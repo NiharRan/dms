@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'bn',
 
     /*
     |--------------------------------------------------------------------------
@@ -170,7 +170,7 @@ return [
         /*
          * Package Service Providers...
          */
-        JamesDordoy\LaravelVueDatatable\Providers\LaravelVueDatatableServiceProvider::class,
+      Intervention\Image\ImageServiceProvider::class,
         App\Providers\LanguageServiceProvider::class,
         /*
          * Application Service Providers...
@@ -234,6 +234,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Helper' => App\Helpers\Helper::class,
 
+
+      'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

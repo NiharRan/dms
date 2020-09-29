@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>{{ env('APP_NAME') }}</title>
-  <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600">
   <link rel="stylesheet" href="{{ asset('vendors/css/vendors.min.css') }}">
@@ -53,6 +53,6 @@
   <script src="{{ asset('js/scripts/footer.js') }}"></script>
 @endif
 
-<script src="{{ mix('/js/app.js') }}" defer></script>
+<script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>

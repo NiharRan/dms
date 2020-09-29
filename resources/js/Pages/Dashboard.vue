@@ -14,8 +14,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <h1 class="mb-2 text-white">Congratulations John,</h1>
-                  <p class="m-auto w-75">You have done <strong>57.6%</strong> more sales today. Check your new badge in your profile.</p>
+                  <h1 class="mb-2 text-white">{{ __('Congratulations') }} {{ $page.auth.name }},</h1>
                 </div>
               </div>
             </div>

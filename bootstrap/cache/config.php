@@ -1,13 +1,13 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'Maska',
+    'name' => 'Depo-Management-System',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://maska.test',
+    'url' => 'http://localhost',
     'asset_url' => NULL,
     'timezone' => 'UTC',
-    'locale' => 'en',
+    'locale' => 'bn',
     'fallback_locale' => 'en',
     'languages' => 
     array (
@@ -15,7 +15,7 @@
       'bn' => 'বাংলা',
     ),
     'faker_locale' => 'en_US',
-    'key' => 'base64:/A4lqDwEybHxB/xqlCFqSrslwGhK+i5HmUV/E3MAqQI=',
+    'key' => 'base64:znKZZyDz43mWiRe7xD4xsb9NhUfJaEy6u3FHCopul3k=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -41,7 +41,7 @@
       19 => 'Illuminate\\Translation\\TranslationServiceProvider',
       20 => 'Illuminate\\Validation\\ValidationServiceProvider',
       21 => 'Illuminate\\View\\ViewServiceProvider',
-      22 => 'JamesDordoy\\LaravelVueDatatable\\Providers\\LaravelVueDatatableServiceProvider',
+      22 => 'Intervention\\Image\\ImageServiceProvider',
       23 => 'App\\Providers\\LanguageServiceProvider',
       24 => 'App\\Providers\\AppServiceProvider',
       25 => 'App\\Providers\\AuthServiceProvider',
@@ -87,6 +87,7 @@
       'Validator' => 'Illuminate\\Support\\Facades\\Validator',
       'View' => 'Illuminate\\Support\\Facades\\View',
       'Helper' => 'App\\Helpers\\Helper',
+      'Image' => 'Intervention\\Image\\Facades\\Image',
     ),
   ),
   'auth' => 
@@ -181,7 +182,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'E:\\laragon\\www\\maska\\storage\\framework/cache/data',
+        'path' => 'E:\\laragon\\www\\dms\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -220,7 +221,7 @@
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'maska_cache',
+    'prefix' => 'depo_management_system_cache',
   ),
   'custom' => 
   array (
@@ -249,7 +250,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'maska',
+        'database' => 'depu_ms',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -259,7 +260,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'maska',
+        'database' => 'depu_ms',
         'username' => 'root',
         'password' => '',
         'unix_socket' => '',
@@ -279,7 +280,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'maska',
+        'database' => 'depu_ms',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -294,7 +295,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'maska',
+        'database' => 'depu_ms',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -309,7 +310,7 @@
       'options' => 
       array (
         'cluster' => 'predis',
-        'prefix' => 'maska_database_',
+        'prefix' => 'depo_management_system_database_',
       ),
       'default' => 
       array (
@@ -338,13 +339,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'E:\\laragon\\www\\maska\\storage\\app',
+        'root' => 'E:\\laragon\\www\\dms\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'E:\\laragon\\www\\maska\\storage\\app/public',
-        'url' => 'http://maska.test/storage',
+        'root' => 'E:\\laragon\\www\\dms\\storage\\app/public',
+        'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -371,6 +372,10 @@
       'threads' => 2,
       'time' => 2,
     ),
+  ),
+  'image' => 
+  array (
+    'driver' => 'gd',
   ),
   'laravel-vue-datatables' => 
   array (
@@ -399,13 +404,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'E:\\laragon\\www\\maska\\storage\\logs/laravel.log',
+        'path' => 'E:\\laragon\\www\\dms\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'E:\\laragon\\www\\maska\\storage\\logs/laravel.log',
+        'path' => 'E:\\laragon\\www\\dms\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -469,7 +474,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'E:\\laragon\\www\\maska\\resources\\views/vendor/mail',
+        0 => 'E:\\laragon\\www\\dms\\resources\\views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -562,7 +567,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'E:\\laragon\\www\\maska\\storage\\framework/sessions',
+    'files' => 'E:\\laragon\\www\\dms\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -571,7 +576,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'maska_session',
+    'cookie' => 'depo_management_system_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => false,
@@ -582,9 +587,9 @@
   array (
     'paths' => 
     array (
-      0 => 'E:\\laragon\\www\\maska\\resources\\views',
+      0 => 'E:\\laragon\\www\\dms\\resources\\views',
     ),
-    'compiled' => 'E:\\laragon\\www\\maska\\storage\\framework\\views',
+    'compiled' => 'E:\\laragon\\www\\dms\\storage\\framework\\views',
   ),
   'debug-server' => 
   array (

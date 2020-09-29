@@ -7,9 +7,9 @@
           <div class="breadcrumb-wrapper col-12">
             <ol v-if="$page.breadcrumbs" class="breadcrumb">
               <li v-for="breadcrumb in $page.breadcrumbs" class="breadcrumb-item">
-                <a v-if="breadcrumb.link" :href="breadcrumb.link">
+                <inertia-link v-if="breadcrumb.link" :href="breadcrumb.link">
                   {{ breadcrumb.name }}
-                </a>
+                </inertia-link>
                 <span v-else>{{ breadcrumb.name }}</span>
               </li>
             </ol>
@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+    <div v-if="$page.has_modal" class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
       <button class="btn-icon waves-effect waves-light btn btn-primary btn-sm" data-toggle="modal" data-target="#default" type="button">
         <i class="feather icon-plus-circle"></i> New
       </button>

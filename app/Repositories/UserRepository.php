@@ -4,22 +4,28 @@
 namespace App\Repositories;
 
 
-use App\Settings\TransactionType;
+use App\Traits\RepositoryTrait;
 use App\User;
 use App\Users\Address;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
 use Intervention\Image\Facades\Image;
 
 class UserRepository
 {
+  use RepositoryTrait;
 
+  private $user;
   protected $guarded = [];
+
+  public function __construct(User $user)
+  {
+    $this->user = $user;
+  }
+
   public function all()
   {
-    $users = User::with([
+    $users = $this->user->with([
       'gender',
       'religion',
       'blood_group',
@@ -45,12 +51,11 @@ class UserRepository
 
   public function findById($rowId)
   {
-    return User::with([
+    return $this->user->with([
       'gender',
       'religion',
       'blood_group',
       'role',
-      'accounts',
       'address' => function ($query) {
         $query->with([
           'upazilla',
@@ -63,12 +68,11 @@ class UserRepository
 
   public function findBySlug(string $slug)
   {
-    return User::with([
+    return $this->user->with([
       'gender',
       'religion',
       'blood_group',
       'role',
-      'accounts',
       'address' => function ($query) {
         $query->with([
           'upazilla',
@@ -143,52 +147,6 @@ class UserRepository
     $img->save($path);
   }
 
-  public function transactionAmountByType($user, $account = null)
-  {
-    $transactionTypes = TransactionType::active()->orderBy('name', 'asc')->get();
-    foreach ($transactionTypes as  $key => $transactionType) {
-      $query = DB::table('transactions')
-        ->where('transaction_type_id', '=', $transactionType->id)
-        ->where('user_id', '=', $user->id);
-      if ($account != null) {
-        $query = $query->where('account_id', '=', $account->id)
-          ->where('created_at', '>=', $account->created_at);
-      }
-      $transactionTypes[$key]->amount = $query->sum('amount');
-    }
-    return $transactionTypes;
-  }
-
-  public function accounts($userId)
-  {
-    $accounts = $this->findById($userId)->accounts;
-    if (\request()->has('status')) {
-      $accounts = $accounts->where('status', \request()->status);
-    }
-    return $accounts;
-  }
-
-    public function dataTable(Request $request)
-    {
-      $query = User::eloquentQuery(
-        $request->input('column'),
-        $request->input('dir'),
-        $request->input('search'),
-        [
-          "gender",
-          "role",
-          "religion",
-          "blood_group",
-        ]
-      );
-
-      $userId = auth()->user()->id;
-      $query = $query->where('id', '!=', $userId);
-
-      $data = $query->paginate($request->input('length'));
-
-      return new DataTableCollectionResource($data);
-    }
 
   private function setupAddress(Address $address, Request $request)
   {

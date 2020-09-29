@@ -130,22 +130,31 @@
             }
           },
           store: function () {
+            const self = this;
             this.$inertia.post(this.route('roles.store'), {
               name: this.form.name
+            }).then(function () {
+              if (Object.keys(self.errors).length === 0) {
+                self.closeModel();
+                self.cleanForm();
+                self.$toast('Role Created Successfully');
+              }
             });
-            this.closeModel();
-            this.cleanForm();
-            this.$toast('Role Created Successfully');
+
           },
           update: function () {
+            const self = this;
             this.$inertia.post(this.route('roles.update', this.form.id), {
               name: this.form.name,
               status: this.form.status,
               _method: "put"
+            }).then(function () {
+              if (Object.keys(self.errors).length === 0) {
+                self.closeModel();
+                self.cleanForm();
+                self.$toast('Role Updated Successfully');
+              }
             });
-            this.closeModel();
-            this.cleanForm();
-            this.$toast('Role Updated Successfully');
           },
           remove: async function (role) {
             if (await this.$confirm()) {

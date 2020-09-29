@@ -1,11 +1,25 @@
 import { InertiaApp } from '@inertiajs/inertia-vue';
 import Vue from 'vue';
 
+import VueMoment from 'vue-moment';
+Vue.use(VueMoment);
+
+import ProgressBar from 'vue-simple-progress';
+Vue.component('progress-bar', ProgressBar);
+
+import Multiselect from 'vue-multiselect';
+Vue.component('multi-select', Multiselect);
+
+import datePicker from 'vue-bootstrap-datetimepicker';
+Vue.use(datePicker);
+
 import InertiaTable from 'inertia-table';
 Vue.use(InertiaTable);
 
 
 Vue.config.productionTip = false;
+
+Vue.mixin(require('./mixins/lang'));
 Vue.mixin({ methods: { route: window.route } });
 
 Vue.use(InertiaApp);

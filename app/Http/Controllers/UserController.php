@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Users\UserCreateRequest;
+use App\Http\Requests\Users\UserUpdateRequest;
 use App\Repositories\UserRepository;
-use App\Settings\Division;
 use App\Users\BloodGroup;
 use App\Users\Gender;
 use App\Users\Religion;
-use App\Settings\Role;
-use Illuminate\Http\Request;
+use App\Users\Role;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
+use Inertia\Inertia;
 
 class UserController extends Controller
 {
@@ -33,83 +35,95 @@ class UserController extends Controller
         ['link'=>"/",'name'=> __('Home')],
         ['name'=> __("Users") ],
       ];
-      return view('/pages/users/index', [
-        'breadcrumbs' => $breadcrumbs
-      ]);
-    }
+      $users = $this->userRepository->paginate(15);
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
       $genders = Gender::active()->get();
-      $bloodGroups = BloodGroup::active()->get();
-      $roles = Role::active()->get();
       $religions = Religion::active()->get();
-      $divisions = Division::active()->get();
-      $pageConfigs = [
-        'pageHeader' => true
-      ];
-      $breadcrumbs = [
-        ['link'=>"/",'name'=> __("Home")],
-        ['link' => '/users', 'name'=> __("Users")],
-        ['name'=> __("Create New User")],
-      ];
-      return view('/pages/users/create', [
-        'breadcrumbs' => $breadcrumbs
-      ])->with([
+      $bloodGroups = BloodGroup::active()->get();
+      return Inertia::render('User/Index', [
+        'breadcrumbs' => $breadcrumbs,
+        'users' => $users,
         'genders' => $genders,
-        'bloodGroups' => $bloodGroups,
-        'roles' => $roles,
         'religions' => $religions,
-        'divisions' => $divisions,
+        'blood_groups' => $bloodGroups,
+        'has_modal' => true
       ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param UserCreateRequest $request
+   * @return Response
+   */
+  public function store(UserCreateRequest $request)
+  {
+    $role = Role::where('name', 'Subscriber')->first();
+    $user = $this->userRepository->store($request);
+    $user->role_id = $role->id;
+    if ($request->hasFile('avatar')) {
+      $extension = $request->file('avatar')->extension();
+      //filename to store
+      $fileNameToStore = \time().'.'.$extension;
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-      $user = $this->userRepository->findById($id);
-      $genders = Gender::active()->get();
-      $bloodGroups = BloodGroup::active()->get();
-      $religions = Religion::active()->get();
-      $divisions = Division::active()->get();
-      $pageConfigs = [
-        'pageHeader' => true
-      ];
-      $breadcrumbs = [
-        ['link'=>"/",'name'=>__('Home')],
-        ['link' => '/users','name'=> __('Users')],
-        ['name' => __('Update Information')]
-      ];
-      return view('/pages/users/edit', [
-        'pageConfigs' => $pageConfigs,
-        'breadcrumbs' => $breadcrumbs
-      ])->with([
-        'user' => $user,
-        'genders' => $genders,
-        'bloodGroups' => $bloodGroups,
-        'religions' => $religions,
-        'divisions' => $divisions,
-      ]);
+      //Upload File
+      $this->userRepository->uploadImage($fileNameToStore, $request);
+
+      $user->avatar = $fileNameToStore;
     }
+    if ($user->save()) {
+      return redirect()
+        ->route('users.index')
+        ->with('success', 'User registration completed successfully!');
+    }
+  }
+
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param UserUpdateRequest $request
+   * @param int $id
+   * @return Response
+   */
+  public function update(UserUpdateRequest $request, $id)
+  {
+    $user = $this->userRepository->update($request, $id);
+    // new image provided
+    if ($request->hasFile('avatar')) {
+      if ($user->avatar !== 'default.jpg') {
+        $originalImagePath = 'public/users/'.$user->avatar;
+        $smallImagePath = 'public/users/thumbnail/small/'.$user->avatar;
+        $mediumImagePath = 'public/users/thumbnail/medium/'.$user->avatar;
+
+        Storage::delete($originalImagePath);
+        Storage::delete($smallImagePath);
+        Storage::delete($mediumImagePath);
+      }
+
+      $extension = $request->file('avatar')->extension();
+      //filename to store
+      $fileNameToStore = \time().'.'.$extension;
+
+      //Upload File
+      $this->userRepository->uploadImage($fileNameToStore, $request);
+
+      $user->avatar = $fileNameToStore;
+    }
+    if ($user->save()) {
+      return redirect()
+        ->route('users.index')
+        ->with('success', "$user->name's information updated successfully!");
+    }
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  int  $id
+   * @return Response
+   */
+  public function destroy($id)
+  {
+    //
+  }
 }

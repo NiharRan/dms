@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
+use Inertia\Inertia;
 
 class LanguageServiceProvider extends ServiceProvider
 {
@@ -25,37 +26,15 @@ class LanguageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Cache::rememberForever('lang', function () {
-          $lang = collect();
-          foreach (['en', 'bn'] as $locale) {
-            $lang[$locale] = [
-              'php' => $this->loadPhpTranslations($locale),
-              'json' => $this->loadJsonTranslations($locale)
-            ];
+
+        Inertia::share('language', config('app.languages.'.app()->getLocale()));
+
+        Inertia::share('lang', function () {
+          $path = resource_path('lang/'. app()->getLocale() .'.json');
+          if (!file_exists($path)) {
+            return [];
           }
-          return $lang;
+          return json_decode(file_get_contents($path), true);
         });
     }
-
-  private function loadPhpTranslations(string $locale)
-  {
-    $path = resource_path("lang/$locale");
-
-    return collect(File::allFiles($path))->flatMap(function ($file) use ($locale) {
-      $key = ($translation = $file->getBasename('.php'));
-
-      return [$key => trans($translation, [], $locale)];
-    });
-  }
-
-  private function loadJsonTranslations(string $locale)
-  {
-    $path = resource_path("lang/$locale.json");
-
-    if (is_string($path) && is_readable($path)) {
-      return json_decode(file_get_contents($path), true);
-    }
-
-    return  [];
-  }
 }

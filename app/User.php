@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Settings\Role;
+use App\Users\Role;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -63,19 +63,19 @@ class User extends Authenticatable
     }
     public function getProfileUrlAttribute()
     {
-      return route('users.profile', $this->slug);
+      return route('users.show', $this->slug);
     }
     public function getAvatarMediumAttribute()
     {
-      return "/storage/profiles/thumbnail/medium/$this->avatar";
+      return "/storage/users/thumbnail/medium/$this->avatar";
     }
     public function getAvatarSmallAttribute()
     {
-      return "/storage/profiles/thumbnail/small/$this->avatar";
+      return "/storage/users/thumbnail/small/$this->avatar";
     }
     public function getAvatarOriginalAttribute()
     {
-      return "/storage/profiles/thumbnail/$this->avatar";
+      return "/storage/users/thumbnail/$this->avatar";
     }
 
     protected $appends = [
@@ -103,7 +103,7 @@ class User extends Authenticatable
     }
 
     public  function role() {
-      return $this->belongsTo("App\Settings\Role");
+      return $this->belongsTo("App\Users\Role");
     }
     public  function address() {
       return $this->hasOne("App\Users\Address");
@@ -116,13 +116,5 @@ class User extends Authenticatable
     }
     public  function religion() {
       return $this->belongsTo("App\Users\Religion");
-    }
-
-    public  function accounts() {
-      return $this->belongsToMany("App\Account", "user_account")->withTimestamps();
-    }
-
-    public  function transactions() {
-      return $this->hasMany("App\Transaction", 'user_id', 'id');
     }
 }

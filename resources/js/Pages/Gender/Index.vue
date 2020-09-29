@@ -1,6 +1,6 @@
 <template>
   <layout name="Dashboard">
-    <!-- users list start -->
+    <!-- gender list start -->
     <section class="users-list-wrapper">
       <!-- Ag Grid users list section start -->
       <div id="basic-examples">
@@ -74,7 +74,7 @@
       </model>
       <!-- Ag Grid users list section end -->
     </section>
-    <!-- users list ends -->
+    <!-- gender list ends -->
   </layout>
 </template>
 
@@ -130,22 +130,30 @@
             }
           },
           store: function () {
+            const self = this;
             this.$inertia.post(this.route('genders.store'), {
               name: this.form.name
+            }).then(function () {
+              if (Object.keys(self.errors).length === 0) {
+                self.closeModel();
+                self.cleanForm();
+                self.$toast('Gender Created Successfully');
+              }
             });
-            this.closeModel();
-            this.cleanForm();
-            this.$toast('Gender Created Successfully');
           },
           update: function () {
+            const self = this;
             this.$inertia.post(this.route('genders.update', this.form.id), {
               name: this.form.name,
               status: this.form.status,
               _method: "put"
+            }).then(function () {
+              if (Object.keys(self.errors).length === 0) {
+                self.closeModel();
+                self.cleanForm();
+                self.$toast('Gender Updated Successfully');
+              }
             });
-            this.closeModel();
-            this.cleanForm();
-            this.$toast('Gender Updated Successfully');
           },
           remove: async function (gender) {
             if (await this.$confirm()) {
