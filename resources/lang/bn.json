@@ -2,6 +2,16 @@
   "Welcome": "স্বাগতম",
   "Congratulations": "অভিনন্দন",
   "Dashboard": "ড্যাশবোর্ড",
+
+
+  "Active": "সক্রিয়",
+  "Inactive": "নিষ্ক্রিয়",
+  "Create": "সৃষ্টি কর",
+  "Update": "পরিবর্তন কর",
+  "Cancel": "বাতিল কর",
+  "New": "নতুন",
+
+
   "Users": "ব্যবহারকারীগণ",
   "User": "ব্যবহারকারী",
   "Roles": "পদবী গুলো",
@@ -11,5 +21,13 @@
   "Religions": "ধর্ম গুলো",
   "Religion": "ধর্ম",
   "Blood Groups": "রক্তের গ্রুপ সমূহ",
-  "Blood Group": "রক্তের গ্রুপ"
+  "Blood Group": "রক্তের গ্রুপ",
+  "Products": "পণ্য গুলো",
+  "Product": "পণ্য",
+  "Product Name": "পণ্যের নাম",
+  "Product Types": "পণ্যের ধরন সমূহ",
+  "Product Type": "পণ্যের ধরন",
+
+  "Companies": "প্রতিষ্ঠান গুলো",
+  "Company": "প্রতিষ্ঠান"
 }

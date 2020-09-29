@@ -32,8 +32,29 @@
           <span class="menu-title" data-i18n="">{{__('Users')}}</span>
         </inertia-link>
       </li>
+
+      <li class="nav-item">
+        <inertia-link :href="route('companies.index')">
+          <i class="feather icon-unlock"></i>
+          <span class="menu-title" data-i18n="">{{__("Company")}}</span>
+        </inertia-link>
+      </li>
+
       <li class="navigation-header">
         <span>Settings</span>
+      </li>
+
+      <li class="nav-item">
+        <inertia-link :href="route('product-types.index')">
+          <i class="feather icon-unlock"></i>
+          <span class="menu-title" data-i18n="">{{__("Product Type")}}</span>
+        </inertia-link>
+      </li>
+      <li class="nav-item">
+        <inertia-link :href="route('products.index')">
+          <i class="feather icon-unlock"></i>
+          <span class="menu-title" data-i18n="">{{__("Product")}}</span>
+        </inertia-link>
       </li>
 
       <li class="nav-item">

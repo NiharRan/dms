@@ -19,7 +19,7 @@
     </div>
     <div v-if="$page.has_modal" class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
       <button class="btn-icon waves-effect waves-light btn btn-primary btn-sm" data-toggle="modal" data-target="#default" type="button">
-        <i class="feather icon-plus-circle"></i> New
+        <i class="feather icon-plus-circle"></i> {{ __("New") }}
       </button>
     </div>
   </div>

@@ -2,6 +2,14 @@
   "Welcome": "Welcome",
   "Congratulations": "Congratulations",
   "Dashboard": "Dashboard",
+
+  "Active": "Active",
+  "Inactive": "Inactive",
+  "Create": "Create",
+  "Update": "Update",
+  "Cancel": "Cancel",
+  "New": "New",
+
   "Users": "Users",
   "User": "User",
   "Roles": "Roles",
@@ -11,5 +19,12 @@
   "Religions": "Religions",
   "Religion": "Religion",
   "Blood Groups": "Blood Groups",
-  "Blood Group": "Blood Group"
+  "Blood Group": "Blood Group",
+  "Products": "Products",
+  "Product": "Product",
+  "Product Types": "Product Types",
+  "Product Type": "Product Type",
+
+  "Companies": "Companies",
+  "Company": "Company"
 }

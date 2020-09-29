@@ -32,6 +32,29 @@ Route::group([
     Route::put('/users/{id}', 'UserController@update')->name('users.update');
     Route::delete('/users/{id}', 'UserController@destroy')->name('users.destroy');
 
+    // Company routes
+    Route::get('/companies', 'CompanyController@index')->name('companies.index');
+    Route::post('/companies', 'CompanyController@store')->name('companies.store');
+    Route::put('/companies/{companyId}', 'CompanyController@update')->name('companies.update');
+    Route::delete('/companies/{companyId}', 'CompanyController@destroy')->name('companies.destroy');
+
+    Route::group([
+      'prefix' => 'settings',
+      'namespace' => 'Settings'
+    ], function () {
+      // Product type routes
+      Route::get('/product-types', 'ProductTypeController@index')->name('product-types.index');
+      Route::post('/product-types', 'ProductTypeController@store')->name('product-types.store');
+      Route::put('/product-types/{productTypeId}', 'ProductTypeController@update')->name('product-types.update');
+      Route::delete('/product-types/{productTypeId}', 'ProductTypeController@destroy')->name('product-types.destroy');
+
+      // Product routes
+      Route::get('/products', 'ProductController@index')->name('products.index');
+      Route::post('/products', 'ProductController@store')->name('products.store');
+      Route::put('/products/{productId}', 'ProductController@update')->name('products.update');
+      Route::delete('/products/{productId}', 'ProductController@destroy')->name('products.destroy');
+    });
+
     Route::group([
       'prefix' => 'users',
       'namespace' => 'Users'
