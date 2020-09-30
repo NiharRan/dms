@@ -25,9 +25,7 @@ class CompanyRepository
   public function all()
   {
     $companies = $this->company
-      ->with(['images' => function ($q) {
-        $q->logo();
-      }])
+      ->with('logo')
       ->where('id', '!=', auth()->user()->id);
 
     if (\request()->has('status')) {
@@ -50,12 +48,13 @@ class CompanyRepository
 
   public function findById($rowId)
   {
-    return $this->company->find($rowId);
+    return $this->company->with(['images', 'logo'])->find($rowId);
   }
 
   public function findBySlug(string $slug)
   {
-    return $this->company->where('slug', $slug)->first();
+    return $this->company->with(['images', 'logo'])
+      ->where('slug', $slug)->first();
   }
 
   public function store(Request $request)

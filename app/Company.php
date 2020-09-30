@@ -45,4 +45,13 @@ class Company extends MyModel
     {
       return $this->hasMany('App\CompanyImage');
     }
+
+    public function logo()
+    {
+      return $this->hasOne('App\CompanyImage')->logo();
+    }
+    public function banner()
+    {
+      return $this->hasOne('App\CompanyImage')->banner();
+    }
 }
