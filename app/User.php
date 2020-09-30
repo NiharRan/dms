@@ -117,4 +117,8 @@ class User extends Authenticatable
     public  function religion() {
       return $this->belongsTo("App\Users\Religion");
     }
+    public function company()
+    {
+      return $this->hasOne('App\Company');
+    }
 }

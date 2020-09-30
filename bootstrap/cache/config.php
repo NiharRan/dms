@@ -223,6 +223,15 @@
     ),
     'prefix' => 'depo_management_system_cache',
   ),
+  'constants' => 
+  array (
+    'image_type' => 
+    array (
+      'logo' => 1,
+      'banner' => 2,
+      'other' => 3,
+    ),
+  ),
   'custom' => 
   array (
     'custom' => 

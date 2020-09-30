@@ -11,8 +11,8 @@
                 {{ success }}
               </div>
 
-              <div class="table-responsive" v-if="companies.data.length > 0">
-                <table id="data-table" class="table table-bordered display responsive nowrap mb-0" style="width: 100%">
+              <div v-if="companies.data.length > 0">
+                <table id="data-table" class="table-responsive table table-bordered display nowrap mb-0" style="width: 100%">
                   <thead>
                   <tr>
                     <th colspan="2">
@@ -43,10 +43,16 @@
                   <tr v-for="(company, index) in companies.data" :key="company.id">
                     <th style="width: 50px">{{ index + 1 }}</th>
                     <th style="width: 150px;">
-                      <img style="width: 100%" :src="company.image_small" :alt="company.name">
+                      <a :href="company.profile_url"><img style="width: 100%" :src="company.current_logo" :alt="company.name"></a>
                     </th>
-                    <th>{{ company.name }}</th>
-                    <th>{{ company.product_type.name }}</th>
+                    <th>
+                      <h3><a :href="company.profile_url">{{ company.name }}</a></h3>
+                    </th>
+                    <th>
+                      <h3>{{ company.owner }}</h3>
+                    </th>
+                    <th>{{ company.phone }}</th>
+                    <th>{{ company.email }}</th>
                     <td>{{ company.default_date_time }}</td>
                     <td v-html="$options.filters.status(company.status)"></td>
                     <td class="text-center">
@@ -72,7 +78,7 @@
         <form @submit.prevent="storeOrUpdate">
           <div class="modal-body">
               <div class="row">
-                <div class="col-md-8 col-12">
+                <div class="col-md-4 col-12">
                   <div class="form-group">
                     <label>{{ __("Company Name") }}</label>
                     <input type="text"
@@ -98,13 +104,71 @@
                 </div>
                 <div class="col-md-4 col-12">
                   <div class="form-group">
+                    <label>{{ __("Email") }}</label>
+                    <input type="text"
+                           :placeholder="__('Company Email')"
+                           class="form-control"
+                           :class="[errors.email ? 'is-invalid' : '']"
+                           v-model="form.email">
+                    <span v-if="errors.email" class="invalid-feedback" style="display: block;" role="alert">
+                      <strong>{{ errors.email[0] }}</strong>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label>{{ __('Contact No.') }}</label>
+                    <input type="text"
+                           :placeholder="__('Contact No.')"
+                           class="form-control"
+                           :class="[errors.phone ? 'is-invalid' : '']"
+                           v-model="form.phone">
+                    <span v-if="errors.phone" class="invalid-feedback" style="display: block;" role="alert">
+                      <strong>{{ errors.phone[0] }}</strong>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-4 col-12">
+                  <div class="form-group">
                     <div class="banner-logo-upload-box mx-auto" style="background: #f3f3f3;width: 170px;height: 140px;">
                       <img :src="form.image_url" class="users-avatar-shadow rounded" alt="">
                       <label class="btn-pill" style="font-size: 35px;">
                         <i class="fa fa-camera"></i>
-                        <input @change="showImage" type="file" name="image" accept="image/*" class="hidden"/>
+                        <input @change="showImage" type="file" accept="image/*" class="hidden"/>
                       </label>
                     </div>
+                    <span v-if="errors.logo" class="invalid-feedback text-center" style="display: block;" role="alert">
+                      <strong>{{ errors.logo[0] }}</strong>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>{{ __('Description') }}</label>
+                    <textarea v-model="form.description" rows="2" class="form-control"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>{{ __('Address') }}</label>
+                    <textarea v-model="form.address" rows="3" class="form-control"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>{{ __('Head Office') }}</label>
+                    <textarea v-model="form.head_office" rows="3" class="form-control"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>{{ __('Dipu Office') }}</label>
+                    <textarea v-model="form.dipu_office" rows="3" class="form-control"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>{{ __('Sales Center') }}</label>
+                    <textarea v-model="form.sales_center" rows="3" class="form-control"></textarea>
                   </div>
                 </div>
               </div>
@@ -260,8 +324,18 @@
           editData: function (data) {
             this.modelTitle = `Edit ${data.name}'s Information`;
             this.editMode = true;
-            this.form = data;
-            this.form.image_url = data.logo_original;
+            this.form.name = data.name;
+            this.form.owner = data.owner;
+            this.form.description = data.description;
+            this.form.head_office = data.head_office;
+            this.form.dipu_office = data.dipu_office;
+            this.form.address = data.address;
+            this.form.sales_center = data.sales_center;
+            this.form.email = data.email;
+            this.form.phone = data.phone;
+            this.form.id = data.id;
+            this.form.status = data.status;
+            this.form.image_url = data.current_logo;
             $("#default").modal('show');
           },
           removeData: async function (data) {

@@ -23,13 +23,17 @@ class CompanyRequest extends FormRequest
    */
   public function rules()
   {
+    $fileRules = 'required';
     $rules = 'required|string';
     if ($this->isPostRequest()) {
       $rules .= '|unique:products';
+      $fileRules .= '|image';
     }
     return [
       'name' => $rules,
       'owner' => 'required',
+      'phone' => 'required',
+      'logo' => $fileRules
     ];
   }
 
@@ -43,7 +47,10 @@ class CompanyRequest extends FormRequest
     $messages = [
       'name.required' => 'Company name is required',
       'owner.required' => 'Company owner type is required',
+      'phone.required' => 'Company contact no. is required',
       'name.string'  => 'Invalid name',
+      'logo.required'  => 'Company logo is required',
+      'logo.image'  => 'File must be an image',
     ];
     if ($this->isPostRequest()) {
       $messages['name.unique']  = 'Already exists! Try another one';

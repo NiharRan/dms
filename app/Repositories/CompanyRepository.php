@@ -6,10 +6,8 @@ namespace App\Repositories;
 
 use App\Company;
 use App\Traits\RepositoryTrait;
-use App\User;
 use App\Users\Address;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
 
 class CompanyRepository
@@ -26,7 +24,11 @@ class CompanyRepository
 
   public function all()
   {
-    $companies = $this->company->where('id', '!=', auth()->user()->id);
+    $companies = $this->company
+      ->with(['images' => function ($q) {
+        $q->logo();
+      }])
+      ->where('id', '!=', auth()->user()->id);
 
     if (\request()->has('status')) {
       $companies = $companies->where('status', \request()->status);
@@ -71,7 +73,7 @@ class CompanyRepository
   {
     $company = $this->findById($id);
     $company = $this->setupData($company, $request);
-    $company->status = $request->status;
+    $company->status = filter_var($request->status, FILTER_VALIDATE_BOOLEAN) ;
     if ($company->save()) {
       return $company;
     }
@@ -109,6 +111,25 @@ class CompanyRepository
     $img->save($path);
   }
 
+  public function updateImageStatus(Company $company, $image_type)
+  {
+    if ($company->images()
+      ->where('image_type', $image_type)
+      ->update(['status' => 0])) {
+      return $company;
+    }
+    return null;
+  }
+
+  public function storeImage(Company $company, string $fileName, $image_type)
+  {
+    return $company->images()->create([
+      'name' => $fileName,
+      'image_type' => $image_type,
+      'status' => 1
+    ]);
+  }
+
 
   private function setupAddress(Address $address, Request $request)
   {
@@ -119,18 +140,19 @@ class CompanyRepository
     return $address;
   }
 
-  public function uploadImage(string $fileNameToStore, $request)
+  public function uploadImage(string $fileNameToStore, $request, $companyId)
   {
-    $request->file('avatar')->storeAs('public/companies', $fileNameToStore);
-    $request->file('avatar')->storeAs('public/companies/thumbnail/small', $fileNameToStore);
-    $request->file('avatar')->storeAs('public/companies/thumbnail/medium', $fileNameToStore);
+
+    $request->file('logo')->storeAs('public/companies/'.$companyId, $fileNameToStore);
+    $request->file('logo')->storeAs('public/companies/'.$companyId.'/thumbnail/small', $fileNameToStore);
+    $request->file('logo')->storeAs('public/companies/'.$companyId.'/thumbnail/medium', $fileNameToStore);
 
     //create small thumbnail
-    $smallThumbnailPath = public_path('storage/companies/thumbnail/small/'.$fileNameToStore);
+    $smallThumbnailPath = public_path('storage/companies/'.$companyId.'/thumbnail/small/'.$fileNameToStore);
     $this->createThumbnail($smallThumbnailPath, 150, 93);
 
     //create medium thumbnail
-    $mediumThumbnailPath = public_path('storage/companies/thumbnail/medium/'.$fileNameToStore);
+    $mediumThumbnailPath = public_path('storage/companies/'.$companyId.'/thumbnail/medium/'.$fileNameToStore);
     $this->createThumbnail($mediumThumbnailPath, 300, 185);
   }
 

@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CompanyRequest;
 use App\Repositories\CompanyRepository;
+use App\Services\ConstDataTypeService;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Config;
 use Inertia\Inertia;
 
 class CompanyController extends Controller
@@ -54,11 +55,11 @@ class CompanyController extends Controller
       $fileNameToStore = \time().'.'.$extension;
 
       //Upload File
-      $this->companyRepository->uploadImage($fileNameToStore, $request);
+      $this->companyRepository->uploadImage($fileNameToStore, $request, $company->id);
 
-      $company->logo = $fileNameToStore;
+      $company = $this->companyRepository->storeImage($company, $fileNameToStore, 1); // 1 => profileImage
     }
-    if ($company->save()) {
+    if ($company) {
       return redirect()
         ->route('companies.index')
         ->with('success', 'Company registration completed successfully!');
@@ -77,24 +78,15 @@ class CompanyController extends Controller
     $company = $this->companyRepository->update($request, $id);
     // new image provided
     if ($request->hasFile('logo')) {
-      if ($company->avatar !== 'default.jpg') {
-        $originalImagePath = 'public/companies/'.$company->logo;
-        $smallImagePath = 'public/companies/thumbnail/small/'.$company->logo;
-        $mediumImagePath = 'public/companies/thumbnail/medium/'.$company->logo;
-
-        Storage::delete($originalImagePath);
-        Storage::delete($smallImagePath);
-        Storage::delete($mediumImagePath);
-      }
-
       $extension = $request->file('logo')->extension();
       //filename to store
       $fileNameToStore = \time().'.'.$extension;
 
       //Upload File
-      $this->companyRepository->uploadImage($fileNameToStore, $request);
+      $this->companyRepository->uploadImage($fileNameToStore, $request, $id);
 
-      $company->logo = $fileNameToStore;
+      $company = $this->companyRepository->updateImageStatus($company, 1); // 1 => profileImage
+      $company = $this->companyRepository->storeImage($company, $fileNameToStore, 1);// 1 => profileImage
     }
     if ($company->save()) {
       return redirect()
