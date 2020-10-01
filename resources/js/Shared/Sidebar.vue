@@ -45,6 +45,13 @@
       </li>
 
       <li class="nav-item">
+        <inertia-link :href="route('clients.index')">
+          <i class="feather icon-unlock"></i>
+          <span class="menu-title" data-i18n="">{{__("Client")}}</span>
+        </inertia-link>
+      </li>
+
+      <li class="nav-item">
         <inertia-link :href="route('product-types.index')">
           <i class="feather icon-unlock"></i>
           <span class="menu-title" data-i18n="">{{__("Product Type")}}</span>
