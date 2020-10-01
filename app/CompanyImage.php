@@ -2,9 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
-class CompanyImage extends Model
+class CompanyImage extends MyModel
 {
     protected $fillable = [
       'name', 'image_type', 'company_id', 'status'

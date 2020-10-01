@@ -40,6 +40,13 @@
         </inertia-link>
       </li>
 
+      <li class="nav-item">
+        <inertia-link :href="route('sales.index')">
+          <i class="feather icon-unlock"></i>
+          <span class="menu-title" data-i18n="">{{__("Sale")}}</span>
+        </inertia-link>
+      </li>
+
       <li class="navigation-header">
         <span>Settings</span>
       </li>

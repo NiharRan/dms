@@ -24,7 +24,6 @@ class CreateCompaniesTable extends Migration
             $table->text('address')->nullable();
             $table->text('sales_center')->nullable();
             $table->string('email', 200)->nullable();
-            $table->string('phone', 200)->nullable();
             $table->string('logo', 20)->default('default.jpg');
             $table->boolean('status')->default(1);
             $table->timestamps();

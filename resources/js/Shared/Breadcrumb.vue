@@ -22,6 +22,11 @@
         <i class="feather icon-plus-circle"></i> {{ __("New") }}
       </button>
     </div>
+    <div v-if="$page.link" class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+      <inertia-link class="btn-icon waves-effect waves-light btn btn-primary btn-sm" :href="$page.link">
+        <i class="feather icon-plus-circle"></i> {{ __("New") }}
+      </inertia-link>
+    </div>
   </div>
 </template>
 

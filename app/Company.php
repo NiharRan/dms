@@ -8,7 +8,7 @@ class Company extends MyModel
     protected $fillable = [
       'name', 'slug', 'description', 'owner',
       'head_office', 'dipu_office', 'address',
-      'sales_center', 'email', 'phone', 'logo', 'status'
+      'sales_center', 'email', 'logo', 'status'
     ];
 
     public function getProfileUrlAttribute()
@@ -44,6 +44,16 @@ class Company extends MyModel
     public function images()
     {
       return $this->hasMany('App\CompanyImage');
+    }
+
+    public function phones()
+    {
+      return $this->hasMany('App\CompanyPhone');
+    }
+
+    public function sales()
+    {
+      return $this->hasMany('App\Sale');
     }
 
     public function logo()

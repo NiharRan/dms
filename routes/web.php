@@ -39,6 +39,13 @@ Route::group([
     Route::delete('/companies/{companyId}', 'CompanyController@destroy')->name('companies.destroy');
     Route::get('/companies/{slug}', 'CompanyProfileController@show')->name('companies.show');
 
+    // Company routes
+    Route::get('/sales', 'SaleController@index')->name('sales.index');
+    Route::get('/sales/create', 'SaleController@create')->name('sales.create');
+    Route::post('/sales', 'SaleController@store')->name('sales.store');
+    Route::put('/sales/{saleId}', 'SaleController@update')->name('sales.update');
+    Route::delete('/sales/{saleId}', 'SaleController@destroy')->name('sales.destroy');
+
     Route::group([
       'prefix' => 'settings',
       'namespace' => 'Settings'

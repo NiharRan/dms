@@ -19,4 +19,9 @@ class Client extends MyModel
   {
     return $this->hasMany('App\Settings\ClientTrack');
   }
+
+  public function sales()
+  {
+    return $this->hasMany('App\Sale');
+  }
 }

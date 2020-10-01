@@ -16,7 +16,12 @@
                     <h3 class="mt-2 mb-0">{{ company.name }}</h3>
                     <p>{{ company.owner }}</p>
                     <p class="mb-0"><i class="fa fa-envelope-square"></i> <span>{{ company.email }}</span></p>
-                    <p class="mb-0"><i class="fa fa-phone-square"></i> <span>{{ company.phone }}</span></p>
+                    <p class="mb-0"><i class="fa fa-phone-square"></i>
+                      <span v-if="company.phones.length > 0">
+                        <span v-for="(phone, index) in company.phones"
+                              :key="phone.id">{{ phone.phone }} {{ index !== company.phones.length - 1 ? ', ' : ''}}</span>
+                      </span>
+                    </p>
                   </div>
                 </div>
               </div>

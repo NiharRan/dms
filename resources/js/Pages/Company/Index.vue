@@ -34,6 +34,7 @@
                     <th>Name</th>
                     <th>Owner</th>
                     <th>Contact No.</th>
+                    <th>E-mail</th>
                     <th>Created At</th>
                     <th class="text-center">Status</th>
                     <th class="text-center">Actions</th>
@@ -51,7 +52,16 @@
                     <th>
                       <h3>{{ company.owner }}</h3>
                     </th>
-                    <th>{{ company.phone }}</th>
+                    <th>
+                      <div v-if="company.phones.length > 0">
+                        <span
+                          class="badge font-small-2"
+                          style="padding: 5px; margin: 2px;"
+                          :class="[phone.status ? 'badge-primary' : 'badge-warning']"
+                          v-for="phone in company.phones"
+                          :key="phone.id">{{ phone.phone }}</span>
+                      </div>
+                    </th>
                     <th>{{ company.email }}</th>
                     <td>{{ company.default_date_time }}</td>
                     <td v-html="$options.filters.status(company.status)"></td>
@@ -78,54 +88,52 @@
         <form @submit.prevent="storeOrUpdate">
           <div class="modal-body">
               <div class="row">
-                <div class="col-md-4 col-12">
-                  <div class="form-group">
-                    <label>{{ __("Company Name") }}</label>
-                    <input type="text"
-                           :placeholder="__('Company Name')"
-                           class="form-control"
-                           :class="[errors.name ? 'is-invalid' : '']"
-                           v-model="form.name">
-                    <span v-if="errors.name" class="invalid-feedback" style="display: block;" role="alert">
-                      <strong>{{ errors.name[0] }}</strong>
-                    </span>
-                  </div>
-                  <div class="form-group">
-                    <label>{{ __('Owner') }}</label>
-                    <input type="text"
-                           :placeholder="__('Owner')"
-                           class="form-control"
-                           :class="[errors.owner ? 'is-invalid' : '']"
-                           v-model="form.owner">
-                    <span v-if="errors.owner" class="invalid-feedback" style="display: block;" role="alert">
+                <div class="col-md-8 col-12">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>{{ __("Company Name") }}</label>
+                        <input type="text"
+                               :placeholder="__('Company Name')"
+                               class="form-control"
+                               :class="[errors.name ? 'is-invalid' : '']"
+                               v-model="form.name">
+                        <span v-if="errors.name" class="invalid-feedback" style="display: block;" role="alert">
+                          <strong>{{ errors.name[0] }}</strong>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                      <div class="form-group">
+                        <label>{{ __('Owner') }}</label>
+                        <input type="text"
+                               :placeholder="__('Owner')"
+                               class="form-control"
+                               :class="[errors.owner ? 'is-invalid' : '']"
+                               v-model="form.owner">
+                        <span v-if="errors.owner" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.owner[0] }}</strong>
                     </span>
-                  </div>
-                </div>
-                <div class="col-md-4 col-12">
-                  <div class="form-group">
-                    <label>{{ __("Email") }}</label>
-                    <input type="text"
-                           :placeholder="__('Company Email')"
-                           class="form-control"
-                           :class="[errors.email ? 'is-invalid' : '']"
-                           v-model="form.email">
-                    <span v-if="errors.email" class="invalid-feedback" style="display: block;" role="alert">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                      <div class="form-group">
+                        <label>{{ __("Email") }}</label>
+                        <input type="text"
+                               :placeholder="__('Company Email')"
+                               class="form-control"
+                               :class="[errors.email ? 'is-invalid' : '']"
+                               v-model="form.email">
+                        <span v-if="errors.email" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.email[0] }}</strong>
                     </span>
-                  </div>
-                  <div class="form-group">
-                    <label>{{ __('Contact No.') }}</label>
-                    <input type="text"
-                           :placeholder="__('Contact No.')"
-                           class="form-control"
-                           :class="[errors.phone ? 'is-invalid' : '']"
-                           v-model="form.phone">
-                    <span v-if="errors.phone" class="invalid-feedback" style="display: block;" role="alert">
-                      <strong>{{ errors.phone[0] }}</strong>
-                    </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
                 <div class="col-md-4 col-12">
                   <div class="form-group">
                     <div class="banner-logo-upload-box mx-auto" style="background: #f3f3f3;width: 170px;height: 140px;">
@@ -141,6 +149,21 @@
                   </div>
                 </div>
 
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>{{ __('Contact No.') }}</label>
+                    <multi-select
+                      v-model="form.phones"
+                      tag-placeholder="Add this contact no."
+                      placeholder="Search or add a contact no"
+                      label="phone"
+                      :options="[]"
+                      track-by="phone"
+                      :multiple="true"
+                      :taggable="true"
+                      @tag="addTag"></multi-select>
+                  </div>
+                </div>
                 <div class="col-md-12">
                   <div class="form-group">
                     <label>{{ __('Description') }}</label>
@@ -217,7 +240,7 @@
               address: '',
               sales_center: '',
               email: '',
-              phone: '',
+              phones: [],
               status: '',
               logo: null,
               image_url: ''
@@ -229,6 +252,13 @@
           }
         },
         methods: {
+          addTag (newPhone) {
+            const tag = {
+              phone: newPhone,
+              status: 1
+            }
+            this.form.phones.push(tag)
+          },
           closeModel: function () {
             $("#default").modal('hide');
           },
@@ -243,7 +273,7 @@
             this.form.address = '';
             this.form.sales_center = '';
             this.form.email = '';
-            this.form.phone = '';
+            this.form.phones = [];
             this.form.id = '';
             this.form.status = '';
             this.form.image_url = '';
@@ -260,7 +290,7 @@
           },
           store: function () {
             const self = this;
-            const product_type_id = this.form.product_type ? this.form.product_type.id : '';
+            const phones = this.form.phones.map(phone => phone.phone);
             const formData = new FormData();
             formData.append('name', this.form.name);
             formData.append('owner', this.form.owner);
@@ -270,7 +300,7 @@
             formData.append('address', this.form.address);
             formData.append('sales_center', this.form.sales_center);
             formData.append('email', this.form.email);
-            formData.append('phone', this.form.phone);
+            formData.append('phones', phones);
             formData.append('logo', this.form.logo);
             this.$inertia.post(this.route('companies.store'), formData)
               .then(function () {
@@ -283,6 +313,7 @@
           },
           update: function () {
             const self = this;
+            const phones = this.form.phones.map(phone => phone.phone);
             const formData = new FormData();
             formData.append('name', this.form.name);
             formData.append('owner', this.form.owner);
@@ -292,7 +323,7 @@
             formData.append('address', this.form.address);
             formData.append('sales_center', this.form.sales_center);
             formData.append('email', this.form.email);
-            formData.append('phone', this.form.phone);
+            formData.append('phones', phones);
             formData.append('logo', this.form.logo);
             formData.append('status', this.form.status);
             formData.append('_method', 'put');
@@ -332,7 +363,7 @@
             this.form.address = data.address;
             this.form.sales_center = data.sales_center;
             this.form.email = data.email;
-            this.form.phone = data.phone;
+            this.form.phones = data.phones;
             this.form.id = data.id;
             this.form.status = data.status;
             this.form.image_url = data.current_logo;
@@ -350,7 +381,7 @@
         }
     }
 </script>
-
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style>
 
 </style>

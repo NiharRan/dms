@@ -28,5 +28,7 @@
   "Companies": "Companies",
   "Company": "Company",
   "Clients": "Clients",
-  "Client": "Client"
+  "Client": "Client",
+  "Sales": "Sales",
+  "Sale": "Sale"
 }

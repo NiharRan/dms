@@ -25,7 +25,7 @@ class CompanyRepository
   public function all()
   {
     $companies = $this->company
-      ->with('logo')
+      ->with(['logo', 'phones'])
       ->where('id', '!=', auth()->user()->id);
 
     if (\request()->has('status')) {
@@ -48,12 +48,12 @@ class CompanyRepository
 
   public function findById($rowId)
   {
-    return $this->company->with(['images', 'logo'])->find($rowId);
+    return $this->company->with(['images', 'logo', 'phones'])->find($rowId);
   }
 
   public function findBySlug(string $slug)
   {
-    return $this->company->with(['images', 'logo'])
+    return $this->company->with(['images', 'logo', 'phones'])
       ->where('slug', $slug)->first();
   }
 
@@ -85,13 +85,20 @@ class CompanyRepository
     $company->slug = make_slug($request->name);
     $company->description = $request->description;
     $company->owner = $request->owner;
-    $company->phone = $request->phone;
     $company->email = $request->email;
     $company->head_office = $request->head_office;
     $company->dipu_office = $request->dipu_office;
     $company->address = $request->address;
     $company->sales_center = $request->sales_center;
 
+    $phones = explode(',', $request->phones);
+    if (sizeof($phones) > 0) {
+      foreach ($phones as $phone) {
+        $company->phones()->create([
+          'phone' => $phone,
+        ]);
+      }
+    }
     return $company;
   }
 

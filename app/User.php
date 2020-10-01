@@ -121,4 +121,8 @@ class User extends Authenticatable
     {
       return $this->hasOne('App\Company');
     }
+    public function sales()
+    {
+      return $this->hasMany('App\Sale');
+    }
 }
