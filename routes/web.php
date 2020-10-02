@@ -39,12 +39,22 @@ Route::group([
     Route::delete('/companies/{companyId}', 'CompanyController@destroy')->name('companies.destroy');
     Route::get('/companies/{slug}', 'CompanyProfileController@show')->name('companies.show');
 
-    // Company routes
+    // Sale routes
     Route::get('/sales', 'SaleController@index')->name('sales.index');
     Route::get('/sales/create', 'SaleController@create')->name('sales.create');
     Route::post('/sales', 'SaleController@store')->name('sales.store');
     Route::put('/sales/{saleId}', 'SaleController@update')->name('sales.update');
     Route::delete('/sales/{saleId}', 'SaleController@destroy')->name('sales.destroy');
+    Route::get('/sales/invoice/{saleId}', 'SaleInvoiceController@show')->name('sales.invoice.show');
+
+    // Driver Invoice routes
+    Route::get('/drivers/invoices', 'DriverInvoiceController@index')->name('drivers.invoices.index');
+    Route::get('/drivers/invoices/create', 'DriverInvoiceController@create')->name('drivers.invoices.create');
+    Route::post('/drivers/invoices', 'DriverInvoiceController@store')->name('drivers.invoices.store');
+    Route::get('/drivers/invoices/{id}', 'DriverInvoiceController@edit')->name('drivers.invoices.edit');
+    Route::put('/drivers/invoices/{id}', 'DriverInvoiceController@update')->name('drivers.invoices.update');
+    Route::delete('/drivers/invoices/{driverI/invoiced}', 'DriverInvoiceController@destroy')->name('drivers.invoices.destroy');
+    Route::get('/drivers/invoices/invoice/{invoice}', 'DriverInvoiceController@show')->name('drivers.invoices.show');
 
     Route::group([
       'prefix' => 'settings',
@@ -74,7 +84,7 @@ Route::group([
       'namespace' => 'Users'
     ], function () {
       // Role routes
-      Route::get('/roles', 'RoleController@index')->name('roles.index');
+      Route::get('/roles', 'Role@index')->name('roles.index');
       Route::post('/roles', 'RoleController@store')->name('roles.store');
       Route::put('/roles/{roleId}', 'RoleController@update')->name('roles.update');
       Route::delete('/roles/{roleId}', 'RoleController@destroy')->name('roles.destroy');

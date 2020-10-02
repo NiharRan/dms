@@ -1,5 +1,5 @@
 <template>
-  <layout name="Dashboard">
+  <layout name="RoleIndex">
     <!-- users list start -->
     <section class="users-list-wrapper">
       <!-- Ag Grid users list section start -->
@@ -82,7 +82,7 @@
     import Layout from "../../Shared/Layout";
     import Model from "../../Components/Model";
     export default {
-        name: "Index",
+        name: "RoleIndex",
         components: {Model, Layout},
         props: {
           success: String,

@@ -125,4 +125,9 @@ class User extends Authenticatable
     {
       return $this->hasMany('App\Sale');
     }
+
+    public function driver_invoices()
+    {
+      return $this->hasMany('App\DriverInvoice');
+    }
 }

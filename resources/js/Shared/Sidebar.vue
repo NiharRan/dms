@@ -40,11 +40,19 @@
         </inertia-link>
       </li>
 
-      <li class="nav-item">
-        <inertia-link :href="route('sales.index')">
-          <i class="feather icon-unlock"></i>
-          <span class="menu-title" data-i18n="">{{__("Sale")}}</span>
-        </inertia-link>
+      <li class="nav-item has-sub">
+        <a href="">
+          <i class="fa fa-money"></i>
+          <span class="menu-title" data-i18n="">{{ __('Invoice') }}</span>
+        </a>
+        <ul>
+          <li class="nav-item">
+            <inertia-link :href="route('drivers.invoices.index')">
+              <i class="feather icon-unlock"></i>
+              <span class="menu-title" data-i18n="">{{__("Driver")}}</span>
+            </inertia-link>
+          </li>
+        </ul>
       </li>
 
       <li class="navigation-header">

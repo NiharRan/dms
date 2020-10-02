@@ -4,14 +4,11 @@
 namespace App\Repositories;
 
 
-use App\Company;
 use App\Sale;
-use App\Services\SaleInvoiceService;
+use App\Services\InvoiceService;
 use App\Traits\RepositoryTrait;
-use App\Users\Address;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Intervention\Image\Facades\Image;
 
 class SaleRepository
 {
@@ -55,18 +52,26 @@ class SaleRepository
     return $this->sale->with(['client', 'sale_details'])->find($rowId);
   }
 
-  public function findBySlug(string $slug)
+  public function findByInvoice(string $invoice)
   {
-    return $this->sale->with(['client', 'sale_details'])
-      ->where('slug', $slug)->first();
+    return $this->sale->with([
+      'client',
+      'creator',
+      'sale_details' => function ($q) {
+        $q->with('product');
+      }
+    ])->where('invoice', $invoice)->first();
   }
 
   public function store(Request $request)
   {
     $sale = new Sale;
     $sale = $this->setupData($sale, $request);
+    $sale->invoice = InvoiceService::sale();
     $sale->created_at = date('Y-m-d H:i:s');
+    $sale->user_id = Auth::id();
     if ($sale->save()) {
+      $this->storeSaleDetailsInfo($sale, $request);
       return $sale;
     }
     return null;
@@ -77,32 +82,42 @@ class SaleRepository
     $sale = $this->findById($id);
     $sale = $this->setupData($sale, $request);
     $sale->status = filter_var($request->status, FILTER_VALIDATE_BOOLEAN) ;
-    $sale->creator = Auth::id();
+    $sale->user_id = Auth::id();
     if ($sale->save()) {
+      $sale->sale_details()->delete();
+      $this->storeSaleDetailsInfo($sale, $request);
       return $sale;
-//      $sale->sale_details()->delete();
-//      $this->storeSaleDetailsInfo($sale, $request);
     }
     return null;
   }
 
   private function setupData(Sale $sale, $request)
   {
-    $sale->invoice = SaleInvoiceService::generate();
     $sale->total_price = $request->total_price;
     $sale->total_paid = $request->total_paid;
     $sale->total_due = $request->total_due;
     $sale->company_id = $request->company_id;
     $sale->client_id = $request->client_id;
+    $sale->driver_name = $request->driver_name;
     $sale->track_no = $request->track_no;
     $sale->dl_no = $request->dl_no;
-    $sale->sale_date = $request->sale_date;
+    $sale->sale_date = date('Y-m-d H:i:s', strtotime($request->sale_date));
 
     return $sale;
   }
 
-//  private function storeSaleDetailsInfo(Sale $sale, Request $request)
-//  {
-//
-//  }
+  private function storeSaleDetailsInfo(Sale $sale, $request)
+  {
+    foreach ($request->products as $key => $value) {
+      if (!empty($value)) {
+        $saleDetail = [
+          'product_id' => $request->products[$key],
+          'quantity' => $request->quantities[$key],
+          'price' => $request->prices[$key],
+          'amount' => $request->totals[$key],
+        ];
+        $sale->sale_details()->create($saleDetail);
+      }
+    }
+  }
 }

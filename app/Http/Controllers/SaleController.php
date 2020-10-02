@@ -3,16 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Company;
-use App\Http\Requests\CompanyRequest;
+use Inertia\Inertia;
 use App\Http\Requests\SaleRequest;
-use App\Repositories\CompanyRepository;
 use App\Repositories\SaleRepository;
-use App\Services\ConstDataTypeService;
 use App\Settings\Client;
 use App\Settings\Product;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Config;
-use Inertia\Inertia;
 
 class SaleController extends Controller
 {
@@ -80,8 +76,8 @@ class SaleController extends Controller
     $sale = $this->saleRepository->store($request);
     if ($sale) {
       return redirect()
-        ->route('sales.index')
-        ->with('success', 'Sale info stored successfully!');
+        ->route('sales.invoice.show', $sale->invoice)
+        ->with('success', 'Sale invoice created successfully!');
     }
   }
 

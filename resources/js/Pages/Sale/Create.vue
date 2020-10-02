@@ -11,7 +11,7 @@
                 {{ success }}
               </div>
 
-              <form>
+              <form @submit.prevent="store">
                 <div class="form-group row">
                   <div class="col-md-6 col-12">
                     <label>Client<strong class="text-danger">*</strong></label>
@@ -26,7 +26,7 @@
                       track-by="name"
                       placeholder="Select Client"></multi-select>
 
-                    <span v-if="errors.client_id" class="invalid-feedback text-center" style="display: block;" role="alert">
+                    <span v-if="errors.client_id" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.client_id[0] }}</strong>
                     </span>
                   </div>
@@ -38,13 +38,13 @@
                            placeholder="Driver Name"
                            class="form-control">
 
-                    <span v-if="errors.driver_name" class="invalid-feedback text-center" style="display: block;" role="alert">
+                    <span v-if="errors.driver_name" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.driver_name[0] }}</strong>
                     </span>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <div class="col-md-6 col-12">
+                  <div class="col-md-4 col-12">
                     <label>Track Number<strong class="text-danger">*</strong></label>
                     <input type="text"
                            v-model="form.track_no"
@@ -52,11 +52,11 @@
                            placeholder="Track Number"
                            class="form-control">
 
-                    <span v-if="errors.track_no" class="invalid-feedback text-center" style="display: block;" role="alert">
+                    <span v-if="errors.track_no" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.track_no[0] }}</strong>
                     </span>
                   </div>
-                  <div class="col-md-6 col-12">
+                  <div class="col-md-4 col-12">
                     <label>D.L. Number<strong class="text-danger">*</strong></label>
                     <input type="text"
                            v-model="form.dl_no"
@@ -64,8 +64,21 @@
                            placeholder="D.L. Number"
                            class="form-control">
 
-                    <span v-if="errors.dl_no" class="invalid-feedback text-center" style="display: block;" role="alert">
+                    <span v-if="errors.dl_no" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.dl_no[0] }}</strong>
+                    </span>
+                  </div>
+
+                  <div class="col-md-4 col-12">
+                    <label>Sale Date<strong class="text-danger">*</strong></label>
+                    <date-picker
+                      class="form-control"
+                       placeholder="Sale Date"
+                       v-model="form.sale_date">
+                    </date-picker>
+
+                    <span v-if="errors.sale_date" class="invalid-feedback" style="display: block;" role="alert">
+                      <strong>{{ errors.sale_date[0] }}</strong>
                     </span>
                   </div>
                 </div>
@@ -103,10 +116,10 @@
                             placeholder="Select Product"></multi-select>
                         </th>
                         <th>
-                          <input type="text" v-model="row.quantity" class="form-control">
+                          <input type="text" v-model="row.quantity" @keyup="calculateTotalWhenQuantityChange(index)" class="form-control">
                         </th>
                         <th>
-                          <input type="text" v-model="row.price" @keyup="calculateTotal(index)" class="form-control">
+                          <input type="text" v-model="row.price" @keyup="calculateTotalWhenPriceChange(index)" class="form-control">
                         </th>
                         <th>
                           <input type="text" v-model="row.total" readonly class="form-control">
@@ -124,7 +137,7 @@
                       </tr>
                       <tr>
                         <th colspan="4" class="text-right">Total Paid</th>
-                        <th><input type="text" v-model="form.total_paid" readonly class="form-control"></th>
+                        <th><input type="text" v-model="form.total_paid" @keyup="calculateDue" class="form-control"></th>
                       </tr>
                       <tr>
                         <th colspan="4" class="text-right">Total Due</th>
@@ -166,11 +179,8 @@
     },
     data: function () {
       return {
-        editMode: false,
-        modelTitle: 'Create New Sale',
         form: {
           id: '',
-          invoice: '',
           total_price: '0.00',
           total_paid: '0.00',
           total_due: '0.00',
@@ -179,38 +189,91 @@
           driver_name: '',
           track_no: '',
           dl_no: '',
-          sale_date: '',
-          status: '',
+          sale_date: new Date(),
           sale_details: []
         },
       }
     },
     methods: {
-      calculateTotal: function (index) {
+      calculateTotalWhenQuantityChange: function (index) {
+        const selectedRow = this.form.sale_details[index];
+        if (selectedRow.price !== '') {
+          let price = 0;
+          if (selectedRow.quantity !== '') {
+            price = parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
+          }
+          selectedRow.total = parseFloat(price).toFixed(2);
+          this.form.sale_details[index] = selectedRow;
+        }
+        this.calculateTotal();
+      },
+      calculateTotalWhenPriceChange: function (index) {
         const selectedRow = this.form.sale_details[index];
         if (selectedRow.quantity !== '') {
-          const price = parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
+          let price = 0;
+          if (selectedRow.price !== '') {
+            price = parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
+          }
           selectedRow.total = parseFloat(price).toFixed(2);
           this.form.sale_details[index] = selectedRow;
         }else {
           alert('Quantity must not be empty!');
         }
+        this.calculateTotal();
+      },
+      calculateTotal: async function () {
+        let total_price = await this.form.sale_details.reduce((sum, item) => sum + parseFloat(item.total), 0);
+        this.form.total_price = parseFloat(total_price).toFixed(2);
+        let total_due = parseFloat(total_price) - parseFloat(this.form.total_paid);
+        this.form.total_due = parseFloat(total_due).toFixed(2);
+      },
+      calculateDue: function () {
+        if (this.form.total_price !== '') {
+          let total_due = 0;
+          if (this.form.total_paid !== '') {
+            total_due = parseFloat(this.form.total_price) - parseFloat(this.form.total_paid);
+          }
+          this.form.total_due = parseFloat(total_due).toFixed(2);
+        }
       },
       cleanForm: function () {
-        this.modelTitle = 'Create New Sale';
-        this.editMode = false;
         Object.keys(this.errors).forEach((key, value) => {
           this.errors[key] = '';
         });
       },
-      store: function () {
+      store: async function () {
         const self = this;
+        const client_id = this.form.client ? this.form.client.id : '';
+        const products = await this.form.sale_details.map(item => {
+          if(item.product) return item.product.id
+          return '';
+        });
+        const quantities = await this.form.sale_details.map(item => {
+          return item.quantity;
+        });
+        const prices = await this.form.sale_details.map(item => {
+          return item.price;
+        });
+        const totals = await this.form.sale_details.map(item => {
+          return item.total;
+        });
         this.$inertia.post(this.route('sales.store'), {
-
+          total_price: this.form.total_price,
+          total_due: this.form.total_due,
+          total_paid: this.form.total_paid,
+          client_id: client_id,
+          company_id: this.company.id,
+          driver_name: this.form.driver_name,
+          track_no: this.form.track_no,
+          dl_no: this.form.dl_no,
+          sale_date: this.form.sale_date,
+          products: products,
+          quantities: quantities,
+          prices: prices,
+          totals: totals,
         })
           .then(function () {
             if (Object.keys(self.errors).length === 0) {
-              self.closeModel();
               self.cleanForm();
               self.$toast('Sale Created Successfully');
             }
@@ -226,11 +289,14 @@
         this.form.sale_details.push(saleDetail);
       },
       removeSaleItem: function (index) {
+        const removedItem =  this.form.sale_details[index];
+        this.form.total_price -= removedItem.total;
+        this.form.total_due -= removedItem.total;
         this.form.sale_details.splice(index, 1);
       }
     },
     created() {
-      this.addNewItem()
+      this.addNewItem();
     }
   }
 </script>

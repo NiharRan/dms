@@ -9,7 +9,7 @@ class Sale extends Model
     protected $fillable = [
       'invoice', 'total_price', 'total_paid', 'total_due',
       'company_id', 'client_id', 'driver_name', 'track_no',
-      'dl_no', 'sale_date', 'status', 'creator'
+      'dl_no', 'sale_date', 'status', 'user_id'
     ];
 
 

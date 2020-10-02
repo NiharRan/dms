@@ -1,5 +1,5 @@
 <template>
-  <layout name="DriverInvoice">
+  <layout name="Sale">
     <!-- product list start -->
     <section class="users-list-wrapper">
       <!-- product section start -->
@@ -11,7 +11,7 @@
                 {{ success }}
               </div>
 
-              <div v-if="sales.data.length > 0">
+              <div v-if="driver_invoices.data.length > 0">
                 <table id="data-table" class="table-responsive table table-bordered display nowrap mb-0" style="width: 100%">
                   <thead>
                   <tr>
@@ -33,34 +33,43 @@
                     <th>Client</th>
                     <th>Driver</th>
                     <th>Track No.</th>
-                    <th class="text-right">Total Price</th>
-                    <th class="text-right">Paid</th>
-                    <th class="text-right">Due</th>
-                    <th>Sale At</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th class="text-right">Amount</th>
+                    <th class="text-right">Track Rent</th>
+                    <th class="text-right">Others</th>
+                    <th>Invoice At</th>
                     <th class="text-center">Status</th>
                     <th class="text-center">Actions</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr v-for="(sale, index) in sales.data" :key="sale.id">
+                  <tr v-for="(driver_invoice, index) in driver_invoices.data" :key="driver_invoice.id">
                     <th style="width: 50px">{{ index + 1 }}</th>
                     <th style="width: 150px;">
-                      {{ sale.client.name }}
+                      {{ driver_invoice.client.name }}
                     </th>
                     <th>
-                      {{ sale.driver_name }}
+                      {{ driver_invoice.driver_name }}
                     </th>
                     <th>
-                      <h3>{{ sale.track_no }}</h3>
+                      <h3>{{ driver_invoice.track_no }}</h3>
                     </th>
-                    <th class="text-right">{{ sale.total_price }}</th>
-                    <th class="text-right">{{ sale.total_paid }}</th>
-                    <th class="text-right">{{ sale.total_due }}</th>
-                    <td>{{ sale.sale_date }}</td>
-                    <td v-html="$options.filters.status(sale.status)"></td>
+                    <th style="width: 150px;">
+                      {{ driver_invoice.product.name }}
+                    </th>
+                    <th style="width: 150px;">
+                      {{ driver_invoice.quantity }}
+                    </th>
+                    <th class="text-right">{{ driver_invoice.amount }}</th>
+                    <th class="text-right">{{ driver_invoice.track_rent }}</th>
+                    <th class="text-right">{{ driver_invoice.others }}</th>
+                    <th class="text-right">{{ driver_invoice.total }}</th>
+                    <td>{{ driver_invoice.invoice_date }}</td>
+                    <td v-html="$options.filters.status(driver_invoice.status)"></td>
                     <td class="text-center">
-                      <a @click.prevent="editData(sale)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                      <a @click.prevent="removeData(sale)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
+                      <a href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
+                      <a href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
                     </td>
                   </tr>
                   </tbody>
@@ -77,15 +86,14 @@
 </template>
 
 <script>
-  import Layout from "../../Shared/Layout";
-  import Model from "../../Components/Model";
-  import DataTable from "../../Components/DataTable";
+  import Layout from "../../../Shared/Layout";
+  import Model from "../../../Components/Model";
 
   export default {
-        name: "DriverInvoice",
-        components: {DataTable, Model, Layout},
+        name: "Sale",
+        components: {Model, Layout},
         props: {
-          sales: Object,
+          driver_invoices: Object,
           success: String
         },
         data: function () {
@@ -99,7 +107,7 @@
         methods: {
 
           searchData: function () {
-            this.$inertia.replace(this.route('sales.index'), {
+            this.$inertia.replace(this.route('drivers.invoices.index'), {
               method: 'get',
               data: {
                 search: this.search.query,

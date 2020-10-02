@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SaleRequest extends FormRequest
+class DriverInvoiceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,6 +25,10 @@ class SaleRequest extends FormRequest
   {
     return [
       'client_id' => 'required',
+      'driver_name' => 'required',
+      'track_no' => 'required',
+      'driver_phone' => 'required',
+      'track_rent' => 'required',
     ];
   }
 
@@ -37,6 +41,10 @@ class SaleRequest extends FormRequest
   {
     return [
       'client_id.required' => 'Client is required',
+      'driver_name.required' => 'Driver name is required',
+      'track_no.required'  => 'Track number is required',
+      'driver_phone.required'  => 'Driver contact no. is required',
+      'track_rent.required' => 'Track rent is required'
     ];
   }
 }

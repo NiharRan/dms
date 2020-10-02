@@ -24,4 +24,9 @@ class Client extends MyModel
   {
     return $this->hasMany('App\Sale');
   }
+
+  public function driver_invoices()
+  {
+    return $this->hasMany('App\DriverInvoice');
+  }
 }
