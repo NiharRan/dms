@@ -30,10 +30,16 @@ class Company extends MyModel
       else return 'Feature';
     }
 
-    protected $appends = [
+    public function getActivePhonesAttribute()
+    {
+      return $this->phones()->active()->pluck('phone')->all();
+    }
+
+  protected $appends = [
       'profile_url',
       'current_logo',
-      'image_type'
+      'image_type',
+      'active_phones'
     ];
 
     public function user()
@@ -65,6 +71,7 @@ class Company extends MyModel
     {
       return $this->hasOne('App\CompanyImage')->logo();
     }
+
     public function banner()
     {
       return $this->hasOne('App\CompanyImage')->banner();

@@ -48,7 +48,7 @@ class DriverInvoiceRepository
         ->orWhere('track_no', 'like', "%$search")
         ->orWhere('driver_phone', 'like', "%$search");
     }
-    return $driverInvoices->orderBy('name', 'asc');
+    return $driverInvoices->orderBy('id', 'desc');
   }
 
   public function findById($rowId)

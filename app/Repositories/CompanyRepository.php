@@ -93,6 +93,7 @@ class CompanyRepository
 
     $phones = explode(',', $request->phones);
     if (sizeof($phones) > 0) {
+      $company->phones()->delete();
       foreach ($phones as $phone) {
         $company->phones()->create([
           'phone' => $phone,

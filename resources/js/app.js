@@ -36,6 +36,7 @@ Vue.use(VueHtmlToPaper);
 Vue.config.productionTip = false;
 
 Vue.mixin(require('./mixins/lang'));
+Vue.mixin(require('./mixins/number_transformar'));
 Vue.mixin({ methods: { route: window.route } });
 
 Vue.use(InertiaApp);

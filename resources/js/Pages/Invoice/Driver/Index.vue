@@ -12,15 +12,15 @@
               </div>
 
               <div v-if="driver_invoices.data.length > 0">
-                <table id="data-table" class="table-responsive table table-bordered display nowrap mb-0" style="width: 100%">
+                <table id="data-table" class="table table-responsive table-bordered mb-0">
                   <thead>
                   <tr>
                     <th colspan="2">
                       <select v-model="search.per_page" @change="searchData" class="form-control">
                         <option value="10">10</option>
                         <option value="25">25</option>
-                        <option value="25">50</option>
-                        <option value="25">100</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
                       </select>
                     </th>
                     <th colspan="3"></th>
@@ -32,44 +32,38 @@
                     <th scope="col">S.N.</th>
                     <th>Client</th>
                     <th>Driver</th>
-                    <th>Track No.</th>
-                    <th>Product</th>
                     <th>Quantity</th>
                     <th class="text-right">Amount</th>
                     <th class="text-right">Track Rent</th>
                     <th class="text-right">Others</th>
+                    <th>Total</th>
                     <th>Invoice At</th>
                     <th class="text-center">Status</th>
                     <th class="text-center">Actions</th>
                   </tr>
                   </thead>
-                  <tbody>
+                  <tbody class="font-small-3">
                   <tr v-for="(driver_invoice, index) in driver_invoices.data" :key="driver_invoice.id">
                     <th style="width: 50px">{{ index + 1 }}</th>
-                    <th style="width: 150px;">
+                    <td style="width: 150px;">
                       {{ driver_invoice.client.name }}
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                       {{ driver_invoice.driver_name }}
-                    </th>
-                    <th>
-                      <h3>{{ driver_invoice.track_no }}</h3>
-                    </th>
-                    <th style="width: 150px;">
-                      {{ driver_invoice.product.name }}
-                    </th>
-                    <th style="width: 150px;">
+                    </td>
+                    <td style="width: 150px;">
                       {{ driver_invoice.quantity }}
-                    </th>
-                    <th class="text-right">{{ driver_invoice.amount }}</th>
-                    <th class="text-right">{{ driver_invoice.track_rent }}</th>
-                    <th class="text-right">{{ driver_invoice.others }}</th>
-                    <th class="text-right">{{ driver_invoice.total }}</th>
-                    <td>{{ driver_invoice.invoice_date }}</td>
+                    </td>
+                    <td class="text-right">{{ driver_invoice.amount }}</td>
+                    <td class="text-right">{{ driver_invoice.track_rent }}</td>
+                    <td class="text-right">{{ driver_invoice.others }}</td>
+                    <td class="text-right">{{ driver_invoice.total }}</td>
+                    <td>{{ driver_invoice.created_at | moment('DD/MM/YYYY') }}</td>
                     <td v-html="$options.filters.status(driver_invoice.status)"></td>
                     <td class="text-center">
-                      <a href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                      <a href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
+                      <inertia-link :href="route('drivers.invoices.show', driver_invoice.invoice)" class="text-primary"><i class="feather icon-eye"></i></inertia-link>
+                      <inertia-link :href="route('drivers.invoices.edit', driver_invoice.id)" class="text-info" role="button"><i class="feather icon-edit"></i></inertia-link>
+                      <inertia-link href="" class="text-warning" role="button"><i class="feather icon-trash"></i></inertia-link>
                     </td>
                   </tr>
                   </tbody>
