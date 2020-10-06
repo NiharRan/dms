@@ -1,5 +1,5 @@
 <template>
-  <layout name="SaleCreate">
+  <layout name="SaleEdit">
     <!-- product list start -->
     <section class="users-list-wrapper">
       <!-- product section start -->
@@ -11,12 +11,12 @@
                 {{ success }}
               </div>
 
-              <form @submit.prevent="store">
+              <form @submit.prevent="update">
                 <div class="form-group row">
                   <div class="col-md-6 col-12">
                     <label>Client<strong class="text-danger">*</strong></label>
                     <multi-select
-                      v-model="form.client"
+                      v-model="sale.client"
                       :options="clients"
                       :class="[errors.client_id ? 'in-invalid' : '' ]"
                       :searchable="true"
@@ -35,7 +35,7 @@
                     <date-picker
                       class="form-control"
                       placeholder="Sale Date"
-                      v-model="form.sale_date">
+                      v-model="sale.sale_date">
                     </date-picker>
 
                     <span v-if="errors.sale_date" class="invalid-feedback" style="display: block;" role="alert">
@@ -57,7 +57,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="(row, index) in form.sale_details" :key="index">
+                      <tr v-for="(row, index) in sale.sale_details" :key="index">
                         <th>
                           <button
                             class="btn btn-outline-danger"
@@ -83,7 +83,7 @@
                           <input type="text" v-model="row.price" @keyup="calculateTotalWhenPriceChange(index)" class="form-control">
                         </th>
                         <th>
-                          <input type="text" v-model="row.total" readonly class="form-control">
+                          <input type="text" v-model="row.amount" readonly class="form-control">
                         </th>
                       </tr>
                       <tr>
@@ -94,20 +94,20 @@
                       </tr>
                       <tr>
                         <th colspan="4" class="text-right">Total Price</th>
-                        <th><input type="text" v-model="form.total_price" readonly class="form-control"></th>
+                        <th><input type="text" v-model="sale.total_price" readonly class="form-control"></th>
                       </tr>
                       <tr>
                         <th colspan="4" class="text-right">Total Paid</th>
-                        <th><input type="text" v-model="form.total_paid" @keyup="calculateDue" class="form-control"></th>
+                        <th><input type="text" v-model="sale.total_paid" @keyup="calculateDue" class="form-control"></th>
                       </tr>
                       <tr>
                         <th colspan="4" class="text-right">Total Due</th>
-                        <th><input type="text" v-model="form.total_due" readonly class="form-control"></th>
+                        <th><input type="text" v-model="sale.total_due" readonly class="form-control"></th>
                       </tr>
                       <tr>
                         <th colspan="5" class="text-right">
                           <button type="button" class="btn btn-secondary"><i class="feather icon-x"></i> Cancel</button>
-                          <button type="submit" class="btn btn-success"><i class="feather icon-printer"></i> Save</button>
+                          <button type="submit" class="btn btn-success"><i class="feather icon-printer"></i> Update</button>
                         </th>
                       </tr>
                     </tbody>
@@ -129,99 +129,86 @@
   import Model from "../../Components/Model";
 
   export default {
-    name: "SaleCreate",
+    name: "SaleEdit",
     components: {Model, Layout},
     props: {
       success: String,
       clients: Array,
       products: Array,
       company: Object,
+      sale: Object,
       errors: Object,
     },
     data: function () {
       return {
-        form: {
-          id: '',
-          total_price: '0.00',
-          total_paid: '0.00',
-          total_due: '0.00',
-          company: null,
-          client: null,
-          sale_date: new Date(),
-          sale_details: []
-        },
+
       }
     },
     methods: {
       calculateTotalWhenQuantityChange: function (index) {
-        const selectedRow = this.form.sale_details[index];
+        const selectedRow = this.sale.sale_details[index];
         if (selectedRow.price !== '') {
           let price = 0;
           if (selectedRow.quantity !== '') {
             price = parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
           }
-          selectedRow.total = parseFloat(price).toFixed(2);
-          this.form.sale_details[index] = selectedRow;
+          selectedRow.amount = parseFloat(price).toFixed(2);
+          this.sale.sale_details[index] = selectedRow;
         }
         this.calculateTotal();
       },
       calculateTotalWhenPriceChange: function (index) {
-        const selectedRow = this.form.sale_details[index];
+        const selectedRow = this.sale.sale_details[index];
         if (selectedRow.quantity !== '') {
           let price = 0;
           if (selectedRow.price !== '') {
             price = parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
           }
-          selectedRow.total = parseFloat(price).toFixed(2);
-          this.form.sale_details[index] = selectedRow;
+          selectedRow.amount = parseFloat(price).toFixed(2);
+          this.sale.sale_details[index] = selectedRow;
         }else {
           alert('Quantity must not be empty!');
         }
         this.calculateTotal();
       },
       calculateTotal: async function () {
-        let total_price = await this.form.sale_details.reduce((sum, item) => sum + parseFloat(item.total), 0);
-        this.form.total_price = parseFloat(total_price).toFixed(2);
-        let total_due = parseFloat(total_price) - parseFloat(this.form.total_paid);
-        this.form.total_due = parseFloat(total_due).toFixed(2);
+        let total_price = await this.sale.sale_details.reduce((sum, item) => sum + parseFloat(item.amount), 0);
+        this.sale.total_price = parseFloat(total_price).toFixed(2);
+        let total_due = parseFloat(total_price) - parseFloat(this.sale.total_paid);
+        this.sale.total_due = parseFloat(total_due).toFixed(2);
       },
       calculateDue: function () {
-        if (this.form.total_price !== '') {
+        if (this.sale.total_price !== '') {
           let total_due = 0;
-          if (this.form.total_paid !== '') {
-            total_due = parseFloat(this.form.total_price) - parseFloat(this.form.total_paid);
+          if (this.sale.total_paid !== '') {
+            total_due = parseFloat(this.sale.total_price) - parseFloat(this.sale.total_paid);
           }
-          this.form.total_due = parseFloat(total_due).toFixed(2);
+          this.sale.total_due = parseFloat(total_due).toFixed(2);
         }
       },
-      cleanForm: function () {
-        Object.keys(this.errors).forEach((key, value) => {
-          this.errors[key] = '';
-        });
-      },
-      store: async function () {
+      update: async function () {
         const self = this;
-        const client_id = this.form.client ? this.form.client.id : '';
-        const products = await this.form.sale_details.map(item => {
+        const client_id = this.sale.client ? this.sale.client.id : '';
+        const products = await this.sale.sale_details.map(item => {
           if(item.product) return item.product.id
           return '';
         });
-        const quantities = await this.form.sale_details.map(item => {
+        const quantities = await this.sale.sale_details.map(item => {
           return item.quantity;
         });
-        const prices = await this.form.sale_details.map(item => {
+        const prices = await this.sale.sale_details.map(item => {
           return item.price;
         });
-        const totals = await this.form.sale_details.map(item => {
-          return item.total;
+        const totals = await this.sale.sale_details.map(item => {
+          return item.amount;
         });
-        this.$inertia.post(this.route('sales.store'), {
-          total_price: this.form.total_price,
-          total_due: this.form.total_due,
-          total_paid: this.form.total_paid,
+        this.$inertia.put(this.route('sales.update', this.sale.id), {
+          total_price: this.sale.total_price,
+          total_due: this.sale.total_due,
+          total_paid: this.sale.total_paid,
           client_id: client_id,
           company_id: this.company.id,
-          sale_date: this.form.sale_date,
+          sale_date: this.sale.sale_date,
           products: products,
           quantities: quantities,
           prices: prices,
@@ -229,7 +216,6 @@
         })
           .then(function () {
             if (Object.keys(self.errors).length === 0) {
-              self.cleanForm();
               self.$toast('Sale Created Successfully');
             }
           });
@@ -239,19 +225,19 @@
           product: null,
           quantity: '',
           price: '0.00',
-          total: '0.00'
+          amount: '0.00'
         };
-        this.form.sale_details.push(saleDetail);
+        this.sale.sale_details.push(saleDetail);
       },
       removeSaleItem: function (index) {
-        const removedItem =  this.form.sale_details[index];
-        this.form.total_price -= removedItem.total;
-        this.form.total_due -= removedItem.total;
-        this.form.sale_details.splice(index, 1);
+        const removedItem =  this.sale.sale_details[index];
+        this.sale.total_price -= removedItem.amount;
+        this.sale.total_due -= removedItem.amount;
+        this.sale.sale_details.splice(index, 1);
       }
     },
     created() {
-      this.addNewItem();
+
     }
   }
 </script>

@@ -101,6 +101,23 @@ class DriverInvoiceController extends Controller
     ]);
   }
 
+  public function print($invoice)
+  {
+    $driverInvoice = $this->driverInvoiceRepository->findByInvoice($invoice);
+    return Inertia::render('Invoice/Driver/Print', [
+      'driver_invoice' => $driverInvoice,
+    ]);
+  }
+
+  public function pay($invoice)
+  {
+    $driverInvoice = $this->driverInvoiceRepository->findByInvoice($invoice);
+    $driverInvoice->status = 1;
+    if ($driverInvoice->save()) {
+      return redirect()->back()->with('success', 'Invoice payment done!');
+    }
+  }
+
   public function edit(Request $request, $id)
   {
     $driver_invoice = $this->driverInvoiceRepository->findById($id);

@@ -32,4 +32,21 @@ class SaleInvoiceController extends Controller
         'link' => route('sales.index')
       ]);
     }
+
+    public function print($invoice)
+    {
+      $sale = $this->saleRepository->findByInvoice($invoice);
+      return Inertia::render('Sale/Print', [
+        'sale' => $sale,
+      ]);
+    }
+
+    public function pay($invoice)
+    {
+      $driverInvoice = $this->saleRepository->findByInvoice($invoice);
+      $driverInvoice->status = 1;
+      if ($driverInvoice->save()) {
+        return redirect()->back()->with('success', 'Sale payment done!');
+      }
+    }
 }

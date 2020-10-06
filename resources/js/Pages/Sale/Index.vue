@@ -11,8 +11,8 @@
                 {{ success }}
               </div>
 
-              <div v-if="sales.data.length > 0">
-                <table id="data-table" class="table-responsive table table-bordered display nowrap mb-0" style="width: 100%">
+              <div v-if="sales.data.length > 0" class="table-responsive">
+                <table id="data-table" class="table table-bordered display nowrap mb-0">
                   <thead>
                   <tr>
                     <th colspan="2">
@@ -23,16 +23,15 @@
                         <option value="25">100</option>
                       </select>
                     </th>
-                    <th colspan="3"></th>
+                    <th colspan="5"></th>
                     <th colspan="2">
                       <input type="text" @keyup="searchData" v-model="search.query" class="form-control" placeholder="Search">
                     </th>
                   </tr>
                   <tr>
                     <th scope="col">S.N.</th>
+                    <th>Invoice</th>
                     <th>Client</th>
-                    <th>Driver</th>
-                    <th>Track No.</th>
                     <th class="text-right">Total Price</th>
                     <th class="text-right">Paid</th>
                     <th class="text-right">Due</th>
@@ -44,23 +43,18 @@
                   <tbody>
                   <tr v-for="(sale, index) in sales.data" :key="sale.id">
                     <th style="width: 50px">{{ index + 1 }}</th>
+                    <th>{{ sale.invoice }}</th>
                     <th style="width: 150px;">
                       {{ sale.client.name }}
-                    </th>
-                    <th>
-                      {{ sale.driver_name }}
-                    </th>
-                    <th>
-                      <h3>{{ sale.track_no }}</h3>
                     </th>
                     <th class="text-right">{{ sale.total_price }}</th>
                     <th class="text-right">{{ sale.total_paid }}</th>
                     <th class="text-right">{{ sale.total_due }}</th>
-                    <td>{{ sale.sale_date }}</td>
+                    <td>{{ sale.sale_date | moment('DD/MM/YYYY hh:mm A') }}</td>
                     <td v-html="$options.filters.status(sale.status)"></td>
                     <td class="text-center">
-                      <a @click.prevent="editData(sale)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                      <a @click.prevent="removeData(sale)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
+                      <a :href="route('sales.edit', sale.id)" class="text-info" role="button"><i class="feather icon-edit"></i></a>
+                      <a :href="route('sales.invoices.show', sale.invoice)" class="text-primary" role="button"><i class="feather icon-eye"></i></a>
                     </td>
                   </tr>
                   </tbody>

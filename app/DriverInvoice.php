@@ -3,6 +3,8 @@
 namespace App;
 
 
+use App\Services\BanglaNumberToWord;
+
 class DriverInvoice extends MyModel
 {
   protected $fillable = [
@@ -10,6 +12,16 @@ class DriverInvoice extends MyModel
     'driver_phone', 'product_id', 'quantity', 'amount', 'track_rent',
     'others', 'total', 'status', 'user_id'
   ];
+
+  public function getWordAttribute()
+  {
+    return (new BanglaNumberToWord())->numToWord($this->total);
+  }
+
+  protected $appends = [
+    'word'
+  ];
+
   public function company()
   {
     return $this->belongsTo('App\Company');

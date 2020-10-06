@@ -24,9 +24,7 @@ class SaleRepository
 
   public function all()
   {
-    $sales = $this->sale
-      ->with(['client'])
-      ->where('id', '!=', auth()->user()->id);
+    $sales = $this->sale->with(['client', 'company']);
 
     if (\request()->has('status')) {
       $sales = $sales->where('status', \request()->status);
@@ -39,27 +37,32 @@ class SaleRepository
 
     if (\request()->has('search') && !empty(\request()->search)) {
       $search = \request()->search;
-      $sales = $sales->where('driver_name', 'like', "%$search")
-        ->orWhere('track_no', 'like', "%$search")
-        ->orWhere('dl_no', 'like', "%$search")
-        ->orWhere('email', 'like', "%$search");
+      $sales = $sales->where('client.name', 'like', "%$search");
     }
-    return $sales->orderBy('name', 'asc');
+    return $sales->orderBy('id', 'desc');
   }
 
   public function findById($rowId)
   {
-    return $this->sale->with(['client', 'sale_details'])->find($rowId);
+    return $this->sale->with([
+      'client',
+      'company',
+      'creator',
+      'sale_details' => function ($q) {
+        $q->with('product');
+      }
+    ])->find($rowId);
   }
 
   public function findByInvoice(string $invoice)
   {
     return $this->sale->with([
       'client',
+      'company',
       'creator',
       'sale_details' => function ($q) {
         $q->with('product');
-      }
+      },
     ])->where('invoice', $invoice)->first();
   }
 
@@ -98,9 +101,6 @@ class SaleRepository
     $sale->total_due = $request->total_due;
     $sale->company_id = $request->company_id;
     $sale->client_id = $request->client_id;
-    $sale->driver_name = $request->driver_name;
-    $sale->track_no = $request->track_no;
-    $sale->dl_no = $request->dl_no;
     $sale->sale_date = date('Y-m-d H:i:s', strtotime($request->sale_date));
 
     return $sale;

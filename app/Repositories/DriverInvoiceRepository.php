@@ -25,8 +25,7 @@ class DriverInvoiceRepository
   public function all()
   {
     $driverInvoices = $this->driverInvoice
-      ->with(['client', 'product'])
-      ->where('id', '!=', auth()->user()->id);
+      ->with(['client', 'product']);
 
     if (\request()->has('status')) {
       $driverInvoices = $driverInvoices->where('status', \request()->status);

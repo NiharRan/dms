@@ -43,9 +43,12 @@ Route::group([
     Route::get('/sales', 'SaleController@index')->name('sales.index');
     Route::get('/sales/create', 'SaleController@create')->name('sales.create');
     Route::post('/sales', 'SaleController@store')->name('sales.store');
+    Route::get('/sales/{saleId}', 'SaleController@edit')->name('sales.edit');
     Route::put('/sales/{saleId}', 'SaleController@update')->name('sales.update');
     Route::delete('/sales/{saleId}', 'SaleController@destroy')->name('sales.destroy');
-    Route::get('/sales/invoice/{saleId}', 'SaleInvoiceController@show')->name('sales.invoice.show');
+    Route::get('/sales/invoice/{invoice}', 'SaleInvoiceController@show')->name('sales.invoices.show');
+    Route::post('/sales/invoice/{invoice}', 'SaleInvoiceController@pay')->name('sales.invoices.pay');
+    Route::get('/sales/invoice/print/{invoice}', 'SaleInvoiceController@print')->name('sales.invoices.print');
 
     // Driver Invoice routes
     Route::get('/drivers/invoices', 'DriverInvoiceController@index')->name('drivers.invoices.index');
@@ -55,6 +58,8 @@ Route::group([
     Route::put('/drivers/invoices/{id}', 'DriverInvoiceController@update')->name('drivers.invoices.update');
     Route::delete('/drivers/invoices/{driverI/invoiced}', 'DriverInvoiceController@destroy')->name('drivers.invoices.destroy');
     Route::get('/drivers/invoices/invoice/{invoice}', 'DriverInvoiceController@show')->name('drivers.invoices.show');
+    Route::get('/drivers/invoices/print/{invoice}', 'DriverInvoiceController@print')->name('drivers.invoices.print');
+    Route::get('/drivers/invoices/pay/{invoice}', 'DriverInvoiceController@pay')->name('drivers.invoices.pay');
 
     Route::group([
       'prefix' => 'settings',

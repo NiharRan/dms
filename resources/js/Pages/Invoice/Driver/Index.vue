@@ -1,5 +1,5 @@
 <template>
-  <layout name="Sale">
+  <layout name="DriverInvoice">
     <!-- product list start -->
     <section class="users-list-wrapper">
       <!-- product section start -->
@@ -23,8 +23,8 @@
                         <option value="100">100</option>
                       </select>
                     </th>
-                    <th colspan="3"></th>
-                    <th colspan="2">
+                    <th colspan="6"></th>
+                    <th colspan="3">
                       <input type="text" @keyup="searchData" v-model="search.query" class="form-control" placeholder="Search">
                     </th>
                   </tr>
@@ -84,7 +84,7 @@
   import Model from "../../../Components/Model";
 
   export default {
-        name: "Sale",
+        name: "DriverInvoice",
         components: {Model, Layout},
         props: {
           driver_invoices: Object,

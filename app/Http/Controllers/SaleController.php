@@ -80,6 +80,31 @@ class SaleController extends Controller
         ->with('success', 'Sale invoice created successfully!');
     }
   }
+  public function edit($id)
+  {
+    $pageConfigs = [
+      'pageHeader' => true
+    ];
+    $breadcrumbs = [
+      ['link'=>"/",'name'=> __('Home')],
+      ['link'=> route('sales.index'), 'name'=> __("Sales") ],
+      ['name' => __('Edit Sale')]
+    ];
+    $sale = $this->saleRepository->findById($id);
+    $clients = Client::active()->get();
+    $products = Product::active()->get();
+    $company = Company::active()->first();
+    return Inertia::render('Sale/Edit', [
+      'breadcrumbs' => $breadcrumbs,
+      'clients' => $clients,
+      'products' => $products,
+      'company' => $company,
+      'sale' => $sale,
+      'has_modal' => false,
+      'link' => route('sales.index')
+    ]);
+  }
+
 
   /**
    * Update the specified resource in storage.
