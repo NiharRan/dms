@@ -90,7 +90,7 @@
                     <span class="float-left">{{ __('Name') }}{{ __(':') }} {{ sale.client.name }}</span>
                     <span class="float-right">{{ __('Address') }}{{ __(':') }} {{ sale.client.address }}</span>
                   </p>
-                  <table class="table table-bordered font-medium-3">
+                  <table class="table font-medium-3">
                     <thead>
                     <tr>
                       <th>{{ __('Product') }}</th>
@@ -180,6 +180,9 @@
 <style>
   *{
     font-family: 'SolaimanLipi',sans-serif;
+  }
+  .table {
+    border-bottom: 1px solid #0b0b0b !important;
   }
   .owner {
     background-color: black;

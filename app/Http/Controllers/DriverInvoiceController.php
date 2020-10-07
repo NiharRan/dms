@@ -118,9 +118,9 @@ class DriverInvoiceController extends Controller
     }
   }
 
-  public function edit(Request $request, $id)
+  public function edit($invoice)
   {
-    $driver_invoice = $this->driverInvoiceRepository->findById($id);
+    $driver_invoice = $this->driverInvoiceRepository->findByInvoice($invoice);
     $pageConfigs = [
       'pageHeader' => true
     ];
@@ -138,7 +138,7 @@ class DriverInvoiceController extends Controller
       'driver_invoice' => $driver_invoice,
       'has_modal' => false,
       'link' => route('drivers.invoices.index')
-    ])->with('success', "$driver_invoice->invoice's info updated successfully");
+    ]);
   }
 
   /**

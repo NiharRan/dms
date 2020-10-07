@@ -93,7 +93,7 @@
                     <span class="col-6 text-left">{{ __('Phone:') }} {{ translate(driver_invoice.driver_phone) }}</span>
                   </p>
 
-                  <table class="table table-bordered font-medium-3">
+                  <table class="table font-medium-3">
                     <thead>
                     <tr>
                       <th>{{ __('Description of Products') }}</th>
@@ -192,6 +192,9 @@
 <style>
   *{
     font-family: 'SolaimanLipi',sans-serif;
+  }
+  .table {
+    border-bottom: 1px solid #0b0b0b !important;
   }
   .owner {
     background-color: black;
