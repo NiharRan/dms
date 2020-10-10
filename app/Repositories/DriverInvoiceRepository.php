@@ -87,7 +87,6 @@ class DriverInvoiceRepository
   {
     $driverInvoice = $this->findById($id);
     $driverInvoice = $this->setupData($driverInvoice, $request);
-    $driverInvoice->status = filter_var($request->status, FILTER_VALIDATE_BOOLEAN) ;
     $driverInvoice->user_id = Auth::id();
     if ($driverInvoice->save()) {
       return $driverInvoice;
@@ -99,16 +98,22 @@ class DriverInvoiceRepository
   {
     $driverInvoice->product_id = $request->product_id;
     $driverInvoice->quantity = $request->quantity;
+    $driverInvoice->scale = $request->scale;
     $driverInvoice->amount = $request->amount;
     $driverInvoice->track_rent = $request->track_rent;
     $driverInvoice->others = $request->others;
     $driverInvoice->total = $request->total;
+    $driverInvoice->paid = $request->paid;
+    $driverInvoice->due = $request->due;
     $driverInvoice->company_id = $request->company_id;
     $driverInvoice->client_id = $request->client_id;
     $driverInvoice->driver_name = $request->driver_name;
     $driverInvoice->track_no = $request->track_no;
     $driverInvoice->driver_phone = $request->driver_phone;
 
+    if(intval($request->due) == 0) {
+      $driverInvoice->status = 1;
+    }
     return $driverInvoice;
   }
 }

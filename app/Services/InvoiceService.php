@@ -14,7 +14,7 @@ class InvoiceService
     $sale = Sale::latest()->first();
     if ($sale) {
       $len =strlen($sale->invoice);
-      $oldInvoice = substr($sale->invoice, 0, $len - 2);
+      $oldInvoice = substr($sale->invoice, 1, $len - 3);
       $id = substr($sale->invoice, $len - 2, $len);
       if (date('ymd') === $oldInvoice) {
         return $oldInvoice . ($id + 1);
@@ -31,7 +31,7 @@ class InvoiceService
     $driverInvoice = DriverInvoice::latest()->first();
     if ($driverInvoice) {
       $len =strlen($driverInvoice->invoice);
-      $oldInvoice = substr($driverInvoice->invoice, 0, $len - 2);
+      $oldInvoice = substr($driverInvoice->invoice, 1, $len - 3);
       $id = substr($driverInvoice->invoice, $len - 2, $len);
       if (date('ymd') === $oldInvoice) {
         return $oldInvoice . ($id + 1);

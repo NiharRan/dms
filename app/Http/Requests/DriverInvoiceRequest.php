@@ -29,6 +29,7 @@ class DriverInvoiceRequest extends FormRequest
       'track_no' => 'required',
       'driver_phone' => 'required',
       'track_rent' => 'required',
+      'quantity' => 'required',
     ];
   }
 
@@ -44,7 +45,8 @@ class DriverInvoiceRequest extends FormRequest
       'driver_name.required' => 'Driver name is required',
       'track_no.required'  => 'Track number is required',
       'driver_phone.required'  => 'Driver contact no. is required',
-      'track_rent.required' => 'Track rent is required'
+      'track_rent.required' => 'Track rent is required',
+      'quantity.required' => 'Quantity is required',
     ];
   }
 }

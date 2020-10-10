@@ -9,8 +9,8 @@ class DriverInvoice extends MyModel
 {
   protected $fillable = [
     'invoice', 'company_id', 'client_id', 'driver_name', 'track_no',
-    'driver_phone', 'product_id', 'quantity', 'amount', 'track_rent',
-    'others', 'total', 'status', 'user_id'
+    'driver_phone', 'product_id', 'quantity', 'scale', 'amount', 'track_rent',
+    'others', 'total', 'paid', 'due', 'status', 'user_id'
   ];
 
   public function getWordAttribute()

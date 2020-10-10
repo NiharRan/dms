@@ -6,10 +6,14 @@
 
   "Active": "সক্রিয়",
   "Inactive": "নিষ্ক্রিয়",
-  "Create": "সৃষ্টি কর",
-  "Update": "পরিবর্তন কর",
-  "Cancel": "বাতিল কর",
+  "Create": "সৃষ্টি করুন",
+  "Update": "পরিবর্তন করুন",
+  "Cancel": "বাতিল করুন",
   "New": "নতুন",
+  "Store": "সংরক্ষণ করুন",
+  "Edit": "পরিবর্তন করুন",
+  "Print": "ছাপান",
+  "Download": "ডাউনলোড করুন",
 
 
   "Users": "ব্যবহারকারীগণ",
@@ -57,11 +61,54 @@
   "Price": "দাম",
   "Paid": "প্রদত্ত",
 
+  "All Clients": "মোট ক্লায়েন্ট",
+  "All Products": "মোট পণ্য",
+  "Today's Driver Invoices": "আজকের ড্রাইভার চালান",
+  "Today's Sales": "আজকের বিক্রয়",
+  "Recent Driver Invoices": "সাম্প্রতিক ড্রাইভারের চালানগুলি",
+  "Recent Sales": "সাম্প্রতিক বিক্রয়",
+  "Select Product": "পণ্য নির্বাচন করুন",
+  "Dri: Mobile:": "ড্রাঃ মোবাইলঃ",
+  "Create Invoice": "চালান তৈরি করুন",
+  "Get Paid": "অর্থ পেয়েছি",
+  "Mark Paid": "মার্ক পেইড",
+  "Awaiting payment": "পেমেন্ট অপেক্ষায়",
+
+
+  "Create New User": "নতুন ব্যবহারকারী তৈরি করুন",
+  "User Name": "ব্যবহারকারীর নাম",
+  "Select Gender": "লিংগ নির্বাচন করুন",
+  "Select Religion": "ধর্ম নির্বাচন করুন",
+  "Select Blood Group": "রক্তের গ্রুপ নির্বাচন করুন",
+  "Email Address": "ইমেল",
+  "Contact No.": "যোগাযোগের নম্বর",
+  "Account": "বিবরণ",
+  "Birth Date": "জন্ম তারিখ",
+
 
   "Clients": "ক্লায়েন্ট গণ",
   "Client": "ক্লায়েন্ট",
   "Sales": "বিক্রয় গুলো",
   "Sale": "বিক্রয়",
+  "Rent": "ভাড়া",
   "Driver": "ড্রাইভার",
-  "Invoice": "চালান"
+  "Invoice": "চালান",
+  "Total Price": "মোট দাম",
+  "Sale At": "বিক্রয়ের তারিখ",
+  "Status": "অবস্থা",
+  "Action": "কর্ম",
+  "Total": "মোট",
+  "Created At": "তৈরির তারিখ",
+  "S.N.": "ক্রমিক নং",
+  "Change": "পরিবর্তন করুন",
+  "Remove": "অপসারণ করুন",
+  "Reset": "পুন:স্থাপন করুন",
+
+
+  "Client Contact No.": "ক্লায়েন্টের যোগাযোগের নং",
+  "Client Address": "ক্লায়েন্ট ঠিকানা",
+  "Track Number": "ট্র্যাকের নম্বর",
+  "Driver Contact No.": "ড্রাইভারের যোগাযোগ নং",
+  "Scale": "স্কেল/ফিতা",
+  "Scale Price": "স্কেলের দাম"
 }

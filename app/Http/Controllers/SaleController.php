@@ -76,7 +76,7 @@ class SaleController extends Controller
     $sale = $this->saleRepository->store($request);
     if ($sale) {
       return redirect()
-        ->route('sales.invoice.show', $sale->invoice)
+        ->route('sales.invoices.show', $sale->invoice)
         ->with('success', 'Sale invoice created successfully!');
     }
   }

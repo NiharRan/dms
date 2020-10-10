@@ -112,15 +112,17 @@ class DriverInvoiceController extends Controller
   public function pay($invoice)
   {
     $driverInvoice = $this->driverInvoiceRepository->findByInvoice($invoice);
+    $driverInvoice->paid = $driverInvoice->total;
+    $driverInvoice->due = 0.00;
     $driverInvoice->status = 1;
     if ($driverInvoice->save()) {
       return redirect()->back()->with('success', 'Invoice payment done!');
     }
   }
 
-  public function edit($invoice)
+  public function edit($id)
   {
-    $driver_invoice = $this->driverInvoiceRepository->findByInvoice($invoice);
+    $driver_invoice = $this->driverInvoiceRepository->findById($id);
     $pageConfigs = [
       'pageHeader' => true
     ];
@@ -154,7 +156,7 @@ class DriverInvoiceController extends Controller
 
     if ($driverInvoice->save()) {
       return redirect()
-        ->route('drivers.invoices.index')
+        ->route('drivers.invoices.show', $driverInvoice->invoice)
         ->with('success', "$driverInvoice->invoice's information updated successfully!");
     }
   }

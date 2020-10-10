@@ -77,12 +77,18 @@ Vue.prototype.$toast = function (msg, icon = 'success') {
   });
 }
 
-
 Vue.filter('status', function (value) {
-  const className = value == 1 ? 'badge-success' : 'badge-danger';
+  const className = value == 1 ? 'text-success' : 'text-danger';
   const text = value == 1 ? 'Active' : 'Inactive';
 
-  return `<span class="badge ${className}">${text}</span>`;
+  return `<i class="fa fa-circle font-small-3 ${className} mr-50"></i>${text}`;
+});
+
+Vue.filter('payment_status', function (value) {
+  const className = value == 1 ? 'text-success' : 'text-danger';
+  const text = value == 1 ? 'Paid' : 'Not Paid';
+
+  return `<i class="fa fa-circle font-small-3 ${className} mr-50"></i>${text}`;
 });
 
 const app = document.getElementById('app');

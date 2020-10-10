@@ -21,10 +21,13 @@ class CreateDriverInvoicesTable extends Migration
             $table->foreign('product_id')->references('id')->on('products');
 
             $table->unsignedInteger('quantity');
-            $table->decimal('amount', 10, 2);
+            $table->string('scale', 45)->nullable();
+            $table->decimal('amount', 10, 2)->nullable();
             $table->decimal('track_rent', 10, 2);
-            $table->decimal('others', 10, 2);
+            $table->decimal('others', 10, 2)->nullable();
             $table->decimal('total', 10, 2);
+            $table->decimal('paid', 10, 2)->nullable();
+            $table->decimal('due', 10, 2)->nullable();
 
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies');

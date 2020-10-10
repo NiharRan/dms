@@ -12,7 +12,7 @@
                 <ul class="nav nav-tabs mb-3" role="tablist">
                   <li class="nav-item">
                     <a class="nav-link d-flex align-items-center active" id="account-tab" data-toggle="tab" href="#account" aria-controls="account" role="tab" aria-selected="true">
-                      <i class="feather icon-user mr-25"></i><span class="d-none d-sm-block">Account</span>
+                      <i class="feather icon-user mr-25"></i><span class="d-none d-sm-block">{{ __("Account") }}</span>
                     </a>
                   </li>
                 </ul>
@@ -30,9 +30,10 @@
                       <div class="media-body mt-50">
                         <h4 class="media-heading">{{ user.name }}</h4>
                         <div class="col-12 d-flex mt-1 px-0">
-                          <button type="button" @click="uploadImage" class="btn btn-primary d-none d-sm-block mr-75 waves-effect waves-light">Change</button>
+                          <button type="button" @click="uploadImage" class="btn btn-primary d-none d-sm-block mr-75 waves-effect waves-light">
+                            {{ __("Change") }}</button>
                           <a href="#" class="btn btn-primary d-block d-sm-none mr-75 waves-effect waves-light"><i class="feather icon-edit-1"></i></a>
-                          <a href="#" class="btn btn-outline-danger d-none d-sm-block waves-effect waves-light">Remove</a>
+                          <a href="#" class="btn btn-outline-danger d-none d-sm-block waves-effect waves-light">{{ __("Remove") }}</a>
                           <a href="#" class="btn btn-outline-danger d-block d-sm-none waves-effect waves-light"><i class="feather icon-trash-2"></i></a>
                         </div>
                       </div>
@@ -45,33 +46,33 @@
                         <div class="col-12 col-sm-6">
                           <div class="form-group">
                             <div class="controls">
-                              <label>Name</label>
+                              <label>{{__("Name")}}</label>
                               <input
                                 type="text"
                                 class="form-control"
-                                placeholder="Name"
+                                :placeholder="__('Name')"
                                 v-model="user.name">
                               <div v-if="errors.name" class="help-block">{{ errors.name[0] }}</div>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="controls">
-                              <label>Contact No.</label>
+                              <label>{{__("Contact No.")}}</label>
                               <input
                                 type="text"
                                 class="form-control"
-                                placeholder="Contact No."
+                                :placeholder="__('Contact No.')"
                                 v-model="user.phone">
                               <div v-if="errors.phone" class="invalid-feedback">{{ errors.phone[0] }}</div>
                           </div>
                           </div>
                           <div class="form-group">
                             <div class="controls">
-                              <label>E-mail</label>
+                              <label>{{__('Email Address')}}</label>
                               <input
                                 type="email"
                                 class="form-control"
-                                placeholder="Email"
+                                :placeholder="__('Email Address')"
                                 v-model="user.email">
                               <div v-if="errors.email" class="invalid-feedback">{{ errors.email[0] }}</div>
                           </div>
@@ -79,9 +80,9 @@
                         </div>
                         <div class="col-12 col-sm-6">
                           <div class="form-group">
-                            <label>Gender</label>
+                            <label>{{__("Gender")}}</label>
                             <select class="form-control" v-model="user.gender_id">
-                              <option>Select ...</option>
+                              <option>{{__("Select Gender")}} ...</option>
                               <option
                                 v-for="gender in genders"
                                 :value="gender.id"
@@ -92,11 +93,11 @@
                             <div v-if="errors.gender_id" class="invalid-feedback">{{ errors.gender_id[0] }}</div>
                           </div>
                           <div class="form-group">
-                            <label>Role</label>
+                            <label>{{ __("Role") }}</label>
                             <select
                               v-model="user.religion_id"
                               class="form-control">
-                              <option value="">Select ...</option>
+                              <option value="">{{ __("Select Role") }} ...</option>
                               <option
                                 v-for="religion in religions"
                                 :value="religion.id"
@@ -107,9 +108,9 @@
                           </div>
                           <div class="form-group">
                             <div class="controls">
-                              <label>Birth Date</label>
+                              <label>{{ __("Birth Date") }}</label>
                               <date-picker class="form-control"
-                                           placeholder="Birth Date"
+                                           :placeholder="__('Birth Date')"
                                            v-model="user.birth_date">
                               </date-picker>
                               <div v-if="errors.birth_date" class="help-block">{{ errors.birth_date[0] }}</div>
@@ -117,9 +118,9 @@
                           </div>
                         </div>
                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
-                          <button type="submit" class="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1 waves-effect waves-light">Save
-                            Changes</button>
-                          <button type="reset" class="btn btn-outline-warning waves-effect waves-light">Reset</button>
+                          <button type="submit" class="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1 waves-effect waves-light">
+                            {{ __('Update') }}</button>
+                          <button type="reset" class="btn btn-outline-warning waves-effect waves-light">{{ __("Reset") }}</button>
                         </div>
                       </div>
                     </form>

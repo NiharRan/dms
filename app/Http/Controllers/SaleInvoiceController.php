@@ -41,11 +41,15 @@ class SaleInvoiceController extends Controller
       ]);
     }
 
-    public function pay($invoice)
+    public function pay(Request $request, $invoice)
     {
-      $driverInvoice = $this->saleRepository->findByInvoice($invoice);
-      $driverInvoice->status = 1;
-      if ($driverInvoice->save()) {
+      $sale = $this->saleRepository->findByInvoice($invoice);
+      $sale->total_paid += $request->amount;
+      $sale->total_due -= $request->amount;
+      if ($sale->total_due == 0) {
+        $sale->status = 1;
+      }
+      if ($sale->save()) {
         return redirect()->back()->with('success', 'Sale payment done!');
       }
     }

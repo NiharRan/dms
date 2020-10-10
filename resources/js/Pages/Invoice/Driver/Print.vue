@@ -33,13 +33,14 @@
             <p><span class="text-bold-700">{{ __('Driver Name') }}{{ __(':') }}</span> {{ driver_invoice.driver_name }}</p>
             <p class="clearfix">
               <span class="float-left">{{ __('Track No.') }}-{{ driver_invoice.track_no }}</span>
-              <span class="float-right">{{ __('Phone:') }} {{ translate(driver_invoice.driver_phone) }}</span>
+              <span class="float-right">{{ __('Dri: Mobile:') }} {{ translate(driver_invoice.driver_phone) }}</span>
             </p>
 
             <table class="table font-medium-3">
               <thead>
               <tr>
                 <th>{{ __('Description of Products') }}</th>
+                <th class="text-center">{{ __('Scale') }}</th>
                 <th class="text-center">{{ __('Quantity') }}</th>
                 <th class="text-right">{{ __('Amount') }}</th>
               </tr>
@@ -47,31 +48,34 @@
               <tbody>
               <tr>
                 <th>{{ driver_invoice.product.name }}</th>
+                <th class="text-center">{{ driver_invoice.scale }}</th>
                 <th class="text-center">{{ driver_invoice.quantity }}</th>
                 <th class="text-right">{{ driver_invoice.amount }}</th>
               </tr>
               <tr>
                 <th>{{ __('Track Rent') }}</th>
                 <th></th>
+                <th></th>
                 <th class="text-right">{{ driver_invoice.track_rent }}</th>
               </tr>
               <tr>
                 <th>{{ __('Others') }}</th>
                 <th></th>
+                <th></th>
                 <th class="text-right">{{ driver_invoice.others }}</th>
               </tr>
 
               <tr>
-                <th colspan="2" class="text-right">{{ __('Total Amount') }}</th>
+                <th colspan="3" class="text-right">{{ __('Total Amount') }}</th>
                 <th class="text-right">{{ driver_invoice.total }}</th>
               </tr>
               <tr>
-                <th colspan="2" class="text-right">{{ __('In Advance') }}</th>
-                <th class="text-right"></th>
+                <th colspan="3" class="text-right">{{ __('Paid') }}</th>
+                <th class="text-right">{{ driver_invoice.paid }}</th>
               </tr>
               <tr>
-                <th colspan="2" class="text-right">{{ __('Due') }}</th>
-                <th class="text-right"></th>
+                <th colspan="3" class="text-right">{{ __('Due') }}</th>
+                <th class="text-right">{{ driver_invoice.due }} </th>
               </tr>
               </tbody>
             </table>

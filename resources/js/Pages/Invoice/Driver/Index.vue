@@ -25,21 +25,23 @@
                     </th>
                     <th colspan="6"></th>
                     <th colspan="3">
-                      <input type="text" @keyup="searchData" v-model="search.query" class="form-control" placeholder="Search">
+                      <input type="text" @keyup="searchData" v-model="search.query" class="form-control" :placeholder="__('Search')">
                     </th>
                   </tr>
                   <tr>
-                    <th scope="col">S.N.</th>
-                    <th>Client</th>
-                    <th>Driver</th>
-                    <th>Quantity</th>
-                    <th class="text-right">Amount</th>
-                    <th class="text-right">Track Rent</th>
-                    <th class="text-right">Others</th>
-                    <th>Total</th>
-                    <th>Invoice At</th>
-                    <th class="text-center">Status</th>
-                    <th class="text-center">Actions</th>
+                    <th scope="col">{{ __('S.N.') }}</th>
+                    <th>{{ __("Client") }}</th>
+                    <th>{{ __("Driver") }}</th>
+                    <th>{{ __("Quantity") }}</th>
+                    <th class="text-right">{{ __("Amount") }}</th>
+                    <th class="text-right">{{ __("Track Rent") }}</th>
+                    <th class="text-right">{{ __("Others") }}</th>
+                    <th>{{ __("Total") }}</th>
+                    <th>{{ __("Paid") }}</th>
+                    <th>{{ __("Due") }}</th>
+                    <th>{{ __("Created At") }}</th>
+                    <th class="text-center">{{ __("Status") }}</th>
+                    <th class="text-center">{{ __("Action") }}</th>
                   </tr>
                   </thead>
                   <tbody class="font-small-3">
@@ -51,13 +53,15 @@
                     <td>
                       {{ driver_invoice.driver_name }}
                     </td>
-                    <td style="width: 150px;">
+                    <td>
                       {{ driver_invoice.quantity }}
                     </td>
                     <td class="text-right">{{ driver_invoice.amount }}</td>
                     <td class="text-right">{{ driver_invoice.track_rent }}</td>
                     <td class="text-right">{{ driver_invoice.others }}</td>
                     <td class="text-right">{{ driver_invoice.total }}</td>
+                    <td class="text-right">{{ driver_invoice.paid }}</td>
+                    <td class="text-right">{{ driver_invoice.due }}</td>
                     <td>{{ driver_invoice.created_at | moment('DD/MM/YYYY') }}</td>
                     <td v-html="$options.filters.status(driver_invoice.status)"></td>
                     <td class="text-center">

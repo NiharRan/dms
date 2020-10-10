@@ -89,150 +89,83 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row" v-if="sales.data.length > 0">
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h4 class="mb-0">Dispatched Orders</h4>
+              <h4 class="mb-0">{{ __('Recent Sales') }}</h4>
             </div>
             <div class="card-content">
               <div class="table-responsive mt-1">
                 <table class="table table-hover-animation mb-0">
                   <thead>
                   <tr>
-                    <th>ORDER</th>
-                    <th>STATUS</th>
-                    <th>OPERATORS</th>
-                    <th>LOCATION</th>
-                    <th>DISTANCE</th>
-                    <th>START DATE</th>
-                    <th>EST DEL. DT</th>
+                    <th class="text-uppercase">{{ __('Invoice') }}</th>
+                    <th class="text-uppercase">{{ __('Client') }}</th>
+                    <th class="text-right text-uppercase">{{ __('Total Price') }}</th>
+                    <th class="text-right text-uppercase">{{ __('Paid') }}</th>
+                    <th class="text-right text-uppercase">{{ __('Due') }}</th>
+                    <th class="text-center text-uppercase">{{ __('Sale At') }}</th>
+                    <th class="text-left text-uppercase">{{ __('Status') }}</th>
+                    <th class="text-center text-uppercase">{{ __('Action') }}</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>#879985</td>
-                    <td><i class="fa fa-circle font-small-3 text-success mr-50"></i>Moving</td>
-                    <td class="p-1">
-                      <ul class="list-unstyled users-list m-0  d-flex align-items-center">
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Vinnie Mostowy" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-11.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Elicia Rieske" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Julee Rossignol" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-10.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Darcey Nooner" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-8.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                      </ul>
+                  <tr v-for="sale in sales.data" :key="sale.id">
+                    <th>#{{ sale.invoice }}</th>
+                    <th>{{ sale.client.name }}</th>
+                    <td class="text-right">{{ sale.total_price }}</td>
+                    <td class="text-right">{{ sale.total_paid }}</td>
+                    <td class="text-right">{{ sale.total_due }}</td>
+                    <td class="text-center">{{ sale.sale_date | moment('DD/MM/YYYY hh:mm A') }}</td>
+                    <td class="text-left" v-html="$options.filters.payment_status(sale.status)"></td>
+                    <td class="text-center">
+                      <a :href="route('sales.edit', sale.id)" class="text-info" role="button"><i class="feather icon-edit"></i></a>
+                      <a :href="route('sales.invoices.show', sale.invoice)" class="text-primary" role="button"><i class="feather icon-eye"></i></a>
                     </td>
-                    <td>Anniston, Alabama</td>
-                    <td>
-                      <span>130 km</span>
-                      <div class="progress progress-bar-success mt-1 mb-0">
-                        <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </td>
-                    <td>14:58 26/07/2018</td>
-                    <td>28/07/2018</td>
                   </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" v-if="driver_invoices.data.length > 0">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="mb-0">{{ __('Recent Driver Invoices') }}</h4>
+            </div>
+            <div class="card-content">
+              <div class="table-responsive mt-1">
+                <table class="table table-hover-animation mb-0">
+                  <thead>
                   <tr>
-                    <td>#156897</td>
-                    <td><i class="fa fa-circle font-small-3 text-warning mr-50"></i>Pending</td>
-                    <td class="p-1">
-                      <ul class="list-unstyled users-list m-0  d-flex align-items-center">
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Trina Lynes" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-1.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Lilian Nenez" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-2.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Alberto Glotzbach" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-3.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                      </ul>
-                    </td>
-                    <td>Cordova, Alaska</td>
-                    <td>
-                      <span>234 km</span>
-                      <div class="progress progress-bar-warning mt-1 mb-0">
-                        <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </td>
-                    <td>14:58 26/07/2018</td>
-                    <td>28/07/2018</td>
+                    <th class="text-uppercase">{{ __('Invoice') }}</th>
+                    <th class="text-uppercase">{{ __('Client') }}</th>
+                    <th class="text-uppercase">{{ __('Driver') }}</th>
+                    <th class="text-uppercase">{{ __('Product') }}</th>
+                    <th class="text-right text-uppercase">{{ __('Total') }}</th>
+                    <th class="text-center text-uppercase">{{ __('Created At') }}</th>
+                    <th class="text-left text-uppercase">{{ __('Status') }}</th>
+                    <th class="text-center text-uppercase">{{ __('Action') }}</th>
                   </tr>
-                  <tr>
-                    <td>#568975</td>
-                    <td><i class="fa fa-circle font-small-3 text-success mr-50"></i>Moving</td>
-                    <td class="p-1">
-                      <ul class="list-unstyled users-list m-0  d-flex align-items-center">
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Lai Lewandowski" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Elicia Rieske" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Darcey Nooner" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-8.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Julee Rossignol" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-10.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Jeffrey Gerondale" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-9.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                      </ul>
+                  </thead>
+                  <tbody>
+                  <tr v-for="driver_invoice in driver_invoices.data" :key="driver_invoice.id">
+                    <th>#{{ driver_invoice.invoice }}</th>
+                    <th>{{ driver_invoice.client.name }}</th>
+                    <th>{{ driver_invoice.driver_name }}</th>
+                    <td>{{ driver_invoice.product.name }}</td>
+                    <td class="text-right">{{ driver_invoice.total }}</td>
+                    <td class="text-center">{{ driver_invoice.created_at | moment('DD/MM/YYYY hh:mm A') }}</td>
+                    <td class="text-left" v-html="$options.filters.payment_status(driver_invoice.status)"></td>
+                    <td class="text-center">
+                      <a :href="route('drivers.invoices.edit', driver_invoice.id)" class="text-info" role="button"><i class="feather icon-edit"></i></a>
+                      <a :href="route('drivers.invoices.show', driver_invoice.invoice)" class="text-primary" role="button"><i class="feather icon-eye"></i></a>
                     </td>
-                    <td>Florence, Alabama</td>
-                    <td>
-                      <span>168 km</span>
-                      <div class="progress progress-bar-success mt-1 mb-0">
-                        <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </td>
-                    <td>14:58 26/07/2018</td>
-                    <td>28/07/2018</td>
-                  </tr>
-                  <tr>
-                    <td>#245689</td>
-                    <td><i class="fa fa-circle font-small-3 text-danger mr-50"></i>Canceled</td>
-                    <td class="p-1">
-                      <ul class="list-unstyled users-list m-0  d-flex align-items-center">
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Vinnie Mostowy" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                        <li data-toggle="tooltip" data-popup="tooltip-custom"  data-placement="bottom"
-                            data-original-title="Elicia Rieske" class="avatar pull-up">
-                          <img class="media-object rounded-circle" src="/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="30" width="30">
-                        </li>
-                      </ul>
-                    </td>
-                    <td>Clifton, Arizona</td>
-                    <td>
-                      <span>125 km</span>
-                      <div class="progress progress-bar-danger mt-1 mb-0">
-                        <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </td>
-                    <td>14:58 26/07/2018</td>
-                    <td>28/07/2018</td>
                   </tr>
                   </tbody>
                 </table>
@@ -250,7 +183,15 @@
     export default {
         name: "Dashboard",
         components: {Layout},
-        props: ['msg', 'today_driver_invoice', 'total_clients', 'total_products', 'today_sale'],
+        props: [
+          'msg',
+          'today_driver_invoice',
+          'total_clients',
+          'total_products',
+          'today_sale',
+          'sales',
+          'driver_invoices'
+        ],
         data: function () {
             return {
               clock: ''

@@ -14,7 +14,7 @@
               <form @submit.prevent="store">
                 <div class="form-group row">
                   <div class="col-md-4 col-12">
-                    <label>Client<strong class="text-danger">*</strong></label>
+                    <label>{{ __("Client") }}<strong class="text-danger">*</strong></label>
                     <multi-select
                       v-model="form.client"
                       :options="clients"
@@ -22,36 +22,36 @@
                       @select="showInfo"
                       label="name"
                       track-by="name"
-                      placeholder="Select Client"></multi-select>
+                      :placeholder="__('Select Client')"></multi-select>
 
                     <span v-if="errors.client_id" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.client_id[0] }}</strong>
                     </span>
                   </div>
                   <div class="col-md-4 col-12">
-                    <label>Client Contact No.</label>
+                    <label>{{ __('Client Contact No.') }}</label>
                     <input type="text"
                            v-model="form.phone"
                            readonly
-                           placeholder="Client Contact No."
+                           :placeholder="__('Client Contact No.')"
                            class="form-control">
                   </div>
                   <div class="col-md-4 col-12">
-                    <label>Client Address</label>
+                    <label>{{ __("Client Address") }}</label>
                     <input type="text"
                            v-model="form.address"
                            readonly
-                           placeholder="Client Address"
+                           :placeholder="__('Client Address')"
                            class="form-control">
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-md-4 col-12">
-                    <label>Driver Name<strong class="text-danger">*</strong></label>
+                    <label>{{ __("Driver Name") }}<strong class="text-danger">*</strong></label>
                     <input type="text"
                            v-model="form.driver_name"
                            :class="[errors.driver_name ? 'in-invalid' : '' ]"
-                           placeholder="Driver Name"
+                           :placeholder="__('Driver Name')"
                            class="form-control">
 
                     <span v-if="errors.driver_name" class="invalid-feedback" style="display: block;" role="alert">
@@ -60,11 +60,11 @@
                   </div>
 
                   <div class="col-md-4 col-12">
-                    <label>Track Number<strong class="text-danger">*</strong></label>
+                    <label>{{ __("Track Number") }}<strong class="text-danger">*</strong></label>
                     <input type="text"
                            v-model="form.track_no"
                            :class="[errors.track_no ? 'in-invalid' : '' ]"
-                           placeholder="Track Number"
+                           :placeholder="__('Track Number')"
                            class="form-control">
 
                     <span v-if="errors.track_no" class="invalid-feedback" style="display: block;" role="alert">
@@ -72,11 +72,11 @@
                     </span>
                   </div>
                   <div class="col-md-4 col-12">
-                    <label>Driver Contact No.<strong class="text-danger">*</strong></label>
+                    <label>{{ __("Driver Contact No.") }}<strong class="text-danger">*</strong></label>
                     <input type="text"
                            v-model="form.driver_phone"
                            :class="[errors.driver_phone ? 'in-invalid' : '' ]"
-                           placeholder="Driver Contact No."
+                           :placeholder="__('Driver Contact No.')"
                            class="form-control">
 
                     <span v-if="errors.driver_phone" class="invalid-feedback" style="display: block;" role="alert">
@@ -95,41 +95,59 @@
                           :options="products"
                           label="name"
                           track-by="name"
-                          placeholder="Select Product"></multi-select>
+                          :placeholder="__('Select Product')"></multi-select>
                       </th>
                       <th>
-                        <input type="text" v-model="form.quantity" class="form-control" placeholder="Quantity">
+                        <input type="text" v-model="form.scale" class="form-control" :placeholder="__('Scale')">
                       </th>
                       <th>
-                        <input type="text" class="form-control" v-model="form.amount" @keyup="calculateTotal">
+                        <input type="text" v-model="form.quantity" class="form-control" :placeholder="__('Quantity')">
+                        <span v-if="errors.quantity" class="invalid-feedback" style="display: block;" role="alert">
+                          <strong>{{ errors.quantity[0] }}</strong>
+                        </span>
+                      </th>
+                      <th>
+                        <input type="text" class="form-control" v-model="form.amount" @keyup="calculateTotal" :placeholder="__('Scale Price')">
                       </th>
                     </tr>
                     <tr>
-                      <th colspan="2" class="text-right">{{ __("Track Rent") }}</th>
+                      <th colspan="3" class="text-right">{{ __("Rent") }}</th>
                       <th>
-                        <input type="text" class="form-control" v-model="form.track_rent" @keyup="calculateTotal">
+                        <input type="text" class="form-control" v-model="form.track_rent" @keyup="calculateTotal" :placeholder="__('Rent')">
                         <span v-if="errors.track_rent" class="invalid-feedback" style="display: block;" role="alert">
                           <strong>{{ errors.track_rent[0] }}</strong>
                         </span>
                       </th>
                     </tr>
                     <tr>
-                      <th colspan="2" class="text-right">{{ __("Others") }}</th>
+                      <th colspan="3" class="text-right">{{ __("Others") }}</th>
                       <th>
                         <input type="text" class="form-control" v-model="form.others" @keyup="calculateTotal">
                       </th>
                     </tr>
 
                     <tr>
-                      <th colspan="2" class="text-right">{{ __("Total") }}</th>
+                      <th colspan="3" class="text-right">{{ __("Total") }}</th>
                       <th>
-                        <input type="text" class="form-control" readonly v-model="form.total">
+                        <input type="text" class="form-control" readonly v-model="form.total" :placeholder="__('Total')">
                       </th>
                     </tr>
                     <tr>
-                      <th colspan="5" class="text-right">
-                        <button type="button" class="btn btn-secondary"><i class="feather icon-x"></i> Cancel</button>
-                        <button type="submit" class="btn btn-success"><i class="feather icon-printer"></i> Save</button>
+                      <th colspan="3" class="text-right">{{ __("Paid") }}</th>
+                      <th>
+                        <input type="text" class="form-control" @keyup="calculateDue" v-model="form.paid" :placeholder="__('Paid')">
+                      </th>
+                    </tr>
+                    <tr>
+                      <th colspan="3" class="text-right">{{ __("Due") }}</th>
+                      <th>
+                        <input type="text" class="form-control" readonly v-model="form.due" :placeholder="__('Due')">
+                      </th>
+                    </tr>
+                    <tr>
+                      <th colspan="6" class="text-right">
+                        <button type="button" class="btn btn-secondary"><i class="feather icon-x"></i> {{ __('Cancel') }}</button>
+                        <button type="submit" class="btn btn-success"><i class="feather icon-printer"></i> {{ __("Store") }}</button>
                       </th>
                     </tr>
                   </table>
@@ -169,13 +187,16 @@
           address: '',
           product: null,
           quantity: '',
-          amount: '0.00',
+          scale: '',
+          amount: '',
           driver_name: '',
           track_no: '',
           driver_phone: '',
-          others: '0.00',
-          track_rent: '0.00',
-          total: '0.00'
+          others: '',
+          track_rent: '',
+          total: '',
+          paid: '',
+          due: ''
         },
       }
     },
@@ -185,12 +206,21 @@
         this.form.address = data.address;
       },
       calculateTotal: function () {
-        let amount = this.driver_invoice.amount === '' ? 0 : this.driver_invoice.amount;
-        let track_rent = this.driver_invoice.track_rent === '' ? 0 : this.driver_invoice.track_rent;
-        let others = this.driver_invoice.others === '' ? 0 : this.driver_invoice.others;
+        let amount = this.form.amount === '' ? 0 : this.form.amount;
+        let track_rent = this.form.track_rent === '' ? 0 : this.form.track_rent;
+        let others = this.form.others === '' ? 0 : this.form.others;
+        let paid = this.form.paid === '' ? 0 : this.form.paid;
 
         let total = parseFloat(amount) + parseFloat(track_rent) + parseFloat(others);
+        let due = total - parseFloat(paid);
         this.form.total = parseFloat(total).toFixed(2);
+        this.form.due = parseFloat(due).toFixed(2);
+      },
+      calculateDue: function () {
+        let total = this.form.total === '' ? 0 : this.form.total;
+        let paid = this.form.paid === '' ? 0 : this.form.paid;
+        let due = parseFloat(total) - parseFloat(paid);
+        this.form.due = parseFloat(due).toFixed(2);
       },
       store: async function () {
         const self = this;
@@ -204,13 +234,14 @@
           driver_phone: this.form.driver_phone,
           product_id: product_id,
           quantity: this.form.quantity,
+          scale: this.form.scale,
           amount: this.form.amount,
           track_rent: this.form.track_rent,
           others: this.form.others,
           total: this.form.total,
-        })
-          .then(function () {
-          });
+          paid: this.form.paid,
+          due: this.form.due
+        });
       },
     },
     created() {

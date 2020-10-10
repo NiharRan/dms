@@ -40,12 +40,12 @@
                   <div class="timeline-info">
                     <h3 class="font-weight-bold">Get Paid</h3>
                     <p class="font-small-3 mb-1">Status {{ sale.status === 0 ? 'Awaiting payment' : `Payment done at ${sale.created_at}` }}</p>
-                    <inertia-link
-                      v-if="sale.status === 0"
-                      class="btn btn-primary"
-                      :href="route('sales.invoices.pay', sale.invoice)">
-                      Mark Paid
-                    </inertia-link>
+                    <a v-if="sale.status === 0"
+                      @click.prevent="setData"
+                      class="btn btn-primary text-white"
+                      role="button">
+                      <i class="feather icon-file"></i> {{ __('Pay') }}
+                    </a>
                   </div>
                 </li>
               </ul>
@@ -148,28 +148,108 @@
       </div>
       <!-- Ag Grid users list section end -->
     </section>
+    <model>
+      <template v-slot:header>
+        <h4 class="modal-title" id="myModalLabel1">{{ modelTitle }}</h4>
+        <button type="button" @click="cleanForm" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </template>
+
+      <form @submit.prevent="payment">
+        <div class="modal-body">
+          <div class="form-group">
+            <input type="text"
+                   :placeholder="__('Total Price')"
+                   class="form-control"
+                   readonly
+                   v-model="form.total_price">
+          </div>
+          <div class="form-group">
+            <input type="text"
+                   :placeholder="__('Total Paid')"
+                   class="form-control"
+                   readonly
+                   v-model="form.total_paid">
+          </div>
+          <div class="form-group">
+            <input type="text"
+                   :placeholder="__('Total Due')"
+                   class="form-control"
+                   readonly
+                   v-model="form.total_due">
+          </div>
+          <div class="form-group mb-0">
+            <input type="text"
+                   :placeholder="__('Amount')"
+                   class="form-control"
+                   v-model="form.amount">
+            <span v-if="errors.amount" class="invalid-feedback" style="display: block;" role="alert">
+              <strong>{{ errors.amount[0] }}</strong>
+            </span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success waves-effect waves-light">{{ __('Pay') }}</button>
+          <button type="button" @click="cleanForm" class="btn" data-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </model>
     <!-- product type list ends -->
   </layout>
 </template>
 
 <script>
   import Layout from "../../Shared/Layout";
+  import Model from "../../Components/Model";
 
   export default {
     name: "DriverInvoiceShow",
-    components: {Layout},
+    components: {Layout, Model},
     props: {
       success: String,
       sale: Object,
+      errors: Object
     },
     data: function () {
       return {
-
+        modelTitle: this.__('Pay Due Amount'),
+        form: {
+          amount: '0',
+          total_price: '',
+          total_due: '',
+          total_paid: '',
+          invoice: ''
+        }
       }
     },
     methods: {
       printPage: function () {
         window.print();
+      },
+      cleanForm: function () {
+        $("#default").modal('hide');
+        this.form.total_price = '';
+        this.form.total_paid = '';
+        this.form.total_due = '';
+        this.form.amount = '';
+        this.form.invoice = '';
+      },
+      payment: function () {
+        const self = this;
+        this.$inertia.post(this.route('sales.invoices.pay', this.form.invoice), {
+          amount: this.form.amount
+        })
+        .then(function (response) {
+          self.cleanForm();
+        });
+      },
+      setData: function () {
+        $("#default").modal('show');
+        this.form.total_price = this.sale.total_price;
+        this.form.total_paid = this.sale.total_paid;
+        this.form.total_due = this.sale.total_due;
+        this.form.invoice = this.sale.invoice;
       }
     },
     created() {
