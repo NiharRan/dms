@@ -27,8 +27,16 @@ class DriverInvoiceRepository
     $driverInvoices = $this->driverInvoice
       ->with(['client', 'product']);
 
-    if (\request()->has('status')) {
+    if (\request()->has('status') && !empty(request()->status)) {
       $driverInvoices = $driverInvoices->where('status', \request()->status);
+    }
+
+    if (\request()->has('start_date') && !empty(request()->start_date)) {
+      $driverInvoices = $driverInvoices->whereBetween('created_at', [\request()->start_date, request()->end_date]);
+    }
+
+    if (\request()->has('invoice') && !empty(request()->invoice)) {
+      $driverInvoices = $driverInvoices->where('invoice', \request()->invoice);
     }
 
     if (\request()->has('client') && !empty(\request()->client)) {
@@ -36,9 +44,9 @@ class DriverInvoiceRepository
       $driverInvoices = $driverInvoices->where('client_id', $client);
     }
 
-    if (\request()->has('product') && !empty(\request()->client)) {
-      $client = \request()->client;
-      $driverInvoices = $driverInvoices->where('product_id', $client);
+    if (\request()->has('product') && !empty(\request()->product)) {
+      $product = \request()->product;
+      $driverInvoices = $driverInvoices->where('product_id', $product);
     }
 
     if (\request()->has('search') && !empty(\request()->search)) {

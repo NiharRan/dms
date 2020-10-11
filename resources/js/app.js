@@ -4,6 +4,9 @@ import Vue from 'vue';
 import VueMoment from 'vue-moment';
 Vue.use(VueMoment);
 
+import DateRangePicker from 'vue2-daterange-picker';
+Vue.component('date-range-picker', DateRangePicker);
+
 import ProgressBar from 'vue-simple-progress';
 Vue.component('progress-bar', ProgressBar);
 

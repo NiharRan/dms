@@ -34,10 +34,13 @@ class DriverInvoiceController extends Controller
       ['name'=> __("Driver Invoices") ],
     ];
     $driverInvoices = $this->driverInvoiceRepository->paginate(request()->per_page);
-
+    $clients = Client::orderBy('name', 'asc')->get();
+    $products = Product::orderBy('name', 'asc')->get();
     return Inertia::render('Invoice/Driver/Index', [
       'breadcrumbs' => $breadcrumbs,
       'driver_invoices' => $driverInvoices,
+      'clients' => $clients,
+      'products' => $products,
       'has_modal' => false,
       'link' => route('drivers.invoices.create')
     ]);

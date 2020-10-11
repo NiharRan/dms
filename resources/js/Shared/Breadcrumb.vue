@@ -6,7 +6,7 @@
           <h2 class="content-header-title float-left mb-0"></h2>
           <div class="breadcrumb-wrapper col-12">
             <ol v-if="$page.breadcrumbs" class="breadcrumb">
-              <li v-for="breadcrumb in $page.breadcrumbs" class="breadcrumb-item">
+              <li v-for="(breadcrumb, index) in $page.breadcrumbs" class="breadcrumb-item" :key="index">
                 <inertia-link v-if="breadcrumb.link" :href="breadcrumb.link">
                   {{ breadcrumb.name }}
                 </inertia-link>
