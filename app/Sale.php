@@ -9,13 +9,19 @@ class Sale extends Model
 {
     protected $fillable = [
       'invoice', 'total_price', 'total_paid', 'total_due',
-      'company_id', 'client_id', 'driver_name', 'track_no',
-      'dl_no', 'sale_date', 'status', 'user_id'
+      'company_id', 'client_id', 'sale_date', 'status', 'user_id'
     ];
 
     public function getWordAttribute()
     {
-      return (new BanglaNumberToWord())->numToWord($this->total_due);
+      if($this->total_due == 0) {
+        $str = ' পরিশোধ করা হয়েছে';
+        $amount = $this->total_paid;
+      }else {
+        $str = ' বাকি আছে';
+        $amount = $this->total_due;
+      }
+      return (new BanglaNumberToWord())->numToWord($amount) . $str;
     }
 
     protected $appends = [

@@ -14,7 +14,7 @@
               <form @submit.prevent="store">
                 <div class="form-group row">
                   <div class="col-md-6 col-12">
-                    <label>Client<strong class="text-danger">*</strong></label>
+                    <label>{{__("Client")}}<strong class="text-danger">*</strong></label>
                     <multi-select
                       v-model="form.client"
                       :options="clients"
@@ -24,17 +24,17 @@
                       :show-labels="true"
                       label="name"
                       track-by="name"
-                      placeholder="Select Client"></multi-select>
+                      :placeholder="__('Select Client')"></multi-select>
 
                     <span v-if="errors.client_id" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.client_id[0] }}</strong>
                     </span>
                   </div>
                   <div class="col-md-6 col-12">
-                    <label>Sale Date<strong class="text-danger">*</strong></label>
+                    <label>{{__("Sale Date")}}<strong class="text-danger">*</strong></label>
                     <date-picker
                       class="form-control"
-                      placeholder="Sale Date"
+                      :placeholder="__('Sale Date')"
                       v-model="form.sale_date">
                     </date-picker>
 
@@ -45,15 +45,16 @@
                 </div>
 
                 <div class="form-group">
-                  <label>Products</label>
+                  <label>{{__("Products")}}</label>
                   <table class="table table-responsive-sm table-bordered">
                     <thead class="bg-secondary">
                       <tr>
-                        <th>Action</th>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Total</th>
+                        <th>{{__("Action")}}</th>
+                        <th>{{__('Track No.')}}</th>
+                        <th style="width: 25%;">{{__("Product")}}</th>
+                        <th>{{__("Quantity")}}</th>
+                        <th>{{__("Price")}}</th>
+                        <th>{{__("Total")}}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -66,6 +67,9 @@
                           </button>
                         </th>
                         <th>
+                          <input type="text" v-model="row.track_no" class="form-control" :placeholder="__('Track No.')">
+                        </th>
+                        <th>
                           <multi-select
                             v-model="row.product"
                             :options="products"
@@ -74,40 +78,40 @@
                             :show-labels="true"
                             label="name"
                             track-by="name"
-                            placeholder="Select Product"></multi-select>
+                            :placeholder="__('Select Product')"></multi-select>
                         </th>
                         <th>
-                          <input type="text" v-model="row.quantity" @keyup="calculateTotalWhenQuantityChange(index)" class="form-control">
+                          <input type="text" v-model="row.quantity" @keyup="calculateTotalWhenQuantityChange(index)" class="form-control" :placeholder="__('Product Quantity')">
                         </th>
                         <th>
-                          <input type="text" v-model="row.price" @keyup="calculateTotalWhenPriceChange(index)" class="form-control">
+                          <input type="text" v-model="row.price" @keyup="calculateTotalWhenPriceChange(index)" class="form-control" :placeholder="__('Product Price')">
                         </th>
                         <th>
-                          <input type="text" v-model="row.total" readonly class="form-control">
+                          <input type="text" v-model="row.total" readonly class="form-control" :placeholder="__('Total')">
                         </th>
                       </tr>
                       <tr>
                         <th>
                           <button @click.prevent="addNewItem" class="btn btn-outline-success"><i class="feather icon-plus"></i></button>
                         </th>
-                        <th colspan="4"></th>
+                        <th colspan="5"></th>
                       </tr>
                       <tr>
-                        <th colspan="4" class="text-right">Total Price</th>
-                        <th><input type="text" v-model="form.total_price" readonly class="form-control"></th>
+                        <th colspan="5" class="text-right">{{__('Total')}}</th>
+                        <th><input type="text" v-model="form.total_price" readonly class="form-control" :placeholder="__('Total')"></th>
                       </tr>
                       <tr>
-                        <th colspan="4" class="text-right">Total Paid</th>
-                        <th><input type="text" v-model="form.total_paid" @keyup="calculateDue" class="form-control"></th>
+                        <th colspan="5" class="text-right">{{__("Paid")}}</th>
+                        <th><input type="text" v-model="form.total_paid" @keyup="calculateDue" class="form-control" :placeholder="__('Paid')"></th>
                       </tr>
                       <tr>
-                        <th colspan="4" class="text-right">Total Due</th>
-                        <th><input type="text" v-model="form.total_due" readonly class="form-control"></th>
+                        <th colspan="5" class="text-right">{{__("Due")}}</th>
+                        <th><input type="text" v-model="form.total_due" readonly class="form-control" :placeholder="__('Due')"></th>
                       </tr>
                       <tr>
-                        <th colspan="5" class="text-right">
-                          <button type="button" class="btn btn-secondary"><i class="feather icon-x"></i> Cancel</button>
-                          <button type="submit" class="btn btn-success"><i class="feather icon-printer"></i> Save</button>
+                        <th colspan="6" class="text-right">
+                          <button type="button" class="btn btn-secondary"><i class="feather icon-x"></i> {{__("Cancel")}}</button>
+                          <button type="submit" class="btn btn-success"><i class="feather icon-printer"></i> {{__("Store")}}</button>
                         </th>
                       </tr>
                     </tbody>
@@ -200,10 +204,14 @@
         });
       },
       store: async function () {
-        const self = this;
+        let self = this;
         const client_id = this.form.client ? this.form.client.id : '';
         const products = await this.form.sale_details.map(item => {
           if(item.product) return item.product.id
+          return '';
+        });
+        const tracks = await this.form.sale_details.map(item => {
+          if(item.track_no) return item.track_no;
           return '';
         });
         const quantities = await this.form.sale_details.map(item => {
@@ -223,6 +231,7 @@
           company_id: this.company.id,
           sale_date: this.form.sale_date,
           products: products,
+          tracks: tracks,
           quantities: quantities,
           prices: prices,
           totals: totals,
@@ -239,7 +248,8 @@
           product: null,
           quantity: '',
           price: '0.00',
-          total: '0.00'
+          total: '0.00',
+          track_no: ''
         };
         this.form.sale_details.push(saleDetail);
       },

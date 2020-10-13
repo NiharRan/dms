@@ -24,6 +24,7 @@ class CreateSaleDetailsTable extends Migration
             $table->unsignedInteger('quantity')->nullable();
             $table->decimal('price', 10, 2);
             $table->decimal('amount', 10, 2);
+            $table->string('track_no');
             $table->timestamps();
         });
     }

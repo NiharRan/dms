@@ -87,6 +87,7 @@
                                 v-for="gender in genders"
                                 :value="gender.id"
                                 :selected="[gender.id == user.gender_id ? true : false ]"
+                                :key="gender.id"
                                 >{{ gender.name }}
                               </option>
                             </select>
@@ -101,7 +102,8 @@
                               <option
                                 v-for="religion in religions"
                                 :value="religion.id"
-                                :selected="[religion.id == user.religion_id ? true : false]">
+                                :selected="[religion.id == user.religion_id ? true : false]"
+                                :key="religion.id">
                                 {{ religion.name }}</option>
                             </select>
                             <div v-if="errors.religion_id" class="invalid-feedback">{{ errors.religion_id[0] }}</div>

@@ -289,7 +289,7 @@
             }
           },
           store: function () {
-            const self = this;
+            let self = this;
             const phones = this.form.phones.map(phone => phone.phone);
             const formData = new FormData();
             formData.append('name', this.form.name);
@@ -312,7 +312,7 @@
             });
           },
           update: function () {
-            const self = this;
+            let self = this;
             const phones = this.form.phones.map(phone => phone.phone);
             const formData = new FormData();
             formData.append('name', this.form.name);

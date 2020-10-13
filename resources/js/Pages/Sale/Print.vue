@@ -29,15 +29,15 @@
               <span class="float-right">{{ __('Date') }}{{ __(':') }} {{ sale.created_at | moment('DD/MM/YYYY') }}</span>
             </p>
             <p class="clearfix">
-              <span class="float-left">{{ __('Name') }}{{ __(':') }} {{ sale.client.name }}</span>
+              <span class="float-left">{{ __('Client Name') }}{{ __(':') }} {{ sale.client.name }}</span>
               <span class="float-right">{{ __('Address') }}{{ __(':') }} {{ sale.client.address }}</span>
             </p>
 
             <table class="table font-medium-3">
               <thead>
               <tr>
-                <th>{{ __('Product') }}</th>
-                <th class="text-center">{{ __('Quantity') }}</th>
+                <th>{{ __('Product Product') }}</th>
+                <th class="text-center">{{ __('Product Quantity') }}</th>
                 <th class="text-right">{{ __('Price') }}</th>
                 <th class="text-right">{{ __('Amount') }}</th>
               </tr>
@@ -45,7 +45,7 @@
               <tbody>
               <tr v-for="row in sale.sale_details" :key="row.id">
                 <th>{{ row.product.name }}</th>
-                <th class="text-center">{{ row.quantity }}</th>
+                <th class="text-center">{{ row.quantity }} {{ __('Mg')}}</th>
                 <th class="text-right">{{ row.price }}</th>
                 <th class="text-right">{{ row.amount }}</th>
               </tr>

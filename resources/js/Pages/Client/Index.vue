@@ -160,7 +160,7 @@
             }
           },
           store: function () {
-            const self = this;
+            let self = this;
             this.$inertia.post(this.route('clients.store'), {
               name: this.form.name,
               phone: this.form.phone,
@@ -174,7 +174,7 @@
             });
           },
           update: function () {
-            const self = this;
+            let self = this;
             this.$inertia.post(this.route('clients.update', this.form.id), {
               name: this.form.name,
               phone: this.form.phone,

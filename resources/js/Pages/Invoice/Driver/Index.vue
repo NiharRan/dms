@@ -26,9 +26,7 @@
                     <th colspan="2">
                       <input type="text" class="form-control" @change="searchData" v-model="search.invoice" :placeholder="__('Invoice')">
                     </th>
-                    <th colspan="3">
-                      
-                    </th>
+                    <th colspan="3"></th>
                     <th colspan="4">
                       <input type="text" @keyup="searchData" v-model="search.query" class="form-control" :placeholder="__('Search')">
                     </th>
@@ -56,9 +54,9 @@
                   <tbody class="font-small-3" v-if="driver_invoices.data.length > 0">
                     <tr>
                       <td colspan="10"></td>
-                      <th>{{ total(driver_invoices.data) }}</th>
-                      <th>{{ totalPaid(driver_invoices.data) }}</th>
-                      <td>{{ totalDue(driver_invoices.data) }}</td>
+                      <th class="text-right">{{ total(driver_invoices.data) }}</th>
+                      <th class="text-right">{{ totalPaid(driver_invoices.data) }}</th>
+                      <th class="text-right">{{ totalDue(driver_invoices.data) }}</th>
                     </tr>
                     <tr v-for="(driver_invoice, index) in driver_invoices.data" :key="driver_invoice.id">
                       <th>{{ index + 1 }}</th>
@@ -145,8 +143,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" @click="searchData" class="btn btn-success">Search</button>
-          <button type="button" class="btn btn-secendary" data-dismiss="modal">Cancel</button>
+          <button type="button" @click="searchData" class="btn btn-success">{{__("Search")}}</button>
+          <button type="button" class="btn btn-secendary" data-dismiss="modal">{{__("Cancel")}}</button>
         </div>
       </model>
       <!-- Ag Grid users list section end -->

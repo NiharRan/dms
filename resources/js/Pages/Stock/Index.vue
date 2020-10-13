@@ -1,8 +1,8 @@
 <template>
-  <layout name="Dashboard">
-    <!-- gender list start -->
+  <layout name="Stock">
+    <!-- Stock list start -->
     <section class="users-list-wrapper">
-      <!-- Ag Grid users list section start -->
+      <!-- Stock section start -->
       <div id="basic-examples">
         <div class="card">
           <div class="card-content">
@@ -11,26 +11,29 @@
                 {{ success }}
               </div>
 
-              <div class="table-responsive" v-if="genders.data.length > 0">
+              <div class="table-responsive" v-if="stocks.data.length > 0">
                 <table id="data-table" class="table table-bordered display responsive nowrap mb-0" style="width: 100%">
                   <thead>
                   <tr>
                     <th scope="col">S.N.</th>
                     <th>Name</th>
+                    <th>Address</th>
+                    <th class="text-center">Stock</th>
                     <th>Created At</th>
                     <th class="text-center">Status</th>
                     <th class="text-center">Actions</th>
                   </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="(gender, index) in genders.data" :key="gender.id">
+                    <tr v-for="(stock, index) in stocks.data" :key="stock.id">
                       <th>{{ index + 1 }}</th>
-                      <th>{{ gender.name }}</th>
-                      <td>{{ gender.default_date_time }}</td>
-                      <td v-html="$options.filters.status(gender.status)"></td>
+                      <th>{{ stock.name }}</th>
+                      <th>{{ stock.address }}</th>
+                      <th class="text-center">{{ stock.stock }}</th>
+                      <td>{{ stock.default_date_time }}</td>
+                      <td v-html="$options.filters.status(stock.status)"></td>
                       <td class="text-center">
-                        <a @click.prevent="setData(gender)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                        <a @click.prevent="remove(gender)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
+                        <a @click.prevent="setData(stock)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
                       </td>
                     </tr>
                   </tbody>
@@ -50,16 +53,40 @@
 
         <form @submit.prevent="storeOrUpdate">
           <div class="modal-body">
-              <div class="form-group mb-0">
+              <div class="form-group">
                 <input type="text"
-                       placeholder="Gender Name"
+                       placeholder="Stock Name"
                        class="form-control"
                         :class="[errors.name ? 'is-invalid' : '']"
                         v-model="form.name">
+                <span v-if="errors.name" class="invalid-feedback" style="display: block;" role="alert">
+                  <strong>{{ errors.name[0] }}</strong>
+                </span>
               </div>
-              <span v-if="errors.name" class="invalid-feedback" style="display: block;" role="alert">
-                <strong>{{ errors.name[0] }}</strong>
-              </span>
+
+              <div class="form-group">
+                <textarea 
+                        placeholder="Stock Address"
+                        class="form-control"
+                        :class="[errors.address ? 'is-invalid' : '']"
+                        v-model="form.address"
+                        rows="2"></textarea>
+                <span v-if="errors.address" class="invalid-feedback" style="display: block;" role="alert">
+                  <strong>{{ errors.address[0] }}</strong>
+                </span>
+              </div>
+
+              <div class="form-group">
+                <textarea 
+                        placeholder="Stock Quantity"
+                        class="form-control"
+                        :class="[errors.quantity ? 'is-invalid' : '']"
+                        v-model="form.quantity"
+                        rows="2"></textarea>
+                <span v-if="errors.quantity" class="invalid-feedback" style="display: block;" role="alert">
+                  <strong>{{ errors.quantity[0] }}</strong>
+                </span>
+              </div>
 
               <label class="float-left mt-2" v-if="editMode">
                 <input type="checkbox" v-model="form.status" :checked="[form.status ? true : false]">
@@ -74,7 +101,7 @@
       </model>
       <!-- Ag Grid users list section end -->
     </section>
-    <!-- gender list ends -->
+    <!-- Stock list ends -->
   </layout>
 </template>
 
@@ -82,20 +109,22 @@
     import Layout from "../../Shared/Layout";
     import Model from "../../Components/Model";
     export default {
-        name: "Index",
+        name: "Stock",
         components: {Model, Layout},
         props: {
           success: String,
-          genders: Object,
+          stocks: Object,
           errors: Object,
         },
         data: function () {
           return {
             editMode: false,
-            modelTitle: 'Create New Gender',
+            modelTitle: 'Create New Stock',
             form: {
               id: '',
               name: '',
+              address: '',
+              quantity: '',
               status: '',
             }
           }
@@ -105,6 +134,8 @@
             this.modelTitle = `Edit ${data.name}'s Information`;
             this.editMode = true;
             this.form.name = data.name;
+            this.form.address = data.address;
+            this.form.quantity = data.quantity;
             this.form.status = data.status;
             this.form.id = data.id;
             $("#default").modal('show');
@@ -113,9 +144,11 @@
             $("#default").modal('hide');
           },
           cleanForm: function () {
-            this.modelTitle = 'Create New Gender';
+            this.modelTitle = 'Create New Stock';
             this.editMode = false;
             this.form.name = '';
+            this.form.address = '';
+            this.form.quantity = '';
             this.form.id = '';
             this.form.status = '';
             Object.keys(this.errors).forEach((key, value) => {
@@ -131,36 +164,34 @@
           },
           store: function () {
             let self = this;
-            this.$inertia.post(this.route('genders.store'), {
-              name: this.form.name
+            this.$inertia.post(this.route('stocks.store'), {
+              name: this.form.name,
+              address: this.form.address,
+              quantity: this.form.quantity,
             }).then(function () {
               if (Object.keys(self.errors).length === 0) {
                 self.closeModel();
                 self.cleanForm();
-                self.$toast('Gender Created Successfully');
+                self.$toast('Stock Created Successfully');
               }
             });
           },
           update: function () {
             let self = this;
-            this.$inertia.post(this.route('genders.update', this.form.id), {
+            this.$inertia.post(this.route('stocks.update', this.form.id), {
               name: this.form.name,
+              address: this.form.address,
+              quantity: this.form.quantity,
               status: this.form.status,
               _method: "put"
             }).then(function () {
               if (Object.keys(self.errors).length === 0) {
                 self.closeModel();
                 self.cleanForm();
-                self.$toast('Gender Updated Successfully');
+                self.$toast('Stock Updated Successfully');
               }
             });
           },
-          remove: async function (gender) {
-            if (await this.$confirm()) {
-              this.$inertia.delete(this.route('genders.destroy', gender.id));
-              this.$toast(`${gender.name } deleted successfully`);
-            }
-          }
         }
     }
 </script>

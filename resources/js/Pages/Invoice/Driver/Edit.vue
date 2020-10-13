@@ -209,7 +209,7 @@
         this.driver_invoice.due = parseFloat(due).toFixed(2);
       },
       update: async function () {
-        const self = this;
+        let self = this;
         const client_id = this.driver_invoice.client ? this.driver_invoice.client.id : '';
         const product_id = this.driver_invoice.product ? this.driver_invoice.product.id : '';
         this.$inertia.put(this.route('drivers.invoices.update', this.driver_invoice.id), {

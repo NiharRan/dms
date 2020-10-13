@@ -130,7 +130,7 @@
             }
           },
           store: function () {
-            const self = this;
+            let self = this;
             this.$inertia.post(this.route('roles.store'), {
               name: this.form.name
             }).then(function () {
@@ -143,7 +143,7 @@
 
           },
           update: function () {
-            const self = this;
+            let self = this;
             this.$inertia.post(this.route('roles.update', this.form.id), {
               name: this.form.name,
               status: this.form.status,

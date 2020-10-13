@@ -130,7 +130,7 @@
             }
           },
           store: function () {
-            const self = this;
+            let self = this;
             this.$inertia.post(this.route('blood-groups.store'), {
               name: this.form.name
             }).then(function () {
@@ -140,7 +140,7 @@
             });
           },
           update: function () {
-            const self = this;
+            let self = this;
             this.$inertia.post(this.route('blood-groups.update', this.form.id), {
               name: this.form.name,
               status: this.form.status,

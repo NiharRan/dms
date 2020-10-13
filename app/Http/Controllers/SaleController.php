@@ -32,11 +32,12 @@ class SaleController extends Controller
         ['link'=>"/",'name'=> __('Home')],
         ['name'=> __("Sales") ],
       ];
+      $clients = Client::orderBy('name', 'asc')->get();
       $sales = $this->saleRepository->paginate(request()->per_page);
-
       return Inertia::render('Sale/Index', [
         'breadcrumbs' => $breadcrumbs,
         'sales' => $sales,
+        'clients' => $clients,
         'has_modal' => false,
         'link' => route('sales.create')
       ]);

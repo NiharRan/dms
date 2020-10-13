@@ -32,7 +32,9 @@ class DriverInvoiceRepository
     }
 
     if (\request()->has('start_date') && !empty(request()->start_date)) {
-      $driverInvoices = $driverInvoices->whereBetween('created_at', [\request()->start_date, request()->end_date]);
+      $start_date = \request()->start_date . ' 00:00:00';
+      $end_date = \request()->end_date . ' 23:59:59';
+      $driverInvoices = $driverInvoices->whereBetween('created_at', [$start_date, $end_date]);
     }
 
     if (\request()->has('invoice') && !empty(request()->invoice)) {

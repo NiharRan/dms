@@ -184,7 +184,7 @@
             }
           },
           store: function () {
-            const self = this;
+            let self = this;
             const product_type_id = this.form.product_type ? this.form.product_type.id : '';
             const formData = new FormData();
             formData.append('name', this.form.name);
@@ -200,7 +200,7 @@
             });
           },
           update: function () {
-            const self = this;
+            let self = this;
             const product_type_id = this.form.product_type ? this.form.product_type.id : '';
             const formData = new FormData();
             formData.append('name', this.form.name);

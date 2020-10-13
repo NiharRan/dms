@@ -20,9 +20,9 @@ class BanglaNumberToWord
 
     if (is_float($number)) {
       $parts = explode('.', $number);
-      return $this->numberSelector($parts[0]) . 'দশমিক' . $this->numToBnDecimal($parts[1]) . ' টাকা মাত্র';
+      return $this->numberSelector($parts[0]) . 'দশমিক' . $this->numToBnDecimal($parts[1]) . ' টাকা';
     }else {
-      return $this->numberSelector($number) . ' টাকা মাত্র';
+      return $this->numberSelector($number) . ' টাকা';
     }
   }
 

@@ -26,8 +26,18 @@ class SaleRepository
   {
     $sales = $this->sale->with(['client', 'company']);
 
-    if (\request()->has('status')) {
+    if (\request()->has('status') && !empty(request()->status)) {
       $sales = $sales->where('status', \request()->status);
+    }
+
+    if (\request()->has('start_date') && !empty(request()->start_date)) {
+      $start_date = \request()->start_date . ' 00:00:00';
+      $end_date = \request()->end_date . ' 23:59:59';
+      $sales = $sales->whereBetween('sale_date', [$start_date, $end_date]);
+    }
+
+    if (\request()->has('invoice') && !empty(request()->invoice)) {
+      $sales = $sales->where('invoice', \request()->invoice);
     }
 
     if (\request()->has('client') && !empty(\request()->client)) {
@@ -37,7 +47,10 @@ class SaleRepository
 
     if (\request()->has('search') && !empty(\request()->search)) {
       $search = \request()->search;
-      $sales = $sales->where('client.name', 'like', "%$search");
+      $sales = $sales->whereHas('client', function ($q) use($search)
+      {
+        $q->where('name', 'like', "%$search");
+      });
     }
     return $sales->orderBy('id', 'desc');
   }
@@ -115,6 +128,7 @@ class SaleRepository
           'quantity' => $request->quantities[$key],
           'price' => $request->prices[$key],
           'amount' => $request->totals[$key],
+          'track_no' => $request->tracks[$key],
         ];
         $sale->sale_details()->create($saleDetail);
       }

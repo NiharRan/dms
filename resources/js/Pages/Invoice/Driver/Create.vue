@@ -223,7 +223,7 @@
         this.form.due = parseFloat(due).toFixed(2);
       },
       store: async function () {
-        const self = this;
+        let self = this;
         const client_id = this.form.client ? this.form.client.id : '';
         const product_id = this.form.product ? this.form.product.id : '';
         this.$inertia.post(this.route('drivers.invoices.store'), {

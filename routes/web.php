@@ -11,6 +11,7 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -70,6 +71,11 @@ Route::group([
       Route::post('/product-types', 'ProductTypeController@store')->name('product-types.store');
       Route::put('/product-types/{productTypeId}', 'ProductTypeController@update')->name('product-types.update');
       Route::delete('/product-types/{productTypeId}', 'ProductTypeController@destroy')->name('product-types.destroy');
+
+       // Product type routes
+       Route::get('/stocks', 'StockController@index')->name('stocks.index');
+       Route::post('/stocks', 'StockController@store')->name('stocks.store');
+       Route::put('/stocks/{stockId}', 'StockController@update')->name('stocks.update');
 
       // Product routes
       Route::get('/products', 'ProductController@index')->name('products.index');

@@ -26,9 +26,6 @@ class CreateSalesTable extends Migration
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients');
 
-            $table->string('driver_name');
-            $table->string('track_no');
-            $table->string('dl_no');
             $table->dateTime('sale_date');
             $table->boolean('status')->default(0);
 
