@@ -45,4 +45,9 @@ class Sale extends Model
     {
       return $this->hasMany('App\SaleDetail');
     }
+
+    public function transactions()
+    {
+      return $this->morphMany('\App\Transaction', 'transactionable');
+    }
 }

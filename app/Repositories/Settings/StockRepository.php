@@ -7,6 +7,7 @@ namespace App\Repositories\Settings;
 use App\Settings\Stock;
 use App\Traits\RepositoryTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StockRepository
 {
@@ -21,7 +22,7 @@ class StockRepository
 
   public function all()
   {
-    $rows = $this->stock->orderBy('name');
+    $rows = $this->stock->with(['stock_details', 'stock_details.product'])->orderBy('name');
     if (request()->has('status')) {
       $rows = $rows->where('status', request()->status);
     }
@@ -39,9 +40,8 @@ class StockRepository
   {
     $stock->name = $request->name;
     $stock->slug = make_slug($request->name);
-    $stock->stock = $request->stock;
     $stock->address = $request->address;
-
+    $stock->user_id = Auth::id();
     return $stock;
   }
 

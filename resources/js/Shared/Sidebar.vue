@@ -40,6 +40,13 @@
         </inertia-link>
       </li>
 
+      <li class="nav-item">
+        <inertia-link :href="route('stock-details.index')">
+          <i class="feather icon-unlock"></i>
+          <span class="menu-title" data-i18n="">{{__("Purchase Product")}}</span>
+        </inertia-link>
+      </li>
+
       <li class="nav-item has-sub">
         <a href="">
           <i class="fa fa-money"></i>
@@ -89,6 +96,13 @@
         <inertia-link :href="route('products.index')">
           <i class="feather icon-unlock"></i>
           <span class="menu-title" data-i18n="">{{__("Product")}}</span>
+        </inertia-link>
+      </li>
+
+      <li class="nav-item">
+        <inertia-link :href="route('transaction-types.index')">
+          <i class="feather icon-unlock"></i>
+          <span class="menu-title" data-i18n="">{{__("Transaction Type")}}</span>
         </inertia-link>
       </li>
 

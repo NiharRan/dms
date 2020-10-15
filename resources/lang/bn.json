@@ -123,5 +123,12 @@
   "Track Number": "ট্র্যাকের নম্বর",
   "Driver Contact No.": "ড্রাইভারের যোগাযোগ নং",
   "Scale": "স্কেল/ফিতা",
-  "Scale Price": "স্কেলের মূল্য"
+  "Scale Price": "স্কেলের মূল্য",
+
+  "Transaction Type": "লেনদেনের ধরণ",
+  "Create New Transaction Type": "নতুন লেনদেনের ধরণ তৈরি করুন",
+  "Transaction Type Name": "লেনদেনের প্রকারের নাম",
+
+  "Purchase Product": "পণ্য ক্রয়",
+  "Select Stock": "স্টক নির্বাচন করুন"
 }

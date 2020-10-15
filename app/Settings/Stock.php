@@ -2,11 +2,16 @@
 
 namespace App\Settings;
 
-use Illuminate\Database\Eloquent\Model;
+use App\MyModel;
 
-class Stock extends Model
+class Stock extends MyModel
 {
     protected $fillable = [
-        'name', 'slug', 'address', 'quantity', 'status', 'creator'
+        'name', 'slug', 'address', 'status', 'creator'
     ];
+
+    public function stock_details()
+    {
+        return $this->hasMany('App\Settings\StockDetails');
+    }
 }

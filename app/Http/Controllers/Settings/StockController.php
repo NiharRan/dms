@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Settings;
 
 use App\Http\Requests\Settings\StockRequest;
 use App\Repositories\Settings\StockRepository;
-use App\Settings\Stock;
 use App\Http\Controllers\Controller;
 use Inertia\Inertia;
 use Inertia\Response;

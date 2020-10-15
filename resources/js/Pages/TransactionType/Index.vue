@@ -1,54 +1,43 @@
 <template>
-  <layout name="Stock">
-    <!-- Stock list start -->
+  <layout name="TransactionType">
+    <!-- Transaction type list start -->
     <section class="users-list-wrapper">
-      <!-- Stock section start -->
+      <!-- Transaction type section start -->
       <div id="basic-examples">
-        <div class="card" v-if="success">
+        <div class="card">
           <div class="card-content">
             <div class="card-body">
-              <div class="alert alert-success">
+              <div v-if="success" class="alert alert-success">
                 {{ success }}
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="row" v-if="stocks.data.length > 0">
-          <div class="col-md-6 col-12" v-for="stock in stocks.data" :key="stock.id">
-            <div class="card">
-              <div class="card-content">
-                <div class="card-header">
-                  <h2 class="mb-0">{{ stock.name }}</h2>
-                  <p class="mb-0">{{ stock.address }}</p>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table id="data-table" class="table table-bordered display responsive nowrap mb-0" style="width: 100%">
-                      <thead>
-                      <tr>
-                        <th scope="col">{{__("S.N.")}}</th>
-                        <th>{{__("Product")}}</th>
-                        <th class="text-center">{{__("Quantity")}}</th>
-                        <th class="text-center">{{__("Action")}}</th>
-                      </tr>
-                      </thead>
-                      <tbody v-if="stock.stock_details.length > 0">
-                        <tr v-for="(stock_detail, i) in stock.stock_details" :key="stock_detail.id">
-                          <th>{{ i + 1 }}</th>
-                          <th>{{ stock_detail.product.name }}</th>
-                          <th>{{ stock_detail.amount }}</th>
-                          <td class="text-center">
-                            <a @click.prevent="setData(stock_detail)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+
+              <div class="table-responsive" v-if="transaction_types.data.length > 0">
+                <table id="data-table" class="table table-bordered display responsive nowrap mb-0" style="width: 100%">
+                  <thead>
+                  <tr>
+                    <th scope="col">{{__("S.N.")}}</th>
+                    <th>{{__("Name")}}</th>
+                    <th>{{__("Created At")}}</th>
+                    <th class="text-center">{{__("Status")}}</th>
+                    <th class="text-center">{{__("Action")}}</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(transaction_type, index) in transaction_types.data" :key="transaction_type.id">
+                      <th>{{ index + 1 }}</th>
+                      <th>{{ transaction_type.name }}</th>
+                      <td>{{ transaction_type.default_date_time }}</td>
+                      <td v-html="$options.filters.status(transaction_type.status)"></td>
+                      <td class="text-center">
+                        <a @click.prevent="setData(transaction_type)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
+                        <a @click.prevent="remove(transaction_type)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-12"></div>
         </div>
       </div>
       <model>
@@ -61,32 +50,20 @@
 
         <form @submit.prevent="storeOrUpdate">
           <div class="modal-body">
-              <div class="form-group">
+              <div class="form-group mb-0">
                 <input type="text"
-                       :placeholder="__('Stock Name')"
+                       :placeholder="__('Transaction Type Name')"
                        class="form-control"
                         :class="[errors.name ? 'is-invalid' : '']"
                         v-model="form.name">
-                <span v-if="errors.name" class="invalid-feedback" style="display: block;" role="alert">
-                  <strong>{{ errors.name[0] }}</strong>
-                </span>
               </div>
-
-              <div class="form-group">
-                <textarea 
-                        :placeholder="__('Stock Address')"
-                        class="form-control"
-                        :class="[errors.address ? 'is-invalid' : '']"
-                        v-model="form.address"
-                        rows="2"></textarea>
-                <span v-if="errors.address" class="invalid-feedback" style="display: block;" role="alert">
-                  <strong>{{ errors.address[0] }}</strong>
-                </span>
-              </div>
+              <span v-if="errors.name" class="invalid-feedback" style="display: block;" role="alert">
+                <strong>{{ errors.name[0] }}</strong>
+              </span>
 
               <label class="float-left mt-2" v-if="editMode">
                 <input type="checkbox" v-model="form.status" :checked="[form.status ? true : false]">
-                {{ form.status ? 'Active' : 'Inactive'}}
+                {{ form.status ? __('Active') : __('Inactive')}}
               </label>
           </div>
           <div class="modal-footer">
@@ -97,7 +74,7 @@
       </model>
       <!-- Ag Grid users list section end -->
     </section>
-    <!-- Stock list ends -->
+    <!-- Transaction type list ends -->
   </layout>
 </template>
 
@@ -105,21 +82,20 @@
     import Layout from "../../Shared/Layout";
     import Model from "../../Components/Model";
     export default {
-        name: "Stock",
+        name: "TransactionType",
         components: {Model, Layout},
         props: {
           success: String,
-          stocks: Object,
+          transaction_types: Object,
           errors: Object,
         },
         data: function () {
           return {
             editMode: false,
-            modelTitle: this.__('Create New Stock'),
+            modelTitle: this.__('Create New Transaction Type'),
             form: {
               id: '',
               name: '',
-              address: '',
               status: '',
             }
           }
@@ -129,7 +105,6 @@
             this.modelTitle = `Edit ${data.name}'s Information`;
             this.editMode = true;
             this.form.name = data.name;
-            this.form.address = data.address;
             this.form.status = data.status;
             this.form.id = data.id;
             $("#default").modal('show');
@@ -138,10 +113,9 @@
             $("#default").modal('hide');
           },
           cleanForm: function () {
-            this.modelTitle = this.__('Create New Stock');
+            this.modelTitle = this.__('Create New Transaction Type');
             this.editMode = false;
             this.form.name = '';
-            this.form.address = '';
             this.form.id = '';
             this.form.status = '';
             Object.keys(this.errors).forEach((key, value) => {
@@ -157,32 +131,36 @@
           },
           store: function () {
             let self = this;
-            this.$inertia.post(this.route('stocks.store'), {
-              name: this.form.name,
-              address: this.form.address,
+            this.$inertia.post(this.route('transaction-types.store'), {
+              name: this.form.name
             }).then(function () {
               if (Object.keys(self.errors).length === 0) {
                 self.closeModel();
                 self.cleanForm();
-                self.$toast('Stock Created Successfully');
+                self.$toast('Transaction Type Created Successfully');
               }
             });
           },
           update: function () {
             let self = this;
-            this.$inertia.post(this.route('stocks.update', this.form.id), {
+            this.$inertia.post(this.route('transaction-types.update', this.form.id), {
               name: this.form.name,
-              address: this.form.address,
               status: this.form.status,
               _method: "put"
             }).then(function () {
               if (Object.keys(self.errors).length === 0) {
                 self.closeModel();
                 self.cleanForm();
-                self.$toast('Stock Updated Successfully');
+                self.$toast('Transaction Type Updated Successfully');
               }
             });
           },
+          remove: async function (transaction_type) {
+            if (await this.$confirm()) {
+              this.$inertia.delete(this.route('transaction-types.destroy',transaction_type.id));
+              this.$toast(`${transaction_type.name } deleted successfully`);
+            }
+          }
         }
     }
 </script>

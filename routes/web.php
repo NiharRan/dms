@@ -72,10 +72,21 @@ Route::group([
       Route::put('/product-types/{productTypeId}', 'ProductTypeController@update')->name('product-types.update');
       Route::delete('/product-types/{productTypeId}', 'ProductTypeController@destroy')->name('product-types.destroy');
 
-       // Product type routes
+      // Transaction type routes
+      Route::get('/transaction-types', 'TransactionTypeController@index')->name('transaction-types.index');
+      Route::post('/transaction-types', 'TransactionTypeController@store')->name('transaction-types.store');
+      Route::put('/transaction-types/{transactionTypeId}', 'TransactionTypeController@update')->name('transaction-types.update');
+      Route::delete('/transaction-types/{transactionTypeId}', 'TransactionTypeController@destroy')->name('transaction-types.destroy');
+
+       // Stock routes
        Route::get('/stocks', 'StockController@index')->name('stocks.index');
        Route::post('/stocks', 'StockController@store')->name('stocks.store');
        Route::put('/stocks/{stockId}', 'StockController@update')->name('stocks.update');
+
+       // Stock details routes
+       Route::get('/stock-details', 'StockDetailsController@index')->name('stock-details.index');
+       Route::post('/stock-details', 'StockDetailsController@store')->name('stock-details.store');
+       Route::put('/stock-details/{stockDetailsId}', 'StockDetailsController@update')->name('stock-details.update');
 
       // Product routes
       Route::get('/products', 'ProductController@index')->name('products.index');

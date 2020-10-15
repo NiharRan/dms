@@ -38,4 +38,9 @@ class DriverInvoice extends MyModel
   {
     return $this->belongsTo('App\User');
   }
+
+  public function transactions()
+  {
+    return $this->morphMany('\App\Transaction', 'transactionable');
+  }
 }
