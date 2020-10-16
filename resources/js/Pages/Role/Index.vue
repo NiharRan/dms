@@ -30,7 +30,6 @@
                       <td v-html="$options.filters.status(role.status)"></td>
                       <td class="text-center">
                         <a @click.prevent="setData(role)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                        <a @click.prevent="remove(role)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
                       </td>
                     </tr>
                   </tbody>
@@ -156,12 +155,6 @@
               }
             });
           },
-          remove: async function (role) {
-            if (await this.$confirm()) {
-              this.$inertia.delete(this.route('roles.destroy', role.id));
-              this.$toast(`${role.name } deleted successfully`);
-            }
-          }
         }
     }
 </script>

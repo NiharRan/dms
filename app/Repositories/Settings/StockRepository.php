@@ -33,7 +33,7 @@ class StockRepository
 
   public function findById($rowId)
   {
-    return $this->stock->find($rowId);
+    return $this->stock->with(['stock_details', 'stock_details.product'])->find($rowId);
   }
 
   public function setup(Stock $stock, Request $request)
@@ -73,4 +73,16 @@ class StockRepository
     return null;
   }
 
+  public function products($stockId)
+  {
+    $stockDetails = $this->findById($stockId)->stock_details;
+    $products = [];
+    if ($stockDetails->count() > 0) {
+      foreach ($stockDetails as $stockDetail) {
+        $stockDetail->product->quantity = $stockDetail->quantity;
+        $products[] = $stockDetail->product;
+      }
+    }
+    return $products;
+  }
 }

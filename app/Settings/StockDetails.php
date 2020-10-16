@@ -7,7 +7,7 @@ use App\MyModel;
 class StockDetails extends MyModel
 {
     protected $fillable = [
-        'stock_id', 'product_id', 'amount', 'status', 'creator'
+        'stock_id', 'product_id', 'amount', 'quantity', 'status', 'creator'
     ];
 
     public function stock()
@@ -18,5 +18,10 @@ class StockDetails extends MyModel
     public function product()
     {
         return $this->belongsTo('App\Settings\Product');
+    }
+
+    public function transaction()
+    {
+      return $this->morphOne('\App\Transaction', 'transactionable');
     }
 }

@@ -18,16 +18,22 @@ class Company extends MyModel
 
     public function getCurrentLogoAttribute()
     {
-      $logo = $this->images()->logo()->first()->name;
-      return "/storage/companies/$this->id/$logo";
+      $logo = $this->images()->logo()->first();
+      if ($logo) {
+        return "/storage/companies/$this->id/$logo->name";
+      }
+      return "/storage/companies/$this->id/default.jpeg";
     }
 
     public function getImageTypeAttribute()
     {
-      $imageType = $this->images()->logo()->first()->image_type;
-      if ($imageType === 1) return  'Logo';
-      elseif ($imageType == 2) return 'Banner';
-      else return 'Feature';
+      $imageType = $this->images()->logo()->first();
+      if ($imageType) {
+        if ($imageType->image_type === 1) return  'Logo';
+        elseif ($imageType->image_type === 2) return 'Banner';
+        else return 'Feature';
+      }
+      return "Logo";
     }
 
     public function getActivePhonesAttribute()

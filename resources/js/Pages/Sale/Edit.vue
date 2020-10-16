@@ -47,18 +47,65 @@
                 <div class="form-group">
                   <label>{{__("Products")}}</label>
                   <table class="table table-responsive-sm table-bordered">
-                    <thead class="bg-secondary">
-                      <tr>
-                        <th>{{__("Action")}}</th>
-                        <th>{{__("Track No.")}}</th>
-                        <th style="width: 25%">{{__("Product")}}</th>
-                        <th>{{__("Quantity")}}</th>
-                        <th>{{__("Price")}}</th>
-                        <th>{{__("Total")}}</th>
-                      </tr>
-                    </thead>
                     <tbody>
                       <tr v-for="(row, index) in sale.sale_details" :key="index">
+                        <td>
+                          <div class="row">
+                            <div class="col-md-4 col-12 my-1">
+                              <input type="text" v-model="row.track_no" class="form-control" :placeholder="__('Track No.')">
+                              <span v-if="sale_details_errors[index]" class="invalid-feedback" style="display: block;" role="alert">
+                                <strong>{{ sale_details_errors[index].track_no }}</strong>
+                              </span>
+                            </div>
+                            <div class="col-md-4 col-12 my-1">
+                              <multi-select
+                                v-model="row.stock"
+                                :options="stocks"
+                                :searchable="true"
+                                :close-on-select="true"
+                                :show-labels="true"
+                                @input="fetchProducts(row.stock)"
+                                label="name"
+                                track-by="name"
+                                :placeholder="__('Select Stock')"></multi-select>
+                                <span v-if="sale_details_errors[index]" class="invalid-feedback" style="display: block;" role="alert">
+                                  <strong>{{ sale_details_errors[index].stock }}</strong>
+                                </span>
+                            </div>
+                            <div class="col-md-4 col-12 my-1">
+                              <multi-select
+                                v-model="row.product"
+                                :options="products"
+                                :searchable="true"
+                                :close-on-select="true"
+                                :show-labels="true"
+                                label="name"
+                                track-by="name"
+                                :placeholder="__('Select Product')"></multi-select>
+                                <span v-if="sale_details_errors[index]" class="invalid-feedback" style="display: block;" role="alert">
+                                  <strong>{{ sale_details_errors[index].product }}</strong>
+                                </span>
+                            </div>
+                            <div class="col-md-3 col-12 my-1">
+                              <input type="text" readonly class="form-control" :value="[row.product ? row.product.quantity : '']" :placeholder="__('Available Stock')">
+                            </div>
+                            <div class="col-md-3 col-12 my-1">
+                              <input type="text" v-model="row.quantity" @keyup="calculateTotalWhenQuantityChange(index)" class="form-control" :placeholder="__('Product Quantity')">
+                              <span v-if="sale_details_errors[index]" class="invalid-feedback" style="display: block;" role="alert">
+                                <strong>{{ sale_details_errors[index].quantity }}</strong>
+                              </span>
+                            </div>
+                            <div class="col-md-3 col-12 my-1">
+                              <input type="text" v-model="row.price" @keyup="calculateTotalWhenPriceChange(index)" class="form-control" :placeholder="__('Product Price')">
+                              <span v-if="sale_details_errors[index]" class="invalid-feedback" style="display: block;" role="alert">
+                                <strong>{{ sale_details_errors[index].price }}</strong>
+                              </span>
+                            </div>
+                            <div class="col-md-3 col-12 my-1">
+                              <input type="text" readonly :value="parseFloat(row.price * row.quantity).toFixed(2)" class="form-control" :placeholder="__('Total')">
+                            </div>
+                          </div>
+                        </td>
                         <th>
                           <button
                             class="btn btn-outline-danger"
@@ -66,50 +113,27 @@
                             type="button"><i class="feather icon-trash"></i>
                           </button>
                         </th>
-                        <th>
-                          <input type="text" v-model="row.track_no" class="form-control" :placeholder="__('Track No.')">
-                        </th>
-                        <th>
-                          <multi-select
-                            v-model="row.product"
-                            :options="products"
-                            :searchable="true"
-                            :close-on-select="true"
-                            :show-labels="true"
-                            label="name"
-                            track-by="name"
-                            :placeholder="__('Select Product')"></multi-select>
-                        </th>
-                        <th>
-                          <input type="text" v-model="row.quantity" @keyup="calculateTotalWhenQuantityChange(index)" class="form-control" :placeholder="__('Product Quantity')">
-                        </th>
-                        <th>
-                          <input type="text" v-model="row.price" @keyup="calculateTotalWhenPriceChange(index)" class="form-control" :placeholder="__('Product Price')">
-                        </th>
-                        <th>
-                          <input type="text" v-model="row.amount" readonly class="form-control" :placeholder="__('Total')">
-                        </th>
                       </tr>
                       <tr>
+                        <th></th>
                         <th>
                           <button @click.prevent="addNewItem" class="btn btn-outline-success"><i class="feather icon-plus"></i></button>
                         </th>
-                        <th colspan="5"></th>
                       </tr>
                       <tr>
-                        <th colspan="5" class="text-right">{{__("Total")}}</th>
+                        <th class="text-right">{{__("Total")}}</th>
                         <th><input type="text" v-model="sale.total_price" readonly class="form-control" :placeholder="__('Total')"></th>
                       </tr>
                       <tr>
-                        <th colspan="5" class="text-right">{{__("Paid")}}</th>
+                        <th class="text-right">{{__("Paid")}}</th>
                         <th><input type="text" v-model="sale.total_paid" @keyup="calculateDue" class="form-control" :placeholder="__('Paid')"></th>
                       </tr>
                       <tr>
-                        <th colspan="5" class="text-right">{{__("Due") }}</th>
+                        <th class="text-right">{{__("Due") }}</th>
                         <th><input type="text" v-model="sale.total_due" readonly class="form-control" :placeholder="__('Due')"></th>
                       </tr>
                       <tr>
-                        <th colspan="6" class="text-right">
+                        <th colspan="2" class="text-right">
                           <button type="button" class="btn btn-secondary"><i class="feather icon-x"></i> {{__("Cancel")}}</button>
                           <button type="submit" class="btn btn-success"><i class="feather icon-printer"></i> {{__("Update")}}</button>
                         </th>
@@ -129,6 +153,7 @@
 </template>
 
 <script>
+  import axios from 'axios';
   import Layout from "../../Shared/Layout";
   import Model from "../../Components/Model";
 
@@ -138,14 +163,16 @@
     props: {
       success: String,
       clients: Array,
-      products: Array,
+      stocks: Array,
       company: Object,
       sale: Object,
       errors: Object,
     },
     data: function () {
       return {
-
+        products: [],
+        sale_details_errors: [],
+        invalid: false
       }
     },
     methods: {
@@ -191,43 +218,54 @@
         }
       },
       update: async function () {
-        let self = this;
-        const client_id = this.sale.client ? this.sale.client.id : '';
-        const products = await this.sale.sale_details.map(item => {
-          if(item.product) return item.product.id
-          return '';
-        });
-        const tracks = await this.sale.sale_details.map(item => {
-          if(item.track_no) return item.track_no;
-          return '';
-        });
-        const quantities = await this.sale.sale_details.map(item => {
-          return item.quantity;
-        });
-        const prices = await this.sale.sale_details.map(item => {
-          return item.price;
-        });
-        const totals = await this.sale.sale_details.map(item => {
-          return item.amount;
-        });
-        this.$inertia.put(this.route('sales.update', this.sale.id), {
-          total_price: this.sale.total_price,
-          total_due: this.sale.total_due,
-          total_paid: this.sale.total_paid,
-          client_id: client_id,
-          company_id: this.company.id,
-          sale_date: this.sale.sale_date,
-          products: products,
-          tracks: tracks,
-          quantities: quantities,
-          prices: prices,
-          totals: totals,
-        })
+        let errors = this.isValid();
+        if (!this.invalid) {
+          let self = this;
+          const client_id = this.sale.client ? this.sale.client.id : '';
+          const stocks = await this.sale.sale_details.map(item => {
+            if(item.stock) return item.stock.id
+            return '';
+          });
+          const products = await this.sale.sale_details.map(item => {
+            if(item.product) return item.product.id
+            return '';
+          });
+          const tracks = await this.sale.sale_details.map(item => {
+            if(item.track_no) return item.track_no;
+            return '';
+          });
+          const quantities = await this.sale.sale_details.map(item => {
+            return item.quantity;
+          });
+          const prices = await this.sale.sale_details.map(item => {
+            return item.price;
+          });
+          const totals = await this.sale.sale_details.map(item => {
+            return item.amount;
+          });
+          this.$inertia.put(this.route('sales.update', this.sale.id), {
+            total_price: this.sale.total_price,
+            total_due: this.sale.total_due,
+            total_paid: this.sale.total_paid,
+            client_id: client_id,
+            company_id: this.company.id,
+            sale_date: this.sale.sale_date,
+            stocks: stocks,
+            products: products,
+            tracks: tracks,
+            quantities: quantities,
+            prices: prices,
+            totals: totals,
+          })
           .then(function () {
             if (Object.keys(self.errors).length === 0) {
               self.$toast('Sale Created Successfully');
             }
           });
+        }else {
+          this.sale_details_errors = errors;
+          this.invalid = false;
+        }
       },
       addNewItem: function () {
         const saleDetail = {
@@ -244,6 +282,41 @@
         this.sale.total_price -= removedItem.amount;
         this.sale.total_due -= removedItem.amount;
         this.sale.sale_details.splice(index, 1);
+      },
+      fetchProducts: function (stock) {
+        let self = this;
+        axios.get(this.route('stocks.products', stock.id))
+        .then(({data}) => {
+          self.products = data;
+        });
+      },
+      isValid: function () {
+        let errors = [];
+        this.sale.sale_details.forEach((row, index) => {
+          let error = {};
+          if(row.stock === null) {
+            this.invalid = true;
+            error.stock = 'Stock is required';
+          }
+          if(row.product === null) {
+            this.invalid = true;
+            error.product = 'Product is required';
+          }
+          if(row.track_no === '') {
+            this.invalid = true;
+            error.track_no = 'Track No. is required';
+          }
+          if(row.quantity === '') {
+            this.invalid = true;
+            error.quantity = 'Product quantity is required';
+          }
+          if(row.price === '0.00' || row.price === '') {
+            this.invalid = true;
+            error.price = 'Product price is required';
+          }
+          errors[index] = error;
+        });
+        return errors;
       }
     },
     created() {

@@ -6,6 +6,7 @@ namespace App\Repositories;
 
 use App\Sale;
 use App\Services\InvoiceService;
+use App\Settings\StockDetails;
 use App\Traits\RepositoryTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -62,7 +63,7 @@ class SaleRepository
       'company',
       'creator',
       'sale_details' => function ($q) {
-        $q->with('product');
+        $q->with(['stock', 'product']);
       }
     ])->find($rowId);
   }
@@ -74,7 +75,7 @@ class SaleRepository
       'company',
       'creator',
       'sale_details' => function ($q) {
-        $q->with('product');
+        $q->with(['stock', 'product']);
       },
     ])->where('invoice', $invoice)->first();
   }
@@ -99,8 +100,21 @@ class SaleRepository
     $sale = $this->setupData($sale, $request);
     $sale->status = filter_var($request->status, FILTER_VALIDATE_BOOLEAN) ;
     $sale->user_id = Auth::id();
+
     if ($sale->save()) {
+      // First increment stock by adding old sale stock data
+      $saleDetails = $sale->sale_details()->get();
+      foreach ($saleDetails as $saleDetail) {
+        $stock_id = $saleDetail->stock_id;
+        $product_id = $saleDetail->product_id;
+        $quantity = $saleDetail->quantity;
+
+        $this->increaseStock($stock_id, $product_id, $quantity);
+      }
+
+      // Then delete old sale details
       $sale->sale_details()->delete();
+      // Now add updated sale info
       $this->storeSaleDetailsInfo($sale, $request);
       return $sale;
     }
@@ -123,15 +137,34 @@ class SaleRepository
   {
     foreach ($request->products as $key => $value) {
       if (!empty($value)) {
+        $stock_id = $request->stocks[$key];
+        $product_id = $request->products[$key];
+        $quantity = $request->quantities[$key];
         $saleDetail = [
-          'product_id' => $request->products[$key],
-          'quantity' => $request->quantities[$key],
+          'stock_id' => $stock_id,
+          'product_id' => $product_id,
+          'quantity' => $quantity,
           'price' => $request->prices[$key],
           'amount' => $request->totals[$key],
           'track_no' => $request->tracks[$key],
         ];
         $sale->sale_details()->create($saleDetail);
+        $this->reduceStock($stock_id, $product_id, $quantity);
       }
     }
+  }
+  private function reduceStock($stock_id, $product_id, $quantity)
+  {
+    StockDetails::where([
+      'stock_id' => $stock_id,
+      'product_id' => $product_id,
+    ])->decrement('quantity', $quantity);
+  }
+  private function increaseStock($stock_id, $product_id, $quantity)
+  {
+    StockDetails::where([
+      'stock_id' => $stock_id,
+      'product_id' => $product_id,
+    ])->increment('quantity', $quantity);
   }
 }

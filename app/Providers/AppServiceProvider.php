@@ -2,7 +2,13 @@
 
 namespace App\Providers;
 
+use App\DriverInvoice;
 use App\Helpers\Helper;
+use App\Observers\DriverInvoiceObserver;
+use App\Observers\SaleObserver;
+use App\Observers\StockDetailsObserver;
+use App\Sale;
+use App\Settings\StockDetails;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Illuminate\Support\ServiceProvider;
@@ -52,5 +58,11 @@ class AppServiceProvider extends ServiceProvider
         Inertia::share('auth', function () {
           return Auth::user() ? Auth::user() : null;
         });
+
+
+        // Observers
+        Sale::observe(SaleObserver::class);
+        DriverInvoice::observe(DriverInvoiceObserver::class);
+        StockDetails::observe(StockDetailsObserver::class);
     }
 }

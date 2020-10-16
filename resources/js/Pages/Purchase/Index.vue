@@ -19,6 +19,7 @@
                     <th>{{__("Stock")}}</th>
                     <th>{{__("Product")}}</th>
                     <th class="text-center">{{__("Quantity")}}</th>
+                    <th class="text-center">{{__("Amount")}}</th>
                     <th class="text-center">{{__("Status")}}</th>
                     <th class="text-center">{{__("Action")}}</th>
                   </tr>
@@ -28,6 +29,7 @@
                       <th>{{ index + 1 }}</th>
                       <th>{{ stock_detail.stock.name }}</th>
                       <th>{{ stock_detail.product.name }}</th>
+                      <th class="text-center">{{ stock_detail.quantity }}</th>
                       <th class="text-center">{{ stock_detail.amount }}</th>
                       <td v-html="$options.filters.status(stock_detail.status)"></td>
                       <td class="text-center">
@@ -41,7 +43,7 @@
           </div>
         </div>
       </div>
-      <model>
+      <model :size="'modal-lg'">
         <template v-slot:header>
           <h4 class="modal-title" id="myModalLabel1">{{ modelTitle }}</h4>
           <button type="button" @click="cleanForm" class="close" data-dismiss="modal" aria-label="Close">
@@ -52,41 +54,59 @@
         <form @submit.prevent="storeOrUpdate">
           <div class="modal-body">
               <div class="form-group">
-                <multi-select
-                    v-model="form.stock"
-                    :options="stocks"
-                    :searchable="true"
-                    :close-on-select="true"
-                    :show-labels="true"
-                    label="name"
-                    track-by="name"
-                    :placeholder="__('Select Stock')"></multi-select>
-                <span v-if="errors.stock_id" class="invalid-feedback" style="display: block;" role="alert">
-                    <strong>{{ errors.stock_id[0] }}</strong>
-                </span>
+                <div v-if="error" class="alert alert-danger">
+                  {{ error }}
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6 col-12">
+                  <label>{{ __('Stock') }}</label>
+                  <multi-select
+                      v-model="form.stock"
+                      :options="stocks"
+                      :searchable="true"
+                      :close-on-select="true"
+                      :show-labels="true"
+                      label="name"
+                      track-by="name"
+                      :placeholder="__('Select Stock')"></multi-select>
+                  <span v-if="errors.stock_id" class="invalid-feedback" style="display: block;" role="alert">
+                      <strong>{{ errors.stock_id[0] }}</strong>
+                  </span>
+                </div>
+                <div class="col-md-6 col-12">
+                  <label>{{ __('Product') }}</label>
+                  <multi-select
+                      v-model="form.product"
+                      :options="products"
+                      :searchable="true"
+                      :close-on-select="true"
+                      :show-labels="true"
+                      label="name"
+                      track-by="name"
+                      :placeholder="__('Select Product')"></multi-select>
+                  <span v-if="errors.product_id" class="invalid-feedback" style="display: block;" role="alert">
+                      <strong>{{ errors.product_id[0] }}</strong>
+                  </span>
+                </div>
               </div>
 
-              <div class="form-group">
-                <multi-select
-                    v-model="form.product"
-                    :options="products"
-                    :searchable="true"
-                    :close-on-select="true"
-                    :show-labels="true"
-                    label="name"
-                    track-by="name"
-                    :placeholder="__('Select Product')"></multi-select>
-                <span v-if="errors.product_id" class="invalid-feedback" style="display: block;" role="alert">
-                    <strong>{{ errors.product_id[0] }}</strong>
-                </span>
-              </div> 
-
-              <div class="form-group mb-0">
-                <input type="text" v-model="form.amount" class="form-control" :placeholder="__('Quantity')">
-                <span v-if="errors.amount" class="invalid-feedback" style="display: block;" role="alert">
-                    <strong>{{ errors.amount[0] }}</strong>
-                </span>
-              </div> 
+              <div class="form-group row mb-0">
+                <div class="col-md-6 col-12">
+                  <label>{{ __('Quantity') }}</label>
+                  <input type="text" v-model="form.quantity" class="form-control" :placeholder="__('Quantity')">
+                  <span v-if="errors.quantity" class="invalid-feedback" style="display: block;" role="alert">
+                      <strong>{{ errors.quantity[0] }}</strong>
+                  </span>
+                </div>
+                <div class="col-md-6 col-12">
+                  <label>{{ __('Amount') }}</label>
+                  <input type="text" v-model="form.amount" class="form-control" :placeholder="__('Amount')">
+                  <span v-if="errors.amount" class="invalid-feedback" style="display: block;" role="alert">
+                      <strong>{{ errors.amount[0] }}</strong>
+                  </span>
+                </div>
+              </div>
 
               <label class="float-left mt-2" v-if="editMode">
                 <input type="checkbox" v-model="form.status" :checked="[form.status ? true : false]">
@@ -113,6 +133,7 @@
         components: {Model, Layout},
         props: {
           success: String,
+          error: String,
           stock_details: Object,
           stocks: Array,
           products: Array,
@@ -138,6 +159,7 @@
             this.form.stock = data.stock;
             this.form.product = data.product;
             this.form.amount = data.amount;
+            this.form.quantity = data.quantity;
             this.form.status = data.status;
             this.form.id = data.id;
             $("#default").modal('show');
@@ -151,6 +173,7 @@
             this.form.stock = null;
             this.form.product = null;
             this.form.amount = '';
+            this.form.quantity = '';
             this.form.id = '';
             this.form.status = '';
             Object.keys(this.errors).forEach((key, value) => {
@@ -169,11 +192,12 @@
             let product_id = this.form.product === null ? '' : this.form.product.id;
             let self = this;
             this.$inertia.post(this.route('stock-details.store'), {
-              stock_id: this.form.stock_id,
-              product_id: this.form.product_id,
+              stock_id: stock_id,
+              product_id: product_id,
               amount: this.form.amount,
+              quantity: this.form.quantity,
             }).then(function () {
-              if (Object.keys(self.errors).length === 0) {
+              if (self.error === null && Object.keys(self.errors).length === 0) {
                 self.closeModel();
                 self.cleanForm();
                 self.$toast('Role Created Successfully');
@@ -186,9 +210,10 @@
             let product_id = this.form.product === null ? '' : this.form.product.id;
             let self = this;
             this.$inertia.post(this.route('stock-details.update', this.form.id), {
-              stock_id: this.form.stock_id,
-              product_id: this.form.product_id,
+              stock_id: stock_id,
+              product_id: product_id,
               amount: this.form.amount,
+              quantity: this.form.quantity,
               status: this.form.status,
               _method: "put"
             }).then(function () {
@@ -199,12 +224,6 @@
               }
             });
           },
-          remove: async function (stock_detail) {
-            if (await this.$confirm()) {
-              this.$inertia.delete(this.route('stock-details.destroy', stock_detail.id));
-              this.$toast(`${stock_detail.name } deleted successfully`);
-            }
-          }
         }
     }
 </script>

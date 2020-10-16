@@ -27,6 +27,7 @@ class StockDetailsRequest extends FormRequest
       'stock_id' => 'required',
       'product_id' => 'required',
       'amount' => 'required|integer|gte:0',
+      'quantity' => 'required|integer|gte:0',
     ];
   }
 
@@ -43,6 +44,9 @@ class StockDetailsRequest extends FormRequest
       'amount.required' => 'Stock amount is required',
       'amount.integer' => 'Invalid stock amount',
       'amount.gte' => 'Stock amount must be greater then or equal zero',
+      'quantity.required' => 'Stock quantity is required',
+      'quantity.integer' => 'Invalid stock quantity',
+      'quantity.gte' => 'Stock quantity must be greater then or equal zero',
     ];
     return $messages;
   }

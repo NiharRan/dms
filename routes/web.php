@@ -31,13 +31,11 @@ Route::group([
       ->name('users.profile.avatar.update');
     Route::post('/users', 'UserController@store')->name('users.store');
     Route::put('/users/{id}', 'UserController@update')->name('users.update');
-    Route::delete('/users/{id}', 'UserController@destroy')->name('users.destroy');
 
     // Company routes
     Route::get('/companies', 'CompanyController@index')->name('companies.index');
     Route::post('/companies', 'CompanyController@store')->name('companies.store');
     Route::put('/companies/{companyId}', 'CompanyController@update')->name('companies.update');
-    Route::delete('/companies/{companyId}', 'CompanyController@destroy')->name('companies.destroy');
     Route::get('/companies/{slug}', 'CompanyProfileController@show')->name('companies.show');
 
     // Sale routes
@@ -70,18 +68,17 @@ Route::group([
       Route::get('/product-types', 'ProductTypeController@index')->name('product-types.index');
       Route::post('/product-types', 'ProductTypeController@store')->name('product-types.store');
       Route::put('/product-types/{productTypeId}', 'ProductTypeController@update')->name('product-types.update');
-      Route::delete('/product-types/{productTypeId}', 'ProductTypeController@destroy')->name('product-types.destroy');
 
       // Transaction type routes
       Route::get('/transaction-types', 'TransactionTypeController@index')->name('transaction-types.index');
       Route::post('/transaction-types', 'TransactionTypeController@store')->name('transaction-types.store');
       Route::put('/transaction-types/{transactionTypeId}', 'TransactionTypeController@update')->name('transaction-types.update');
-      Route::delete('/transaction-types/{transactionTypeId}', 'TransactionTypeController@destroy')->name('transaction-types.destroy');
 
        // Stock routes
        Route::get('/stocks', 'StockController@index')->name('stocks.index');
        Route::post('/stocks', 'StockController@store')->name('stocks.store');
        Route::put('/stocks/{stockId}', 'StockController@update')->name('stocks.update');
+       Route::get('/stocks/{stockId}/products', 'StockController@products')->name('stocks.products');
 
        // Stock details routes
        Route::get('/stock-details', 'StockDetailsController@index')->name('stock-details.index');
@@ -92,42 +89,36 @@ Route::group([
       Route::get('/products', 'ProductController@index')->name('products.index');
       Route::post('/products', 'ProductController@store')->name('products.store');
       Route::put('/products/{productId}', 'ProductController@update')->name('products.update');
-      Route::delete('/products/{productId}', 'ProductController@destroy')->name('products.destroy');
 
       // Client routes
       Route::get('/clients', 'ClientController@index')->name('clients.index');
       Route::post('/clients', 'ClientController@store')->name('clients.store');
       Route::put('/clients/{clientId}', 'ClientController@update')->name('clients.update');
-      Route::delete('/clients/{clientId}', 'ClientController@destroy')->name('clients.destroy');
     });
 
     Route::group([
-      'prefix' => 'users',
+      'prefix' => 'settings',
       'namespace' => 'Users'
     ], function () {
       // Role routes
-      Route::get('/roles', 'Role@index')->name('roles.index');
+      Route::get('/roles', 'RoleController@index')->name('roles.index');
       Route::post('/roles', 'RoleController@store')->name('roles.store');
       Route::put('/roles/{roleId}', 'RoleController@update')->name('roles.update');
-      Route::delete('/roles/{roleId}', 'RoleController@destroy')->name('roles.destroy');
 
       // Gender routes
       Route::get('/genders', 'GenderController@index')->name('genders.index');
       Route::post('/genders', 'GenderController@store')->name('genders.store');
       Route::put('/genders/{genderId}', 'GenderController@update')->name('genders.update');
-      Route::delete('/genders/{genderId}', 'GenderController@destroy')->name('genders.destroy');
 
       // Religion routes
       Route::get('/religions', 'ReligionController@index')->name('religions.index');
       Route::post('/religions', 'ReligionController@store')->name('religions.store');
       Route::put('/religions/{religionId}', 'ReligionController@update')->name('religions.update');
-      Route::delete('/religions/{religionId}', 'ReligionController@destroy')->name('religions.destroy');
 
       // Blood group routes
       Route::get('/blood-groups', 'GenderController@index')->name('blood-groups.index');
       Route::post('/blood-groups', 'GenderController@store')->name('blood-groups.store');
       Route::put('/blood-groups/{bloodGroupId}', 'GenderController@update')->name('blood-groups.update');
-      Route::delete('/blood-groups/{bloodGroupId}', 'GenderController@destroy')->name('blood-groups.destroy');
     });
   });
 });

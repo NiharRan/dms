@@ -29,6 +29,7 @@
                         <th scope="col">{{__("S.N.")}}</th>
                         <th>{{__("Product")}}</th>
                         <th class="text-center">{{__("Quantity")}}</th>
+                        <th class="text-right">{{__("Amount")}}</th>
                         <th class="text-center">{{__("Action")}}</th>
                       </tr>
                       </thead>
@@ -36,7 +37,8 @@
                         <tr v-for="(stock_detail, i) in stock.stock_details" :key="stock_detail.id">
                           <th>{{ i + 1 }}</th>
                           <th>{{ stock_detail.product.name }}</th>
-                          <th>{{ stock_detail.amount }}</th>
+                          <th class="text-center">{{ stock_detail.quantity }}</th>
+                          <th class="text-right">{{ stock_detail.amount }}</th>
                           <td class="text-center">
                             <a @click.prevent="setData(stock_detail)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
                           </td>

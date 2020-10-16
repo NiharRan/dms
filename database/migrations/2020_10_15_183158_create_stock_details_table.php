@@ -22,7 +22,8 @@ class CreateStockDetailsTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
 
-            $table->unsignedInteger('amount');
+            $table->decimal('amount', 10);
+            $table->decimal('quantity', 10);
             $table->boolean('status')->default(1);
 
             $table->unsignedBigInteger('user_id');

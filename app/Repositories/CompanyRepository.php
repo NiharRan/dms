@@ -40,7 +40,6 @@ class CompanyRepository
       $search = \request()->search;
       $companies = $companies->where('name', 'like', "%$search")
         ->orWhere('owner', 'like', "%$search")
-        ->orWhere('phone', 'like', "%$search")
         ->orWhere('email', 'like', "%$search");
     }
     return $companies->orderBy('name', 'asc');
@@ -120,21 +119,21 @@ class CompanyRepository
 
   public function updateImageStatus(Company $company, $image_type)
   {
-    if ($company->images()
-      ->where('image_type', $image_type)
-      ->update(['status' => 0])) {
-      return $company;
+    if ($company->images()) {
+        $company->images()
+        ->where('image_type', $image_type)
+        ->update(['status' => 0]);
     }
-    return null;
   }
 
   public function storeImage(Company $company, string $fileName, $image_type)
   {
-    return $company->images()->create([
+    $company->images()->create([
       'name' => $fileName,
       'image_type' => $image_type,
       'status' => 1
     ]);
+    return $company;
   }
 
 

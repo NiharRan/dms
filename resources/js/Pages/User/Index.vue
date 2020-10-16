@@ -30,7 +30,6 @@
                       <td v-html="$options.filters.status(user.status)"></td>
                       <td class="text-center">
                         <a @click.prevent="setData(user)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                        <a @click.prevent="remove(user)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
                       </td>
                     </tr>
                     </tbody>
@@ -259,12 +258,6 @@
             }
           });
         },
-        remove: async function (user) {
-          if (await this.$confirm()) {
-            this.$inertia.delete(this.route('users.destroy', user.id));
-            this.$toast(`${user.name } ${this.__('Deleted Successfully')}`);
-          }
-        }
       }
     }
 </script>

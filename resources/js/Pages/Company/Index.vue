@@ -67,7 +67,6 @@
                     <td v-html="$options.filters.status(company.status)"></td>
                     <td class="text-center">
                       <a @click.prevent="editData(company)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                      <a @click.prevent="removeData(company)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
                     </td>
                   </tr>
                   </tbody>
@@ -368,12 +367,6 @@
             this.form.status = data.status;
             this.form.image_url = data.current_logo;
             $("#default").modal('show');
-          },
-          removeData: async function (data) {
-            if (await this.$confirm()) {
-              this.$inertia.delete(this.route('companies.destroy', data.id));
-              this.$toast(`${data.name }s record deleted successfully`);
-            }
           },
         },
         created() {

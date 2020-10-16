@@ -93,6 +93,8 @@
                   <table class="table font-medium-3">
                     <thead>
                     <tr>
+                      <th>{{ __('Track No.') }}</th>
+                      <th>{{ __('Stock') }}</th>
                       <th>{{ __('Product Type') }}</th>
                       <th class="text-center">{{ __('Product Quantity') }}</th>
                       <th class="text-right">{{ __('Price') }}</th>
@@ -101,21 +103,23 @@
                     </thead>
                     <tbody>
                     <tr v-for="row in sale.sale_details" :key="row.id">
+                      <th>{{ row.track_no }}</th>
+                      <th>{{ row.stock.name }}</th>
                       <th>{{ row.product.name }}</th>
                       <th class="text-center">{{ row.quantity }} {{ __('Mg')}}</th>
                       <th class="text-right">{{ row.price }}</th>
                       <th class="text-right">{{ row.amount }}</th>
                     </tr>
                     <tr>
-                      <th colspan="3" class="text-right">{{ __('Total Amount') }}</th>
+                      <th colspan="5" class="text-right">{{ __('Total Amount') }}</th>
                       <th class="text-right">{{ sale.total_price }}</th>
                     </tr>
                     <tr>
-                      <th colspan="3" class="text-right">{{ __('Paid') }}</th>
+                      <th colspan="5" class="text-right">{{ __('Paid') }}</th>
                       <th class="text-right">{{ sale.total_paid }}</th>
                     </tr>
                     <tr>
-                      <th colspan="3" class="text-right">{{ __('Due') }}</th>
+                      <th colspan="5" class="text-right">{{ __('Due') }}</th>
                       <th class="text-right">{{ sale.total_due }}</th>
                     </tr>
                     </tbody>

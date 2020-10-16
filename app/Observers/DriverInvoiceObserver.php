@@ -22,7 +22,7 @@ class DriverInvoiceObserver
      */
     public function created(DriverInvoice $driverInvoice)
     {
-        $driverInvoice->transactions()->create([
+        $driverInvoice->transaction()->create([
             'transaction_type_id' => $this->transactionType->id,
             'amount' => $driverInvoice->total,
             'user_id' => $this->user->id,
@@ -37,8 +37,8 @@ class DriverInvoiceObserver
      */
     public function updated(DriverInvoice $driverInvoice)
     {
-        $driverInvoice->transactions()->delete();
-        $driverInvoice->transactions()->create([
+        $driverInvoice->transaction()->delete();
+        $driverInvoice->transaction()->create([
             'transaction_type_id' => $this->transactionType->id,
             'amount' => $driverInvoice->total,
             'user_id' => $this->user->id,
@@ -53,6 +53,6 @@ class DriverInvoiceObserver
      */
     public function deleted(DriverInvoice $driverInvoice)
     {
-        $driverInvoice->transactions()->delete();
+        $driverInvoice->transaction()->delete();
     }
 }

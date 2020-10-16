@@ -30,7 +30,6 @@
                       <td v-html="$options.filters.status(blood_group.status)"></td>
                       <td class="text-center">
                         <a @click.prevent="setData(blood_group)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                        <a @click.prevent="remove(blood_group)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
                       </td>
                     </tr>
                   </tbody>
@@ -151,12 +150,6 @@
               self.$toast('Blood Group Updated Successfully');
             });
           },
-          remove: async function (blood_group) {
-            if (await this.$confirm()) {
-              this.$inertia.delete(this.route('blood-groups.destroy', blood_group.id));
-              this.$toast(`${blood_group.name } deleted successfully`);
-            }
-          }
         }
     }
 </script>

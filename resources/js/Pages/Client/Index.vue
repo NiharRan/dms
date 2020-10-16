@@ -34,7 +34,6 @@
                       <td v-html="$options.filters.status(client.status)"></td>
                       <td class="text-center">
                         <a @click.prevent="setData(client)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                        <a @click.prevent="remove(client)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
                       </td>
                     </tr>
                   </tbody>
@@ -189,12 +188,6 @@
               }
             });
           },
-          remove: async function (client) {
-            if (await this.$confirm()) {
-              this.$inertia.delete(this.route('clients.destroy',client.id));
-              this.$toast(`${client.name } deleted successfully`);
-            }
-          }
         }
     }
 </script>

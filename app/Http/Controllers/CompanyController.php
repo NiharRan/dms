@@ -85,7 +85,7 @@ class CompanyController extends Controller
       //Upload File
       $this->companyRepository->uploadImage($fileNameToStore, $request, $id);
 
-      $company = $this->companyRepository->updateImageStatus($company, 1); // 1 => profileImage
+      $this->companyRepository->updateImageStatus($company, 1); // 1 => profileImage
       $company = $this->companyRepository->storeImage($company, $fileNameToStore, 1);// 1 => profileImage
     }
     if ($company->save()) {

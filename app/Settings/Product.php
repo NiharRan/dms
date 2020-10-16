@@ -45,4 +45,9 @@ class Product extends MyModel
   {
     return $this->belongsTo('App\Settings\ProductType');
   }
+
+  public function sale_details()
+  {
+    return $this->belongsTo('App\SaleDetails');
+  }
 }

@@ -30,7 +30,6 @@
                       <td v-html="$options.filters.status(transaction_type.status)"></td>
                       <td class="text-center">
                         <a @click.prevent="setData(transaction_type)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                        <a @click.prevent="remove(transaction_type)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
                       </td>
                     </tr>
                   </tbody>
@@ -155,12 +154,6 @@
               }
             });
           },
-          remove: async function (transaction_type) {
-            if (await this.$confirm()) {
-              this.$inertia.delete(this.route('transaction-types.destroy',transaction_type.id));
-              this.$toast(`${transaction_type.name } deleted successfully`);
-            }
-          }
         }
     }
 </script>

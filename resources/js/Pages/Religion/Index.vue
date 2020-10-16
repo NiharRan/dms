@@ -30,7 +30,6 @@
                       <td v-html="$options.filters.status(religion.status)"></td>
                       <td class="text-center">
                         <a @click.prevent="setData(religion)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                        <a @click.prevent="remove(religion)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
                       </td>
                     </tr>
                   </tbody>
@@ -155,12 +154,6 @@
               }
             });
           },
-          remove: async function (religion) {
-            if (await this.$confirm()) {
-              this.$inertia.delete(this.route('religions.destroy', religion.id));
-              this.$toast(`${religion.name } deleted successfully`);
-            }
-          }
         }
     }
 </script>

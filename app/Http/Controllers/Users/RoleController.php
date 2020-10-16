@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Users;
 
 use App\Http\Requests\Users\RoleRequest;
 use App\Repositories\Users\RoleRepository;
-use App\Users\Role;
 use App\Http\Controllers\Controller;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -70,22 +69,5 @@ class RoleController extends Controller
           'role' => $role
         ]);
     }
-  }
-
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param $id
-   * @return \Illuminate\Http\Response
-   */
-  public function destroy($id)
-  {
-    $role = Role::find($id);
-    $name = $role->name;
-    if ($role->delete()) return redirect()
-      ->route('roles.index')
-      ->with([
-        'success' => "$name deleted successfully!"
-      ]);
   }
 }

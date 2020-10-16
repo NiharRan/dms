@@ -30,7 +30,6 @@
                       <td v-html="$options.filters.status(product_type.status)"></td>
                       <td class="text-center">
                         <a @click.prevent="setData(product_type)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                        <a @click.prevent="remove(product_type)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
                       </td>
                     </tr>
                   </tbody>
@@ -155,12 +154,6 @@
               }
             });
           },
-          remove: async function (product_type) {
-            if (await this.$confirm()) {
-              this.$inertia.delete(this.route('product-types.destroy',product_type.id));
-              this.$toast(`${product_type.name } deleted successfully`);
-            }
-          }
         }
     }
 </script>

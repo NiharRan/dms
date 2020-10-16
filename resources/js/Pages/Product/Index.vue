@@ -50,7 +50,6 @@
                     <td v-html="$options.filters.status(product.status)"></td>
                     <td class="text-center">
                       <a @click.prevent="editData(product)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
-                      <a @click.prevent="removeData(product)" href="" class="text-warning" role="button"><i class="feather icon-trash"></i></a>
                     </td>
                   </tr>
                   </tbody>
@@ -243,12 +242,6 @@
             this.form.id = data.id;
             this.form.image_url = data.image_original;
             $("#default").modal('show');
-          },
-          removeData: async function (data) {
-            if (await this.$confirm()) {
-              this.$inertia.delete(this.route('products.destroy', data.id));
-              this.$toast(`${data.name }s record deleted successfully`);
-            }
           },
         },
         created() {

@@ -41,6 +41,10 @@ class StockDetailsRepository
       $rows = $rows->where('amount', request()->amount);
     }
 
+    if (request()->has('quantity') && !empty(request()->quantity)) {
+      $rows = $rows->where('quantity', request()->quantity);
+    }
+
     return $rows;
   }
 
@@ -79,11 +83,20 @@ class StockDetailsRepository
   {
     $row = new StockDetails();
     $row = $this->setup($row, $request);
-
+    $row->amount = $request->amount;
+    $row->quantity = $request->quantity;
     if($row->save()) {
       return $row;
     }
     return null;
+  }
+
+  public function alreadyExists($stock_id, $product_id)
+  {
+    return $this->stockDetails->where([
+      'stock_id' => $stock_id,
+      'product_id' => $product_id
+    ])->active()->first();
   }
 
 }

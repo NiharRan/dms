@@ -65,4 +65,19 @@ class StockController extends Controller
         ->with('success', 'Stock info updated successfully!');
     }
   }
+
+  /**
+   * fetch all products of specific stock.
+   *
+   * @param $id
+   * @return \Illuminate\Http\Response
+   */
+  public function products($id)
+  {
+    $products = $this->stockRepository->products($id);
+    if ($products) {
+      return response()
+        ->json($products);
+    }
+  }
 }
