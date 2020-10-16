@@ -98,7 +98,12 @@
                           :placeholder="__('Select Product')"></multi-select>
                       </th>
                       <th>
-                        <input type="text" v-model="driver_invoice.scale" class="form-control" :placeholder="__('Scale')">
+                        <multi-select
+                          v-model="driver_invoice.measurement_type"
+                          :options="measurement_types"
+                          label="name"
+                          track-by="name"
+                          :placeholder="__('Select Measurement Type')"></multi-select>
                       </th>
                       <th>
                         <input type="text" v-model="driver_invoice.quantity" class="form-control" :placeholder="__('Quantity')">
@@ -179,6 +184,7 @@
       driver_invoice: Object,
       clients: Array,
       products: Array,
+      measurement_types: Array,
       errors: Object,
     },
     data: function () {
@@ -212,6 +218,7 @@
         let self = this;
         const client_id = this.driver_invoice.client ? this.driver_invoice.client.id : '';
         const product_id = this.driver_invoice.product ? this.driver_invoice.product.id : '';
+        const measurement_type_id = this.driver_invoice.measurement_type ? this.driver_invoice.measurement_type.id : '';
         this.$inertia.put(this.route('drivers.invoices.update', this.driver_invoice.id), {
           client_id: client_id,
           company_id: this.driver_invoice.company.id,
@@ -219,6 +226,7 @@
           track_no: this.driver_invoice.track_no,
           driver_phone: this.driver_invoice.driver_phone,
           product_id: product_id,
+          measurement_type_id: measurement_type_id,
           quantity: this.driver_invoice.quantity,
           scale: this.driver_invoice.scale,
           amount: this.driver_invoice.amount,

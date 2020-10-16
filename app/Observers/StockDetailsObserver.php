@@ -39,11 +39,7 @@ class StockDetailsObserver
     public function updated(StockDetails $stockDetails)
     {
         $stockDetails->transaction()->delete();
-        $stockDetails->transaction()->create([
-            'transaction_type_id' => $this->transactionType->id,
-            'amount' => $stockDetails->amount,
-            'user_id' => $this->user->id,
-        ]);
+        $this->created($stockDetails);
     }
 
     /**

@@ -98,7 +98,15 @@
                           :placeholder="__('Select Product')"></multi-select>
                       </th>
                       <th>
-                        <input type="text" v-model="form.scale" class="form-control" :placeholder="__('Scale')">
+                        <multi-select
+                          v-model="form.measurement_type"
+                          :options="measurement_types"
+                          label="name"
+                          track-by="name"
+                          :placeholder="__('Select Measurement Type')"></multi-select>
+                        <span v-if="errors.measurement_type_id" class="invalid-feedback" style="display: block;" role="alert">
+                          <strong>{{ errors.measurement_type_id[0] }}</strong>
+                        </span>
                       </th>
                       <th>
                         <input type="text" v-model="form.quantity" class="form-control" :placeholder="__('Quantity')">
@@ -174,6 +182,7 @@
       success: String,
       clients: Array,
       products: Array,
+      measurement_types: Array,
       company: Object,
       errors: Object,
     },
@@ -187,7 +196,7 @@
           address: '',
           product: null,
           quantity: '',
-          scale: '',
+          measurement_type: '',
           amount: '',
           driver_name: '',
           track_no: '',
@@ -226,6 +235,7 @@
         let self = this;
         const client_id = this.form.client ? this.form.client.id : '';
         const product_id = this.form.product ? this.form.product.id : '';
+        const measurement_type_id = this.form.measurement_type ? this.form.measurement_type.id : '';
         this.$inertia.post(this.route('drivers.invoices.store'), {
           client_id: client_id,
           company_id: this.company.id,
@@ -233,8 +243,8 @@
           track_no: this.form.track_no,
           driver_phone: this.form.driver_phone,
           product_id: product_id,
+          measurement_type_id: measurement_type_id,
           quantity: this.form.quantity,
-          scale: this.form.scale,
           amount: this.form.amount,
           track_rent: this.form.track_rent,
           others: this.form.others,

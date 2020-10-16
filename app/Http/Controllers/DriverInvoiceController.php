@@ -6,6 +6,7 @@ use App\Company;
 use App\Http\Requests\DriverInvoiceRequest;
 use App\Repositories\DriverInvoiceRepository;
 use App\Settings\Client;
+use App\Settings\MeasurementType;
 use App\Settings\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -34,13 +35,15 @@ class DriverInvoiceController extends Controller
       ['name'=> __("Driver Invoices") ],
     ];
     $driverInvoices = $this->driverInvoiceRepository->paginate(request()->per_page);
-    $clients = Client::orderBy('name', 'asc')->get();
-    $products = Product::orderBy('name', 'asc')->get();
+    $clients = Client::active()->orderBy('name', 'asc')->get();
+    $products = Product::active()->orderBy('name', 'asc')->get();
+    $measurementTypes = MeasurementType::active()->orderBy('name', 'asc')->get();
     return Inertia::render('Invoice/Driver/Index', [
       'breadcrumbs' => $breadcrumbs,
       'driver_invoices' => $driverInvoices,
       'clients' => $clients,
       'products' => $products,
+      'measurement_types' => $measurementTypes,
       'has_modal' => false,
       'link' => route('drivers.invoices.create')
     ]);
@@ -59,10 +62,12 @@ class DriverInvoiceController extends Controller
     $clients = Client::active()->get();
     $products = Product::active()->get();
     $company = Company::active()->first();
+    $measurementTypes = MeasurementType::active()->orderBy('name', 'asc')->get();
     return Inertia::render('Invoice/Driver/Create', [
       'breadcrumbs' => $breadcrumbs,
       'clients' => $clients,
       'products' => $products,
+      'measurement_types' => $measurementTypes,
       'company' => $company,
       'has_modal' => false,
       'link' => route('drivers.invoices.index')
@@ -136,11 +141,13 @@ class DriverInvoiceController extends Controller
     ];
     $clients = Client::active()->get();
     $products = Product::active()->get();
+    $measurementTypes = MeasurementType::active()->orderBy('name', 'asc')->get();
     return Inertia::render('Invoice/Driver/Edit', [
       'breadcrumbs' => $breadcrumbs,
       'clients' => $clients,
       'products' => $products,
       'driver_invoice' => $driver_invoice,
+      'measurement_types' => $measurementTypes,
       'has_modal' => false,
       'link' => route('drivers.invoices.index')
     ]);

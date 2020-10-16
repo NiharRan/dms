@@ -46,6 +46,11 @@ class DriverInvoiceRepository
       $driverInvoices = $driverInvoices->where('client_id', $client);
     }
 
+    if (\request()->has('measurement') && !empty(\request()->measurement)) {
+      $measurement = \request()->measurement;
+      $driverInvoices = $driverInvoices->where('measurement_type_id', $measurement);
+    }
+
     if (\request()->has('product') && !empty(\request()->product)) {
       $product = \request()->product;
       $driverInvoices = $driverInvoices->where('product_id', $product);
@@ -108,7 +113,7 @@ class DriverInvoiceRepository
   {
     $driverInvoice->product_id = $request->product_id;
     $driverInvoice->quantity = $request->quantity;
-    $driverInvoice->scale = $request->scale;
+    $driverInvoice->measurement_type_id = $request->measurement_type_id;
     $driverInvoice->amount = $request->amount;
     $driverInvoice->track_rent = $request->track_rent;
     $driverInvoice->others = $request->others;

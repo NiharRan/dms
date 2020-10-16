@@ -130,5 +130,11 @@
   "Transaction Type Name": "লেনদেনের প্রকারের নাম",
 
   "Purchase Product": "পণ্য ক্রয়",
-  "Select Stock": "স্টক নির্বাচন করুন"
+  "Select Stock": "স্টক নির্বাচন করুন",
+
+
+  "Measurement Type": "পরিমাপের একক",
+  "Create New Measurement Type": "নতুন পরিমাপের একক তৈরি করুন",
+  "Measurement Type Name": "পরিমাপের এককের নাম",
+  "Select Measurement Type": "পরিমাপের এককের নির্বাচন করুন"
 }

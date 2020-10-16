@@ -58,6 +58,8 @@ class StockDetailsRepository
   {
     $stockDetails->stock_id = $request->stock_id;
     $stockDetails->product_id = $request->product_id;
+    $stockDetails->amount = $request->amount;
+    $stockDetails->quantity = $request->quantity;
     $stockDetails->user_id = Auth::id();
     return $stockDetails;
   }
@@ -83,8 +85,6 @@ class StockDetailsRepository
   {
     $row = new StockDetails();
     $row = $this->setup($row, $request);
-    $row->amount = $request->amount;
-    $row->quantity = $request->quantity;
     if($row->save()) {
       return $row;
     }

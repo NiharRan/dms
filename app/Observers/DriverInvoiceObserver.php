@@ -7,12 +7,17 @@ use App\Settings\TransactionType;
 
 class DriverInvoiceObserver
 {
-    private $transactionType;
     private $user;
+    private $driverInvoiceTransactionType;
+    private $paidTransactionType;
+    private $dueTransactionType;
+
     public function __construct()
     {
         $this->user = auth()->user();
-        $this->transactionType = TransactionType::where('name', '=', 'Driver Invoice')->first();
+        $this->driverInvoiceTransactionType = TransactionType::where('name', '=', 'Driver Invoice')->first();
+        $this->paidTransactionType = TransactionType::where('name', '=', 'Paid')->first();
+        $this->dueTransactionType = TransactionType::where('name', '=', 'Due')->first();
     }
     /**
      * Handle the driver invoice "created" event.
@@ -22,9 +27,22 @@ class DriverInvoiceObserver
      */
     public function created(DriverInvoice $driverInvoice)
     {
-        $driverInvoice->transaction()->create([
-            'transaction_type_id' => $this->transactionType->id,
+        $driverInvoice->transactions()->create([
+            'transaction_type_id' => $this->driverInvoiceTransactionType->id,
             'amount' => $driverInvoice->total,
+            'user_id' => $this->user->id,
+        ]);
+
+        $driverInvoice->transactions()->create([
+            'transaction_type_id' => $this->paidTransactionType->id,
+            'amount' => $driverInvoice->paid,
+            'user_id' => $this->user->id,
+        ]);
+
+       
+        $driverInvoice->transactions()->create([
+            'transaction_type_id' => $this->dueTransactionType->id,
+            'amount' => $driverInvoice->due,
             'user_id' => $this->user->id,
         ]);
     }
@@ -37,12 +55,8 @@ class DriverInvoiceObserver
      */
     public function updated(DriverInvoice $driverInvoice)
     {
-        $driverInvoice->transaction()->delete();
-        $driverInvoice->transaction()->create([
-            'transaction_type_id' => $this->transactionType->id,
-            'amount' => $driverInvoice->total,
-            'user_id' => $this->user->id,
-        ]);
+        $driverInvoice->transactions()->delete();
+        $this->created($driverInvoice);
     }
 
     /**

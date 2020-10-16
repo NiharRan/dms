@@ -21,7 +21,10 @@ class CreateDriverInvoicesTable extends Migration
             $table->foreign('product_id')->references('id')->on('products');
 
             $table->unsignedInteger('quantity');
-            $table->string('scale', 45)->nullable();
+            
+            $table->unsignedBigInteger('measurement_type_id');
+            $table->foreign('measurement_type_id')->references('id')->on('measurement_types');
+
             $table->decimal('amount', 10, 2)->nullable();
             $table->decimal('track_rent', 10, 2);
             $table->decimal('others', 10, 2)->nullable();
@@ -38,7 +41,6 @@ class CreateDriverInvoicesTable extends Migration
             $table->string('driver_name');
             $table->string('track_no');
             $table->string('driver_phone');
-            $table->dateTime('invoice_date');
             $table->boolean('status')->default(0);
 
             $table->unsignedBigInteger('user_id');

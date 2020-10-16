@@ -9,13 +9,20 @@ class DriverInvoice extends MyModel
 {
   protected $fillable = [
     'invoice', 'company_id', 'client_id', 'driver_name', 'track_no',
-    'driver_phone', 'product_id', 'quantity', 'scale', 'amount', 'track_rent',
+    'driver_phone', 'product_id', 'quantity', 'measurement_type_id', 'amount', 'track_rent',
     'others', 'total', 'paid', 'due', 'status', 'user_id'
   ];
 
   public function getWordAttribute()
   {
-    return (new BanglaNumberToWord())->numToWord($this->total);
+    if($this->due == 0) {
+      $str = ' পরিশোধ করা হয়েছে';
+      $amount = $this->paid;
+    }else {
+      $str = ' বাকি আছে';
+      $amount = $this->due;
+    }
+    return (new BanglaNumberToWord())->numToWord($amount) . $str;
   }
 
   protected $appends = [
@@ -25,6 +32,10 @@ class DriverInvoice extends MyModel
   public function company()
   {
     return $this->belongsTo('App\Company');
+  }
+  public function measurement_type()
+  {
+    return $this->belongsTo('App\Settings\MeasurementType');
   }
   public function product()
   {

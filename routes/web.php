@@ -69,6 +69,11 @@ Route::group([
       Route::post('/product-types', 'ProductTypeController@store')->name('product-types.store');
       Route::put('/product-types/{productTypeId}', 'ProductTypeController@update')->name('product-types.update');
 
+      // Product type routes
+      Route::get('/measurement-types', 'MeasurementTypeController@index')->name('measurement-types.index');
+      Route::post('/measurement-types', 'MeasurementTypeController@store')->name('measurement-types.store');
+      Route::put('/measurement-types/{measurementTypeId}', 'MeasurementTypeController@update')->name('measurement-types.update');
+
       // Transaction type routes
       Route::get('/transaction-types', 'TransactionTypeController@index')->name('transaction-types.index');
       Route::post('/transaction-types', 'TransactionTypeController@store')->name('transaction-types.store');

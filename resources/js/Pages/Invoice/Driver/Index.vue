@@ -82,7 +82,7 @@
                       <td class="text-right">{{ driver_invoice.due }}</td>
                       <td class="text-center">
                         <inertia-link :href="route('drivers.invoices.show', driver_invoice.invoice)" class="text-primary"><i class="feather icon-eye"></i></inertia-link>
-                        <inertia-link :href="route('drivers.invoices.edit', driver_invoice.invoice)" class="text-info" role="button"><i class="feather icon-edit"></i></inertia-link>
+                        <inertia-link :href="route('drivers.invoices.edit', driver_invoice.id)" class="text-info" role="button"><i class="feather icon-edit"></i></inertia-link>
                         <inertia-link href="" class="text-warning" role="button"><i class="feather icon-trash"></i></inertia-link>
                       </td>
                     </tr>
