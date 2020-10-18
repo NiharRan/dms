@@ -43,11 +43,11 @@
   "Companies": "প্রতিষ্ঠান গুলো",
   "Company": "প্রতিষ্ঠান",
   "Driver Name": "ড্রাইভারের নাম",
-  "Track Rent": "ট্র্যাক ভাড়া",
-  "Track No.": "ট্র্যাক নাম্বার",
+  "Track Rent": "গাড়ি ভাড়া",
+  "Track No.": "গাড়ি নাম্বার",
   "Others": "অন্যান্য",
-  "Total Amount": "মোট টাকা",
-  "In Advance": "অগ্রিম",
+  "Total Amount": "সর্বমোট টাকা",
+  "In Advance": "অগ্রিম নেয়া",
   "Due": "বাকি",
   "Signature of Driver": "ড্রাইভারের স্বাক্ষর",
   "In Favor of": "পক্ষে",
@@ -56,7 +56,7 @@
   "Dipu Office": "ডিপো অফিস",
   "Address": "ঠিকানা",
   "Sales Center": "বিক্রয় কেন্দ্র",
-  "Description of Products": "মালের বিবরণ",
+  "Description of Products": "পণ্যের বিবরণ",
   "Quantity": "পরিমাণ",
   "Amount": "টাকা",
   "Phone:": "মোবাইলঃ",
@@ -70,7 +70,7 @@
   "Price": "মূল্য",
   "Paid": "টাকা দেওয়া",
 
-  "All Clients": "মোট ক্লায়েন্ট",
+  "All Clients": "মোট ক্রেতা",
   "All Products": "মোট পণ্য",
   "Today's Driver Invoices": "আজকের ড্রাইভার চালান",
   "Today's Sales": "আজকের বিক্রয়",
@@ -97,10 +97,13 @@
   "Stock": "স্টক",
 
 
-  "Clients": "ক্লায়েন্ট গণ",
-  "Client": "ক্লায়েন্ট",
-  "Select Client": "ক্লায়েন্ট নির্বাচন করুন",
+  "Clients": "ক্রেতা গণ",
+  "Client": "ক্রেতা",
+  "Select Client": "ক্রেতার নির্বাচন করুন",
   "Client Name": "ক্রেতার নাম",
+  "Client Contact No.": "ক্রেতার যোগাযোগের নং",
+  "Client Address": "ক্রেতার ঠিকানা",
+
   "Sales": "বিক্রয় গুলো",
   "Sale": "বিক্রয়",
   "Rent": "ভাড়া",
@@ -117,10 +120,7 @@
   "Remove": "অপসারণ করুন",
   "Reset": "পুন:স্থাপন করুন",
 
-
-  "Client Contact No.": "ক্লায়েন্টের যোগাযোগের নং",
-  "Client Address": "ক্লায়েন্ট ঠিকানা",
-  "Track Number": "ট্র্যাকের নম্বর",
+  "Track Number": "গাড়ির নম্বর",
   "Driver Contact No.": "ড্রাইভারের যোগাযোগ নং",
   "Scale": "স্কেল/ফিতা",
   "Scale Price": "স্কেলের মূল্য",
@@ -136,5 +136,9 @@
   "Measurement Type": "পরিমাপের একক",
   "Create New Measurement Type": "নতুন পরিমাপের একক তৈরি করুন",
   "Measurement Type Name": "পরিমাপের এককের নাম",
-  "Select Measurement Type": "পরিমাপের এককের নির্বাচন করুন"
+  "Select Measurement Type": "পরিমাপের এককের নির্বাচন করুন",
+
+  "Height": "উচ্চতা",
+  "Length": "দৈর্ঘ্য",
+  "Breadth": "প্রশস্ততা"
 }

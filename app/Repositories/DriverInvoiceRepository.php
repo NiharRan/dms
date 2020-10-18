@@ -25,7 +25,7 @@ class DriverInvoiceRepository
   public function all()
   {
     $driverInvoices = $this->driverInvoice
-      ->with(['client', 'product']);
+      ->with(['client', 'product', 'measurement_type']);
 
     if (\request()->has('status') && !empty(request()->status)) {
       $driverInvoices = $driverInvoices->where('status', \request()->status);
@@ -71,7 +71,8 @@ class DriverInvoiceRepository
       'client',
       'product',
       'company',
-      'creator'
+      'creator',
+      'measurement_type'
     ])->find($rowId);
   }
 
@@ -81,7 +82,8 @@ class DriverInvoiceRepository
       'company',
       'client',
       'creator',
-      'product'
+      'product',
+      'measurement_type'
     ])->where('invoice', $invoice)->first();
   }
 
@@ -114,7 +116,9 @@ class DriverInvoiceRepository
     $driverInvoice->product_id = $request->product_id;
     $driverInvoice->quantity = $request->quantity;
     $driverInvoice->measurement_type_id = $request->measurement_type_id;
-    $driverInvoice->amount = $request->amount;
+    $driverInvoice->container_height = $request->container_height;
+    $driverInvoice->container_length = $request->container_length;
+    $driverInvoice->container_breadth = $request->container_breadth;
     $driverInvoice->track_rent = $request->track_rent;
     $driverInvoice->others = $request->others;
     $driverInvoice->total = $request->total;

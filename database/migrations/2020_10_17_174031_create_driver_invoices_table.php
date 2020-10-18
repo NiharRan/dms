@@ -25,7 +25,9 @@ class CreateDriverInvoicesTable extends Migration
             $table->unsignedBigInteger('measurement_type_id');
             $table->foreign('measurement_type_id')->references('id')->on('measurement_types');
 
-            $table->decimal('amount', 10, 2)->nullable();
+            $table->unsignedDecimal('container_height')->nullable();
+            $table->unsignedDecimal('container_length')->nullable();
+            $table->unsignedDecimal('container_breadth')->nullable();
             $table->decimal('track_rent', 10, 2);
             $table->decimal('others', 10, 2)->nullable();
             $table->decimal('total', 10, 2);

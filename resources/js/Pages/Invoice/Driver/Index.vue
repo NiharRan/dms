@@ -39,10 +39,10 @@
                     <th style="width: 10%;">{{ __("Client") }}</th>
                     <th>{{ __("Driver") }}</th>
                     <th class="text-center">{{ __("Invoice") }}</th>
+                    <th>{{ __("Measurement Type") }}</th>
                     <th>{{ __("Created At") }}</th>
                     <th class="text-center">{{ __("Status") }}</th>
                     <th class="text-center">{{ __("Quantity") }}</th>
-                    <th class="text-right">{{ __("Amount") }}</th>
                     <th class="text-right">{{ __("Track Rent") }}</th>
                     <th class="text-right">{{ __("Others") }}</th>
                     <th>{{ __("Total") }}</th>
@@ -69,12 +69,17 @@
                       <th class="text-center">
                         {{ driver_invoice.invoice }}
                       </th>
+                      <td>
+                        <p class="mb-0"><strong>{{ driver_invoice.measurement_type.name }}</strong></p>
+                        <p class="mb-0 text-sm">{{ __('Height') }}{{ __(':') }} {{ driver_invoice.container_height }}</p>
+                        <p class="mb-0 text-sm">{{ __('Length') }}{{ __(':') }} {{ driver_invoice.container_length }}</p>
+                        <p class="mb-0 text-sm">{{ __('Breadth') }}{{ __(':') }} {{ driver_invoice.container_breadth }}</p>
+                      </td>
                       <td>{{ driver_invoice.created_at | moment('DD/MM/YYYY') }}</td>
                       <td v-html="$options.filters.payment_status(driver_invoice.status)"></td>
                       <td class="text-center">
                         {{ driver_invoice.quantity }}
                       </td>
-                      <td class="text-right">{{ driver_invoice.amount }}</td>
                       <td class="text-right">{{ driver_invoice.track_rent }}</td>
                       <td class="text-right">{{ driver_invoice.others }}</td>
                       <td class="text-right">{{ driver_invoice.total }}</td>

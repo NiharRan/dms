@@ -28,9 +28,9 @@
               <span class="float-left">{{ __('Serial No.') }}-{{ driver_invoice.invoice }}</span>
               <span class="float-right">{{ __('Date') }}{{ __(':') }} {{ driver_invoice.created_at | moment('DD/MM/YYYY') }}</span>
             </p>
-            <p><span class="text-bold-700">{{ __('Name') }}{{ __(':') }}</span> {{ driver_invoice.client.name}}</p>
-            <p><span class="text-bold-700">{{ __('Address') }}{{ __(':') }} {{ driver_invoice.client.address}}</span></p>
-            <p><span class="text-bold-700">{{ __('Driver Name') }}{{ __(':') }}</span> {{ driver_invoice.driver_name }}</p>
+            <p><span>{{ __('Client Name') }}{{ __(':') }}</span> {{ driver_invoice.client.name}}</p>
+            <p><span>{{ __('Client Address') }}{{ __(':') }} {{ driver_invoice.client.address}}</span></p>
+            <p><span>{{ __('Driver Name') }}{{ __(':') }}</span> {{ driver_invoice.driver_name }}</p>
             <p class="clearfix">
               <span class="float-left">{{ __('Track No.') }}-{{ driver_invoice.track_no }}</span>
               <span class="float-right">{{ __('Dri: Mobile:') }} {{ translate(driver_invoice.driver_phone) }}</span>
@@ -40,17 +40,17 @@
               <thead>
               <tr>
                 <th>{{ __('Description of Products') }}</th>
-                <th class="text-center">{{ __('Scale') }}</th>
+                <th class="text-center">{{ __('Measurement Type') }}</th>
+                <th class="text-center">{{ __('Height') }} * {{ __('Length') }} * {{ __('Breadth') }}</th>
                 <th class="text-center">{{ __('Quantity') }}</th>
-                <th class="text-right">{{ __('Amount') }}</th>
               </tr>
               </thead>
               <tbody>
               <tr>
                 <th>{{ driver_invoice.product.name }}</th>
-                <th class="text-center">{{ driver_invoice.scale }}</th>
+                <th class="text-center">{{ driver_invoice.measurement_type.name }}</th>
+                <th class="text-center">{{ driver_invoice.container_height }} * {{ driver_invoice.container_length }} * {{ driver_invoice.container_breadth }}</th>
                 <th class="text-center">{{ driver_invoice.quantity }}</th>
-                <th class="text-right">{{ driver_invoice.amount }}</th>
               </tr>
               <tr>
                 <th>{{ __('Track Rent') }}</th>

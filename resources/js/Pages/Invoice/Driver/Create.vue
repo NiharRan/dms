@@ -114,8 +114,30 @@
                           <strong>{{ errors.quantity[0] }}</strong>
                         </span>
                       </th>
-                      <th>
-                        <input type="text" class="form-control" v-model="form.amount" @keyup="calculateTotal" :placeholder="__('Scale Price')">
+                      <th style="width: 15%;">
+                        <div class="row" v-if="form.measurement_type && form.measurement_type.id === 2">
+                          <div class="col-md-4 col-4">
+                            <input 
+                              type="text" 
+                              v-model="form.container_height" 
+                              :placeholder="__('Height')" 
+                              class="form-control">
+                          </div>
+                          <div class="col-md-4 col-4">
+                            <input 
+                              type="text" 
+                              v-model="form.container_length" 
+                              :placeholder="__('Length')" 
+                              class="form-control">
+                          </div>
+                          <div class="col-md-4 col-4">
+                            <input 
+                              type="text" 
+                              v-model="form.container_breadth" 
+                              :placeholder="__('Breadth')" 
+                              class="form-control">
+                          </div>
+                        </div>
                       </th>
                     </tr>
                     <tr>
@@ -197,7 +219,9 @@
           product: null,
           quantity: '',
           measurement_type: '',
-          amount: '',
+          container_height: '',
+          container_length: '',
+          container_breadth: '',
           driver_name: '',
           track_no: '',
           driver_phone: '',
@@ -215,12 +239,11 @@
         this.form.address = data.address;
       },
       calculateTotal: function () {
-        let amount = this.form.amount === '' ? 0 : this.form.amount;
         let track_rent = this.form.track_rent === '' ? 0 : this.form.track_rent;
         let others = this.form.others === '' ? 0 : this.form.others;
         let paid = this.form.paid === '' ? 0 : this.form.paid;
 
-        let total = parseFloat(amount) + parseFloat(track_rent) + parseFloat(others);
+        let total = parseFloat(track_rent) + parseFloat(others);
         let due = total - parseFloat(paid);
         this.form.total = parseFloat(total).toFixed(2);
         this.form.due = parseFloat(due).toFixed(2);
@@ -244,8 +267,10 @@
           driver_phone: this.form.driver_phone,
           product_id: product_id,
           measurement_type_id: measurement_type_id,
+          container_height: this.form.container_height,
+          container_length: this.form.container_length,
+          container_breadth: this.form.container_breadth,
           quantity: this.form.quantity,
-          amount: this.form.amount,
           track_rent: this.form.track_rent,
           others: this.form.others,
           total: this.form.total,

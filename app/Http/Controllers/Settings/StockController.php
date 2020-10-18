@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Settings;
 use App\Http\Requests\Settings\StockRequest;
 use App\Repositories\Settings\StockRepository;
 use App\Http\Controllers\Controller;
+use App\Services\StockService;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -74,7 +75,7 @@ class StockController extends Controller
    */
   public function products($id)
   {
-    $products = $this->stockRepository->products($id);
+    $products = StockService::products($id);
     if ($products) {
       return response()
         ->json($products);

@@ -112,7 +112,29 @@
                         </span>
                       </th>
                       <th>
-                        <input type="text" class="form-control" v-model="driver_invoice.amount" @keyup="calculateTotal" :placeholder="__('Scale Price')">
+                        <div class="row" v-if="driver_invoice.measurement_type && driver_invoice.measurement_type.id === 2">
+                          <div class="col-md-4 col-4">
+                            <input 
+                              type="text" 
+                              v-model="driver_invoice.container_height" 
+                              :placeholder="__('Height')" 
+                              class="form-controll">
+                          </div>
+                          <div class="col-md-4 col-4">
+                            <input 
+                              type="text" 
+                              v-model="driver_invoice.container_length" 
+                              :placeholder="__('Length')" 
+                              class="form-controll">
+                          </div>
+                          <div class="col-md-4 col-4">
+                            <input 
+                              type="text" 
+                              v-model="driver_invoice.container_breadth" 
+                              :placeholder="__('Breadth')" 
+                              class="form-controll">
+                          </div>
+                        </div>
                       </th>
                     </tr>
                     <tr>
@@ -198,12 +220,11 @@
         this.driver_invoice.address = data.address;
       },
       calculateTotal: function () {
-        let amount = this.driver_invoice.amount;
         let track_rent = this.driver_invoice.track_rent;
         let others = this.driver_invoice.others;
         let paid = this.driver_invoice.paid;
 
-        let total = parseFloat(amount) + parseFloat(track_rent) + parseFloat(others);
+        let total = parseFloat(track_rent) + parseFloat(others);
         let due = total - parseFloat(paid);
         this.driver_invoice.total = parseFloat(total).toFixed(2);
         this.driver_invoice.due = parseFloat(due).toFixed(2);
@@ -227,9 +248,11 @@
           driver_phone: this.driver_invoice.driver_phone,
           product_id: product_id,
           measurement_type_id: measurement_type_id,
+          container_height: this.driver_invoice.container_height,
+          container_length: this.driver_invoice.container_length,
+          container_breadth: this.driver_invoice.container_breadth,
           quantity: this.driver_invoice.quantity,
           scale: this.driver_invoice.scale,
-          amount: this.driver_invoice.amount,
           track_rent: this.driver_invoice.track_rent,
           others: this.driver_invoice.others,
           total: this.driver_invoice.total,

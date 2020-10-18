@@ -14,45 +14,6 @@
           </div>
         </div>
 
-        <div class="info-card card">
-          <div class="card-content">
-            <div class="card-body">
-              <ul  class="activity-timeline timeline-left list-unstyled">
-                <li>
-                  <div class="timeline-icon bg-gradient-primary">
-                    <i class="feather font-medium-2 icon-plus-circle"></i>
-                  </div>
-                  <div class="timeline-info">
-                    <h3 class="font-weight-bold">{{__("Create Invoice")}}</h3>
-                    <p class="font-small-3 mb-1">Created on {{ driver_invoice.created_at | moment('DD-MM-YY HH:mm A') }}</p>
-                    <inertia-link
-                      class="btn btn-primary"
-                      :href="route('drivers.invoices.edit', driver_invoice.id)">
-                      {{ __("Edit") }}
-                    </inertia-link>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="timeline-icon bg-gradient-success">
-                    <i class="fa fa-money font-medium-2"></i>
-                  </div>
-                  <div class="timeline-info">
-                    <h3 class="font-weight-bold">{{__("Get Paid")}}</h3>
-                    <p class="font-small-3 mb-1">{{__("Status")}} {{ driver_invoice.status === 0 ? __('Awaiting payment') : `Payment completed at ${driver_invoice.created_at}` }}</p>
-                    <inertia-link
-                      v-if="driver_invoice.status === 0"
-                      class="btn btn-primary"
-                      :href="route('drivers.invoices.pay', driver_invoice.invoice)">
-                      {{__("Mark Paid")}}
-                    </inertia-link>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
         <div class="invoice-card card">
           <div class="card-content">
             <div class="card-header bg-gradient-success">
@@ -85,9 +46,9 @@
                     <span class="float-left">{{ __('Serial No.') }}-{{ driver_invoice.invoice }}</span>
                     <span class="float-right">{{ __('Date') }}{{ __(':') }} {{ driver_invoice.created_at | moment('DD/MM/YYYY') }}</span>
                   </p>
-                  <p><span class="text-bold-700">{{ __('Name') }}{{ __(':') }}</span> {{ driver_invoice.client.name}}</p>
-                  <p><span class="text-bold-700">{{ __('Address') }}{{ __(':') }} {{ driver_invoice.client.address}}</span></p>
-                  <p><span class="text-bold-700">{{ __('Driver Name') }}{{ __(':') }}</span> {{ driver_invoice.driver_name }}</p>
+                  <p><span>{{ __('Client Name') }}{{ __(':') }}</span> {{ driver_invoice.client.name}}</p>
+                  <p><span>{{ __('Client Address') }}{{ __(':') }} {{ driver_invoice.client.address}}</span></p>
+                  <p><span>{{ __('Driver Name') }}{{ __(':') }}</span> {{ driver_invoice.driver_name }}</p>
                   <p class="row">
                     <span class="col-6 text-left">{{ __('Track No.') }}-{{ driver_invoice.track_no }}</span>
                     <span class="col-6 text-right">{{ __('Dri: Mobile:') }} {{ translate(driver_invoice.driver_phone) }}</span>
@@ -97,17 +58,17 @@
                     <thead>
                     <tr>
                       <th>{{ __('Description of Products') }}</th>
-                      <th class="text-center">{{ __('Scale') }}</th>
+                      <th class="text-center">{{ __('Measurement Type') }}</th>
+                      <th class="text-center">{{ __('Height') }} * {{ __('Length') }} * {{ __('Breadth') }}</th>
                       <th class="text-center">{{ __('Quantity') }}</th>
-                      <th class="text-right">{{ __('Amount') }}</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                       <th>{{ driver_invoice.product.name }}</th>
-                      <th class="text-center">{{ driver_invoice.scale }}</th>
+                      <th class="text-center">{{ driver_invoice.measurement_type.name }}</th>
+                      <th class="text-center">{{ driver_invoice.container_height }} * {{ driver_invoice.container_length }} * {{ driver_invoice.container_breadth }}</th>
                       <th class="text-center">{{ driver_invoice.quantity }}</th>
-                      <th class="text-right">{{ driver_invoice.amount }}</th>
                     </tr>
                     <tr>
                       <th>{{ __('Track Rent') }}</th>
@@ -151,12 +112,16 @@
               </div>
             </div>
             <div class="card-footer text-right">
-              <a :href="route('drivers.invoices.edit', driver_invoice.id)" class="btn btn-primary"><i class="feather icon-edit"></i>
-                {{ __("Edit") }}</a>
-              <a :href="route('drivers.invoices.print', driver_invoice.invoice)" target="_blank" class="btn btn-info"><i class="feather icon-printer"></i>
-                {{ __("Print") }}</a>
-              <a @click.prevent="printPage" href="" class="btn btn-success"><i class="feather icon-download"></i>
-                {{ __("Download") }}</a>
+              <inertia-link
+                v-if="driver_invoice.status === 0"
+                class="btn btn-primary"
+                :href="route('drivers.invoices.pay', driver_invoice.invoice)">
+                {{__("Mark Paid")}}
+              </inertia-link>
+              <inertia-link :href="route('drivers.invoices.edit', driver_invoice.id)" class="btn btn-primary"><i class="feather icon-edit"></i>
+                {{ __("Edit") }}</inertia-link>
+              <inertia-link :href="route('drivers.invoices.print', driver_invoice.invoice)" target="_blank" class="btn btn-info"><i class="feather icon-printer"></i>
+                {{ __("Print") }}</inertia-link>
 
             </div>
           </div>

@@ -39,7 +39,6 @@ class StockRepository
   public function setup(Stock $stock, Request $request)
   {
     $stock->name = $request->name;
-    $stock->slug = make_slug($request->name);
     $stock->address = $request->address;
     $stock->user_id = Auth::id();
     return $stock;
@@ -71,18 +70,5 @@ class StockRepository
       return $row;
     }
     return null;
-  }
-
-  public function products($stockId)
-  {
-    $stockDetails = $this->findById($stockId)->stock_details;
-    $products = [];
-    if ($stockDetails->count() > 0) {
-      foreach ($stockDetails as $stockDetail) {
-        $stockDetail->product->quantity = $stockDetail->quantity;
-        $products[] = $stockDetail->product;
-      }
-    }
-    return $products;
   }
 }

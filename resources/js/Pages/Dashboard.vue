@@ -89,6 +89,11 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+        
+      </div>
+
       <div class="row" v-if="sales.data.length > 0">
         <div class="col-12">
           <div class="card">
@@ -190,11 +195,13 @@
           'total_products',
           'today_sale',
           'sales',
-          'driver_invoices'
+          'stockCharts',
+          'driver_invoices',
+          'products'
         ],
         data: function () {
             return {
-              clock: ''
+              clock: '',
             }
         },
         methods: {
