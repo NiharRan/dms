@@ -89,6 +89,7 @@ Route::group([
        Route::get('/stock-details', 'StockDetailsController@index')->name('stock-details.index');
        Route::post('/stock-details', 'StockDetailsController@store')->name('stock-details.store');
        Route::put('/stock-details/{stockDetailsId}', 'StockDetailsController@update')->name('stock-details.update');
+       Route::get('/stock-details/history/{stockDetailsId}', 'StockDetailsHistoryController@show')->name('stock-details.history.show');
 
       // Product routes
       Route::get('/products', 'ProductController@index')->name('products.index');

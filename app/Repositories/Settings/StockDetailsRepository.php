@@ -5,6 +5,7 @@ namespace App\Repositories\Settings;
 
 
 use App\Settings\StockDetails;
+use App\Settings\StockDetailsHistory;
 use App\Traits\RepositoryTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +23,7 @@ class StockDetailsRepository
 
   public function all()
   {
-    $rows = $this->stockDetails->with(['stock', 'product']);
+    $rows = $this->stockDetails->with(['stock', 'product', 'stock_details_histories']);
     $rows = $rows->whereHas('stock', function ($q) {
       $q->orderBy('name', 'ASC');
     })->whereHas('product', function ($q) {
@@ -36,13 +37,6 @@ class StockDetailsRepository
     }
     if (request()->has('product') && !empty(request()->product)) {
       $rows = $rows->where('product_id', request()->product);
-    }
-    if (request()->has('amount') && !empty(request()->amount)) {
-      $rows = $rows->where('amount', request()->amount);
-    }
-
-    if (request()->has('quantity') && !empty(request()->quantity)) {
-      $rows = $rows->where('quantity', request()->quantity);
     }
 
     return $rows;
@@ -58,7 +52,6 @@ class StockDetailsRepository
   {
     $stockDetails->stock_id = $request->stock_id;
     $stockDetails->product_id = $request->product_id;
-    $stockDetails->amount = $request->amount;
     $stockDetails->quantity = $request->quantity;
     $stockDetails->user_id = Auth::id();
     return $stockDetails;
@@ -78,16 +71,24 @@ class StockDetailsRepository
 
   public function destroy($rowId)
   {
-    return $this->stockDetails->find($rowId)->delete();
+    return $this->stockDetails->with('stock_details_histories')->find($rowId)->delete();
   }
 
   public function store(Request $request)
   {
-    $row = new StockDetails();
-    $row = $this->setup($row, $request);
-    if($row->save()) {
-      return $row;
+    if ($stockDetails = $this->alreadyExists($request->stock_id, $request->product_id)) {
+      $stockDetails->quantity += $request->quantity;
+      $stockDetails->save();
+    } else {
+      $stockDetails = new StockDetails();
+      $stockDetails = $this->setup($stockDetails, $request);
     }
+
+    if ($stockDetails->save()) {
+      $this->storeHistory($request, $stockDetails);
+      return $stockDetails;
+    }
+    
     return null;
   }
 
@@ -97,6 +98,16 @@ class StockDetailsRepository
       'stock_id' => $stock_id,
       'product_id' => $product_id
     ])->active()->first();
+  }
+
+  public function storeHistory(Request $request, StockDetails $stockDetails)
+  {
+    return $stockDetails->stock_details_histories()->create([
+      'ship' => $request->ship,
+      'company' => $request->company,
+      'quantity' => $request->quantity,
+      'user_id' => Auth::id(),
+    ]);
   }
 
 }

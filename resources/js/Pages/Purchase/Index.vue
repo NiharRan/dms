@@ -33,7 +33,8 @@
                       <th class="text-center">{{ stock_detail.amount }}</th>
                       <td v-html="$options.filters.status(stock_detail.status)"></td>
                       <td class="text-center">
-                        <a @click.prevent="setData(stock_detail)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>
+                        <a @click.prevent="setData(stock_detail)" :title="__('Edit')" href="" class="text-primary" role="button"><i class="feather icon-edit"></i></a>
+                        <inertia-link :title="__('History')" :href="route('stock-details.history.show', stock_detail.id)" class="text-info" role="button"><i class="feather icon-eye"></i></inertia-link>
                       </td>
                     </tr>
                   </tbody>
@@ -92,18 +93,25 @@
               </div>
 
               <div class="form-group row mb-0">
-                <div class="col-md-6 col-12">
+                <div class="col-md-4 col-12">
                   <label>{{ __('Quantity') }}</label>
                   <input type="text" v-model="form.quantity" class="form-control" :placeholder="__('Quantity')">
                   <span v-if="errors.quantity" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.quantity[0] }}</strong>
                   </span>
                 </div>
-                <div class="col-md-6 col-12">
-                  <label>{{ __('Amount') }}</label>
-                  <input type="text" v-model="form.amount" class="form-control" :placeholder="__('Amount')">
-                  <span v-if="errors.amount" class="invalid-feedback" style="display: block;" role="alert">
-                      <strong>{{ errors.amount[0] }}</strong>
+                <div class="col-md-4 col-12">
+                  <label>{{ __('Ship') }}</label>
+                  <input type="text" v-model="form.ship" class="form-control" :placeholder="__('Ship')">
+                  <span v-if="errors.ship" class="invalid-feedback" style="display: block;" role="alert">
+                      <strong>{{ errors.ship[0] }}</strong>
+                  </span>
+                </div>
+                <div class="col-md-4 col-12">
+                  <label>{{ __('Company') }}</label>
+                  <input type="text" v-model="form.company" class="form-control" :placeholder="__('Company')">
+                  <span v-if="errors.company" class="invalid-feedback" style="display: block;" role="alert">
+                      <strong>{{ errors.company[0] }}</strong>
                   </span>
                 </div>
               </div>
@@ -147,7 +155,8 @@
               id: '',
               stock: null,
               product: null,
-              amount: '',
+              ship: '',
+              company: '',
               status: '',
             }
           }
@@ -158,7 +167,8 @@
             this.editMode = true;
             this.form.stock = data.stock;
             this.form.product = data.product;
-            this.form.amount = data.amount;
+            this.form.ship = data.ship;
+            this.form.company = data.company;
             this.form.quantity = data.quantity;
             this.form.status = data.status;
             this.form.id = data.id;
@@ -172,7 +182,8 @@
             this.editMode = false;
             this.form.stock = null;
             this.form.product = null;
-            this.form.amount = '';
+            this.form.ship = '';
+            this.form.company = '';
             this.form.quantity = '';
             this.form.id = '';
             this.form.status = '';
@@ -194,7 +205,8 @@
             this.$inertia.post(this.route('stock-details.store'), {
               stock_id: stock_id,
               product_id: product_id,
-              amount: this.form.amount,
+              ship: this.form.ship,
+              company: this.form.company,
               quantity: this.form.quantity,
             }).then(function () {
               if (self.error === null && Object.keys(self.errors).length === 0) {
@@ -212,7 +224,8 @@
             this.$inertia.post(this.route('stock-details.update', this.form.id), {
               stock_id: stock_id,
               product_id: product_id,
-              amount: this.form.amount,
+              ship: this.form.ship,
+              company: this.form.company,
               quantity: this.form.quantity,
               status: this.form.status,
               _method: "put"

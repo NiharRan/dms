@@ -123,9 +123,9 @@ class SaleRepository
 
   private function setupData(Sale $sale, $request)
   {
-    $sale->total_price = $request->total_price;
-    $sale->total_paid = $request->total_paid;
-    $sale->total_due = $request->total_due;
+    $sale->total_price = $request->total_price == '' ? 0 : $request->total_price;
+    $sale->total_paid = $request->total_paid == '' ? 0 : $request->total_paid;
+    $sale->total_due = $request->total_due == '' ? 0 : $request->total_due;
     $sale->company_id = $request->company_id;
     $sale->client_id = $request->client_id;
     $sale->sale_date = date('Y-m-d H:i:s', strtotime($request->sale_date));

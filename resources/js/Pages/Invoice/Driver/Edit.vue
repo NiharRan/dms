@@ -105,13 +105,7 @@
                           track-by="name"
                           :placeholder="__('Select Measurement Type')"></multi-select>
                       </th>
-                      <th>
-                        <input type="text" v-model="driver_invoice.quantity" class="form-control" :placeholder="__('Quantity')">
-                        <span v-if="errors.quantity" class="invalid-feedback" style="display: block;" role="alert">
-                          <strong>{{ errors.quantity[0] }}</strong>
-                        </span>
-                      </th>
-                      <th>
+                      <th style="width: 25%">
                         <div class="row" v-if="driver_invoice.measurement_type && driver_invoice.measurement_type.id === 2">
                           <div class="col-md-4 col-4">
                             <input 
@@ -136,6 +130,13 @@
                           </div>
                         </div>
                       </th>
+                      <th>
+                        <input type="text" v-model="driver_invoice.quantity" class="form-control" :placeholder="__('Quantity')">
+                        <span v-if="errors.quantity" class="invalid-feedback" style="display: block;" role="alert">
+                          <strong>{{ errors.quantity[0] }}</strong>
+                        </span>
+                      </th>
+                    
                     </tr>
                     <tr>
                       <th colspan="3" class="text-right">{{ __("Track Rent") }}</th>

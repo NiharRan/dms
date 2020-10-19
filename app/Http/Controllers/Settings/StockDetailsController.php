@@ -7,7 +7,6 @@ use App\Http\Requests\Settings\StockDetailsRequest;
 use App\Repositories\Settings\StockDetailsRepository;
 use App\Settings\Product;
 use App\Settings\Stock;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class StockDetailsController extends Controller
@@ -49,16 +48,10 @@ class StockDetailsController extends Controller
      */
     public function store(StockDetailsRequest $request)
     {
-        $stockDetails = $this->stockDetailsRepository->alreadyExists($request->stock_id, $request->product_id);
-        if ($stockDetails) {
-            return redirect()->back()->with('error', 'This product is already exists');
-        } else {
-            $stockDetails = $this->stockDetailsRepository->store($request);
+        $stockDetails = $this->stockDetailsRepository->store($request);
             if ($stockDetails) return redirect()
             ->route('stock-details.index')
             ->with('success', "Stock purchase done successfully!");
-        }
-        
     }
 
     /**

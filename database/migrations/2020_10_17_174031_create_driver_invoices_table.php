@@ -20,7 +20,7 @@ class CreateDriverInvoicesTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
 
-            $table->unsignedInteger('quantity');
+            $table->unsignedDecimal('quantity', 10, 2);
             
             $table->unsignedBigInteger('measurement_type_id');
             $table->foreign('measurement_type_id')->references('id')->on('measurement_types');

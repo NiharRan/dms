@@ -121,9 +121,9 @@ class DriverInvoiceRepository
     $driverInvoice->container_breadth = $request->container_breadth;
     $driverInvoice->track_rent = $request->track_rent;
     $driverInvoice->others = $request->others;
-    $driverInvoice->total = $request->total;
-    $driverInvoice->paid = $request->paid;
-    $driverInvoice->due = $request->due;
+    $driverInvoice->total = $request->total == '' ? 0 : $request->total;
+    $driverInvoice->paid = $request->paid == '' ? 0 : $request->paid;
+    $driverInvoice->due = $request->due == '' ? 0 : $request->due;
     $driverInvoice->company_id = $request->company_id;
     $driverInvoice->client_id = $request->client_id;
     $driverInvoice->driver_name = $request->driver_name;

@@ -27,24 +27,30 @@ class DriverInvoiceObserver
      */
     public function created(DriverInvoice $driverInvoice)
     {
-        $driverInvoice->transactions()->create([
-            'transaction_type_id' => $this->driverInvoiceTransactionType->id,
-            'amount' => $driverInvoice->total,
-            'user_id' => $this->user->id,
-        ]);
+        if ($driverInvoice->total != '') {
+            $driverInvoice->transactions()->create([
+                'transaction_type_id' => $this->driverInvoiceTransactionType->id,
+                'amount' => $driverInvoice->total,
+                'user_id' => $this->user->id,
+            ]);
+        }
 
-        $driverInvoice->transactions()->create([
-            'transaction_type_id' => $this->paidTransactionType->id,
-            'amount' => $driverInvoice->paid,
-            'user_id' => $this->user->id,
-        ]);
+        if ($driverInvoice->paid != '') {
+            $driverInvoice->transactions()->create([
+                'transaction_type_id' => $this->paidTransactionType->id,
+                'amount' => $driverInvoice->paid,
+                'user_id' => $this->user->id,
+            ]);
+        }
 
        
-        $driverInvoice->transactions()->create([
-            'transaction_type_id' => $this->dueTransactionType->id,
-            'amount' => $driverInvoice->due,
-            'user_id' => $this->user->id,
-        ]);
+        if ($driverInvoice->due != '') {
+            $driverInvoice->transactions()->create([
+                'transaction_type_id' => $this->dueTransactionType->id,
+                'amount' => $driverInvoice->due,
+                'user_id' => $this->user->id,
+            ]);
+        }
     }
 
     /**

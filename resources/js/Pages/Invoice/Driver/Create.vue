@@ -108,13 +108,7 @@
                           <strong>{{ errors.measurement_type_id[0] }}</strong>
                         </span>
                       </th>
-                      <th>
-                        <input type="text" v-model="form.quantity" class="form-control" :placeholder="__('Quantity')">
-                        <span v-if="errors.quantity" class="invalid-feedback" style="display: block;" role="alert">
-                          <strong>{{ errors.quantity[0] }}</strong>
-                        </span>
-                      </th>
-                      <th style="width: 15%;">
+                      <th style="width: 25%">
                         <div class="row" v-if="form.measurement_type && form.measurement_type.id === 2">
                           <div class="col-md-4 col-4">
                             <input 
@@ -139,6 +133,13 @@
                           </div>
                         </div>
                       </th>
+                      <th>
+                        <input type="text" v-model="form.quantity" class="form-control" :placeholder="__('Quantity')">
+                        <span v-if="errors.quantity" class="invalid-feedback" style="display: block;" role="alert">
+                          <strong>{{ errors.quantity[0] }}</strong>
+                        </span>
+                      </th>
+                
                     </tr>
                     <tr>
                       <th colspan="3" class="text-right">{{ __("Rent") }}</th>

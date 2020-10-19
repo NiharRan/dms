@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStockDetailsTable extends Migration
+class CreateStockDetailsHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,20 @@ class CreateStockDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('stock_details', function (Blueprint $table) {
+        Schema::create('stock_details_histories', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->unsignedBigInteger('stock_id');
-            $table->foreign('stock_id')->references('id')->on('stocks');
+            $table->unsignedBigInteger('stock_details_id');
+            $table->foreign('stock_details_id')->references('id')->on('stock_details');
 
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
-            $table->decimal('quantity', 10);
-            $table->boolean('status')->default(1);
-
+            $table->string('ship', 45)->nullable();
+            $table->string('company', 45)->nullable();
+            $table->unsignedDecimal('quantity', 10, 2);
+            
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
@@ -38,6 +38,6 @@ class CreateStockDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stock_details');
+        Schema::dropIfExists('stock_details_histories');
     }
 }

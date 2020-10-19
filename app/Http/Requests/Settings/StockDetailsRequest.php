@@ -26,7 +26,8 @@ class StockDetailsRequest extends FormRequest
     return [
       'stock_id' => 'required',
       'product_id' => 'required',
-      'amount' => 'required|numeric|gte:0',
+      'ship' => 'required',
+      'company' => 'required',
       'quantity' => 'required|numeric|gte:0',
     ];
   }
@@ -42,8 +43,8 @@ class StockDetailsRequest extends FormRequest
       'stock.required' => 'Stock house is required',
       'product.required' => 'Product is required',
       'amount.required' => 'Stock amount is required',
-      'amount.numeric' => 'Invalid stock amount',
-      'amount.gte' => 'Stock amount must be greater then or equal zero',
+      'ship.required' => 'Ship name is required',
+      'company.required' => 'Company name is required',
       'quantity.required' => 'Stock quantity is required',
       'quantity.numeric' => 'Invalid stock quantity',
       'quantity.gte' => 'Stock quantity must be greater then or equal zero',

@@ -27,24 +27,30 @@ class SaleObserver
      */
     public function created(Sale $sale)
     {
-        $sale->transactions()->create([
-            'transaction_type_id' => $this->saleTransactionType->id,
-            'amount' => $sale->total_price,
-            'user_id' => $this->user->id,
-        ]);
+        if ($sale->total_price != '') {
+            $sale->transactions()->create([
+                'transaction_type_id' => $this->saleTransactionType->id,
+                'amount' => $sale->total_price,
+                'user_id' => $this->user->id,
+            ]);
+        }
 
-        $sale->transactions()->create([
-            'transaction_type_id' => $this->paidTransactionType->id,
-            'amount' => $sale->total_paid,
-            'user_id' => $this->user->id,
-        ]);
+        if ($sale->total_paid != '') {
+            $sale->transactions()->create([
+                'transaction_type_id' => $this->paidTransactionType->id,
+                'amount' => $sale->total_paid,
+                'user_id' => $this->user->id,
+            ]);
+        }
 
        
-        $sale->transactions()->create([
-            'transaction_type_id' => $this->dueTransactionType->id,
-            'amount' => $sale->total_due,
-            'user_id' => $this->user->id,
-        ]);
+        if ($sale->total_due != '') {
+            $sale->transactions()->create([
+                'transaction_type_id' => $this->dueTransactionType->id,
+                'amount' => $sale->total_due,
+                'user_id' => $this->user->id,
+            ]);
+        }
     }
 
     /**

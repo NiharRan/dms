@@ -7,7 +7,7 @@ use App\MyModel;
 class StockDetails extends MyModel
 {
     protected $fillable = [
-        'stock_id', 'product_id', 'amount', 'quantity', 'status', 'creator'
+        'stock_id', 'product_id', 'quantity', 'status', 'creator'
     ];
 
     public function stock()
@@ -18,6 +18,11 @@ class StockDetails extends MyModel
     public function product()
     {
         return $this->belongsTo('App\Settings\Product');
+    }
+
+    public function stock_details_histories()
+    {
+        return $this->hasMany(StockDetailsHistory::class, 'stock_details_id');
     }
 
     public function transaction()
