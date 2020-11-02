@@ -46,9 +46,11 @@
                     <span class="float-left">{{ __('Serial No.') }}-{{ driver_invoice.invoice }}</span>
                     <span class="float-right">{{ __('Date') }}{{ __(':') }} {{ driver_invoice.created_at | moment('DD/MM/YYYY') }}</span>
                   </p>
-                  <p><span>{{ __('Client Name') }}{{ __(':') }}</span> {{ driver_invoice.client.name}}</p>
-                  <p><span>{{ __('Client Address') }}{{ __(':') }} {{ driver_invoice.client.address}}</span></p>
-                  <p><span>{{ __('Driver Name') }}{{ __(':') }}</span> {{ driver_invoice.driver_name }}</p>
+                  <p class="d-flex" style="justify-content: space-between;">
+                    <span>{{ __("Client Name") }}{{ __(":") }} {{ driver_invoice.client.name }}</span>
+                    <span>{{ __("Client Address") }}{{ __(":") }} {{ driver_invoice.client.address }}</span>
+                    <span>{{ __("Driver Name") }}{{ __(":") }} {{ driver_invoice.driver_name }}</span>
+                  </p>
                   <p class="row">
                     <span class="col-6 text-left">{{ __('Track No.') }}-{{ driver_invoice.track_no }}</span>
                     <span class="col-6 text-right">{{ __('Dri: Mobile:') }} {{ translate(driver_invoice.driver_phone) }}</span>

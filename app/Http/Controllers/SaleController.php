@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Company;
 use Inertia\Inertia;
 use App\Http\Requests\SaleRequest;
+use App\Http\Resources\SaleResource;
 use App\Repositories\SaleRepository;
 use App\Settings\Client;
 use App\Settings\Product;
@@ -34,7 +35,7 @@ class SaleController extends Controller
         ['name'=> __("Sales") ],
       ];
       $clients = Client::orderBy('name', 'asc')->get();
-      $sales = $this->saleRepository->paginate(request()->per_page);
+      $sales = SaleResource::collection($this->saleRepository->paginate(request()->per_page));
       return Inertia::render('Sale/Index', [
         'breadcrumbs' => $breadcrumbs,
         'sales' => $sales,

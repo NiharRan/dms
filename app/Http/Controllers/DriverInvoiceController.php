@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use App\Http\Requests\DriverInvoiceRequest;
+use App\Http\Resources\DriverInvoiceResource;
 use App\Repositories\DriverInvoiceRepository;
 use App\Settings\Client;
 use App\Settings\MeasurementType;
 use App\Settings\Product;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Inertia\Inertia;
 
@@ -34,7 +34,7 @@ class DriverInvoiceController extends Controller
       ['link'=>"/",'name'=> __('Home')],
       ['name'=> __("Driver Invoices") ],
     ];
-    $driverInvoices = $this->driverInvoiceRepository->paginate(request()->per_page);
+    $driverInvoices = DriverInvoiceResource::collection($this->driverInvoiceRepository->paginate(request()->per_page));
     $clients = Client::active()->orderBy('name', 'asc')->get();
     $products = Product::active()->orderBy('name', 'asc')->get();
     $measurementTypes = MeasurementType::active()->orderBy('name', 'asc')->get();

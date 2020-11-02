@@ -98,7 +98,6 @@ class SaleRepository
   {
     $sale = $this->findById($id);
     $sale = $this->setupData($sale, $request);
-    $sale->status = filter_var($request->status, FILTER_VALIDATE_BOOLEAN) ;
     $sale->user_id = Auth::id();
 
     if ($sale->save()) {
@@ -129,6 +128,10 @@ class SaleRepository
     $sale->company_id = $request->company_id;
     $sale->client_id = $request->client_id;
     $sale->sale_date = date('Y-m-d H:i:s', strtotime($request->sale_date));
+    
+    if(intval($request->total_due) === 0) {
+      $sale->status = 1;
+    }
 
     return $sale;
   }

@@ -207,10 +207,11 @@
         methods: {
           showClock: function () {
             let today = new Date();
-            let h = today.getHours();
+            let h = today.getHours() % 12;
             let m = today.getMinutes();
             let s = today.getSeconds();
 
+            h = this.checkTime(h);
             m = this.checkTime(m);
             s = this.checkTime(s);
             this.clock = `${h}:${m}:${s}`;
