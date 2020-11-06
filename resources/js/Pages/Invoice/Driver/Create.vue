@@ -176,6 +176,23 @@
                       </th>
                     </tr>
                     <tr>
+                      <th>{{ __('Transaction Media') }} <strong class="text-danger">*</strong></th>
+                      <th>
+                        <multi-select
+                          v-model="form.transaction_media"
+                          :options="transaction_medias"
+                          label="name"
+                          track-by="name"
+                          :placeholder="__('Select Transaction Media')"></multi-select>
+                        <span v-if="errors.transaction_media_id" class="invalid-feedback" style="display: block;" role="alert">
+                          <strong>{{ errors.transaction_media_id[0] }}</strong>
+                        </span>
+                      </th>
+                      <th colspan="2">
+                        <input type="text" v-model="form.description" class="form-control" :placeholder="__('Description')">
+                      </th>
+                    </tr>
+                    <tr>
                       <th colspan="6" class="text-right">
                         <button type="button" class="btn btn-secondary"><i class="feather icon-x"></i> {{ __('Cancel') }}</button>
                         <button type="submit" class="btn btn-success"><i class="feather icon-printer"></i> {{ __("Store") }}</button>
@@ -206,7 +223,9 @@
       clients: Array,
       products: Array,
       measurement_types: Array,
+      transaction_medias: Array,
       company: Object,
+      load: Object,
       errors: Object,
     },
     data: function () {
@@ -215,6 +234,8 @@
           id: '',
           company: null,
           client: null,
+          transaction_media: null,
+          load: null,
           phone: '',
           address: '',
           product: null,
@@ -230,7 +251,8 @@
           track_rent: '',
           total: '',
           paid: '',
-          due: ''
+          due: '',
+          description: ''
         },
       }
     },
@@ -241,11 +263,13 @@
       },
       calculateTotal: function () {
         let track_rent = this.form.track_rent === '' ? 0 : this.form.track_rent;
+        let quantity = this.form.quantity === '' ? 0 : this.form.quantity;
         let others = this.form.others === '' ? 0 : this.form.others;
         let paid = this.form.paid === '' ? 0 : this.form.paid;
 
-        let total = parseFloat(track_rent) + parseFloat(others);
+        let total = (parseFloat(track_rent) + parseFloat(this.load.amount)) * parseFloat(quantity) + parseFloat(others);
         let due = total - parseFloat(paid);
+
         this.form.total = parseFloat(total).toFixed(2);
         this.form.due = parseFloat(due).toFixed(2);
       },
@@ -258,10 +282,14 @@
       store: async function () {
         let self = this;
         const client_id = this.form.client ? this.form.client.id : '';
+        const transaction_media_id = this.form.transaction_media ? this.form.transaction_media.id : '';
+        const load_id = this.load ? this.load.id : '';
         const product_id = this.form.product ? this.form.product.id : '';
         const measurement_type_id = this.form.measurement_type ? this.form.measurement_type.id : '';
         this.$inertia.post(this.route('drivers.invoices.store'), {
           client_id: client_id,
+          load_id: load_id,
+          transaction_media_id: transaction_media_id,
           company_id: this.company.id,
           driver_name: this.form.driver_name,
           track_no: this.form.track_no,
@@ -276,7 +304,8 @@
           others: this.form.others,
           total: this.form.total,
           paid: this.form.paid,
-          due: this.form.due
+          due: this.form.due,
+          description: this.form.description,
         });
       },
     },

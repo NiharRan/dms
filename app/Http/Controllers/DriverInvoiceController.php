@@ -7,8 +7,10 @@ use App\Http\Requests\DriverInvoiceRequest;
 use App\Http\Resources\DriverInvoiceResource;
 use App\Repositories\DriverInvoiceRepository;
 use App\Settings\Client;
+use App\Settings\Load;
 use App\Settings\MeasurementType;
 use App\Settings\Product;
+use App\Settings\TransactionMedia;
 use Illuminate\Http\Response;
 use Inertia\Inertia;
 
@@ -61,12 +63,16 @@ class DriverInvoiceController extends Controller
     ];
     $clients = Client::active()->get();
     $products = Product::active()->get();
+    $transactionMedias = TransactionMedia::active()->get();
     $company = Company::active()->first();
+    $load = Load::orderBy('id', 'desc')->active()->first();
     $measurementTypes = MeasurementType::active()->orderBy('name', 'asc')->get();
     return Inertia::render('Invoice/Driver/Create', [
       'breadcrumbs' => $breadcrumbs,
       'clients' => $clients,
       'products' => $products,
+      'transaction_medias' => $transactionMedias,
+      'load' => $load,
       'measurement_types' => $measurementTypes,
       'company' => $company,
       'has_modal' => false,
@@ -141,11 +147,15 @@ class DriverInvoiceController extends Controller
     ];
     $clients = Client::active()->get();
     $products = Product::active()->get();
+    $transactionMedias = TransactionMedia::active()->get();
+    $load = Load::orderBy('id', 'desc')->active()->first();
     $measurementTypes = MeasurementType::active()->orderBy('name', 'asc')->get();
     return Inertia::render('Invoice/Driver/Edit', [
       'breadcrumbs' => $breadcrumbs,
       'clients' => $clients,
       'products' => $products,
+      'transaction_medias' => $transactionMedias,
+      'load' => $load,
       'driver_invoice' => $driver_invoice,
       'measurement_types' => $measurementTypes,
       'has_modal' => false,

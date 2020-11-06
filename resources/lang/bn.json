@@ -18,6 +18,7 @@
   "Date Range": "তারিখের পরিসীমা",
   "Search": "অনুসন্ধান করুন",
   "Back": "আগের পেইজ",
+  "Description": "বর্ণনা",
 
 
   "Users": "ব্যবহারকারীগণ",
@@ -36,10 +37,15 @@
   "Product Quantity": "পণ্যের পরিমাণ",
   "Product Types": "পণ্যের ধরন সমূহ",
   "Product Type": "পণ্যের ধরন",
+
+  "Loads": "লোড গুলো",
+  "Load": "লোড", 
+
   "Payment Status": "লেনদেনের অবস্থা",
   "Mg": "মে.ট.",
   "Due Payment": "বাকি পরিশোধ",
   "Update Due Amount": "বকেয়ার পরিমাণ আপডেট করুন",
+  "Commission": "কমিশন",
 
   "Companies": "প্রতিষ্ঠান গুলো",
   "Company": "প্রতিষ্ঠান",
@@ -129,6 +135,11 @@
   "Transaction Type": "লেনদেনের ধরণ",
   "Create New Transaction Type": "নতুন লেনদেনের ধরণ তৈরি করুন",
   "Transaction Type Name": "লেনদেনের প্রকারের নাম",
+
+  "Transaction Media": "লেনদেনের মাধ্যম",
+  "Create New Transaction Media": "নতুন লেনদেনের মাধ্যম তৈরি করুন",
+  "Select Transaction Media": "লেনদেনের মাধ্যম নির্বাচন করুন",
+  "Transaction Media Name": "লেনদেনের মাধ্যমের নাম",
 
   "Purchase Product": "পণ্য ক্রয়",
   "Select Stock": "স্টক নির্বাচন করুন",

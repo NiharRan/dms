@@ -30,6 +30,7 @@
     "@inertiajs/inertia": "^0.2.3",
     "@inertiajs/inertia-vue": "^0.2.4",
     "chart.js": "^2.9.3",
+    "node-sass": "^4.14.1",
     "sweetalert2": "^10.6.0",
     "vue-bootstrap-datetimepicker": "^5.0.1",
     "vue-chartjs": "^3.5.1",

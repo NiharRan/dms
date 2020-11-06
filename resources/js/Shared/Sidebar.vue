@@ -94,6 +94,13 @@
       </li>
 
       <li class="nav-item">
+        <inertia-link :href="route('loads.index')">
+          <i class="feather icon-unlock"></i>
+          <span class="menu-title" data-i18n="">{{__("Load")}}</span>
+        </inertia-link>
+      </li>
+
+      <li class="nav-item">
         <inertia-link :href="route('product-types.index')">
           <i class="feather icon-unlock"></i>
           <span class="menu-title" data-i18n="">{{__("Product Type")}}</span>
@@ -110,6 +117,13 @@
         <inertia-link :href="route('transaction-types.index')">
           <i class="feather icon-unlock"></i>
           <span class="menu-title" data-i18n="">{{__("Transaction Type")}}</span>
+        </inertia-link>
+      </li>
+
+      <li class="nav-item">
+        <inertia-link :href="route('transaction-media.index')">
+          <i class="feather icon-unlock"></i>
+          <span class="menu-title" data-i18n="">{{__("Transaction Media")}}</span>
         </inertia-link>
       </li>
 

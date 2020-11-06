@@ -173,7 +173,23 @@
                         <input type="text" class="form-control" readonly v-model="driver_invoice.due" :placeholder="__('Due')">
                       </th>
                     </tr>
-
+                    <tr>
+                      <th>{{ __('Transaction Media') }} <strong class="text-danger">*</strong></th>
+                      <th>
+                        <multi-select
+                          v-model="driver_invoice.transaction_media"
+                          :options="transaction_medias"
+                          label="name"
+                          track-by="name"
+                          :placeholder="__('Select Transaction Media')"></multi-select>
+                        <span v-if="errors.transaction_media_id" class="invalid-feedback" style="display: block;" role="alert">
+                          <strong>{{ errors.transaction_media_id[0] }}</strong>
+                        </span>
+                      </th>
+                      <th colspan="2">
+                        <input type="text" v-model="driver_invoice.description" class="form-control" :placeholder="__('Description')">
+                      </th>
+                    </tr>
                     <tr>
                       <th colspan="6" class="text-right">
                         <inertia-link :href="route('drivers.invoices.show', driver_invoice.invoice)" class="btn btn-secondary">
@@ -207,6 +223,8 @@
       driver_invoice: Object,
       clients: Array,
       products: Array,
+      load: Object,
+      transaction_medias: Array,
       measurement_types: Array,
       errors: Object,
     },
@@ -222,10 +240,11 @@
       },
       calculateTotal: function () {
         let track_rent = this.driver_invoice.track_rent;
+        let quantity = this.driver_invoice.quantity;
         let others = this.driver_invoice.others;
         let paid = this.driver_invoice.paid;
 
-        let total = parseFloat(track_rent) + parseFloat(others);
+        let total = (parseFloat(track_rent) + parseFloat(this.load.amount)) * parseFloat(quantity) + parseFloat(others);
         let due = total - parseFloat(paid);
         this.driver_invoice.total = parseFloat(total).toFixed(2);
         this.driver_invoice.due = parseFloat(due).toFixed(2);
@@ -239,10 +258,14 @@
       update: async function () {
         let self = this;
         const client_id = this.driver_invoice.client ? this.driver_invoice.client.id : '';
+        const transaction_media_id = this.driver_invoice.transaction_media ? this.driver_invoice.transaction_media.id : '';
+        const load_id = this.load ? this.load.id : '';
         const product_id = this.driver_invoice.product ? this.driver_invoice.product.id : '';
         const measurement_type_id = this.driver_invoice.measurement_type ? this.driver_invoice.measurement_type.id : '';
         this.$inertia.put(this.route('drivers.invoices.update', this.driver_invoice.id), {
           client_id: client_id,
+          transaction_media_id: transaction_media_id,
+          load_id: load_id,
           company_id: this.driver_invoice.company.id,
           driver_name: this.driver_invoice.driver_name,
           track_no: this.driver_invoice.track_no,
@@ -259,6 +282,7 @@
           total: this.driver_invoice.total,
           paid: this.driver_invoice.paid,
           due: this.driver_invoice.due,
+          description: this.driver_invoice.description,
         });
       },
     },

@@ -14,17 +14,17 @@ class InvoiceService
     $sale = Sale::latest()->first();
     if ($sale) {
       $len =strlen($sale->invoice);
-      $oldInvoice = substr($sale->invoice, 1, $len - 4);
+      $oldInvoice = substr($sale->invoice, 2, $len - 4);
       $id = substr($sale->invoice, $len - 3, $len - 1);
       if (date('ymd') === $oldInvoice) {
         $id += 1;
         $id = sprintf("%'.03d", $id);
-        return 'S' . $oldInvoice . $id;
+        return 'CI' . $oldInvoice . $id;
       }else {
-        return 'S' . date('ymd') . '001';
+        return 'CI' . date('ymd') . '001';
       }
     }else {
-       return 'S' . date('ymd') . '001';
+       return 'CI' . date('ymd') . '001';
     }
   }
 
@@ -33,17 +33,17 @@ class InvoiceService
     $driverInvoice = DriverInvoice::latest()->first();
     if ($driverInvoice) {
       $len =strlen($driverInvoice->invoice);
-      $oldInvoice = substr($driverInvoice->invoice, 1, $len - 4);
+      $oldInvoice = substr($driverInvoice->invoice, 2, $len - 4);
       $id = substr($driverInvoice->invoice, $len - 2, $len - 1);
       if (date('ymd') === $oldInvoice) {
         $id += 1;
         $id = sprintf("%'.03d", $id);
-        return 'D' . $oldInvoice . $id;
+        return 'DI' . $oldInvoice . $id;
       }else {
-        return 'D' . date('ymd') . '001';
+        return 'DI' . date('ymd') . '001';
       }
     }else {
-      return 'D' . date('ymd') . '001';
+      return 'DI' . date('ymd') . '001';
     }
   }
 }

@@ -126,6 +126,8 @@ class DriverInvoiceRepository
     $driverInvoice->due = $request->due == '' ? 0 : $request->due;
     $driverInvoice->company_id = $request->company_id;
     $driverInvoice->client_id = $request->client_id;
+    $driverInvoice->load_id = $request->load_id;
+    $driverInvoice->transaction_media_id = $request->transaction_media_id;
     $driverInvoice->driver_name = $request->driver_name;
     $driverInvoice->track_no = $request->track_no;
     $driverInvoice->driver_phone = $request->driver_phone;

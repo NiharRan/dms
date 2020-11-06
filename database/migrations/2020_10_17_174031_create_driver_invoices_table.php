@@ -45,6 +45,12 @@ class CreateDriverInvoicesTable extends Migration
             $table->string('driver_phone');
             $table->boolean('status')->default(0);
 
+            $table->unsignedBigInteger('load_id');
+            $table->foreign('load_id')->references('id')->on('loads');
+
+            $table->unsignedBigInteger('transaction_media_id');
+            $table->foreign('transaction_media_id')->references('id')->on('transaction_media');
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

@@ -69,6 +69,12 @@ Route::group([
       Route::post('/product-types', 'ProductTypeController@store')->name('product-types.store');
       Route::put('/product-types/{productTypeId}', 'ProductTypeController@update')->name('product-types.update');
 
+      // Loads routes
+      Route::get('/loads', 'LoadController@index')->name('loads.index');
+      Route::post('/loads', 'LoadController@store')->name('loads.store');
+      Route::put('/loads/{loadId}', 'LoadController@update')->name('loads.update');
+
+
       // Product type routes
       Route::get('/measurement-types', 'MeasurementTypeController@index')->name('measurement-types.index');
       Route::post('/measurement-types', 'MeasurementTypeController@store')->name('measurement-types.store');
@@ -78,6 +84,12 @@ Route::group([
       Route::get('/transaction-types', 'TransactionTypeController@index')->name('transaction-types.index');
       Route::post('/transaction-types', 'TransactionTypeController@store')->name('transaction-types.store');
       Route::put('/transaction-types/{transactionTypeId}', 'TransactionTypeController@update')->name('transaction-types.update');
+
+      // Transaction media routes
+      Route::get('/transaction-media', 'TransactionMediaController@index')->name('transaction-media.index');
+      Route::post('/transaction-media', 'TransactionMediaController@store')->name('transaction-media.store');
+      Route::put('/transaction-media/{transactionMediaId}', 'TransactionMediaController@update')->name('transaction-media.update');
+
 
        // Stock routes
        Route::get('/stocks', 'StockController@index')->name('stocks.index');
