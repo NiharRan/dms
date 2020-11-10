@@ -133,6 +133,23 @@
                         <th><input type="text" v-model="sale.total_due" readonly class="form-control" :placeholder="__('Due')"></th>
                       </tr>
                       <tr>
+                      <th>{{ __('Transaction Media') }} <strong class="text-danger">*</strong></th>
+                      <th>
+                        <multi-select
+                          v-model="sale.transaction_media"
+                          :options="transaction_medias"
+                          label="name"
+                          track-by="name"
+                          :placeholder="__('Select Transaction Media')"></multi-select>
+                        <span v-if="errors.transaction_media_id" class="invalid-feedback" style="display: block;" role="alert">
+                          <strong>{{ errors.transaction_media_id[0] }}</strong>
+                        </span>
+                      </th>
+                      <th colspan="2">
+                        <input type="text" v-model="sale.description" class="form-control" :placeholder="__('Description')">
+                      </th>
+                    </tr>
+                      <tr>
                         <th colspan="2" class="text-right">
                           <button type="button" class="btn btn-secondary"><i class="feather icon-x"></i> {{__("Cancel")}}</button>
                           <button type="submit" class="btn btn-success"><i class="feather icon-printer"></i> {{__("Update")}}</button>
@@ -164,6 +181,7 @@
       success: String,
       clients: Array,
       stocks: Array,
+      transaction_medias: Array,
       company: Object,
       sale: Object,
       errors: Object,
@@ -221,6 +239,7 @@
         let errors = this.isValid();
         if (!this.invalid) {
           let self = this;
+        const transaction_media_id = this.sale.transaction_media ? this.sale.transaction_media.id : '';
           const client_id = this.sale.client ? this.sale.client.id : '';
           const stocks = await this.sale.sale_details.map(item => {
             if(item.stock) return item.stock.id
@@ -247,6 +266,7 @@
             total_price: this.sale.total_price,
             total_due: this.sale.total_due,
             total_paid: this.sale.total_paid,
+          transaction_media_id: transaction_media_id,
             client_id: client_id,
             company_id: this.company.id,
             sale_date: this.sale.sale_date,

@@ -27,6 +27,11 @@ class CreateSalesTable extends Migration
             $table->foreign('client_id')->references('id')->on('clients');
 
             $table->dateTime('sale_date');
+
+            $table->unsignedBigInteger('transaction_media_id');
+            $table->foreign('transaction_media_id')->references('id')->on('transaction_media');
+
+            $table->string('description', 255)->nullable();
             $table->boolean('status')->default(0);
 
             $table->unsignedBigInteger('user_id');

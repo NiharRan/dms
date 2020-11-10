@@ -8,65 +8,67 @@ use App\Http\Requests\SaleRequest;
 use App\Http\Resources\SaleResource;
 use App\Repositories\SaleRepository;
 use App\Settings\Client;
-use App\Settings\Product;
 use App\Settings\Stock;
+use App\Settings\TransactionMedia;
 use Illuminate\Http\Response;
 
 class SaleController extends Controller
 {
-    protected $saleRepository;
-    public function __construct(SaleRepository $saleRepository)
-    {
-      $this->saleRepository = $saleRepository;
-    }
+  protected $saleRepository;
+  public function __construct(SaleRepository $saleRepository)
+  {
+    $this->saleRepository = $saleRepository;
+  }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index()
-    {
-      $pageConfigs = [
-        'pageHeader' => true
-      ];
-      $breadcrumbs = [
-        ['link'=>"/",'name'=> __('Home')],
-        ['name'=> __("Sales") ],
-      ];
-      $clients = Client::orderBy('name', 'asc')->get();
-      $sales = SaleResource::collection($this->saleRepository->paginate(request()->per_page));
-      return Inertia::render('Sale/Index', [
-        'breadcrumbs' => $breadcrumbs,
-        'sales' => $sales,
-        'clients' => $clients,
-        'has_modal' => false,
-        'link' => route('sales.create')
-      ]);
-    }
+  /**
+   * Display a listing of the resource.
+   *
+   * @return Response
+   */
+  public function index()
+  {
+    $pageConfigs = [
+      'pageHeader' => true
+    ];
+    $breadcrumbs = [
+      ['link' => "/", 'name' => __('Home')],
+      ['name' => __("Sales")],
+    ];
+    $clients = Client::orderBy('name', 'asc')->get();
+    $sales = SaleResource::collection($this->saleRepository->paginate(request()->per_page));
+    return Inertia::render('Sale/Index', [
+      'breadcrumbs' => $breadcrumbs,
+      'sales' => $sales,
+      'clients' => $clients,
+      'has_modal' => false,
+      'link' => route('sales.create')
+    ]);
+  }
 
-    public function create()
-    {
-      $pageConfigs = [
-        'pageHeader' => true
-      ];
-      $breadcrumbs = [
-        ['link'=>"/",'name'=> __('Home')],
-        ['link'=> route('sales.index'), 'name'=> __("Sales") ],
-        ['name' => __('New Sale')]
-      ];
-      $clients = Client::active()->get();
-      $stocks = Stock::active()->get();
-      $company = Company::active()->first();
-      return Inertia::render('Sale/Create', [
-        'breadcrumbs' => $breadcrumbs,
-        'clients' => $clients,
-        'stocks' => $stocks,
-        'company' => $company,
-        'has_modal' => false,
-        'link' => route('sales.index')
-      ]);
-    }
+  public function create()
+  {
+    $pageConfigs = [
+      'pageHeader' => true
+    ];
+    $breadcrumbs = [
+      ['link' => "/", 'name' => __('Home')],
+      ['link' => route('sales.index'), 'name' => __("Sales")],
+      ['name' => __('New Sale')]
+    ];
+    $clients = Client::active()->get();
+    $stocks = Stock::active()->get();
+    $transactionMedias = TransactionMedia::active()->get();
+    $company = Company::active()->first();
+    return Inertia::render('Sale/Create', [
+      'breadcrumbs' => $breadcrumbs,
+      'clients' => $clients,
+      'transaction_medias' => $transactionMedias,
+      'stocks' => $stocks,
+      'company' => $company,
+      'has_modal' => false,
+      'link' => route('sales.index')
+    ]);
+  }
 
   /**
    * Store a newly created resource in storage.
@@ -89,17 +91,19 @@ class SaleController extends Controller
       'pageHeader' => true
     ];
     $breadcrumbs = [
-      ['link'=>"/",'name'=> __('Home')],
-      ['link'=> route('sales.index'), 'name'=> __("Sales") ],
+      ['link' => "/", 'name' => __('Home')],
+      ['link' => route('sales.index'), 'name' => __("Sales")],
       ['name' => __('Edit Sale')]
     ];
     $sale = $this->saleRepository->findById($id);
     $clients = Client::active()->get();
     $stocks = Stock::active()->get();
+    $transactionMedias = TransactionMedia::active()->get();
     $company = Company::active()->first();
     return Inertia::render('Sale/Edit', [
       'breadcrumbs' => $breadcrumbs,
       'clients' => $clients,
+      'transaction_medias' => $transactionMedias,
       'stocks' => $stocks,
       'company' => $company,
       'sale' => $sale,

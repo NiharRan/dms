@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Http\Requests\DriverInvoicePayRequest;
 use App\Http\Requests\DriverInvoiceRequest;
 use App\Http\Resources\DriverInvoiceResource;
 use App\Repositories\DriverInvoiceRepository;
@@ -98,6 +99,7 @@ class DriverInvoiceController extends Controller
 
   public function show($invoice)
   {
+    $transactionMedias = TransactionMedia::active()->get();
     $driverInvoice = $this->driverInvoiceRepository->findByInvoice($invoice);
     $pageConfigs = [
       'pageHeader' => true
@@ -110,6 +112,7 @@ class DriverInvoiceController extends Controller
 
     return Inertia::render('Invoice/Driver/Invoice', [
       'driver_invoice' => $driverInvoice,
+      'transaction_medias' => $transactionMedias,
       'breadcrumbs' => $breadcrumbs,
       'link' => route('drivers.invoices.index')
     ]);
@@ -123,12 +126,9 @@ class DriverInvoiceController extends Controller
     ]);
   }
 
-  public function pay($invoice)
+  public function pay(DriverInvoicePayRequest $request, $invoice)
   {
-    $driverInvoice = $this->driverInvoiceRepository->findByInvoice($invoice);
-    $driverInvoice->paid = $driverInvoice->total;
-    $driverInvoice->due = 0.00;
-    $driverInvoice->status = 1;
+    $driverInvoice = $this->driverInvoiceRepository->payNow($request, $invoice);
     if ($driverInvoice->save()) {
       return redirect()->back()->with('success', 'Invoice payment done!');
     }

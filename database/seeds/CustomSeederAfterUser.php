@@ -13,7 +13,7 @@ class CustomSeederAfterUser extends Seeder
    */
   public function run()
   {
-    $transaction_types = ['Purchase', 'Driver Invoice', 'Sale', 'Expense', 'Paid', 'Due'];
+    $transaction_types = ['In', 'Out'];
     foreach ($transaction_types as $transaction_type) {
       DB::table('transaction_types')->insert([
         'name' => $transaction_type,
@@ -78,7 +78,7 @@ class CustomSeederAfterUser extends Seeder
       ]);
     }
 
-    $transaction_medias = ['Bank', 'Cash',];
+    $transaction_medias = ['Bank', 'Cash'];
     foreach ($transaction_medias as $transaction_media) {
       DB::table('transaction_media')->insert([
         'name' => $transaction_media,

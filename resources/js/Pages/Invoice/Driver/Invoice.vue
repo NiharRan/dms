@@ -17,98 +17,180 @@
         <div class="invoice-card card">
           <div class="card-content">
             <div class="card-header bg-gradient-success">
-              <h2 class="card-title mb-1 text-white">{{__("Invoice")}}: {{ driver_invoice.invoice }}</h2>
+              <h2 class="card-title mb-1 text-white">
+                {{ __("Invoice") }}: {{ driver_invoice.invoice }}
+              </h2>
             </div>
             <div class="card-body">
               <div class="invoice">
                 <div class="invoice-header text-center position-relative">
                   <div class="logo position-absolute width-200">
-                    <img :src="driver_invoice.company.current_logo" class="width-95-per" :alt="driver_invoice.company.name">
+                    <img
+                      :src="driver_invoice.company.current_logo"
+                      class="width-95-per"
+                      :alt="driver_invoice.company.name"
+                    />
                   </div>
-                  <h1 style="font-weight: bolder" class="mb-0">{{ driver_invoice.company.name }}</h1>
+                  <h1 style="font-weight: bolder" class="mb-0">
+                    {{ driver_invoice.company.name }}
+                  </h1>
                   <h5>{{ driver_invoice.company.description }}</h5>
-                  <p class="my-1"><span class="owner">{{ __('Pro:-') }} {{ driver_invoice.company.owner }}</span></p>
-                  <p class="mb-0"><span class="text-bold-700">{{ __('Head Office') }}: </span>{{ driver_invoice.company.head_office }}</p>
-                  <p class="mb-0"><span class="text-bold-700">{{ __("Dipu Office") }}: </span>{{ driver_invoice.company.dipu_office }}</p>
-                  <p class="mb-0"><span class="text-bold-700">{{ __("Address") }}: </span>{{ driver_invoice.company.address }}</p>
-                  <p class="mb-0"><span class="text-bold-700">{{ __('Sales Center') }}: </span>{{ driver_invoice.company.sales_center }}</p>
+                  <p class="my-1">
+                    <span class="owner"
+                      >{{ __("Pro:-") }}
+                      {{ driver_invoice.company.owner }}</span
+                    >
+                  </p>
                   <p class="mb-0">
-                  <span class="text-left">
-                    <span class="text-bold-700"> {{ __('Phone:') }}</span> {{ translate(driver_invoice.company.active_phones.toString()) }}
-                  </span>
+                    <span class="text-bold-700">{{ __("Head Office") }}: </span
+                    >{{ driver_invoice.company.head_office }}
+                  </p>
+                  <p class="mb-0">
+                    <span class="text-bold-700">{{ __("Dipu Office") }}: </span
+                    >{{ driver_invoice.company.dipu_office }}
+                  </p>
+                  <p class="mb-0">
+                    <span class="text-bold-700">{{ __("Address") }}: </span
+                    >{{ driver_invoice.company.address }}
+                  </p>
+                  <p class="mb-0">
+                    <span class="text-bold-700">{{ __("Sales Center") }}: </span
+                    >{{ driver_invoice.company.sales_center }}
+                  </p>
+                  <p class="mb-0">
+                    <span class="text-left">
+                      <span class="text-bold-700"> {{ __("Phone:") }}</span>
+                      {{
+                        translate(
+                          driver_invoice.company.active_phones.toString()
+                        )
+                      }}
+                    </span>
                     <span class="text-right">
-                    <span class="text-bold-700"> {{ __('Email:') }}</span> {{ driver_invoice.company.email }}
-                  </span>
+                      <span class="text-bold-700"> {{ __("Email:") }}</span>
+                      {{ driver_invoice.company.email }}
+                    </span>
                   </p>
                 </div>
                 <div class="invoice-body">
                   <p class="clearfix">
-                    <span class="float-left">{{ __('Serial No.') }}-{{ driver_invoice.invoice }}</span>
-                    <span class="float-right">{{ __('Date') }}{{ __(':') }} {{ driver_invoice.created_at | moment('DD/MM/YYYY') }}</span>
+                    <span class="float-left"
+                      >{{ __("Serial No.") }}-{{ driver_invoice.invoice }}</span
+                    >
+                    <span class="float-right"
+                      >{{ __("Date") }}{{ __(":") }}
+                      {{
+                        driver_invoice.created_at | moment("DD/MM/YYYY")
+                      }}</span
+                    >
                   </p>
-                  <p class="d-flex" style="justify-content: space-between;">
-                    <span>{{ __("Client Name") }}{{ __(":") }} {{ driver_invoice.client.name }}</span>
-                    <span>{{ __("Client Address") }}{{ __(":") }} {{ driver_invoice.client.address }}</span>
-                    <span>{{ __("Driver Name") }}{{ __(":") }} {{ driver_invoice.driver_name }}</span>
+                  <p class="d-flex" style="justify-content: space-between">
+                    <span
+                      >{{ __("Client Name") }}{{ __(":") }}
+                      {{ driver_invoice.client.name }}</span
+                    >
+                    <span
+                      >{{ __("Client Address") }}{{ __(":") }}
+                      {{ driver_invoice.client.address }}</span
+                    >
+                    <span
+                      >{{ __("Client Address") }}{{ __(":") }}
+                      {{ translate(driver_invoice.client.phone) }}</span
+                    >
                   </p>
-                  <p class="row">
-                    <span class="col-6 text-left">{{ __('Track No.') }}-{{ driver_invoice.track_no }}</span>
-                    <span class="col-6 text-right">{{ __('Dri: Mobile:') }} {{ translate(driver_invoice.driver_phone) }}</span>
+                  <p class="d-flex" style="justify-content: space-between">
+                    <span
+                      >{{ __("Driver Name") }}{{ __(":") }}
+                      {{ driver_invoice.driver_name }}</span
+                    >
+                    <span
+                      >{{ __("Track No.") }}-{{ driver_invoice.track_no }}</span
+                    >
+                    <span
+                      >{{ __("Dri: Mobile:") }}
+                      {{ translate(driver_invoice.driver_phone) }}</span
+                    >
                   </p>
 
                   <table class="table font-medium-3">
                     <thead>
-                    <tr>
-                      <th>{{ __('Description of Products') }}</th>
-                      <th class="text-center">{{ __('Measurement Type') }}</th>
-                      <th class="text-center">{{ __('Height') }} * {{ __('Length') }} * {{ __('Breadth') }}</th>
-                      <th class="text-center">{{ __('Quantity') }}</th>
-                    </tr>
+                      <tr>
+                        <th>{{ __("Description of Products") }}</th>
+                        <th class="text-center">
+                          {{ __("Measurement Type") }}
+                        </th>
+                        <th class="text-center">
+                          {{ __("Length") }} *
+                          {{ __("Breadth") }} *
+                          {{ __("Height") }} 
+                        </th>
+                        <th class="text-center">{{ __("Quantity") }}</th>
+                      </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <th>{{ driver_invoice.product.name }}</th>
-                      <th class="text-center">{{ driver_invoice.measurement_type.name }}</th>
-                      <th class="text-center">{{ driver_invoice.container_height }} * {{ driver_invoice.container_length }} * {{ driver_invoice.container_breadth }}</th>
-                      <th class="text-center">{{ driver_invoice.quantity }}</th>
-                    </tr>
-                    <tr>
-                      <th>{{ __('Track Rent') }}</th>
-                      <th></th>
-                      <th></th>
-                      <th class="text-right">{{ driver_invoice.track_rent }}</th>
-                    </tr>
-                    <tr>
-                      <th>{{ __('Others') }}</th>
-                      <th></th>
-                      <th></th>
-                      <th class="text-right">{{ driver_invoice.others }}</th>
-                    </tr>
+                      <tr>
+                        <th>{{ driver_invoice.product.name }}</th>
+                        <th class="text-center">
+                          {{ driver_invoice.measurement_type.name }}
+                        </th>
+                        <th class="text-center">
+                          {{ driver_invoice.container_height }} *
+                          {{ driver_invoice.container_length }} *
+                          {{ driver_invoice.container_breadth }}
+                        </th>
+                        <th class="text-center">
+                          {{ driver_invoice.quantity }}
+                        </th>
+                      </tr>
+                      <tr>
+                        <th>{{ __("Track Rent") }}</th>
+                        <th></th>
+                        <th></th>
+                        <th class="text-right">
+                          {{ driver_invoice.track_rent }}
+                        </th>
+                      </tr>
+                      <tr>
+                        <th>{{ __("Others") }}</th>
+                        <th></th>
+                        <th></th>
+                        <th class="text-right">{{ driver_invoice.others }}</th>
+                      </tr>
 
-                    <tr>
-                      <th colspan="3" class="text-right">{{ __('Total Amount') }}</th>
-                      <th class="text-right">{{ driver_invoice.total }}</th>
-                    </tr>
-                    <tr>
-                      <th colspan="3" class="text-right">{{ __('Paid') }}</th>
-                      <th class="text-right">{{ driver_invoice.paid }}</th>
-                    </tr>
-                    <tr>
-                      <th colspan="3" class="text-right">{{ __('Due') }}</th>
-                      <th class="text-right">{{ driver_invoice.due }}</th>
-                    </tr>
+                      <tr>
+                        <th colspan="3" class="text-right">
+                          {{ __("Total Amount") }}
+                        </th>
+                        <th class="text-right">{{ driver_invoice.total }}</th>
+                      </tr>
+                      <tr>
+                        <th colspan="3" class="text-right">{{ __("Paid") }}</th>
+                        <th class="text-right">{{ driver_invoice.paid }}</th>
+                      </tr>
+                      <tr>
+                        <th colspan="3" class="text-right">{{ __("Due") }}</th>
+                        <th class="text-right">{{ driver_invoice.due }}</th>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
                 <div class="invoice-footer">
-                  <p><span>{{ __('In Words') }}{{ __(':') }}</span> {{ driver_invoice.word }}</p>
+                  <p>
+                    <span>{{ __("In Words") }}{{ __(":") }}</span>
+                    {{ driver_invoice.word }}
+                  </p>
                   <p class="mb-0">
-                  <span class="float-left">
-                    <span class="text-bold-700"> {{ __('Signature of Driver') }}{{ __(':') }}</span>
-                  </span>
+                    <span class="float-left">
+                      <span class="text-bold-700">
+                        {{ __("Signature of Driver") }}{{ __(":") }}</span
+                      >
+                    </span>
                     <span class="float-right">
-                    <span class="text-bold-700"> {{ __('In Favor of') }}{{ __(':') }}</span> {{ driver_invoice.company.name }}
-                  </span>
+                      <span class="text-bold-700">
+                        {{ __("In Favor of") }}{{ __(":") }}</span
+                      >
+                      {{ driver_invoice.company.name }}
+                    </span>
                   </p>
                 </div>
               </div>
@@ -117,18 +199,92 @@
               <inertia-link
                 v-if="driver_invoice.status === 0"
                 class="btn btn-primary"
-                :href="route('drivers.invoices.pay', driver_invoice.invoice)">
-                {{__("Mark Paid")}}
+                role="button"
+                @click.prevent="openModel(driver_invoice)"
+                href=""
+              >
+                {{ __("Mark Paid") }}
               </inertia-link>
-              <inertia-link :href="route('drivers.invoices.edit', driver_invoice.id)" class="btn btn-primary"><i class="feather icon-edit"></i>
-                {{ __("Edit") }}</inertia-link>
-              <inertia-link :href="route('drivers.invoices.print', driver_invoice.invoice)" target="_blank" class="btn btn-info"><i class="feather icon-printer"></i>
-                {{ __("Print") }}</inertia-link>
-
+              <inertia-link
+                :href="route('drivers.invoices.edit', driver_invoice.id)"
+                class="btn btn-primary"
+                ><i class="feather icon-edit"></i>
+                {{ __("Edit") }}</inertia-link
+              >
+              <inertia-link
+                :href="route('drivers.invoices.print', driver_invoice.invoice)"
+                target="_blank"
+                class="btn btn-info"
+                ><i class="feather icon-printer"></i>
+                {{ __("Print") }}</inertia-link
+              >
             </div>
           </div>
         </div>
       </div>
+
+      <model>
+        <template v-slot:header>
+          <h4 class="modal-title" id="myModalLabel1">{{ modelTitle }}</h4>
+          <button
+            type="button"
+            @click="cleanModel"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+        </template>
+
+        <form @submit.prevent="pay">
+          <div class="modal-body">
+            <div class="form-group">
+              <multi-select
+                v-model="form.transaction_media"
+                :options="transaction_medias"
+                :class="[errors.transaction_media_id ? 'in-invalid' : '']"
+                label="name"
+                track-by="name"
+                :placeholder="__('Select Transaction Media')"
+              ></multi-select>
+              <span
+                v-if="errors.transaction_media_id"
+                class="invalid-feedback"
+                style="display: block"
+                role="alert"
+              >
+                <strong>{{ errors.transaction_media_id[0] }}</strong>
+              </span>
+            </div>
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                v-model="form.description"
+                :placeholder="__('Description')"
+                rows="3"
+              >
+              </textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="submit"
+              class="btn btn-success waves-effect waves-light"
+            >
+              {{ __("Pay") }}
+            </button>
+            <button
+              type="button"
+              @click="cleanModel"
+              class="btn"
+              data-dismiss="modal"
+            >
+              {{ __("Cancel") }}
+            </button>
+          </div>
+        </form>
+      </model>
       <!-- Ag Grid users list section end -->
     </section>
     <!-- product type list ends -->
@@ -136,60 +292,92 @@
 </template>
 
 <script>
-  import Layout from "../../../Shared/Layout";
+import Layout from "../../../Shared/Layout";
+import Model from "../../../Components/Model";
 
-  export default {
-    name: "DriverInvoiceShow",
-    components: {Layout},
-    props: {
-      success: String,
-      driver_invoice: Object,
+export default {
+  name: "DriverInvoiceShow",
+  components: { Layout, Model },
+  props: {
+    success: String,
+    transaction_medias: Array,
+    driver_invoice: Object,
+    errors: Object,
+  },
+  data: function () {
+    return {
+      modelTitle: "Mark as paid",
+      form: {
+        transaction_media: null,
+        description: "",
+      },
+    };
+  },
+  methods: {
+    printPage: function () {
+      window.print();
     },
-    data: function () {
-      return {
-
-      }
+    openModel: function (driver_invoice) {
+      this.form = driver_invoice;
+      $("#default").modal("show");
     },
-    methods: {
-      printPage: function () {
-        window.print();
-      }
+    cleanModel: function () {
+      $("#default").modal("hide");
+      this.form.transaction_media = null;
+      this.form.description = "";
     },
-    created() {
-
-    }
-  }
+    pay: function () {
+      let self = this;
+      let transaction_media_id = this.form.transaction_media
+        ? this.form.transaction_media.id
+        : "";
+      this.$inertia
+        .put(this.route(`drivers.invoices.pay`, this.form.invoice), {
+          transaction_media_id: transaction_media_id,
+          _method: "put",
+        })
+        .then(function () {
+          if (Object.keys(self.errors).length === 0) {
+            self.closeModel();
+            self.$toast("Marked as paid successfully");
+          }
+        });
+    },
+  },
+  created() {},
+};
 </script>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style>
-  *{
-    font-family: 'SolaimanLipi',sans-serif;
-  }
-  .table {
-    border-bottom: 1px solid #0b0b0b !important;
-  }
+* {
+  font-family: "SolaimanLipi", sans-serif;
+}
+.table {
+  border-bottom: 1px solid #0b0b0b !important;
+}
+.owner {
+  background-color: black;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 16px;
+  font-size: 18px;
+}
+@media print {
   .owner {
-    background-color: black;
-    color: #fff;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 16px;
-    font-size: 18px;
+    background-color: black !important;
+    color: #fff !important;
+    font-weight: bold !important;
   }
-  @media print {
-    .owner {
-      background-color: black !important;
-      color: #fff !important;
-      font-weight: bold !important;
-    }
-    .main-menu,
-    .header-navbar-shadow,
-    .content-header,
-    .info-card,
-    .invoice-card .card-header,
-    .card-footer,
-    .footer {
-      display: none !important;
-      visibility: hidden !important;
-    }
+  .main-menu,
+  .header-navbar-shadow,
+  .content-header,
+  .info-card,
+  .invoice-card .card-header,
+  .card-footer,
+  .footer {
+    display: none !important;
+    visibility: hidden !important;
   }
+}
 </style>

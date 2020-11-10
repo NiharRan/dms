@@ -6,6 +6,7 @@ namespace App\Repositories;
 
 use App\DriverInvoice;
 use App\Services\InvoiceService;
+use App\Services\TransactionService;
 use App\Traits\RepositoryTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -95,6 +96,9 @@ class DriverInvoiceRepository
     $driverInvoice->created_at = date('Y-m-d H:i:s');
     $driverInvoice->user_id = Auth::id();
     if ($driverInvoice->save()) {
+      if($driverInvoice->paid != 0) {
+        TransactionService::createFromDriverInvoice($driverInvoice);
+      }
       return $driverInvoice;
     }
     return null;
@@ -106,6 +110,9 @@ class DriverInvoiceRepository
     $driverInvoice = $this->setupData($driverInvoice, $request);
     $driverInvoice->user_id = Auth::id();
     if ($driverInvoice->save()) {
+      if($driverInvoice->paid != 0) {
+        TransactionService::updateFromDriverInvoice($driverInvoice);
+      }
       return $driverInvoice;
     }
     return null;
@@ -127,14 +134,32 @@ class DriverInvoiceRepository
     $driverInvoice->company_id = $request->company_id;
     $driverInvoice->client_id = $request->client_id;
     $driverInvoice->load_id = $request->load_id;
-    $driverInvoice->transaction_media_id = $request->transaction_media_id;
     $driverInvoice->driver_name = $request->driver_name;
     $driverInvoice->track_no = $request->track_no;
     $driverInvoice->driver_phone = $request->driver_phone;
+    
+    $driverInvoice->transaction_media_id = $request->transaction_media_id;
+    $driverInvoice->description = $request->description;
 
     if(intval($request->due) == 0) {
       $driverInvoice->status = 1;
     }
     return $driverInvoice;
+  }
+
+  public function payNow(Request $request, $invoice)
+  {
+    $driverInvoice = $this->findByInvoice($invoice);
+    $driverInvoice->paid = $driverInvoice->total;
+    $driverInvoice->due = 0.00;
+    $driverInvoice->status = 1;
+    $driverInvoice->transaction_media_id = $request->transaction_media_id;
+    $driverInvoice->description = $request->description;
+    
+    if ($driverInvoice->save()) {
+      TransactionService::updateFromDriverInvoice($driverInvoice);
+      return $driverInvoice;
+    }
+    return null;
   }
 }

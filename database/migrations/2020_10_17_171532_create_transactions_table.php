@@ -26,6 +26,11 @@ class CreateTransactionsTable extends Migration
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+
+            $table->unsignedBigInteger('transaction_media_id');
+            $table->foreign('transaction_media_id')->references('id')->on('transaction_media');
+
+            $table->string('description', 255)->nullable();
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class DriverInvoice extends MyModel
     'invoice', 'company_id', 'client_id', 'driver_name', 'track_no',
     'driver_phone', 'product_id', 'quantity', 'measurement_type_id', 
     'container_height', 'container_length', 'container_breadth', 'track_rent',
-    'others', 'total', 'paid', 'due', 'status', 'user_id', 'load_id', 'transaction_media_id'
+    'others', 'total', 'paid', 'due', 'status', 'user_id', 'load_id', 'transaction_media_id', 'description'
   ];
 
   public function getWordAttribute()

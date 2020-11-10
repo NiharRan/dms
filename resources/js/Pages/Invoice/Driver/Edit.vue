@@ -179,6 +179,7 @@
                         <multi-select
                           v-model="driver_invoice.transaction_media"
                           :options="transaction_medias"
+                          :class="[errors.driver_name ? 'in-invalid' : '' ]"
                           label="name"
                           track-by="name"
                           :placeholder="__('Select Transaction Media')"></multi-select>

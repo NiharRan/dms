@@ -6,6 +6,7 @@ namespace App\Repositories;
 
 use App\Sale;
 use App\Services\InvoiceService;
+use App\Services\TransactionService;
 use App\Settings\StockDetails;
 use App\Traits\RepositoryTrait;
 use Illuminate\Http\Request;
@@ -89,6 +90,10 @@ class SaleRepository
     $sale->user_id = Auth::id();
     if ($sale->save()) {
       $this->storeSaleDetailsInfo($sale, $request);
+
+      if ($sale->total_paid != 0) {
+        TransactionService::createFromSale($sale);
+      }
       return $sale;
     }
     return null;
@@ -115,6 +120,9 @@ class SaleRepository
       $sale->sale_details()->delete();
       // Now add updated sale info
       $this->storeSaleDetailsInfo($sale, $request);
+      if ($sale->total_paid != 0) {
+        TransactionService::updateFromSale($sale);
+      }
       return $sale;
     }
     return null;
@@ -127,6 +135,8 @@ class SaleRepository
     $sale->total_due = $request->total_due == '' ? 0 : $request->total_due;
     $sale->company_id = $request->company_id;
     $sale->client_id = $request->client_id;
+    $sale->transaction_media_id = $request->transaction_media_id;
+    $sale->description = $request->description;
     $sale->sale_date = date('Y-m-d H:i:s', strtotime($request->sale_date));
     
     if(intval($request->total_due) === 0) {

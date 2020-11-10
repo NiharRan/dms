@@ -76,13 +76,14 @@
             <p class="d-flex" style="justify-content: space-between;">
               <span>{{ __("Client Name") }}{{ __(":") }} {{ driver_invoice.client.name }}</span>
               <span>{{ __("Client Address") }}{{ __(":") }} {{ driver_invoice.client.address }}</span>
-              <span>{{ __("Driver Name") }}{{ __(":") }} {{ driver_invoice.driver_name }}</span>
+              <span>{{ __("Client Address") }}{{ __(":") }} {{ translate(driver_invoice.client.phone) }}</span>
             </p>
-            <p class="clearfix">
-              <span class="float-left"
+            <p class="d-flex" style="justify-content: space-between;">
+              <span>{{ __("Driver Name") }}{{ __(":") }} {{ driver_invoice.driver_name }}</span>
+              <span
                 >{{ __("Track No.") }}-{{ driver_invoice.track_no }}</span
               >
-              <span class="float-right"
+              <span
                 >{{ __("Dri: Mobile:") }}
                 {{ translate(driver_invoice.driver_phone) }}</span
               >

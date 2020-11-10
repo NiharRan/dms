@@ -59,7 +59,5 @@ class AppServiceProvider extends ServiceProvider
 
 
         // Observers
-        Sale::observe(SaleObserver::class);
-        DriverInvoice::observe(DriverInvoiceObserver::class);
     }
 }

@@ -14,47 +14,80 @@
               <form @submit.prevent="store">
                 <div class="form-group row">
                   <div class="col-md-6 col-12">
-                    <label>{{__("Client")}}<strong class="text-danger">*</strong></label>
+                    <label
+                      >{{ __("Client")
+                      }}<strong class="text-danger">*</strong></label
+                    >
                     <multi-select
                       v-model="form.client"
                       :options="clients"
-                      :class="[errors.client_id ? 'in-invalid' : '' ]"
+                      :class="[errors.client_id ? 'in-invalid' : '']"
                       :searchable="true"
                       :close-on-select="true"
                       :show-labels="true"
                       label="name"
                       track-by="name"
-                      :placeholder="__('Select Client')"></multi-select>
+                      :placeholder="__('Select Client')"
+                    ></multi-select>
 
-                    <span v-if="errors.client_id" class="invalid-feedback" style="display: block;" role="alert">
+                    <span
+                      v-if="errors.client_id"
+                      class="invalid-feedback"
+                      style="display: block"
+                      role="alert"
+                    >
                       <strong>{{ errors.client_id[0] }}</strong>
                     </span>
                   </div>
                   <div class="col-md-6 col-12">
-                    <label>{{__("Sale Date")}}<strong class="text-danger">*</strong></label>
+                    <label
+                      >{{ __("Sale Date")
+                      }}<strong class="text-danger">*</strong></label
+                    >
                     <date-picker
                       class="form-control"
                       :placeholder="__('Sale Date')"
-                      v-model="form.sale_date">
+                      v-model="form.sale_date"
+                    >
                     </date-picker>
 
-                    <span v-if="errors.sale_date" class="invalid-feedback" style="display: block;" role="alert">
+                    <span
+                      v-if="errors.sale_date"
+                      class="invalid-feedback"
+                      style="display: block"
+                      role="alert"
+                    >
                       <strong>{{ errors.sale_date[0] }}</strong>
                     </span>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label>{{__("Products")}}</label>
+                  <label>{{ __("Products") }}</label>
                   <table class="table table-responsive-sm table-bordered">
                     <tbody>
-                      <tr v-for="(row, index) in form.sale_details" :key="index">
+                      <tr
+                        v-for="(row, index) in form.sale_details"
+                        :key="index"
+                      >
                         <td>
                           <div class="row">
                             <div class="col-md-4 col-12 my-1">
-                              <input type="text" v-model="row.track_no" class="form-control" :placeholder="__('Track No.')">
-                              <span v-if="sale_details_errors[index]" class="invalid-feedback" style="display: block;" role="alert">
-                                <strong>{{ sale_details_errors[index].track_no }}</strong>
+                              <input
+                                type="text"
+                                v-model="row.track_no"
+                                class="form-control"
+                                :placeholder="__('Track No.')"
+                              />
+                              <span
+                                v-if="sale_details_errors[index]"
+                                class="invalid-feedback"
+                                style="display: block"
+                                role="alert"
+                              >
+                                <strong>{{
+                                  sale_details_errors[index].track_no
+                                }}</strong>
                               </span>
                             </div>
                             <div class="col-md-4 col-12 my-1">
@@ -67,9 +100,17 @@
                                 @input="fetchProducts(row.stock)"
                                 label="name"
                                 track-by="name"
-                                :placeholder="__('Select Stock')"></multi-select>
-                                <span v-if="sale_details_errors[index]" class="invalid-feedback" style="display: block;" role="alert">
-                                <strong>{{ sale_details_errors[index].stock }}</strong>
+                                :placeholder="__('Select Stock')"
+                              ></multi-select>
+                              <span
+                                v-if="sale_details_errors[index]"
+                                class="invalid-feedback"
+                                style="display: block"
+                                role="alert"
+                              >
+                                <strong>{{
+                                  sale_details_errors[index].stock
+                                }}</strong>
                               </span>
                             </div>
                             <div class="col-md-4 col-12 my-1">
@@ -81,28 +122,76 @@
                                 :show-labels="true"
                                 label="name"
                                 track-by="name"
-                                :placeholder="__('Select Product')"></multi-select>
-                                <span v-if="sale_details_errors[index]" class="invalid-feedback" style="display: block;" role="alert">
-                                <strong>{{ sale_details_errors[index].product }}</strong>
+                                :placeholder="__('Select Product')"
+                              ></multi-select>
+                              <span
+                                v-if="sale_details_errors[index]"
+                                class="invalid-feedback"
+                                style="display: block"
+                                role="alert"
+                              >
+                                <strong>{{
+                                  sale_details_errors[index].product
+                                }}</strong>
                               </span>
                             </div>
                             <div class="col-md-3 col-12 my-1">
-                              <input type="text" readonly class="form-control" :value="[row.product ? row.product.quantity : '']" :placeholder="__('Available Stock')">
+                              <input
+                                type="text"
+                                readonly
+                                class="form-control"
+                                :value="[
+                                  row.product ? row.product.quantity : '',
+                                ]"
+                                :placeholder="__('Available Stock')"
+                              />
                             </div>
                             <div class="col-md-3 col-12 my-1">
-                              <input type="text" v-model="row.quantity" @keyup="calculateTotalWhenQuantityChange(index)" class="form-control" :placeholder="__('Product Quantity')">
-                              <span v-if="sale_details_errors[index]" class="invalid-feedback" style="display: block;" role="alert">
-                                <strong>{{ sale_details_errors[index].quantity }}</strong>
+                              <input
+                                type="text"
+                                v-model="row.quantity"
+                                @keyup="calculateTotalWhenQuantityChange(index)"
+                                class="form-control"
+                                :placeholder="__('Product Quantity')"
+                              />
+                              <span
+                                v-if="sale_details_errors[index]"
+                                class="invalid-feedback"
+                                style="display: block"
+                                role="alert"
+                              >
+                                <strong>{{
+                                  sale_details_errors[index].quantity
+                                }}</strong>
                               </span>
                             </div>
                             <div class="col-md-3 col-12 my-1">
-                              <input type="text" v-model="row.price" @keyup="calculateTotalWhenPriceChange(index)" class="form-control" :placeholder="__('Product Price')">
-                              <span v-if="sale_details_errors[index]" class="invalid-feedback" style="display: block;" role="alert">
-                                <strong>{{ sale_details_errors[index].price }}</strong>
+                              <input
+                                type="text"
+                                v-model="row.price"
+                                @keyup="calculateTotalWhenPriceChange(index)"
+                                class="form-control"
+                                :placeholder="__('Product Price')"
+                              />
+                              <span
+                                v-if="sale_details_errors[index]"
+                                class="invalid-feedback"
+                                style="display: block"
+                                role="alert"
+                              >
+                                <strong>{{
+                                  sale_details_errors[index].price
+                                }}</strong>
                               </span>
                             </div>
                             <div class="col-md-3 col-12 my-1">
-                              <input type="text" v-model="row.total" readonly class="form-control" :placeholder="__('Total')">
+                              <input
+                                type="text"
+                                v-model="row.total"
+                                readonly
+                                class="form-control"
+                                :placeholder="__('Total')"
+                              />
                             </div>
                           </div>
                         </td>
@@ -110,35 +199,105 @@
                           <button
                             class="btn btn-outline-danger"
                             @click.prevent="removeSaleItem(index)"
-                            type="button"><i class="feather icon-trash"></i>
+                            type="button"
+                          >
+                            <i class="feather icon-trash"></i>
                           </button>
                         </th>
-                        
                       </tr>
                       <tr>
+                        <th></th>
                         <th>
-                          
+                          <button
+                            @click.prevent="addNewItem"
+                            class="btn btn-outline-success"
+                          >
+                            <i class="feather icon-plus"></i>
+                          </button>
                         </th>
+                      </tr>
+                      <tr>
+                        <th class="text-right">{{ __("Total") }}</th>
                         <th>
-                          <button @click.prevent="addNewItem" class="btn btn-outline-success"><i class="feather icon-plus"></i></button>
+                          <input
+                            type="text"
+                            v-model="form.total_price"
+                            readonly
+                            class="form-control"
+                            :placeholder="__('Total')"
+                          />
                         </th>
                       </tr>
                       <tr>
-                        <th class="text-right">{{__('Total')}}</th>
-                        <th><input type="text" v-model="form.total_price" readonly class="form-control" :placeholder="__('Total')"></th>
+                        <th class="text-right">{{ __("Paid") }}</th>
+                        <th>
+                          <input
+                            type="text"
+                            v-model="form.total_paid"
+                            @keyup="calculateDue"
+                            class="form-control"
+                            :placeholder="__('Paid')"
+                          />
+                        </th>
                       </tr>
                       <tr>
-                        <th class="text-right">{{__("Paid")}}</th>
-                        <th><input type="text" v-model="form.total_paid" @keyup="calculateDue" class="form-control" :placeholder="__('Paid')"></th>
+                        <th class="text-right">{{ __("Due") }}</th>
+                        <th>
+                          <input
+                            type="text"
+                            v-model="form.total_due"
+                            readonly
+                            class="form-control"
+                            :placeholder="__('Due')"
+                          />
+                        </th>
                       </tr>
                       <tr>
-                        <th class="text-right">{{__("Due")}}</th>
-                        <th><input type="text" v-model="form.total_due" readonly class="form-control" :placeholder="__('Due')"></th>
+                        <th colspan="2">
+                          <div class="row">
+                            <div class="col-2">
+                              {{ __("Transaction Media") }}
+                              <strong class="text-danger">*</strong>
+                            </div>
+                            <div class="col-4">
+                              <multi-select
+                                v-model="form.transaction_media"
+                                :options="transaction_medias"
+                                label="name"
+                                track-by="name"
+                                :placeholder="__('Select Transaction Media')"
+                              ></multi-select>
+                              <span
+                                v-if="errors.transaction_media_id"
+                                class="invalid-feedback"
+                                style="display: block"
+                                role="alert"
+                              >
+                                <strong>{{
+                                  errors.transaction_media_id[0]
+                                }}</strong>
+                              </span>
+                            </div>
+                            <div class="col-6">
+                              <input
+                                type="text"
+                                v-model="form.description"
+                                class="form-control"
+                                :placeholder="__('Description')"
+                              />
+                            </div>
+                          </div>
+                        </th>
                       </tr>
                       <tr>
                         <th colspan="2" class="text-right">
-                          <button type="button" class="btn btn-secondary"><i class="feather icon-x"></i> {{__("Cancel")}}</button>
-                          <button type="submit" class="btn btn-success"><i class="feather icon-printer"></i> {{__("Store")}}</button>
+                          <button type="button" class="btn btn-secondary">
+                            <i class="feather icon-x"></i> {{ __("Cancel") }}
+                          </button>
+                          <button type="submit" class="btn btn-success">
+                            <i class="feather icon-printer"></i>
+                            {{ __("Store") }}
+                          </button>
                         </th>
                       </tr>
                     </tbody>
@@ -156,115 +315,130 @@
 </template>
 
 <script>
-  import axios from 'axios'
-  import Layout from "../../Shared/Layout";
-  import Model from "../../Components/Model";
+import axios from "axios";
+import Layout from "../../Shared/Layout";
+import Model from "../../Components/Model";
 
-  export default {
-    name: "SaleCreate",
-    components: {Model, Layout},
-    props: {
-      success: String,
-      clients: Array,
-      stocks: Array,
-      company: Object,
-      errors: Object,
+export default {
+  name: "SaleCreate",
+  components: { Model, Layout },
+  props: {
+    success: String,
+    clients: Array,
+    transaction_medias: Array,
+    stocks: Array,
+    company: Object,
+    errors: Object,
+  },
+  data: function () {
+    return {
+      form: {
+        id: "",
+        total_price: "0.00",
+        total_paid: "0.00",
+        total_due: "0.00",
+        company: null,
+        transaction_media: null,
+        client: null,
+        sale_date: new Date(),
+        sale_details: [],
+      },
+      products: [],
+      sale_details_errors: [],
+      invalid: false,
+    };
+  },
+  methods: {
+    calculateTotalWhenQuantityChange: function (index) {
+      const selectedRow = this.form.sale_details[index];
+      if (selectedRow.price !== "") {
+        let price = 0;
+        if (selectedRow.quantity !== "") {
+          price =
+            parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
+        }
+        selectedRow.total = parseFloat(price).toFixed(2);
+        this.form.sale_details[index] = selectedRow;
+      }
+      this.calculateTotal();
     },
-    data: function () {
-      return {
-        form: {
-          id: '',
-          total_price: '0.00',
-          total_paid: '0.00',
-          total_due: '0.00',
-          company: null,
-          client: null,
-          sale_date: new Date(),
-          sale_details: []
-        },
-        products: [],
-        sale_details_errors: [],
-        invalid: false
+    calculateTotalWhenPriceChange: function (index) {
+      const selectedRow = this.form.sale_details[index];
+      if (selectedRow.quantity !== "") {
+        let price = 0;
+        if (selectedRow.price !== "") {
+          price =
+            parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
+        }
+        selectedRow.total = parseFloat(price).toFixed(2);
+        this.form.sale_details[index] = selectedRow;
+      } else {
+        alert("Quantity must not be empty!");
+      }
+      this.calculateTotal();
+    },
+    calculateTotal: async function () {
+      let total_price = await this.form.sale_details.reduce(
+        (sum, item) => sum + parseFloat(item.total),
+        0
+      );
+      this.form.total_price = parseFloat(total_price).toFixed(2);
+      let total_due =
+        parseFloat(total_price) - parseFloat(this.form.total_paid);
+      this.form.total_due = parseFloat(total_due).toFixed(2);
+    },
+    calculateDue: function () {
+      if (this.form.total_price !== "") {
+        let total_due = 0;
+        if (this.form.total_paid !== "") {
+          total_due =
+            parseFloat(this.form.total_price) -
+            parseFloat(this.form.total_paid);
+        }
+        this.form.total_due = parseFloat(total_due).toFixed(2);
       }
     },
-    methods: {
-      calculateTotalWhenQuantityChange: function (index) {
-        const selectedRow = this.form.sale_details[index];
-        if (selectedRow.price !== '') {
-          let price = 0;
-          if (selectedRow.quantity !== '') {
-            price = parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
-          }
-          selectedRow.total = parseFloat(price).toFixed(2);
-          this.form.sale_details[index] = selectedRow;
-        }
-        this.calculateTotal();
-      },
-      calculateTotalWhenPriceChange: function (index) {
-        const selectedRow = this.form.sale_details[index];
-        if (selectedRow.quantity !== '') {
-          let price = 0;
-          if (selectedRow.price !== '') {
-            price = parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
-          }
-          selectedRow.total = parseFloat(price).toFixed(2);
-          this.form.sale_details[index] = selectedRow;
-        }else {
-          alert('Quantity must not be empty!');
-        }
-        this.calculateTotal();
-      },
-      calculateTotal: async function () {
-        let total_price = await this.form.sale_details.reduce((sum, item) => sum + parseFloat(item.total), 0);
-        this.form.total_price = parseFloat(total_price).toFixed(2);
-        let total_due = parseFloat(total_price) - parseFloat(this.form.total_paid);
-        this.form.total_due = parseFloat(total_due).toFixed(2);
-      },
-      calculateDue: function () {
-        if (this.form.total_price !== '') {
-          let total_due = 0;
-          if (this.form.total_paid !== '') {
-            total_due = parseFloat(this.form.total_price) - parseFloat(this.form.total_paid);
-          }
-          this.form.total_due = parseFloat(total_due).toFixed(2);
-        }
-      },
-      cleanForm: function () {
-        Object.keys(this.errors).forEach((key, value) => {
-          this.errors[key] = '';
+    cleanForm: function () {
+      Object.keys(this.errors).forEach((key, value) => {
+        this.errors[key] = "";
+      });
+    },
+    store: async function () {
+      let errors = this.isValid();
+      if (!this.invalid) {
+        let self = this;
+        const transaction_media_id = this.form.transaction_media
+          ? this.form.transaction_media.id
+          : "";
+        const client_id = this.form.client ? this.form.client.id : "";
+        const stocks = await this.form.sale_details.map((item) => {
+          if (item.stock) return item.stock.id;
+          return "";
         });
-      },
-      store: async function () {
-        let errors = this.isValid();
-        if (!this.invalid) {
-          let self = this;
-          const client_id = this.form.client ? this.form.client.id : '';
-          const stocks = await this.form.sale_details.map(item => {
-            if(item.stock) return item.stock.id
-            return '';
-          });
-          const products = await this.form.sale_details.map(item => {
-            if(item.product) return item.product.id
-            return '';
-          });
-          const tracks = await this.form.sale_details.map(item => {
-            if(item.track_no) return item.track_no;
-            return '';
-          });
-          const quantities = await this.form.sale_details.map(item => {
-            return item.quantity;
-          });
-          const prices = await this.form.sale_details.map(item => {
-            return item.price;
-          });
-          const totals = await this.form.sale_details.map(item => {
-            return item.total;
-          });
-          this.$inertia.post(this.route('sales.store'), {
+        const products = await this.form.sale_details.map((item) => {
+          if (item.product) return item.product.id;
+          return "";
+        });
+        const tracks = await this.form.sale_details.map((item) => {
+          if (item.track_no) return item.track_no;
+          return "";
+        });
+        const quantities = await this.form.sale_details.map((item) => {
+          return item.quantity;
+        });
+        const prices = await this.form.sale_details.map((item) => {
+          return item.price;
+        });
+        const totals = await this.form.sale_details.map((item) => {
+          return item.total;
+        });
+        this.$inertia
+          .post(this.route("sales.store"), {
             total_price: this.form.total_price,
             total_due: this.form.total_due,
             total_paid: this.form.total_paid,
             client_id: client_id,
+            transaction_media_id: transaction_media_id,
             company_id: this.company.id,
             sale_date: this.form.sale_date,
             stocks: stocks,
@@ -277,73 +451,72 @@
           .then(function () {
             if (Object.keys(self.errors).length === 0) {
               self.cleanForm();
-              self.$toast('Sale Created Successfully');
+              self.$toast("Sale Created Successfully");
             }
           });
-        } else {
-          this.sale_details_errors = errors;
-          this.invalid = false;
-        }
-      },
-      addNewItem: function () {
-        const saleDetail = {
-          stock: null,
-          product: null,
-          quantity: '',
-          price: '0.00',
-          total: '0.00',
-          track_no: ''
-        };
-        this.form.sale_details.push(saleDetail);
-      },
-      removeSaleItem: function (index) {
-        const removedItem =  this.form.sale_details[index];
-        this.form.total_price -= removedItem.total;
-        this.form.total_due -= removedItem.total;
-        this.form.sale_details.splice(index, 1);
-      },
-      fetchProducts: function (stock) {
-        let self = this;
-        axios.get(this.route('stocks.products', stock.id))
-        .then(({data}) => {
-          self.products = data;
-        });
-      },
-      isValid: function () {
-        let errors = [];
-        this.form.sale_details.forEach((row, index) => {
-          let error = {};
-          if(row.stock === null) {
-            this.invalid = true;
-            error.stock = 'Stock is required';
-          }
-          if(row.product === null) {
-            this.invalid = true;
-            error.product = 'Product is required';
-          }
-          if(row.track_no === '') {
-            this.invalid = true;
-            error.track_no = 'Track No. is required';
-          }
-          if(row.quantity === '') {
-            this.invalid = true;
-            error.quantity = 'Product quantity is required';
-          }
-          if(row.price === '0.00' || row.price === '') {
-            this.invalid = true;
-            error.price = 'Product price is required';
-          }
-          errors[index] = error;
-        });
-        return errors;
+      } else {
+        this.sale_details_errors = errors;
+        this.invalid = false;
       }
     },
-    created() {
-      this.addNewItem();
-    }
-  }
+    addNewItem: function () {
+      const saleDetail = {
+        stock: null,
+        product: null,
+        quantity: "",
+        price: "0.00",
+        total: "0.00",
+        track_no: "",
+      };
+      this.form.sale_details.push(saleDetail);
+    },
+    removeSaleItem: function (index) {
+      const removedItem = this.form.sale_details[index];
+      this.form.total_price -= removedItem.total;
+      this.form.total_due -= removedItem.total;
+      this.form.sale_details.splice(index, 1);
+    },
+    fetchProducts: function (stock) {
+      let self = this;
+      axios.get(this.route("stocks.products", stock.id)).then(({ data }) => {
+        self.products = data;
+      });
+    },
+    isValid: function () {
+      let errors = [];
+      this.form.sale_details.forEach((row, index) => {
+        let error = {};
+        if (row.stock === null) {
+          this.invalid = true;
+          error.stock = "Stock is required";
+        }
+        if (row.product === null) {
+          this.invalid = true;
+          error.product = "Product is required";
+        }
+        if (row.track_no === "") {
+          this.invalid = true;
+          error.track_no = "Track No. is required";
+        }
+        if (row.quantity === "") {
+          this.invalid = true;
+          error.quantity = "Product quantity is required";
+        }
+        if (row.price === "0.00" || row.price === "") {
+          this.invalid = true;
+          error.price = "Product price is required";
+        }
+
+        errors[index] = error;
+      });
+      return errors;
+    },
+  },
+  created() {
+    this.addNewItem();
+  },
+};
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style>
-
 </style>

@@ -25,6 +25,7 @@ class SaleRequest extends FormRequest
   {
     return [
       'client_id' => 'required',
+      'transaction_media_id' => 'required',
     ];
   }
 
@@ -37,6 +38,7 @@ class SaleRequest extends FormRequest
   {
     return [
       'client_id.required' => 'Client is required',
+      'transaction_media_id.required' => 'Transaction media is required',
     ];
   }
 }
