@@ -39,6 +39,7 @@ class LoadRepository
     $row = $this->load->find($rowId);
     return $row->update([
       'amount' => request()->amount,
+      'stock_rent' => request()->stock_rent,
       'status' => request()->status
     ]);
   }
@@ -52,7 +53,8 @@ class LoadRepository
   {
     return $this->load->create([
       'amount' => request()->amount,
-    ]);
+      'stock_rent' => request()->stock_rent,
+      ]);
   }
 
 }

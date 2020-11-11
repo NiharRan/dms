@@ -24,7 +24,8 @@ class LoadRequest extends FormRequest
   public function rules()
   {
     return [
-      'amount' => 'required|numeric'
+      'amount' => 'required|numeric',
+      'stock_rent' => 'required|numeric',
     ];
   }
 
@@ -38,6 +39,8 @@ class LoadRequest extends FormRequest
     $messages = [
       'amount.required' => 'Load amount is required',
       'amount.numeric'  => 'Invalid amount',
+      'stock_rent.required' => 'Stock rent amount is required',
+      'stock_rent.numeric'  => 'Invalid amount',
     ];
     return $messages;
   }

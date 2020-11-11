@@ -12,6 +12,6 @@ class Load extends MyModel
    * @var array
    */
   protected $fillable = [
-    'amount', 'status'
+    'amount', 'stock_rent', 'status'
   ];
 }
