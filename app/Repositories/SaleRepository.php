@@ -133,6 +133,7 @@ class SaleRepository
     $sale->total_price = $request->total_price == '' ? 0 : $request->total_price;
     $sale->total_paid = $request->total_paid == '' ? 0 : $request->total_paid;
     $sale->total_due = $request->total_due == '' ? 0 : $request->total_due;
+    $sale->commission = $request->commission == '' ? 0 : $request->commission;
     $sale->company_id = $request->company_id;
     $sale->client_id = $request->client_id;
     $sale->transaction_media_id = $request->transaction_media_id;

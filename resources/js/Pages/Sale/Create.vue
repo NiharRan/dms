@@ -76,7 +76,7 @@
                               <input
                                 type="text"
                                 v-model="row.track_no"
-                                class="form-control"
+                                class="form-control text-uppercase"
                                 :placeholder="__('Track No.')"
                               />
                               <span
@@ -253,6 +253,18 @@
                         </th>
                       </tr>
                       <tr>
+                        <th class="text-right">{{ __('Reference Code') }}</th>
+                        <td>
+                          <input type="text" @change="fetchCommission" v-model="form.reference_code" class="form-control" :placeholder="__('Reference Code')">
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="text-right">{{ __('Commission') }}</th>
+                        <td>
+                          <input type="text" readonly v-model="form.commission" class="form-control" :placeholder="__('Commission')">
+                        </td>
+                      </tr>
+                      <tr>
                         <th colspan="2">
                           <div class="row">
                             <div class="col-2">
@@ -291,9 +303,9 @@
                       </tr>
                       <tr>
                         <th colspan="2" class="text-right">
-                          <button type="button" class="btn btn-secondary">
-                            <i class="feather icon-x"></i> {{ __("Cancel") }}
-                          </button>
+                          <inertia-link :href="route('sales.index')" class="btn btn-primary">
+                          <i class="feather icon-arrow-left"></i> {{ __("Back") }}
+                        </inertia-link>
                           <button type="submit" class="btn btn-success">
                             <i class="feather icon-printer"></i>
                             {{ __("Store") }}
@@ -342,6 +354,8 @@ export default {
         client: null,
         sale_date: new Date(),
         sale_details: [],
+        reference_code: '',
+        commission: '0.00'
       },
       products: [],
       sale_details_errors: [],
@@ -349,8 +363,17 @@ export default {
     };
   },
   methods: {
+    fetchCommission: function () {
+      if (this.form.reference_code != '') {
+        console.log('.....');
+      }
+    },
     calculateTotalWhenQuantityChange: function (index) {
       const selectedRow = this.form.sale_details[index];
+      const selectedProduct = this.form.sale_details[index].product;
+      if (selectedProduct) {
+        selectedProduct.quantity -= selectedRow.quantity;
+      }
       if (selectedRow.price !== "") {
         let price = 0;
         if (selectedRow.quantity !== "") {
@@ -472,9 +495,17 @@ export default {
     },
     removeSaleItem: function (index) {
       const removedItem = this.form.sale_details[index];
+
+      const selectedProduct = this.form.sale_details[index].product;
+      if (selectedProduct) {
+        selectedProduct.quantity += selectedRow.quantity;
+      }
+
       this.form.total_price -= removedItem.total;
       this.form.total_due -= removedItem.total;
       this.form.sale_details.splice(index, 1);
+      this.calculateTotal();
+      this.calculateDue();
     },
     fetchProducts: function (stock) {
       let self = this;

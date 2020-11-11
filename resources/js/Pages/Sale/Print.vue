@@ -128,14 +128,16 @@
             <p class="mb-0 signature">
               <span class="float-left">
                 <span class="text-bold-700">
-                  {{ __("Signature of Driver") }}{{ __(":") }}</span
+                 {{ __('Signature of Client') }}{{ __(":") }}</span
                 >
+                <span class="underlined">{{ sale.client.name }}</span>
               </span>
               <span class="float-right">
                 <span class="text-bold-700">
                   {{ __("In Favor of") }}{{ __(":") }}</span
                 >
-                {{ sale.company.name }}
+                <span class="underlined">{{ sale.company.name }}</span>
+                
               </span>
             </p>
           </div>

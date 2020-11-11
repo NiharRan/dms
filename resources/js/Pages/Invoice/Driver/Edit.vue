@@ -193,7 +193,7 @@
                     </tr>
                     <tr>
                       <th colspan="6" class="text-right">
-                        <inertia-link :href="route('drivers.invoices.show', driver_invoice.invoice)" class="btn btn-secondary">
+                        <inertia-link :href="route('drivers.invoices.show', driver_invoice.invoice)" class="btn btn-primary">
                           <i class="feather icon-arrow-left"></i> {{ __("Back") }}
                         </inertia-link>
                         <button type="submit" class="btn btn-success"><i class="feather icon-printer"></i> {{ __("Update") }}</button>

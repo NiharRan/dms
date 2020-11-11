@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Sale extends Model
 {
   protected $fillable = [
-    'invoice', 'total_price', 'total_paid', 'total_due',
+    'invoice', 'total_price', 'total_paid', 'total_due', 'commission',
     'company_id', 'client_id', 'sale_date', 'status', 'user_id', 'transaction_media_id', 'description'
   ];
 
