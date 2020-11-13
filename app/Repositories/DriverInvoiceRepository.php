@@ -26,7 +26,7 @@ class DriverInvoiceRepository
   public function all()
   {
     $driverInvoices = $this->driverInvoice
-      ->with(['client', 'product', 'measurement_type']);
+      ->with(['client', 'product', 'measurement_type', 'transaction_media']);
 
     if (\request()->has('status') && !empty(request()->status)) {
       $driverInvoices = $driverInvoices->where('status', \request()->status);
@@ -52,6 +52,11 @@ class DriverInvoiceRepository
       $driverInvoices = $driverInvoices->where('measurement_type_id', $measurement);
     }
 
+    if (\request()->has('transaction_media') && !empty(\request()->transaction_media)) {
+      $transaction_media = \request()->transaction_media;
+      $driverInvoices = $driverInvoices->where('transaction_media_id', $transaction_media);
+    }
+
     if (\request()->has('product') && !empty(\request()->product)) {
       $product = \request()->product;
       $driverInvoices = $driverInvoices->where('product_id', $product);
@@ -73,7 +78,8 @@ class DriverInvoiceRepository
       'product',
       'company',
       'creator',
-      'measurement_type'
+      'measurement_type',
+      'transaction_media',
     ])->find($rowId);
   }
 
@@ -84,6 +90,7 @@ class DriverInvoiceRepository
       'client',
       'creator',
       'product',
+      'transaction_media',
       'measurement_type'
     ])->where('invoice', $invoice)->first();
   }
@@ -131,8 +138,12 @@ class DriverInvoiceRepository
     $driverInvoice->total = $request->total == '' ? 0 : $request->total;
     $driverInvoice->paid = $request->paid == '' ? 0 : $request->paid;
     $driverInvoice->due = $request->due == '' ? 0 : $request->due;
+    $driverInvoice->commission = $request->commission == '' ? 0 : $request->commission;
+    $driverInvoice->reference = $request->reference;
     $driverInvoice->company_id = $request->company_id;
     $driverInvoice->client_id = $request->client_id;
+    $driverInvoice->client_address = $request->client_address;
+    $driverInvoice->client_phone = $request->client_phone;
     $driverInvoice->load_id = $request->load_id;
     $driverInvoice->driver_name = $request->driver_name;
     $driverInvoice->track_no = $request->track_no;

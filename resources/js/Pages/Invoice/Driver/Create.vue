@@ -41,8 +41,7 @@
                     <label>{{ __("Client Contact No.") }}</label>
                     <input
                       type="text"
-                      v-model="form.phone"
-                      readonly
+                      v-model="form.client_phone"
                       :placeholder="__('Client Contact No.')"
                       class="form-control"
                     />
@@ -51,15 +50,14 @@
                     <label>{{ __("Client Address") }}</label>
                     <input
                       type="text"
-                      v-model="form.address"
-                      readonly
+                      v-model="form.client_address"
                       :placeholder="__('Client Address')"
                       class="form-control"
                     />
                   </div>
                 </div>
                 <div class="form-group row">
-                  <div class="col-md-4 col-12">
+                  <div class="col-md-3 col-12">
                     <label
                       >{{ __("Driver Name")
                       }}<strong class="text-danger">*</strong></label
@@ -82,7 +80,7 @@
                     </span>
                   </div>
 
-                  <div class="col-md-4 col-12">
+                  <div class="col-md-3 col-12">
                     <label
                       >{{ __("Track Number")
                       }}<strong class="text-danger">*</strong></label
@@ -104,7 +102,7 @@
                       <strong>{{ errors.track_no[0] }}</strong>
                     </span>
                   </div>
-                  <div class="col-md-4 col-12">
+                  <div class="col-md-3 col-12">
                     <label
                       >{{ __("Driver Contact No.")
                       }}<strong class="text-danger">*</strong></label
@@ -124,6 +122,28 @@
                       role="alert"
                     >
                       <strong>{{ errors.driver_phone[0] }}</strong>
+                    </span>
+                  </div>
+                  <div class="col-md-3 col-12">
+                    <label
+                      >{{ __("Reference")
+                      }}<strong class="text-danger">*</strong></label
+                    >
+                    <input
+                      type="text"
+                      v-model="form.reference"
+                      :class="[errors.reference ? 'in-invalid' : '']"
+                      :placeholder="__('Reference')"
+                      class="form-control"
+                    />
+
+                    <span
+                      v-if="errors.reference"
+                      class="invalid-feedback"
+                      style="display: block"
+                      role="alert"
+                    >
+                      <strong>{{ errors.reference[0] }}</strong>
                     </span>
                   </div>
                 </div>
@@ -309,8 +329,12 @@
                     </tr>
                     <tr>
                       <th colspan="6" class="text-right">
-                        <inertia-link :href="route('drivers.invoices.index')" class="btn btn-primary">
-                          <i class="feather icon-arrow-left"></i> {{ __("Back") }}
+                        <inertia-link
+                          :href="route('drivers.invoices.index')"
+                          class="btn btn-primary"
+                        >
+                          <i class="feather icon-arrow-left"></i>
+                          {{ __("Back") }}
                         </inertia-link>
                         <button type="submit" class="btn btn-success">
                           <i class="feather icon-printer"></i> {{ __("Store") }}
@@ -355,8 +379,8 @@ export default {
         client: null,
         transaction_media: null,
         load: null,
-        phone: "",
-        address: "",
+        client_phone: "",
+        client_address: "",
         product: null,
         quantity: "",
         measurement_type: "",
@@ -372,13 +396,15 @@ export default {
         paid: "",
         due: "",
         description: "",
+        reference: "",
+        commission: "",
       },
     };
   },
   methods: {
     showInfo: function (data) {
-      this.form.phone = data.phone;
-      this.form.address = data.address;
+      this.form.client_phone = data.phone;
+      this.form.client_address = data.address;
     },
     calculateTotal: function () {
       let track_rent = this.form.track_rent === "" ? 0 : this.form.track_rent;
@@ -394,6 +420,16 @@ export default {
 
       this.form.total = parseFloat(total).toFixed(2);
       this.form.due = parseFloat(due).toFixed(2);
+      this.calculateCommission();
+    },
+    calculateCommission: function () {
+      let quantity = this.form.quantity === "" ? 0 : this.form.quantity;
+
+      let commission =
+        parseFloat(this.load.stock_rent) +
+        parseFloat(this.load.amount) * parseFloat(quantity);
+      this.form.commission = parseFloat(commission).toFixed(2);
+      console.log(this.form.commission);
     },
     calculateDue: function () {
       let total = this.form.total === "" ? 0 : this.form.total;
@@ -414,6 +450,8 @@ export default {
         : "";
       this.$inertia.post(this.route("drivers.invoices.store"), {
         client_id: client_id,
+        client_address: this.form.client_address,
+        client_phone: this.form.client_phone,
         load_id: load_id,
         transaction_media_id: transaction_media_id,
         company_id: this.company.id,
@@ -432,6 +470,8 @@ export default {
         paid: this.form.paid,
         due: this.form.due,
         description: this.form.description,
+        reference: this.form.reference,
+        commission: this.form.commission,
       });
     },
   },

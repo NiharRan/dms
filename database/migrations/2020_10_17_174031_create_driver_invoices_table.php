@@ -33,12 +33,17 @@ class CreateDriverInvoicesTable extends Migration
             $table->decimal('total', 10, 2);
             $table->decimal('paid', 10, 2)->nullable();
             $table->decimal('due', 10, 2)->nullable();
+            $table->decimal('commission', 10, 2)->nullable();
+            $table->string('reference', 10, 2);
 
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies');
 
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients');
+
+            $table->string('client_address')->nullable();
+            $table->string('client_phone')->nullable();
 
             $table->string('driver_name');
             $table->string('track_no');

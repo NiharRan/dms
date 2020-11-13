@@ -14,10 +14,12 @@ use App\Transaction;
 class DriverInvoice extends MyModel
 {
   protected $fillable = [
-    'invoice', 'company_id', 'client_id', 'driver_name', 'track_no',
+    'invoice', 'company_id', 'client_id', 'driver_name', 'track_no', 
     'driver_phone', 'product_id', 'quantity', 'measurement_type_id', 
     'container_height', 'container_length', 'container_breadth', 'track_rent',
-    'others', 'total', 'paid', 'due', 'status', 'user_id', 'load_id', 'transaction_media_id', 'description'
+    'others', 'total', 'paid', 'due', 'status', 'user_id', 'load_id', 
+    'transaction_media_id', 'description', 'commission', 'reference',
+    'client_address', 'client_phone'
   ];
 
   public function getWordAttribute()

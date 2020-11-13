@@ -32,6 +32,7 @@ class DriverInvoiceRequest extends FormRequest
       'driver_phone' => 'required',
       'track_rent' => 'required',
       'quantity' => 'required',
+      'reference' => 'required',
     ];
   }
 
@@ -51,6 +52,7 @@ class DriverInvoiceRequest extends FormRequest
       'driver_phone.required'  => 'Driver contact no. is required',
       'track_rent.required' => 'Track rent is required',
       'quantity.required' => 'Quantity is required',
+      'reference.required' => 'Reference is required',
     ];
   }
 }
