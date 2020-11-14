@@ -8,30 +8,30 @@ use App\Settings\Client;
 use App\Settings\Load;
 use App\Settings\MeasurementType;
 use App\Settings\Product;
-use App\Settings\TransactionMedia;
 use App\Transaction;
 
 class DriverInvoice extends MyModel
 {
   protected $fillable = [
-    'invoice', 'company_id', 'client_id', 'driver_name', 'track_no', 
-    'driver_phone', 'product_id', 'quantity', 'measurement_type_id', 
+    'invoice', 'company_id', 'client_id', 'driver_name', 'track_no',
+    'driver_phone', 'product_id', 'quantity', 'measurement_type_id',
     'container_height', 'container_length', 'container_breadth', 'track_rent',
-    'others', 'total', 'paid', 'due', 'status', 'user_id', 'load_id', 
-    'transaction_media_id', 'description', 'commission', 'reference',
+    'others', 'total', 'borrow', 'final', 'status', 'user_id', 'load_id', 'commission', 'reference',
     'client_address', 'client_phone'
   ];
 
   public function getWordAttribute()
   {
-    if($this->due == 0) {
-      $str = ' পরিশোধ করা হয়েছে';
-      $amount = $this->paid;
-    }else {
-      $str = ' বাকি আছে';
-      $amount = $this->due;
+    $company = $this->company()->first();
+
+    if ($this->borrow > 0) {
+      $amount = (new BanglaNumberToWord())->numToWord($this->borrow);
+      $str =  "আপনি $company->name এর থেকে '$amount' ধার নিয়েছেন";
+    } else {
+      $amount = (new BanglaNumberToWord())->numToWord($this->final);
+      $str = "মোট ভাড়া  $amount";
     }
-    return (new BanglaNumberToWord())->numToWord($amount) . $str;
+    return $str;
   }
 
   protected $appends = [
@@ -64,10 +64,6 @@ class DriverInvoice extends MyModel
     return $this->morphMany(Transaction::class, 'transactionable');
   }
 
-  public function transaction_media()
-  {
-    return $this->belongsTo(TransactionMedia::class);
-  }
 
   public function track_load()
   {

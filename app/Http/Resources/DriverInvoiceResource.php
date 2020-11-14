@@ -26,9 +26,6 @@ class DriverInvoiceResource extends JsonResource
             'measurement_type'  => [
                 'name'          => $this->measurement_type->name
             ],
-            'transaction_media'  => [
-                'name'          => $this->transaction_media->name
-            ],
             'driver_name'       => $this->driver_name,
             'created_at'        => $this->created_at,
             'container_height'  => $this->container_height,
@@ -38,8 +35,8 @@ class DriverInvoiceResource extends JsonResource
             'track_rent'        => $this->track_rent,
             'others'            => $this->others,
             'total'             => $this->total,
-            'paid'              => $this->paid,
-            'due'               => $this->due,
+            'borrow'              => $this->borrow,
+            'final'               => $this->final,
             'status'            => $this->status,
         ];
     }

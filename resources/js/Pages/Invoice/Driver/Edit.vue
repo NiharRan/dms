@@ -67,7 +67,7 @@
                       v-model="driver_invoice.driver_name"
                       :class="[errors.driver_name ? 'in-invalid' : '']"
                       :placeholder="__('Driver Name')"
-                      class="form-control"
+                      class="form-control text-uppercase"
                     />
 
                     <span
@@ -90,7 +90,7 @@
                       v-model="driver_invoice.track_no"
                       :class="[errors.track_no ? 'in-invalid' : '']"
                       :placeholder="__('Track Number')"
-                      class="form-control"
+                      class="form-control text-uppercase"
                     />
 
                     <span
@@ -269,58 +269,26 @@
                       </th>
                     </tr>
                     <tr>
-                      <th colspan="3" class="text-right">{{ __("Paid") }}</th>
+                      <th colspan="3" class="text-right">{{ __("Borrow") }}</th>
                       <th>
                         <input
                           type="text"
                           class="form-control"
-                          @keyup="calculateDue"
-                          v-model="driver_invoice.paid"
-                          :placeholder="__('Paid')"
+                          @keyup="calculateFinal"
+                          v-model="driver_invoice.borrow"
+                          :placeholder="__('Borrow')"
                         />
                       </th>
                     </tr>
                     <tr>
-                      <th colspan="3" class="text-right">{{ __("Due") }}</th>
+                      <th colspan="3" class="text-right">{{ __("Final") }}</th>
                       <th>
                         <input
                           type="text"
                           class="form-control"
                           readonly
-                          v-model="driver_invoice.due"
-                          :placeholder="__('Due')"
-                        />
-                      </th>
-                    </tr>
-                    <tr>
-                      <th>
-                        {{ __("Transaction Media") }}
-                        <strong class="text-danger">*</strong>
-                      </th>
-                      <th>
-                        <multi-select
-                          v-model="driver_invoice.transaction_media"
-                          :options="transaction_medias"
-                          :class="[errors.driver_name ? 'in-invalid' : '']"
-                          label="name"
-                          track-by="name"
-                          :placeholder="__('Select Transaction Media')"
-                        ></multi-select>
-                        <span
-                          v-if="errors.transaction_media_id"
-                          class="invalid-feedback"
-                          style="display: block"
-                          role="alert"
-                        >
-                          <strong>{{ errors.transaction_media_id[0] }}</strong>
-                        </span>
-                      </th>
-                      <th colspan="2">
-                        <input
-                          type="text"
-                          v-model="driver_invoice.description"
-                          class="form-control"
-                          :placeholder="__('Description')"
+                          v-model="driver_invoice.final"
+                          :placeholder="__('Final')"
                         />
                       </th>
                     </tr>
@@ -370,7 +338,6 @@ export default {
     clients: Array,
     products: Array,
     load: Object,
-    transaction_medias: Array,
     measurement_types: Array,
     errors: Object,
   },
@@ -397,18 +364,18 @@ export default {
         this.driver_invoice.others === "" || this.driver_invoice.others === null
           ? 0
           : this.driver_invoice.others;
-      let paid =
-        this.driver_invoice.paid === "" || this.driver_invoice.paid === null
+      let borrow =
+        this.driver_invoice.borrow === "" || this.driver_invoice.borrow === null
           ? 0
-          : this.driver_invoice.paid;
+          : this.driver_invoice.borrow;
 
       let total =
         (parseFloat(track_rent) + parseFloat(this.load.amount)) *
           parseFloat(quantity) +
         parseFloat(others);
-      let due = total - parseFloat(paid);
+      let final = total - parseFloat(borrow);
       this.driver_invoice.total = parseFloat(total).toFixed(2);
-      this.driver_invoice.due = parseFloat(due).toFixed(2);
+      this.driver_invoice.final = parseFloat(final).toFixed(2);
       this.calculateCommission();
     },
     calculateCommission: function () {
@@ -421,19 +388,22 @@ export default {
       this.driver_invoice.commission = parseFloat(commission).toFixed(2);
       console.log(this.driver_invoice.commission);
     },
-    calculateDue: function () {
-      let total = this.driver_invoice.total;
-      let paid = this.driver_invoice.paid;
-      let due = parseFloat(total) - parseFloat(paid);
-      this.driver_invoice.due = parseFloat(due).toFixed(2);
+    calculateFinal: function () {
+      let total =
+        this.driver_invoice.total == "" || this.driver_invoice.total == null
+          ? 0
+          : this.driver_invoice.total;
+      let borrow =
+        this.driver_invoice.borrow == "" || this.driver_invoice.borrow == null
+          ? 0
+          : this.driver_invoice.borrow;
+      let final = parseFloat(total) - parseFloat(borrow);
+      this.driver_invoice.final = parseFloat(final).toFixed(2);
     },
     update: async function () {
       let self = this;
       const client_id = this.driver_invoice.client
         ? this.driver_invoice.client.id
-        : "";
-      const transaction_media_id = this.driver_invoice.transaction_media
-        ? this.driver_invoice.transaction_media.id
         : "";
       const load_id = this.load ? this.load.id : "";
       const product_id = this.driver_invoice.product
@@ -448,7 +418,6 @@ export default {
           client_id: client_id,
           client_address: this.driver_invoice.client_address,
           client_phone: this.driver_invoice.client_phone,
-          transaction_media_id: transaction_media_id,
           load_id: load_id,
           company_id: this.driver_invoice.company.id,
           driver_name: this.driver_invoice.driver_name,
@@ -464,9 +433,8 @@ export default {
           track_rent: this.driver_invoice.track_rent,
           others: this.driver_invoice.others,
           total: this.driver_invoice.total,
-          paid: this.driver_invoice.paid,
-          due: this.driver_invoice.due,
-          description: this.driver_invoice.description,
+          borrow: this.driver_invoice.borrow,
+          final: this.driver_invoice.final,
           commission: this.driver_invoice.commission,
           reference: this.driver_invoice.reference,
         }

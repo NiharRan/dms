@@ -32,7 +32,7 @@
                         <th scope="col">{{__("S.N.")}}</th>
                         <th>{{__("Product")}}</th>
                         <th class="text-center">{{__("Quantity")}}</th>
-                        <th class="text-right">{{__("Amount")}}</th>
+                        <th class="text-right">{{__("Action")}}</th>
                       </tr>
                       </thead>
                       <tbody v-if="stock.stock_details.length > 0">
@@ -40,7 +40,9 @@
                           <th>{{ i + 1 }}</th>
                           <th>{{ stock_detail.product.name }}</th>
                           <th class="text-center">{{ stock_detail.quantity }}</th>
-                          <th class="text-right">{{ stock_detail.amount }}</th>
+                          <th>
+                            <inertia-link :title="__('History')" :href="route('stock-details.history.show', stock_detail.id)" class="text-info" role="button"><i class="feather icon-eye"></i></inertia-link>
+                          </th>
                         </tr>
                       </tbody>
                     </table>

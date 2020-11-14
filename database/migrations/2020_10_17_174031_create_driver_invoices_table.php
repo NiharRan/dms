@@ -31,8 +31,8 @@ class CreateDriverInvoicesTable extends Migration
             $table->decimal('track_rent', 10, 2);
             $table->decimal('others', 10, 2)->nullable();
             $table->decimal('total', 10, 2);
-            $table->decimal('paid', 10, 2)->nullable();
-            $table->decimal('due', 10, 2)->nullable();
+            $table->decimal('borrow', 10, 2)->nullable();
+            $table->decimal('final', 10, 2)->nullable();
             $table->decimal('commission', 10, 2)->nullable();
             $table->string('reference', 10, 2);
 
@@ -52,10 +52,6 @@ class CreateDriverInvoicesTable extends Migration
             $table->unsignedBigInteger('load_id');
             $table->foreign('load_id')->references('id')->on('loads');
 
-            $table->unsignedBigInteger('transaction_media_id');
-            $table->foreign('transaction_media_id')->references('id')->on('transaction_media');
-
-            $table->string('description', 255)->nullable();
             $table->boolean('status')->default(0);
 
             $table->unsignedBigInteger('user_id');

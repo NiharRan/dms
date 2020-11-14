@@ -25,7 +25,6 @@ class DriverInvoiceRequest extends FormRequest
   {
     return [
       'client_id' => 'required',
-      'transaction_media_id' => 'required',
       'driver_name' => 'required',
       'track_no' => 'required',
       'measurement_type_id' => 'required',
@@ -45,7 +44,6 @@ class DriverInvoiceRequest extends FormRequest
   {
     return [
       'client_id.required' => 'Client is required',
-      'transaction_media_id.required' => 'Transaction media is required',
       'driver_name.required' => 'Driver name is required',
       'track_no.required'  => 'Track number is required',
       'measurement_type_id.required'  => 'Measurement type is required',

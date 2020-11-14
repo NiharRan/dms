@@ -164,12 +164,12 @@
                         <th class="text-right">{{ driver_invoice.total }}</th>
                       </tr>
                       <tr>
-                        <th colspan="3" class="text-right">{{ __("Paid") }}</th>
-                        <th class="text-right">{{ driver_invoice.paid }}</th>
+                        <th colspan="3" class="text-right">{{ __("Borrow") }}</th>
+                        <th class="text-right">{{ driver_invoice.borrow }}</th>
                       </tr>
                       <tr>
-                        <th colspan="3" class="text-right">{{ __("Due") }}</th>
-                        <th class="text-right">{{ driver_invoice.due }}</th>
+                        <th colspan="3" class="text-right">{{ __("Final") }}</th>
+                        <th class="text-right">{{ driver_invoice.final }}</th>
                       </tr>
                     </tbody>
                   </table>
@@ -196,15 +196,6 @@
               </div>
             </div>
             <div class="card-footer text-right">
-              <inertia-link
-                v-if="driver_invoice.status === 0"
-                class="btn btn-primary"
-                role="button"
-                @click.prevent="openModel(driver_invoice)"
-                href=""
-              >
-                {{ __("Mark Paid") }}
-              </inertia-link>
               <inertia-link
                 :href="route('drivers.invoices.edit', driver_invoice.id)"
                 class="btn btn-primary"
@@ -236,54 +227,6 @@
             <span aria-hidden="true">×</span>
           </button>
         </template>
-
-        <form @submit.prevent="pay">
-          <div class="modal-body">
-            <div class="form-group">
-              <multi-select
-                v-model="form.transaction_media"
-                :options="transaction_medias"
-                :class="[errors.transaction_media_id ? 'in-invalid' : '']"
-                label="name"
-                track-by="name"
-                :placeholder="__('Select Transaction Media')"
-              ></multi-select>
-              <span
-                v-if="errors.transaction_media_id"
-                class="invalid-feedback"
-                style="display: block"
-                role="alert"
-              >
-                <strong>{{ errors.transaction_media_id[0] }}</strong>
-              </span>
-            </div>
-            <div class="form-group">
-              <textarea
-                class="form-control"
-                v-model="form.description"
-                :placeholder="__('Description')"
-                rows="3"
-              >
-              </textarea>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="submit"
-              class="btn btn-success waves-effect waves-light"
-            >
-              {{ __("Pay") }}
-            </button>
-            <button
-              type="button"
-              @click="cleanModel"
-              class="btn"
-              data-dismiss="modal"
-            >
-              {{ __("Cancel") }}
-            </button>
-          </div>
-        </form>
       </model>
       <!-- Ag Grid users list section end -->
     </section>
@@ -300,48 +243,16 @@ export default {
   components: { Layout, Model },
   props: {
     success: String,
-    transaction_medias: Array,
     driver_invoice: Object,
     errors: Object,
   },
   data: function () {
     return {
-      modelTitle: "Mark as paid",
-      form: {
-        transaction_media: null,
-        description: "",
-      },
     };
   },
   methods: {
     printPage: function () {
       window.print();
-    },
-    openModel: function (driver_invoice) {
-      this.form = driver_invoice;
-      $("#default").modal("show");
-    },
-    cleanModel: function () {
-      $("#default").modal("hide");
-      this.form.transaction_media = null;
-      this.form.description = "";
-    },
-    pay: function () {
-      let self = this;
-      let transaction_media_id = this.form.transaction_media
-        ? this.form.transaction_media.id
-        : "";
-      this.$inertia
-        .put(this.route(`drivers.invoices.pay`, this.form.invoice), {
-          transaction_media_id: transaction_media_id,
-          _method: "put",
-        })
-        .then(function () {
-          if (Object.keys(self.errors).length === 0) {
-            self.closeModel();
-            self.$toast("Marked as paid successfully");
-          }
-        });
     },
   },
   created() {},

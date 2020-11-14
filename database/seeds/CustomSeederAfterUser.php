@@ -90,6 +90,7 @@ class CustomSeederAfterUser extends Seeder
 
     DB::table('loads')->insert([
       'amount' => 140,
+      'stock_rent' => 400,
       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
       'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
     ]);

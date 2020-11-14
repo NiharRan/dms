@@ -134,12 +134,12 @@
                   <th class="text-right">{{ driver_invoice.total }}</th>
                 </tr>
                 <tr>
-                  <th colspan="3" class="text-right">{{ __("Paid") }}</th>
-                  <th class="text-right">{{ driver_invoice.paid }}</th>
+                  <th colspan="3" class="text-right">{{ __("Borrow") }}</th>
+                  <th class="text-right">{{ driver_invoice.borrow }}</th>
                 </tr>
                 <tr>
-                  <th colspan="3" class="text-right">{{ __("Due") }}</th>
-                  <th class="text-right">{{ driver_invoice.due }}</th>
+                  <th colspan="3" class="text-right">{{ __("Final") }}</th>
+                  <th class="text-right">{{ driver_invoice.final }}</th>
                 </tr>
               </tbody>
             </table>

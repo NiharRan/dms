@@ -67,7 +67,7 @@
                       v-model="form.driver_name"
                       :class="[errors.driver_name ? 'in-invalid' : '']"
                       :placeholder="__('Driver Name')"
-                      class="form-control"
+                      class="form-control text-uppercase"
                     />
 
                     <span
@@ -90,7 +90,7 @@
                       v-model="form.track_no"
                       :class="[errors.track_no ? 'in-invalid' : '']"
                       :placeholder="__('Track Number')"
-                      class="form-control"
+                      class="form-control text-uppercase"
                     />
 
                     <span
@@ -273,57 +273,26 @@
                       </th>
                     </tr>
                     <tr>
-                      <th colspan="3" class="text-right">{{ __("Paid") }}</th>
+                      <th colspan="3" class="text-right">{{ __("Borrow") }}</th>
                       <th>
                         <input
                           type="text"
                           class="form-control"
-                          @keyup="calculateDue"
-                          v-model="form.paid"
-                          :placeholder="__('Paid')"
+                          @keyup="calculateFinal"
+                          v-model="form.borrow"
+                          :placeholder="__('Borrow')"
                         />
                       </th>
                     </tr>
                     <tr>
-                      <th colspan="3" class="text-right">{{ __("Due") }}</th>
+                      <th colspan="3" class="text-right">{{ __("Final") }}</th>
                       <th>
                         <input
                           type="text"
                           class="form-control"
                           readonly
-                          v-model="form.due"
-                          :placeholder="__('Due')"
-                        />
-                      </th>
-                    </tr>
-                    <tr>
-                      <th>
-                        {{ __("Transaction Media") }}
-                        <strong class="text-danger">*</strong>
-                      </th>
-                      <th>
-                        <multi-select
-                          v-model="form.transaction_media"
-                          :options="transaction_medias"
-                          label="name"
-                          track-by="name"
-                          :placeholder="__('Select Transaction Media')"
-                        ></multi-select>
-                        <span
-                          v-if="errors.transaction_media_id"
-                          class="invalid-feedback"
-                          style="display: block"
-                          role="alert"
-                        >
-                          <strong>{{ errors.transaction_media_id[0] }}</strong>
-                        </span>
-                      </th>
-                      <th colspan="2">
-                        <input
-                          type="text"
-                          v-model="form.description"
-                          class="form-control"
-                          :placeholder="__('Description')"
+                          v-model="form.final"
+                          :placeholder="__('Final')"
                         />
                       </th>
                     </tr>
@@ -366,7 +335,6 @@ export default {
     clients: Array,
     products: Array,
     measurement_types: Array,
-    transaction_medias: Array,
     company: Object,
     load: Object,
     errors: Object,
@@ -377,7 +345,6 @@ export default {
         id: "",
         company: null,
         client: null,
-        transaction_media: null,
         load: null,
         client_phone: "",
         client_address: "",
@@ -393,9 +360,8 @@ export default {
         others: "",
         track_rent: "",
         total: "",
-        paid: "",
-        due: "",
-        description: "",
+        borrow: "",
+        final: "",
         reference: "",
         commission: "",
       },
@@ -410,16 +376,16 @@ export default {
       let track_rent = this.form.track_rent === "" ? 0 : this.form.track_rent;
       let quantity = this.form.quantity === "" ? 0 : this.form.quantity;
       let others = this.form.others === "" ? 0 : this.form.others;
-      let paid = this.form.paid === "" ? 0 : this.form.paid;
+      let borrow = this.form.borrow === "" ? 0 : this.form.borrow;
 
       let total =
         (parseFloat(track_rent) + parseFloat(this.load.amount)) *
           parseFloat(quantity) +
         parseFloat(others);
-      let due = total - parseFloat(paid);
+      let final = total - parseFloat(borrow);
 
       this.form.total = parseFloat(total).toFixed(2);
-      this.form.due = parseFloat(due).toFixed(2);
+      this.form.final = parseFloat(final).toFixed(2);
       this.calculateCommission();
     },
     calculateCommission: function () {
@@ -431,18 +397,15 @@ export default {
       this.form.commission = parseFloat(commission).toFixed(2);
       console.log(this.form.commission);
     },
-    calculateDue: function () {
-      let total = this.form.total === "" ? 0 : this.form.total;
-      let paid = this.form.paid === "" ? 0 : this.form.paid;
-      let due = parseFloat(total) - parseFloat(paid);
-      this.form.due = parseFloat(due).toFixed(2);
+    calculateFinal: function () {
+      let total = this.form.total === "" ? "0" : this.form.total;
+      let borrow = this.form.borrow === "" ? "0" : this.form.borrow;
+      let final = parseFloat(total) - parseFloat(borrow);
+      this.form.final = parseFloat(final).toFixed(2);
     },
     store: async function () {
       let self = this;
       const client_id = this.form.client ? this.form.client.id : "";
-      const transaction_media_id = this.form.transaction_media
-        ? this.form.transaction_media.id
-        : "";
       const load_id = this.load ? this.load.id : "";
       const product_id = this.form.product ? this.form.product.id : "";
       const measurement_type_id = this.form.measurement_type
@@ -453,7 +416,6 @@ export default {
         client_address: this.form.client_address,
         client_phone: this.form.client_phone,
         load_id: load_id,
-        transaction_media_id: transaction_media_id,
         company_id: this.company.id,
         driver_name: this.form.driver_name,
         track_no: this.form.track_no,
@@ -467,9 +429,8 @@ export default {
         track_rent: this.form.track_rent,
         others: this.form.others,
         total: this.form.total,
-        paid: this.form.paid,
-        due: this.form.due,
-        description: this.form.description,
+        borrow: this.form.borrow,
+        final: this.form.final,
         reference: this.form.reference,
         commission: this.form.commission,
       });

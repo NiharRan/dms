@@ -164,7 +164,7 @@
                     <th>{{ driver_invoice.client.name }}</th>
                     <th>{{ driver_invoice.driver_name }}</th>
                     <td>{{ driver_invoice.product.name }}</td>
-                    <td class="text-right">{{ driver_invoice.total }}</td>
+                    <td class="text-right">{{ driver_invoice.final }}</td>
                     <td class="text-center">{{ driver_invoice.created_at | moment('DD/MM/YYYY hh:mm A') }}</td>
                     <td class="text-left" v-html="$options.filters.payment_status(driver_invoice.status)"></td>
                     <td class="text-center">

@@ -46,8 +46,8 @@
                     <th class="text-right">{{ __("Track Rent") }}</th>
                     <th class="text-right">{{ __("Others") }}</th>
                     <th>{{ __("Total") }}</th>
-                    <th>{{ __("Paid") }}</th>
-                    <th>{{ __("Due") }}</th>
+                    <th>{{ __("Borrow") }}</th>
+                    <th>{{ __("Final") }}</th>
                     <th class="text-center">{{ __("Action") }}</th>
                   </tr>
                   </thead>
@@ -55,8 +55,8 @@
                     <tr>
                       <td colspan="10"></td>
                       <th class="text-right">{{ total(driver_invoices.data) }}</th>
-                      <th class="text-right">{{ totalPaid(driver_invoices.data) }}</th>
-                      <th class="text-right">{{ totalDue(driver_invoices.data) }}</th>
+                      <th class="text-right">{{ totalBorrow(driver_invoices.data) }}</th>
+                      <th class="text-right">{{ totalFinal(driver_invoices.data) }}</th>
                     </tr>
                     <tr v-for="(driver_invoice, index) in driver_invoices.data" :key="driver_invoice.id">
                       <th>{{ index + 1 }}</th>
@@ -83,8 +83,8 @@
                       <td class="text-right">{{ driver_invoice.track_rent }}</td>
                       <td class="text-right">{{ driver_invoice.others }}</td>
                       <td class="text-right">{{ driver_invoice.total }}</td>
-                      <td class="text-right">{{ driver_invoice.paid }}</td>
-                      <td class="text-right">{{ driver_invoice.due }}</td>
+                      <td class="text-right">{{ driver_invoice.borrow }}</td>
+                      <td class="text-right">{{ driver_invoice.final }}</td>
                       <td class="text-center">
                         <inertia-link :href="route('drivers.invoices.show', driver_invoice.invoice)" class="text-primary"><i class="feather icon-eye"></i></inertia-link>
                         <inertia-link :href="route('drivers.invoices.edit', driver_invoice.id)" class="text-info" role="button"><i class="feather icon-edit"></i></inertia-link>
@@ -141,8 +141,8 @@
               <label>{{ __('Payment Status') }}</label>
               <select v-model="search.status" class="form-control">
                 <option value="">{{__('Payment Status')}}</option>
-                <option value="1">{{ __('Paid') }}</option>
-                <option value="0">{{ __('Due') }}</option>
+                <option value="1">{{ __('Borrow') }}</option>
+                <option value="0">{{ __('Final') }}</option>
               </select>
             </div>
           </div>
@@ -189,19 +189,19 @@
             let totalPrice = data.reduce((total, invoice) => total + parseFloat(invoice.total), 0);
             return parseFloat(totalPrice).toFixed(2);
           },
-          totalPaid: function (data) {
-            let paidPrice = data.reduce((paid, invoice) => {
-              let p = invoice.paid == '' ? 0 : invoice.paid;
-              return paid + parseFloat(p);
+          totalBorrow: function (data) {
+            let borrowPrice = data.reduce((borrow, invoice) => {
+              let p = invoice.borrow == '' ? 0 : invoice.borrow;
+              return borrow + parseFloat(p);
             }, 0);
-            return parseFloat(paidPrice).toFixed(2);
+            return parseFloat(borrowPrice).toFixed(2);
           },
-          totalDue: function (data) {
-            let duePrice = data.reduce((due, invoice) => {
-              let d = invoice.due == '' ? 0 : invoice.due;
-              return due + parseFloat(d);
+          totalFinal: function (data) {
+            let finalPrice = data.reduce((final, invoice) => {
+              let d = invoice.final == '' ? 0 : invoice.final;
+              return final + parseFloat(d);
             }, 0);
-            return parseFloat(duePrice).toFixed(2);
+            return parseFloat(finalPrice).toFixed(2);
           },
           searchData: function () {
             $("#default").modal('hide');
