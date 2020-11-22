@@ -2614,7 +2614,7 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2630,6 +2630,156 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Shared_Layout__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model__ = __webpack_require__(255);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Components_Model__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2817,23 +2967,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       editMode: false,
-      modelTitle: this.__('Create New User'),
+      modelTitle: this.__("Create New User"),
       form: {
-        id: '',
-        name: '',
-        phone: '',
-        guardian_phone: '',
-        email: '',
-        gender_id: '',
-        religion_id: '',
-        blood_group_id: '',
+        id: "",
+        name: "",
+        avatar: null,
+        phone: "",
+        email: "",
+        gender_id: "",
+        religion_id: "",
+        blood_group_id: "",
         birth_date: new Date(),
-        nationality: '',
-        division: null,
-        district: null,
-        upazilla: null,
-        address: '',
-        status: ''
+        nationality: "",
+        address: "",
+        status: "",
+        avatar_url: ""
       }
     };
   },
@@ -2842,23 +2990,50 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.modelTitle = "Edit ".concat(data.name, "'s Information");
       this.editMode = true;
       this.form.name = data.name;
+      this.form.phone = data.phone;
+      this.form.email = data.email;
+      this.form.gender_id = data.gender_id;
+      this.form.religion_id = data.religion_id;
+      this.form.blood_group_id = data.blood_group_id;
+      this.form.birth_date = new Date(data.birth_date);
+      this.form.nationality = data.nationality;
+      this.form.address = data.address;
       this.form.status = data.status;
       this.form.id = data.id;
-      $("#default").modal('show');
+      this.form.avatar_url = data.avatar_small;
+      $("#default").modal("show");
+    },
+    showImage: function showImage(e) {
+      var file = e.target.files[0];
+      var url = URL.createObjectURL(file);
+      console.log(file);
+      this.form.avatar_url = url;
+      this.form.avatar = file;
     },
     closeModel: function closeModel() {
-      $("#default").modal('hide');
+      $("#default").modal("hide");
     },
     cleanForm: function cleanForm() {
       var _this = this;
 
-      this.modelTitle = this.__('Create New User');
+      this.modelTitle = this.__("Create New User");
       this.editMode = false;
-      this.form.name = '';
-      this.form.id = '';
-      this.form.status = '';
+      this.form.name = "";
+      this.form.phone = "";
+      this.form.email = "";
+      this.form.gender_id = "";
+      this.form.religion_id = "";
+      this.form.blood_group_id = "";
+      this.form.birth_date = "";
+      this.form.nationality = "";
+      this.form.address = "";
+      this.form.id = "";
+      this.form.status = "";
+      this.form.avatar = null;
+      $("#avatar").val('');
+      this.form.avatar_url = "";
       Object.keys(this.errors).forEach(function (key, value) {
-        _this.errors[key] = '';
+        _this.errors[key] = "";
       });
     },
     storeOrUpdate: function storeOrUpdate() {
@@ -2870,27 +3045,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     store: function store() {
       var self = this;
-      this.$inertia.post(this.route('users.store'), {
-        name: this.form.name
-      }).then(function () {
+      var formData = new FormData();
+      formData.append("name", this.form.name);
+      formData.append("phone", this.form.phone);
+      formData.append("email", this.form.email);
+      formData.append("gender_id", this.form.gender_id);
+      formData.append("religion_id", this.form.religion_id);
+      formData.append("blood_group_id", this.form.blood_group_id);
+      formData.append("birth_date", this.form.birth_date);
+      formData.append("nationality", this.form.nationality);
+      formData.append("address", this.form.address);
+      formData.append("avatar", this.form.avatar);
+      this.$inertia.post(this.route("users.store"), formData).then(function () {
         if (Object.keys(self.errors).length === 0) {
           self.closeModel();
           self.cleanForm();
-          self.$toast(self.__('User Created Successfully'));
+          self.$toast(self.__("User Created Successfully"));
         }
       });
     },
     update: function update() {
       var self = this;
-      this.$inertia.post(this.route('users.update', this.form.id), {
-        name: this.form.name,
-        status: this.form.status,
-        _method: "put"
-      }).then(function () {
+      var formData = new FormData();
+      formData.append("name", this.form.name);
+      formData.append("phone", this.form.phone);
+      formData.append("email", this.form.email);
+      formData.append("gender_id", this.form.gender_id);
+      formData.append("religion_id", this.form.religion_id);
+      formData.append("blood_group_id", this.form.blood_group_id);
+      formData.append("birth_date", this.form.birth_date);
+      formData.append("nationality", this.form.nationality);
+      formData.append("address", this.form.address);
+      formData.append("avatar", this.form.avatar);
+      formData.append("status", this.form.status);
+      formData.append("_method", "PUT");
+      this.$inertia.post(this.route("users.update", this.form.id), formData).then(function () {
         if (Object.keys(self.errors).length === 0) {
           self.closeModel();
           self.cleanForm();
-          self.$toast(self.__('User Updated Successfully'));
+          self.$toast(self.__("User Updated Successfully"));
         }
       });
     }
@@ -2944,7 +3137,13 @@ var render = function() {
                                   staticClass: "text-uppercase",
                                   attrs: { scope: "col" }
                                 },
-                                [_vm._v(_vm._s(_vm.__("S.N.")))]
+                                [
+                                  _vm._v(
+                                    "\n                      " +
+                                      _vm._s(_vm.__("S.N.")) +
+                                      "\n                    "
+                                  )
+                                ]
                               ),
                               _vm._v(" "),
                               _c("th", { staticClass: "text-uppercase" }, [
@@ -2958,13 +3157,25 @@ var render = function() {
                               _c(
                                 "th",
                                 { staticClass: "text-center text-uppercase" },
-                                [_vm._v(_vm._s(_vm.__("Status")))]
+                                [
+                                  _vm._v(
+                                    "\n                      " +
+                                      _vm._s(_vm.__("Status")) +
+                                      "\n                    "
+                                  )
+                                ]
                               ),
                               _vm._v(" "),
                               _c(
                                 "th",
                                 { staticClass: "text-center text-uppercase" },
-                                [_vm._v(_vm._s(_vm.__("Action")))]
+                                [
+                                  _vm._v(
+                                    "\n                      " +
+                                      _vm._s(_vm.__("Action")) +
+                                      "\n                    "
+                                  )
+                                ]
                               )
                             ])
                           ]),
@@ -3085,7 +3296,7 @@ var render = function() {
               [
                 _c("div", { staticClass: "modal-body" }, [
                   _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
                       _c("div", { staticClass: "form-group" }, [
                         _c("input", {
                           directives: [
@@ -3131,7 +3342,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-6" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
                       _c("div", { staticClass: "form-group" }, [
                         _c("input", {
                           directives: [
@@ -3146,7 +3357,9 @@ var render = function() {
                           class: [_vm.errors.phone ? "is-invalid" : ""],
                           attrs: {
                             type: "text",
-                            placeholder: _vm.__("Contact No.")
+                            placeholder: _vm.__("Contact No."),
+                            minlength: "11",
+                            maxlength: "11"
                           },
                           domProps: { value: _vm.form.phone },
                           on: {
@@ -3175,268 +3388,6 @@ var render = function() {
                             )
                           : _vm._e()
                       ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("div", { staticClass: "form-group" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.form.gender_id,
-                                expression: "form.gender_id"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            class: [_vm.errors.gender_id ? "is-invalid" : ""],
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.form,
-                                  "gender_id",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              }
-                            }
-                          },
-                          [
-                            _c("option", { attrs: { value: "" } }, [
-                              _vm._v(_vm._s(_vm.__("Select Gender")) + " ....")
-                            ]),
-                            _vm._v(" "),
-                            _vm._l(_vm.genders, function(gender) {
-                              return _c(
-                                "option",
-                                {
-                                  key: gender.id,
-                                  domProps: { value: gender.id }
-                                },
-                                [_vm._v(_vm._s(gender.name))]
-                              )
-                            })
-                          ],
-                          2
-                        ),
-                        _vm._v(" "),
-                        _vm.errors.gender_id
-                          ? _c(
-                              "span",
-                              {
-                                staticClass: "invalid-feedback",
-                                staticStyle: { display: "block" },
-                                attrs: { role: "alert" }
-                              },
-                              [
-                                _c("strong", [
-                                  _vm._v(_vm._s(_vm.errors.gender_id[0]))
-                                ])
-                              ]
-                            )
-                          : _vm._e()
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("div", { staticClass: "form-group" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.form.religion_id,
-                                expression: "form.religion_id"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            class: [_vm.errors.religion_id ? "is-invalid" : ""],
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.form,
-                                  "religion_id",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              }
-                            }
-                          },
-                          [
-                            _c("option", { attrs: { value: "" } }, [
-                              _vm._v(
-                                _vm._s(_vm.__("Select Religion")) + " ...."
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _vm._l(_vm.religions, function(religion) {
-                              return _c(
-                                "option",
-                                {
-                                  key: religion.id,
-                                  domProps: { value: religion.id }
-                                },
-                                [_vm._v(_vm._s(religion.name))]
-                              )
-                            })
-                          ],
-                          2
-                        ),
-                        _vm._v(" "),
-                        _vm.errors.religion_id
-                          ? _c(
-                              "span",
-                              {
-                                staticClass: "invalid-feedback",
-                                staticStyle: { display: "block" },
-                                attrs: { role: "alert" }
-                              },
-                              [
-                                _c("strong", [
-                                  _vm._v(_vm._s(_vm.errors.religion_id[0]))
-                                ])
-                              ]
-                            )
-                          : _vm._e()
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("div", { staticClass: "form-group" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.form.blood_group_id,
-                                expression: "form.blood_group_id"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            class: [
-                              _vm.errors.blood_group_id ? "is-invalid" : ""
-                            ],
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.$set(
-                                  _vm.form,
-                                  "blood_group_id",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
-                              }
-                            }
-                          },
-                          [
-                            _c("option", { attrs: { value: "" } }, [
-                              _vm._v(
-                                _vm._s(_vm.__("Select Blood Group")) + " ...."
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _vm._l(_vm.blood_groups, function(blood_group) {
-                              return _c(
-                                "option",
-                                {
-                                  key: blood_group.id,
-                                  domProps: { value: blood_group.id }
-                                },
-                                [_vm._v(_vm._s(blood_group.name))]
-                              )
-                            })
-                          ],
-                          2
-                        ),
-                        _vm._v(" "),
-                        _vm.errors.blood_group_id
-                          ? _c(
-                              "span",
-                              {
-                                staticClass: "invalid-feedback",
-                                staticStyle: { display: "block" },
-                                attrs: { role: "alert" }
-                              },
-                              [
-                                _c("strong", [
-                                  _vm._v(_vm._s(_vm.errors.blood_group_id[0]))
-                                ])
-                              ]
-                            )
-                          : _vm._e()
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "form-group" },
-                        [
-                          _c("date-picker", {
-                            class: [_vm.errors.birth_date ? "is-invalid" : ""],
-                            model: {
-                              value: _vm.form.birth_date,
-                              callback: function($$v) {
-                                _vm.$set(_vm.form, "birth_date", $$v)
-                              },
-                              expression: "form.birth_date"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _vm.errors.birth_date
-                            ? _c(
-                                "span",
-                                {
-                                  staticClass: "invalid-feedback",
-                                  staticStyle: { display: "block" },
-                                  attrs: { role: "alert" }
-                                },
-                                [
-                                  _c("strong", [
-                                    _vm._v(_vm._s(_vm.errors.birth_date[0]))
-                                  ])
-                                ]
-                              )
-                            : _vm._e()
-                        ],
-                        1
-                      )
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-4" }, [
@@ -3482,6 +3433,397 @@ var render = function() {
                               ]
                             )
                           : _vm._e()
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-8 col-12" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.gender_id,
+                                    expression: "form.gender_id"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                class: [
+                                  _vm.errors.gender_id ? "is-invalid" : ""
+                                ],
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.form,
+                                      "gender_id",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              [
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v(
+                                    _vm._s(_vm.__("Select Gender")) + " ...."
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _vm._l(_vm.genders, function(gender) {
+                                  return _c(
+                                    "option",
+                                    {
+                                      key: gender.id,
+                                      domProps: { value: gender.id }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                        " +
+                                          _vm._s(gender.name) +
+                                          "\n                      "
+                                      )
+                                    ]
+                                  )
+                                })
+                              ],
+                              2
+                            ),
+                            _vm._v(" "),
+                            _vm.errors.gender_id
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "invalid-feedback",
+                                    staticStyle: { display: "block" },
+                                    attrs: { role: "alert" }
+                                  },
+                                  [
+                                    _c("strong", [
+                                      _vm._v(_vm._s(_vm.errors.gender_id[0]))
+                                    ])
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.religion_id,
+                                    expression: "form.religion_id"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                class: [
+                                  _vm.errors.religion_id ? "is-invalid" : ""
+                                ],
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.form,
+                                      "religion_id",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              [
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v(
+                                    "\n                        " +
+                                      _vm._s(_vm.__("Select Religion")) +
+                                      " ....\n                      "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _vm._l(_vm.religions, function(religion) {
+                                  return _c(
+                                    "option",
+                                    {
+                                      key: religion.id,
+                                      domProps: { value: religion.id }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                        " +
+                                          _vm._s(religion.name) +
+                                          "\n                      "
+                                      )
+                                    ]
+                                  )
+                                })
+                              ],
+                              2
+                            ),
+                            _vm._v(" "),
+                            _vm.errors.religion_id
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "invalid-feedback",
+                                    staticStyle: { display: "block" },
+                                    attrs: { role: "alert" }
+                                  },
+                                  [
+                                    _c("strong", [
+                                      _vm._v(_vm._s(_vm.errors.religion_id[0]))
+                                    ])
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c(
+                            "div",
+                            { staticClass: "form-group" },
+                            [
+                              _c("date-picker", {
+                                class: [
+                                  _vm.errors.birth_date ? "is-invalid" : ""
+                                ],
+                                model: {
+                                  value: _vm.form.birth_date,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "birth_date", $$v)
+                                  },
+                                  expression: "form.birth_date"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _vm.errors.birth_date
+                                ? _c(
+                                    "span",
+                                    {
+                                      staticClass: "invalid-feedback",
+                                      staticStyle: { display: "block" },
+                                      attrs: { role: "alert" }
+                                    },
+                                    [
+                                      _c("strong", [
+                                        _vm._v(_vm._s(_vm.errors.birth_date[0]))
+                                      ])
+                                    ]
+                                  )
+                                : _vm._e()
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.blood_group_id,
+                                    expression: "form.blood_group_id"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                class: [
+                                  _vm.errors.blood_group_id ? "is-invalid" : ""
+                                ],
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.form,
+                                      "blood_group_id",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              [
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v(
+                                    "\n                        " +
+                                      _vm._s(_vm.__("Select Blood Group")) +
+                                      " ....\n                      "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _vm._l(_vm.blood_groups, function(blood_group) {
+                                  return _c(
+                                    "option",
+                                    {
+                                      key: blood_group.id,
+                                      domProps: { value: blood_group.id }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                        " +
+                                          _vm._s(blood_group.name) +
+                                          "\n                      "
+                                      )
+                                    ]
+                                  )
+                                })
+                              ],
+                              2
+                            ),
+                            _vm._v(" "),
+                            _vm.errors.blood_group_id
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "invalid-feedback",
+                                    staticStyle: { display: "block" },
+                                    attrs: { role: "alert" }
+                                  },
+                                  [
+                                    _c("strong", [
+                                      _vm._v(
+                                        _vm._s(_vm.errors.blood_group_id[0])
+                                      )
+                                    ])
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("textarea", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.address,
+                                  expression: "form.address"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: { placeholder: "Address", rows: "3" },
+                              domProps: { value: _vm.form.address },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.form,
+                                    "address",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.blood_group_id
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "invalid-feedback",
+                                    staticStyle: { display: "block" },
+                                    attrs: { role: "alert" }
+                                  },
+                                  [
+                                    _c("strong", [
+                                      _vm._v(
+                                        _vm._s(_vm.errors.blood_group_id[0])
+                                      )
+                                    ])
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-4 col-12" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "banner-logo-upload-box mx-auto",
+                            staticStyle: {
+                              background: "#f3f3f3",
+                              width: "170px",
+                              height: "140px"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "users-avatar-shadow rounded",
+                              attrs: { src: _vm.form.avatar_url, alt: "" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "btn-pill",
+                                staticStyle: { "font-size": "35px" }
+                              },
+                              [
+                                _c("i", { staticClass: "fa fa-camera" }),
+                                _vm._v(" "),
+                                _c("input", {
+                                  staticClass: "hidden",
+                                  attrs: {
+                                    type: "file",
+                                    name: "image",
+                                    id: "avatar",
+                                    accept: "image/*"
+                                  },
+                                  on: { change: _vm.showImage }
+                                })
+                              ]
+                            )
+                          ]
+                        )
                       ])
                     ])
                   ]),
@@ -3557,9 +3899,11 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        _vm._s(
-                          _vm.editMode ? _vm.__("Update") : _vm.__("Create")
-                        )
+                        "\n            " +
+                          _vm._s(
+                            _vm.editMode ? _vm.__("Update") : _vm.__("Create")
+                          ) +
+                          "\n          "
                       )
                     ]
                   ),
@@ -3571,7 +3915,13 @@ var render = function() {
                       attrs: { type: "button", "data-dismiss": "modal" },
                       on: { click: _vm.cleanForm }
                     },
-                    [_vm._v(_vm._s(_vm.__("Cancel")))]
+                    [
+                      _vm._v(
+                        "\n            " +
+                          _vm._s(_vm.__("Cancel")) +
+                          "\n          "
+                      )
+                    ]
                   )
                 ])
               ]

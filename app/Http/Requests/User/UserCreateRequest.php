@@ -29,7 +29,6 @@ class UserCreateRequest extends FormRequest
           'gender_id'       => 'required',
           'birth_date'      => 'required',
           'religion_id'     => 'required',
-          'avatar'          => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ];
     }
 
@@ -48,11 +47,6 @@ class UserCreateRequest extends FormRequest
       'religion_id.required' => __("Religion is required"),
 
       'phone.unique' => __("This contact no. is already used"),
-
-      'avatar.required' => __("User image is required"),
-      'avatar.image' => __("Invalid file"),
-      'avatar.mimes' => __("Image must be with in jpeg, png, or jpg format"),
-      'avatar.max' => __("Image must be less then 2mb")
     ];
   }
 }

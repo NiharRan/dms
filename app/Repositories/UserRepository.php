@@ -6,11 +6,11 @@ namespace App\Repositories;
 
 use App\Traits\RepositoryTrait;
 use App\User;
-use App\Users\Address;
 use App\Users\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Str;
 
 class UserRepository
 {
@@ -57,13 +57,6 @@ class UserRepository
       'religion',
       'blood_group',
       'role',
-      'address' => function ($query) {
-        $query->with([
-          'upazilla',
-          'district',
-          'division'
-        ]);
-      },
     ])->find($rowId);
   }
 
@@ -74,13 +67,6 @@ class UserRepository
       'religion',
       'blood_group',
       'role',
-      'address' => function ($query) {
-        $query->with([
-          'upazilla',
-          'district',
-          'division'
-        ]);
-      },
     ])->where('slug', $slug)
       ->first();
   }
@@ -88,8 +74,8 @@ class UserRepository
   public function store(Request $request)
   {
     $user = new User;
-    $role = Role::where('name', '=', 'User')->first();
-    
+    $role = Role::where('name', '=', 'Operator')->first();
+
     $user = $this->setupData($user, $request);
     $user->email_verified_at = date('Y-m-d H:i:s');
     $user->password = Hash::make("12345678");
@@ -105,6 +91,7 @@ class UserRepository
   {
     $user = $this->findById($id);
     $this->setupData($user, $request);
+    $user->status = $request->status ? 1 : 0;
     if ($user->save()) {
       return $user;
     }
@@ -114,14 +101,23 @@ class UserRepository
   private function setupData(User $user, $request)
   {
     $user->name = $request->name;
-    $user->slug = make_slug($request->name);
+
+
+    $slug = Str::slug($request->name, '-');
+
+    if ($this->findBySlug($slug)) {
+      $slug .= '-'. uniqid();
+    }
+
     $user->phone = $request->phone;
     $user->email = $request->email;
+    $user->slug = $slug;
     $user->gender_id = $request->gender_id;
     $user->birth_date = date('Y-m-d', strtotime($request->birth_date));
     $user->blood_group_id = $request->blood_group_id;
     $user->religion_id = $request->religion_id;
     $user->nationality = $request->nationality;
+    $user->address = $request->address;
     return $user;
   }
 
@@ -140,15 +136,6 @@ class UserRepository
     $img->save($path);
   }
 
-
-  private function setupAddress(Address $address, Request $request)
-  {
-    $address->address = $request->address;
-    $address->division_id = $request->division_id;
-    $address->district_id = $request->district_id;
-    $address->upazilla_id = $request->upazilla_id;
-    return $address;
-  }
 
   public function uploadImage(string $fileNameToStore, $request)
   {

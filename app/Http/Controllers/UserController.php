@@ -58,7 +58,7 @@ class UserController extends Controller
    */
   public function store(UserCreateRequest $request)
   {
-    $role = Role::where('name', 'Subscriber')->first();
+    $role = Role::where('name', 'Operator')->first();
     $user = $this->userRepository->store($request);
     $user->role_id = $role->id;
     if ($request->hasFile('avatar')) {

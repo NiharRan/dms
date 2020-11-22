@@ -3281,140 +3281,134 @@ var render = function() {
                     ])
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.products.data.length > 0
-                  ? _c("div", { staticClass: "table-responsive" }, [
-                      _c(
-                        "table",
-                        {
-                          staticClass:
-                            "table table-bordered display responsive nowrap mb-0",
-                          staticStyle: { width: "100%" },
-                          attrs: { id: "data-table" }
-                        },
-                        [
-                          _c("thead", [
-                            _c("tr", [
-                              _c("th", { attrs: { colspan: "2" } }, [
-                                _c(
-                                  "select",
+                _c("div", { staticClass: "table-responsive" }, [
+                  _c(
+                    "table",
+                    {
+                      staticClass:
+                        "table table-bordered display responsive nowrap mb-0",
+                      staticStyle: { width: "100%" },
+                      attrs: { id: "data-table" }
+                    },
+                    [
+                      _c("thead", [
+                        _c("tr", [
+                          _c("th", { attrs: { colspan: "2" } }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
                                   {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.search.per_page,
-                                        expression: "search.per_page"
-                                      }
-                                    ],
-                                    staticClass: "form-control",
-                                    on: {
-                                      change: [
-                                        function($event) {
-                                          var $$selectedVal = Array.prototype.filter
-                                            .call(
-                                              $event.target.options,
-                                              function(o) {
-                                                return o.selected
-                                              }
-                                            )
-                                            .map(function(o) {
-                                              var val =
-                                                "_value" in o
-                                                  ? o._value
-                                                  : o.value
-                                              return val
-                                            })
-                                          _vm.$set(
-                                            _vm.search,
-                                            "per_page",
-                                            $event.target.multiple
-                                              ? $$selectedVal
-                                              : $$selectedVal[0]
-                                          )
-                                        },
-                                        _vm.searchData
-                                      ]
-                                    }
-                                  },
-                                  [
-                                    _c("option", { attrs: { value: "10" } }, [
-                                      _vm._v("10")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("option", { attrs: { value: "25" } }, [
-                                      _vm._v("25")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("option", { attrs: { value: "25" } }, [
-                                      _vm._v("50")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("option", { attrs: { value: "25" } }, [
-                                      _vm._v("100")
-                                    ])
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("th", { attrs: { colspan: "3" } }),
-                              _vm._v(" "),
-                              _c("th", { attrs: { colspan: "2" } }, [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.search.query,
-                                      expression: "search.query"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: {
-                                    type: "text",
-                                    placeholder: "Search"
-                                  },
-                                  domProps: { value: _vm.search.query },
-                                  on: {
-                                    keyup: _vm.searchData,
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.search.per_page,
+                                    expression: "search.per_page"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                on: {
+                                  change: [
+                                    function($event) {
+                                      var $$selectedVal = Array.prototype.filter
+                                        .call($event.target.options, function(
+                                          o
+                                        ) {
+                                          return o.selected
+                                        })
+                                        .map(function(o) {
+                                          var val =
+                                            "_value" in o ? o._value : o.value
+                                          return val
+                                        })
                                       _vm.$set(
                                         _vm.search,
-                                        "query",
-                                        $event.target.value
+                                        "per_page",
+                                        $event.target.multiple
+                                          ? $$selectedVal
+                                          : $$selectedVal[0]
                                       )
-                                    }
-                                  }
-                                })
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("th", { attrs: { scope: "col" } }, [
-                                _vm._v("S.N.")
-                              ]),
-                              _vm._v(" "),
-                              _c("th", [_vm._v("Image")]),
-                              _vm._v(" "),
-                              _c("th", [_vm._v("Name")]),
-                              _vm._v(" "),
-                              _c("th", [_vm._v("Type")]),
-                              _vm._v(" "),
-                              _c("th", [_vm._v("Created At")]),
-                              _vm._v(" "),
-                              _c("th", { staticClass: "text-center" }, [
-                                _vm._v("Status")
-                              ]),
-                              _vm._v(" "),
-                              _c("th", { staticClass: "text-center" }, [
-                                _vm._v("Actions")
-                              ])
-                            ])
+                                    },
+                                    _vm.searchData
+                                  ]
+                                }
+                              },
+                              [
+                                _c("option", { attrs: { value: "10" } }, [
+                                  _vm._v("10")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "25" } }, [
+                                  _vm._v("25")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "25" } }, [
+                                  _vm._v("50")
+                                ]),
+                                _vm._v(" "),
+                                _c("option", { attrs: { value: "25" } }, [
+                                  _vm._v("100")
+                                ])
+                              ]
+                            )
                           ]),
                           _vm._v(" "),
-                          _c(
+                          _c("th", { attrs: { colspan: "3" } }),
+                          _vm._v(" "),
+                          _c("th", { attrs: { colspan: "2" } }, [
+                            _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.search.query,
+                                  expression: "search.query"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: { type: "text", placeholder: "Search" },
+                              domProps: { value: _vm.search.query },
+                              on: {
+                                keyup: _vm.searchData,
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.search,
+                                    "query",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            })
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("th", { attrs: { scope: "col" } }, [
+                            _vm._v("S.N.")
+                          ]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("Image")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("Name")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("Type")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("Created At")]),
+                          _vm._v(" "),
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v("Status")
+                          ]),
+                          _vm._v(" "),
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v("Actions")
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _vm.products.data.length > 0
+                        ? _c(
                             "tbody",
                             _vm._l(_vm.products.data, function(product, index) {
                               return _c("tr", { key: product.id }, [
@@ -3476,10 +3470,10 @@ var render = function() {
                             }),
                             0
                           )
-                        ]
-                      )
-                    ])
-                  : _vm._e()
+                        : _vm._e()
+                    ]
+                  )
+                ])
               ])
             ])
           ])

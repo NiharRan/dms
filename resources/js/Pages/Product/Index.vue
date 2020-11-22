@@ -11,7 +11,7 @@
                 {{ success }}
               </div>
 
-              <div class="table-responsive" v-if="products.data.length > 0">
+              <div class="table-responsive">
                 <table id="data-table" class="table table-bordered display responsive nowrap mb-0" style="width: 100%">
                   <thead>
                   <tr>
@@ -38,7 +38,7 @@
                     <th class="text-center">Actions</th>
                   </tr>
                   </thead>
-                  <tbody>
+                  <tbody v-if="products.data.length > 0">
                   <tr v-for="(product, index) in products.data" :key="product.id">
                     <th style="width: 50px">{{ index + 1 }}</th>
                     <th style="width: 150px;">
