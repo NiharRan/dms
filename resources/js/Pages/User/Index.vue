@@ -188,16 +188,12 @@
             id: '',
             name: '',
             phone: '',
-            guardian_phone: '',
             email: '',
             gender_id: '',
             religion_id: '',
             blood_group_id: '',
             birth_date: new Date(),
             nationality: '',
-            division: null,
-            district: null,
-            upazilla: null,
             address: '',
             status: '',
           }
@@ -208,6 +204,14 @@
           this.modelTitle = `Edit ${data.name}'s Information`;
           this.editMode = true;
           this.form.name = data.name;
+          this.form.phone = data.phone;
+          this.form.email = data.email;
+          this.form.gender_id = data.gender_id;
+          this.form.religion_id = data.religion_id;
+          this.form.blood_group_id = data.blood_group_id;
+          this.form.birth_date = data.birth_date;
+          this.form.nationality = data.nationality;
+          this.form.address = data.address;
           this.form.status = data.status;
           this.form.id = data.id;
           $("#default").modal('show');
@@ -219,6 +223,10 @@
           this.modelTitle = this.__('Create New User');
           this.editMode = false;
           this.form.name = '';
+          this.form.phone = '';
+          this.form.email = '';
+          this.form.gender_id = '';
+          this.form.religion_id = '';
           this.form.id = '';
           this.form.status = '';
           Object.keys(this.errors).forEach((key, value) => {

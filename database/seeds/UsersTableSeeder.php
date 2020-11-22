@@ -17,8 +17,6 @@ class UsersTableSeeder extends Seeder
       DB::table('users')->insert([
         'name' => 'Nihar Ranjan Das',
         'slug' => Str::slug('Nihar Ranjan Das', '-'),
-        'father_name' => 'Niranjan Kumer Das',
-        'mother_name' => 'Swapna Rani Das',
         'phone' => '01623021319',
         'email' => 'niharranjandasmu@gmail.com',
         'gender_id' => 1,
@@ -33,8 +31,6 @@ class UsersTableSeeder extends Seeder
       DB::table('users')->insert([
         'name' => 'Akash Das',
         'slug' => Str::slug('Akash Das', '-'),
-        'father_name' => 'Niranjan Kumer Das',
-        'mother_name' => 'Swapna Rani Das',
         'phone' => '01761152186',
         'email' => 'akashdasmu@gmail.com',
         'gender_id' => 1,
@@ -50,8 +46,6 @@ class UsersTableSeeder extends Seeder
       DB::table('users')->insert([
         'name' => 'Pulok Talukdar',
         'slug' => Str::slug('Pulok Talukdar', '-'),
-        'father_name' => '',
-        'mother_name' => '',
         'phone' => '01726334422',
         'gender_id' => 1,
         'birth_date' => '1994-10-12',
@@ -66,8 +60,6 @@ class UsersTableSeeder extends Seeder
       DB::table('users')->insert([
         'name' => 'Prodip Das',
         'slug' => Str::slug('Prodip Das', '-'),
-        'father_name' => '',
-        'mother_name' => '',
         'phone' => '01911152186',
         'gender_id' => 1,
         'birth_date' => '1993-05-28',

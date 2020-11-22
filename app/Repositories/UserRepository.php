@@ -7,6 +7,7 @@ namespace App\Repositories;
 use App\Traits\RepositoryTrait;
 use App\User;
 use App\Users\Address;
+use App\Users\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
@@ -87,17 +88,15 @@ class UserRepository
   public function store(Request $request)
   {
     $user = new User;
+    $role = Role::where('name', '=', 'User')->first();
+    
     $user = $this->setupData($user, $request);
     $user->email_verified_at = date('Y-m-d H:i:s');
     $user->password = Hash::make("12345678");
     $user->created_at = date('Y-m-d H:i:s');
+    $user->role_id = $role->id;
     if ($user->save()) {
-      $address = $user->address();
-      $address = $this->setupAddress($address, $request);
-      $address->created_at = date('Y-m-d H:i:s');
-      if ($address->save()) {
-        return $user;
-      }
+      return $user;
     }
     return null;
   }
@@ -107,11 +106,7 @@ class UserRepository
     $user = $this->findById($id);
     $this->setupData($user, $request);
     if ($user->save()) {
-      $address = $user->address;
-      $address = $this->setupAddress($address, $request);
-      if ($address->save()) {
-        return $user;
-      }
+      return $user;
     }
     return null;
   }
@@ -120,8 +115,6 @@ class UserRepository
   {
     $user->name = $request->name;
     $user->slug = make_slug($request->name);
-    $user->father_name = $request->father_name;
-    $user->mother_name = $request->mother_name;
     $user->phone = $request->phone;
     $user->email = $request->email;
     $user->gender_id = $request->gender_id;
