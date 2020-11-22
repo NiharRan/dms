@@ -58,6 +58,7 @@ Route::group([
     Route::delete('/drivers/invoices/{driverI/invoiced}', 'DriverInvoiceController@destroy')->name('drivers.invoices.destroy');
     Route::get('/drivers/invoices/invoice/{invoice}', 'DriverInvoiceController@show')->name('drivers.invoices.show');
     Route::get('/drivers/invoices/print/{invoice}', 'DriverInvoiceController@print')->name('drivers.invoices.print');
+    Route::get('/drivers/invoices/commissions/{referenceCode}', 'DriverInvoiceController@commissions')->name('drivers.invoices.commissions');
 
     Route::group([
       'prefix' => 'settings',

@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Services\BanglaNumberToWord;
+use App\Settings\Client;
 use App\Settings\TransactionMedia;
 use Illuminate\Database\Eloquent\Model;
 
@@ -32,19 +33,19 @@ class Sale extends Model
 
   public function company()
   {
-    return $this->belongsTo('App\Company');
+    return $this->belongsTo(Company::class);
   }
   public function client()
   {
-    return $this->belongsTo('App\Settings\Client');
+    return $this->belongsTo(Client::class);
   }
   public function creator()
   {
-    return $this->belongsTo('App\User');
+    return $this->belongsTo(User::class, 'user_id');
   }
   public function sale_details()
   {
-    return $this->hasMany('App\SaleDetail');
+    return $this->hasMany(SaleDetail::class);
   }
 
   public function transaction_media()
@@ -54,6 +55,6 @@ class Sale extends Model
 
   public function transactions()
   {
-    return $this->morphMany('\App\Transaction', 'transactionable');
+    return $this->morphMany(Transaction::class, 'transactionable');
   }
 }

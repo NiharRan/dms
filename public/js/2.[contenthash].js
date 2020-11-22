@@ -900,7 +900,7 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -912,6 +912,27 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1244,6 +1265,68 @@ var render = function() {
                             attrs: { "data-i18n": "" }
                           },
                           [_vm._v(_vm._s(_vm.__("Sale")))]
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "inertia-link",
+                      { attrs: { href: _vm.route("drivers.invoices.index") } },
+                      [
+                        _c("i", { staticClass: "feather icon-unlock" }),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "menu-title",
+                            attrs: { "data-i18n": "" }
+                          },
+                          [_vm._v(_vm._s(_vm.__("Driver")))]
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item has-sub" }, [
+              _c("a", { attrs: { href: "" } }, [
+                _c("i", { staticClass: "fa fa-money" }),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  { staticClass: "menu-title", attrs: { "data-i18n": "" } },
+                  [_vm._v(_vm._s(_vm.__("Accounts")))]
+                )
+              ]),
+              _vm._v(" "),
+              _c("ul", [
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "inertia-link",
+                      { attrs: { href: _vm.route("sales.index") } },
+                      [
+                        _c("i", { staticClass: "feather icon-unlock" }),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "menu-title",
+                            attrs: { "data-i18n": "" }
+                          },
+                          [_vm._v(_vm._s(_vm.__("Account Statement")))]
                         )
                       ]
                     )
@@ -2700,7 +2783,7 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n.btn-default {\n    border: 1px solid #ccc;\n    padding: 10px;\n}\n.vue-daterange-picker[data-v-4f8eb193] {\n    min-width: 100% !important;\n}\n", ""]);
+exports.push([module.i, "\n.btn-default {\n  border: 1px solid #ccc;\n  padding: 10px;\n}\n.vue-daterange-picker[data-v-4f8eb193] {\n  min-width: 100% !important;\n}\n", ""]);
 
 // exports
 
@@ -2716,6 +2799,56 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Shared_Layout__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model__ = __webpack_require__(255);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Components_Model__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2862,9 +2995,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       search: {
         per_page: 10,
-        query: '',
-        invoice: '',
-        status: '',
+        query: "",
+        invoice: "",
+        status: "",
         client: null,
         dateRange: {}
       }
@@ -2879,25 +3012,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     totalPaid: function totalPaid(data) {
       var paidPrice = data.reduce(function (paid, sale) {
-        var p = sale.total_paid == '' ? 0 : sale.total_paid;
+        var p = sale.total_paid == "" ? 0 : sale.total_paid;
         return paid + parseFloat(p);
       }, 0);
       return parseFloat(paidPrice).toFixed(2);
     },
-    totalDue: function totalDue(data) {
-      var duePrice = data.reduce(function (due, sale) {
-        var d = sale.total_due == '' ? 0 : sale.total_due;
-        return due + parseFloat(d);
+    totalCommission: function totalCommission(data) {
+      var commissionPrice = data.reduce(function (c, sale) {
+        var com = sale.commission == "" ? 0 : sale.commission;
+        return c + parseFloat(com);
       }, 0);
-      return parseFloat(duePrice).toFixed(2);
+      return parseFloat(commissionPrice).toFixed(2);
     },
     searchData: function searchData() {
-      $("#default").modal('hide');
-      var client = this.search.client == null ? '' : this.search.client.id;
-      var start_date = this.$options.filters.moment(this.search.dateRange.startDate, 'YYYY-MM-DD');
-      var end_date = this.$options.filters.moment(this.search.dateRange.endDate, 'YYYY-MM-DD');
-      this.$inertia.replace(this.route('sales.index'), {
-        method: 'get',
+      $("#default").modal("hide");
+      var client = this.search.client == null ? "" : this.search.client.id;
+      var start_date = this.$options.filters.moment(this.search.dateRange.startDate, "YYYY-MM-DD");
+      var end_date = this.$options.filters.moment(this.search.dateRange.endDate, "YYYY-MM-DD");
+      this.$inertia.replace(this.route("sales.index"), {
+        method: "get",
         data: {
           search: this.search.query,
           per_page: this.search.per_page,
@@ -3046,8 +3179,6 @@ var render = function() {
                             })
                           ]),
                           _vm._v(" "),
-                          _c("th", { attrs: { colspan: "2" } }),
-                          _vm._v(" "),
                           _c("th", { attrs: { colspan: "2" } }, [
                             _c("input", {
                               directives: [
@@ -3101,7 +3232,11 @@ var render = function() {
                                   _c("i", {
                                     staticClass: "feather icon-filter mr-2"
                                   }),
-                                  _vm._v(" " + _vm._s(_vm.__("Filter")))
+                                  _vm._v(
+                                    "\n                        " +
+                                      _vm._s(_vm.__("Filter")) +
+                                      "\n                      "
+                                  )
                                 ]
                               )
                             ]
@@ -3113,18 +3248,14 @@ var render = function() {
                             _vm._v(_vm._s(_vm.__("S.N.")))
                           ]),
                           _vm._v(" "),
+                          _c("th", [_vm._v(_vm._s(_vm.__("Date")))]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v(_vm._s(_vm.__("Creator")))]),
+                          _vm._v(" "),
                           _c("th", [_vm._v(_vm._s(_vm.__("Invoice")))]),
                           _vm._v(" "),
-                          _c("th", [_vm._v(_vm._s(_vm.__("Client")))]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v(_vm._s(_vm.__("Sale Date")))]),
-                          _vm._v(" "),
-                          _c("th", { staticClass: "text-center" }, [
-                            _vm._v(_vm._s(_vm.__("Status")))
-                          ]),
-                          _vm._v(" "),
                           _c("th", { staticClass: "text-right" }, [
-                            _vm._v(_vm._s(_vm.__("Total")))
+                            _vm._v(_vm._s(_vm.__("Total Price")))
                           ]),
                           _vm._v(" "),
                           _c("th", { staticClass: "text-right" }, [
@@ -3132,7 +3263,7 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("th", { staticClass: "text-right" }, [
-                            _vm._v(_vm._s(_vm.__("Due")))
+                            _vm._v(_vm._s(_vm.__("Commission")))
                           ]),
                           _vm._v(" "),
                           _c("th", { staticClass: "text-center" }, [
@@ -3145,41 +3276,11 @@ var render = function() {
                         ? _c(
                             "tbody",
                             [
-                              _c("tr", [
-                                _c("td", { attrs: { colspan: "5" } }),
-                                _vm._v(" "),
-                                _c("th", { staticClass: "text-right" }, [
-                                  _vm._v(_vm._s(_vm.total(_vm.sales.data)))
-                                ]),
-                                _vm._v(" "),
-                                _c("th", { staticClass: "text-right" }, [
-                                  _vm._v(_vm._s(_vm.totalPaid(_vm.sales.data)))
-                                ]),
-                                _vm._v(" "),
-                                _c("th", { staticClass: "text-right" }, [
-                                  _vm._v(_vm._s(_vm.totalDue(_vm.sales.data)))
-                                ])
-                              ]),
-                              _vm._v(" "),
                               _vm._l(_vm.sales.data, function(sale, index) {
                                 return _c("tr", { key: sale.id }, [
                                   _c("th", { staticStyle: { width: "50px" } }, [
                                     _vm._v(_vm._s(index + 1))
                                   ]),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v(_vm._s(sale.invoice))]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "th",
-                                    { staticStyle: { width: "150px" } },
-                                    [
-                                      _vm._v(
-                                        "\n                    " +
-                                          _vm._s(sale.client.name) +
-                                          "\n                  "
-                                      )
-                                    ]
-                                  ),
                                   _vm._v(" "),
                                   _c("td", [
                                     _vm._v(
@@ -3192,15 +3293,9 @@ var render = function() {
                                     )
                                   ]),
                                   _vm._v(" "),
-                                  _c("td", {
-                                    domProps: {
-                                      innerHTML: _vm._s(
-                                        _vm.$options.filters.payment_status(
-                                          sale.status
-                                        )
-                                      )
-                                    }
-                                  }),
+                                  _c("th", [_vm._v(_vm._s(sale.creator.name))]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v(_vm._s(sale.invoice))]),
                                   _vm._v(" "),
                                   _c("th", { staticClass: "text-right" }, [
                                     _vm._v(_vm._s(sale.total_price))
@@ -3211,7 +3306,7 @@ var render = function() {
                                   ]),
                                   _vm._v(" "),
                                   _c("th", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(sale.total_due))
+                                    _vm._v(_vm._s(sale.commission))
                                   ]),
                                   _vm._v(" "),
                                   _c("td", { staticClass: "text-center" }, [
@@ -3254,7 +3349,38 @@ var render = function() {
                                     )
                                   ])
                                 ])
-                              })
+                              }),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c(
+                                  "td",
+                                  {
+                                    staticClass: "text-right",
+                                    attrs: { colspan: "4" }
+                                  },
+                                  [_vm._v(_vm._s(_vm.__("Total")))]
+                                ),
+                                _vm._v(" "),
+                                _c("th", { staticClass: "text-right" }, [
+                                  _vm._v(_vm._s(_vm.total(_vm.sales.data)))
+                                ]),
+                                _vm._v(" "),
+                                _c("th", { staticClass: "text-right" }, [
+                                  _vm._v(_vm._s(_vm.totalPaid(_vm.sales.data)))
+                                ]),
+                                _vm._v(" "),
+                                _c("th", { staticClass: "text-right" }, [
+                                  _vm._v(
+                                    "\n                      " +
+                                      _vm._s(
+                                        _vm.totalCommission(_vm.sales.data)
+                                      ) +
+                                      "\n                    "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("th")
+                              ])
                             ],
                             2
                           )
@@ -3282,7 +3408,13 @@ var render = function() {
                         staticClass: "modal-title",
                         attrs: { id: "myModalLabel1" }
                       },
-                      [_vm._v(_vm._s(_vm.__("Advanced Search")))]
+                      [
+                        _vm._v(
+                          "\n          " +
+                            _vm._s(_vm.__("Advanced Search")) +
+                            "\n        "
+                        )
+                      ]
                     ),
                     _vm._v(" "),
                     _c(
@@ -3328,18 +3460,18 @@ var render = function() {
                         fn: function(picker) {
                           return [
                             _vm._v(
-                              "\n                  " +
+                              "\n              " +
                                 _vm._s(
                                   _vm._f("moment")(
                                     picker.startDate,
                                     "DD-MM-YYYY"
                                   )
                                 ) +
-                                " - " +
+                                " -\n              " +
                                 _vm._s(
                                   _vm._f("moment")(picker.endDate, "DD-MM-YYYY")
                                 ) +
-                                "\n              "
+                                "\n            "
                             )
                           ]
                         }
@@ -3444,7 +3576,11 @@ var render = function() {
                   attrs: { type: "button" },
                   on: { click: _vm.searchData }
                 },
-                [_vm._v(_vm._s(_vm.__("Search")))]
+                [
+                  _vm._v(
+                    "\n          " + _vm._s(_vm.__("Search")) + "\n        "
+                  )
+                ]
               ),
               _vm._v(" "),
               _c(
@@ -3453,7 +3589,11 @@ var render = function() {
                   staticClass: "btn btn-secendary",
                   attrs: { type: "button", "data-dismiss": "modal" }
                 },
-                [_vm._v(_vm._s(_vm.__("Cancel")))]
+                [
+                  _vm._v(
+                    "\n          " + _vm._s(_vm.__("Cancel")) + "\n        "
+                  )
+                ]
               )
             ])
           ]

@@ -356,8 +356,17 @@ export default {
   },
   methods: {
     fetchCommission: function () {
-      if (this.sale.reference_code != '') {
-        console.log('.....');
+      if (this.sale.reference_code != "") {
+        axios
+          .get(
+            this.route("drivers.invoices.commissions", this.sale.reference_code)
+          )
+          .then(({ data }) => {
+            this.sale.commission = data.commission == '' ? 0.00 : parseFloat(data.commission).toFixed(2);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       }
     },
     calculateTotalWhenQuantityChange: function (index) {
@@ -447,6 +456,7 @@ export default {
             total_price: this.sale.total_price,
             total_due: this.sale.total_due,
             total_paid: this.sale.total_paid,
+            commission: this.sale.commission,
             transaction_media_id: transaction_media_id,
             client_id: client_id,
             company_id: this.company.id,

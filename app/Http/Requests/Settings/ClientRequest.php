@@ -24,14 +24,12 @@ class ClientRequest extends FormRequest
   public function rules()
   {
     $rules = 'required|string';
-    $phoneRules = 'required';
     if ($this->isPostRequest()) {
       $rules .= '|unique:clients';
-      $phoneRules .= '|unique:clients';
     }
     return [
       'name' => $rules,
-      'phone' => $phoneRules,
+      'address' => 'required'
     ];
   }
 
@@ -44,12 +42,11 @@ class ClientRequest extends FormRequest
   {
     $messages = [
       'name.required' => 'Client name is required',
-      'phone.required' => 'Contact no. is required',
+      'address.required' => 'Address is required',
       'name.string'  => 'Invalid name',
     ];
     if ($this->isPostRequest()) {
       $messages['name.unique']  = 'Already exists! Try another one';
-      $messages['phone.unique']  = 'Already exists! Try another one';
     }
     return $messages;
   }

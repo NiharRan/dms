@@ -253,15 +253,27 @@
                         </th>
                       </tr>
                       <tr>
-                        <th class="text-right">{{ __('Reference Code') }}</th>
+                        <th class="text-right">{{ __("Reference Code") }}</th>
                         <td>
-                          <input type="text" @change="fetchCommission" v-model="form.reference_code" class="form-control" :placeholder="__('Reference Code')">
+                          <input
+                            type="text"
+                            @change="fetchCommission"
+                            v-model="form.reference_code"
+                            class="form-control"
+                            :placeholder="__('Reference Code')"
+                          />
                         </td>
                       </tr>
                       <tr>
-                        <th class="text-right">{{ __('Commission') }}</th>
+                        <th class="text-right">{{ __("Commission") }}</th>
                         <td>
-                          <input type="text" readonly v-model="form.commission" class="form-control" :placeholder="__('Commission')">
+                          <input
+                            type="text"
+                            readonly
+                            v-model="form.commission"
+                            class="form-control"
+                            :placeholder="__('Commission')"
+                          />
                         </td>
                       </tr>
                       <tr>
@@ -303,9 +315,13 @@
                       </tr>
                       <tr>
                         <th colspan="2" class="text-right">
-                          <inertia-link :href="route('sales.index')" class="btn btn-primary">
-                          <i class="feather icon-arrow-left"></i> {{ __("Back") }}
-                        </inertia-link>
+                          <inertia-link
+                            :href="route('sales.index')"
+                            class="btn btn-primary"
+                          >
+                            <i class="feather icon-arrow-left"></i>
+                            {{ __("Back") }}
+                          </inertia-link>
                           <button type="submit" class="btn btn-success">
                             <i class="feather icon-printer"></i>
                             {{ __("Store") }}
@@ -354,8 +370,8 @@ export default {
         client: null,
         sale_date: new Date(),
         sale_details: [],
-        reference_code: '',
-        commission: '0.00'
+        reference_code: "",
+        commission: "0.00",
       },
       products: [],
       sale_details_errors: [],
@@ -364,8 +380,17 @@ export default {
   },
   methods: {
     fetchCommission: function () {
-      if (this.form.reference_code != '') {
-        console.log('.....');
+      if (this.form.reference_code != "") {
+        axios
+          .get(
+            this.route("drivers.invoices.commissions", this.form.reference_code)
+          )
+          .then(({ data }) => {
+            this.form.commission = data.commission == '' ? 0.00 : parseFloat(data.commission).toFixed(2);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       }
     },
     calculateTotalWhenQuantityChange: function (index) {

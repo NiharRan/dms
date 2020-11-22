@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\DriverInvoice;
 use App\Http\Requests\DriverInvoiceRequest;
 use App\Http\Resources\DriverInvoiceResource;
 use App\Repositories\DriverInvoiceRepository;
@@ -174,5 +175,11 @@ class DriverInvoiceController extends Controller
   public function destroy($id)
   {
     //
+  }
+
+  public function commissions($referenceCode)
+  {
+    $commissions = DriverInvoice::where('reference', '=', $referenceCode)->get()->sum('commission');
+    return response()->json(['commission' => $commissions]);
   }
 }

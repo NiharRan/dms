@@ -26,7 +26,7 @@ class SaleRepository
 
   public function all()
   {
-    $sales = $this->sale->with(['client', 'company']);
+    $sales = $this->sale->with(['client', 'company', 'creator']);
 
     if (\request()->has('status') && !empty(request()->status)) {
       $sales = $sales->where('status', \request()->status);
