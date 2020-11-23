@@ -40,6 +40,7 @@ Route::group([
 
     // Sale routes
     Route::get('/sales', 'SaleController@index')->name('sales.index');
+    Route::get('/sales/print', 'SaleController@print')->name('sales.print');
     Route::get('/sales/create', 'SaleController@create')->name('sales.create');
     Route::post('/sales', 'SaleController@store')->name('sales.store');
     Route::get('/sales/{saleId}', 'SaleController@edit')->name('sales.edit');

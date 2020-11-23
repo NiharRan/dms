@@ -45,6 +45,21 @@ class SaleController extends Controller
     ]);
   }
 
+  /**
+   * Display a listing of the resource.
+   *
+   * @return Response
+   */
+  public function print()
+  {
+    $company = Company::active()->orderBy('id', 'desc')->first();
+    $sales = $this->saleRepository->all()->get();
+    return Inertia::render('Sale/PrintList', [
+      'sales' => $sales,
+      'company' => $company,
+    ]);
+  }
+
   public function create()
   {
     $pageConfigs = [

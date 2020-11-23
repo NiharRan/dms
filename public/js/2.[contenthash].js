@@ -2948,6 +2948,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3013,6 +3021,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         preserveState: true,
         preserveScroll: true
       });
+    },
+    print: function print() {
+      var client = this.search.client == null ? "" : this.search.client.id;
+      var query = "sales/print?search=".concat(this.search.query, "&&invoice=").concat(this.search.invoice, "&&status=").concat(this.search.status, "&&client=").concat(client);
+
+      if (this.search.dateRange.startDate) {
+        var start_date = this.$options.filters.moment(this.search.dateRange.startDate, "YYYY-MM-DD");
+        var end_date = this.$options.filters.moment(this.search.dateRange.endDate, "YYYY-MM-DD");
+        query = "".concat(query, "&&start_date=").concat(start_date, "&&end_date=").concat(end_date);
+      }
+
+      window.open(query, "_blank");
     }
   },
   created: function created() {
@@ -3205,6 +3225,25 @@ var render = function() {
                                   _vm._v(
                                     "\n                        " +
                                       _vm._s(_vm.__("Filter")) +
+                                      "\n                      "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-default",
+                                  attrs: { type: "button" },
+                                  on: { click: _vm.print }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "feather icon-printer mr-2"
+                                  }),
+                                  _vm._v(
+                                    "\n                        " +
+                                      _vm._s(_vm.__("Print")) +
                                       "\n                      "
                                   )
                                 ]

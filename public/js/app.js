@@ -56389,283 +56389,291 @@ module.exports = function (css) {
 var map = {
 	"./Account/Statement": [
 		151,
-		4
+		40
 	],
 	"./Account/Statement.vue": [
 		151,
-		4
+		40
 	],
 	"./Auth/Email": [
 		152,
-		32
+		68
 	],
 	"./Auth/Email.vue": [
 		152,
-		32
+		68
 	],
 	"./Auth/Login": [
 		153,
-		31
+		67
 	],
 	"./Auth/Login.vue": [
 		153,
-		31
+		67
 	],
 	"./Auth/PasswordReset": [
 		154,
-		30
+		66
 	],
 	"./Auth/PasswordReset.vue": [
 		154,
-		30
+		66
 	],
 	"./Auth/Register": [
 		155,
-		29
+		65
 	],
 	"./Auth/Register.vue": [
 		155,
-		29
+		65
 	],
 	"./BloodGroup/Index": [
 		156,
-		24
+		60
 	],
 	"./BloodGroup/Index.vue": [
 		156,
-		24
+		60
 	],
 	"./Client/Index": [
 		157,
-		23
+		59
 	],
 	"./Client/Index.vue": [
 		157,
-		23
+		59
 	],
 	"./Company/Index": [
 		158,
-		1
+		37
 	],
 	"./Company/Index.vue": [
 		158,
-		1
+		37
 	],
 	"./Company/Profile": [
 		159,
-		27
+		63
 	],
 	"./Company/Profile.vue": [
 		159,
-		27
+		63
 	],
 	"./Dashboard": [
 		161,
-		28
+		64
 	],
 	"./Dashboard.vue": [
 		161,
-		28
+		64
 	],
 	"./Dashboard/AdminDashboard": [
 		160,
-		25
+		61
 	],
 	"./Dashboard/AdminDashboard.vue": [
 		160,
-		25
+		61
 	],
 	"./Gender/Index": [
 		162,
-		22
+		58
 	],
 	"./Gender/Index.vue": [
 		162,
-		22
+		58
 	],
 	"./Invoice/Driver/Create": [
 		163,
-		11
+		47
 	],
 	"./Invoice/Driver/Create.vue": [
 		163,
-		11
+		47
 	],
 	"./Invoice/Driver/Edit": [
 		164,
-		10
+		46
 	],
 	"./Invoice/Driver/Edit.vue": [
 		164,
-		10
+		46
 	],
 	"./Invoice/Driver/Index": [
 		165,
-		3
+		39
 	],
 	"./Invoice/Driver/Index.vue": [
 		165,
-		3
+		39
 	],
 	"./Invoice/Driver/Invoice": [
 		166,
-		9
+		45
 	],
 	"./Invoice/Driver/Invoice.vue": [
 		166,
-		9
+		45
 	],
 	"./Invoice/Driver/Print": [
 		167,
-		34
+		71
 	],
 	"./Invoice/Driver/Print.vue": [
 		167,
-		34
+		71
 	],
 	"./Load/Index": [
 		168,
-		21
+		57
 	],
 	"./Load/Index.vue": [
 		168,
-		21
+		57
 	],
 	"./MeasurementType/Index": [
 		169,
-		20
+		56
 	],
 	"./MeasurementType/Index.vue": [
 		169,
-		20
+		56
 	],
 	"./Product/Index": [
 		170,
-		0
+		36
 	],
 	"./Product/Index.vue": [
 		170,
-		0
+		36
 	],
 	"./ProductType/Index": [
 		171,
-		19
+		55
 	],
 	"./ProductType/Index.vue": [
 		171,
-		19
+		55
 	],
 	"./Purchase/History": [
 		172,
-		8
+		44
 	],
 	"./Purchase/History.vue": [
 		172,
-		8
+		44
 	],
 	"./Purchase/Index": [
 		173,
-		7
+		43
 	],
 	"./Purchase/Index.vue": [
 		173,
-		7
+		43
 	],
 	"./Religion/Index": [
 		174,
-		18
+		54
 	],
 	"./Religion/Index.vue": [
 		174,
-		18
+		54
 	],
 	"./Role/Index": [
 		175,
-		17
+		53
 	],
 	"./Role/Index.vue": [
 		175,
-		17
+		53
 	],
 	"./Sale/Create": [
 		176,
-		6
+		42
 	],
 	"./Sale/Create.vue": [
 		176,
-		6
+		42
 	],
 	"./Sale/Edit": [
 		177,
-		5
+		41
 	],
 	"./Sale/Edit.vue": [
 		177,
-		5
+		41
 	],
 	"./Sale/Index": [
 		178,
-		2
+		38
 	],
 	"./Sale/Index.vue": [
 		178,
-		2
+		38
 	],
 	"./Sale/Invoice": [
 		179,
-		16
+		52
 	],
 	"./Sale/Invoice.vue": [
 		179,
-		16
+		52
 	],
 	"./Sale/Print": [
 		180,
-		33
+		70
 	],
 	"./Sale/Print.vue": [
 		180,
-		33
+		70
+	],
+	"./Sale/PrintList": [
+		453,
+		69
+	],
+	"./Sale/PrintList.vue": [
+		453,
+		69
 	],
 	"./Stock/Index": [
 		181,
-		15
+		51
 	],
 	"./Stock/Index.vue": [
 		181,
-		15
+		51
 	],
 	"./TransactionMedia/Index": [
 		182,
-		14
+		50
 	],
 	"./TransactionMedia/Index.vue": [
 		182,
-		14
+		50
 	],
 	"./TransactionType/Index": [
 		183,
-		13
+		49
 	],
 	"./TransactionType/Index.vue": [
 		183,
-		13
+		49
 	],
 	"./User/Index": [
 		184,
-		12
+		48
 	],
 	"./User/Index.vue": [
 		184,
-		12
+		48
 	],
 	"./User/Profile": [
 		185,
-		26
+		62
 	],
 	"./User/Profile.vue": [
 		185,
-		26
+		62
 	]
 };
 function webpackAsyncContext(req) {

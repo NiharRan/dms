@@ -58,6 +58,14 @@
                           <i class="feather icon-filter mr-2"></i>
                           {{ __("Filter") }}
                         </button>
+                        <button
+                          class="btn btn-default"
+                          type="button"
+                          @click="print"
+                        >
+                          <i class="feather icon-printer mr-2"></i>
+                          {{ __("Print") }}
+                        </button>
                       </th>
                     </tr>
                     <tr>
@@ -248,6 +256,22 @@ export default {
         preserveState: true,
         preserveScroll: true,
       });
+    },
+    print: function () {
+      let client = this.search.client == null ? "" : this.search.client.id;
+      let query = `sales/print?search=${this.search.query}&&invoice=${this.search.invoice}&&status=${this.search.status}&&client=${client}`;
+      if (this.search.dateRange.startDate) {
+        let start_date = this.$options.filters.moment(
+          this.search.dateRange.startDate,
+          "YYYY-MM-DD"
+        );
+        let end_date = this.$options.filters.moment(
+          this.search.dateRange.endDate,
+          "YYYY-MM-DD"
+        );
+        query = `${query}&&start_date=${start_date}&&end_date=${end_date}`;
+      }
+      window.open(query, "_blank");
     },
   },
   created() {
