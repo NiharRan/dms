@@ -27,7 +27,7 @@
                           <input id="image" @change="showImage" type="file" name="avatar" class="hidden"/>
                         </label>
                       </div>
-                      <div class="media-body mt-50">
+                      <div class="media-body mt-50 ml-2">
                         <h4 class="media-heading">{{ user.name }}</h4>
                         <div class="col-12 d-flex mt-1 px-0">
                           <button type="button" @click="uploadImage" class="btn btn-primary d-none d-sm-block mr-75 waves-effect waves-light">

@@ -61,6 +61,7 @@ class SaleRepository
   {
     return $this->sale->with([
       'client',
+      'transaction_media',
       'company',
       'creator',
       'sale_details' => function ($q) {
@@ -74,6 +75,7 @@ class SaleRepository
     return $this->sale->with([
       'client',
       'company',
+      'transaction_media',
       'creator',
       'sale_details' => function ($q) {
         $q->with(['stock', 'product']);

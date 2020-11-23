@@ -1,19 +1,19 @@
 webpackJsonp([5],{
 
-/***/ 175:
+/***/ 177:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(389)
-  __webpack_require__(391)
+  __webpack_require__(404)
+  __webpack_require__(406)
 }
-var normalizeComponent = __webpack_require__(228)
+var normalizeComponent = __webpack_require__(229)
 /* script */
-var __vue_script__ = __webpack_require__(393)
+var __vue_script__ = __webpack_require__(408)
 /* template */
-var __vue_template__ = __webpack_require__(394)
+var __vue_template__ = __webpack_require__(409)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30,7 +30,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/Pages/Sale/Create.vue"
+Component.options.__file = "resources/js/Pages/Sale/Edit.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -39,9 +39,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-03e766cb", Component.options)
+    hotAPI.createRecord("data-v-0fb0de99", Component.options)
   } else {
-    hotAPI.reload("data-v-03e766cb", Component.options)
+    hotAPI.reload("data-v-0fb0de99", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -53,7 +53,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 227:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -72,7 +72,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(229)
+var listToStyles = __webpack_require__(230)
 
 /*
 type StyleObject = {
@@ -282,7 +282,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 228:
+/***/ 229:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -392,7 +392,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, exports) {
 
 /**
@@ -426,19 +426,19 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 230:
+/***/ 231:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(231)
+  __webpack_require__(232)
 }
-var normalizeComponent = __webpack_require__(228)
+var normalizeComponent = __webpack_require__(229)
 /* script */
-var __vue_script__ = __webpack_require__(233)
+var __vue_script__ = __webpack_require__(234)
 /* template */
-var __vue_template__ = __webpack_require__(234)
+var __vue_template__ = __webpack_require__(235)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -478,17 +478,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 231:
+/***/ 232:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(232);
+var content = __webpack_require__(233);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(227)("03a0949b", content, false, {});
+var update = __webpack_require__(228)("03a0949b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -505,7 +505,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 232:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -520,7 +520,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 233:
+/***/ 234:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -558,7 +558,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 234:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -640,19 +640,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 235:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(236)
+  __webpack_require__(237)
 }
-var normalizeComponent = __webpack_require__(228)
+var normalizeComponent = __webpack_require__(229)
 /* script */
-var __vue_script__ = __webpack_require__(238)
+var __vue_script__ = __webpack_require__(239)
 /* template */
-var __vue_template__ = __webpack_require__(254)
+var __vue_template__ = __webpack_require__(255)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -692,17 +692,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 236:
+/***/ 237:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(237);
+var content = __webpack_require__(238);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(227)("24565851", content, false, {});
+var update = __webpack_require__(228)("24565851", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -719,7 +719,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 237:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -734,18 +734,18 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 238:
+/***/ 239:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(240);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Sidebar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Navbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__AppFooter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb__ = __webpack_require__(250);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Breadcrumb__);
 //
 //
@@ -812,19 +812,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 239:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(240)
+  __webpack_require__(241)
 }
-var normalizeComponent = __webpack_require__(228)
+var normalizeComponent = __webpack_require__(229)
 /* script */
-var __vue_script__ = __webpack_require__(242)
+var __vue_script__ = __webpack_require__(243)
 /* template */
-var __vue_template__ = __webpack_require__(243)
+var __vue_template__ = __webpack_require__(244)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -864,17 +864,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 240:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(241);
+var content = __webpack_require__(242);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(227)("880366ac", content, false, {});
+var update = __webpack_require__(228)("880366ac", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -891,7 +891,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 241:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -899,24 +899,18 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 242:
+/***/ 243:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1099,7 +1093,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 243:
+/***/ 244:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1315,7 +1309,7 @@ var render = function() {
                   [
                     _c(
                       "inertia-link",
-                      { attrs: { href: _vm.route("sales.index") } },
+                      { attrs: { href: _vm.route("accounts.statements") } },
                       [
                         _c("i", { staticClass: "feather icon-unlock" }),
                         _vm._v(" "),
@@ -1326,30 +1320,6 @@ var render = function() {
                             attrs: { "data-i18n": "" }
                           },
                           [_vm._v(_vm._s(_vm.__("Account Statement")))]
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "inertia-link",
-                      { attrs: { href: _vm.route("drivers.invoices.index") } },
-                      [
-                        _c("i", { staticClass: "feather icon-unlock" }),
-                        _vm._v(" "),
-                        _c(
-                          "span",
-                          {
-                            staticClass: "menu-title",
-                            attrs: { "data-i18n": "" }
-                          },
-                          [_vm._v(_vm._s(_vm.__("Driver")))]
                         )
                       ]
                     )
@@ -1664,19 +1634,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 244:
+/***/ 245:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(245)
+  __webpack_require__(246)
 }
-var normalizeComponent = __webpack_require__(228)
+var normalizeComponent = __webpack_require__(229)
 /* script */
-var __vue_script__ = __webpack_require__(247)
+var __vue_script__ = __webpack_require__(248)
 /* template */
-var __vue_template__ = __webpack_require__(248)
+var __vue_template__ = __webpack_require__(249)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1716,17 +1686,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 245:
+/***/ 246:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(246);
+var content = __webpack_require__(247);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(227)("629be114", content, false, {});
+var update = __webpack_require__(228)("629be114", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1743,7 +1713,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 246:
+/***/ 247:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -1758,7 +1728,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 247:
+/***/ 248:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1843,7 +1813,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 248:
+/***/ 249:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2146,19 +2116,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 249:
+/***/ 250:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(250)
+  __webpack_require__(251)
 }
-var normalizeComponent = __webpack_require__(228)
+var normalizeComponent = __webpack_require__(229)
 /* script */
-var __vue_script__ = __webpack_require__(252)
+var __vue_script__ = __webpack_require__(253)
 /* template */
-var __vue_template__ = __webpack_require__(253)
+var __vue_template__ = __webpack_require__(254)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2198,17 +2168,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 250:
+/***/ 251:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(251);
+var content = __webpack_require__(252);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(227)("c3dd8234", content, false, {});
+var update = __webpack_require__(228)("c3dd8234", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2225,7 +2195,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 251:
+/***/ 252:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2240,7 +2210,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 252:
+/***/ 253:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2283,7 +2253,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 253:
+/***/ 254:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2397,7 +2367,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 254:
+/***/ 255:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2483,19 +2453,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 255:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(256)
+  __webpack_require__(257)
 }
-var normalizeComponent = __webpack_require__(228)
+var normalizeComponent = __webpack_require__(229)
 /* script */
-var __vue_script__ = __webpack_require__(258)
+var __vue_script__ = __webpack_require__(259)
 /* template */
-var __vue_template__ = __webpack_require__(259)
+var __vue_template__ = __webpack_require__(260)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2535,17 +2505,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 256:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(257);
+var content = __webpack_require__(258);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(227)("71b6ec7e", content, false, {});
+var update = __webpack_require__(228)("71b6ec7e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2562,7 +2532,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 257:
+/***/ 258:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2577,7 +2547,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 
 /***/ }),
 
-/***/ 258:
+/***/ 259:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2607,7 +2577,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 259:
+/***/ 260:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2663,23 +2633,23 @@ if (false) {
 
 /***/ }),
 
-/***/ 389:
+/***/ 404:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(390);
+var content = __webpack_require__(405);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(227)("1b0d9534", content, false, {});
+var update = __webpack_require__(228)("7d709b7a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-03e766cb\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
-     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-03e766cb\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
+   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0fb0de99\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
+     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0fb0de99\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -2690,7 +2660,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 390:
+/***/ 405:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2705,23 +2675,23 @@ exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n
 
 /***/ }),
 
-/***/ 391:
+/***/ 406:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(392);
+var content = __webpack_require__(407);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(227)("14a40b06", content, false, {});
+var update = __webpack_require__(228)("58bcc8d6", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-03e766cb\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./Create.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-03e766cb\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./Create.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0fb0de99\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./Edit.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0fb0de99\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./Edit.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -2732,7 +2702,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 392:
+/***/ 407:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2740,14 +2710,14 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 393:
+/***/ 408:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2756,9 +2726,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Shared_Layout__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Shared_Layout__ = __webpack_require__(236);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Shared_Layout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Shared_Layout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Components_Model__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Components_Model__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Components_Model___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Components_Model__);
 
 
@@ -3098,23 +3068,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "SaleCreate",
+  name: "SaleEdit",
   components: {
     Model: __WEBPACK_IMPORTED_MODULE_3__Components_Model___default.a,
     Layout: __WEBPACK_IMPORTED_MODULE_2__Shared_Layout___default.a
@@ -3122,26 +3080,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   props: {
     success: String,
     clients: Array,
-    transaction_medias: Array,
     stocks: Array,
+    transaction_medias: Array,
     company: Object,
+    sale: Object,
     errors: Object
   },
   data: function data() {
     return {
-      form: {
-        id: "",
-        total_price: "0.00",
-        total_paid: "0.00",
-        total_due: "0.00",
-        company: null,
-        transaction_media: null,
-        client: null,
-        sale_date: new Date(),
-        sale_details: [],
-        reference_code: "",
-        commission: "0.00"
-      },
       products: [],
       sale_details_errors: [],
       invalid: false
@@ -3151,21 +3097,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     fetchCommission: function fetchCommission() {
       var _this = this;
 
-      if (this.form.reference_code != "") {
-        __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(this.route("drivers.invoices.commissions", this.form.reference_code)).then(function (_ref) {
+      if (this.sale.reference_code != "") {
+        __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(this.route("drivers.invoices.commissions", this.sale.reference_code)).then(function (_ref) {
           var data = _ref.data;
-          _this.form.commission = data.commission == '' ? 0.00 : parseFloat(data.commission).toFixed(2);
+          _this.sale.commission = data.commission == '' ? 0.00 : parseFloat(data.commission).toFixed(2);
         })["catch"](function (err) {
           console.log(err);
         });
       }
     },
     calculateTotalWhenQuantityChange: function calculateTotalWhenQuantityChange(index) {
-      var selectedRow = this.form.sale_details[index];
-      var selectedProduct = this.form.sale_details[index].product;
+      var selectedRow = this.sale.sale_details[index];
+      var selectedProduct = this.sale.sale_details[index].product;
 
-      if (selectedProduct) {
-        selectedProduct.quantity -= selectedRow.quantity;
+      if (this.sale.sale_details[index].product) {
+        this.sale.sale_details[index].product.quantity -= selectedRow.quantity;
       }
 
       if (selectedRow.price !== "") {
@@ -3175,14 +3121,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           price = parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
         }
 
-        selectedRow.total = parseFloat(price).toFixed(2);
-        this.form.sale_details[index] = selectedRow;
+        selectedRow.amount = parseFloat(price).toFixed(2);
+        this.sale.sale_details[index] = selectedRow;
       }
 
       this.calculateTotal();
     },
     calculateTotalWhenPriceChange: function calculateTotalWhenPriceChange(index) {
-      var selectedRow = this.form.sale_details[index];
+      var selectedRow = this.sale.sale_details[index];
 
       if (selectedRow.quantity !== "") {
         var price = 0;
@@ -3191,8 +3137,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           price = parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
         }
 
-        selectedRow.total = parseFloat(price).toFixed(2);
-        this.form.sale_details[index] = selectedRow;
+        selectedRow.amount = parseFloat(price).toFixed(2);
+        this.sale.sale_details[index] = selectedRow;
       } else {
         alert("Quantity must not be empty!");
       }
@@ -3207,15 +3153,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return this.form.sale_details.reduce(function (sum, item) {
-                  return sum + parseFloat(item.total);
+                return this.sale.sale_details.reduce(function (sum, item) {
+                  return sum + parseFloat(item.amount);
                 }, 0);
 
               case 2:
                 total_price = _context.sent;
-                this.form.total_price = parseFloat(total_price).toFixed(2);
-                total_due = parseFloat(total_price) - parseFloat(this.form.total_paid);
-                this.form.total_due = parseFloat(total_due).toFixed(2);
+                this.sale.total_price = parseFloat(total_price).toFixed(2);
+                total_due = parseFloat(total_price) - parseFloat(this.sale.total_paid);
+                this.sale.total_due = parseFloat(total_due).toFixed(2);
 
               case 6:
               case "end":
@@ -3232,25 +3178,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return calculateTotal;
     }(),
     calculateDue: function calculateDue() {
-      if (this.form.total_price !== "") {
+      if (this.sale.total_price !== "") {
         var total_due = 0;
 
-        if (this.form.total_paid !== "") {
-          total_due = parseFloat(this.form.total_price) - parseFloat(this.form.total_paid);
+        if (this.sale.total_paid !== "") {
+          total_due = parseFloat(this.sale.total_price) - parseFloat(this.sale.total_paid);
         }
 
-        this.form.total_due = parseFloat(total_due).toFixed(2);
+        this.sale.total_due = parseFloat(total_due).toFixed(2);
       }
     },
-    cleanForm: function cleanForm() {
-      var _this2 = this;
-
-      Object.keys(this.errors).forEach(function (key, value) {
-        _this2.errors[key] = "";
-      });
-    },
-    store: function () {
-      var _store = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee2() {
+    update: function () {
+      var _update = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee2() {
         var errors, self, transaction_media_id, client_id, stocks, products, tracks, quantities, prices, totals;
         return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
           while (1) {
@@ -3264,10 +3203,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }
 
                 self = this;
-                transaction_media_id = this.form.transaction_media ? this.form.transaction_media.id : "";
-                client_id = this.form.client ? this.form.client.id : "";
+                transaction_media_id = this.sale.transaction_media ? this.sale.transaction_media.id : "";
+                client_id = this.sale.client ? this.sale.client.id : "";
                 _context2.next = 7;
-                return this.form.sale_details.map(function (item) {
+                return this.sale.sale_details.map(function (item) {
                   if (item.stock) return item.stock.id;
                   return "";
                 });
@@ -3275,7 +3214,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 7:
                 stocks = _context2.sent;
                 _context2.next = 10;
-                return this.form.sale_details.map(function (item) {
+                return this.sale.sale_details.map(function (item) {
                   if (item.product) return item.product.id;
                   return "";
                 });
@@ -3283,7 +3222,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 10:
                 products = _context2.sent;
                 _context2.next = 13;
-                return this.form.sale_details.map(function (item) {
+                return this.sale.sale_details.map(function (item) {
                   if (item.track_no) return item.track_no;
                   return "";
                 });
@@ -3291,34 +3230,35 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 13:
                 tracks = _context2.sent;
                 _context2.next = 16;
-                return this.form.sale_details.map(function (item) {
+                return this.sale.sale_details.map(function (item) {
                   return item.quantity;
                 });
 
               case 16:
                 quantities = _context2.sent;
                 _context2.next = 19;
-                return this.form.sale_details.map(function (item) {
+                return this.sale.sale_details.map(function (item) {
                   return item.price;
                 });
 
               case 19:
                 prices = _context2.sent;
                 _context2.next = 22;
-                return this.form.sale_details.map(function (item) {
-                  return item.total;
+                return this.sale.sale_details.map(function (item) {
+                  return item.amount;
                 });
 
               case 22:
                 totals = _context2.sent;
-                this.$inertia.post(this.route("sales.store"), {
-                  total_price: this.form.total_price,
-                  total_due: this.form.total_due,
-                  total_paid: this.form.total_paid,
-                  client_id: client_id,
+                this.$inertia.put(this.route("sales.update", this.sale.id), {
+                  total_price: this.sale.total_price,
+                  total_due: this.sale.total_due,
+                  total_paid: this.sale.total_paid,
+                  commission: this.sale.commission,
                   transaction_media_id: transaction_media_id,
+                  client_id: client_id,
                   company_id: this.company.id,
-                  sale_date: this.form.sale_date,
+                  sale_date: this.sale.sale_date,
                   stocks: stocks,
                   products: products,
                   tracks: tracks,
@@ -3327,7 +3267,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   totals: totals
                 }).then(function () {
                   if (Object.keys(self.errors).length === 0) {
-                    self.cleanForm();
                     self.$toast("Sale Created Successfully");
                   }
                 });
@@ -3346,34 +3285,32 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2, this);
       }));
 
-      function store() {
-        return _store.apply(this, arguments);
+      function update() {
+        return _update.apply(this, arguments);
       }
 
-      return store;
+      return update;
     }(),
     addNewItem: function addNewItem() {
       var saleDetail = {
-        stock: null,
         product: null,
         quantity: "",
         price: "0.00",
-        total: "0.00",
+        amount: "0.00",
         track_no: ""
       };
-      this.form.sale_details.push(saleDetail);
+      this.sale.sale_details.push(saleDetail);
     },
     removeSaleItem: function removeSaleItem(index) {
-      var removedItem = this.form.sale_details[index];
-      var selectedProduct = this.form.sale_details[index].product;
+      var removedItem = this.sale.sale_details[index];
 
-      if (selectedProduct) {
-        selectedProduct.quantity += selectedRow.quantity;
+      if (this.sale.sale_details[index].product) {
+        this.sale.sale_details[index].product.quantity -= removedItem.quantity;
       }
 
-      this.form.total_price -= removedItem.total;
-      this.form.total_due -= removedItem.total;
-      this.form.sale_details.splice(index, 1);
+      this.sale.total_price -= removedItem.amount;
+      this.sale.total_due -= removedItem.amount;
+      this.sale.sale_details.splice(index, 1);
       this.calculateTotal();
       this.calculateDue();
     },
@@ -3385,34 +3322,34 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     isValid: function isValid() {
-      var _this3 = this;
+      var _this2 = this;
 
       var errors = [];
-      this.form.sale_details.forEach(function (row, index) {
+      this.sale.sale_details.forEach(function (row, index) {
         var error = {};
 
         if (row.stock === null) {
-          _this3.invalid = true;
+          _this2.invalid = true;
           error.stock = "Stock is required";
         }
 
         if (row.product === null) {
-          _this3.invalid = true;
+          _this2.invalid = true;
           error.product = "Product is required";
         }
 
         if (row.track_no === "") {
-          _this3.invalid = true;
+          _this2.invalid = true;
           error.track_no = "Track No. is required";
         }
 
         if (row.quantity === "") {
-          _this3.invalid = true;
+          _this2.invalid = true;
           error.quantity = "Product quantity is required";
         }
 
         if (row.price === "0.00" || row.price === "") {
-          _this3.invalid = true;
+          _this2.invalid = true;
           error.price = "Product price is required";
         }
 
@@ -3421,21 +3358,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return errors;
     }
   },
-  created: function created() {
-    this.addNewItem();
-  }
+  created: function created() {}
 });
 
 /***/ }),
 
-/***/ 394:
+/***/ 409:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("layout", { attrs: { name: "SaleCreate" } }, [
+  return _c("layout", { attrs: { name: "SaleEdit" } }, [
     _c("section", { staticClass: "users-list-wrapper" }, [
       _c("div", { attrs: { id: "basic-examples" } }, [
         _c("div", { staticClass: "card" }, [
@@ -3457,7 +3392,7 @@ var render = function() {
                   on: {
                     submit: function($event) {
                       $event.preventDefault()
-                      return _vm.store($event)
+                      return _vm.update($event)
                     }
                   }
                 },
@@ -3486,11 +3421,11 @@ var render = function() {
                             placeholder: _vm.__("Select Client")
                           },
                           model: {
-                            value: _vm.form.client,
+                            value: _vm.sale.client,
                             callback: function($$v) {
-                              _vm.$set(_vm.form, "client", $$v)
+                              _vm.$set(_vm.sale, "client", $$v)
                             },
-                            expression: "form.client"
+                            expression: "sale.client"
                           }
                         }),
                         _vm._v(" "),
@@ -3528,11 +3463,11 @@ var render = function() {
                           staticClass: "form-control",
                           attrs: { placeholder: _vm.__("Sale Date") },
                           model: {
-                            value: _vm.form.sale_date,
+                            value: _vm.sale.sale_date,
                             callback: function($$v) {
-                              _vm.$set(_vm.form, "sale_date", $$v)
+                              _vm.$set(_vm.sale, "sale_date", $$v)
                             },
-                            expression: "form.sale_date"
+                            expression: "sale.sale_date"
                           }
                         }),
                         _vm._v(" "),
@@ -3568,7 +3503,7 @@ var render = function() {
                         _c(
                           "tbody",
                           [
-                            _vm._l(_vm.form.sale_details, function(row, index) {
+                            _vm._l(_vm.sale.sale_details, function(row, index) {
                               return _c("tr", { key: index }, [
                                 _c("td", [
                                   _c("div", { staticClass: "row" }, [
@@ -3900,32 +3835,16 @@ var render = function() {
                                       { staticClass: "col-md-3 col-12 my-1" },
                                       [
                                         _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: row.total,
-                                              expression: "row.total"
-                                            }
-                                          ],
                                           staticClass: "form-control",
                                           attrs: {
                                             type: "text",
                                             readonly: "",
                                             placeholder: _vm.__("Total")
                                           },
-                                          domProps: { value: row.total },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.$set(
-                                                row,
-                                                "total",
-                                                $event.target.value
-                                              )
-                                            }
+                                          domProps: {
+                                            value: parseFloat(
+                                              row.price * row.quantity
+                                            ).toFixed(2)
                                           }
                                         })
                                       ]
@@ -3991,8 +3910,8 @@ var render = function() {
                                     {
                                       name: "model",
                                       rawName: "v-model",
-                                      value: _vm.form.total_price,
-                                      expression: "form.total_price"
+                                      value: _vm.sale.total_price,
+                                      expression: "sale.total_price"
                                     }
                                   ],
                                   staticClass: "form-control",
@@ -4001,14 +3920,14 @@ var render = function() {
                                     readonly: "",
                                     placeholder: _vm.__("Total")
                                   },
-                                  domProps: { value: _vm.form.total_price },
+                                  domProps: { value: _vm.sale.total_price },
                                   on: {
                                     input: function($event) {
                                       if ($event.target.composing) {
                                         return
                                       }
                                       _vm.$set(
-                                        _vm.form,
+                                        _vm.sale,
                                         "total_price",
                                         $event.target.value
                                       )
@@ -4029,8 +3948,8 @@ var render = function() {
                                     {
                                       name: "model",
                                       rawName: "v-model",
-                                      value: _vm.form.total_paid,
-                                      expression: "form.total_paid"
+                                      value: _vm.sale.total_paid,
+                                      expression: "sale.total_paid"
                                     }
                                   ],
                                   staticClass: "form-control",
@@ -4038,7 +3957,7 @@ var render = function() {
                                     type: "text",
                                     placeholder: _vm.__("Paid")
                                   },
-                                  domProps: { value: _vm.form.total_paid },
+                                  domProps: { value: _vm.sale.total_paid },
                                   on: {
                                     keyup: _vm.calculateDue,
                                     input: function($event) {
@@ -4046,7 +3965,7 @@ var render = function() {
                                         return
                                       }
                                       _vm.$set(
-                                        _vm.form,
+                                        _vm.sale,
                                         "total_paid",
                                         $event.target.value
                                       )
@@ -4067,8 +3986,8 @@ var render = function() {
                                     {
                                       name: "model",
                                       rawName: "v-model",
-                                      value: _vm.form.total_due,
-                                      expression: "form.total_due"
+                                      value: _vm.sale.total_due,
+                                      expression: "sale.total_due"
                                     }
                                   ],
                                   staticClass: "form-control",
@@ -4077,14 +3996,14 @@ var render = function() {
                                     readonly: "",
                                     placeholder: _vm.__("Due")
                                   },
-                                  domProps: { value: _vm.form.total_due },
+                                  domProps: { value: _vm.sale.total_due },
                                   on: {
                                     input: function($event) {
                                       if ($event.target.composing) {
                                         return
                                       }
                                       _vm.$set(
-                                        _vm.form,
+                                        _vm.sale,
                                         "total_due",
                                         $event.target.value
                                       )
@@ -4105,8 +4024,8 @@ var render = function() {
                                     {
                                       name: "model",
                                       rawName: "v-model",
-                                      value: _vm.form.reference_code,
-                                      expression: "form.reference_code"
+                                      value: _vm.sale.reference_code,
+                                      expression: "sale.reference_code"
                                     }
                                   ],
                                   staticClass: "form-control",
@@ -4114,7 +4033,7 @@ var render = function() {
                                     type: "text",
                                     placeholder: _vm.__("Reference Code")
                                   },
-                                  domProps: { value: _vm.form.reference_code },
+                                  domProps: { value: _vm.sale.reference_code },
                                   on: {
                                     change: _vm.fetchCommission,
                                     input: function($event) {
@@ -4122,7 +4041,7 @@ var render = function() {
                                         return
                                       }
                                       _vm.$set(
-                                        _vm.form,
+                                        _vm.sale,
                                         "reference_code",
                                         $event.target.value
                                       )
@@ -4143,8 +4062,8 @@ var render = function() {
                                     {
                                       name: "model",
                                       rawName: "v-model",
-                                      value: _vm.form.commission,
-                                      expression: "form.commission"
+                                      value: _vm.sale.commission,
+                                      expression: "sale.commission"
                                     }
                                   ],
                                   staticClass: "form-control",
@@ -4153,14 +4072,14 @@ var render = function() {
                                     readonly: "",
                                     placeholder: _vm.__("Commission")
                                   },
-                                  domProps: { value: _vm.form.commission },
+                                  domProps: { value: _vm.sale.commission },
                                   on: {
                                     input: function($event) {
                                       if ($event.target.composing) {
                                         return
                                       }
                                       _vm.$set(
-                                        _vm.form,
+                                        _vm.sale,
                                         "commission",
                                         $event.target.value
                                       )
@@ -4200,15 +4119,15 @@ var render = function() {
                                           )
                                         },
                                         model: {
-                                          value: _vm.form.transaction_media,
+                                          value: _vm.sale.transaction_media,
                                           callback: function($$v) {
                                             _vm.$set(
-                                              _vm.form,
+                                              _vm.sale,
                                               "transaction_media",
                                               $$v
                                             )
                                           },
-                                          expression: "form.transaction_media"
+                                          expression: "sale.transaction_media"
                                         }
                                       }),
                                       _vm._v(" "),
@@ -4242,8 +4161,8 @@ var render = function() {
                                         {
                                           name: "model",
                                           rawName: "v-model",
-                                          value: _vm.form.description,
-                                          expression: "form.description"
+                                          value: _vm.sale.description,
+                                          expression: "sale.description"
                                         }
                                       ],
                                       staticClass: "form-control",
@@ -4251,14 +4170,14 @@ var render = function() {
                                         type: "text",
                                         placeholder: _vm.__("Description")
                                       },
-                                      domProps: { value: _vm.form.description },
+                                      domProps: { value: _vm.sale.description },
                                       on: {
                                         input: function($event) {
                                           if ($event.target.composing) {
                                             return
                                           }
                                           _vm.$set(
-                                            _vm.form,
+                                            _vm.sale,
                                             "description",
                                             $event.target.value
                                           )
@@ -4282,16 +4201,21 @@ var render = function() {
                                     "inertia-link",
                                     {
                                       staticClass: "btn btn-primary",
-                                      attrs: { href: _vm.route("sales.index") }
+                                      attrs: {
+                                        href: _vm.route(
+                                          "sales.invoices.show",
+                                          _vm.sale.invoice
+                                        )
+                                      }
                                     },
                                     [
                                       _c("i", {
                                         staticClass: "feather icon-arrow-left"
                                       }),
                                       _vm._v(
-                                        "\n                          " +
+                                        " " +
                                           _vm._s(_vm.__("Back")) +
-                                          "\n                        "
+                                          "\n                      "
                                       )
                                     ]
                                   ),
@@ -4308,7 +4232,7 @@ var render = function() {
                                       }),
                                       _vm._v(
                                         "\n                          " +
-                                          _vm._s(_vm.__("Store")) +
+                                          _vm._s(_vm.__("Update")) +
                                           "\n                        "
                                       )
                                     ]
@@ -4338,7 +4262,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-03e766cb", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0fb0de99", module.exports)
   }
 }
 

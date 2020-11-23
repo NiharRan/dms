@@ -75,15 +75,9 @@
         </a>
         <ul>
           <li class="nav-item">
-            <inertia-link :href="route('sales.index')">
+            <inertia-link :href="route('accounts.statements')">
               <i class="feather icon-unlock"></i>
               <span class="menu-title" data-i18n="">{{__("Account Statement")}}</span>
-            </inertia-link>
-          </li>
-          <li class="nav-item">
-            <inertia-link :href="route('drivers.invoices.index')">
-              <i class="feather icon-unlock"></i>
-              <span class="menu-title" data-i18n="">{{__("Driver")}}</span>
             </inertia-link>
           </li>
         </ul>

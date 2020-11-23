@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Settings\TransactionMedia;
+use App\Settings\TransactionType;
 use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
@@ -25,6 +26,22 @@ class Transaction extends Model
      */
     public function media()
     {
-        return $this->belongsTo(TransactionMedia::class);
+        return $this->belongsTo(TransactionMedia::class, 'transaction_media_id');
+    }
+
+    /**
+     * Get the owning transaction media model.
+     */
+    public function transaction_type()
+    {
+        return $this->belongsTo(TransactionType::class);
+    }
+
+    /**
+     * Get the owning transaction media model.
+     */
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

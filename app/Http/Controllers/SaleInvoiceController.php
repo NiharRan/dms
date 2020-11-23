@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\SaleRepository;
+use App\Services\TransactionService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -50,6 +51,7 @@ class SaleInvoiceController extends Controller
         $sale->status = 1;
       }
       if ($sale->save()) {
+        TransactionService::createFromSale($sale, $request->amount);
         return redirect()->back()->with('success', 'Sale payment done!');
       }
     }
