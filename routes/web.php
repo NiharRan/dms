@@ -62,6 +62,7 @@ Route::group([
     Route::get('/drivers/invoices/commissions/{referenceCode}', 'DriverInvoiceController@commissions')->name('drivers.invoices.commissions');
 
     Route::get('/accounts/statements', 'AccountController@statement')->name('accounts.statements');
+    Route::get('/accounts/statements/print', 'AccountController@print')->name('accounts.statements.print');
     Route::get('/accounts/ledgers/{transactionId}', 'AccountController@ledger')->name('accounts.ledgers');
 
     Route::group([

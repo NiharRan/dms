@@ -89,7 +89,7 @@
               >
             </p>
 
-            <table class="table font-medium-3 mt-2">
+            <table class="table table-bordered font-medium-3 mt-2">
               <thead>
                 <tr>
                   <th>{{ __("Description of Products") }}</th>
@@ -226,8 +226,19 @@ body {
   width: 100%;
 }
 @media print {
-  .table {
-    border-bottom: 1px solid #0b0b0b !important;
+  .table th,
+  .table td {
+    padding: 0.5rem !important;
+  }
+  .table-bordered {
+    border: 1px solid #333 !important;
+  }
+  td,
+  th {
+    font-size: 14px !important;
+  }
+  .bt {
+    border-top: 1px solid #0b0b0b !important;
   }
   .controller {
     display: none;

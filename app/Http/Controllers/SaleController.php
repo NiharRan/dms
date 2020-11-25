@@ -35,7 +35,7 @@ class SaleController extends Controller
       ['name' => __("Sales")],
     ];
     $clients = Client::orderBy('name', 'asc')->get();
-    $sales = SaleResource::collection($this->saleRepository->paginate(request()->per_page));
+    $sales = request()->has('per_page') ? SaleResource::collection($this->saleRepository->paginate(request()->per_page)) : null;
     return Inertia::render('Sale/Index', [
       'breadcrumbs' => $breadcrumbs,
       'sales' => $sales,

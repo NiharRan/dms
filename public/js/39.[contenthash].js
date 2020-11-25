@@ -1,20 +1,20 @@
 webpackJsonp([39],{
 
-/***/ 165:
+/***/ 178:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(342)
-  __webpack_require__(344)
-  __webpack_require__(346)
+  __webpack_require__(411)
+  __webpack_require__(413)
+  __webpack_require__(415)
 }
-var normalizeComponent = __webpack_require__(229)
+var normalizeComponent = __webpack_require__(230)
 /* script */
-var __vue_script__ = __webpack_require__(348)
+var __vue_script__ = __webpack_require__(417)
 /* template */
-var __vue_template__ = __webpack_require__(349)
+var __vue_template__ = __webpack_require__(418)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -31,7 +31,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/Pages/Invoice/Driver/Index.vue"
+Component.options.__file = "resources/js/Pages/Sale/Index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -40,9 +40,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1f04f276", Component.options)
+    hotAPI.createRecord("data-v-2822ae53", Component.options)
   } else {
-    hotAPI.reload("data-v-1f04f276", Component.options)
+    hotAPI.reload("data-v-2822ae53", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -54,7 +54,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 228:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -73,7 +73,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(230)
+var listToStyles = __webpack_require__(231)
 
 /*
 type StyleObject = {
@@ -283,7 +283,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -393,7 +393,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 230:
+/***/ 231:
 /***/ (function(module, exports) {
 
 /**
@@ -427,19 +427,19 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 231:
+/***/ 232:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(232)
+  __webpack_require__(233)
 }
-var normalizeComponent = __webpack_require__(229)
+var normalizeComponent = __webpack_require__(230)
 /* script */
-var __vue_script__ = __webpack_require__(234)
+var __vue_script__ = __webpack_require__(235)
 /* template */
-var __vue_template__ = __webpack_require__(235)
+var __vue_template__ = __webpack_require__(236)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -479,17 +479,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 232:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(233);
+var content = __webpack_require__(234);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(228)("03a0949b", content, false, {});
+var update = __webpack_require__(229)("03a0949b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -506,7 +506,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 233:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -521,7 +521,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 234:
+/***/ 235:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -559,7 +559,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 235:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -641,19 +641,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 236:
+/***/ 237:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(237)
+  __webpack_require__(238)
 }
-var normalizeComponent = __webpack_require__(229)
+var normalizeComponent = __webpack_require__(230)
 /* script */
-var __vue_script__ = __webpack_require__(239)
+var __vue_script__ = __webpack_require__(240)
 /* template */
-var __vue_template__ = __webpack_require__(255)
+var __vue_template__ = __webpack_require__(256)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -693,17 +693,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 237:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(238);
+var content = __webpack_require__(239);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(228)("24565851", content, false, {});
+var update = __webpack_require__(229)("24565851", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -720,7 +720,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 238:
+/***/ 239:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -735,18 +735,18 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 239:
+/***/ 240:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Sidebar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Navbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter__ = __webpack_require__(232);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__AppFooter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb__ = __webpack_require__(251);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Breadcrumb__);
 //
 //
@@ -813,19 +813,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 240:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(241)
+  __webpack_require__(242)
 }
-var normalizeComponent = __webpack_require__(229)
+var normalizeComponent = __webpack_require__(230)
 /* script */
-var __vue_script__ = __webpack_require__(243)
+var __vue_script__ = __webpack_require__(244)
 /* template */
-var __vue_template__ = __webpack_require__(244)
+var __vue_template__ = __webpack_require__(245)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -865,17 +865,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 241:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(242);
+var content = __webpack_require__(243);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(228)("880366ac", content, false, {});
+var update = __webpack_require__(229)("880366ac", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -892,7 +892,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 242:
+/***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -900,18 +900,30 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 243:
+/***/ 244:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1094,7 +1106,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 244:
+/***/ 245:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1248,7 +1260,7 @@ var render = function() {
                   [
                     _c(
                       "inertia-link",
-                      { attrs: { href: _vm.route("sales.index") } },
+                      { attrs: { href: _vm.route("sales.create") } },
                       [
                         _c("i", { staticClass: "feather icon-unlock" }),
                         _vm._v(" "),
@@ -1272,7 +1284,7 @@ var render = function() {
                   [
                     _c(
                       "inertia-link",
-                      { attrs: { href: _vm.route("drivers.invoices.index") } },
+                      { attrs: { href: _vm.route("drivers.invoices.create") } },
                       [
                         _c("i", { staticClass: "feather icon-unlock" }),
                         _vm._v(" "),
@@ -1299,11 +1311,59 @@ var render = function() {
                 _c(
                   "span",
                   { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                  [_vm._v(_vm._s(_vm.__("Accounts")))]
+                  [_vm._v(_vm._s(_vm.__("Report")))]
                 )
               ]),
               _vm._v(" "),
               _c("ul", [
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "inertia-link",
+                      { attrs: { href: _vm.route("drivers.invoices.index") } },
+                      [
+                        _c("i", { staticClass: "feather icon-unlock" }),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "menu-title",
+                            attrs: { "data-i18n": "" }
+                          },
+                          [_vm._v(_vm._s(_vm.__("Driver Invoice Report")))]
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "inertia-link",
+                      { attrs: { href: _vm.route("sales.index") } },
+                      [
+                        _c("i", { staticClass: "feather icon-unlock" }),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "menu-title",
+                            attrs: { "data-i18n": "" }
+                          },
+                          [_vm._v(_vm._s(_vm.__("Sale Report")))]
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
                 _c(
                   "li",
                   { staticClass: "nav-item" },
@@ -1635,19 +1695,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 245:
+/***/ 246:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(246)
+  __webpack_require__(247)
 }
-var normalizeComponent = __webpack_require__(229)
+var normalizeComponent = __webpack_require__(230)
 /* script */
-var __vue_script__ = __webpack_require__(248)
+var __vue_script__ = __webpack_require__(249)
 /* template */
-var __vue_template__ = __webpack_require__(249)
+var __vue_template__ = __webpack_require__(250)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1687,17 +1747,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 246:
+/***/ 247:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(247);
+var content = __webpack_require__(248);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(228)("629be114", content, false, {});
+var update = __webpack_require__(229)("629be114", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1714,7 +1774,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 247:
+/***/ 248:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -1729,7 +1789,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 248:
+/***/ 249:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1814,7 +1874,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 249:
+/***/ 250:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2117,19 +2177,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 250:
+/***/ 251:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(251)
+  __webpack_require__(252)
 }
-var normalizeComponent = __webpack_require__(229)
+var normalizeComponent = __webpack_require__(230)
 /* script */
-var __vue_script__ = __webpack_require__(253)
+var __vue_script__ = __webpack_require__(254)
 /* template */
-var __vue_template__ = __webpack_require__(254)
+var __vue_template__ = __webpack_require__(255)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2169,17 +2229,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 251:
+/***/ 252:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(252);
+var content = __webpack_require__(253);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(228)("c3dd8234", content, false, {});
+var update = __webpack_require__(229)("c3dd8234", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2196,7 +2256,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 252:
+/***/ 253:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2211,7 +2271,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 253:
+/***/ 254:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2254,7 +2314,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 254:
+/***/ 255:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2368,7 +2428,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 255:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2454,19 +2514,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 256:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(257)
+  __webpack_require__(258)
 }
-var normalizeComponent = __webpack_require__(229)
+var normalizeComponent = __webpack_require__(230)
 /* script */
-var __vue_script__ = __webpack_require__(259)
+var __vue_script__ = __webpack_require__(260)
 /* template */
-var __vue_template__ = __webpack_require__(260)
+var __vue_template__ = __webpack_require__(261)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2506,17 +2566,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 257:
+/***/ 258:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(258);
+var content = __webpack_require__(259);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(228)("71b6ec7e", content, false, {});
+var update = __webpack_require__(229)("71b6ec7e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2533,7 +2593,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 258:
+/***/ 259:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2548,7 +2608,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 
 /***/ }),
 
-/***/ 259:
+/***/ 260:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2578,7 +2638,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 260:
+/***/ 261:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2634,23 +2694,23 @@ if (false) {
 
 /***/ }),
 
-/***/ 342:
+/***/ 411:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(343);
+var content = __webpack_require__(412);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(228)("668f7684", content, false, {});
+var update = __webpack_require__(229)("5bca4740", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1f04f276\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
-     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1f04f276\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
+   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2822ae53\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
+     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2822ae53\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -2661,7 +2721,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 343:
+/***/ 412:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2676,23 +2736,23 @@ exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n
 
 /***/ }),
 
-/***/ 344:
+/***/ 413:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(345);
+var content = __webpack_require__(414);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(228)("33b64a3b", content, false, {});
+var update = __webpack_require__(229)("dcbf4012", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1f04f276\",\"scoped\":false,\"hasInlineConfig\":true}!./vue2-daterange-picker.css", function() {
-     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1f04f276\",\"scoped\":false,\"hasInlineConfig\":true}!./vue2-daterange-picker.css");
+   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2822ae53\",\"scoped\":false,\"hasInlineConfig\":true}!./vue2-daterange-picker.css", function() {
+     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2822ae53\",\"scoped\":false,\"hasInlineConfig\":true}!./vue2-daterange-picker.css");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -2703,7 +2763,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 345:
+/***/ 414:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2718,23 +2778,23 @@ exports.push([module.i, "\ntd[data-v-aab6e828],th[data-v-aab6e828]{padding:2px;b
 
 /***/ }),
 
-/***/ 346:
+/***/ 415:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(347);
+var content = __webpack_require__(416);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(228)("56d5efb8", content, false, {});
+var update = __webpack_require__(229)("6aef01fe", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1f04f276\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=2!./Index.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1f04f276\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=2!./Index.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2822ae53\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=2!./Index.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2822ae53\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=2!./Index.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -2745,7 +2805,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 347:
+/***/ 416:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2753,21 +2813,21 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n.btn-default {\n    border: 1px solid #ccc;\n    padding: 10px;\n}\n.vue-daterange-picker[data-v-4f8eb193] {\n    min-width: 100% !important;\n}\n", ""]);
+exports.push([module.i, "\n.btn-default {\n  border: 1px solid #ccc;\n  padding: 10px;\n}\n.vue-daterange-picker[data-v-4f8eb193] {\n  min-width: 100% !important;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 348:
+/***/ 417:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Shared_Layout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Components_Model__);
 //
 //
@@ -2929,92 +2989,126 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "DriverInvoice",
+  name: "Sale",
   components: {
     Model: __WEBPACK_IMPORTED_MODULE_1__Components_Model___default.a,
     Layout: __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default.a
   },
   props: {
-    driver_invoices: Object,
+    sales: Object,
     clients: Array,
-    products: Array,
     success: String
   },
   data: function data() {
     return {
       search: {
         per_page: 10,
-        query: '',
-        invoice: '',
-        status: '',
+        query: "",
+        invoice: "",
+        status: "",
         client: null,
-        product: null,
         dateRange: {}
       }
     };
   },
   methods: {
     total: function total(data) {
-      var totalPrice = data.reduce(function (total, invoice) {
-        return total + parseFloat(invoice.total);
+      var totalPrice = data.reduce(function (total, sale) {
+        return total + parseFloat(sale.total_price);
       }, 0);
       return parseFloat(totalPrice).toFixed(2);
     },
-    totalBorrow: function totalBorrow(data) {
-      var borrowPrice = data.reduce(function (borrow, invoice) {
-        var p = invoice.borrow == '' ? 0 : invoice.borrow;
-        return borrow + parseFloat(p);
+    totalPaid: function totalPaid(data) {
+      var paidPrice = data.reduce(function (paid, sale) {
+        var p = sale.total_paid == "" ? 0 : sale.total_paid;
+        return paid + parseFloat(p);
       }, 0);
-      return parseFloat(borrowPrice).toFixed(2);
+      return parseFloat(paidPrice).toFixed(2);
     },
-    totalFinal: function totalFinal(data) {
-      var finalPrice = data.reduce(function (_final, invoice) {
-        var d = invoice["final"] == '' ? 0 : invoice["final"];
-        return _final + parseFloat(d);
+    totalCommission: function totalCommission(data) {
+      var commissionPrice = data.reduce(function (c, sale) {
+        var com = sale.commission == "" ? 0 : sale.commission;
+        return c + parseFloat(com);
       }, 0);
-      return parseFloat(finalPrice).toFixed(2);
+      return parseFloat(commissionPrice).toFixed(2);
     },
     searchData: function searchData() {
-      $("#default").modal('hide');
-      var client = this.search.client == null ? '' : this.search.client.id;
-      var product = this.search.product == null ? '' : this.search.product.id;
-      var start_date = this.$options.filters.moment(this.search.dateRange.startDate, 'YYYY-MM-DD');
-      var end_date = this.$options.filters.moment(this.search.dateRange.endDate, 'YYYY-MM-DD');
-      this.$inertia.replace(this.route('drivers.invoices.index'), {
-        method: 'get',
+      $("#default").modal("hide");
+      var client = this.search.client == null ? "" : this.search.client.id;
+      var start_date = this.$options.filters.moment(this.search.dateRange.startDate, "YYYY-MM-DD");
+      var end_date = this.$options.filters.moment(this.search.dateRange.endDate, "YYYY-MM-DD");
+      this.$inertia.replace(this.route("sales.index"), {
+        method: "get",
         data: {
           search: this.search.query,
           per_page: this.search.per_page,
           invoice: this.search.invoice,
           status: this.search.status,
           client: client,
-          product: product,
           start_date: start_date,
           end_date: end_date
         },
         preserveState: true,
         preserveScroll: true
       });
+    },
+    print: function print() {
+      var client = this.search.client == null ? "" : this.search.client.id;
+      var query = "sales/print?search=".concat(this.search.query, "&&invoice=").concat(this.search.invoice, "&&status=").concat(this.search.status, "&&client=").concat(client);
+
+      if (this.search.dateRange.startDate) {
+        var start_date = this.$options.filters.moment(this.search.dateRange.startDate, "YYYY-MM-DD");
+        var end_date = this.$options.filters.moment(this.search.dateRange.endDate, "YYYY-MM-DD");
+        query = "".concat(query, "&&start_date=").concat(start_date, "&&end_date=").concat(end_date);
+      }
+
+      window.open(query, "_blank");
     }
   },
-  created: function created() {
-    this.searchData();
+  created: function created() {// this.searchData();
   }
 });
 
 /***/ }),
 
-/***/ 349:
+/***/ 418:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("layout", { attrs: { name: "DriverInvoice" } }, [
+  return _c("layout", { attrs: { name: "Sale" } }, [
     _c(
       "section",
       { staticClass: "users-list-wrapper" },
@@ -3033,11 +3127,11 @@ var render = function() {
                     ])
                   : _vm._e(),
                 _vm._v(" "),
-                _c("div", [
+                _c("div", { staticClass: "table-responsive" }, [
                   _c(
                     "table",
                     {
-                      staticClass: "table table-responsive table-bordered mb-0",
+                      staticClass: "table table-bordered display nowrap mb-0",
                       attrs: { id: "data-table" }
                     },
                     [
@@ -3091,11 +3185,11 @@ var render = function() {
                                   _vm._v("25")
                                 ]),
                                 _vm._v(" "),
-                                _c("option", { attrs: { value: "50" } }, [
+                                _c("option", { attrs: { value: "25" } }, [
                                   _vm._v("50")
                                 ]),
                                 _vm._v(" "),
-                                _c("option", { attrs: { value: "100" } }, [
+                                _c("option", { attrs: { value: "25" } }, [
                                   _vm._v("100")
                                 ])
                               ]
@@ -3134,9 +3228,7 @@ var render = function() {
                             })
                           ]),
                           _vm._v(" "),
-                          _c("th", { attrs: { colspan: "3" } }),
-                          _vm._v(" "),
-                          _c("th", { attrs: { colspan: "4" } }, [
+                          _c("th", { attrs: { colspan: "2" } }, [
                             _c("input", {
                               directives: [
                                 {
@@ -3189,7 +3281,30 @@ var render = function() {
                                   _c("i", {
                                     staticClass: "feather icon-filter mr-2"
                                   }),
-                                  _vm._v(" " + _vm._s(_vm.__("Filter")))
+                                  _vm._v(
+                                    "\n                        " +
+                                      _vm._s(_vm.__("Filter")) +
+                                      "\n                      "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-default",
+                                  attrs: { type: "button" },
+                                  on: { click: _vm.print }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "feather icon-printer mr-2"
+                                  }),
+                                  _vm._v(
+                                    "\n                        " +
+                                      _vm._s(_vm.__("Print")) +
+                                      "\n                      "
+                                  )
                                 ]
                               )
                             ]
@@ -3201,43 +3316,23 @@ var render = function() {
                             _vm._v(_vm._s(_vm.__("S.N.")))
                           ]),
                           _vm._v(" "),
-                          _c("th", { staticStyle: { width: "10%" } }, [
-                            _vm._v(_vm._s(_vm.__("Client")))
-                          ]),
+                          _c("th", [_vm._v(_vm._s(_vm.__("Date")))]),
                           _vm._v(" "),
-                          _c("th", [_vm._v(_vm._s(_vm.__("Driver")))]),
+                          _c("th", [_vm._v(_vm._s(_vm.__("Creator")))]),
                           _vm._v(" "),
-                          _c("th", { staticClass: "text-center" }, [
-                            _vm._v(_vm._s(_vm.__("Invoice")))
-                          ]),
+                          _c("th", [_vm._v(_vm._s(_vm.__("Invoice")))]),
                           _vm._v(" "),
-                          _c("th", [
-                            _vm._v(_vm._s(_vm.__("Measurement Type")))
-                          ]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v(_vm._s(_vm.__("Created At")))]),
-                          _vm._v(" "),
-                          _c("th", { staticClass: "text-center" }, [
-                            _vm._v(_vm._s(_vm.__("Status")))
-                          ]),
-                          _vm._v(" "),
-                          _c("th", { staticClass: "text-center" }, [
-                            _vm._v(_vm._s(_vm.__("Quantity")))
+                          _c("th", { staticClass: "text-right" }, [
+                            _vm._v(_vm._s(_vm.__("Total Price")))
                           ]),
                           _vm._v(" "),
                           _c("th", { staticClass: "text-right" }, [
-                            _vm._v(_vm._s(_vm.__("Track Rent")))
+                            _vm._v(_vm._s(_vm.__("Paid")))
                           ]),
                           _vm._v(" "),
                           _c("th", { staticClass: "text-right" }, [
-                            _vm._v(_vm._s(_vm.__("Others")))
+                            _vm._v(_vm._s(_vm.__("Commission")))
                           ]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v(_vm._s(_vm.__("Total")))]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v(_vm._s(_vm.__("Borrow")))]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v(_vm._s(_vm.__("Final")))]),
                           _vm._v(" "),
                           _c("th", { staticClass: "text-center" }, [
                             _vm._v(_vm._s(_vm.__("Action")))
@@ -3245,220 +3340,115 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
-                      _vm.driver_invoices.data.length > 0
+                      _vm.sales && _vm.sales.data.length > 0
                         ? _c(
                             "tbody",
-                            { staticClass: "font-small-3" },
                             [
-                              _c("tr", [
-                                _c("td", { attrs: { colspan: "10" } }),
-                                _vm._v(" "),
-                                _c("th", { staticClass: "text-right" }, [
-                                  _vm._v(
-                                    _vm._s(_vm.total(_vm.driver_invoices.data))
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("th", { staticClass: "text-right" }, [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.totalBorrow(_vm.driver_invoices.data)
-                                    )
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("th", { staticClass: "text-right" }, [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.totalFinal(_vm.driver_invoices.data)
-                                    )
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.driver_invoices.data, function(
-                                driver_invoice,
-                                index
-                              ) {
-                                return _c("tr", { key: driver_invoice.id }, [
-                                  _c("th", [_vm._v(_vm._s(index + 1))]),
-                                  _vm._v(" "),
-                                  _c("td", [
-                                    _vm._v(
-                                      "\n                      " +
-                                        _vm._s(driver_invoice.client.name) +
-                                        "\n                    "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", [
-                                    _vm._v(
-                                      "\n                      " +
-                                        _vm._s(driver_invoice.driver_name) +
-                                        "\n                    "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("th", { staticClass: "text-center" }, [
-                                    _vm._v(
-                                      "\n                      " +
-                                        _vm._s(driver_invoice.invoice) +
-                                        "\n                    "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", [
-                                    _c("p", { staticClass: "mb-0" }, [
-                                      _c("strong", [
-                                        _vm._v(
-                                          _vm._s(
-                                            driver_invoice.measurement_type.name
-                                          )
-                                        )
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", { staticClass: "mb-0 text-sm" }, [
-                                      _vm._v(
-                                        _vm._s(_vm.__("Height")) +
-                                          _vm._s(_vm.__(":")) +
-                                          " " +
-                                          _vm._s(
-                                            driver_invoice.container_height
-                                          )
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", { staticClass: "mb-0 text-sm" }, [
-                                      _vm._v(
-                                        _vm._s(_vm.__("Length")) +
-                                          _vm._s(_vm.__(":")) +
-                                          " " +
-                                          _vm._s(
-                                            driver_invoice.container_length
-                                          )
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("p", { staticClass: "mb-0 text-sm" }, [
-                                      _vm._v(
-                                        _vm._s(_vm.__("Breadth")) +
-                                          _vm._s(_vm.__(":")) +
-                                          " " +
-                                          _vm._s(
-                                            driver_invoice.container_breadth
-                                          )
-                                      )
-                                    ])
+                              _vm._l(_vm.sales.data, function(sale, index) {
+                                return _c("tr", { key: sale.id }, [
+                                  _c("th", { staticStyle: { width: "50px" } }, [
+                                    _vm._v(_vm._s(index + 1))
                                   ]),
                                   _vm._v(" "),
                                   _c("td", [
                                     _vm._v(
                                       _vm._s(
                                         _vm._f("moment")(
-                                          driver_invoice.created_at,
+                                          sale.sale_date,
                                           "DD/MM/YYYY"
                                         )
                                       )
                                     )
                                   ]),
                                   _vm._v(" "),
-                                  _c("td", {
-                                    domProps: {
-                                      innerHTML: _vm._s(
-                                        _vm.$options.filters.payment_status(
-                                          driver_invoice.status
-                                        )
-                                      )
-                                    }
-                                  }),
+                                  _c("th", [_vm._v(_vm._s(sale.creator.name))]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v(_vm._s(sale.invoice))]),
+                                  _vm._v(" "),
+                                  _c("th", { staticClass: "text-right" }, [
+                                    _vm._v(_vm._s(sale.total_price))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", { staticClass: "text-right" }, [
+                                    _vm._v(_vm._s(sale.total_paid))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", { staticClass: "text-right" }, [
+                                    _vm._v(_vm._s(sale.commission))
+                                  ]),
                                   _vm._v(" "),
                                   _c("td", { staticClass: "text-center" }, [
-                                    _vm._v(
-                                      "\n                      " +
-                                        _vm._s(driver_invoice.quantity) +
-                                        "\n                    "
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "text-info",
+                                        attrs: {
+                                          href: _vm.route(
+                                            "sales.edit",
+                                            sale.id
+                                          ),
+                                          role: "button"
+                                        }
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "feather icon-edit"
+                                        })
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass: "text-primary",
+                                        attrs: {
+                                          href: _vm.route(
+                                            "sales.invoices.show",
+                                            sale.invoice
+                                          ),
+                                          role: "button"
+                                        }
+                                      },
+                                      [
+                                        _c("i", {
+                                          staticClass: "feather icon-eye"
+                                        })
+                                      ]
                                     )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(driver_invoice.track_rent))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(driver_invoice.others))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(driver_invoice.total))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(driver_invoice.borrow))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(driver_invoice.final))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "td",
-                                    { staticClass: "text-center" },
-                                    [
-                                      _c(
-                                        "inertia-link",
-                                        {
-                                          staticClass: "text-primary",
-                                          attrs: {
-                                            href: _vm.route(
-                                              "drivers.invoices.show",
-                                              driver_invoice.invoice
-                                            )
-                                          }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass: "feather icon-eye"
-                                          })
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "inertia-link",
-                                        {
-                                          staticClass: "text-info",
-                                          attrs: {
-                                            href: _vm.route(
-                                              "drivers.invoices.edit",
-                                              driver_invoice.id
-                                            ),
-                                            role: "button"
-                                          }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass: "feather icon-edit"
-                                          })
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "inertia-link",
-                                        {
-                                          staticClass: "text-warning",
-                                          attrs: { href: "", role: "button" }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass: "feather icon-trash"
-                                          })
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  )
+                                  ])
                                 ])
-                              })
+                              }),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c(
+                                  "td",
+                                  {
+                                    staticClass: "text-right",
+                                    attrs: { colspan: "4" }
+                                  },
+                                  [_vm._v(_vm._s(_vm.__("Total")))]
+                                ),
+                                _vm._v(" "),
+                                _c("th", { staticClass: "text-right" }, [
+                                  _vm._v(_vm._s(_vm.total(_vm.sales.data)))
+                                ]),
+                                _vm._v(" "),
+                                _c("th", { staticClass: "text-right" }, [
+                                  _vm._v(_vm._s(_vm.totalPaid(_vm.sales.data)))
+                                ]),
+                                _vm._v(" "),
+                                _c("th", { staticClass: "text-right" }, [
+                                  _vm._v(
+                                    "\n                      " +
+                                      _vm._s(
+                                        _vm.totalCommission(_vm.sales.data)
+                                      ) +
+                                      "\n                    "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("th")
+                              ])
                             ],
                             2
                           )
@@ -3486,7 +3476,13 @@ var render = function() {
                         staticClass: "modal-title",
                         attrs: { id: "myModalLabel1" }
                       },
-                      [_vm._v(_vm._s(_vm.__("Advanced Search")))]
+                      [
+                        _vm._v(
+                          "\n          " +
+                            _vm._s(_vm.__("Advanced Search")) +
+                            "\n        "
+                        )
+                      ]
                     ),
                     _vm._v(" "),
                     _c(
@@ -3532,18 +3528,18 @@ var render = function() {
                         fn: function(picker) {
                           return [
                             _vm._v(
-                              "\n                  " +
+                              "\n              " +
                                 _vm._s(
                                   _vm._f("moment")(
                                     picker.startDate,
                                     "DD-MM-YYYY"
                                   )
                                 ) +
-                                " - " +
+                                " -\n              " +
                                 _vm._s(
                                   _vm._f("moment")(picker.endDate, "DD-MM-YYYY")
                                 ) +
-                                "\n              "
+                                "\n            "
                             )
                           ]
                         }
@@ -3564,32 +3560,7 @@ var render = function() {
               _c("div", { staticClass: "form-group row mb-0" }, [
                 _c(
                   "div",
-                  { staticClass: "col-md-4 col-12" },
-                  [
-                    _c("label", [_vm._v(_vm._s(_vm.__("Product")))]),
-                    _vm._v(" "),
-                    _c("multi-select", {
-                      attrs: {
-                        options: _vm.products,
-                        label: "name",
-                        "track-by": "name",
-                        placeholder: _vm.__("Select Product")
-                      },
-                      model: {
-                        value: _vm.search.product,
-                        callback: function($$v) {
-                          _vm.$set(_vm.search, "product", $$v)
-                        },
-                        expression: "search.product"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-md-4 col-12" },
+                  { staticClass: "col-md-6 col-12" },
                   [
                     _c("label", [_vm._v(_vm._s(_vm.__("Client")))]),
                     _vm._v(" "),
@@ -3612,7 +3583,7 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-4 col-12" }, [
+                _c("div", { staticClass: "col-md-6 col-12" }, [
                   _c("label", [_vm._v(_vm._s(_vm.__("Payment Status")))]),
                   _vm._v(" "),
                   _c(
@@ -3653,11 +3624,11 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "1" } }, [
-                        _vm._v(_vm._s(_vm.__("Borrow")))
+                        _vm._v(_vm._s(_vm.__("Paid")))
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "0" } }, [
-                        _vm._v(_vm._s(_vm.__("Final")))
+                        _vm._v(_vm._s(_vm.__("Due")))
                       ])
                     ]
                   )
@@ -3673,7 +3644,11 @@ var render = function() {
                   attrs: { type: "button" },
                   on: { click: _vm.searchData }
                 },
-                [_vm._v(_vm._s(_vm.__("Search")))]
+                [
+                  _vm._v(
+                    "\n          " + _vm._s(_vm.__("Search")) + "\n        "
+                  )
+                ]
               ),
               _vm._v(" "),
               _c(
@@ -3682,7 +3657,11 @@ var render = function() {
                   staticClass: "btn btn-secendary",
                   attrs: { type: "button", "data-dismiss": "modal" }
                 },
-                [_vm._v(_vm._s(_vm.__("Cancel")))]
+                [
+                  _vm._v(
+                    "\n          " + _vm._s(_vm.__("Cancel")) + "\n        "
+                  )
+                ]
               )
             ])
           ]
@@ -3698,7 +3677,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1f04f276", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-2822ae53", module.exports)
   }
 }
 

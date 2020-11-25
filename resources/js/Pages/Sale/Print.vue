@@ -84,9 +84,10 @@
               >
             </p>
 
-            <table class="table font-medium-3">
+            <table class="table table-bordered font-medium-3">
               <thead>
                 <tr>
+                  <th scope="col">{{ __("S.N.") }}</th>
                   <th>{{ __("Track No.") }}</th>
                   <th>{{ __("Stock") }}</th>
                   <th>{{ __("Product Product") }}</th>
@@ -96,7 +97,8 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="row in sale.sale_details" :key="row.id">
+                <tr v-for="(row, index) in sale.sale_details" :key="row.id">
+                  <th style="width: 80px">#{{ index + 1 }}</th>
                   <th>{{ row.track_no }}</th>
                   <th>{{ row.stock.name }}</th>
                   <th>{{ row.product.name }}</th>
@@ -105,17 +107,17 @@
                   <th class="text-right">{{ row.amount }}</th>
                 </tr>
                 <tr>
-                  <th colspan="5" class="text-right">
+                  <th colspan="6" class="text-right">
                     {{ __("Total Amount") }}
                   </th>
                   <th class="text-right">{{ sale.total_price }}</th>
                 </tr>
                 <tr>
-                  <th colspan="5" class="text-right">{{ __("Paid") }}</th>
+                  <th colspan="6" class="text-right">{{ __("Paid") }}</th>
                   <th class="text-right">{{ sale.total_paid }}</th>
                 </tr>
                 <tr>
-                  <th colspan="5" class="text-right">{{ __("Due") }}</th>
+                  <th colspan="6" class="text-right">{{ __("Due") }}</th>
                   <th class="text-right">{{ sale.total_due }}</th>
                 </tr>
               </tbody>
@@ -204,8 +206,19 @@ body {
   width: 100%;
 }
 @media print {
-  .table {
-    border-bottom: 1px solid #0b0b0b !important;
+  .table th,
+  .table td {
+    padding: 0.5rem !important;
+  }
+  .table-bordered {
+    border: 1px solid #333 !important;
+  }
+  td,
+  th {
+    font-size: 14px !important;
+  }
+  .bt {
+    border-top: 1px solid #0b0b0b !important;
   }
   .controller {
     display: none;

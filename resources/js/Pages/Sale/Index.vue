@@ -79,7 +79,7 @@
                       <th class="text-center">{{ __("Action") }}</th>
                     </tr>
                   </thead>
-                  <tbody v-if="sales.data.length > 0">
+                  <tbody v-if="sales && sales.data.length > 0">
                     <tr v-for="(sale, index) in sales.data" :key="sale.id">
                       <th style="width: 50px">{{ index + 1 }}</th>
                       <td>{{ sale.sale_date | moment("DD/MM/YYYY") }}</td>
@@ -275,7 +275,7 @@ export default {
     },
   },
   created() {
-    this.searchData();
+    // this.searchData();
   },
 };
 </script>

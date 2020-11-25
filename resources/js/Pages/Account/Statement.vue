@@ -39,7 +39,7 @@
                           :placeholder="__('Invoice')"
                         />
                       </th>
-                      <th colspan="2">
+                      <th colspan="1">
                         <input
                           type="text"
                           @keyup="searchData"
@@ -48,7 +48,7 @@
                           :placeholder="__('Search')"
                         />
                       </th>
-                      <th colspan="3" class="text-center">
+                      <th colspan="4" class="text-center">
                         <button
                           class="btn btn-default"
                           data-toggle="modal"
@@ -58,23 +58,38 @@
                           <i class="feather icon-filter mr-2"></i>
                           {{ __("Filter") }}
                         </button>
+                        <button
+                          class="btn btn-default"
+                          type="button"
+                          @click="print"
+                        >
+                          <i class="feather icon-printer mr-2"></i>
+                          {{ __("Print") }}
+                        </button>
                       </th>
                     </tr>
                     <tr>
                       <th scope="col">{{ __("S.N.") }}</th>
                       <th>{{ __("Date & Time") }}</th>
                       <th>{{ __("Invoice") }}</th>
-                      <th>{{ __('Transaction Type') }}</th>
-                      <th>{{ __('Transaction Media') }}</th>
-                      <th>{{ __('Description') }}</th>
-                      <th class="text-right">{{ __('Amount') }}</th>
+                      <th>{{ __("Transaction Type") }}</th>
+                      <th>{{ __("Transaction Media") }}</th>
+                      <th>{{ __("Description") }}</th>
+                      <th class="text-right">{{ __("Amount") }}</th>
                       <th class="text-center">{{ __("Action") }}</th>
                     </tr>
                   </thead>
-                  <tbody v-if="transactions.data.length > 0">
-                    <tr v-for="(transaction, index) in transactions.data" :key="transaction.id">
+                  <tbody v-if="transactions && transactions.data.length > 0">
+                    <tr
+                      v-for="(transaction, index) in transactions.data"
+                      :key="transaction.id"
+                    >
                       <th style="width: 50px">{{ index + 1 }}</th>
-                      <td>{{ transaction.created_at | moment("DD/MM/YYYY hh:mm A") }}</td>
+                      <td>
+                        {{
+                          transaction.created_at | moment("DD/MM/YYYY hh:mm A")
+                        }}
+                      </td>
                       <th>{{ transaction.transactionable.invoice }}</th>
                       <th>{{ transaction.transaction_type.name }}</th>
                       <th>{{ transaction.media.name }}</th>
@@ -92,7 +107,9 @@
 
                     <tr>
                       <td colspan="6" class="text-right">{{ __("Total") }}</td>
-                      <th class="text-right">{{ totalAmount(transactions.data) }}</th>
+                      <th class="text-right">
+                        {{ totalAmount(transactions.data) }}
+                      </th>
                       <th></th>
                     </tr>
                   </tbody>
@@ -102,7 +119,7 @@
           </div>
         </div>
       </div>
-            <model :size="'modal-lg'">
+      <model :size="'modal-lg'">
         <template v-slot:header>
           <h4 class="modal-title" id="myModalLabel1">
             {{ __("Advanced Search") }}
@@ -171,7 +188,7 @@
 
 <script>
 import Layout from "../../Shared/Layout";
-import Model from '../../Components/Model'
+import Model from "../../Components/Model";
 
 export default {
   name: "AccountStatement",
@@ -204,7 +221,10 @@ export default {
     },
     searchData: function () {
       $("#default").modal("hide");
-      let transaction_type = this.search.transaction_type == null ? "" : this.search.transaction_type.id;
+      let transaction_type =
+        this.search.transaction_type == null
+          ? ""
+          : this.search.transaction_type.id;
       let media = this.search.media == null ? "" : this.search.media.id;
       let start_date = this.$options.filters.moment(
         this.search.dateRange.startDate,
@@ -229,9 +249,26 @@ export default {
         preserveScroll: true,
       });
     },
+    print: function () {
+      let transaction_type = this.search.transaction_type == null ? "" : this.search.transaction_type.id;
+      let media = this.search.media == null ? "" : this.search.media.id;
+      let query = `/accounts/statements/print?search=${this.search.query}&&invoice=${this.search.invoice}&&transaction_type=${transaction_type}&&media=${media}`;
+      if (this.search.dateRange.startDate) {
+        let start_date = this.$options.filters.moment(
+          this.search.dateRange.startDate,
+          "YYYY-MM-DD"
+        );
+        let end_date = this.$options.filters.moment(
+          this.search.dateRange.endDate,
+          "YYYY-MM-DD"
+        );
+        query = `${query}&&start_date=${start_date}&&end_date=${end_date}`;
+      }
+      window.open(query, "_blank");
+    },
   },
   created() {
-    this.searchData();
+    // this.searchData();
   },
 };
 </script>
@@ -244,5 +281,21 @@ export default {
 }
 .vue-daterange-picker[data-v-4f8eb193] {
   min-width: 100% !important;
+}
+
+@media print {
+  td,
+  th {
+    font-size: 14px !important;
+  }
+  .bb {
+    border-bottom: 1px solid #0b0b0b !important;
+  }
+  .bt {
+    border-top: 1px solid #0b0b0b !important;
+  }
+  .controller {
+    display: none;
+  }
 }
 </style>

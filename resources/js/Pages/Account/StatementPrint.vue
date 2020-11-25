@@ -62,36 +62,39 @@
             </button>
           </div>
           <div class="invoice-body" :class="[hasHeader ? 'mt-0' : 'mt-200']">
-            <table class="table table-bordered font-medium-3">
+            <table id="data-table" class="table table-bordered font-medium-3">
               <thead>
                 <tr>
                   <th scope="col">{{ __("S.N.") }}</th>
-                  <th>{{ __("Date") }}</th>
-                  <th>{{ __("Creator") }}</th>
+                  <th>{{ __("Date & Time") }}</th>
                   <th>{{ __("Invoice") }}</th>
-                  <th class="text-right">{{ __("Total Price") }}</th>
-                  <th class="text-right">{{ __("Paid") }}</th>
-                  <th class="text-right">{{ __("Commission") }}</th>
+                  <th>{{ __("Transaction Type") }}</th>
+                  <th>{{ __("Transaction Media") }}</th>
+                  <th>{{ __("Description") }}</th>
+                  <th class="text-right">{{ __("Amount") }}</th>
                 </tr>
               </thead>
-              <tbody v-if="sales.length > 0">
-                <tr v-for="(sale, index) in sales" :key="sale.id">
+              <tbody v-if="transactions && transactions.length > 0">
+                <tr
+                  v-for="(transaction, index) in transactions"
+                  :key="transaction.id"
+                >
                   <th style="width: 80px">#{{ index + 1 }}</th>
-                  <td>{{ sale.sale_date | moment("DD/MM/YYYY") }}</td>
-                  <th>{{ sale.creator.name }}</th>
-                  <th>{{ sale.invoice }}</th>
-                  <th class="text-right">{{ sale.total_price }}</th>
-                  <th class="text-right">{{ sale.total_paid }}</th>
-                  <th class="text-right">{{ sale.commission }}</th>
+                  <td>
+                    {{ transaction.created_at | moment("DD/MM/YYYY hh:mm A") }}
+                  </td>
+                  <th>{{ transaction.transactionable.invoice }}</th>
+                  <th>{{ transaction.transaction_type.name }}</th>
+                  <th>{{ transaction.media.name }}</th>
+                  <th class="text-left">{{ transaction.description }}</th>
+                  <th class="text-right">{{ transaction.amount }}</th>
                 </tr>
               </tbody>
-              <tfoot class="bt">
+              <tfoot>
                 <tr>
-                  <td colspan="4" class="text-right">{{ __("Total") }}</td>
-                  <th class="text-right">{{ total(sales) }}</th>
-                  <th class="text-right">{{ totalPaid(sales) }}</th>
+                  <td colspan="6" class="text-right">{{ __("Total") }}</td>
                   <th class="text-right">
-                    {{ totalCommission(sales) }}
+                    {{ totalAmount(transactions) }}
                   </th>
                 </tr>
               </tfoot>
@@ -105,9 +108,9 @@
 
 <script>
 export default {
-  name: "PrintList",
+  name: "StatementPrint",
   props: {
-    sales: Array,
+    transactions: Array,
     company: Object,
   },
   data() {
@@ -116,26 +119,12 @@ export default {
     };
   },
   methods: {
-    total: function (data) {
-      let totalPrice = data.reduce(
-        (total, sale) => total + parseFloat(sale.total_price),
-        0
-      );
-      return parseFloat(totalPrice).toFixed(2);
-    },
-    totalPaid: function (data) {
-      let paidPrice = data.reduce((paid, sale) => {
-        let p = sale.total_paid == "" ? 0 : sale.total_paid;
+    totalAmount: function (data) {
+      let paidPrice = data.reduce((paid, transaction) => {
+        let p = transaction.amount == "" ? 0 : transaction.amount;
         return paid + parseFloat(p);
       }, 0);
       return parseFloat(paidPrice).toFixed(2);
-    },
-    totalCommission: function (data) {
-      let commissionPrice = data.reduce((c, sale) => {
-        let com = sale.commission == "" ? 0 : sale.commission;
-        return c + parseFloat(com);
-      }, 0);
-      return parseFloat(commissionPrice).toFixed(2);
     },
     printPage: function () {
       window.print();

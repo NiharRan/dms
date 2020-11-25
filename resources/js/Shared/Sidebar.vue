@@ -54,13 +54,13 @@
         </a>
         <ul>
           <li class="nav-item">
-            <inertia-link :href="route('sales.index')">
+            <inertia-link :href="route('sales.create')">
               <i class="feather icon-unlock"></i>
               <span class="menu-title" data-i18n="">{{__("Sale")}}</span>
             </inertia-link>
           </li>
           <li class="nav-item">
-            <inertia-link :href="route('drivers.invoices.index')">
+            <inertia-link :href="route('drivers.invoices.create')">
               <i class="feather icon-unlock"></i>
               <span class="menu-title" data-i18n="">{{__("Driver")}}</span>
             </inertia-link>
@@ -68,12 +68,24 @@
         </ul>
       </li>
 
-      <li class="nav-item has-sub">
+       <li class="nav-item has-sub">
         <a href="">
           <i class="fa fa-money"></i>
-          <span class="menu-title" data-i18n="">{{ __('Accounts') }}</span>
+          <span class="menu-title" data-i18n="">{{ __('Report') }}</span>
         </a>
         <ul>
+          <li class="nav-item">
+            <inertia-link :href="route('drivers.invoices.index')">
+              <i class="feather icon-unlock"></i>
+              <span class="menu-title" data-i18n="">{{__("Driver Invoice Report")}}</span>
+            </inertia-link>
+          </li>
+          <li class="nav-item">
+            <inertia-link :href="route('sales.index')">
+              <i class="feather icon-unlock"></i>
+              <span class="menu-title" data-i18n="">{{__("Sale Report")}}</span>
+            </inertia-link>
+          </li>
           <li class="nav-item">
             <inertia-link :href="route('accounts.statements')">
               <i class="feather icon-unlock"></i>

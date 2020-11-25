@@ -33,10 +33,10 @@ class DriverInvoiceController extends Controller
       'pageHeader' => true
     ];
     $breadcrumbs = [
-      ['link'=>"/",'name'=> __('Home')],
-      ['name'=> __("Driver Invoices") ],
+      ['link' => "/", 'name' => __('Home')],
+      ['name' => __("Driver Invoices")],
     ];
-    $driverInvoices = DriverInvoiceResource::collection($this->driverInvoiceRepository->paginate(request()->per_page));
+    $driverInvoices = request()->has('per_page') ? DriverInvoiceResource::collection($this->driverInvoiceRepository->paginate(request()->per_page)) : null;
     $clients = Client::active()->orderBy('name', 'asc')->get();
     $products = Product::active()->orderBy('name', 'asc')->get();
     $measurementTypes = MeasurementType::active()->orderBy('name', 'asc')->get();
@@ -57,8 +57,8 @@ class DriverInvoiceController extends Controller
       'pageHeader' => true
     ];
     $breadcrumbs = [
-      ['link'=>"/",'name'=> __('Home')],
-      ['link'=> route('drivers.invoices.index'), 'name'=> __("Driver Invoices") ],
+      ['link' => "/", 'name' => __('Home')],
+      ['link' => route('drivers.invoices.index'), 'name' => __("Driver Invoices")],
       ['name' => __('New Driver Invoice')]
     ];
     $clients = Client::active()->get();
@@ -101,8 +101,8 @@ class DriverInvoiceController extends Controller
       'pageHeader' => true
     ];
     $breadcrumbs = [
-      ['link'=>"/",'name'=> __('Home')],
-      ['link'=> route('drivers.invoices.index'), 'name'=> __("Driver Invoices") ],
+      ['link' => "/", 'name' => __('Home')],
+      ['link' => route('drivers.invoices.index'), 'name' => __("Driver Invoices")],
       ['name' => __("Invoice: $driverInvoice->invoice")]
     ];
 
@@ -128,8 +128,8 @@ class DriverInvoiceController extends Controller
       'pageHeader' => true
     ];
     $breadcrumbs = [
-      ['link'=>"/",'name'=> __('Home')],
-      ['link'=> route('drivers.invoices.index'), 'name'=> __("Driver Invoices") ],
+      ['link' => "/", 'name' => __('Home')],
+      ['link' => route('drivers.invoices.index'), 'name' => __("Driver Invoices")],
       ['name' => __('New Driver Invoice')]
     ];
     $clients = Client::active()->get();

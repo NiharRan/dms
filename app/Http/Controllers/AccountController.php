@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Company;
 use App\Http\Resources\TransactionResource;
 use App\Repositories\TransactionRepository;
 use App\Settings\TransactionMedia;
@@ -33,7 +34,7 @@ class AccountController extends Controller
       ];
       $transaction_types = TransactionType::orderBy('name', 'asc')->get();
       $medias = TransactionMedia::orderBy('name', 'asc')->get();
-      $transactions = TransactionResource::collection($this->transactionRepository->paginate(20));
+      $transactions = request()->has('per_page') ? TransactionResource::collection($this->transactionRepository->paginate(20)) : null;
       return Inertia::render('Account/Statement', [
         'breadcrumbs' => $breadcrumbs,
         'transactions' => $transactions,
@@ -65,4 +66,19 @@ class AccountController extends Controller
         'has_modal' => false,
       ]);
     }
+
+    /**
+   * Display a listing of the resource.
+   *
+   * @return Response
+   */
+  public function print()
+  {
+    $company = Company::active()->orderBy('id', 'desc')->first();
+    $transactions = $this->transactionRepository->all()->get();
+    return Inertia::render('Account/StatementPrint', [
+      'transactions' => $transactions,
+      'company' => $company,
+    ]);
+  }
 }

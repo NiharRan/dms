@@ -51,7 +51,7 @@
                     <th class="text-center">{{ __("Action") }}</th>
                   </tr>
                   </thead>
-                  <tbody class="font-small-3" v-if="driver_invoices.data.length > 0">
+                  <tbody class="font-small-3" v-if="driver_invoices && driver_invoices.data.length > 0">
                     <tr>
                       <td colspan="10"></td>
                       <th class="text-right">{{ total(driver_invoices.data) }}</th>
@@ -227,7 +227,7 @@
           },
         },
         created() {
-          this.searchData();
+          // this.searchData();
         }
     }
 </script>

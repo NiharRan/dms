@@ -163,5 +163,8 @@
 
   "Accounts": "অ্যাকাউন্টস",
   "Account Statement": "অ্যাকাউন্ট বিবৃতি",
-  "Date & Time": "তারিখ এবং সময়"
+  "Date & Time": "তারিখ এবং সময়",
+  "Report": "রিপোর্ট",
+  "Sale Report": "বিক্রয়ের রিপোর্ট",
+  "Driver Invoice Report": "ড্রাইভার চালান রিপোর্ট"
 }

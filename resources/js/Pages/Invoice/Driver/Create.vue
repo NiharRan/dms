@@ -381,6 +381,7 @@ export default {
       let total =
         (parseFloat(track_rent) + parseFloat(this.load.amount)) *
           parseFloat(quantity) +
+        parseFloat(this.load.stock_rent) +
         parseFloat(others);
       let final = total - parseFloat(borrow);
 
