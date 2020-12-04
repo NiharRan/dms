@@ -1,18 +1,18 @@
-webpackJsonp([33],{
+webpackJsonp([74],{
 
-/***/ 182:
+/***/ 152:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(432)
+  __webpack_require__(286)
 }
 var normalizeComponent = __webpack_require__(231)
 /* script */
-var __vue_script__ = __webpack_require__(434)
+var __vue_script__ = __webpack_require__(288)
 /* template */
-var __vue_template__ = __webpack_require__(435)
+var __vue_template__ = __webpack_require__(289)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/Pages/Sale/PrintList.vue"
+Component.options.__file = "resources/js/Pages/Account/StatementPrint.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2c366d6c", Component.options)
+    hotAPI.createRecord("data-v-0bc71fa9", Component.options)
   } else {
-    hotAPI.reload("data-v-2c366d6c", Component.options)
+    hotAPI.reload("data-v-0bc71fa9", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -425,23 +425,23 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 432:
+/***/ 286:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(433);
+var content = __webpack_require__(287);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(230)("18f6082c", content, false, {});
+var update = __webpack_require__(230)("abc3c76c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2c366d6c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PrintList.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2c366d6c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PrintList.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0bc71fa9\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./StatementPrint.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0bc71fa9\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./StatementPrint.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 433:
+/***/ 287:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -460,14 +460,14 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n.mt-200 {\n  margin-top: 200px;\n}\n.mb-200 {\n  margin-top: 200px;\n}\n.controller {\n  right: 10px;\n  top: 10px;\n  border: 1px solid #d0d0d0;\n  border-radius: 4px;\n  padding: 10px;\n  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);\n          box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);\n}\nbody {\n  -webkit-print-color-adjust: exact !important;\n}\n* {\n  font-family: \"SolaimanLipi\", sans-serif;\n  font-size: 20px !important;\n}\n.owner {\n  background-color: #000;\n  color: #fff;\n  font-weight: bold;\n  padding: 5px 10px;\n  border-radius: 16px;\n  font-size: 18px;\n}\n.signature {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n}\n@media print {\n.table th,\n  .table td {\n    padding: 0.5rem !important;\n}\n.table-bordered {\n    border: 1px solid #333 !important;\n}\ntd,\n  th {\n    font-size: 14px !important;\n}\n.bt {\n    border-top: 1px solid #0b0b0b !important;\n}\n.controller {\n    display: none;\n}\n}\n", ""]);
+exports.push([module.i, "\n.mt-200 {\r\n  margin-top: 200px;\n}\n.mb-200 {\r\n  margin-top: 200px;\n}\n.controller {\r\n  right: 10px;\r\n  top: 10px;\r\n  border: 1px solid #d0d0d0;\r\n  border-radius: 4px;\r\n  padding: 10px;\r\n  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);\r\n          box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);\n}\nbody {\r\n  -webkit-print-color-adjust: exact !important;\n}\n* {\r\n  font-family: \"SolaimanLipi\", sans-serif;\r\n  font-size: 20px !important;\n}\n.owner {\r\n  background-color: #000;\r\n  color: #fff;\r\n  font-weight: bold;\r\n  padding: 5px 10px;\r\n  border-radius: 16px;\r\n  font-size: 18px;\n}\n.signature {\r\n  position: fixed;\r\n  bottom: 0;\r\n  left: 0;\r\n  width: 100%;\n}\n@media print {\n.table th,\r\n  .table td {\r\n    padding: 0.5rem !important;\n}\n.table-bordered {\r\n    border: 1px solid #333 !important;\n}\ntd,\r\n  th {\r\n    font-size: 14px !important;\n}\n.bt {\r\n    border-top: 1px solid #0b0b0b !important;\n}\n.controller {\r\n    display: none;\n}\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 434:
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -577,10 +577,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "PrintList",
+  name: "StatementPrint",
   props: {
-    sales: Array,
+    transactions: Array,
     company: Object
   },
   data: function data() {
@@ -589,25 +592,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
   methods: {
-    total: function total(data) {
-      var totalPrice = data.reduce(function (total, sale) {
-        return total + parseFloat(sale.total_price);
-      }, 0);
-      return parseFloat(totalPrice).toFixed(2);
-    },
-    totalPaid: function totalPaid(data) {
-      var paidPrice = data.reduce(function (paid, sale) {
-        var p = sale.total_paid == "" ? 0 : sale.total_paid;
+    totalAmount: function totalAmount(data) {
+      var paidPrice = data.reduce(function (paid, transaction) {
+        var p = transaction.amount == "" ? 0 : transaction.amount;
         return paid + parseFloat(p);
       }, 0);
       return parseFloat(paidPrice).toFixed(2);
-    },
-    totalCommission: function totalCommission(data) {
-      var commissionPrice = data.reduce(function (c, sale) {
-        var com = sale.commission == "" ? 0 : sale.commission;
-        return c + parseFloat(com);
-      }, 0);
-      return parseFloat(commissionPrice).toFixed(2);
     },
     printPage: function printPage() {
       window.print();
@@ -618,192 +608,204 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 435:
+/***/ 289:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "invoice-card card" }, [
-    _c("div", { staticClass: "card-content" }, [
-      _c("div", { staticClass: "card-body" }, [
-        _c("div", { staticClass: "invoice" }, [
-          _vm.hasHeader
-            ? _c(
-                "div",
-                {
-                  staticClass:
-                    "invoice-header text-center mb-2 position-relative"
-                },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "logo position-absolute width-200" },
-                    [
-                      _c("img", {
-                        staticClass: "width-95-per",
-                        attrs: {
-                          src: _vm.company.current_logo,
-                          alt: _vm.company.name
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "h1",
-                    {
-                      staticClass: "mb-0",
-                      staticStyle: { "font-weight": "bolder" }
-                    },
-                    [
-                      _vm._v(
-                        "\n            " +
-                          _vm._s(_vm.company.name) +
-                          "\n          "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("h5", [_vm._v(_vm._s(_vm.company.description))]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "my-1" }, [
-                    _c("span", { staticClass: "owner" }, [
-                      _vm._v(
-                        _vm._s(_vm.__("Pro:-")) +
-                          " " +
-                          _vm._s(_vm.company.owner)
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "mb-0" }, [
-                    _c("span", { staticClass: "text-bold-700" }, [
-                      _vm._v(_vm._s(_vm.__("Head Office")) + ": ")
-                    ]),
-                    _vm._v(_vm._s(_vm.company.head_office) + "\n          ")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "mb-0" }, [
-                    _c("span", { staticClass: "text-bold-700" }, [
-                      _vm._v(_vm._s(_vm.__("Dipu Office")) + ": ")
-                    ]),
-                    _vm._v(_vm._s(_vm.company.dipu_office) + "\n          ")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "mb-0" }, [
-                    _c("span", { staticClass: "text-bold-700" }, [
-                      _vm._v(_vm._s(_vm.__("Address")) + ": ")
-                    ]),
-                    _vm._v(_vm._s(_vm.company.address) + "\n          ")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "mb-0" }, [
-                    _c("span", { staticClass: "text-bold-700" }, [
-                      _vm._v(_vm._s(_vm.__("Sales Center")) + ": ")
-                    ]),
-                    _vm._v(_vm._s(_vm.company.sales_center) + "\n          ")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "mb-0" }, [
-                    _c("span", { staticClass: "text-left" }, [
-                      _c("span", { staticClass: "text-bold-700" }, [
-                        _vm._v(" " + _vm._s(_vm.__("Phone:")))
-                      ]),
-                      _vm._v(
-                        "\n              " +
-                          _vm._s(
-                            _vm.translate(_vm.company.active_phones.toString())
-                          ) +
-                          "\n            "
-                      )
+  return _c(
+    "div",
+    {
+      staticClass: "invoice-card card",
+      class: [!_vm.hasHeader ? "page-gap" : ""]
+    },
+    [
+      _c("div", { staticClass: "card-content" }, [
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "invoice" }, [
+            _vm.hasHeader
+              ? _c(
+                  "div",
+                  {
+                    staticClass:
+                      "invoice-header text-center mb-2 position-relative"
+                  },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "logo position-absolute width-200" },
+                      [
+                        _c("img", {
+                          staticClass: "width-95-per",
+                          attrs: {
+                            src: _vm.company.current_logo,
+                            alt: _vm.company.name
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "h1",
+                      {
+                        staticClass: "mb-0",
+                        staticStyle: { "font-weight": "bolder" }
+                      },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.company.name) +
+                            "\n          "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("h5", [_vm._v(_vm._s(_vm.company.description))]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "my-1" }, [
+                      _c("span", { staticClass: "owner" }, [
+                        _vm._v(
+                          _vm._s(_vm.__("Pro:-")) +
+                            " " +
+                            _vm._s(_vm.company.owner)
+                        )
+                      ])
                     ]),
                     _vm._v(" "),
-                    _c("span", { staticClass: "text-right" }, [
+                    _c("p", { staticClass: "mb-0" }, [
                       _c("span", { staticClass: "text-bold-700" }, [
-                        _vm._v(" " + _vm._s(_vm.__("Email:")))
+                        _vm._v(_vm._s(_vm.__("Head Office")) + ": ")
                       ]),
-                      _vm._v(
-                        "\n              " +
-                          _vm._s(_vm.company.email) +
-                          "\n            "
-                      )
+                      _vm._v(_vm._s(_vm.company.head_office) + "\n          ")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mb-0" }, [
+                      _c("span", { staticClass: "text-bold-700" }, [
+                        _vm._v(_vm._s(_vm.__("Dipu Office")) + ": ")
+                      ]),
+                      _vm._v(_vm._s(_vm.company.dipu_office) + "\n          ")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mb-0" }, [
+                      _c("span", { staticClass: "text-bold-700" }, [
+                        _vm._v(_vm._s(_vm.__("Address")) + ": ")
+                      ]),
+                      _vm._v(_vm._s(_vm.company.address) + "\n          ")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mb-0" }, [
+                      _c("span", { staticClass: "text-bold-700" }, [
+                        _vm._v(_vm._s(_vm.__("Sales Center")) + ": ")
+                      ]),
+                      _vm._v(_vm._s(_vm.company.sales_center) + "\n          ")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mb-0" }, [
+                      _c("span", { staticClass: "text-left" }, [
+                        _c("span", { staticClass: "text-bold-700" }, [
+                          _vm._v(" " + _vm._s(_vm.__("Phone:")))
+                        ]),
+                        _vm._v(
+                          "\n              " +
+                            _vm._s(
+                              _vm.translate(
+                                _vm.company.active_phones.toString()
+                              )
+                            ) +
+                            "\n            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "text-right" }, [
+                        _c("span", { staticClass: "text-bold-700" }, [
+                          _vm._v(" " + _vm._s(_vm.__("Email:")))
+                        ]),
+                        _vm._v(
+                          "\n              " +
+                            _vm._s(_vm.company.email) +
+                            "\n            "
+                        )
+                      ])
                     ])
-                  ])
-                ]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _c("div", { staticClass: "controller position-absolute width-300" }, [
-            _c("label", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.hasHeader,
-                    expression: "hasHeader"
-                  }
-                ],
-                attrs: { type: "checkbox" },
-                domProps: {
-                  checked: Array.isArray(_vm.hasHeader)
-                    ? _vm._i(_vm.hasHeader, null) > -1
-                    : _vm.hasHeader
-                },
-                on: {
-                  change: function($event) {
-                    var $$a = _vm.hasHeader,
-                      $$el = $event.target,
-                      $$c = $$el.checked ? true : false
-                    if (Array.isArray($$a)) {
-                      var $$v = null,
-                        $$i = _vm._i($$a, $$v)
-                      if ($$el.checked) {
-                        $$i < 0 && (_vm.hasHeader = $$a.concat([$$v]))
-                      } else {
-                        $$i > -1 &&
-                          (_vm.hasHeader = $$a
-                            .slice(0, $$i)
-                            .concat($$a.slice($$i + 1)))
-                      }
-                    } else {
-                      _vm.hasHeader = $$c
-                    }
-                  }
-                }
-              }),
-              _vm._v(
-                "\n            " + _vm._s(_vm.__("Attach company information"))
-              )
-            ]),
+                  ]
+                )
+              : _vm._e(),
             _vm._v(" "),
             _c(
-              "button",
-              {
-                staticClass: "btn btn-primary btn-sm float-right",
-                attrs: { type: "button" },
-                on: { click: _vm.printPage }
-              },
+              "div",
+              { staticClass: "controller position-absolute width-300" },
               [
-                _vm._v(
-                  "\n            " + _vm._s(_vm.__("Print")) + "\n          "
+                _c("label", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.hasHeader,
+                        expression: "hasHeader"
+                      }
+                    ],
+                    attrs: { type: "checkbox" },
+                    domProps: {
+                      checked: Array.isArray(_vm.hasHeader)
+                        ? _vm._i(_vm.hasHeader, null) > -1
+                        : _vm.hasHeader
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.hasHeader,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.hasHeader = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.hasHeader = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.hasHeader = $$c
+                        }
+                      }
+                    }
+                  }),
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.__("Attach company information"))
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary btn-sm float-right",
+                    attrs: { type: "button" },
+                    on: { click: _vm.printPage }
+                  },
+                  [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(_vm.__("Print")) +
+                        "\n          "
+                    )
+                  ]
                 )
               ]
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "invoice-body",
-              class: [_vm.hasHeader ? "mt-0" : "mt-200"]
-            },
-            [
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "invoice-body" }, [
               _c(
                 "table",
-                { staticClass: "table table-bordered font-medium-3" },
+                {
+                  staticClass: "table table-bordered font-medium-3",
+                  attrs: { id: "data-table" }
+                },
                 [
                   _c("thead", [
                     _c("tr", [
@@ -811,57 +813,62 @@ var render = function() {
                         _vm._v(_vm._s(_vm.__("S.N.")))
                       ]),
                       _vm._v(" "),
-                      _c("th", [_vm._v(_vm._s(_vm.__("Date")))]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v(_vm._s(_vm.__("Creator")))]),
+                      _c("th", [_vm._v(_vm._s(_vm.__("Date & Time")))]),
                       _vm._v(" "),
                       _c("th", [_vm._v(_vm._s(_vm.__("Invoice")))]),
                       _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [
-                        _vm._v(_vm._s(_vm.__("Total Price")))
-                      ]),
+                      _c("th", [_vm._v(_vm._s(_vm.__("Transaction Type")))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(_vm.__("Transaction Media")))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(_vm.__("Description")))]),
                       _vm._v(" "),
                       _c("th", { staticClass: "text-right" }, [
-                        _vm._v(_vm._s(_vm.__("Paid")))
-                      ]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [
-                        _vm._v(_vm._s(_vm.__("Commission")))
+                        _vm._v(_vm._s(_vm.__("Amount")))
                       ])
                     ])
                   ]),
                   _vm._v(" "),
-                  _vm.sales.length > 0
+                  _vm.transactions && _vm.transactions.length > 0
                     ? _c(
                         "tbody",
-                        _vm._l(_vm.sales, function(sale, index) {
-                          return _c("tr", { key: sale.id }, [
+                        _vm._l(_vm.transactions, function(transaction, index) {
+                          return _c("tr", { key: transaction.id }, [
                             _c("th", { staticStyle: { width: "80px" } }, [
                               _vm._v("#" + _vm._s(index + 1))
                             ]),
                             _vm._v(" "),
                             _c("td", [
                               _vm._v(
-                                _vm._s(
-                                  _vm._f("moment")(sale.sale_date, "DD/MM/YYYY")
-                                )
+                                "\n                  " +
+                                  _vm._s(
+                                    _vm._f("moment")(
+                                      transaction.created_at,
+                                      "DD/MM/YYYY hh:mm A"
+                                    )
+                                  ) +
+                                  "\n                "
                               )
                             ]),
                             _vm._v(" "),
-                            _c("th", [_vm._v(_vm._s(sale.creator.name))]),
+                            _c("th", [
+                              _vm._v(
+                                _vm._s(transaction.transactionable.invoice)
+                              )
+                            ]),
                             _vm._v(" "),
-                            _c("th", [_vm._v(_vm._s(sale.invoice))]),
+                            _c("th", [
+                              _vm._v(_vm._s(transaction.transaction_type.name))
+                            ]),
                             _vm._v(" "),
-                            _c("th", { staticClass: "text-right" }, [
-                              _vm._v(_vm._s(sale.total_price))
+                            _c("th", [_vm._v(_vm._s(transaction.media.name))]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "text-left" }, [
+                              _vm._v(_vm._s(transaction.description))
                             ]),
                             _vm._v(" "),
                             _c("th", { staticClass: "text-right" }, [
-                              _vm._v(_vm._s(sale.total_paid))
-                            ]),
-                            _vm._v(" "),
-                            _c("th", { staticClass: "text-right" }, [
-                              _vm._v(_vm._s(sale.commission))
+                              _vm._v(_vm._s(transaction.amount))
                             ])
                           ])
                         }),
@@ -869,26 +876,18 @@ var render = function() {
                       )
                     : _vm._e(),
                   _vm._v(" "),
-                  _c("tfoot", { staticClass: "bt" }, [
+                  _c("tfoot", [
                     _c("tr", [
                       _c(
                         "td",
-                        { staticClass: "text-right", attrs: { colspan: "4" } },
+                        { staticClass: "text-right", attrs: { colspan: "6" } },
                         [_vm._v(_vm._s(_vm.__("Total")))]
                       ),
                       _vm._v(" "),
                       _c("th", { staticClass: "text-right" }, [
-                        _vm._v(_vm._s(_vm.total(_vm.sales)))
-                      ]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [
-                        _vm._v(_vm._s(_vm.totalPaid(_vm.sales)))
-                      ]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [
                         _vm._v(
                           "\n                  " +
-                            _vm._s(_vm.totalCommission(_vm.sales)) +
+                            _vm._s(_vm.totalAmount(_vm.transactions)) +
                             "\n                "
                         )
                       ])
@@ -896,12 +895,12 @@ var render = function() {
                   ])
                 ]
               )
-            ]
-          )
+            ])
+          ])
         ])
       ])
-    ])
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -909,7 +908,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2c366d6c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0bc71fa9", module.exports)
   }
 }
 

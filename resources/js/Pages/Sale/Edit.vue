@@ -257,15 +257,27 @@
                         </th>
                       </tr>
                       <tr>
-                        <th class="text-right">{{ __('Reference Code') }}</th>
+                        <th class="text-right">{{ __("Reference Code") }}</th>
                         <td>
-                          <input type="text" @change="fetchCommission" v-model="sale.reference_code" class="form-control" :placeholder="__('Reference Code')">
+                          <input
+                            type="text"
+                            @change="fetchCommission"
+                            v-model="sale.reference_code"
+                            class="form-control"
+                            :placeholder="__('Reference Code')"
+                          />
                         </td>
                       </tr>
                       <tr>
-                        <th class="text-right">{{ __('Commission') }}</th>
+                        <th class="text-right">{{ __("Commission") }}</th>
                         <td>
-                          <input type="text" readonly v-model="sale.commission" class="form-control" :placeholder="__('Commission')">
+                          <input
+                            type="text"
+                            readonly
+                            v-model="sale.commission"
+                            class="form-control"
+                            :placeholder="__('Commission')"
+                          />
                         </td>
                       </tr>
                       <tr>
@@ -307,9 +319,13 @@
                       </tr>
                       <tr>
                         <th colspan="2" class="text-right">
-                          <inertia-link :href="route('sales.invoices.show', sale.invoice)" class="btn btn-primary">
-                          <i class="feather icon-arrow-left"></i> {{ __("Back") }}
-                        </inertia-link>
+                          <inertia-link
+                            :href="route('sales.invoices.show', sale.invoice)"
+                            class="btn btn-primary"
+                          >
+                            <i class="feather icon-arrow-left"></i>
+                            {{ __("Back") }}
+                          </inertia-link>
                           <button type="submit" class="btn btn-success">
                             <i class="feather icon-printer"></i>
                             {{ __("Update") }}
@@ -362,7 +378,10 @@ export default {
             this.route("drivers.invoices.commissions", this.sale.reference_code)
           )
           .then(({ data }) => {
-            this.sale.commission = data.commission == '' ? 0.00 : parseFloat(data.commission).toFixed(2);
+            this.sale.commission =
+              data.commission == ""
+                ? 0.0
+                : parseFloat(data.commission).toFixed(2);
           })
           .catch((err) => {
             console.log(err);
@@ -371,34 +390,27 @@ export default {
     },
     calculateTotalWhenQuantityChange: function (index) {
       const selectedRow = this.sale.sale_details[index];
-      const selectedProduct = this.sale.sale_details[index].product;
       if (this.sale.sale_details[index].product) {
         this.sale.sale_details[index].product.quantity -= selectedRow.quantity;
       }
-      if (selectedRow.price !== "") {
-        let price = 0;
-        if (selectedRow.quantity !== "") {
-          price =
-            parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
-        }
-        selectedRow.amount = parseFloat(price).toFixed(2);
-        this.sale.sale_details[index] = selectedRow;
-      }
+
+      let price = selectedRow.price == "" ? "0.00" : selectedRow.price;
+      let quantity = selectedRow.quantity == "" ? "0.00" : selectedRow.quantity;
+
+      let total = parseFloat(price) * parseFloat(quantity);
+      selectedRow.total = parseFloat(total).toFixed(2);
+      this.form.sale_details[index] = selectedRow;
       this.calculateTotal();
     },
     calculateTotalWhenPriceChange: function (index) {
       const selectedRow = this.sale.sale_details[index];
-      if (selectedRow.quantity !== "") {
-        let price = 0;
-        if (selectedRow.price !== "") {
-          price =
-            parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
-        }
-        selectedRow.amount = parseFloat(price).toFixed(2);
-        this.sale.sale_details[index] = selectedRow;
-      } else {
-        alert("Quantity must not be empty!");
-      }
+
+      let price = selectedRow.price == "" ? "0.00" : selectedRow.price;
+      let quantity = selectedRow.quantity == "" ? "0.00" : selectedRow.quantity;
+
+      let total = parseFloat(price) * parseFloat(quantity);
+      selectedRow.total = parseFloat(total).toFixed(2);
+      this.form.sale_details[index] = selectedRow;
       this.calculateTotal();
     },
     calculateTotal: async function () {
@@ -407,20 +419,15 @@ export default {
         0
       );
       this.sale.total_price = parseFloat(total_price).toFixed(2);
-      let total_due =
-        parseFloat(total_price) - parseFloat(this.sale.total_paid);
-      this.sale.total_due = parseFloat(total_due).toFixed(2);
+      this.calculateDue();
     },
     calculateDue: function () {
-      if (this.sale.total_price !== "") {
-        let total_due = 0;
-        if (this.sale.total_paid !== "") {
-          total_due =
-            parseFloat(this.sale.total_price) -
-            parseFloat(this.sale.total_paid);
-        }
-        this.sale.total_due = parseFloat(total_due).toFixed(2);
-      }
+      let total_price =
+        this.sale.total_price == "" ? "0.00" : this.sale.total_price;
+      let total_paid =
+        this.sale.total_paid == "" ? "0.00" : this.sale.total_paid;
+      let total_due = parseFloat(total_price) - parseFloat(total_paid);
+      this.sale.total_due = parseFloat(total_due).toFixed(2);
     },
     update: async function () {
       let errors = this.isValid();

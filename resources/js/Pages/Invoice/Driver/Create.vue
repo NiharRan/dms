@@ -110,6 +110,7 @@
                     <input
                       type="text"
                       v-model="form.driver_phone"
+                      maxlength="11"
                       :class="[errors.driver_phone ? 'in-invalid' : '']"
                       :placeholder="__('Driver Contact No.')"
                       class="form-control"
@@ -182,17 +183,9 @@
                           class="row"
                           v-if="
                             form.measurement_type &&
-                            form.measurement_type.id === 2
+                            form.measurement_type.id === 1
                           "
                         >
-                          <div class="col-md-4 col-4">
-                            <input
-                              type="text"
-                              v-model="form.container_height"
-                              :placeholder="__('Height')"
-                              class="form-control"
-                            />
-                          </div>
                           <div class="col-md-4 col-4">
                             <input
                               type="text"
@@ -206,6 +199,14 @@
                               type="text"
                               v-model="form.container_breadth"
                               :placeholder="__('Breadth')"
+                              class="form-control"
+                            />
+                          </div>
+                          <div class="col-md-4 col-4">
+                            <input
+                              type="text"
+                              v-model="form.container_height"
+                              :placeholder="__('Height')"
                               class="form-control"
                             />
                           </div>

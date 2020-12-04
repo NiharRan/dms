@@ -363,7 +363,7 @@ export default {
       form: {
         id: "",
         total_price: "0.00",
-        total_paid: "0.00",
+        total_paid: "",
         total_due: "0.00",
         company: null,
         transaction_media: null,
@@ -386,7 +386,10 @@ export default {
             this.route("drivers.invoices.commissions", this.form.reference_code)
           )
           .then(({ data }) => {
-            this.form.commission = data.commission == '' ? 0.00 : parseFloat(data.commission).toFixed(2);
+            this.form.commission =
+              data.commission == ""
+                ? 0.0
+                : parseFloat(data.commission).toFixed(2);
           })
           .catch((err) => {
             console.log(err);
@@ -396,33 +399,25 @@ export default {
     calculateTotalWhenQuantityChange: function (index) {
       const selectedRow = this.form.sale_details[index];
       const selectedProduct = this.form.sale_details[index].product;
-      if (selectedProduct) {
-        selectedProduct.quantity -= selectedRow.quantity;
-      }
-      if (selectedRow.price !== "") {
-        let price = 0;
-        if (selectedRow.quantity !== "") {
-          price =
-            parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
-        }
-        selectedRow.total = parseFloat(price).toFixed(2);
-        this.form.sale_details[index] = selectedRow;
-      }
+
+      let price = selectedRow.price == "" ? "0.00" : selectedRow.price;
+      let quantity = selectedRow.quantity == "" ? "0.00" : selectedRow.quantity;
+
+      let total = parseFloat(price) * parseFloat(quantity);
+      selectedRow.total = parseFloat(total).toFixed(2);
+      this.form.sale_details[index] = selectedRow;
       this.calculateTotal();
     },
     calculateTotalWhenPriceChange: function (index) {
       const selectedRow = this.form.sale_details[index];
-      if (selectedRow.quantity !== "") {
-        let price = 0;
-        if (selectedRow.price !== "") {
-          price =
-            parseFloat(selectedRow.quantity) * parseFloat(selectedRow.price);
-        }
-        selectedRow.total = parseFloat(price).toFixed(2);
-        this.form.sale_details[index] = selectedRow;
-      } else {
-        alert("Quantity must not be empty!");
-      }
+
+      let price = selectedRow.price == "" ? "0.00" : selectedRow.price;
+      let quantity = selectedRow.quantity == "" ? "0.00" : selectedRow.quantity;
+
+      let total = parseFloat(price) * parseFloat(quantity);
+      selectedRow.total = parseFloat(total).toFixed(2);
+      this.form.sale_details[index] = selectedRow;
+
       this.calculateTotal();
     },
     calculateTotal: async function () {
@@ -431,20 +426,15 @@ export default {
         0
       );
       this.form.total_price = parseFloat(total_price).toFixed(2);
-      let total_due =
-        parseFloat(total_price) - parseFloat(this.form.total_paid);
-      this.form.total_due = parseFloat(total_due).toFixed(2);
+      this.calculateDue();
     },
     calculateDue: function () {
-      if (this.form.total_price !== "") {
-        let total_due = 0;
-        if (this.form.total_paid !== "") {
-          total_due =
-            parseFloat(this.form.total_price) -
-            parseFloat(this.form.total_paid);
-        }
-        this.form.total_due = parseFloat(total_due).toFixed(2);
-      }
+      let total_price =
+        this.form.total_price == "" ? "0.00" : this.form.total_price;
+      let total_paid =
+        this.form.total_paid == "" ? "0.00" : this.form.total_paid;
+      let total_due = parseFloat(total_price) - parseFloat(total_paid);
+      this.form.total_due = parseFloat(total_due).toFixed(2);
     },
     cleanForm: function () {
       Object.keys(this.errors).forEach((key, value) => {
@@ -489,6 +479,7 @@ export default {
             transaction_media_id: transaction_media_id,
             company_id: this.company.id,
             sale_date: this.form.sale_date,
+            commission: this.form.commission,
             stocks: stocks,
             products: products,
             tracks: tracks,
@@ -512,7 +503,7 @@ export default {
         stock: null,
         product: null,
         quantity: "",
-        price: "0.00",
+        price: "",
         total: "0.00",
         track_no: "",
       };

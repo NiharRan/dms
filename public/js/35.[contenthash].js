@@ -1,18 +1,18 @@
 webpackJsonp([35],{
 
-/***/ 167:
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(357)
+  __webpack_require__(362)
 }
-var normalizeComponent = __webpack_require__(230)
+var normalizeComponent = __webpack_require__(231)
 /* script */
-var __vue_script__ = __webpack_require__(359)
+var __vue_script__ = __webpack_require__(364)
 /* template */
-var __vue_template__ = __webpack_require__(360)
+var __vue_template__ = __webpack_require__(365)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -71,7 +71,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(231)
+var listToStyles = __webpack_require__(232)
 
 /*
 type StyleObject = {
@@ -281,7 +281,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 230:
+/***/ 231:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -391,7 +391,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 231:
+/***/ 232:
 /***/ (function(module, exports) {
 
 /**
@@ -425,17 +425,17 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 357:
+/***/ 362:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(358);
+var content = __webpack_require__(363);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(229)("7753108a", content, false, {});
+var update = __webpack_require__(230)("7753108a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 358:
+/***/ 363:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -460,14 +460,14 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n.mt-200 {\n  margin-top: 200px;\n}\n.mb-200 {\n  margin-top: 200px;\n}\n.controller {\n  right: 10px;\n  top: 10px;\n  border: 1px solid #d0d0d0;\n  border-radius: 4px;\n  padding: 10px;\n  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);\n          box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);\n}\nbody {\n  -webkit-print-color-adjust: exact !important;\n}\n* {\n  font-family: \"SolaimanLipi\", sans-serif;\n  font-size: 20px !important;\n}\n.owner {\n  background-color: #000 !important;\n  color: #fff;\n  font-weight: bold;\n  padding: 5px 10px;\n  border-radius: 16px;\n  font-size: 18px;\n}\n.signature {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n}\n@media print {\n.table {\n    border-bottom: 1px solid #0b0b0b !important;\n}\n.controller {\n    display: none;\n}\n}\n", ""]);
+exports.push([module.i, "\n.mt-200 {\n  margin-top: 200px;\n}\n.mb-200 {\n  margin-top: 200px;\n}\n.controller {\n  right: 10px;\n  top: 10px;\n  border: 1px solid #d0d0d0;\n  border-radius: 4px;\n  padding: 10px;\n  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);\n          box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);\n}\nbody {\n  -webkit-print-color-adjust: exact !important;\n}\n* {\n  font-family: \"SolaimanLipi\", sans-serif;\n  font-size: 20px !important;\n}\n.owner {\n  background-color: #000 !important;\n  color: #fff;\n  font-weight: bold;\n  padding: 5px 10px;\n  border-radius: 16px;\n  font-size: 18px;\n}\n.signature {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n}\n@media print {\n.table th,\n  .table td {\n    padding: 0.5rem !important;\n}\n.table-bordered {\n    border: 1px solid #333 !important;\n}\ntd,\n  th {\n    font-size: 14px !important;\n}\n.bt {\n    border-top: 1px solid #0b0b0b !important;\n}\n.controller {\n    display: none;\n}\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 359:
+/***/ 364:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -663,7 +663,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 360:
+/***/ 365:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -956,131 +956,137 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _c("table", { staticClass: "table font-medium-3 mt-2" }, [
-                _c("thead", [
-                  _c("tr", [
-                    _c("th", [
-                      _vm._v(_vm._s(_vm.__("Description of Products")))
-                    ]),
-                    _vm._v(" "),
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v(_vm._s(_vm.__("Measurement Type")))
-                    ]),
-                    _vm._v(" "),
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v(
-                        "\n                  " +
-                          _vm._s(_vm.__("Height")) +
-                          " * " +
-                          _vm._s(_vm.__("Length")) +
-                          " *\n                  " +
-                          _vm._s(_vm.__("Breadth")) +
-                          "\n                "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v(_vm._s(_vm.__("Quantity")))
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("tbody", [
-                  _c("tr", [
-                    _c("th", [_vm._v(_vm._s(_vm.driver_invoice.product.name))]),
-                    _vm._v(" "),
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v(
-                        "\n                  " +
-                          _vm._s(_vm.driver_invoice.measurement_type.name) +
-                          "\n                "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v(
-                        "\n                  " +
-                          _vm._s(_vm.driver_invoice.container_height) +
-                          " *\n                  " +
-                          _vm._s(_vm.driver_invoice.container_length) +
-                          " *\n                  " +
-                          _vm._s(_vm.driver_invoice.container_breadth) +
-                          "\n                "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v(_vm._s(_vm.driver_invoice.quantity))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", [_vm._v(_vm._s(_vm.__("Track Rent")))]),
-                    _vm._v(" "),
-                    _c("th"),
-                    _vm._v(" "),
-                    _c("th"),
-                    _vm._v(" "),
-                    _c("th", { staticClass: "text-right" }, [
-                      _vm._v(_vm._s(_vm.driver_invoice.track_rent))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", [_vm._v(_vm._s(_vm.__("Others")))]),
-                    _vm._v(" "),
-                    _c("th"),
-                    _vm._v(" "),
-                    _c("th"),
-                    _vm._v(" "),
-                    _c("th", { staticClass: "text-right" }, [
-                      _vm._v(_vm._s(_vm.driver_invoice.others))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c(
-                      "th",
-                      { staticClass: "text-right", attrs: { colspan: "3" } },
-                      [
+              _c(
+                "table",
+                { staticClass: "table table-bordered font-medium-3 mt-2" },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", [
+                        _vm._v(_vm._s(_vm.__("Description of Products")))
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-center" }, [
+                        _vm._v(_vm._s(_vm.__("Measurement Type")))
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-center" }, [
                         _vm._v(
                           "\n                  " +
-                            _vm._s(_vm.__("Total Amount")) +
+                            _vm._s(_vm.__("Height")) +
+                            " * " +
+                            _vm._s(_vm.__("Length")) +
+                            " *\n                  " +
+                            _vm._s(_vm.__("Breadth")) +
                             "\n                "
                         )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("th", { staticClass: "text-right" }, [
-                      _vm._v(_vm._s(_vm.driver_invoice.total))
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-center" }, [
+                        _vm._v(_vm._s(_vm.__("Quantity")))
+                      ])
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("tr", [
-                    _c(
-                      "th",
-                      { staticClass: "text-right", attrs: { colspan: "3" } },
-                      [_vm._v(_vm._s(_vm.__("Borrow")))]
-                    ),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("th", [
+                        _vm._v(_vm._s(_vm.driver_invoice.product.name))
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-center" }, [
+                        _vm._v(
+                          "\n                  " +
+                            _vm._s(_vm.driver_invoice.measurement_type.name) +
+                            "\n                "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-center" }, [
+                        _vm._v(
+                          "\n                  " +
+                            _vm._s(_vm.driver_invoice.container_height) +
+                            " *\n                  " +
+                            _vm._s(_vm.driver_invoice.container_length) +
+                            " *\n                  " +
+                            _vm._s(_vm.driver_invoice.container_breadth) +
+                            "\n                "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-center" }, [
+                        _vm._v(_vm._s(_vm.driver_invoice.quantity))
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c("th", { staticClass: "text-right" }, [
-                      _vm._v(_vm._s(_vm.driver_invoice.borrow))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c(
-                      "th",
-                      { staticClass: "text-right", attrs: { colspan: "3" } },
-                      [_vm._v(_vm._s(_vm.__("Final")))]
-                    ),
+                    _c("tr", [
+                      _c("th", [_vm._v(_vm._s(_vm.__("Track Rent")))]),
+                      _vm._v(" "),
+                      _c("th"),
+                      _vm._v(" "),
+                      _c("th"),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-right" }, [
+                        _vm._v(_vm._s(_vm.driver_invoice.track_rent))
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c("th", { staticClass: "text-right" }, [
-                      _vm._v(_vm._s(_vm.driver_invoice.final))
+                    _c("tr", [
+                      _c("th", [_vm._v(_vm._s(_vm.__("Others")))]),
+                      _vm._v(" "),
+                      _c("th"),
+                      _vm._v(" "),
+                      _c("th"),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-right" }, [
+                        _vm._v(_vm._s(_vm.driver_invoice.others))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c(
+                        "th",
+                        { staticClass: "text-right", attrs: { colspan: "3" } },
+                        [
+                          _vm._v(
+                            "\n                  " +
+                              _vm._s(_vm.__("Total Amount")) +
+                              "\n                "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-right" }, [
+                        _vm._v(_vm._s(_vm.driver_invoice.total))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c(
+                        "th",
+                        { staticClass: "text-right", attrs: { colspan: "3" } },
+                        [_vm._v(_vm._s(_vm.__("Borrow")))]
+                      ),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-right" }, [
+                        _vm._v(_vm._s(_vm.driver_invoice.borrow))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c(
+                        "th",
+                        { staticClass: "text-right", attrs: { colspan: "3" } },
+                        [_vm._v(_vm._s(_vm.__("Final")))]
+                      ),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-right" }, [
+                        _vm._v(_vm._s(_vm.driver_invoice.final))
+                      ])
                     ])
                   ])
-                ])
-              ])
+                ]
+              )
             ]
           ),
           _vm._v(" "),

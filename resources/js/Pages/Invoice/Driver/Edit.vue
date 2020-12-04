@@ -109,6 +109,7 @@
                     >
                     <input
                       type="text"
+                      maxlength="11"
                       v-model="driver_invoice.driver_phone"
                       :class="[errors.driver_phone ? 'in-invalid' : '']"
                       :placeholder="__('Driver Contact No.')"
@@ -174,17 +175,9 @@
                           class="row"
                           v-if="
                             driver_invoice.measurement_type &&
-                            driver_invoice.measurement_type.id === 2
+                            driver_invoice.measurement_type.id === 1
                           "
                         >
-                          <div class="col-md-4 col-4">
-                            <input
-                              type="text"
-                              v-model="driver_invoice.container_height"
-                              :placeholder="__('Height')"
-                              class="form-controll"
-                            />
-                          </div>
                           <div class="col-md-4 col-4">
                             <input
                               type="text"
@@ -198,6 +191,14 @@
                               type="text"
                               v-model="driver_invoice.container_breadth"
                               :placeholder="__('Breadth')"
+                              class="form-controll"
+                            />
+                          </div>
+                          <div class="col-md-4 col-4">
+                            <input
+                              type="text"
+                              v-model="driver_invoice.container_height"
+                              :placeholder="__('Height')"
                               class="form-controll"
                             />
                           </div>

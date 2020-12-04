@@ -1,5 +1,5 @@
 <template>
-  <div class="invoice-card card">
+  <div class="invoice-card card" :class="[!hasHeader ? 'page-gap' : '']">
     <div class="card-content">
       <div class="card-body">
         <div class="invoice">
@@ -61,7 +61,7 @@
               {{ __("Print") }}
             </button>
           </div>
-          <div class="invoice-body" :class="[hasHeader ? 'mt-0' : 'mt-200']">
+          <div class="invoice-body">
             <table class="table table-bordered font-medium-3">
               <thead>
                 <tr>

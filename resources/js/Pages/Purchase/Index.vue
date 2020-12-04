@@ -44,7 +44,7 @@
           </div>
         </div>
       </div>
-      <model :size="'modal-lg'">
+      <model :size="!editMode ? 'modal-lg' : ''">
         <template v-slot:header>
           <h4 class="modal-title" id="myModalLabel1">{{ modelTitle }}</h4>
           <button type="button" @click="cleanForm" class="close" data-dismiss="modal" aria-label="Close">
@@ -60,7 +60,7 @@
                 </div>
               </div>
               <div class="form-group row">
-                <div class="col-md-6 col-12">
+                <div class="col-md-6 col-12" v-if="!editMode">
                   <label>{{ __('Stock') }}</label>
                   <multi-select
                       v-model="form.stock"
@@ -75,7 +75,7 @@
                       <strong>{{ errors.stock_id[0] }}</strong>
                   </span>
                 </div>
-                <div class="col-md-6 col-12">
+                <div class="col-md-6 col-12" v-if="!editMode">
                   <label>{{ __('Product') }}</label>
                   <multi-select
                       v-model="form.product"
@@ -93,33 +93,36 @@
               </div>
 
               <div class="form-group row mb-0">
-                <div class="col-md-4 col-12">
+                <div class="col-md-4 col-12" v-if="!editMode">
                   <label>{{ __('Quantity') }}</label>
                   <input type="text" v-model="form.quantity" class="form-control" :placeholder="__('Quantity')">
                   <span v-if="errors.quantity" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.quantity[0] }}</strong>
                   </span>
                 </div>
-                <div class="col-md-4 col-12">
+                <div class="col-md-4 col-12" v-if="!editMode">
                   <label>{{ __('Ship') }}</label>
-                  <input type="text" v-model="form.ship" class="form-control" :placeholder="__('Ship')">
+                  <input type="text" v-model="form.ship" class="form-control text-uppercase" :placeholder="__('Ship')">
                   <span v-if="errors.ship" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.ship[0] }}</strong>
                   </span>
                 </div>
-                <div class="col-md-4 col-12">
+                <div class="col-md-4 col-12" v-if="!editMode">
                   <label>{{ __('Company') }}</label>
-                  <input type="text" v-model="form.company" class="form-control" :placeholder="__('Company')">
+                  <input type="text" v-model="form.company" class="form-control text-uppercase" :placeholder="__('Company')">
                   <span v-if="errors.company" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.company[0] }}</strong>
                   </span>
                 </div>
-              </div>
 
-              <label class="float-left mt-2" v-if="editMode">
-                <input type="checkbox" v-model="form.status" :checked="[form.status ? true : false]">
-                {{ form.status ? __('Active') : __('Inactive') }}
-              </label>
+                <div class="col-12" v-if="editMode">
+                  <label>{{ __('Staus') }}</label>
+                  <select class="form-control" v-model="form.status">
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+                  </select>
+                </div>
+              </div>
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-success waves-effect waves-light">{{ editMode ? __('Update') : __('Create') }}</button>
@@ -163,7 +166,7 @@
         },
         methods: {
           setData: function (data) {
-            this.modelTitle = `Edit ${data.name}'s Information`;
+            this.modelTitle = `Update Stock Status`;
             this.editMode = true;
             this.form.stock = data.stock;
             this.form.product = data.product;

@@ -12,7 +12,7 @@
               </div>
 
               <div class="table-responsive">
-                <table id="data-table" class="table table-bordered display responsive nowrap mb-0" style="width: 100%">
+                <table id="data-table" class="table table-bordered display responsive nowrap mb-0" style="width: 150%">
                   <thead>
                   <tr>
                     <th colspan="2">
@@ -41,7 +41,7 @@
                   <tbody v-if="products.data.length > 0">
                   <tr v-for="(product, index) in products.data" :key="product.id">
                     <th style="width: 50px">{{ index + 1 }}</th>
-                    <th style="width: 150px;">
+                    <th style="width: 80px;">
                       <img style="width: 100%" :src="product.image_small" :alt="product.name">
                     </th>
                     <th>{{ product.name }}</th>

@@ -19,13 +19,14 @@
                 >
                   <thead>
                     <tr>
-                        <th colspan="6" class="text-center">
+                        <th colspan="5" class="text-center">
                             <h1 class="text-success mb-0">{{ stock_details.stock.name }}</h1>
                             <p class="mb-0">{{ stock_details.stock.address }}</p>
                             <span class="badge badge-success">{{ stock_details.product.name }}</span>
                         </th>
                         <th class="text-center">
                             <inertia-link :href="route('stock-details.index')" class="btn btn-primary">{{ __('Back') }}</inertia-link>
+                            <inertia-link target="_blank" :href="route('stock-details.history.print', stock_details.id)" class="btn btn-info"><i class="feather icon-printer"></i> {{ __('Print') }}</inertia-link>
                         </th>
                     </tr>
                     <tr>
@@ -34,8 +35,7 @@
                       <th class="text-center">{{ __("Quantity") }}</th>
                       <th class="text-center">{{ __("Ship") }}</th>
                       <th class="text-center">{{ __("Company") }}</th>
-                      <th>{{ __("Status") }}</th>
-                      <th class="text-center">{{ __("Action") }}</th>
+                      <th class="text-center">{{ __("Status") }}</th>
                     </tr>
                   </thead>
                   <tbody v-if="stock_details_histories.data.length > 0">
@@ -48,17 +48,7 @@
                       <th class="text-center">{{ history.quantity }} {{ __('Mg')}}</th>
                       <th class="text-center">{{ history.ship }}</th>
                       <th class="text-center">{{ history.company }}</th>
-                      <td v-html="$options.filters.status(history.status)"></td>
-                      <td class="text-center">
-                        <a
-                          @click.prevent="setData(history)"
-                          :title="__('Edit')"
-                          href=""
-                          class="text-primary"
-                          role="button"
-                          ><i class="feather icon-edit"></i
-                        ></a>
-                      </td>
+                      <td class="text-center" v-html="$options.filters.status(history.status)"></td>
                     </tr>
                   </tbody>
                 </table>

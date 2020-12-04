@@ -1,19 +1,19 @@
 webpackJsonp([47],{
 
-/***/ 164:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(337)
-  __webpack_require__(339)
+  __webpack_require__(356)
+  __webpack_require__(358)
 }
-var normalizeComponent = __webpack_require__(230)
+var normalizeComponent = __webpack_require__(231)
 /* script */
-var __vue_script__ = __webpack_require__(341)
+var __vue_script__ = __webpack_require__(360)
 /* template */
-var __vue_template__ = __webpack_require__(342)
+var __vue_template__ = __webpack_require__(361)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30,7 +30,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/Pages/Invoice/Driver/Edit.vue"
+Component.options.__file = "resources/js/Pages/Invoice/Driver/Invoice.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -39,9 +39,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-49340a16", Component.options)
+    hotAPI.createRecord("data-v-2d119451", Component.options)
   } else {
-    hotAPI.reload("data-v-49340a16", Component.options)
+    hotAPI.reload("data-v-2d119451", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -53,7 +53,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -72,7 +72,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(231)
+var listToStyles = __webpack_require__(232)
 
 /*
 type StyleObject = {
@@ -282,7 +282,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 230:
+/***/ 231:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -392,7 +392,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 231:
+/***/ 232:
 /***/ (function(module, exports) {
 
 /**
@@ -426,19 +426,19 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 232:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(233)
+  __webpack_require__(234)
 }
-var normalizeComponent = __webpack_require__(230)
+var normalizeComponent = __webpack_require__(231)
 /* script */
-var __vue_script__ = __webpack_require__(235)
+var __vue_script__ = __webpack_require__(236)
 /* template */
-var __vue_template__ = __webpack_require__(236)
+var __vue_template__ = __webpack_require__(237)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -478,17 +478,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 233:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(234);
+var content = __webpack_require__(235);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(229)("03a0949b", content, false, {});
+var update = __webpack_require__(230)("03a0949b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -505,7 +505,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 234:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -520,7 +520,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 235:
+/***/ 236:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -558,7 +558,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 236:
+/***/ 237:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -640,19 +640,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 237:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(238)
+  __webpack_require__(239)
 }
-var normalizeComponent = __webpack_require__(230)
+var normalizeComponent = __webpack_require__(231)
 /* script */
-var __vue_script__ = __webpack_require__(240)
+var __vue_script__ = __webpack_require__(241)
 /* template */
-var __vue_template__ = __webpack_require__(256)
+var __vue_template__ = __webpack_require__(257)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -692,17 +692,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 238:
+/***/ 239:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(239);
+var content = __webpack_require__(240);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(229)("24565851", content, false, {});
+var update = __webpack_require__(230)("24565851", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -719,7 +719,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 239:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -734,18 +734,18 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 240:
+/***/ 241:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Sidebar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar__ = __webpack_require__(247);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Navbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter__ = __webpack_require__(233);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__AppFooter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb__ = __webpack_require__(252);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Breadcrumb__);
 //
 //
@@ -812,19 +812,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 241:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(242)
+  __webpack_require__(243)
 }
-var normalizeComponent = __webpack_require__(230)
+var normalizeComponent = __webpack_require__(231)
 /* script */
-var __vue_script__ = __webpack_require__(244)
+var __vue_script__ = __webpack_require__(245)
 /* template */
-var __vue_template__ = __webpack_require__(245)
+var __vue_template__ = __webpack_require__(246)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -864,17 +864,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 242:
+/***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(243);
+var content = __webpack_require__(244);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(229)("880366ac", content, false, {});
+var update = __webpack_require__(230)("880366ac", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -891,7 +891,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 243:
+/***/ 244:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -906,7 +906,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 244:
+/***/ 245:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1105,7 +1105,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 245:
+/***/ 246:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1694,19 +1694,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 246:
+/***/ 247:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(247)
+  __webpack_require__(248)
 }
-var normalizeComponent = __webpack_require__(230)
+var normalizeComponent = __webpack_require__(231)
 /* script */
-var __vue_script__ = __webpack_require__(249)
+var __vue_script__ = __webpack_require__(250)
 /* template */
-var __vue_template__ = __webpack_require__(250)
+var __vue_template__ = __webpack_require__(251)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1746,17 +1746,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 247:
+/***/ 248:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(248);
+var content = __webpack_require__(249);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(229)("629be114", content, false, {});
+var update = __webpack_require__(230)("629be114", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1773,7 +1773,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 248:
+/***/ 249:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -1788,7 +1788,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 249:
+/***/ 250:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1873,7 +1873,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 250:
+/***/ 251:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2176,19 +2176,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 251:
+/***/ 252:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(252)
+  __webpack_require__(253)
 }
-var normalizeComponent = __webpack_require__(230)
+var normalizeComponent = __webpack_require__(231)
 /* script */
-var __vue_script__ = __webpack_require__(254)
+var __vue_script__ = __webpack_require__(255)
 /* template */
-var __vue_template__ = __webpack_require__(255)
+var __vue_template__ = __webpack_require__(256)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2228,17 +2228,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 252:
+/***/ 253:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(253);
+var content = __webpack_require__(254);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(229)("c3dd8234", content, false, {});
+var update = __webpack_require__(230)("c3dd8234", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2255,7 +2255,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 253:
+/***/ 254:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2270,7 +2270,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 254:
+/***/ 255:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2313,7 +2313,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 255:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2427,7 +2427,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 256:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2513,19 +2513,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 257:
+/***/ 258:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(258)
+  __webpack_require__(259)
 }
-var normalizeComponent = __webpack_require__(230)
+var normalizeComponent = __webpack_require__(231)
 /* script */
-var __vue_script__ = __webpack_require__(260)
+var __vue_script__ = __webpack_require__(261)
 /* template */
-var __vue_template__ = __webpack_require__(261)
+var __vue_template__ = __webpack_require__(262)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2565,17 +2565,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 258:
+/***/ 259:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(259);
+var content = __webpack_require__(260);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(229)("71b6ec7e", content, false, {});
+var update = __webpack_require__(230)("71b6ec7e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2592,7 +2592,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 259:
+/***/ 260:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2607,7 +2607,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 
 /***/ }),
 
-/***/ 260:
+/***/ 261:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2637,7 +2637,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 261:
+/***/ 262:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2693,23 +2693,23 @@ if (false) {
 
 /***/ }),
 
-/***/ 337:
+/***/ 356:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(338);
+var content = __webpack_require__(357);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(229)("73064468", content, false, {});
+var update = __webpack_require__(230)("113181df", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-49340a16\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
-     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-49340a16\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
+   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d119451\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
+     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d119451\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -2720,7 +2720,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 338:
+/***/ 357:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2735,23 +2735,23 @@ exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n
 
 /***/ }),
 
-/***/ 339:
+/***/ 358:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(340);
+var content = __webpack_require__(359);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(229)("16961b66", content, false, {});
+var update = __webpack_require__(230)("66d8de1e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-49340a16\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./Edit.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-49340a16\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./Edit.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d119451\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./Invoice.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d119451\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./Invoice.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -2762,7 +2762,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 340:
+/***/ 359:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2770,121 +2770,22 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n* {\n  font-family: \"SolaimanLipi\", sans-serif;\n}\n.table {\n  border-bottom: 1px solid #0b0b0b !important;\n}\n.owner {\n  background-color: black;\n  color: #fff;\n  font-weight: bold;\n  padding: 5px 10px;\n  border-radius: 16px;\n  font-size: 18px;\n}\n@media print {\n.owner {\n    background-color: black !important;\n    color: #fff !important;\n    font-weight: bold !important;\n}\n.main-menu,\n  .header-navbar-shadow,\n  .content-header,\n  .info-card,\n  .invoice-card .card-header,\n  .card-footer,\n  .footer {\n    display: none !important;\n    visibility: hidden !important;\n}\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 341:
+/***/ 360:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Shared_Layout__ = __webpack_require__(237);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Shared_Layout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Shared_Layout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Components_Model__ = __webpack_require__(257);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Components_Model___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Components_Model__);
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Shared_Layout__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Components_Model__);
 //
 //
 //
@@ -3124,703 +3025,388 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "DriverInvoiceCreate",
+  name: "DriverInvoiceShow",
   components: {
-    Model: __WEBPACK_IMPORTED_MODULE_2__Components_Model___default.a,
-    Layout: __WEBPACK_IMPORTED_MODULE_1__Shared_Layout___default.a
+    Layout: __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default.a,
+    Model: __WEBPACK_IMPORTED_MODULE_1__Components_Model___default.a
   },
   props: {
     success: String,
     driver_invoice: Object,
-    clients: Array,
-    products: Array,
-    load: Object,
-    measurement_types: Array,
     errors: Object
   },
   data: function data() {
     return {};
   },
   methods: {
-    showInfo: function showInfo(data) {
-      this.driver_invoice.client_phone = data.phone;
-      this.driver_invoice.client_address = data.address;
-    },
-    calculateTotal: function calculateTotal() {
-      var track_rent = this.driver_invoice.track_rent === "" || this.driver_invoice.track_rent === null ? 0 : this.driver_invoice.track_rent;
-      var quantity = this.driver_invoice.quantity === "" || this.driver_invoice.quantity === null ? 0 : this.driver_invoice.quantity;
-      var others = this.driver_invoice.others === "" || this.driver_invoice.others === null ? 0 : this.driver_invoice.others;
-      var borrow = this.driver_invoice.borrow === "" || this.driver_invoice.borrow === null ? 0 : this.driver_invoice.borrow;
-      var total = (parseFloat(track_rent) + parseFloat(this.load.amount)) * parseFloat(quantity) + parseFloat(others);
-
-      var _final = total - parseFloat(borrow);
-
-      this.driver_invoice.total = parseFloat(total).toFixed(2);
-      this.driver_invoice["final"] = parseFloat(_final).toFixed(2);
-      this.calculateCommission();
-    },
-    calculateCommission: function calculateCommission() {
-      var quantity = this.driver_invoice.quantity === "" ? 0 : this.driver_invoice.quantity;
-      var commission = parseFloat(this.load.stock_rent) + parseFloat(this.load.amount) * parseFloat(quantity);
-      this.driver_invoice.commission = parseFloat(commission).toFixed(2);
-      console.log(this.driver_invoice.commission);
-    },
-    calculateFinal: function calculateFinal() {
-      var total = this.driver_invoice.total == "" || this.driver_invoice.total == null ? 0 : this.driver_invoice.total;
-      var borrow = this.driver_invoice.borrow == "" || this.driver_invoice.borrow == null ? 0 : this.driver_invoice.borrow;
-
-      var _final2 = parseFloat(total) - parseFloat(borrow);
-
-      this.driver_invoice["final"] = parseFloat(_final2).toFixed(2);
-    },
-    update: function () {
-      var _update = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee() {
-        var self, client_id, load_id, product_id, measurement_type_id;
-        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                self = this;
-                client_id = this.driver_invoice.client ? this.driver_invoice.client.id : "";
-                load_id = this.load ? this.load.id : "";
-                product_id = this.driver_invoice.product ? this.driver_invoice.product.id : "";
-                measurement_type_id = this.driver_invoice.measurement_type ? this.driver_invoice.measurement_type.id : "";
-                this.$inertia.put(this.route("drivers.invoices.update", this.driver_invoice.id), {
-                  client_id: client_id,
-                  client_address: this.driver_invoice.client_address,
-                  client_phone: this.driver_invoice.client_phone,
-                  load_id: load_id,
-                  company_id: this.driver_invoice.company.id,
-                  driver_name: this.driver_invoice.driver_name,
-                  track_no: this.driver_invoice.track_no,
-                  driver_phone: this.driver_invoice.driver_phone,
-                  product_id: product_id,
-                  measurement_type_id: measurement_type_id,
-                  container_height: this.driver_invoice.container_height,
-                  container_length: this.driver_invoice.container_length,
-                  container_breadth: this.driver_invoice.container_breadth,
-                  quantity: this.driver_invoice.quantity,
-                  scale: this.driver_invoice.scale,
-                  track_rent: this.driver_invoice.track_rent,
-                  others: this.driver_invoice.others,
-                  total: this.driver_invoice.total,
-                  borrow: this.driver_invoice.borrow,
-                  "final": this.driver_invoice["final"],
-                  commission: this.driver_invoice.commission,
-                  reference: this.driver_invoice.reference
-                });
-
-              case 6:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function update() {
-        return _update.apply(this, arguments);
-      }
-
-      return update;
-    }()
+    printPage: function printPage() {
+      window.print();
+    }
   },
   created: function created() {}
 });
 
 /***/ }),
 
-/***/ 342:
+/***/ 361:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("layout", { attrs: { name: "DriverInvoiceCreate" } }, [
-    _c("section", { staticClass: "users-list-wrapper" }, [
-      _c("div", { attrs: { id: "basic-examples" } }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-content" }, [
-            _c("div", { staticClass: "card-body" }, [
-              _vm.success
-                ? _c("div", { staticClass: "alert alert-success" }, [
-                    _vm._v(
-                      "\n              " +
-                        _vm._s(_vm.success) +
-                        "\n            "
-                    )
+  return _c("layout", { attrs: { name: "DriverInvoiceShow" } }, [
+    _c(
+      "section",
+      { staticClass: "users-list-wrapper" },
+      [
+        _c("div", { attrs: { id: "basic-examples" } }, [
+          _vm.success
+            ? _c("div", { staticClass: "card" }, [
+                _c("div", { staticClass: "card-content" }, [
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("div", { staticClass: "alert alert-success" }, [
+                      _vm._v(
+                        "\n              " +
+                          _vm._s(_vm.success) +
+                          "\n            "
+                      )
+                    ])
                   ])
-                : _vm._e(),
+                ])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("div", { staticClass: "invoice-card card" }, [
+            _c("div", { staticClass: "card-content" }, [
+              _c("div", { staticClass: "card-header bg-gradient-success" }, [
+                _c("h2", { staticClass: "card-title mb-1 text-white" }, [
+                  _vm._v(
+                    "\n              " +
+                      _vm._s(_vm.__("Invoice")) +
+                      ": " +
+                      _vm._s(_vm.driver_invoice.invoice) +
+                      "\n            "
+                  )
+                ])
+              ]),
               _vm._v(" "),
-              _c(
-                "form",
-                {
-                  on: {
-                    submit: function($event) {
-                      $event.preventDefault()
-                      return _vm.update($event)
-                    }
-                  }
-                },
-                [
-                  _c("div", { staticClass: "form-group row" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "invoice" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "invoice-header text-center position-relative"
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "logo position-absolute width-200" },
+                        [
+                          _c("img", {
+                            staticClass: "width-95-per",
+                            attrs: {
+                              src: _vm.driver_invoice.company.current_logo,
+                              alt: _vm.driver_invoice.company.name
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "h1",
+                        {
+                          staticClass: "mb-0",
+                          staticStyle: { "font-weight": "bolder" }
+                        },
+                        [
+                          _vm._v(
+                            "\n                  " +
+                              _vm._s(_vm.driver_invoice.company.name) +
+                              "\n                "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("h5", [
+                        _vm._v(_vm._s(_vm.driver_invoice.company.description))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "my-1" }, [
+                        _c("span", { staticClass: "owner" }, [
+                          _vm._v(
+                            _vm._s(_vm.__("Pro:-")) +
+                              "\n                    " +
+                              _vm._s(_vm.driver_invoice.company.owner)
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-0" }, [
+                        _c("span", { staticClass: "text-bold-700" }, [
+                          _vm._v(_vm._s(_vm.__("Head Office")) + ": ")
+                        ]),
+                        _vm._v(
+                          _vm._s(_vm.driver_invoice.company.head_office) +
+                            "\n                "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-0" }, [
+                        _c("span", { staticClass: "text-bold-700" }, [
+                          _vm._v(_vm._s(_vm.__("Dipu Office")) + ": ")
+                        ]),
+                        _vm._v(
+                          _vm._s(_vm.driver_invoice.company.dipu_office) +
+                            "\n                "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-0" }, [
+                        _c("span", { staticClass: "text-bold-700" }, [
+                          _vm._v(_vm._s(_vm.__("Address")) + ": ")
+                        ]),
+                        _vm._v(
+                          _vm._s(_vm.driver_invoice.company.address) +
+                            "\n                "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-0" }, [
+                        _c("span", { staticClass: "text-bold-700" }, [
+                          _vm._v(_vm._s(_vm.__("Sales Center")) + ": ")
+                        ]),
+                        _vm._v(
+                          _vm._s(_vm.driver_invoice.company.sales_center) +
+                            "\n                "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "mb-0" }, [
+                        _c("span", { staticClass: "text-left" }, [
+                          _c("span", { staticClass: "text-bold-700" }, [
+                            _vm._v(" " + _vm._s(_vm.__("Phone:")))
+                          ]),
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(
+                                _vm.translate(
+                                  _vm.driver_invoice.company.active_phones.toString()
+                                )
+                              ) +
+                              "\n                  "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-right" }, [
+                          _c("span", { staticClass: "text-bold-700" }, [
+                            _vm._v(" " + _vm._s(_vm.__("Email:")))
+                          ]),
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(_vm.driver_invoice.company.email) +
+                              "\n                  "
+                          )
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "invoice-body" }, [
+                    _c("p", { staticClass: "clearfix" }, [
+                      _c("span", { staticClass: "float-left" }, [
+                        _vm._v(
+                          _vm._s(_vm.__("Serial No.")) +
+                            "-" +
+                            _vm._s(_vm.driver_invoice.invoice)
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "float-right" }, [
+                        _vm._v(
+                          _vm._s(_vm.__("Date")) +
+                            _vm._s(_vm.__(":")) +
+                            "\n                    " +
+                            _vm._s(
+                              _vm._f("moment")(
+                                _vm.driver_invoice.created_at,
+                                "DD/MM/YYYY"
+                              )
+                            )
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
                     _c(
-                      "div",
-                      { staticClass: "col-md-4 col-12" },
+                      "p",
+                      {
+                        staticClass: "d-flex",
+                        staticStyle: { "justify-content": "space-between" }
+                      },
                       [
-                        _c("label", [
-                          _vm._v(_vm._s(_vm.__("Client"))),
-                          _c("strong", { staticClass: "text-danger" }, [
-                            _vm._v("*")
+                        _c("span", [
+                          _vm._v(
+                            _vm._s(_vm.__("Client Name")) +
+                              _vm._s(_vm.__(":")) +
+                              "\n                    " +
+                              _vm._s(_vm.driver_invoice.client.name)
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            _vm._s(_vm.__("Client Address")) +
+                              _vm._s(_vm.__(":")) +
+                              "\n                    " +
+                              _vm._s(_vm.driver_invoice.client.address)
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            _vm._s(_vm.__("Client Address")) +
+                              _vm._s(_vm.__(":")) +
+                              "\n                    " +
+                              _vm._s(
+                                _vm.translate(_vm.driver_invoice.client.phone)
+                              )
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass: "d-flex",
+                        staticStyle: { "justify-content": "space-between" }
+                      },
+                      [
+                        _c("span", [
+                          _vm._v(
+                            _vm._s(_vm.__("Driver Name")) +
+                              _vm._s(_vm.__(":")) +
+                              "\n                    " +
+                              _vm._s(_vm.driver_invoice.driver_name)
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            _vm._s(_vm.__("Track No.")) +
+                              "-" +
+                              _vm._s(_vm.driver_invoice.track_no)
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            _vm._s(_vm.__("Dri: Mobile:")) +
+                              "\n                    " +
+                              _vm._s(
+                                _vm.translate(_vm.driver_invoice.driver_phone)
+                              )
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("table", { staticClass: "table font-medium-3" }, [
+                      _c("thead", [
+                        _c("tr", [
+                          _c("th", [
+                            _vm._v(_vm._s(_vm.__("Description of Products")))
+                          ]),
+                          _vm._v(" "),
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(_vm.__("Measurement Type")) +
+                                "\n                      "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(_vm.__("Length")) +
+                                " *\n                        " +
+                                _vm._s(_vm.__("Breadth")) +
+                                " *\n                        " +
+                                _vm._s(_vm.__("Height")) +
+                                " \n                      "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v(_vm._s(_vm.__("Quantity")))
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("tbody", [
+                        _c("tr", [
+                          _c("th", [
+                            _vm._v(_vm._s(_vm.driver_invoice.product.name))
+                          ]),
+                          _vm._v(" "),
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(
+                                  _vm.driver_invoice.measurement_type.name
+                                ) +
+                                "\n                      "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(_vm.driver_invoice.container_height) +
+                                " *\n                        " +
+                                _vm._s(_vm.driver_invoice.container_length) +
+                                " *\n                        " +
+                                _vm._s(_vm.driver_invoice.container_breadth) +
+                                "\n                      "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(_vm.driver_invoice.quantity) +
+                                "\n                      "
+                            )
                           ])
                         ]),
                         _vm._v(" "),
-                        _c("multi-select", {
-                          class: [_vm.errors.client_id ? "in-invalid" : ""],
-                          attrs: {
-                            options: _vm.clients,
-                            label: "name",
-                            "track-by": "name",
-                            placeholder: _vm.__("Select Client")
-                          },
-                          on: { select: _vm.showInfo },
-                          model: {
-                            value: _vm.driver_invoice.client,
-                            callback: function($$v) {
-                              _vm.$set(_vm.driver_invoice, "client", $$v)
-                            },
-                            expression: "driver_invoice.client"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _vm.errors.client_id
-                          ? _c(
-                              "span",
-                              {
-                                staticClass: "invalid-feedback",
-                                staticStyle: { display: "block" },
-                                attrs: { role: "alert" }
-                              },
-                              [
-                                _c("strong", [
-                                  _vm._v(_vm._s(_vm.errors.client_id[0]))
-                                ])
-                              ]
-                            )
-                          : _vm._e()
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4 col-12" }, [
-                      _c("label", [
-                        _vm._v(_vm._s(_vm.__("Client Contact No.")))
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.driver_invoice.client_phone,
-                            expression: "driver_invoice.client_phone"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: _vm.__("Client Contact No.")
-                        },
-                        domProps: { value: _vm.driver_invoice.client_phone },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.driver_invoice,
-                              "client_phone",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4 col-12" }, [
-                      _c("label", [_vm._v(_vm._s(_vm.__("Client Address")))]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.driver_invoice.client_address,
-                            expression: "driver_invoice.client_address"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: _vm.__("Client Address")
-                        },
-                        domProps: { value: _vm.driver_invoice.client_address },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.driver_invoice,
-                              "client_address",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group row" }, [
-                    _c("div", { staticClass: "col-md-3 col-12" }, [
-                      _c("label", [
-                        _vm._v(_vm._s(_vm.__("Driver Name"))),
-                        _c("strong", { staticClass: "text-danger" }, [
-                          _vm._v("*")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.driver_invoice.driver_name,
-                            expression: "driver_invoice.driver_name"
-                          }
-                        ],
-                        staticClass: "form-control text-uppercase",
-                        class: [_vm.errors.driver_name ? "in-invalid" : ""],
-                        attrs: {
-                          type: "text",
-                          placeholder: _vm.__("Driver Name")
-                        },
-                        domProps: { value: _vm.driver_invoice.driver_name },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.driver_invoice,
-                              "driver_name",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _vm.errors.driver_name
-                        ? _c(
-                            "span",
-                            {
-                              staticClass: "invalid-feedback",
-                              staticStyle: { display: "block" },
-                              attrs: { role: "alert" }
-                            },
-                            [
-                              _c("strong", [
-                                _vm._v(_vm._s(_vm.errors.driver_name[0]))
-                              ])
-                            ]
-                          )
-                        : _vm._e()
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-3 col-12" }, [
-                      _c("label", [
-                        _vm._v(_vm._s(_vm.__("Track Number"))),
-                        _c("strong", { staticClass: "text-danger" }, [
-                          _vm._v("*")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.driver_invoice.track_no,
-                            expression: "driver_invoice.track_no"
-                          }
-                        ],
-                        staticClass: "form-control text-uppercase",
-                        class: [_vm.errors.track_no ? "in-invalid" : ""],
-                        attrs: {
-                          type: "text",
-                          placeholder: _vm.__("Track Number")
-                        },
-                        domProps: { value: _vm.driver_invoice.track_no },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.driver_invoice,
-                              "track_no",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _vm.errors.track_no
-                        ? _c(
-                            "span",
-                            {
-                              staticClass: "invalid-feedback",
-                              staticStyle: { display: "block" },
-                              attrs: { role: "alert" }
-                            },
-                            [
-                              _c("strong", [
-                                _vm._v(_vm._s(_vm.errors.track_no[0]))
-                              ])
-                            ]
-                          )
-                        : _vm._e()
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-3 col-12" }, [
-                      _c("label", [
-                        _vm._v(_vm._s(_vm.__("Driver Contact No."))),
-                        _c("strong", { staticClass: "text-danger" }, [
-                          _vm._v("*")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.driver_invoice.driver_phone,
-                            expression: "driver_invoice.driver_phone"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        class: [_vm.errors.driver_phone ? "in-invalid" : ""],
-                        attrs: {
-                          type: "text",
-                          placeholder: _vm.__("Driver Contact No.")
-                        },
-                        domProps: { value: _vm.driver_invoice.driver_phone },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.driver_invoice,
-                              "driver_phone",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _vm.errors.driver_phone
-                        ? _c(
-                            "span",
-                            {
-                              staticClass: "invalid-feedback",
-                              staticStyle: { display: "block" },
-                              attrs: { role: "alert" }
-                            },
-                            [
-                              _c("strong", [
-                                _vm._v(_vm._s(_vm.errors.driver_phone[0]))
-                              ])
-                            ]
-                          )
-                        : _vm._e()
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-3 col-12" }, [
-                      _c("label", [
-                        _vm._v(_vm._s(_vm.__("Reference"))),
-                        _c("strong", { staticClass: "text-danger" }, [
-                          _vm._v("*")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.driver_invoice.reference,
-                            expression: "driver_invoice.reference"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        class: [_vm.errors.reference ? "in-invalid" : ""],
-                        attrs: {
-                          type: "text",
-                          placeholder: _vm.__("Reference")
-                        },
-                        domProps: { value: _vm.driver_invoice.reference },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.driver_invoice,
-                              "reference",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _vm.errors.reference
-                        ? _c(
-                            "span",
-                            {
-                              staticClass: "invalid-feedback",
-                              staticStyle: { display: "block" },
-                              attrs: { role: "alert" }
-                            },
-                            [
-                              _c("strong", [
-                                _vm._v(_vm._s(_vm.errors.reference[0]))
-                              ])
-                            ]
-                          )
-                        : _vm._e()
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "table",
-                      {
-                        staticClass: "table table-bordered table-responsive-sm"
-                      },
-                      [
                         _c("tr", [
-                          _c(
-                            "th",
-                            [
-                              _c("multi-select", {
-                                attrs: {
-                                  options: _vm.products,
-                                  label: "name",
-                                  "track-by": "name",
-                                  placeholder: _vm.__("Select Product")
-                                },
-                                model: {
-                                  value: _vm.driver_invoice.product,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.driver_invoice, "product", $$v)
-                                  },
-                                  expression: "driver_invoice.product"
-                                }
-                              })
-                            ],
-                            1
-                          ),
+                          _c("th", [_vm._v(_vm._s(_vm.__("Track Rent")))]),
                           _vm._v(" "),
-                          _c(
-                            "th",
-                            [
-                              _c("multi-select", {
-                                attrs: {
-                                  options: _vm.measurement_types,
-                                  label: "name",
-                                  "track-by": "name",
-                                  placeholder: _vm.__("Select Measurement Type")
-                                },
-                                model: {
-                                  value: _vm.driver_invoice.measurement_type,
-                                  callback: function($$v) {
-                                    _vm.$set(
-                                      _vm.driver_invoice,
-                                      "measurement_type",
-                                      $$v
-                                    )
-                                  },
-                                  expression: "driver_invoice.measurement_type"
-                                }
-                              })
-                            ],
-                            1
-                          ),
+                          _c("th"),
                           _vm._v(" "),
-                          _c("th", { staticStyle: { width: "25%" } }, [
-                            _vm.driver_invoice.measurement_type &&
-                            _vm.driver_invoice.measurement_type.id === 2
-                              ? _c("div", { staticClass: "row" }, [
-                                  _c("div", { staticClass: "col-md-4 col-4" }, [
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value:
-                                            _vm.driver_invoice.container_height,
-                                          expression:
-                                            "driver_invoice.container_height"
-                                        }
-                                      ],
-                                      staticClass: "form-controll",
-                                      attrs: {
-                                        type: "text",
-                                        placeholder: _vm.__("Height")
-                                      },
-                                      domProps: {
-                                        value:
-                                          _vm.driver_invoice.container_height
-                                      },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            _vm.driver_invoice,
-                                            "container_height",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "col-md-4 col-4" }, [
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value:
-                                            _vm.driver_invoice.container_length,
-                                          expression:
-                                            "driver_invoice.container_length"
-                                        }
-                                      ],
-                                      staticClass: "form-controll",
-                                      attrs: {
-                                        type: "text",
-                                        placeholder: _vm.__("Length")
-                                      },
-                                      domProps: {
-                                        value:
-                                          _vm.driver_invoice.container_length
-                                      },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            _vm.driver_invoice,
-                                            "container_length",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "col-md-4 col-4" }, [
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value:
-                                            _vm.driver_invoice
-                                              .container_breadth,
-                                          expression:
-                                            "driver_invoice.container_breadth"
-                                        }
-                                      ],
-                                      staticClass: "form-controll",
-                                      attrs: {
-                                        type: "text",
-                                        placeholder: _vm.__("Breadth")
-                                      },
-                                      domProps: {
-                                        value:
-                                          _vm.driver_invoice.container_breadth
-                                      },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            _vm.driver_invoice,
-                                            "container_breadth",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ])
-                                ])
-                              : _vm._e()
-                          ]),
+                          _c("th"),
                           _vm._v(" "),
-                          _c("th", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.driver_invoice.quantity,
-                                  expression: "driver_invoice.quantity"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                placeholder: _vm.__("Quantity")
-                              },
-                              domProps: { value: _vm.driver_invoice.quantity },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.driver_invoice,
-                                    "quantity",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _vm.errors.quantity
-                              ? _c(
-                                  "span",
-                                  {
-                                    staticClass: "invalid-feedback",
-                                    staticStyle: { display: "block" },
-                                    attrs: { role: "alert" }
-                                  },
-                                  [
-                                    _c("strong", [
-                                      _vm._v(_vm._s(_vm.errors.quantity[0]))
-                                    ])
-                                  ]
-                                )
-                              : _vm._e()
+                          _c("th", { staticClass: "text-right" }, [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(_vm.driver_invoice.track_rent) +
+                                "\n                      "
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("th", [_vm._v(_vm._s(_vm.__("Others")))]),
+                          _vm._v(" "),
+                          _c("th"),
+                          _vm._v(" "),
+                          _c("th"),
+                          _vm._v(" "),
+                          _c("th", { staticClass: "text-right" }, [
+                            _vm._v(_vm._s(_vm.driver_invoice.others))
                           ])
                         ]),
                         _vm._v(" "),
@@ -3833,147 +3419,15 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                      " +
-                                  _vm._s(_vm.__("Track Rent")) +
-                                  "\n                    "
+                                "\n                        " +
+                                  _vm._s(_vm.__("Total Amount")) +
+                                  "\n                      "
                               )
                             ]
                           ),
                           _vm._v(" "),
-                          _c("th", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.driver_invoice.track_rent,
-                                  expression: "driver_invoice.track_rent"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                placeholder: _vm.__("Track Rent")
-                              },
-                              domProps: {
-                                value: _vm.driver_invoice.track_rent
-                              },
-                              on: {
-                                keyup: _vm.calculateTotal,
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.driver_invoice,
-                                    "track_rent",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _vm.errors.track_rent
-                              ? _c(
-                                  "span",
-                                  {
-                                    staticClass: "invalid-feedback",
-                                    staticStyle: { display: "block" },
-                                    attrs: { role: "alert" }
-                                  },
-                                  [
-                                    _c("strong", [
-                                      _vm._v(_vm._s(_vm.errors.track_rent[0]))
-                                    ])
-                                  ]
-                                )
-                              : _vm._e()
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("tr", [
-                          _c(
-                            "th",
-                            {
-                              staticClass: "text-right",
-                              attrs: { colspan: "3" }
-                            },
-                            [_vm._v(_vm._s(_vm.__("Others")))]
-                          ),
-                          _vm._v(" "),
-                          _c("th", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.driver_invoice.others,
-                                  expression: "driver_invoice.others"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                placeholder: _vm.__("Others")
-                              },
-                              domProps: { value: _vm.driver_invoice.others },
-                              on: {
-                                keyup: _vm.calculateTotal,
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.driver_invoice,
-                                    "others",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("tr", [
-                          _c(
-                            "th",
-                            {
-                              staticClass: "text-right",
-                              attrs: { colspan: "3" }
-                            },
-                            [_vm._v(_vm._s(_vm.__("Total")))]
-                          ),
-                          _vm._v(" "),
-                          _c("th", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.driver_invoice.total,
-                                  expression: "driver_invoice.total"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                readonly: "",
-                                placeholder: _vm.__("Total")
-                              },
-                              domProps: { value: _vm.driver_invoice.total },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.driver_invoice,
-                                    "total",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
+                          _c("th", { staticClass: "text-right" }, [
+                            _vm._v(_vm._s(_vm.driver_invoice.total))
                           ])
                         ]),
                         _vm._v(" "),
@@ -3987,36 +3441,8 @@ var render = function() {
                             [_vm._v(_vm._s(_vm.__("Borrow")))]
                           ),
                           _vm._v(" "),
-                          _c("th", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.driver_invoice.borrow,
-                                  expression: "driver_invoice.borrow"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                placeholder: _vm.__("Borrow")
-                              },
-                              domProps: { value: _vm.driver_invoice.borrow },
-                              on: {
-                                keyup: _vm.calculateFinal,
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.driver_invoice,
-                                    "borrow",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
+                          _c("th", { staticClass: "text-right" }, [
+                            _vm._v(_vm._s(_vm.driver_invoice.borrow))
                           ])
                         ]),
                         _vm._v(" "),
@@ -4030,101 +3456,142 @@ var render = function() {
                             [_vm._v(_vm._s(_vm.__("Final")))]
                           ),
                           _vm._v(" "),
-                          _c("th", [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.driver_invoice.final,
-                                  expression: "driver_invoice.final"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                readonly: "",
-                                placeholder: _vm.__("Final")
-                              },
-                              domProps: { value: _vm.driver_invoice.final },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.driver_invoice,
-                                    "final",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
+                          _c("th", { staticClass: "text-right" }, [
+                            _vm._v(_vm._s(_vm.driver_invoice.final))
                           ])
-                        ]),
-                        _vm._v(" "),
-                        _c("tr", [
-                          _c(
-                            "th",
-                            {
-                              staticClass: "text-right",
-                              attrs: { colspan: "6" }
-                            },
-                            [
-                              _c(
-                                "inertia-link",
-                                {
-                                  staticClass: "btn btn-primary",
-                                  attrs: {
-                                    href: _vm.route(
-                                      "drivers.invoices.show",
-                                      _vm.driver_invoice.invoice
-                                    )
-                                  }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass: "feather icon-arrow-left"
-                                  }),
-                                  _vm._v(
-                                    "\n                        " +
-                                      _vm._s(_vm.__("Back")) +
-                                      "\n                      "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-success",
-                                  attrs: { type: "submit" }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass: "feather icon-printer"
-                                  }),
-                                  _vm._v(
-                                    "\n                        " +
-                                      _vm._s(_vm.__("Update")) +
-                                      "\n                      "
-                                  )
-                                ]
-                              )
-                            ],
-                            1
+                        ])
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "invoice-footer" }, [
+                    _c("p", [
+                      _c("span", [
+                        _vm._v(_vm._s(_vm.__("In Words")) + _vm._s(_vm.__(":")))
+                      ]),
+                      _vm._v(
+                        "\n                  " +
+                          _vm._s(_vm.driver_invoice.word) +
+                          "\n                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mb-0" }, [
+                      _c("span", { staticClass: "float-left" }, [
+                        _c("span", { staticClass: "text-bold-700" }, [
+                          _vm._v(
+                            "\n                      " +
+                              _vm._s(_vm.__("Signature of Driver")) +
+                              _vm._s(_vm.__(":"))
                           )
                         ])
-                      ]
-                    )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "float-right" }, [
+                        _c("span", { staticClass: "text-bold-700" }, [
+                          _vm._v(
+                            "\n                      " +
+                              _vm._s(_vm.__("In Favor of")) +
+                              _vm._s(_vm.__(":"))
+                          )
+                        ]),
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(_vm.driver_invoice.company.name) +
+                            "\n                  "
+                        )
+                      ])
+                    ])
                   ])
-                ]
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "card-footer text-right" },
+                [
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: {
+                        href: _vm.route(
+                          "drivers.invoices.edit",
+                          _vm.driver_invoice.id
+                        )
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "feather icon-edit" }),
+                      _vm._v("\n              " + _vm._s(_vm.__("Edit")))
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass: "btn btn-info",
+                      attrs: {
+                        href: _vm.route(
+                          "drivers.invoices.print",
+                          _vm.driver_invoice.invoice
+                        ),
+                        target: "_blank"
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "feather icon-printer" }),
+                      _vm._v("\n              " + _vm._s(_vm.__("Print")))
+                    ]
+                  )
+                ],
+                1
               )
             ])
           ])
-        ])
-      ])
-    ])
+        ]),
+        _vm._v(" "),
+        _c("model", {
+          scopedSlots: _vm._u([
+            {
+              key: "header",
+              fn: function() {
+                return [
+                  _c(
+                    "h4",
+                    {
+                      staticClass: "modal-title",
+                      attrs: { id: "myModalLabel1" }
+                    },
+                    [_vm._v(_vm._s(_vm.modelTitle))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "close",
+                      attrs: {
+                        type: "button",
+                        "data-dismiss": "modal",
+                        "aria-label": "Close"
+                      },
+                      on: { click: _vm.cleanModel }
+                    },
+                    [
+                      _c("span", { attrs: { "aria-hidden": "true" } }, [
+                        _vm._v("×")
+                      ])
+                    ]
+                  )
+                ]
+              },
+              proxy: true
+            }
+          ])
+        })
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -4133,7 +3600,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-49340a16", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-2d119451", module.exports)
   }
 }
 

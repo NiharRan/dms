@@ -62,39 +62,39 @@
             </button>
           </div>
           <div class="invoice-body">
-            <table id="data-table" class="table table-bordered font-medium-3">
+            <div class="text-center">
+              <h2 class="mb-0 stock-name">{{ stock_details.stock.name }}</h2>
+              <p class="mb-0">{{ stock_details.stock.address }}</p>
+              <p style="font-size: 3px">{{ stock_details.product.name }}</p>
+            </div>
+            <table class="table table-bordered font-medium-3">
               <thead>
                 <tr>
                   <th scope="col">{{ __("S.N.") }}</th>
-                  <th>{{ __("Date & Time") }}</th>
-                  <th>{{ __("Invoice") }}</th>
-                  <th>{{ __("Transaction Type") }}</th>
-                  <th>{{ __("Transaction Media") }}</th>
-                  <th>{{ __("Description") }}</th>
-                  <th class="text-right">{{ __("Amount") }}</th>
+                  <th>{{ __("Date") }}</th>
+                  <th class="text-center">{{ __("Ship") }}</th>
+                  <th class="text-center">{{ __("Company") }}</th>
+                  <th class="text-right">{{ __("Quantity") }}</th>
                 </tr>
               </thead>
-              <tbody v-if="transactions && transactions.length > 0">
+              <tbody v-if="stock_details_histories.length > 0">
                 <tr
-                  v-for="(transaction, index) in transactions"
-                  :key="transaction.id"
+                  v-for="(history, index) in stock_details_histories"
+                  :key="history.id"
                 >
                   <th style="width: 80px">#{{ index + 1 }}</th>
-                  <td>
-                    {{ transaction.created_at | moment("DD/MM/YYYY hh:mm A") }}
-                  </td>
-                  <th>{{ transaction.transactionable.invoice }}</th>
-                  <th>{{ transaction.transaction_type.name }}</th>
-                  <th>{{ transaction.media.name }}</th>
-                  <th class="text-left">{{ transaction.description }}</th>
-                  <th class="text-right">{{ transaction.amount }}</th>
+                  <td>{{ history.history_date | moment("DD/MM/YYYY") }}</td>
+                  <th class="text-center">{{ history.shop }}</th>
+                  <th class="text-center">{{ history.comapny }}</th>
+                  <th class="text-right">{{ history.quantity }}</th>
                 </tr>
               </tbody>
-              <tfoot>
+              <tfoot class="bt">
                 <tr>
-                  <td colspan="6" class="text-right">{{ __("Total") }}</td>
+                  <td colspan="4" class="text-right">{{ __("Total") }}</td>
+
                   <th class="text-right">
-                    {{ totalAmount(transactions) }}
+                    {{ total(stock_details_histories) }}
                   </th>
                 </tr>
               </tfoot>
@@ -108,9 +108,10 @@
 
 <script>
 export default {
-  name: "StatementPrint",
+  name: "PrintList",
   props: {
-    transactions: Array,
+    stock_details_histories: Array,
+    stock_details: Object,
     company: Object,
   },
   data() {
@@ -119,12 +120,12 @@ export default {
     };
   },
   methods: {
-    totalAmount: function (data) {
-      let paidPrice = data.reduce((paid, transaction) => {
-        let p = transaction.amount == "" ? 0 : transaction.amount;
-        return paid + parseFloat(p);
-      }, 0);
-      return parseFloat(paidPrice).toFixed(2);
+    total: function (data) {
+      let totalQuantity = data.reduce(
+        (total, history) => total + parseFloat(history.quantity),
+        0
+      );
+      return parseFloat(totalQuantity).toFixed(2);
     },
     printPage: function () {
       window.print();
@@ -171,6 +172,9 @@ body {
   width: 100%;
 }
 @media print {
+  .stock-name {
+    font-size: 30px !important;
+  }
   .table th,
   .table td {
     padding: 0.5rem !important;

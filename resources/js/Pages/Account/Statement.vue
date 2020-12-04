@@ -68,6 +68,14 @@
                         </button>
                       </th>
                     </tr>
+                  </thead>
+                </table>
+                <table
+                  v-if="transactions && transactions.data.length > 0"
+                  id="data-table"
+                  class="table table-bordered display nowrap mb-0"
+                >
+                  <thead>
                     <tr>
                       <th scope="col">{{ __("S.N.") }}</th>
                       <th>{{ __("Date & Time") }}</th>
@@ -79,7 +87,7 @@
                       <th class="text-center">{{ __("Action") }}</th>
                     </tr>
                   </thead>
-                  <tbody v-if="transactions && transactions.data.length > 0">
+                  <tbody>
                     <tr
                       v-for="(transaction, index) in transactions.data"
                       :key="transaction.id"
@@ -250,7 +258,10 @@ export default {
       });
     },
     print: function () {
-      let transaction_type = this.search.transaction_type == null ? "" : this.search.transaction_type.id;
+      let transaction_type =
+        this.search.transaction_type == null
+          ? ""
+          : this.search.transaction_type.id;
       let media = this.search.media == null ? "" : this.search.media.id;
       let query = `/accounts/statements/print?search=${this.search.query}&&invoice=${this.search.invoice}&&transaction_type=${transaction_type}&&media=${media}`;
       if (this.search.dateRange.startDate) {

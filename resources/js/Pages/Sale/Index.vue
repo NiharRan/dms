@@ -68,7 +68,15 @@
                         </button>
                       </th>
                     </tr>
-                    <tr>
+                  </thead>
+                </table>
+                <table v-if="sales && sales.data.length > 0"
+                  id="data-table"
+                  class="table table-bordered display nowrap mb-0"
+                  style="width: 110%"
+                >
+                  <thead>
+                    <tr v-if="sales && sales.data.length > 0">
                       <th scope="col">{{ __("S.N.") }}</th>
                       <th>{{ __("Date") }}</th>
                       <th>{{ __("Creator") }}</th>

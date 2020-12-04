@@ -159,3 +159,9 @@
 .app-content.content {
     min-height: 92vh;
 }
+
+@media print {
+  .page-gap{
+    margin: 2in 0in;
+  }
+}
