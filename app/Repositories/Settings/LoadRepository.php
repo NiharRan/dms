@@ -40,7 +40,7 @@ class LoadRepository
     return $row->update([
       'amount' => request()->amount,
       'stock_rent' => request()->stock_rent,
-      'status' => request()->status
+      'status' => filter_var(request()->status, FILTER_VALIDATE_BOOLEAN)
     ]);
   }
 

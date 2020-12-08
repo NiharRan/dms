@@ -68,6 +68,8 @@
               <input type="text"
                      placeholder="Contact No."
                      class="form-control"
+                     minlength="11"
+                     maxlength="11"
                      :class="[errors.phone ? 'is-invalid' : '']"
                      v-model="form.phone">
               <span v-if="errors.phone" class="invalid-feedback" style="display: block;" role="alert">

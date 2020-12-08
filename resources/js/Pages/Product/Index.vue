@@ -12,7 +12,7 @@
               </div>
 
               <div class="table-responsive">
-                <table id="data-table" class="table table-bordered display responsive nowrap mb-0" style="width: 150%">
+                <table id="data-table" class="table table-bordered display responsive nowrap mb-0" style="width: 100%">
                   <thead>
                   <tr>
                     <th colspan="2">
@@ -23,8 +23,8 @@
                         <option value="25">100</option>
                       </select>
                     </th>
-                    <th colspan="3"></th>
-                    <th colspan="2">
+                    <th colspan="4"></th>
+                    <th>
                       <input type="text" @keyup="searchData" v-model="search.query" class="form-control" placeholder="Search">
                     </th>
                   </tr>
@@ -33,7 +33,7 @@
                     <th>Image</th>
                     <th>Name</th>
                     <th>Type</th>
-                    <th>Created At</th>
+                    <th>Updated At</th>
                     <th class="text-center">Status</th>
                     <th class="text-center">Actions</th>
                   </tr>
@@ -46,7 +46,7 @@
                     </th>
                     <th>{{ product.name }}</th>
                     <th>{{ product.product_type.name }}</th>
-                    <td>{{ product.default_date_time }}</td>
+                    <td>{{ product.last_updated }}</td>
                     <td v-html="$options.filters.status(product.status)"></td>
                     <td class="text-center">
                       <a @click.prevent="editData(product)" href="" class="text-info" role="button"><i class="feather icon-edit"></i></a>

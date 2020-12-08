@@ -160,8 +160,34 @@
     min-height: 92vh;
 }
 
+.signature {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px dashed;
+  padding-bottom: 10px;
+}
+
+.border-top-dashed {
+  border-top: 2px dashed;
+}
+
+.controller {
+  right: 29%;
+  bottom: 0;
+  position: fixed;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);
+}
+
 @media print {
   .page-gap{
     margin: 2in 0in;
+  }
+  .signature {
+    bottom: 2.5in;
   }
 }

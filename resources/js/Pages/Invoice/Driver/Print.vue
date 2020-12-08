@@ -42,7 +42,11 @@
             <p class="mb-0">
               <span class="text-left">
                 <span class="text-bold-700"> {{ __("Phone:") }}</span>
-                {{ translate(driver_invoice.company.active_phones.toString()) }}
+                {{
+                  driver_invoice.company.active_phones
+                    ? translate(driver_invoice.company.active_phones.toString())
+                    : ""
+                }}
               </span>
               <span class="text-right">
                 <span class="text-bold-700"> {{ __("Email:") }}</span>
@@ -50,7 +54,7 @@
               </span>
             </p>
           </div>
-          <div class="controller position-absolute width-300">
+          <div class="controller width-300">
             <label
               ><input type="checkbox" v-model="hasHeader" />
               {{ __("Attach company information") }}</label
@@ -73,19 +77,31 @@
                 {{ driver_invoice.created_at | moment("DD/MM/YYYY") }}</span
               >
             </p>
-            <p class="d-flex" style="justify-content: space-between;">
-              <span>{{ __("Client Name") }}{{ __(":") }} {{ driver_invoice.client.name }}</span>
-              <span>{{ __("Client Address") }}{{ __(":") }} {{ driver_invoice.client.address }}</span>
-              <span>{{ __("Client Address") }}{{ __(":") }} {{ translate(driver_invoice.client.phone) }}</span>
-            </p>
-            <p class="d-flex" style="justify-content: space-between;">
-              <span>{{ __("Driver Name") }}{{ __(":") }} {{ driver_invoice.driver_name }}</span>
+            <p class="d-flex" style="justify-content: space-between">
               <span
-                >{{ __("Track No.") }}-{{ driver_invoice.track_no }}</span
+                >{{ __("Client Name") }}{{ __(":") }}
+                {{ driver_invoice.client.name }}</span
               >
               <span
+                >{{ __("Address") }}{{ __(":") }}
+                {{ driver_invoice.client.address }}</span
+              >
+              <span
+                >{{ __("Contact No.") }}{{ __(":") }}
+                {{ driver_invoice.client_phone }}</span
+              >
+            </p>
+            <p class="d-flex" style="justify-content: space-between">
+              <span
+                >{{ __("Driver Name") }}{{ __(":") }}
+                {{ driver_invoice.driver_name }}</span
+              >
+              <span>{{ __("Track No.") }}-{{ driver_invoice.track_no }}</span>
+              <span
                 >{{ __("Dri: Mobile:") }}
-                {{ translate(driver_invoice.driver_phone) }}</span
+                {{
+                  driver_invoice.driver_phone
+                }}</span
               >
             </p>
 
@@ -95,8 +111,10 @@
                   <th>{{ __("Description of Products") }}</th>
                   <th class="text-center">{{ __("Measurement Type") }}</th>
                   <th class="text-center">
-                    {{ __("Height") }} * {{ __("Length") }} *
-                    {{ __("Breadth") }}
+                    <span v-if="driver_invoice.measurement_type.id == 1">
+                      {{ __("Length") }} * {{ __("Breadth") }} *
+                      {{ __("Height") }}
+                    </span>
                   </th>
                   <th class="text-center">{{ __("Quantity") }}</th>
                 </tr>
@@ -108,9 +126,11 @@
                     {{ driver_invoice.measurement_type.name }}
                   </th>
                   <th class="text-center">
-                    {{ driver_invoice.container_height }} *
-                    {{ driver_invoice.container_length }} *
-                    {{ driver_invoice.container_breadth }}
+                    <span v-if="driver_invoice.container_height">
+                      {{ driver_invoice.container_height }} In *
+                      {{ driver_invoice.container_length }} In *
+                      {{ driver_invoice.container_breadth }} In
+                    </span>
                   </th>
                   <th class="text-center">{{ driver_invoice.quantity }}</th>
                 </tr>
@@ -138,7 +158,9 @@
                   <th class="text-right">{{ driver_invoice.borrow }}</th>
                 </tr>
                 <tr>
-                  <th colspan="3" class="text-right">{{ __("Final") }}</th>
+                  <th colspan="3" class="text-right">
+                    {{ __("Final Amount") }}
+                  </th>
                   <th class="text-right">{{ driver_invoice.final }}</th>
                 </tr>
               </tbody>
@@ -150,12 +172,13 @@
               {{ driver_invoice.word }}
             </p>
             <p class="mb-0 signature">
-              <span class="float-left">
+              <span class="border-top-dashed float-left">
                 <span class="text-bold-700">
-                  {{ __("Signature of Driver") }}{{ __(":") }}</span
-                >
+                  {{ __("Signature of Driver") }}{{ __(":") }}
+                  {{ driver_invoice.driver_name }}
+                </span>
               </span>
-              <span class="float-right">
+              <span class="border-top-dashed float-right">
                 <span class="text-bold-700">
                   {{ __("In Favor of") }}{{ __(":") }}</span
                 >
@@ -196,14 +219,6 @@ export default {
 .mb-200 {
   margin-top: 200px;
 }
-.controller {
-  right: 10px;
-  top: 10px;
-  border: 1px solid #d0d0d0;
-  border-radius: 4px;
-  padding: 10px;
-  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);
-}
 body {
   -webkit-print-color-adjust: exact !important;
 }
@@ -218,12 +233,6 @@ body {
   padding: 5px 10px;
   border-radius: 16px;
   font-size: 18px;
-}
-.signature {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
 @media print {
   .table th,

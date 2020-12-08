@@ -39,15 +39,6 @@
                           :placeholder="__('Invoice')"
                         />
                       </th>
-                      <th colspan="5">
-                        <input
-                          type="text"
-                          @keyup="searchData"
-                          v-model="search.query"
-                          class="form-control"
-                          :placeholder="__('Search')"
-                        />
-                      </th>
                       <th class="text-center">
                         <button
                           class="btn btn-default"

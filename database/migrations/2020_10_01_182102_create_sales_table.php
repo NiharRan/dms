@@ -16,10 +16,10 @@ class CreateSalesTable extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('invoice');
-            $table->decimal('total_price', 10, 2);
-            $table->decimal('total_paid', 10, 2);
-            $table->decimal('total_due', 10, 2);
-            $table->decimal('commission', 10, 2)->nullable();
+            $table->decimal('total_price', 10, 4);
+            $table->decimal('total_paid', 10, 4);
+            $table->decimal('total_due', 10, 4);
+            $table->decimal('commission', 10, 4)->nullable();
 
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies');

@@ -71,7 +71,7 @@ class CompanyRepository
   {
     $company = $this->findById($id);
     $company = $this->setupData($company, $request);
-    $company->status = filter_var($request->status, FILTER_VALIDATE_BOOLEAN) ;
+    $company->status = filter_var($request->status, FILTER_VALIDATE_BOOLEAN);
     if ($company->save()) {
       return $company;
     }

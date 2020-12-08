@@ -58,9 +58,11 @@ class DriverInvoiceRepository
 
     if (\request()->has('search') && !empty(\request()->search)) {
       $search = \request()->search;
-      $driverInvoices = $driverInvoices->where('driver_name', 'like', "%$search")
-        ->orWhere('track_no', 'like', "%$search")
-        ->orWhere('driver_phone', 'like', "%$search");
+      $driverInvoices = $driverInvoices->where(function ($query) use ($search) {
+        $query->where('driver_name', 'like', "%$search")
+          ->orWhere('track_no', 'like', "%$search")
+          ->orWhere('driver_phone', 'like', "%$search");
+      });
     }
     return $driverInvoices->orderBy('id', 'desc');
   }
@@ -125,18 +127,18 @@ class DriverInvoiceRepository
     $driverInvoice->borrow = $request->borrow == '' ? 0 : $request->borrow;
     $driverInvoice->final = $request->final == '' ? 0 : $request->final;
     $driverInvoice->commission = $request->commission == '' ? 0 : $request->commission;
-    $driverInvoice->reference = $request->reference;
+    $driverInvoice->reference = strtoupper($request->reference);
     $driverInvoice->company_id = $request->company_id;
     $driverInvoice->client_id = $request->client_id;
-    $driverInvoice->client_address = $request->client_address;
-    $driverInvoice->client_phone = $request->client_phone;
+    $driverInvoice->client_address = strtoupper($request->client_address);
+    $driverInvoice->client_phone = strtoupper($request->client_phone);
     $driverInvoice->load_id = $request->load_id;
-    $driverInvoice->driver_name = $request->driver_name;
-    $driverInvoice->track_no = $request->track_no;
+    $driverInvoice->driver_name = strtoupper($request->driver_name);
+    $driverInvoice->track_no = strtoupper($request->track_no);
     $driverInvoice->driver_phone = $request->driver_phone;
-    
 
-    if(intval($request->due) == 0) {
+
+    if (intval($request->due) == 0) {
       $driverInvoice->status = 1;
     }
     return $driverInvoice;

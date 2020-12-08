@@ -24,9 +24,9 @@ class CreateSaleDetailsTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
 
-            $table->decimal('quantity', 10, 2)->nullable();
-            $table->decimal('price', 10, 2);
-            $table->decimal('amount', 10, 2);
+            $table->decimal('quantity', 10, 4)->nullable();
+            $table->decimal('price', 10, 4);
+            $table->decimal('amount', 10, 4);
             $table->string('track_no');
             $table->timestamps();
         });

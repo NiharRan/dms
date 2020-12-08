@@ -15,8 +15,8 @@ class CreateLoadsTable extends Migration
     {
         Schema::create('loads', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->decimal('amount', 10, 2);
-            $table->decimal('stock_rent', 10, 2);
+            $table->decimal('amount', 10, 4);
+            $table->decimal('stock_rent', 10, 4);
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

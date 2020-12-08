@@ -53,7 +53,8 @@
   "Track Rent": "গাড়ি ভাড়া",
   "Track No.": "গাড়ি নাম্বার",
   "Others": "অন্যান্য",
-  "Total Amount": "সর্বমোট টাকা",
+  "Total Amount": "মোট টাকা",
+  "Final Amount": "সর্বমোট টাকা",
   "In Advance": "অগ্রিম নেয়া",
   "Due": "বাকি",
   "Signature of Driver": "ড্রাইভারের স্বাক্ষর",
@@ -99,7 +100,7 @@
   "Select Religion": "ধর্ম নির্বাচন করুন",
   "Select Blood Group": "রক্তের গ্রুপ নির্বাচন করুন",
   "Email Address": "ইমেল",
-  "Contact No.": "যোগাযোগের নম্বর",
+  "Contact No.": "যোগাযোগ নম্বর",
   "Account": "বিবরণ",
   "Birth Date": "জন্ম তারিখ",
 
@@ -110,7 +111,7 @@
   "Client": "ক্রেতা",
   "Select Client": "ক্রেতার নির্বাচন করুন",
   "Client Name": "ক্রেতার নাম",
-  "Client Contact No.": "ক্রেতার যোগাযোগের নং",
+  "Client Contact No.": "ক্রেতার যোগাযোগ নং",
   "Client Address": "ক্রেতার ঠিকানা",
 
   "Sales": "বিক্রয় গুলো",

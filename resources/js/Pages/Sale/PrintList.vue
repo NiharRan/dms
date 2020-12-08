@@ -48,7 +48,7 @@
               </span>
             </p>
           </div>
-          <div class="controller position-absolute width-300">
+          <div class="controller width-300">
             <label
               ><input type="checkbox" v-model="hasHeader" />
               {{ __("Attach company information") }}</label
@@ -76,7 +76,7 @@
               </thead>
               <tbody v-if="sales.length > 0">
                 <tr v-for="(sale, index) in sales" :key="sale.id">
-                  <th style="width: 80px">#{{ index + 1 }}</th>
+                  <th style="width: 80px">{{ index + 1 }}</th>
                   <td>{{ sale.sale_date | moment("DD/MM/YYYY") }}</td>
                   <th>{{ sale.creator.name }}</th>
                   <th>{{ sale.invoice }}</th>
@@ -152,14 +152,7 @@ export default {
 .mb-200 {
   margin-top: 200px;
 }
-.controller {
-  right: 10px;
-  top: 10px;
-  border: 1px solid #d0d0d0;
-  border-radius: 4px;
-  padding: 10px;
-  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);
-}
+
 body {
   -webkit-print-color-adjust: exact !important;
 }
@@ -174,12 +167,6 @@ body {
   padding: 5px 10px;
   border-radius: 16px;
   font-size: 18px;
-}
-.signature {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
 @media print {
   .table th,

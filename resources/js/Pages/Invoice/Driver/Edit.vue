@@ -43,6 +43,8 @@
                       type="text"
                       v-model="driver_invoice.client_phone"
                       :placeholder="__('Client Contact No.')"
+                      minlength="11"
+                      maxlength="11"
                       class="form-control"
                     />
                   </div>
@@ -52,7 +54,7 @@
                       type="text"
                       v-model="driver_invoice.client_address"
                       :placeholder="__('Client Address')"
-                      class="form-control"
+                      class="form-control text-uppercase"
                     />
                   </div>
                 </div>
@@ -135,7 +137,7 @@
                       v-model="driver_invoice.reference"
                       :class="[errors.reference ? 'in-invalid' : '']"
                       :placeholder="__('Reference')"
-                      class="form-control"
+                      class="form-control text-uppercase"
                     />
 
                     <span
@@ -270,6 +272,18 @@
                       </th>
                     </tr>
                     <tr>
+                      <th colspan="3" class="text-right">{{ __("Commission") }}</th>
+                      <th>
+                        <input
+                          type="text"
+                          class="form-control"
+                          readonly
+                          v-model="driver_invoice.commission"
+                          :placeholder="__('Commission')"
+                        />
+                      </th>
+                    </tr>
+                    <tr>
                       <th colspan="3" class="text-right">{{ __("Borrow") }}</th>
                       <th>
                         <input
@@ -282,14 +296,14 @@
                       </th>
                     </tr>
                     <tr>
-                      <th colspan="3" class="text-right">{{ __("Final") }}</th>
+                      <th colspan="3" class="text-right">{{ __("Final Amount") }}</th>
                       <th>
                         <input
                           type="text"
                           class="form-control"
                           readonly
                           v-model="driver_invoice.final"
-                          :placeholder="__('Final')"
+                          :placeholder="__('Final Amount')"
                         />
                       </th>
                     </tr>

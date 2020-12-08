@@ -48,7 +48,7 @@
               </span>
             </p>
           </div>
-          <div class="controller position-absolute width-300">
+          <div class="controller width-300">
             <label
               ><input type="checkbox" v-model="hasHeader" />
               {{ __("Attach company information") }}</label
@@ -82,7 +82,7 @@
                   v-for="(history, index) in stock_details_histories"
                   :key="history.id"
                 >
-                  <th style="width: 80px">#{{ index + 1 }}</th>
+                  <th style="width: 80px">{{ index + 1 }}</th>
                   <td>{{ history.history_date | moment("DD/MM/YYYY") }}</td>
                   <th class="text-center">{{ history.shop }}</th>
                   <th class="text-center">{{ history.comapny }}</th>
@@ -142,14 +142,7 @@ export default {
 .mb-200 {
   margin-top: 200px;
 }
-.controller {
-  right: 10px;
-  top: 10px;
-  border: 1px solid #d0d0d0;
-  border-radius: 4px;
-  padding: 10px;
-  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);
-}
+
 body {
   -webkit-print-color-adjust: exact !important;
 }

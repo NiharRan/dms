@@ -20,7 +20,7 @@ class CreateDriverInvoicesTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
 
-            $table->unsignedDecimal('quantity', 10, 2);
+            $table->unsignedDecimal('quantity', 10, 4);
             
             $table->unsignedBigInteger('measurement_type_id');
             $table->foreign('measurement_type_id')->references('id')->on('measurement_types');
@@ -28,13 +28,13 @@ class CreateDriverInvoicesTable extends Migration
             $table->unsignedDecimal('container_height')->nullable();
             $table->unsignedDecimal('container_length')->nullable();
             $table->unsignedDecimal('container_breadth')->nullable();
-            $table->decimal('track_rent', 10, 2);
-            $table->decimal('others', 10, 2)->nullable();
-            $table->decimal('total', 10, 2);
-            $table->decimal('borrow', 10, 2)->nullable();
-            $table->decimal('final', 10, 2)->nullable();
-            $table->decimal('commission', 10, 2)->nullable();
-            $table->string('reference', 10, 2);
+            $table->decimal('track_rent', 10, 4);
+            $table->decimal('others', 10, 4)->nullable();
+            $table->decimal('total', 10, 4);
+            $table->decimal('borrow', 10, 4)->nullable();
+            $table->decimal('final', 10, 4)->nullable();
+            $table->decimal('commission', 10, 4)->nullable();
+            $table->string('reference', 20);
 
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies');

@@ -40,7 +40,7 @@ class ProductTypeRepository
     return $row->update([
       'name' => request()->name,
       'slug' => make_slug(request()->name),
-      'status' => request()->status
+      'status' => filter_var(request()->status, FILTER_VALIDATE_BOOLEAN)
     ]);
   }
 

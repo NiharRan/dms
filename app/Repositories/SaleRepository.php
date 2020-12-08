@@ -162,7 +162,7 @@ class SaleRepository
           'quantity' => $quantity,
           'price' => $request->prices[$key],
           'amount' => $request->totals[$key],
-          'track_no' => $request->tracks[$key],
+          'track_no' => strtoupper($request->tracks[$key]),
         ];
         $sale->sale_details()->create($saleDetail);
         $this->reduceStock($stock_id, $product_id, $quantity);

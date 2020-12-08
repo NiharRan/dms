@@ -29,7 +29,7 @@ class DriverInvoice extends MyModel
       $str =  "আপনি $company->name এর থেকে '$amount' ধার নিয়েছেন";
     } else {
       $amount = (new BanglaNumberToWord())->numToWord($this->final);
-      $str = "মোট ভাড়া  $amount";
+      $str = "মোট  $amount";
     }
     return $str;
   }

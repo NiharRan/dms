@@ -46,7 +46,7 @@ class ProductRepository
     {
       $row = $this->product->find($rowId);
       $row = $this->setupData($request, $row);
-      $row->status = $request->status;
+      $row->status = filter_var($request->status, FILTER_VALIDATE_BOOLEAN);
 
       if ($row->save()) {
         return $row;

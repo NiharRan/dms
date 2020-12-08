@@ -32,9 +32,6 @@
                         <div class="col-12 d-flex mt-1 px-0">
                           <button type="button" @click="uploadImage" class="btn btn-primary d-none d-sm-block mr-75 waves-effect waves-light">
                             {{ __("Change") }}</button>
-                          <a href="#" class="btn btn-primary d-block d-sm-none mr-75 waves-effect waves-light"><i class="feather icon-edit-1"></i></a>
-                          <a href="#" class="btn btn-outline-danger d-none d-sm-block waves-effect waves-light">{{ __("Remove") }}</a>
-                          <a href="#" class="btn btn-outline-danger d-block d-sm-none waves-effect waves-light"><i class="feather icon-trash-2"></i></a>
                         </div>
                       </div>
                     </div>
@@ -94,11 +91,11 @@
                             <div v-if="errors.gender_id" class="invalid-feedback">{{ errors.gender_id[0] }}</div>
                           </div>
                           <div class="form-group">
-                            <label>{{ __("Role") }}</label>
+                            <label>{{ __("Religion") }}</label>
                             <select
                               v-model="user.religion_id"
                               class="form-control">
-                              <option value="">{{ __("Select Role") }} ...</option>
+                              <option value="">{{ __("Select Religion") }} ...</option>
                               <option
                                 v-for="religion in religions"
                                 :value="religion.id"
@@ -122,7 +119,6 @@
                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
                           <button type="submit" class="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1 waves-effect waves-light">
                             {{ __('Update') }}</button>
-                          <button type="reset" class="btn btn-outline-warning waves-effect waves-light">{{ __("Reset") }}</button>
                         </div>
                       </div>
                     </form>

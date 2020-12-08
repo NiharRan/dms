@@ -61,7 +61,7 @@ class StockDetailsRepository
   {
     $row = $this->stockDetails->find($rowId);
     $row = $this->setup($row, $request);
-    $row->status = $request->status;
+    $row->status = filter_var($request->status, FILTER_VALIDATE_BOOLEAN);
     
     if($row->save()) {
       return $row;

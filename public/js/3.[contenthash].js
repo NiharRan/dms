@@ -6,15 +6,15 @@ webpackJsonp([3],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(348)
-  __webpack_require__(350)
-  __webpack_require__(352)
+  __webpack_require__(349)
+  __webpack_require__(351)
+  __webpack_require__(353)
 }
-var normalizeComponent = __webpack_require__(231)
+var normalizeComponent = __webpack_require__(232)
 /* script */
-var __vue_script__ = __webpack_require__(354)
+var __vue_script__ = __webpack_require__(355)
 /* template */
-var __vue_template__ = __webpack_require__(355)
+var __vue_template__ = __webpack_require__(356)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -54,7 +54,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 230:
+/***/ 231:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -73,7 +73,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(232)
+var listToStyles = __webpack_require__(233)
 
 /*
 type StyleObject = {
@@ -283,7 +283,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 231:
+/***/ 232:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -393,7 +393,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 232:
+/***/ 233:
 /***/ (function(module, exports) {
 
 /**
@@ -427,19 +427,19 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 233:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(234)
+  __webpack_require__(235)
 }
-var normalizeComponent = __webpack_require__(231)
+var normalizeComponent = __webpack_require__(232)
 /* script */
-var __vue_script__ = __webpack_require__(236)
+var __vue_script__ = __webpack_require__(237)
 /* template */
-var __vue_template__ = __webpack_require__(237)
+var __vue_template__ = __webpack_require__(238)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -479,17 +479,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 234:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(235);
+var content = __webpack_require__(236);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(230)("03a0949b", content, false, {});
+var update = __webpack_require__(231)("03a0949b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -506,7 +506,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 235:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -521,7 +521,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 236:
+/***/ 237:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -559,7 +559,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 237:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -641,19 +641,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 238:
+/***/ 239:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(239)
+  __webpack_require__(240)
 }
-var normalizeComponent = __webpack_require__(231)
+var normalizeComponent = __webpack_require__(232)
 /* script */
-var __vue_script__ = __webpack_require__(241)
+var __vue_script__ = __webpack_require__(242)
 /* template */
-var __vue_template__ = __webpack_require__(257)
+var __vue_template__ = __webpack_require__(258)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -693,17 +693,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 239:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(240);
+var content = __webpack_require__(241);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(230)("24565851", content, false, {});
+var update = __webpack_require__(231)("24565851", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -720,7 +720,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 240:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -735,18 +735,18 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 241:
+/***/ 242:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(243);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Sidebar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Navbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter__ = __webpack_require__(234);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__AppFooter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Breadcrumb__);
 //
 //
@@ -813,19 +813,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 242:
+/***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(243)
+  __webpack_require__(244)
 }
-var normalizeComponent = __webpack_require__(231)
+var normalizeComponent = __webpack_require__(232)
 /* script */
-var __vue_script__ = __webpack_require__(245)
+var __vue_script__ = __webpack_require__(246)
 /* template */
-var __vue_template__ = __webpack_require__(246)
+var __vue_template__ = __webpack_require__(247)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -865,17 +865,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 243:
+/***/ 244:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(244);
+var content = __webpack_require__(245);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(230)("880366ac", content, false, {});
+var update = __webpack_require__(231)("880366ac", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -892,7 +892,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 244:
+/***/ 245:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -907,7 +907,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 245:
+/***/ 246:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1106,7 +1106,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 246:
+/***/ 247:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1695,19 +1695,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 247:
+/***/ 248:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(248)
+  __webpack_require__(249)
 }
-var normalizeComponent = __webpack_require__(231)
+var normalizeComponent = __webpack_require__(232)
 /* script */
-var __vue_script__ = __webpack_require__(250)
+var __vue_script__ = __webpack_require__(251)
 /* template */
-var __vue_template__ = __webpack_require__(251)
+var __vue_template__ = __webpack_require__(252)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1747,17 +1747,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 248:
+/***/ 249:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(249);
+var content = __webpack_require__(250);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(230)("629be114", content, false, {});
+var update = __webpack_require__(231)("629be114", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1774,7 +1774,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 249:
+/***/ 250:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -1789,7 +1789,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 250:
+/***/ 251:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1874,7 +1874,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 251:
+/***/ 252:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2177,19 +2177,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 252:
+/***/ 253:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(253)
+  __webpack_require__(254)
 }
-var normalizeComponent = __webpack_require__(231)
+var normalizeComponent = __webpack_require__(232)
 /* script */
-var __vue_script__ = __webpack_require__(255)
+var __vue_script__ = __webpack_require__(256)
 /* template */
-var __vue_template__ = __webpack_require__(256)
+var __vue_template__ = __webpack_require__(257)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2229,17 +2229,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 253:
+/***/ 254:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(254);
+var content = __webpack_require__(255);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(230)("c3dd8234", content, false, {});
+var update = __webpack_require__(231)("c3dd8234", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2256,7 +2256,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 254:
+/***/ 255:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2271,7 +2271,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 255:
+/***/ 256:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2314,7 +2314,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 256:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2428,7 +2428,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 257:
+/***/ 258:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2514,19 +2514,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 258:
+/***/ 259:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(259)
+  __webpack_require__(260)
 }
-var normalizeComponent = __webpack_require__(231)
+var normalizeComponent = __webpack_require__(232)
 /* script */
-var __vue_script__ = __webpack_require__(261)
+var __vue_script__ = __webpack_require__(262)
 /* template */
-var __vue_template__ = __webpack_require__(262)
+var __vue_template__ = __webpack_require__(263)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2566,17 +2566,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 259:
+/***/ 260:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(260);
+var content = __webpack_require__(261);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(230)("71b6ec7e", content, false, {});
+var update = __webpack_require__(231)("71b6ec7e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2593,7 +2593,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 260:
+/***/ 261:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2608,7 +2608,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 
 /***/ }),
 
-/***/ 261:
+/***/ 262:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2638,7 +2638,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 262:
+/***/ 263:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2694,17 +2694,17 @@ if (false) {
 
 /***/ }),
 
-/***/ 348:
+/***/ 349:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(349);
+var content = __webpack_require__(350);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(230)("668f7684", content, false, {});
+var update = __webpack_require__(231)("668f7684", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2721,7 +2721,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 349:
+/***/ 350:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2736,17 +2736,17 @@ exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n
 
 /***/ }),
 
-/***/ 350:
+/***/ 351:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(351);
+var content = __webpack_require__(352);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(230)("33b64a3b", content, false, {});
+var update = __webpack_require__(231)("33b64a3b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2763,7 +2763,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 351:
+/***/ 352:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2778,17 +2778,17 @@ exports.push([module.i, "\ntd[data-v-aab6e828],th[data-v-aab6e828]{padding:2px;b
 
 /***/ }),
 
-/***/ 352:
+/***/ 353:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(353);
+var content = __webpack_require__(354);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(230)("56d5efb8", content, false, {});
+var update = __webpack_require__(231)("56d5efb8", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2805,7 +2805,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 353:
+/***/ 354:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2813,22 +2813,117 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n.btn-default {\n    border: 1px solid #ccc;\n    padding: 10px;\n}\n.vue-daterange-picker[data-v-4f8eb193] {\n    min-width: 100% !important;\n}\n", ""]);
+exports.push([module.i, "\n.btn-default {\n  border: 1px solid #ccc;\n  padding: 10px;\n}\n.vue-daterange-picker[data-v-4f8eb193] {\n  min-width: 100% !important;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 354:
+/***/ 355:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout__ = __webpack_require__(239);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Shared_Layout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model__ = __webpack_require__(259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Components_Model__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3007,9 +3102,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       search: {
         per_page: 10,
-        query: '',
-        invoice: '',
-        status: '',
+        query: "",
+        invoice: "",
+        status: "",
         client: null,
         product: null,
         dateRange: {}
@@ -3025,26 +3120,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     totalBorrow: function totalBorrow(data) {
       var borrowPrice = data.reduce(function (borrow, invoice) {
-        var p = invoice.borrow == '' ? 0 : invoice.borrow;
+        var p = invoice.borrow == "" ? 0 : invoice.borrow;
         return borrow + parseFloat(p);
       }, 0);
       return parseFloat(borrowPrice).toFixed(2);
     },
     totalFinal: function totalFinal(data) {
       var finalPrice = data.reduce(function (_final, invoice) {
-        var d = invoice["final"] == '' ? 0 : invoice["final"];
+        var d = invoice["final"] == "" ? 0 : invoice["final"];
         return _final + parseFloat(d);
       }, 0);
       return parseFloat(finalPrice).toFixed(2);
     },
     searchData: function searchData() {
-      $("#default").modal('hide');
-      var client = this.search.client == null ? '' : this.search.client.id;
-      var product = this.search.product == null ? '' : this.search.product.id;
-      var start_date = this.$options.filters.moment(this.search.dateRange.startDate, 'YYYY-MM-DD');
-      var end_date = this.$options.filters.moment(this.search.dateRange.endDate, 'YYYY-MM-DD');
-      this.$inertia.replace(this.route('drivers.invoices.index'), {
-        method: 'get',
+      $("#default").modal("hide");
+      var client = this.search.client == null ? "" : this.search.client.id;
+      var product = this.search.product == null ? "" : this.search.product.id;
+      var start_date = this.$options.filters.moment(this.search.dateRange.startDate, "YYYY-MM-DD");
+      var end_date = this.$options.filters.moment(this.search.dateRange.endDate, "YYYY-MM-DD");
+      this.$inertia.replace(this.route("drivers.invoices.index"), {
+        method: "get",
         data: {
           search: this.search.query,
           per_page: this.search.per_page,
@@ -3066,7 +3161,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 355:
+/***/ 356:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -3193,338 +3288,407 @@ var render = function() {
                             })
                           ]),
                           _vm._v(" "),
-                          _c("th", { attrs: { colspan: "3" } }),
-                          _vm._v(" "),
-                          _c("th", { attrs: { colspan: "4" } }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.search.query,
-                                  expression: "search.query"
+                          _c("th", { staticClass: "text-center" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-default",
+                                attrs: {
+                                  "data-toggle": "modal",
+                                  "data-target": "#default",
+                                  type: "button"
                                 }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "text",
-                                placeholder: _vm.__("Search")
                               },
-                              domProps: { value: _vm.search.query },
-                              on: {
-                                keyup: _vm.searchData,
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.search,
-                                    "query",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "th",
-                            {
-                              staticClass: "text-center",
-                              attrs: { colspan: "3" }
-                            },
-                            [
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-default",
-                                  attrs: {
-                                    "data-toggle": "modal",
-                                    "data-target": "#default",
-                                    type: "button"
-                                  }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass: "feather icon-filter mr-2"
-                                  }),
-                                  _vm._v(" " + _vm._s(_vm.__("Filter")))
-                                ]
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("tr", [
-                          _c("th", { attrs: { scope: "col" } }, [
-                            _vm._v(_vm._s(_vm.__("S.N.")))
-                          ]),
-                          _vm._v(" "),
-                          _c("th", { staticStyle: { width: "10%" } }, [
-                            _vm._v(_vm._s(_vm.__("Client")))
-                          ]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v(_vm._s(_vm.__("Driver")))]),
-                          _vm._v(" "),
-                          _c("th", { staticClass: "text-center" }, [
-                            _vm._v(_vm._s(_vm.__("Invoice")))
-                          ]),
-                          _vm._v(" "),
-                          _c("th", [
-                            _vm._v(_vm._s(_vm.__("Measurement Type")))
-                          ]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v(_vm._s(_vm.__("Created At")))]),
-                          _vm._v(" "),
-                          _c("th", { staticClass: "text-center" }, [
-                            _vm._v(_vm._s(_vm.__("Status")))
-                          ]),
-                          _vm._v(" "),
-                          _c("th", { staticClass: "text-center" }, [
-                            _vm._v(_vm._s(_vm.__("Quantity")))
-                          ]),
-                          _vm._v(" "),
-                          _c("th", { staticClass: "text-right" }, [
-                            _vm._v(_vm._s(_vm.__("Track Rent")))
-                          ]),
-                          _vm._v(" "),
-                          _c("th", { staticClass: "text-right" }, [
-                            _vm._v(_vm._s(_vm.__("Others")))
-                          ]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v(_vm._s(_vm.__("Total")))]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v(_vm._s(_vm.__("Borrow")))]),
-                          _vm._v(" "),
-                          _c("th", [_vm._v(_vm._s(_vm.__("Final")))]),
-                          _vm._v(" "),
-                          _c("th", { staticClass: "text-center" }, [
-                            _vm._v(_vm._s(_vm.__("Action")))
+                              [
+                                _c("i", {
+                                  staticClass: "feather icon-filter mr-2"
+                                }),
+                                _vm._v(
+                                  "\n                        " +
+                                    _vm._s(_vm.__("Filter")) +
+                                    "\n                      "
+                                )
+                              ]
+                            )
                           ])
                         ])
-                      ]),
-                      _vm._v(" "),
-                      _vm.driver_invoices && _vm.driver_invoices.data.length > 0
-                        ? _c(
-                            "tbody",
-                            { staticClass: "font-small-3" },
-                            [
-                              _c("tr", [
-                                _c("td", { attrs: { colspan: "10" } }),
-                                _vm._v(" "),
-                                _c("th", { staticClass: "text-right" }, [
-                                  _vm._v(
-                                    _vm._s(_vm.total(_vm.driver_invoices.data))
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("th", { staticClass: "text-right" }, [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.totalBorrow(_vm.driver_invoices.data)
-                                    )
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("th", { staticClass: "text-right" }, [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.totalFinal(_vm.driver_invoices.data)
-                                    )
-                                  )
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.driver_invoices.data, function(
-                                driver_invoice,
-                                index
-                              ) {
-                                return _c("tr", { key: driver_invoice.id }, [
-                                  _c("th", [_vm._v(_vm._s(index + 1))]),
-                                  _vm._v(" "),
-                                  _c("td", [
-                                    _vm._v(
-                                      "\n                      " +
-                                        _vm._s(driver_invoice.client.name) +
-                                        "\n                    "
-                                    )
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm.driver_invoices && _vm.driver_invoices.data.length > 0
+                  ? _c("div", { staticClass: "table-responsive" }, [
+                      _c(
+                        "table",
+                        {
+                          staticClass:
+                            "table table-responsive table-bordered mb-0",
+                          staticStyle: { width: "130%" },
+                          attrs: { id: "data-table" }
+                        },
+                        [
+                          _c("thead", [
+                            _vm.driver_invoices &&
+                            _vm.driver_invoices.data.length > 0
+                              ? _c("tr", [
+                                  _c("th", { attrs: { scope: "col" } }, [
+                                    _vm._v(_vm._s(_vm.__("S.N.")))
                                   ]),
                                   _vm._v(" "),
-                                  _c("td", [
-                                    _vm._v(
-                                      "\n                      " +
-                                        _vm._s(driver_invoice.driver_name) +
-                                        "\n                    "
-                                    )
+                                  _c("th", { staticStyle: { width: "10%" } }, [
+                                    _vm._v(_vm._s(_vm.__("Client")))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v(_vm._s(_vm.__("Driver")))]),
+                                  _vm._v(" "),
+                                  _c("th", { staticClass: "text-center" }, [
+                                    _vm._v(_vm._s(_vm.__("Invoice")))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", [
+                                    _vm._v(_vm._s(_vm.__("Measurement Type")))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", [
+                                    _vm._v(_vm._s(_vm.__("Created At")))
                                   ]),
                                   _vm._v(" "),
                                   _c("th", { staticClass: "text-center" }, [
-                                    _vm._v(
-                                      "\n                      " +
-                                        _vm._s(driver_invoice.invoice) +
-                                        "\n                    "
-                                    )
+                                    _vm._v(_vm._s(_vm.__("Status")))
                                   ]),
                                   _vm._v(" "),
-                                  _c("td", [
-                                    _c("p", { staticClass: "mb-0" }, [
-                                      _c("strong", [
-                                        _vm._v(
-                                          _vm._s(
-                                            driver_invoice.measurement_type.name
-                                          )
-                                        )
-                                      ])
-                                    ]),
+                                  _c("th", { staticClass: "text-center" }, [
+                                    _vm._v(_vm._s(_vm.__("Quantity")))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", { staticClass: "text-right" }, [
+                                    _vm._v(_vm._s(_vm.__("Track Rent")))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", { staticClass: "text-right" }, [
+                                    _vm._v(_vm._s(_vm.__("Others")))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v(_vm._s(_vm.__("Total")))]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v(_vm._s(_vm.__("Borrow")))]),
+                                  _vm._v(" "),
+                                  _c("th", [_vm._v(_vm._s(_vm.__("Final")))]),
+                                  _vm._v(" "),
+                                  _c("th", { staticClass: "text-center" }, [
+                                    _vm._v(_vm._s(_vm.__("Action")))
+                                  ])
+                                ])
+                              : _vm._e()
+                          ]),
+                          _vm._v(" "),
+                          _vm.driver_invoices &&
+                          _vm.driver_invoices.data.length > 0
+                            ? _c(
+                                "tbody",
+                                { staticClass: "font-small-3" },
+                                [
+                                  _c("tr", [
+                                    _c("td", { attrs: { colspan: "10" } }),
                                     _vm._v(" "),
-                                    _c("p", { staticClass: "mb-0 text-sm" }, [
+                                    _c("th", { staticClass: "text-right" }, [
                                       _vm._v(
-                                        _vm._s(_vm.__("Height")) +
-                                          _vm._s(_vm.__(":")) +
-                                          " " +
+                                        "\n                      " +
                                           _vm._s(
-                                            driver_invoice.container_height
-                                          )
+                                            _vm.total(_vm.driver_invoices.data)
+                                          ) +
+                                          "\n                    "
                                       )
                                     ]),
                                     _vm._v(" "),
-                                    _c("p", { staticClass: "mb-0 text-sm" }, [
+                                    _c("th", { staticClass: "text-right" }, [
                                       _vm._v(
-                                        _vm._s(_vm.__("Length")) +
-                                          _vm._s(_vm.__(":")) +
-                                          " " +
+                                        "\n                      " +
                                           _vm._s(
-                                            driver_invoice.container_length
-                                          )
+                                            _vm.totalBorrow(
+                                              _vm.driver_invoices.data
+                                            )
+                                          ) +
+                                          "\n                    "
                                       )
                                     ]),
                                     _vm._v(" "),
-                                    _c("p", { staticClass: "mb-0 text-sm" }, [
+                                    _c("th", { staticClass: "text-right" }, [
                                       _vm._v(
-                                        _vm._s(_vm.__("Breadth")) +
-                                          _vm._s(_vm.__(":")) +
-                                          " " +
+                                        "\n                      " +
                                           _vm._s(
-                                            driver_invoice.container_breadth
-                                          )
+                                            _vm.totalFinal(
+                                              _vm.driver_invoices.data
+                                            )
+                                          ) +
+                                          "\n                    "
                                       )
                                     ])
                                   ]),
                                   _vm._v(" "),
-                                  _c("td", [
-                                    _vm._v(
-                                      _vm._s(
-                                        _vm._f("moment")(
-                                          driver_invoice.created_at,
-                                          "DD/MM/YYYY"
-                                        )
-                                      )
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", {
-                                    domProps: {
-                                      innerHTML: _vm._s(
-                                        _vm.$options.filters.payment_status(
-                                          driver_invoice.status
-                                        )
-                                      )
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("td", { staticClass: "text-center" }, [
-                                    _vm._v(
-                                      "\n                      " +
-                                        _vm._s(driver_invoice.quantity) +
-                                        "\n                    "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(driver_invoice.track_rent))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(driver_invoice.others))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(driver_invoice.total))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(driver_invoice.borrow))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(driver_invoice.final))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "td",
-                                    { staticClass: "text-center" },
-                                    [
-                                      _c(
-                                        "inertia-link",
-                                        {
-                                          staticClass: "text-primary",
-                                          attrs: {
-                                            href: _vm.route(
-                                              "drivers.invoices.show",
-                                              driver_invoice.invoice
+                                  _vm._l(_vm.driver_invoices.data, function(
+                                    driver_invoice,
+                                    index
+                                  ) {
+                                    return _c(
+                                      "tr",
+                                      { key: driver_invoice.id },
+                                      [
+                                        _c("th", [_vm._v(_vm._s(index + 1))]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                      " +
+                                              _vm._s(
+                                                driver_invoice.client.name
+                                              ) +
+                                              "\n                    "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                      " +
+                                              _vm._s(
+                                                driver_invoice.driver_name
+                                              ) +
+                                              "\n                    "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "th",
+                                          { staticClass: "text-center" },
+                                          [
+                                            _vm._v(
+                                              "\n                      " +
+                                                _vm._s(driver_invoice.invoice) +
+                                                "\n                    "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _c("p", { staticClass: "mb-0" }, [
+                                            _c("strong", [
+                                              _vm._v(
+                                                _vm._s(
+                                                  driver_invoice
+                                                    .measurement_type.name
+                                                )
+                                              )
+                                            ])
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "p",
+                                            { staticClass: "mb-0 text-sm" },
+                                            [
+                                              _vm._v(
+                                                "\n                        " +
+                                                  _vm._s(_vm.__("Height")) +
+                                                  _vm._s(_vm.__(":")) +
+                                                  "\n                        " +
+                                                  _vm._s(
+                                                    driver_invoice.container_height
+                                                  ) +
+                                                  "\n                      "
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "p",
+                                            { staticClass: "mb-0 text-sm" },
+                                            [
+                                              _vm._v(
+                                                "\n                        " +
+                                                  _vm._s(_vm.__("Length")) +
+                                                  _vm._s(_vm.__(":")) +
+                                                  "\n                        " +
+                                                  _vm._s(
+                                                    driver_invoice.container_length
+                                                  ) +
+                                                  "\n                      "
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "p",
+                                            { staticClass: "mb-0 text-sm" },
+                                            [
+                                              _vm._v(
+                                                "\n                        " +
+                                                  _vm._s(_vm.__("Breadth")) +
+                                                  _vm._s(_vm.__(":")) +
+                                                  "\n                        " +
+                                                  _vm._s(
+                                                    driver_invoice.container_breadth
+                                                  ) +
+                                                  "\n                      "
+                                              )
+                                            ]
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                      " +
+                                              _vm._s(
+                                                _vm._f("moment")(
+                                                  driver_invoice.created_at,
+                                                  "DD/MM/YYYY"
+                                                )
+                                              ) +
+                                              "\n                    "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", {
+                                          domProps: {
+                                            innerHTML: _vm._s(
+                                              _vm.$options.filters.payment_status(
+                                                driver_invoice.status
+                                              )
                                             )
                                           }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass: "feather icon-eye"
-                                          })
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "inertia-link",
-                                        {
-                                          staticClass: "text-info",
-                                          attrs: {
-                                            href: _vm.route(
-                                              "drivers.invoices.edit",
-                                              driver_invoice.id
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-center" },
+                                          [
+                                            _vm._v(
+                                              "\n                      " +
+                                                _vm._s(
+                                                  driver_invoice.quantity
+                                                ) +
+                                                "\n                    "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-right" },
+                                          [
+                                            _vm._v(
+                                              "\n                      " +
+                                                _vm._s(
+                                                  driver_invoice.track_rent
+                                                ) +
+                                                "\n                    "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-right" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(driver_invoice.others)
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-right" },
+                                          [_vm._v(_vm._s(driver_invoice.total))]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-right" },
+                                          [
+                                            _vm._v(
+                                              _vm._s(driver_invoice.borrow)
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-right" },
+                                          [_vm._v(_vm._s(driver_invoice.final))]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-center" },
+                                          [
+                                            _c(
+                                              "inertia-link",
+                                              {
+                                                staticClass: "text-primary",
+                                                attrs: {
+                                                  href: _vm.route(
+                                                    "drivers.invoices.show",
+                                                    driver_invoice.invoice
+                                                  )
+                                                }
+                                              },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "feather icon-eye"
+                                                })
+                                              ]
                                             ),
-                                            role: "button"
-                                          }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass: "feather icon-edit"
-                                          })
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "inertia-link",
-                                        {
-                                          staticClass: "text-warning",
-                                          attrs: { href: "", role: "button" }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass: "feather icon-trash"
-                                          })
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ])
-                              })
-                            ],
-                            2
-                          )
-                        : _vm._e()
-                    ]
-                  )
-                ])
+                                            _vm._v(" "),
+                                            _c(
+                                              "inertia-link",
+                                              {
+                                                staticClass: "text-info",
+                                                attrs: {
+                                                  href: _vm.route(
+                                                    "drivers.invoices.edit",
+                                                    driver_invoice.id
+                                                  ),
+                                                  role: "button"
+                                                }
+                                              },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "feather icon-edit"
+                                                })
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "inertia-link",
+                                              {
+                                                staticClass: "text-warning",
+                                                attrs: {
+                                                  href: "",
+                                                  role: "button"
+                                                }
+                                              },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "feather icon-trash"
+                                                })
+                                              ]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ]
+                                    )
+                                  })
+                                ],
+                                2
+                              )
+                            : _vm._e()
+                        ]
+                      )
+                    ])
+                  : _vm._e()
               ])
             ])
           ])
@@ -3545,7 +3709,13 @@ var render = function() {
                         staticClass: "modal-title",
                         attrs: { id: "myModalLabel1" }
                       },
-                      [_vm._v(_vm._s(_vm.__("Advanced Search")))]
+                      [
+                        _vm._v(
+                          "\n          " +
+                            _vm._s(_vm.__("Advanced Search")) +
+                            "\n        "
+                        )
+                      ]
                     ),
                     _vm._v(" "),
                     _c(
@@ -3591,18 +3761,18 @@ var render = function() {
                         fn: function(picker) {
                           return [
                             _vm._v(
-                              "\n                  " +
+                              "\n              " +
                                 _vm._s(
                                   _vm._f("moment")(
                                     picker.startDate,
                                     "DD-MM-YYYY"
                                   )
                                 ) +
-                                " - " +
+                                " -\n              " +
                                 _vm._s(
                                   _vm._f("moment")(picker.endDate, "DD-MM-YYYY")
                                 ) +
-                                "\n              "
+                                "\n            "
                             )
                           ]
                         }
@@ -3732,7 +3902,11 @@ var render = function() {
                   attrs: { type: "button" },
                   on: { click: _vm.searchData }
                 },
-                [_vm._v(_vm._s(_vm.__("Search")))]
+                [
+                  _vm._v(
+                    "\n          " + _vm._s(_vm.__("Search")) + "\n        "
+                  )
+                ]
               ),
               _vm._v(" "),
               _c(
@@ -3741,7 +3915,11 @@ var render = function() {
                   staticClass: "btn btn-secendary",
                   attrs: { type: "button", "data-dismiss": "modal" }
                 },
-                [_vm._v(_vm._s(_vm.__("Cancel")))]
+                [
+                  _vm._v(
+                    "\n          " + _vm._s(_vm.__("Cancel")) + "\n        "
+                  )
+                ]
               )
             ])
           ]

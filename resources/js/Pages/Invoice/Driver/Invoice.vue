@@ -62,7 +62,9 @@
                       <span class="text-bold-700"> {{ __("Phone:") }}</span>
                       {{
                         translate(
-                          driver_invoice.company.active_phones.toString()
+                          driver_invoice.company.active_phones
+                            ? driver_invoice.company.active_phones.toString()
+                            : ""
                         )
                       }}
                     </span>
@@ -90,12 +92,15 @@
                       {{ driver_invoice.client.name }}</span
                     >
                     <span
-                      >{{ __("Client Address") }}{{ __(":") }}
+                      >{{ __("Address") }}{{ __(":") }}
                       {{ driver_invoice.client.address }}</span
                     >
                     <span
-                      >{{ __("Client Address") }}{{ __(":") }}
-                      {{ translate(driver_invoice.client.phone) }}</span
+                      >{{ __("Contact No.") }}{{ __(":") }}
+                      {{
+                        driver_invoice.client_phone
+
+                      }}</span
                     >
                   </p>
                   <p class="d-flex" style="justify-content: space-between">
@@ -108,7 +113,9 @@
                     >
                     <span
                       >{{ __("Dri: Mobile:") }}
-                      {{ translate(driver_invoice.driver_phone) }}</span
+                      {{
+                        driver_invoice.driver_phone
+                      }}</span
                     >
                   </p>
 
@@ -120,9 +127,10 @@
                           {{ __("Measurement Type") }}
                         </th>
                         <th class="text-center">
-                          {{ __("Length") }} *
-                          {{ __("Breadth") }} *
-                          {{ __("Height") }} 
+                          <span v-if="driver_invoice.measurement_type.id == 1">
+                            {{ __("Length") }} * {{ __("Breadth") }} *
+                            {{ __("Height") }}
+                          </span>
                         </th>
                         <th class="text-center">{{ __("Quantity") }}</th>
                       </tr>
@@ -134,9 +142,11 @@
                           {{ driver_invoice.measurement_type.name }}
                         </th>
                         <th class="text-center">
-                          {{ driver_invoice.container_height }} *
-                          {{ driver_invoice.container_length }} *
-                          {{ driver_invoice.container_breadth }}
+                          <span v-if="driver_invoice.container_height">
+                            {{ driver_invoice.container_height }} In *
+                            {{ driver_invoice.container_length }} In *
+                            {{ driver_invoice.container_breadth }} In
+                          </span>
                         </th>
                         <th class="text-center">
                           {{ driver_invoice.quantity }}
@@ -164,11 +174,15 @@
                         <th class="text-right">{{ driver_invoice.total }}</th>
                       </tr>
                       <tr>
-                        <th colspan="3" class="text-right">{{ __("Borrow") }}</th>
+                        <th colspan="3" class="text-right">
+                          {{ __("Borrow") }}
+                        </th>
                         <th class="text-right">{{ driver_invoice.borrow }}</th>
                       </tr>
                       <tr>
-                        <th colspan="3" class="text-right">{{ __("Final") }}</th>
+                        <th colspan="3" class="text-right">
+                          {{ __("Final Amount") }}
+                        </th>
                         <th class="text-right">{{ driver_invoice.final }}</th>
                       </tr>
                     </tbody>
@@ -213,21 +227,6 @@
           </div>
         </div>
       </div>
-
-      <model>
-        <template v-slot:header>
-          <h4 class="modal-title" id="myModalLabel1">{{ modelTitle }}</h4>
-          <button
-            type="button"
-            @click="cleanModel"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">×</span>
-          </button>
-        </template>
-      </model>
       <!-- Ag Grid users list section end -->
     </section>
     <!-- product type list ends -->
@@ -247,8 +246,7 @@ export default {
     errors: Object,
   },
   data: function () {
-    return {
-    };
+    return {};
   },
   methods: {
     printPage: function () {

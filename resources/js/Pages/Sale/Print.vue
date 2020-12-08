@@ -50,7 +50,7 @@
               </span>
             </p>
           </div>
-          <div class="controller position-absolute width-300">
+          <div class="controller width-300">
             <label
               ><input type="checkbox" v-model="hasHeader" />
               {{ __("Attach company information") }}</label
@@ -89,8 +89,7 @@
                 <tr>
                   <th scope="col">{{ __("S.N.") }}</th>
                   <th>{{ __("Track No.") }}</th>
-                  <th>{{ __("Stock") }}</th>
-                  <th>{{ __("Product Product") }}</th>
+                  <th>{{ __("Product") }}</th>
                   <th class="text-center">{{ __("Product Quantity") }}</th>
                   <th class="text-right">{{ __("Price") }}</th>
                   <th class="text-right">{{ __("Amount") }}</th>
@@ -98,26 +97,25 @@
               </thead>
               <tbody>
                 <tr v-for="(row, index) in sale.sale_details" :key="row.id">
-                  <th style="width: 80px">#{{ index + 1 }}</th>
+                  <th style="width: 80px">{{ index + 1 }}</th>
                   <th>{{ row.track_no }}</th>
-                  <th>{{ row.stock.name }}</th>
                   <th>{{ row.product.name }}</th>
                   <th class="text-center">{{ row.quantity }} {{ __("Mg") }}</th>
                   <th class="text-right">{{ row.price }}</th>
                   <th class="text-right">{{ row.amount }}</th>
                 </tr>
                 <tr>
-                  <th colspan="6" class="text-right">
+                  <th colspan="5" class="text-right">
                     {{ __("Total Amount") }}
                   </th>
                   <th class="text-right">{{ sale.total_price }}</th>
                 </tr>
                 <tr>
-                  <th colspan="6" class="text-right">{{ __("Paid") }}</th>
+                  <th colspan="5" class="text-right">{{ __("Paid") }}</th>
                   <th class="text-right">{{ sale.total_paid }}</th>
                 </tr>
                 <tr>
-                  <th colspan="6" class="text-right">{{ __("Due") }}</th>
+                  <th colspan="5" class="text-right">{{ __("Due") }}</th>
                   <th class="text-right">{{ sale.total_due }}</th>
                 </tr>
               </tbody>
@@ -128,18 +126,17 @@
               <span>{{ __("In Words") }}{{ __(":") }}</span> {{ sale.word }}
             </p>
             <p class="mb-0 signature">
-              <span class="float-left">
+              <span class="border-top-dashed float-left">
                 <span class="text-bold-700">
-                 {{ __('Signature of Client') }}{{ __(":") }}</span
+                  {{ __("Signature of Client") }}{{ __(":") }}</span
                 >
-                <span class="underlined">{{ sale.client.name }}</span>
+                <span class="text-bold-700">{{ sale.client.name }}</span>
               </span>
-              <span class="float-right">
+              <span class="border-top-dashed float-right">
                 <span class="text-bold-700">
                   {{ __("In Favor of") }}{{ __(":") }}</span
                 >
-                <span class="underlined">{{ sale.company.name }}</span>
-                
+                <span class="text-bold-700">{{ sale.company.name }}</span>
               </span>
             </p>
           </div>
@@ -176,14 +173,6 @@ export default {
 .mb-200 {
   margin-top: 200px;
 }
-.controller {
-  right: 10px;
-  top: 10px;
-  border: 1px solid #d0d0d0;
-  border-radius: 4px;
-  padding: 10px;
-  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);
-}
 body {
   -webkit-print-color-adjust: exact !important;
 }
@@ -198,12 +187,6 @@ body {
   padding: 5px 10px;
   border-radius: 16px;
   font-size: 18px;
-}
-.signature {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
 @media print {
   .table th,
