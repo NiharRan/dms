@@ -39,15 +39,7 @@
                           :placeholder="__('Invoice')"
                         />
                       </th>
-                      <th colspan="1">
-                        <input
-                          type="text"
-                          @keyup="searchData"
-                          v-model="search.query"
-                          class="form-control"
-                          :placeholder="__('Search')"
-                        />
-                      </th>
+                      <th></th>
                       <th colspan="4" class="text-center">
                         <button
                           class="btn btn-default"
@@ -59,6 +51,11 @@
                           {{ __("Filter") }}
                         </button>
                         <button
+                          :disabled="
+                            transactions && transactions.data.length > 0
+                              ? false
+                              : true
+                          "
                           class="btn btn-default"
                           type="button"
                           @click="print"
@@ -101,8 +98,10 @@
                       <th>{{ transaction.transactionable.invoice }}</th>
                       <th>{{ transaction.transaction_type.name }}</th>
                       <th>{{ transaction.media.name }}</th>
-                      <th class="text-right">{{ transaction.description }}</th>
-                      <th class="text-right">{{ transaction.amount }}</th>
+                      <th>{{ transaction.description }}</th>
+                      <th class="text-right">
+                        {{ parseFloat(transaction.amount).toFixed(2) }}
+                      </th>
                       <td class="text-center">
                         <a
                           :href="route('accounts.ledgers', transaction.id)"

@@ -35,9 +35,10 @@ class DriverInvoiceResource extends JsonResource
             'track_rent'        => $this->track_rent,
             'others'            => $this->others,
             'total'             => $this->total,
-            'borrow'              => $this->borrow,
-            'final'               => $this->final,
-            'status'            => $this->status,
+            'borrow'            => $this->borrow,
+            'final'             => $this->final,
+            'is_commission_added'   => $this->is_commission_added,
+            'status'                => $this->status,
         ];
     }
 }

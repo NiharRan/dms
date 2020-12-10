@@ -33,8 +33,8 @@
                       <th scope="col">{{ __("S.N.") }}</th>
                       <th>{{ __('Purchased At') }}</th>
                       <th class="text-center">{{ __("Quantity") }}</th>
-                      <th class="text-center">{{ __("Ship") }}</th>
-                      <th class="text-center">{{ __("Company") }}</th>
+                      <th>{{ __("Ship") }}</th>
+                      <th>{{ __("Company") }}</th>
                       <th class="text-center">{{ __("Status") }}</th>
                     </tr>
                   </thead>
@@ -45,9 +45,9 @@
                     >
                       <th>{{ index + 1 }}</th>
                       <td>{{ history.created_at | moment('DD/MM/YYYY') }}</td>
-                      <th class="text-center">{{ history.quantity }} {{ __('Mg')}}</th>
-                      <th class="text-center">{{ history.ship }}</th>
-                      <th class="text-center">{{ history.company }}</th>
+                      <th class="text-center">{{ parseFloat(history.quantity).toFixed(2) }} {{ __('Mg')}}</th>
+                      <th>{{ history.ship }}</th>
+                      <th>{{ history.company }}</th>
                       <td class="text-center" v-html="$options.filters.status(history.status)"></td>
                     </tr>
                   </tbody>

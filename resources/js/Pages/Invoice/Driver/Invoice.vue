@@ -97,10 +97,7 @@
                     >
                     <span
                       >{{ __("Contact No.") }}{{ __(":") }}
-                      {{
-                        driver_invoice.client_phone
-
-                      }}</span
+                      {{ driver_invoice.client_phone }}</span
                     >
                   </p>
                   <p class="d-flex" style="justify-content: space-between">
@@ -113,9 +110,7 @@
                     >
                     <span
                       >{{ __("Dri: Mobile:") }}
-                      {{
-                        driver_invoice.driver_phone
-                      }}</span
+                      {{ driver_invoice.driver_phone }}</span
                     >
                   </p>
 
@@ -210,16 +205,21 @@
               </div>
             </div>
             <div class="card-footer text-right">
+              <inertia-link class="btn btn-primary" :href="route('drivers.invoices.index')">
+                <i class="feather icon-unlock"></i>
+                <span class="menu-title" data-i18n="">{{ __("Back") }}</span>
+              </inertia-link>
               <inertia-link
+                v-if="!driver_invoice.is_commission_added"
                 :href="route('drivers.invoices.edit', driver_invoice.id)"
-                class="btn btn-primary"
+                class="btn btn-info"
                 ><i class="feather icon-edit"></i>
                 {{ __("Edit") }}</inertia-link
               >
               <inertia-link
                 :href="route('drivers.invoices.print', driver_invoice.invoice)"
                 target="_blank"
-                class="btn btn-info"
+                class="btn btn-warning"
                 ><i class="feather icon-printer"></i>
                 {{ __("Print") }}</inertia-link
               >

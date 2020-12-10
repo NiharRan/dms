@@ -132,13 +132,34 @@
                       >{{ __("Reference")
                       }}<strong class="text-danger">*</strong></label
                     >
-                    <input
-                      type="text"
-                      v-model="form.reference"
-                      :class="[errors.reference ? 'in-invalid' : '']"
-                      :placeholder="__('Reference')"
-                      class="form-control text-uppercase"
-                    />
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <fieldset class="checkbox">
+                          <div class="vs-checkbox-con vs-checkbox-primary">
+                            <input
+                              type="checkbox"
+                              v-model="form.has_commission"
+                            />
+                            <span class="vs-checkbox">
+                              <span class="vs-checkbox--check">
+                                <i
+                                  style="font-size: 30px"
+                                  class="vs-icon feather icon-check"
+                                ></i>
+                              </span>
+                            </span>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <input
+                        type="text"
+                        v-model="form.reference"
+                        :class="[errors.reference ? 'in-invalid' : '']"
+                        :readonly="!form.has_commission"
+                        :placeholder="__('Reference')"
+                        class="form-control text-uppercase"
+                      />
+                    </div>
 
                     <span
                       v-if="errors.reference"
@@ -276,7 +297,9 @@
                       </th>
                     </tr>
                     <tr>
-                      <th colspan="3" class="text-right">{{ __("Commission") }}</th>
+                      <th colspan="3" class="text-right">
+                        {{ __("Commission") }}
+                      </th>
                       <th>
                         <input
                           type="text"
@@ -300,7 +323,9 @@
                       </th>
                     </tr>
                     <tr>
-                      <th colspan="3" class="text-right">{{ __("Final Amount") }}</th>
+                      <th colspan="3" class="text-right">
+                        {{ __("Final Amount") }}
+                      </th>
                       <th>
                         <input
                           type="text"
@@ -379,6 +404,7 @@ export default {
         final: "",
         reference: "",
         commission: "",
+        has_commission: true,
       },
     };
   },
@@ -405,13 +431,17 @@ export default {
       this.calculateCommission();
     },
     calculateCommission: function () {
-      let quantity = this.form.quantity === "" ? 0 : this.form.quantity;
+      if (this.form.has_commission) {
+        let quantity = this.form.quantity === "" ? 0 : this.form.quantity;
 
-      let commission =
-        parseFloat(this.load.stock_rent) +
-        parseFloat(this.load.amount) * parseFloat(quantity);
-      this.form.commission = parseFloat(commission).toFixed(2);
-      console.log(this.form.commission);
+        let commission =
+          parseFloat(this.load.stock_rent) +
+          parseFloat(this.load.amount) * parseFloat(quantity);
+        this.form.commission = parseFloat(commission).toFixed(2);
+        console.log(this.form.commission);
+      } else {
+        this.form.commission = "";
+      }
     },
     calculateFinal: function () {
       let total = this.form.total === "" ? "0" : this.form.total;
@@ -449,6 +479,7 @@ export default {
         final: this.form.final,
         reference: this.form.reference,
         commission: this.form.commission,
+        has_commission: this.form.has_commission,
       });
     },
   },
@@ -457,4 +488,8 @@ export default {
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style>
+.vs-checkbox-con .vs-checkbox {
+  width: 40px;
+  height: 40px;
+}
 </style>

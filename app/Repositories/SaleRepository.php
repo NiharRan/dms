@@ -3,10 +3,11 @@
 
 namespace App\Repositories;
 
-
+use App\DriverInvoice;
 use App\Sale;
 use App\Services\InvoiceService;
 use App\Services\TransactionService;
+use App\Settings\Client;
 use App\Settings\StockDetails;
 use App\Traits\RepositoryTrait;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class SaleRepository
 
   public function all()
   {
-    $sales = $this->sale->with(['client', 'company', 'creator']);
+    $sales = $this->sale->with(['client', 'company', 'creator', 'transaction_media']);
 
     if (\request()->has('status') && !empty(request()->status)) {
       $sales = $sales->where('status', \request()->status);
@@ -49,9 +50,13 @@ class SaleRepository
 
     if (\request()->has('search') && !empty(\request()->search)) {
       $search = \request()->search;
-      $sales = $sales->whereHas('client', function ($q) use($search)
-      {
-        $q->where('name', 'like', "%$search");
+      $sales = $sales->where(function ($query) use ($search) {
+        $query->whereHas('client', function ($q) use ($search) {
+          $q->where('name', 'like', "%$search%");
+        })
+          ->orWhereHas('creator', function ($q) use ($search) {
+            $q->where('name', 'like', "%$search%");
+          });
       });
     }
     return $sales->orderBy('id', 'desc');
@@ -90,6 +95,15 @@ class SaleRepository
     $sale->invoice = InvoiceService::sale();
     $sale->created_at = date('Y-m-d H:i:s');
     $sale->user_id = Auth::id();
+
+    if ($request->total_paid < $request->total_price) {
+      $sale = $this->paymentFromBalance($request, $sale);
+    }
+
+    if (!empty($request->reference)) {
+      $this->checkReference($request->reference);
+    }
+
     if ($sale->save()) {
       $this->storeSaleDetailsInfo($sale, $request);
 
@@ -106,6 +120,24 @@ class SaleRepository
     $sale = $this->findById($id);
     $sale = $this->setupData($sale, $request);
     $sale->user_id = Auth::id();
+
+    if ($request->total_paid < $request->total_price) {
+      $sale = $this->paymentFromBalance($request, $sale);
+    } elseif ($request->total_paid > $request->total_price) {
+      if ($sale->is_paid_from_balance) {
+        $sale = $this->restoreBalance($request, $sale);
+      } else {
+        $sale->total_paid = $request->total_price;
+        $sale->total_due = $request->total_price - $request->total_paid;
+      }
+    }
+
+    if ($request->reference != $sale->reference) {
+      $this->uncheckReference($sale->reference);
+      if (!empty($request->reference)) {
+        $this->checkReference($request->reference);
+      }
+    }
 
     if ($sale->save()) {
       // First increment stock by adding old sale stock data
@@ -130,19 +162,85 @@ class SaleRepository
     return null;
   }
 
+  private function paymentFromBalance(Request $request, Sale $sale)
+  {
+    $total_price = $request->total_price;
+    $total_due = $request->total_due == "" ? 0 : $request->total_due;
+    $total_paid = $request->total_paid == "" ? 0 : $request->total_paid;
+    $client = Client::find($request->client_id);
+    if ($client->balance > 0) {
+      $balance_decrease = 0;
+      if ($client->balance < $total_due) {
+        $total_paid += $client->balance;
+        $total_due -= $client->balance;
+
+        $balance_decrease = $client->balance;
+        $client->balance = 0;
+      } else {
+        $total_paid += $total_due;
+        $total_due = 0;
+
+        $client->balance -= $total_due;
+        $balance_decrease = $total_due;
+      }
+      if ($client->save()) {
+        $balance = number_format($balance_decrease, 2);
+        $client->balance_histories()->create([
+          'amount' => $balance_decrease,
+          'description' => "$client->name, Total $balance TK is spent from your balance as 'Product Sale Payment'.Sale Invoice No. is $sale->invoice",
+          'type' => 'Out',
+          'status' => 1,
+          'created_at' => date('Y-m-d H:i:s')
+        ]);
+      }
+      $sale->is_paid_from_balance = 1;
+    }
+    $sale->total_price = $total_price;
+    $sale->total_paid = $total_paid;
+    $sale->total_due = $total_due;
+
+    return $sale;
+  }
+
+  private function restoreBalance(Request $request, Sale $sale)
+  {
+    $total_price = $request->total_price;
+    $total_paid = $request->total_paid;
+
+    $client = Client::find($request->client_id);
+    $balance_increase = $total_paid - $total_price;
+    $client->balance += $balance_increase;
+    if ($client->save()) {
+      $balance = number_format($balance_increase, 2);
+      $price = number_format($total_price, 2);
+      $paid = number_format($total_paid, 2);
+      $client->balance_histories()->create([
+        'amount' => $balance_increase,
+        'description' => "$client->name, Total $balance TK is restore from $sale->invoice No. (Invoice) sale. ($paid (Paid) - $price (Price) = $balance (Increase))",
+        'type' => 'In',
+        'status' => 1,
+        'created_at' => date('Y-m-d H:i:s')
+      ]);
+    }
+    $sale->total_price = $total_price;
+    $sale->total_paid = $total_price;
+    $sale->total_due = 0;
+
+    return $sale;
+  }
+
+
   private function setupData(Sale $sale, $request)
   {
-    $sale->total_price = $request->total_price == '' ? 0 : $request->total_price;
-    $sale->total_paid = $request->total_paid == '' ? 0 : $request->total_paid;
-    $sale->total_due = $request->total_due == '' ? 0 : $request->total_due;
-    $sale->commission = $request->commission == '' ? 0 : $request->commission;
     $sale->company_id = $request->company_id;
     $sale->client_id = $request->client_id;
     $sale->transaction_media_id = $request->transaction_media_id;
-    $sale->description = $request->description;
+    $sale->description = strtoupper($request->description);
     $sale->sale_date = date('Y-m-d H:i:s', strtotime($request->sale_date));
-    
-    if(intval($request->total_due) === 0) {
+    $sale->commission = $request->commission == '' ? 0 : $request->commission;
+    $sale->reference = $request->reference;
+
+    if (intval($request->total_due) === 0) {
       $sale->status = 1;
     }
 
@@ -182,5 +280,19 @@ class SaleRepository
       'stock_id' => $stock_id,
       'product_id' => $product_id,
     ])->increment('quantity', $quantity);
+  }
+
+  private function checkReference($reference)
+  {
+    DriverInvoice::where('reference', '=', $reference)->update([
+      'is_commission_added' => 1
+    ]);
+  }
+
+  private function uncheckReference($reference)
+  {
+    DriverInvoice::where('reference', '=', $reference)->update([
+      'is_commission_added' => 0
+    ]);
   }
 }

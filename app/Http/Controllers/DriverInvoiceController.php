@@ -179,7 +179,20 @@ class DriverInvoiceController extends Controller
 
   public function commissions($referenceCode)
   {
-    $commissions = DriverInvoice::where('reference', '=', $referenceCode)->get()->sum('commission');
+    $commissions = DriverInvoice::where([
+      'reference' => $referenceCode,
+      'is_commission_added' => 0
+    ])->get()->sum('commission');
     return response()->json(['commission' => $commissions]);
+  }
+
+  public function printList()
+  {
+    $company = Company::active()->orderBy('id', 'desc')->first();
+    $driver_invoices = $this->driverInvoiceRepository->all()->get();
+    return Inertia::render('Invoice/Driver/PrintList', [
+      'driver_invoices' => $driver_invoices,
+      'company' => $company,
+    ]);
   }
 }

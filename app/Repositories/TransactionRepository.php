@@ -27,11 +27,11 @@ class TransactionRepository
       $transactions = $transactions->where('status', \request()->status);
     }
 
-    if (\request()->has('media') && !empty(request()->media)) {
+    if (\request()->has('media') && request()->media != '') {
       $transactions = $transactions->where('transaction_media_id', \request()->media);
     }
 
-    if (\request()->has('transaction_type') && !empty(request()->transaction_type)) {
+    if (\request()->has('transaction_type') && request()->transaction_type != '') {
       $transactions = $transactions->where('transaction_type_id', \request()->transaction_type);
     }
 

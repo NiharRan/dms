@@ -59,6 +59,7 @@
                           {{ __("Filter") }}
                         </button>
                         <button
+                        :disabled="sales && sales.data.length > 0 ? false : true"
                           class="btn btn-default"
                           type="button"
                           @click="print"
@@ -70,7 +71,8 @@
                     </tr>
                   </thead>
                 </table>
-                <table v-if="sales && sales.data.length > 0"
+                <table
+                  v-if="sales && sales.data.length > 0"
                   id="data-table"
                   class="table table-bordered display nowrap mb-0"
                   style="width: 110%"
@@ -81,9 +83,11 @@
                       <th>{{ __("Date") }}</th>
                       <th>{{ __("Creator") }}</th>
                       <th>{{ __("Invoice") }}</th>
-                      <th class="text-right">{{ __("Total Price") }}</th>
-                      <th class="text-right">{{ __("Paid") }}</th>
+                      <th>{{ __("Client") }}</th>
                       <th class="text-right">{{ __("Commission") }}</th>
+                      <th class="text-right">{{ __("Final Amount") }}</th>
+                      <th class="text-right">{{ __("Paid") }}</th>
+                      <th class="text-right">{{ __("Due") }}</th>
                       <th class="text-center">{{ __("Action") }}</th>
                     </tr>
                   </thead>
@@ -93,9 +97,19 @@
                       <td>{{ sale.sale_date | moment("DD/MM/YYYY") }}</td>
                       <th>{{ sale.creator.name }}</th>
                       <th>{{ sale.invoice }}</th>
-                      <th class="text-right">{{ sale.total_price }}</th>
-                      <th class="text-right">{{ sale.total_paid }}</th>
-                      <th class="text-right">{{ sale.commission }}</th>
+                      <th>{{ sale.client.name }}</th>
+                      <th class="text-right">
+                        {{ parseFloat(sale.commission).toFixed(2) }}
+                      </th>
+                      <th class="text-right">
+                        {{ parseFloat(sale.total_price).toFixed(2) }}
+                      </th>
+                      <th class="text-right">
+                        {{ parseFloat(sale.total_paid).toFixed(2) }}
+                      </th>
+                      <th class="text-right">
+                        {{ parseFloat(sale.total_due).toFixed(2) }}
+                      </th>
                       <td class="text-center">
                         <a
                           :href="route('sales.edit', sale.id)"
@@ -113,12 +127,14 @@
                     </tr>
 
                     <tr>
-                      <td colspan="4" class="text-right">{{ __("Total") }}</td>
-                      <th class="text-right">{{ total(sales.data) }}</th>
-                      <th class="text-right">{{ totalPaid(sales.data) }}</th>
+                      <td colspan="5" class="text-right">{{ __("Total") }}</td>
                       <th class="text-right">
                         {{ totalCommission(sales.data) }}
                       </th>
+                      <th class="text-right">{{ total(sales.data) }}</th>
+                      <th class="text-right">{{ totalPaid(sales.data) }}</th>
+                      <th class="text-right">{{ totalDue(sales.data) }}</th>
+
                       <th></th>
                     </tr>
                   </tbody>
@@ -231,6 +247,13 @@ export default {
         return paid + parseFloat(p);
       }, 0);
       return parseFloat(paidPrice).toFixed(2);
+    },
+    totalDue: function (data) {
+      let duePrice = data.reduce((due, sale) => {
+        let p = sale.total_due == "" ? 0 : sale.total_due;
+        return due + parseFloat(p);
+      }, 0);
+      return parseFloat(duePrice).toFixed(2);
     },
     totalCommission: function (data) {
       let commissionPrice = data.reduce((c, sale) => {

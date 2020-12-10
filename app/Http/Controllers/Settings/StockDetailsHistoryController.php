@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Settings;
 
 use App\Company;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Settings\StockDetailsHistoryRequest;
 use App\Settings\StockDetails;
-use App\Settings\StockDetailsHistory;
 use Inertia\Inertia;
 
 class StockDetailsHistoryController extends Controller

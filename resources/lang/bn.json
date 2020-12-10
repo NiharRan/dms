@@ -105,6 +105,9 @@
   "Birth Date": "জন্ম তারিখ",
 
   "Stock": "স্টক",
+  "Commission Status": "কমিশনের অবস্থা",
+  "Collected": "সংগৃহীত",
+  "Not Collected": "সংগৃহীত নয়",
 
 
   "Clients": "ক্রেতা গণ",
@@ -117,8 +120,8 @@
   "Sales": "বিক্রয় গুলো",
   "Sale": "বিক্রয়",
   "Rent": "ভাড়া",
-  "Driver": "ড্রাইভার",
-  "Invoice": "চালান",
+  "Driver": "চালক",
+  "Invoice": "চালান নং",
   "Total Price": "মোট মূল্য",
   "Sale At": "বিক্রয়ের তারিখ",
   "Status": "অবস্থা",
@@ -131,6 +134,7 @@
   "Reset": "পুন:স্থাপন করুন",
 
   "Track Number": "গাড়ির নম্বর",
+  "Track Rental": "গাড়ী ভাড়া",
   "Driver Contact No.": "ড্রাইভারের যোগাযোগ নং",
   "Scale": "স্কেল/ফিতা",
   "Scale Price": "স্কেলের মূল্য",

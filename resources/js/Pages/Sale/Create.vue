@@ -195,7 +195,7 @@
                             </div>
                           </div>
                         </td>
-                        <th>
+                        <th width="15%">
                           <button
                             class="btn btn-outline-danger"
                             @click.prevent="removeSaleItem(index)"
@@ -258,7 +258,7 @@
                           <input
                             type="text"
                             @change="fetchCommission"
-                            v-model="form.reference_code"
+                            v-model="form.reference"
                             class="form-control"
                             :placeholder="__('Reference Code')"
                           />
@@ -370,7 +370,7 @@ export default {
         client: null,
         sale_date: new Date(),
         sale_details: [],
-        reference_code: "",
+        reference: "",
         commission: "0.00",
       },
       products: [],
@@ -380,10 +380,10 @@ export default {
   },
   methods: {
     fetchCommission: function () {
-      if (this.form.reference_code != "") {
+      if (this.form.reference != "") {
         axios
           .get(
-            this.route("drivers.invoices.commissions", this.form.reference_code)
+            this.route("drivers.invoices.commissions", this.form.reference)
           )
           .then(({ data }) => {
             this.form.commission =
@@ -475,11 +475,13 @@ export default {
             total_price: this.form.total_price,
             total_due: this.form.total_due,
             total_paid: this.form.total_paid,
+            description: this.form.description,
             client_id: client_id,
             transaction_media_id: transaction_media_id,
             company_id: this.company.id,
             sale_date: this.form.sale_date,
             commission: this.form.commission,
+            reference: this.form.reference,
             stocks: stocks,
             products: products,
             tracks: tracks,

@@ -48,15 +48,21 @@
               </span>
             </p>
           </div>
-          <div class="controller width-300">
+          <div class="controller width-400 text-center">
             <label
               ><input type="checkbox" v-model="hasHeader" />
               {{ __("Attach company information") }}</label
             >
+            <inertia-link
+              :href="route('stock-details.history.show', stock_details.id)"
+              class="btn btn-primary btn-sm float-left"
+            >
+              {{ __("Back") }}
+            </inertia-link>
             <button
               type="button"
               @click="printPage"
-              class="btn btn-primary btn-sm float-right"
+              class="btn btn-warning btn-sm float-right"
             >
               {{ __("Print") }}
             </button>
@@ -72,8 +78,8 @@
                 <tr>
                   <th scope="col">{{ __("S.N.") }}</th>
                   <th>{{ __("Date") }}</th>
-                  <th class="text-center">{{ __("Ship") }}</th>
-                  <th class="text-center">{{ __("Company") }}</th>
+                  <th>{{ __("Ship") }}</th>
+                  <th>{{ __("Company") }}</th>
                   <th class="text-right">{{ __("Quantity") }}</th>
                 </tr>
               </thead>
@@ -83,10 +89,10 @@
                   :key="history.id"
                 >
                   <th style="width: 80px">{{ index + 1 }}</th>
-                  <td>{{ history.history_date | moment("DD/MM/YYYY") }}</td>
-                  <th class="text-center">{{ history.shop }}</th>
-                  <th class="text-center">{{ history.comapny }}</th>
-                  <th class="text-right">{{ history.quantity }}</th>
+                  <td>{{ history.created_at | moment("DD/MM/YYYY") }}</td>
+                  <th>{{ history.ship }}</th>
+                  <th>{{ history.company }}</th>
+                  <th class="text-right">{{ parseFloat(history.quantity).toFixed(2) }}</th>
                 </tr>
               </tbody>
               <tfoot class="bt">

@@ -10,8 +10,9 @@ use Illuminate\Database\Eloquent\Model;
 class Sale extends Model
 {
   protected $fillable = [
-    'invoice', 'total_price', 'total_paid', 'total_due', 'commission',
-    'company_id', 'client_id', 'sale_date', 'status', 'user_id', 'transaction_media_id', 'description'
+    'invoice', 'total_price', 'total_paid', 'total_due', 'commission', 'reference',
+    'company_id', 'client_id', 'sale_date', 'status', 'user_id', 
+    'transaction_media_id', 'description', 'is_paid_from_balance'
   ];
 
   public function getWordAttribute()

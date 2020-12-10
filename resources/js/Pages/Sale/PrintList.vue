@@ -69,9 +69,11 @@
                   <th>{{ __("Date") }}</th>
                   <th>{{ __("Creator") }}</th>
                   <th>{{ __("Invoice") }}</th>
+                  <th>{{ __("Client") }}</th>
+                  <th class="text-right">{{ __("Commission") }}</th>
                   <th class="text-right">{{ __("Total Price") }}</th>
                   <th class="text-right">{{ __("Paid") }}</th>
-                  <th class="text-right">{{ __("Commission") }}</th>
+                  <th class="text-right">{{ __("Due") }}</th>
                 </tr>
               </thead>
               <tbody v-if="sales.length > 0">
@@ -80,19 +82,30 @@
                   <td>{{ sale.sale_date | moment("DD/MM/YYYY") }}</td>
                   <th>{{ sale.creator.name }}</th>
                   <th>{{ sale.invoice }}</th>
-                  <th class="text-right">{{ sale.total_price }}</th>
-                  <th class="text-right">{{ sale.total_paid }}</th>
-                  <th class="text-right">{{ sale.commission }}</th>
+                  <th>{{ sale.client.name }}</th>
+                  <th class="text-right">
+                    {{ parseFloat(sale.commission).toFixed(2) }}
+                  </th>
+                  <th class="text-right">
+                    {{ parseFloat(sale.total_price).toFixed(2) }}
+                  </th>
+                  <th class="text-right">
+                    {{ parseFloat(sale.total_paid).toFixed(2) }}
+                  </th>
+                  <th class="text-right">
+                    {{ parseFloat(sale.total_due).toFixed(2) }}
+                  </th>
                 </tr>
               </tbody>
               <tfoot class="bt">
                 <tr>
-                  <td colspan="4" class="text-right">{{ __("Total") }}</td>
-                  <th class="text-right">{{ total(sales) }}</th>
-                  <th class="text-right">{{ totalPaid(sales) }}</th>
+                  <td colspan="5" class="text-right">{{ __("Total") }}</td>
                   <th class="text-right">
                     {{ totalCommission(sales) }}
                   </th>
+                  <th class="text-right">{{ total(sales) }}</th>
+                  <th class="text-right">{{ totalPaid(sales) }}</th>
+                  <th class="text-right">{{ totalDue(sales) }}</th>
                 </tr>
               </tfoot>
             </table>
@@ -129,6 +142,13 @@ export default {
         return paid + parseFloat(p);
       }, 0);
       return parseFloat(paidPrice).toFixed(2);
+    },
+    totalDue: function (data) {
+      let duePrice = data.reduce((due, sale) => {
+        let p = sale.total_due == "" ? 0 : sale.total_due;
+        return due + parseFloat(p);
+      }, 0);
+      return parseFloat(duePrice).toFixed(2);
     },
     totalCommission: function (data) {
       let commissionPrice = data.reduce((c, sale) => {

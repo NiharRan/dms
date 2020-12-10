@@ -20,6 +20,7 @@ class CreateSalesTable extends Migration
             $table->decimal('total_paid', 10, 4);
             $table->decimal('total_due', 10, 4);
             $table->decimal('commission', 10, 4)->nullable();
+            $table->string('reference', 20)->nullable();
 
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies');
@@ -34,6 +35,7 @@ class CreateSalesTable extends Migration
 
             $table->string('description', 255)->nullable();
             $table->boolean('status')->default(0);
+            $table->boolean('is_paid_from_balance')->default(0);
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

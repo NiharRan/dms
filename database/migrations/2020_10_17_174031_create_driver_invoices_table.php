@@ -53,6 +53,7 @@ class CreateDriverInvoicesTable extends Migration
             $table->foreign('load_id')->references('id')->on('loads');
 
             $table->boolean('status')->default(0);
+            $table->boolean('is_commission_added')->default(0);
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

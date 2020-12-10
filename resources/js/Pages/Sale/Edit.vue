@@ -199,7 +199,7 @@
                             </div>
                           </div>
                         </td>
-                        <th>
+                        <th width="20%" class="text-center">
                           <button
                             class="btn btn-outline-danger"
                             @click.prevent="removeSaleItem(index)"
@@ -211,7 +211,7 @@
                       </tr>
                       <tr>
                         <th></th>
-                        <th>
+                        <th class="text-center">
                           <button
                             @click.prevent="addNewItem"
                             class="btn btn-outline-success"
@@ -262,7 +262,7 @@
                           <input
                             type="text"
                             @change="fetchCommission"
-                            v-model="sale.reference_code"
+                            v-model="sale.reference"
                             class="form-control"
                             :placeholder="__('Reference Code')"
                           />
@@ -372,11 +372,9 @@ export default {
   },
   methods: {
     fetchCommission: function () {
-      if (this.sale.reference_code != "") {
+      if (this.sale.reference != "") {
         axios
-          .get(
-            this.route("drivers.invoices.commissions", this.sale.reference_code)
-          )
+          .get(this.route("drivers.invoices.commissions", this.sale.reference))
           .then(({ data }) => {
             this.sale.commission =
               data.commission == ""
@@ -390,16 +388,13 @@ export default {
     },
     calculateTotalWhenQuantityChange: function (index) {
       const selectedRow = this.sale.sale_details[index];
-      if (this.sale.sale_details[index].product) {
-        this.sale.sale_details[index].product.quantity -= selectedRow.quantity;
-      }
 
       let price = selectedRow.price == "" ? "0.00" : selectedRow.price;
       let quantity = selectedRow.quantity == "" ? "0.00" : selectedRow.quantity;
 
       let total = parseFloat(price) * parseFloat(quantity);
       selectedRow.total = parseFloat(total).toFixed(2);
-      this.form.sale_details[index] = selectedRow;
+      this.sale.sale_details[index] = selectedRow;
       this.calculateTotal();
     },
     calculateTotalWhenPriceChange: function (index) {
@@ -409,15 +404,13 @@ export default {
       let quantity = selectedRow.quantity == "" ? "0.00" : selectedRow.quantity;
 
       let total = parseFloat(price) * parseFloat(quantity);
-      selectedRow.total = parseFloat(total).toFixed(2);
-      this.form.sale_details[index] = selectedRow;
+      this.sale.sale_details[index].amount = parseFloat(total).toFixed(2);
       this.calculateTotal();
     },
     calculateTotal: async function () {
-      let total_price = await this.sale.sale_details.reduce(
-        (sum, item) => sum + parseFloat(item.amount),
-        0
-      );
+      let total_price = await this.sale.sale_details.reduce((sum, item) => {
+        return sum + parseFloat(item.amount);
+      }, 0);
       this.sale.total_price = parseFloat(total_price).toFixed(2);
       this.calculateDue();
     },
@@ -464,6 +457,8 @@ export default {
             total_due: this.sale.total_due,
             total_paid: this.sale.total_paid,
             commission: this.sale.commission,
+            reference: this.sale.reference,
+            description: this.sale.description,
             transaction_media_id: transaction_media_id,
             client_id: client_id,
             company_id: this.company.id,

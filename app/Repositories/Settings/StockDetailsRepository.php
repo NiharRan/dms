@@ -103,8 +103,8 @@ class StockDetailsRepository
   public function storeHistory(Request $request, StockDetails $stockDetails)
   {
     return $stockDetails->stock_details_histories()->create([
-      'ship' => $request->ship,
-      'company' => $request->company,
+      'ship' => strtoupper($request->ship),
+      'company' => strtoupper($request->company),
       'quantity' => $request->quantity,
       'user_id' => Auth::id(),
     ]);

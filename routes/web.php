@@ -60,6 +60,7 @@ Route::group([
     Route::get('/drivers/invoices/invoice/{invoice}', 'DriverInvoiceController@show')->name('drivers.invoices.show');
     Route::get('/drivers/invoices/print/{invoice}', 'DriverInvoiceController@print')->name('drivers.invoices.print');
     Route::get('/drivers/invoices/commissions/{referenceCode}', 'DriverInvoiceController@commissions')->name('drivers.invoices.commissions');
+    Route::get('/drivers/invoices/list/print', 'DriverInvoiceController@printList')->name('drivers.invoices.print');
 
     Route::get('/accounts/statements', 'AccountController@statement')->name('accounts.statements');
     Route::get('/accounts/statements/print', 'AccountController@print')->name('accounts.statements.print');
@@ -118,6 +119,8 @@ Route::group([
       Route::get('/clients', 'ClientController@index')->name('clients.index');
       Route::post('/clients', 'ClientController@store')->name('clients.store');
       Route::put('/clients/{clientId}', 'ClientController@update')->name('clients.update');
+      Route::get('/client-balances/history/{clientId}', 'ClientPaymentHistoryController@show')->name('client-balances.history.show');
+      Route::get('/client-balances/history/print/{clientId}', 'ClientPaymentHistoryController@print')->name('client-balances.history.print');
     });
 
     Route::group([

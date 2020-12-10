@@ -29,8 +29,8 @@
                       <th>{{ index + 1 }}</th>
                       <th>{{ stock_detail.stock.name }}</th>
                       <th>{{ stock_detail.product.name }}</th>
-                      <th class="text-center">{{ stock_detail.quantity }}</th>
-                      <th class="text-center">{{ stock_detail.amount }}</th>
+                      <th class="text-center">{{ parseFloat(stock_detail.quantity).toFixed(2) }}</th>
+                      <th class="text-center">{{ parseFloat(stock_detail.amount).toFixed(2) }}</th>
                       <td v-html="$options.filters.status(stock_detail.status)"></td>
                       <td class="text-center">
                         <a @click.prevent="setData(stock_detail)" :title="__('Edit')" href="" class="text-primary" role="button"><i class="feather icon-edit"></i></a>
@@ -100,14 +100,14 @@
                       <strong>{{ errors.quantity[0] }}</strong>
                   </span>
                 </div>
-                <div class="col-md-4 col-12" v-if="!editMode">
+                <div class="col-md-4 col-12">
                   <label>{{ __('Ship') }}</label>
                   <input type="text" v-model="form.ship" class="form-control text-uppercase" :placeholder="__('Ship')">
                   <span v-if="errors.ship" class="invalid-feedback" style="display: block;" role="alert">
                       <strong>{{ errors.ship[0] }}</strong>
                   </span>
                 </div>
-                <div class="col-md-4 col-12" v-if="!editMode">
+                <div class="col-md-4 col-12">
                   <label>{{ __('Company') }}</label>
                   <input type="text" v-model="form.company" class="form-control text-uppercase" :placeholder="__('Company')">
                   <span v-if="errors.company" class="invalid-feedback" style="display: block;" role="alert">
@@ -222,14 +222,11 @@
           },
           update: function () {
             let stock_id = this.form.stock === null ? '' : this.form.stock.id;
-            let product_id = this.form.product === null ? '' : this.form.product.id;
             let self = this;
             this.$inertia.post(this.route('stock-details.update', this.form.id), {
               stock_id: stock_id,
-              product_id: product_id,
               ship: this.form.ship,
               company: this.form.company,
-              quantity: this.form.quantity,
               status: this.form.status,
               _method: "put"
             }).then(function () {

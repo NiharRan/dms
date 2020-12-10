@@ -49,12 +49,28 @@
                           <i class="feather icon-filter mr-2"></i>
                           {{ __("Filter") }}
                         </button>
+                        <button
+                          :disabled="
+                            driver_invoices && driver_invoices.data.length > 0
+                              ? false
+                              : true
+                          "
+                          class="btn btn-default"
+                          type="button"
+                          @click="print"
+                        >
+                          <i class="feather icon-printer mr-2"></i>
+                          {{ __("Print") }}
+                        </button>
                       </th>
                     </tr>
                   </thead>
                 </table>
               </div>
-              <div class="table-responsive" v-if="driver_invoices && driver_invoices.data.length > 0">
+              <div
+                class="table-responsive"
+                v-if="driver_invoices && driver_invoices.data.length > 0"
+              >
                 <table
                   id="data-table"
                   class="table table-responsive table-bordered mb-0"
@@ -65,18 +81,13 @@
                       v-if="driver_invoices && driver_invoices.data.length > 0"
                     >
                       <th scope="col">{{ __("S.N.") }}</th>
+                      <th>{{ __("Date") }}</th>
                       <th style="width: 10%">{{ __("Client") }}</th>
                       <th>{{ __("Driver") }}</th>
                       <th class="text-center">{{ __("Invoice") }}</th>
+                      <th>{{ __("Product") }}</th>
                       <th>{{ __("Measurement Type") }}</th>
-                      <th>{{ __("Created At") }}</th>
-                      <th class="text-center">{{ __("Status") }}</th>
-                      <th class="text-center">{{ __("Quantity") }}</th>
-                      <th class="text-right">{{ __("Track Rent") }}</th>
-                      <th class="text-right">{{ __("Others") }}</th>
-                      <th>{{ __("Total") }}</th>
-                      <th>{{ __("Borrow") }}</th>
-                      <th>{{ __("Final") }}</th>
+                      <th class="text-right">{{ __("Track Rental") }}</th>
                       <th class="text-center">{{ __("Action") }}</th>
                     </tr>
                   </thead>
@@ -85,22 +96,25 @@
                     v-if="driver_invoices && driver_invoices.data.length > 0"
                   >
                     <tr>
-                      <td colspan="10"></td>
-                      <th class="text-right">
-                        {{ total(driver_invoices.data) }}
-                      </th>
-                      <th class="text-right">
-                        {{ totalBorrow(driver_invoices.data) }}
-                      </th>
+                      <td colspan="7"></td>
                       <th class="text-right">
                         {{ totalFinal(driver_invoices.data) }}
                       </th>
+                      <th></th>
                     </tr>
                     <tr
                       v-for="(driver_invoice, index) in driver_invoices.data"
-                      :key="driver_invoice.id"
+                      :key="index"
+                      :class="[
+                        driver_invoice.is_commission_added
+                          ? 'alert-primary'
+                          : '',
+                      ]"
                     >
                       <th>{{ index + 1 }}</th>
+                      <td>
+                        {{ driver_invoice.created_at | moment("DD/MM/YYYY") }}
+                      </td>
                       <td>
                         {{ driver_invoice.client.name }}
                       </td>
@@ -109,6 +123,9 @@
                       </td>
                       <th class="text-center">
                         {{ driver_invoice.invoice }}
+                      </th>
+                      <th class="text-center">
+                        {{ driver_invoice.product.name }}
                       </th>
                       <td>
                         <p class="mb-0">
@@ -129,24 +146,9 @@
                           {{ driver_invoice.container_breadth }}
                         </p>
                       </td>
-                      <td>
-                        {{ driver_invoice.created_at | moment("DD/MM/YYYY") }}
-                      </td>
-                      <td
-                        v-html="
-                          $options.filters.payment_status(driver_invoice.status)
-                        "
-                      ></td>
-                      <td class="text-center">
-                        {{ driver_invoice.quantity }}
-                      </td>
                       <td class="text-right">
-                        {{ driver_invoice.track_rent }}
+                        {{ parseFloat(driver_invoice.final).toFixed(2) }}
                       </td>
-                      <td class="text-right">{{ driver_invoice.others }}</td>
-                      <td class="text-right">{{ driver_invoice.total }}</td>
-                      <td class="text-right">{{ driver_invoice.borrow }}</td>
-                      <td class="text-right">{{ driver_invoice.final }}</td>
                       <td class="text-center">
                         <inertia-link
                           :href="
@@ -229,11 +231,11 @@
               ></multi-select>
             </div>
             <div class="col-md-4 col-12">
-              <label>{{ __("Payment Status") }}</label>
-              <select v-model="search.status" class="form-control">
-                <option value="">{{ __("Payment Status") }}</option>
-                <option value="1">{{ __("Borrow") }}</option>
-                <option value="0">{{ __("Final") }}</option>
+              <label>{{ __("Commission Status") }}</label>
+              <select v-model="search.is_commission_added" class="form-control">
+                <option value="">{{ __("Commission Status") }}</option>
+                <option value="1">{{ __("Collected") }}</option>
+                <option value="0">{{ __("Not Collected") }}</option>
               </select>
             </div>
           </div>
@@ -272,7 +274,7 @@ export default {
         per_page: 10,
         query: "",
         invoice: "",
-        status: "",
+        is_commission_added: "",
         client: null,
         product: null,
         dateRange: {},
@@ -280,6 +282,23 @@ export default {
     };
   },
   methods: {
+    print: function () {
+      let client = this.search.client == null ? "" : this.search.client.id;
+      let product = this.search.product == null ? "" : this.search.product.id;
+      let query = `/drivers/invoices/list/print?search=${this.search.query}&&invoice=${this.search.invoice}&&is_commission_added=${this.search.is_commission_added}&&client=${client}&&product=${product}`;
+      if (this.search.dateRange.startDate) {
+        let start_date = this.$options.filters.moment(
+          this.search.dateRange.startDate,
+          "YYYY-MM-DD"
+        );
+        let end_date = this.$options.filters.moment(
+          this.search.dateRange.endDate,
+          "YYYY-MM-DD"
+        );
+        query = `${query}&&start_date=${start_date}&&end_date=${end_date}`;
+      }
+      window.open(query, "_blank");
+    },
     total: function (data) {
       let totalPrice = data.reduce(
         (total, invoice) => total + parseFloat(invoice.total),
@@ -319,7 +338,7 @@ export default {
           search: this.search.query,
           per_page: this.search.per_page,
           invoice: this.search.invoice,
-          status: this.search.status,
+          is_commission_added: this.search.is_commission_added,
           client: client,
           product: product,
           start_date: start_date,

@@ -54,10 +54,11 @@ class ClientRepository
 
     public function setupData(Request $request, Client $client)
     {
-      $client->name = $request->name;
-      $client->slug = make_slug($request->name);
+      $client->name = strtoupper($request->name);
+      $client->slug = make_slug(strtolower($request->name));
       $client->phone = $request->phone;
-      $client->address = $request->address;
+      $client->address = strtoupper($request->address);
+
 
       return $client;
     }
@@ -71,8 +72,17 @@ class ClientRepository
     {
       $row = new $this->client;
       $row = $this->setupData($request, $row);
-
+      $row->balance = empty($request->balance) ? 0 : $request->balance;
       if ($row->save()) {
+        if(!empty($request->balance)) {
+          $row->balance_histories()->create([
+            'amount' => $request->balance,
+            'description' => "Opening Balance",
+            'type' => 'In',
+            'status' => 1,
+            'created_at' => date('Y-m-d H:i:s')
+          ]);
+        }
         return $row;
       }
       return null;

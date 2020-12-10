@@ -27,10 +27,6 @@ class DriverInvoiceRepository
     $driverInvoices = $this->driverInvoice
       ->with(['client', 'product', 'measurement_type']);
 
-    if (\request()->has('status') && !empty(request()->status)) {
-      $driverInvoices = $driverInvoices->where('status', \request()->status);
-    }
-
     if (\request()->has('start_date') && !empty(request()->start_date)) {
       $start_date = \request()->start_date . ' 00:00:00';
       $end_date = \request()->end_date . ' 23:59:59';
@@ -64,7 +60,10 @@ class DriverInvoiceRepository
           ->orWhere('driver_phone', 'like', "%$search");
       });
     }
-    return $driverInvoices->orderBy('id', 'desc');
+    if (\request()->has('is_commission_added') && request()->is_commission_added != '') {
+      $driverInvoices = $driverInvoices->where('is_commission_added', '=', \request()->is_commission_added);
+    }
+     return $driverInvoices->orderBy('id', 'desc');
   }
 
   public function findById($rowId)
@@ -136,11 +135,8 @@ class DriverInvoiceRepository
     $driverInvoice->driver_name = strtoupper($request->driver_name);
     $driverInvoice->track_no = strtoupper($request->track_no);
     $driverInvoice->driver_phone = $request->driver_phone;
-
-
-    if (intval($request->due) == 0) {
-      $driverInvoice->status = 1;
-    }
+    $driverInvoice->is_commission_added = 0;
+    
     return $driverInvoice;
   }
 }

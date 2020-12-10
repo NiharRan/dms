@@ -1,20 +1,20 @@
 webpackJsonp([3],{
 
-/***/ 166:
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(349)
-  __webpack_require__(351)
-  __webpack_require__(353)
+  __webpack_require__(361)
+  __webpack_require__(363)
+  __webpack_require__(365)
 }
-var normalizeComponent = __webpack_require__(232)
+var normalizeComponent = __webpack_require__(234)
 /* script */
-var __vue_script__ = __webpack_require__(355)
+var __vue_script__ = __webpack_require__(367)
 /* template */
-var __vue_template__ = __webpack_require__(356)
+var __vue_template__ = __webpack_require__(368)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -54,7 +54,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 231:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -73,7 +73,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(233)
+var listToStyles = __webpack_require__(235)
 
 /*
 type StyleObject = {
@@ -283,7 +283,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 232:
+/***/ 234:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -393,7 +393,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 233:
+/***/ 235:
 /***/ (function(module, exports) {
 
 /**
@@ -427,19 +427,19 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 234:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(235)
+  __webpack_require__(237)
 }
-var normalizeComponent = __webpack_require__(232)
+var normalizeComponent = __webpack_require__(234)
 /* script */
-var __vue_script__ = __webpack_require__(237)
+var __vue_script__ = __webpack_require__(239)
 /* template */
-var __vue_template__ = __webpack_require__(238)
+var __vue_template__ = __webpack_require__(240)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -479,17 +479,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 235:
+/***/ 237:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(236);
+var content = __webpack_require__(238);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(231)("03a0949b", content, false, {});
+var update = __webpack_require__(233)("03a0949b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -506,7 +506,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 236:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -521,7 +521,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 237:
+/***/ 239:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -559,7 +559,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 238:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -641,19 +641,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 239:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(240)
+  __webpack_require__(242)
 }
-var normalizeComponent = __webpack_require__(232)
+var normalizeComponent = __webpack_require__(234)
 /* script */
-var __vue_script__ = __webpack_require__(242)
+var __vue_script__ = __webpack_require__(244)
 /* template */
-var __vue_template__ = __webpack_require__(258)
+var __vue_template__ = __webpack_require__(260)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -693,17 +693,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 240:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(241);
+var content = __webpack_require__(243);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(231)("24565851", content, false, {});
+var update = __webpack_require__(233)("24565851", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -720,7 +720,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 241:
+/***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -735,18 +735,18 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 242:
+/***/ 244:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Sidebar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar__ = __webpack_require__(250);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Navbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter__ = __webpack_require__(236);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__AppFooter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb__ = __webpack_require__(255);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Breadcrumb__);
 //
 //
@@ -813,19 +813,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 243:
+/***/ 245:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(244)
+  __webpack_require__(246)
 }
-var normalizeComponent = __webpack_require__(232)
+var normalizeComponent = __webpack_require__(234)
 /* script */
-var __vue_script__ = __webpack_require__(246)
+var __vue_script__ = __webpack_require__(248)
 /* template */
-var __vue_template__ = __webpack_require__(247)
+var __vue_template__ = __webpack_require__(249)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -865,17 +865,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 244:
+/***/ 246:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(245);
+var content = __webpack_require__(247);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(231)("880366ac", content, false, {});
+var update = __webpack_require__(233)("880366ac", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -892,7 +892,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 245:
+/***/ 247:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -907,7 +907,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 246:
+/***/ 248:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1106,7 +1106,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 247:
+/***/ 249:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1695,19 +1695,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 248:
+/***/ 250:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(249)
+  __webpack_require__(251)
 }
-var normalizeComponent = __webpack_require__(232)
+var normalizeComponent = __webpack_require__(234)
 /* script */
-var __vue_script__ = __webpack_require__(251)
+var __vue_script__ = __webpack_require__(253)
 /* template */
-var __vue_template__ = __webpack_require__(252)
+var __vue_template__ = __webpack_require__(254)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1747,17 +1747,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 249:
+/***/ 251:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(250);
+var content = __webpack_require__(252);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(231)("629be114", content, false, {});
+var update = __webpack_require__(233)("629be114", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1774,7 +1774,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 250:
+/***/ 252:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -1789,7 +1789,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 251:
+/***/ 253:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1874,7 +1874,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 252:
+/***/ 254:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2177,19 +2177,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 253:
+/***/ 255:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(254)
+  __webpack_require__(256)
 }
-var normalizeComponent = __webpack_require__(232)
+var normalizeComponent = __webpack_require__(234)
 /* script */
-var __vue_script__ = __webpack_require__(256)
+var __vue_script__ = __webpack_require__(258)
 /* template */
-var __vue_template__ = __webpack_require__(257)
+var __vue_template__ = __webpack_require__(259)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2229,17 +2229,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 254:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(255);
+var content = __webpack_require__(257);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(231)("c3dd8234", content, false, {});
+var update = __webpack_require__(233)("c3dd8234", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2256,7 +2256,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 255:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2271,7 +2271,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 256:
+/***/ 258:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2314,7 +2314,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 257:
+/***/ 259:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2428,7 +2428,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 258:
+/***/ 260:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2514,19 +2514,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 259:
+/***/ 261:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(260)
+  __webpack_require__(262)
 }
-var normalizeComponent = __webpack_require__(232)
+var normalizeComponent = __webpack_require__(234)
 /* script */
-var __vue_script__ = __webpack_require__(262)
+var __vue_script__ = __webpack_require__(264)
 /* template */
-var __vue_template__ = __webpack_require__(263)
+var __vue_template__ = __webpack_require__(265)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2566,17 +2566,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 260:
+/***/ 262:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(261);
+var content = __webpack_require__(263);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(231)("71b6ec7e", content, false, {});
+var update = __webpack_require__(233)("71b6ec7e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2593,7 +2593,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 261:
+/***/ 263:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2608,7 +2608,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 
 /***/ }),
 
-/***/ 262:
+/***/ 264:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2638,7 +2638,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 263:
+/***/ 265:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2694,17 +2694,17 @@ if (false) {
 
 /***/ }),
 
-/***/ 349:
+/***/ 361:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(350);
+var content = __webpack_require__(362);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(231)("668f7684", content, false, {});
+var update = __webpack_require__(233)("668f7684", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2721,7 +2721,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 350:
+/***/ 362:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2736,17 +2736,17 @@ exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n
 
 /***/ }),
 
-/***/ 351:
+/***/ 363:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(352);
+var content = __webpack_require__(364);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(231)("33b64a3b", content, false, {});
+var update = __webpack_require__(233)("33b64a3b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2763,7 +2763,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 352:
+/***/ 364:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2778,17 +2778,17 @@ exports.push([module.i, "\ntd[data-v-aab6e828],th[data-v-aab6e828]{padding:2px;b
 
 /***/ }),
 
-/***/ 353:
+/***/ 365:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(354);
+var content = __webpack_require__(366);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(231)("56d5efb8", content, false, {});
+var update = __webpack_require__(233)("56d5efb8", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2805,7 +2805,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 354:
+/***/ 366:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2820,26 +2820,15 @@ exports.push([module.i, "\n.btn-default {\n  border: 1px solid #ccc;\n  padding:
 
 /***/ }),
 
-/***/ 355:
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Shared_Layout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model__ = __webpack_require__(261);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Components_Model__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3104,7 +3093,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         per_page: 10,
         query: "",
         invoice: "",
-        status: "",
+        is_commission_added: "",
         client: null,
         product: null,
         dateRange: {}
@@ -3144,7 +3133,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           search: this.search.query,
           per_page: this.search.per_page,
           invoice: this.search.invoice,
-          status: this.search.status,
+          is_commission_added: this.search.is_commission_added,
           client: client,
           product: product,
           start_date: start_date,
@@ -3161,7 +3150,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 356:
+/***/ 368:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -3336,6 +3325,8 @@ var render = function() {
                                     _vm._v(_vm._s(_vm.__("S.N.")))
                                   ]),
                                   _vm._v(" "),
+                                  _c("th", [_vm._v(_vm._s(_vm.__("Date")))]),
+                                  _vm._v(" "),
                                   _c("th", { staticStyle: { width: "10%" } }, [
                                     _vm._v(_vm._s(_vm.__("Client")))
                                   ]),
@@ -3346,35 +3337,15 @@ var render = function() {
                                     _vm._v(_vm._s(_vm.__("Invoice")))
                                   ]),
                                   _vm._v(" "),
+                                  _c("th", [_vm._v(_vm._s(_vm.__("Product")))]),
+                                  _vm._v(" "),
                                   _c("th", [
                                     _vm._v(_vm._s(_vm.__("Measurement Type")))
                                   ]),
                                   _vm._v(" "),
-                                  _c("th", [
-                                    _vm._v(_vm._s(_vm.__("Created At")))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("th", { staticClass: "text-center" }, [
-                                    _vm._v(_vm._s(_vm.__("Status")))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("th", { staticClass: "text-center" }, [
-                                    _vm._v(_vm._s(_vm.__("Quantity")))
-                                  ]),
-                                  _vm._v(" "),
                                   _c("th", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(_vm.__("Track Rent")))
+                                    _vm._v(_vm._s(_vm.__("Track Rental")))
                                   ]),
-                                  _vm._v(" "),
-                                  _c("th", { staticClass: "text-right" }, [
-                                    _vm._v(_vm._s(_vm.__("Others")))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v(_vm._s(_vm.__("Total")))]),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v(_vm._s(_vm.__("Borrow")))]),
-                                  _vm._v(" "),
-                                  _c("th", [_vm._v(_vm._s(_vm.__("Final")))]),
                                   _vm._v(" "),
                                   _c("th", { staticClass: "text-center" }, [
                                     _vm._v(_vm._s(_vm.__("Action")))
@@ -3390,29 +3361,7 @@ var render = function() {
                                 { staticClass: "font-small-3" },
                                 [
                                   _c("tr", [
-                                    _c("td", { attrs: { colspan: "10" } }),
-                                    _vm._v(" "),
-                                    _c("th", { staticClass: "text-right" }, [
-                                      _vm._v(
-                                        "\n                      " +
-                                          _vm._s(
-                                            _vm.total(_vm.driver_invoices.data)
-                                          ) +
-                                          "\n                    "
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("th", { staticClass: "text-right" }, [
-                                      _vm._v(
-                                        "\n                      " +
-                                          _vm._s(
-                                            _vm.totalBorrow(
-                                              _vm.driver_invoices.data
-                                            )
-                                          ) +
-                                          "\n                    "
-                                      )
-                                    ]),
+                                    _c("td", { attrs: { colspan: "7" } }),
                                     _vm._v(" "),
                                     _c("th", { staticClass: "text-right" }, [
                                       _vm._v(
@@ -3424,7 +3373,9 @@ var render = function() {
                                           ) +
                                           "\n                    "
                                       )
-                                    ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("th")
                                   ]),
                                   _vm._v(" "),
                                   _vm._l(_vm.driver_invoices.data, function(
@@ -3433,9 +3384,29 @@ var render = function() {
                                   ) {
                                     return _c(
                                       "tr",
-                                      { key: driver_invoice.id },
+                                      {
+                                        key: index,
+                                        class: [
+                                          driver_invoice.is_commission_added
+                                            ? "alert-primary"
+                                            : ""
+                                        ]
+                                      },
                                       [
                                         _c("th", [_vm._v(_vm._s(index + 1))]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                      " +
+                                              _vm._s(
+                                                _vm._f("moment")(
+                                                  driver_invoice.created_at,
+                                                  "DD/MM/YYYY"
+                                                )
+                                              ) +
+                                              "\n                    "
+                                          )
+                                        ]),
                                         _vm._v(" "),
                                         _c("td", [
                                           _vm._v(
@@ -3464,6 +3435,20 @@ var render = function() {
                                             _vm._v(
                                               "\n                      " +
                                                 _vm._s(driver_invoice.invoice) +
+                                                "\n                    "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "th",
+                                          { staticClass: "text-center" },
+                                          [
+                                            _vm._v(
+                                              "\n                      " +
+                                                _vm._s(
+                                                  driver_invoice.product.name
+                                                ) +
                                                 "\n                    "
                                             )
                                           ]
@@ -3533,43 +3518,6 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                      " +
-                                              _vm._s(
-                                                _vm._f("moment")(
-                                                  driver_invoice.created_at,
-                                                  "DD/MM/YYYY"
-                                                )
-                                              ) +
-                                              "\n                    "
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", {
-                                          domProps: {
-                                            innerHTML: _vm._s(
-                                              _vm.$options.filters.payment_status(
-                                                driver_invoice.status
-                                              )
-                                            )
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-center" },
-                                          [
-                                            _vm._v(
-                                              "\n                      " +
-                                                _vm._s(
-                                                  driver_invoice.quantity
-                                                ) +
-                                                "\n                    "
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
                                         _c(
                                           "td",
                                           { staticClass: "text-right" },
@@ -3577,43 +3525,13 @@ var render = function() {
                                             _vm._v(
                                               "\n                      " +
                                                 _vm._s(
-                                                  driver_invoice.track_rent
+                                                  parseFloat(
+                                                    driver_invoice.final
+                                                  ).toFixed(2)
                                                 ) +
                                                 "\n                    "
                                             )
                                           ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-right" },
-                                          [
-                                            _vm._v(
-                                              _vm._s(driver_invoice.others)
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-right" },
-                                          [_vm._v(_vm._s(driver_invoice.total))]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-right" },
-                                          [
-                                            _vm._v(
-                                              _vm._s(driver_invoice.borrow)
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-right" },
-                                          [_vm._v(_vm._s(driver_invoice.final))]
                                         ),
                                         _vm._v(" "),
                                         _c(
@@ -3842,7 +3760,7 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-4 col-12" }, [
-                  _c("label", [_vm._v(_vm._s(_vm.__("Payment Status")))]),
+                  _c("label", [_vm._v(_vm._s(_vm.__("Commission Status")))]),
                   _vm._v(" "),
                   _c(
                     "select",
@@ -3851,8 +3769,8 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.search.status,
-                          expression: "search.status"
+                          value: _vm.search.is_commission_added,
+                          expression: "search.is_commission_added"
                         }
                       ],
                       staticClass: "form-control",
@@ -3868,7 +3786,7 @@ var render = function() {
                             })
                           _vm.$set(
                             _vm.search,
-                            "status",
+                            "is_commission_added",
                             $event.target.multiple
                               ? $$selectedVal
                               : $$selectedVal[0]
@@ -3878,15 +3796,15 @@ var render = function() {
                     },
                     [
                       _c("option", { attrs: { value: "" } }, [
-                        _vm._v(_vm._s(_vm.__("Payment Status")))
+                        _vm._v(_vm._s(_vm.__("Commission Status")))
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "1" } }, [
-                        _vm._v(_vm._s(_vm.__("Borrow")))
+                        _vm._v(_vm._s(_vm.__("Collected")))
                       ]),
                       _vm._v(" "),
                       _c("option", { attrs: { value: "0" } }, [
-                        _vm._v(_vm._s(_vm.__("Final")))
+                        _vm._v(_vm._s(_vm.__("Not Collected")))
                       ])
                     ]
                   )

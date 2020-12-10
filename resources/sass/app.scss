@@ -175,12 +175,16 @@
 
 .controller {
   right: 29%;
-  bottom: 0;
+  bottom: 30px;
   position: fixed;
   border: 1px solid #d0d0d0;
   border-radius: 4px;
   padding: 10px;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);
+}
+
+.btn-md {
+  padding: 0.9rem 1rem !important;
 }
 
 @media print {

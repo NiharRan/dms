@@ -87,7 +87,7 @@
                   <th>{{ transaction.transaction_type.name }}</th>
                   <th>{{ transaction.media.name }}</th>
                   <th class="text-left">{{ transaction.description }}</th>
-                  <th class="text-right">{{ transaction.amount }}</th>
+                  <th class="text-right">{{ parseFloat(transaction.amount).toFixed(2) }}</th>
                 </tr>
               </tbody>
               <tfoot>
