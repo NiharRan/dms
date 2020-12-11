@@ -122,6 +122,12 @@
                   </tbody>
                 </table>
               </div>
+              <div class="mt-1">
+                <pagination
+                  v-if="transactions"
+                  :links="transactions.meta.links"
+                ></pagination>
+              </div>
             </div>
           </div>
         </div>
@@ -196,10 +202,11 @@
 <script>
 import Layout from "../../Shared/Layout";
 import Model from "../../Components/Model";
+import Pagination from "../../Shared/Pagination";
 
 export default {
   name: "AccountStatement",
-  components: { Model, Layout },
+  components: { Model, Layout, Pagination },
   props: {
     transactions: Object,
     transaction_types: Array,

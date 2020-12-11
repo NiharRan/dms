@@ -12,6 +12,7 @@ use App\Settings\StockDetails;
 use App\Traits\RepositoryTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class SaleRepository
 {
@@ -64,15 +65,31 @@ class SaleRepository
 
   public function findById($rowId)
   {
-    return $this->sale->with([
+    $sale = $this->sale->with([
       'client',
       'transaction_media',
       'company',
       'creator',
       'sale_details' => function ($q) {
-        $q->with(['stock', 'product']);
+        $q->with([
+          'stock',
+          'product'
+          ]);
       }
     ])->find($rowId);
+    
+    if($sale->sale_details->count() > 0) {
+      foreach($sale->sale_details as $key => $sale_detail) {
+        $stock_detail = StockDetails::where([
+          'stock_id' => $sale_detail->stock->id,
+          'product_id' => $sale_detail->product->id,
+        ])->first();
+        $sale->sale_details[$key]->product->quantity = $stock_detail->quantity;
+        $sale->sale_details[$key]->stock_alert = '';
+      }
+    }
+
+    return $sale;
   }
 
   public function findByInvoice(string $invoice)
@@ -168,7 +185,7 @@ class SaleRepository
     $total_due = $request->total_due == "" ? 0 : $request->total_due;
     $total_paid = $request->total_paid == "" ? 0 : $request->total_paid;
     $client = Client::find($request->client_id);
-    if ($client->balance > 0) {
+    if ($client->balance && $client->balance > 0) {
       $balance_decrease = 0;
       if ($client->balance < $total_due) {
         $total_paid += $client->balance;
@@ -269,14 +286,14 @@ class SaleRepository
   }
   private function reduceStock($stock_id, $product_id, $quantity)
   {
-    StockDetails::where([
+    DB::table('stock_details')->where([
       'stock_id' => $stock_id,
       'product_id' => $product_id,
     ])->decrement('quantity', $quantity);
   }
   private function increaseStock($stock_id, $product_id, $quantity)
   {
-    StockDetails::where([
+    DB::table('stock_details')->where([
       'stock_id' => $stock_id,
       'product_id' => $product_id,
     ])->increment('quantity', $quantity);

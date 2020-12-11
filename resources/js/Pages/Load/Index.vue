@@ -30,8 +30,8 @@
                   <tbody>
                     <tr v-for="(load, index) in loads.data" :key="load.id">
                       <th>{{ index + 1 }}</th>
-                      <th class="text-right">{{ load.amount }}</th>
-                      <th class="text-right">{{ load.stock_rent }}</th>
+                      <th class="text-right">{{ parseFloat(load.amount).toFixed(2) }}</th>
+                      <th class="text-right">{{ parseFloat(load.stock_rent).toFixed(2) }}</th>
                       <td>{{ load.default_date_time }}</td>
                       <td v-html="$options.filters.status(load.status)"></td>
                       <td class="text-center">

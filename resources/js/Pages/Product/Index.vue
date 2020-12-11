@@ -23,10 +23,7 @@
                         <option value="25">100</option>
                       </select>
                     </th>
-                    <th colspan="4"></th>
-                    <th>
-                      <input type="text" @keyup="searchData" v-model="search.query" class="form-control" placeholder="Search">
-                    </th>
+                    <th colspan="5"></th>
                   </tr>
                   <tr>
                     <th scope="col">S.N.</th>

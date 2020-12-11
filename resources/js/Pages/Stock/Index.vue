@@ -39,7 +39,7 @@
                         <tr v-for="(stock_detail, i) in stock.stock_details" :key="stock_detail.id">
                           <th>{{ i + 1 }}</th>
                           <th>{{ stock_detail.product.name }}</th>
-                          <th class="text-center">{{ stock_detail.quantity }}</th>
+                          <th class="text-center">{{ parseFloat(stock_detail.quantity).toFixed(2) }}</th>
                           <th>
                             <inertia-link :title="__('History')" :href="route('stock-details.history.show', stock_detail.id)" class="text-info" role="button"><i class="feather icon-eye"></i></inertia-link>
                           </th>

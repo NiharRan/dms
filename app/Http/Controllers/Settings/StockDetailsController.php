@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Settings;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Settings\StockDetailsRequest;
+use App\Http\Resources\StockDetailsResource;
 use App\Repositories\Settings\StockDetailsRepository;
 use App\Settings\Product;
 use App\Settings\Stock;
@@ -25,7 +26,7 @@ class StockDetailsController extends Controller
      */
     public function index()
     {
-        $stockDetails = $this->stockDetailsRepository->paginate(10);
+        $stockDetails = StockDetailsResource::collection($this->stockDetailsRepository->paginate(10));
         $stocks = Stock::active()->get();
         $products = Product::active()->get();
         $breadcrumbs = [

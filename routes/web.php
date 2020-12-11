@@ -60,7 +60,7 @@ Route::group([
     Route::get('/drivers/invoices/invoice/{invoice}', 'DriverInvoiceController@show')->name('drivers.invoices.show');
     Route::get('/drivers/invoices/print/{invoice}', 'DriverInvoiceController@print')->name('drivers.invoices.print');
     Route::get('/drivers/invoices/commissions/{referenceCode}', 'DriverInvoiceController@commissions')->name('drivers.invoices.commissions');
-    Route::get('/drivers/invoices/list/print', 'DriverInvoiceController@printList')->name('drivers.invoices.print');
+    Route::get('/drivers/invoices/list/print', 'DriverInvoiceController@printList')->name('drivers.invoices.print.list');
 
     Route::get('/accounts/statements', 'AccountController@statement')->name('accounts.statements');
     Route::get('/accounts/statements/print', 'AccountController@print')->name('accounts.statements.print');

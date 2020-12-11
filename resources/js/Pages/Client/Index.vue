@@ -61,6 +61,12 @@
                   </tbody>
                 </table>
               </div>
+              <div class="mt-1">
+                <pagination
+                  v-if="clients"
+                  :links="clients.links"
+                ></pagination>
+              </div>
             </div>
           </div>
         </div>
@@ -195,9 +201,10 @@
 <script>
 import Layout from "../../Shared/Layout";
 import Model from "../../Components/Model";
+import Pagination from "../../Shared/Pagination";
 export default {
   name: "Client",
-  components: { Model, Layout },
+  components: { Model, Layout, Pagination },
   props: {
     success: String,
     clients: Object,

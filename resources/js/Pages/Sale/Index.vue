@@ -59,7 +59,9 @@
                           {{ __("Filter") }}
                         </button>
                         <button
-                        :disabled="sales && sales.data.length > 0 ? false : true"
+                          :disabled="
+                            sales && sales.data.length > 0 ? false : true
+                          "
                           class="btn btn-default"
                           type="button"
                           @click="print"
@@ -140,6 +142,9 @@
                   </tbody>
                 </table>
               </div>
+              <div class="mt-1">
+                <pagination v-if="sales" :links="sales.meta.links"></pagination>
+              </div>
             </div>
           </div>
         </div>
@@ -212,10 +217,11 @@
 <script>
 import Layout from "../../Shared/Layout";
 import Model from "../../Components/Model";
+import Pagination from "../../Shared/Pagination";
 
 export default {
   name: "Sale",
-  components: { Model, Layout },
+  components: { Model, Layout, Pagination },
   props: {
     sales: Object,
     clients: Array,

@@ -144,7 +144,7 @@
                           </span>
                         </th>
                         <th class="text-center">
-                          {{ driver_invoice.quantity }}
+                          {{ parseFloat(driver_invoice.quantity).toFixed(2) }}
                         </th>
                       </tr>
                       <tr>
@@ -152,33 +152,33 @@
                         <th></th>
                         <th></th>
                         <th class="text-right">
-                          {{ driver_invoice.track_rent }}
+                          {{ parseFloat(driver_invoice.track_rent).toFixed(2) }}
                         </th>
                       </tr>
                       <tr>
                         <th>{{ __("Others") }}</th>
                         <th></th>
                         <th></th>
-                        <th class="text-right">{{ driver_invoice.others }}</th>
+                        <th class="text-right">{{ parseFloat(driver_invoice.others).toFixed(2) }}</th>
                       </tr>
 
                       <tr>
                         <th colspan="3" class="text-right">
                           {{ __("Total Amount") }}
                         </th>
-                        <th class="text-right">{{ driver_invoice.total }}</th>
+                        <th class="text-right">{{ parseFloat(driver_invoice.total).toFixed(2) }}</th>
                       </tr>
                       <tr>
                         <th colspan="3" class="text-right">
                           {{ __("Borrow") }}
                         </th>
-                        <th class="text-right">{{ driver_invoice.borrow }}</th>
+                        <th class="text-right">{{ parseFloat(driver_invoice.borrow).toFixed(2) }}</th>
                       </tr>
                       <tr>
                         <th colspan="3" class="text-right">
                           {{ __("Final Amount") }}
                         </th>
-                        <th class="text-right">{{ driver_invoice.final }}</th>
+                        <th class="text-right">{{ parseFloat(driver_invoice.final).toFixed(2) }}</th>
                       </tr>
                     </tbody>
                   </table>

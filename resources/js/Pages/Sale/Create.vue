@@ -77,10 +77,19 @@
                                 type="text"
                                 v-model="row.track_no"
                                 class="form-control text-uppercase"
+                                :class="[
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].track_no
+                                    ? 'is-invalid'
+                                    : '',
+                                ]"
                                 :placeholder="__('Track No.')"
                               />
                               <span
-                                v-if="sale_details_errors[index]"
+                                v-if="
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].track_no
+                                "
                                 class="invalid-feedback"
                                 style="display: block"
                                 role="alert"
@@ -95,6 +104,12 @@
                                 v-model="row.stock"
                                 :options="stocks"
                                 :searchable="true"
+                                :class="[
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].stock
+                                    ? 'is-invalid'
+                                    : '',
+                                ]"
                                 :close-on-select="true"
                                 :show-labels="true"
                                 @input="fetchProducts(row.stock)"
@@ -103,7 +118,10 @@
                                 :placeholder="__('Select Stock')"
                               ></multi-select>
                               <span
-                                v-if="sale_details_errors[index]"
+                                v-if="
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].stock
+                                "
                                 class="invalid-feedback"
                                 style="display: block"
                                 role="alert"
@@ -118,6 +136,13 @@
                                 v-model="row.product"
                                 :options="products"
                                 :searchable="true"
+                                :class="[
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].product
+                                    ? 'is-invalid'
+                                    : '',
+                                ]"
+                                @input="checkProduct"
                                 :close-on-select="true"
                                 :show-labels="true"
                                 label="name"
@@ -125,7 +150,10 @@
                                 :placeholder="__('Select Product')"
                               ></multi-select>
                               <span
-                                v-if="sale_details_errors[index]"
+                                v-if="
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].product
+                                "
                                 class="invalid-feedback"
                                 style="display: block"
                                 role="alert"
@@ -151,17 +179,38 @@
                                 type="text"
                                 v-model="row.quantity"
                                 @keyup="calculateTotalWhenQuantityChange(index)"
+                                @change="checkStock(index)"
                                 class="form-control"
+                                :class="[
+                                  (sale_details_errors[index] &&
+                                    sale_details_errors[index].quantity) ||
+                                  row.stock_alert != ''
+                                    ? 'is-invalid'
+                                    : '',
+                                ]"
                                 :placeholder="__('Product Quantity')"
                               />
                               <span
-                                v-if="sale_details_errors[index]"
+                                v-if="
+                                  (sale_details_errors[index] &&
+                                    sale_details_errors[index].quantity) ||
+                                  row.stock_alert != ''
+                                "
                                 class="invalid-feedback"
                                 style="display: block"
                                 role="alert"
                               >
-                                <strong>{{
-                                  sale_details_errors[index].quantity
+                                <strong
+                                  v-if="
+                                    sale_details_errors[index] &&
+                                    sale_details_errors[index].quantity
+                                  "
+                                  >{{
+                                    sale_details_errors[index].quantity
+                                  }}</strong
+                                >
+                                <strong v-if="row.stock_alert != ''">{{
+                                  row.stock_alert
                                 }}</strong>
                               </span>
                             </div>
@@ -171,10 +220,19 @@
                                 v-model="row.price"
                                 @keyup="calculateTotalWhenPriceChange(index)"
                                 class="form-control"
+                                :class="[
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].price
+                                    ? 'is-invalid'
+                                    : '',
+                                ]"
                                 :placeholder="__('Product Price')"
                               />
                               <span
-                                v-if="sale_details_errors[index]"
+                                v-if="
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].price
+                                "
                                 class="invalid-feedback"
                                 style="display: block"
                                 role="alert"
@@ -376,15 +434,14 @@ export default {
       products: [],
       sale_details_errors: [],
       invalid: false,
+      invalid_stock: false,
     };
   },
   methods: {
     fetchCommission: function () {
       if (this.form.reference != "") {
         axios
-          .get(
-            this.route("drivers.invoices.commissions", this.form.reference)
-          )
+          .get(this.route("drivers.invoices.commissions", this.form.reference))
           .then(({ data }) => {
             this.form.commission =
               data.commission == ""
@@ -396,9 +453,35 @@ export default {
           });
       }
     },
+    checkStock: function (index) {
+      const selectedRow = this.form.sale_details[index];
+      let stock = selectedRow.product.quantity;
+      let quantity = selectedRow.quantity;
+      let dif = stock - quantity;
+      if (dif < 0) {
+        this.invalid_stock = true;
+        this.form.sale_details[
+          index
+        ].stock_alert = `${stock} - ${quantity} = ${dif}`;
+      } else {
+        this.invalid_stock = false;
+        this.form.sale_details[index].stock_alert = "";
+      }
+    },
+    checkProduct: function (obj) {
+      console.log(obj)
+      const result = this.form.sale_details.find(function (sale_detail) {
+        return sale_detail.product.id == obj.id;
+      });
+      if (result) {
+        this.$toast("Oops! This product is already selected!", "error");
+        this.form.sale_details[
+          this.form.sale_details.length - 1
+        ].product = null;
+      }
+    },
     calculateTotalWhenQuantityChange: function (index) {
       const selectedRow = this.form.sale_details[index];
-      const selectedProduct = this.form.sale_details[index].product;
 
       let price = selectedRow.price == "" ? "0.00" : selectedRow.price;
       let quantity = selectedRow.quantity == "" ? "0.00" : selectedRow.quantity;
@@ -443,7 +526,7 @@ export default {
     },
     store: async function () {
       let errors = this.isValid();
-      if (!this.invalid) {
+      if (!this.invalid && !this.invalid_stock) {
         let self = this;
         const transaction_media_id = this.form.transaction_media
           ? this.form.transaction_media.id
@@ -508,6 +591,7 @@ export default {
         price: "",
         total: "0.00",
         track_no: "",
+        stock_alert: "",
       };
       this.form.sale_details.push(saleDetail);
     },

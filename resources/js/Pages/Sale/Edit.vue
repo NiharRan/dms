@@ -77,10 +77,19 @@
                                 type="text"
                                 v-model="row.track_no"
                                 class="form-control text-uppercase"
+                                :class="[
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].track_no
+                                    ? 'is-invalid'
+                                    : '',
+                                ]"
                                 :placeholder="__('Track No.')"
                               />
                               <span
-                                v-if="sale_details_errors[index]"
+                                v-if="
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].track_no
+                                "
                                 class="invalid-feedback"
                                 style="display: block"
                                 role="alert"
@@ -96,6 +105,12 @@
                                 :options="stocks"
                                 :searchable="true"
                                 :close-on-select="true"
+                                :class="[
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].stock
+                                    ? 'is-invalid'
+                                    : '',
+                                ]"
                                 :show-labels="true"
                                 @input="fetchProducts(row.stock)"
                                 label="name"
@@ -103,7 +118,10 @@
                                 :placeholder="__('Select Stock')"
                               ></multi-select>
                               <span
-                                v-if="sale_details_errors[index]"
+                                v-if="
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].stock
+                                "
                                 class="invalid-feedback"
                                 style="display: block"
                                 role="alert"
@@ -117,6 +135,13 @@
                               <multi-select
                                 v-model="row.product"
                                 :options="products"
+                                :class="[
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].product
+                                    ? 'is-invalid'
+                                    : '',
+                                ]"
+                                @input="checkProduct"
                                 :searchable="true"
                                 :close-on-select="true"
                                 :show-labels="true"
@@ -125,7 +150,10 @@
                                 :placeholder="__('Select Product')"
                               ></multi-select>
                               <span
-                                v-if="sale_details_errors[index]"
+                                v-if="
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].product
+                                "
                                 class="invalid-feedback"
                                 style="display: block"
                                 role="alert"
@@ -151,17 +179,38 @@
                                 type="text"
                                 v-model="row.quantity"
                                 @keyup="calculateTotalWhenQuantityChange(index)"
+                                @change="checkStock(index)"
                                 class="form-control"
+                                :class="[
+                                  (sale_details_errors[index] &&
+                                    sale_details_errors[index].qunatity) ||
+                                  row.stock_alert != ''
+                                    ? 'is-invalid'
+                                    : '',
+                                ]"
                                 :placeholder="__('Product Quantity')"
                               />
                               <span
-                                v-if="sale_details_errors[index]"
+                                v-if="
+                                  (sale_details_errors[index] &&
+                                    sale_details_errors[index].qunatity) ||
+                                  row.stock_alert != ''
+                                "
                                 class="invalid-feedback"
                                 style="display: block"
                                 role="alert"
                               >
-                                <strong>{{
-                                  sale_details_errors[index].quantity
+                                <strong
+                                  v-if="
+                                    sale_details_errors[index] &&
+                                    sale_details_errors[index].qunatity
+                                  "
+                                  >{{
+                                    sale_details_errors[index].quantity
+                                  }}</strong
+                                >
+                                <strong v-if="row.stock_alert != ''">{{
+                                  row.stock_alert
                                 }}</strong>
                               </span>
                             </div>
@@ -170,11 +219,20 @@
                                 type="text"
                                 v-model="row.price"
                                 @keyup="calculateTotalWhenPriceChange(index)"
+                                :class="[
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].price
+                                    ? 'is-invalid'
+                                    : '',
+                                ]"
                                 class="form-control"
                                 :placeholder="__('Product Price')"
                               />
                               <span
-                                v-if="sale_details_errors[index]"
+                                v-if="
+                                  sale_details_errors[index] &&
+                                  sale_details_errors[index].price
+                                "
                                 class="invalid-feedback"
                                 style="display: block"
                                 role="alert"
@@ -368,6 +426,7 @@ export default {
       products: [],
       sale_details_errors: [],
       invalid: false,
+      invalid_stock: false,
     };
   },
   methods: {
@@ -386,6 +445,32 @@ export default {
           });
       }
     },
+    checkStock: function (index) {
+      const selectedRow = this.sale.sale_details[index];
+      let stock = parseFloat(selectedRow.product.quantity).toFixed(2);
+      let quantity = parseFloat(selectedRow.quantity).toFixed(2);
+      let dif = stock - quantity;
+      if (dif < 0) {
+        this.invalid_stock = true;
+        this.sale.sale_details[
+          index
+        ].stock_alert = `${stock} - ${quantity} = ${dif}`;
+      } else {
+        this.invalid_stock = false;
+        this.sale.sale_details[index].stock_alert = "";
+      }
+    },
+    checkProduct: function (obj) {
+      const result = this.sale.sale_details.find(function (sale_detail) {
+        return sale_detail.product.id == obj.id;
+      });
+      if (result) {
+        this.$toast("Oops! This product is already selected!", "error");
+        this.sale.sale_details[
+          this.sale.sale_details.length - 1
+        ].product = null;
+      }
+    },
     calculateTotalWhenQuantityChange: function (index) {
       const selectedRow = this.sale.sale_details[index];
 
@@ -393,8 +478,7 @@ export default {
       let quantity = selectedRow.quantity == "" ? "0.00" : selectedRow.quantity;
 
       let total = parseFloat(price) * parseFloat(quantity);
-      selectedRow.total = parseFloat(total).toFixed(2);
-      this.sale.sale_details[index] = selectedRow;
+      this.sale.sale_details[index].amount = parseFloat(total).toFixed(2);
       this.calculateTotal();
     },
     calculateTotalWhenPriceChange: function (index) {
@@ -424,7 +508,7 @@ export default {
     },
     update: async function () {
       let errors = this.isValid();
-      if (!this.invalid) {
+      if (!this.invalid && !this.invalid_stock) {
         let self = this;
         const transaction_media_id = this.sale.transaction_media
           ? this.sale.transaction_media.id
@@ -484,9 +568,10 @@ export default {
       const saleDetail = {
         product: null,
         quantity: "",
-        price: "0.00",
-        amount: "0.00",
+        price: "",
+        amount: "",
         track_no: "",
+        stock_alert: "",
       };
       this.sale.sale_details.push(saleDetail);
     },
@@ -513,23 +598,23 @@ export default {
       let errors = [];
       this.sale.sale_details.forEach((row, index) => {
         let error = {};
-        if (row.stock === null) {
+        if (row.stock == null) {
           this.invalid = true;
           error.stock = "Stock is required";
         }
-        if (row.product === null) {
+        if (row.product == null) {
           this.invalid = true;
           error.product = "Product is required";
         }
-        if (row.track_no === "") {
+        if (row.track_no == "") {
           this.invalid = true;
           error.track_no = "Track No. is required";
         }
-        if (row.quantity === "") {
+        if (row.quantity == "") {
           this.invalid = true;
           error.quantity = "Product quantity is required";
         }
-        if (row.price === "0.00" || row.price === "") {
+        if (row.price == "0.00" || row.price == "") {
           this.invalid = true;
           error.price = "Product price is required";
         }
