@@ -92,7 +92,7 @@
                   <td>{{ history.created_at | moment("DD/MM/YYYY") }}</td>
                   <th>{{ history.ship }}</th>
                   <th>{{ history.company }}</th>
-                  <th class="text-right">{{ parseFloat(history.quantity).toFixed(2) }}</th>
+                  <th class="text-right">{{ parseFloat(history.quantity).toFixed(3) }}</th>
                 </tr>
               </tbody>
               <tfoot class="bt">
@@ -131,7 +131,7 @@ export default {
         (total, history) => total + parseFloat(history.quantity),
         0
       );
-      return parseFloat(totalQuantity).toFixed(2);
+      return parseFloat(totalQuantity).toFixed(3);
     },
     printPage: function () {
       window.print();

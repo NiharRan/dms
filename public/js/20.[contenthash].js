@@ -1,18 +1,18 @@
 webpackJsonp([20],{
 
-/***/ 175:
+/***/ 179:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(398)
+  __webpack_require__(421)
 }
 var normalizeComponent = __webpack_require__(235)
 /* script */
-var __vue_script__ = __webpack_require__(400)
+var __vue_script__ = __webpack_require__(423)
 /* template */
-var __vue_template__ = __webpack_require__(401)
+var __vue_template__ = __webpack_require__(424)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/Pages/ProductType/Index.vue"
+Component.options.__file = "resources/js/Pages/Religion/Index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f2bde0da", Component.options)
+    hotAPI.createRecord("data-v-3c97ce3d", Component.options)
   } else {
-    hotAPI.reload("data-v-f2bde0da", Component.options)
+    hotAPI.reload("data-v-3c97ce3d", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -2599,7 +2599,7 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2630,6 +2630,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     size: {
       type: String,
       "default": ''
+    },
+    modelId: {
+      type: String,
+      "default": 'default'
     }
   }
 });
@@ -2649,7 +2653,7 @@ var render = function() {
       staticClass: "modal fade text-left",
       staticStyle: { display: "none" },
       attrs: {
-        id: "default",
+        id: _vm.modelId,
         tabindex: "-1",
         role: "dialog",
         "aria-labelledby": "myModalLabel1",
@@ -2692,23 +2696,23 @@ if (false) {
 
 /***/ }),
 
-/***/ 398:
+/***/ 421:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(399);
+var content = __webpack_require__(422);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("6838604a", content, false, {});
+var update = __webpack_require__(234)("768e38b0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f2bde0da\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f2bde0da\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3c97ce3d\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3c97ce3d\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -2719,7 +2723,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 399:
+/***/ 422:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2734,7 +2738,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 400:
+/***/ 423:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2825,20 +2829,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ProductType",
+  name: "Religion",
   components: {
     Model: __WEBPACK_IMPORTED_MODULE_1__Components_Model___default.a,
     Layout: __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default.a
   },
   props: {
     success: String,
-    product_types: Object,
+    religions: Object,
     errors: Object
   },
   data: function data() {
     return {
       editMode: false,
-      modelTitle: 'Create New Product Type',
+      modelTitle: 'Create New Religion',
       form: {
         id: '',
         name: '',
@@ -2861,7 +2865,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     cleanForm: function cleanForm() {
       var _this = this;
 
-      this.modelTitle = 'Create New Product Type';
+      this.modelTitle = 'Create New Religion';
       this.editMode = false;
       this.form.name = '';
       this.form.id = '';
@@ -2879,19 +2883,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     store: function store() {
       var self = this;
-      this.$inertia.post(this.route('product-types.store'), {
+      this.$inertia.post(this.route('religions.store'), {
         name: this.form.name
       }).then(function () {
         if (Object.keys(self.errors).length === 0) {
           self.closeModel();
           self.cleanForm();
-          self.$toast('Product Type Created Successfully');
+          self.$toast('Religion Created Successfully');
         }
       });
     },
     update: function update() {
       var self = this;
-      this.$inertia.post(this.route('product-types.update', this.form.id), {
+      this.$inertia.post(this.route('religions.update', this.form.id), {
         name: this.form.name,
         status: this.form.status,
         _method: "put"
@@ -2899,7 +2903,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (Object.keys(self.errors).length === 0) {
           self.closeModel();
           self.cleanForm();
-          self.$toast('Product Type Updated Successfully');
+          self.$toast('Religion Updated Successfully');
         }
       });
     }
@@ -2908,14 +2912,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 401:
+/***/ 424:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("layout", { attrs: { name: "ProductType" } }, [
+  return _c("layout", { attrs: { name: "Religion" } }, [
     _c(
       "section",
       { staticClass: "users-list-wrapper" },
@@ -2934,7 +2938,7 @@ var render = function() {
                     ])
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.product_types.data.length > 0
+                _vm.religions.data.length > 0
                   ? _c("div", { staticClass: "table-responsive" }, [
                       _c(
                         "table",
@@ -2967,24 +2971,24 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "tbody",
-                            _vm._l(_vm.product_types.data, function(
-                              product_type,
+                            _vm._l(_vm.religions.data, function(
+                              religion,
                               index
                             ) {
-                              return _c("tr", { key: product_type.id }, [
+                              return _c("tr", { key: religion.id }, [
                                 _c("th", [_vm._v(_vm._s(index + 1))]),
                                 _vm._v(" "),
-                                _c("th", [_vm._v(_vm._s(product_type.name))]),
+                                _c("th", [_vm._v(_vm._s(religion.name))]),
                                 _vm._v(" "),
                                 _c("td", [
-                                  _vm._v(_vm._s(product_type.default_date_time))
+                                  _vm._v(_vm._s(religion.default_date_time))
                                 ]),
                                 _vm._v(" "),
                                 _c("td", {
                                   domProps: {
                                     innerHTML: _vm._s(
                                       _vm.$options.filters.status(
-                                        product_type.status
+                                        religion.status
                                       )
                                     )
                                   }
@@ -2999,7 +3003,7 @@ var render = function() {
                                       on: {
                                         click: function($event) {
                                           $event.preventDefault()
-                                          return _vm.setData(product_type)
+                                          return _vm.setData(religion)
                                         }
                                       }
                                     },
@@ -3089,7 +3093,7 @@ var render = function() {
                       ],
                       staticClass: "form-control",
                       class: [_vm.errors.name ? "is-invalid" : ""],
-                      attrs: { type: "text", placeholder: "Product Type Name" },
+                      attrs: { type: "text", placeholder: "Religion Name" },
                       domProps: { value: _vm.form.name },
                       on: {
                         input: function($event) {
@@ -3207,7 +3211,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-f2bde0da", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-3c97ce3d", module.exports)
   }
 }
 

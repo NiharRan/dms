@@ -1,18 +1,18 @@
 webpackJsonp([22],{
 
-/***/ 172:
+/***/ 173:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(384)
+  __webpack_require__(391)
 }
 var normalizeComponent = __webpack_require__(235)
 /* script */
-var __vue_script__ = __webpack_require__(386)
+var __vue_script__ = __webpack_require__(393)
 /* template */
-var __vue_template__ = __webpack_require__(387)
+var __vue_template__ = __webpack_require__(394)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/Pages/Load/Index.vue"
+Component.options.__file = "resources/js/Pages/MeasurementType/Index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1cb5b832", Component.options)
+    hotAPI.createRecord("data-v-11e4d7c0", Component.options)
   } else {
-    hotAPI.reload("data-v-1cb5b832", Component.options)
+    hotAPI.reload("data-v-11e4d7c0", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -2599,7 +2599,7 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2630,6 +2630,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     size: {
       type: String,
       "default": ''
+    },
+    modelId: {
+      type: String,
+      "default": 'default'
     }
   }
 });
@@ -2649,7 +2653,7 @@ var render = function() {
       staticClass: "modal fade text-left",
       staticStyle: { display: "none" },
       attrs: {
-        id: "default",
+        id: _vm.modelId,
         tabindex: "-1",
         role: "dialog",
         "aria-labelledby": "myModalLabel1",
@@ -2692,23 +2696,23 @@ if (false) {
 
 /***/ }),
 
-/***/ 384:
+/***/ 391:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(385);
+var content = __webpack_require__(392);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("dfd648e8", content, false, {});
+var update = __webpack_require__(234)("abe7ed7e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1cb5b832\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1cb5b832\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-11e4d7c0\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-11e4d7c0\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -2719,7 +2723,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 385:
+/***/ 392:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2727,14 +2731,14 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 386:
+/***/ 393:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2822,115 +2826,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Load",
+  name: "MeasurementType",
   components: {
     Model: __WEBPACK_IMPORTED_MODULE_1__Components_Model___default.a,
     Layout: __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default.a
   },
   props: {
     success: String,
-    loads: Object,
+    measurement_types: Object,
     errors: Object
   },
   data: function data() {
     return {
       editMode: false,
-      modelTitle: "Create New Load",
+      modelTitle: this.__('Create New Measurement Type'),
       form: {
-        id: "",
-        amount: "",
-        stock_rent: "",
-        status: ""
+        id: '',
+        name: '',
+        status: ''
       }
     };
   },
   methods: {
     setData: function setData(data) {
-      this.modelTitle = "Edit ".concat(data.amount, "'s Information");
+      this.modelTitle = "Edit ".concat(data.name, "'s Information");
       this.editMode = true;
-      this.form.amount = data.amount;
-      this.form.stock_rent = data.stock_rent;
+      this.form.name = data.name;
       this.form.status = data.status;
       this.form.id = data.id;
-      $("#default").modal("show");
+      $("#default").modal('show');
     },
     closeModel: function closeModel() {
-      $("#default").modal("hide");
+      $("#default").modal('hide');
     },
     cleanForm: function cleanForm() {
       var _this = this;
 
-      this.modelTitle = "Create New Load";
+      this.modelTitle = this.__('Create New Measurement Type');
       this.editMode = false;
-      this.form.amount = "";
-      this.form.stock_rent = "";
-      this.form.id = "";
-      this.form.status = "";
+      this.form.name = '';
+      this.form.id = '';
+      this.form.status = '';
       Object.keys(this.errors).forEach(function (key, value) {
-        _this.errors[key] = "";
+        _this.errors[key] = '';
       });
     },
     storeOrUpdate: function storeOrUpdate() {
@@ -2942,29 +2883,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     store: function store() {
       var self = this;
-      this.$inertia.post(this.route("loads.store"), {
-        amount: this.form.amount,
-        stock_rent: this.form.stock_rent
+      this.$inertia.post(this.route('measurement-types.store'), {
+        name: this.form.name
       }).then(function () {
         if (Object.keys(self.errors).length === 0) {
           self.closeModel();
           self.cleanForm();
-          self.$toast("Load Created Successfully");
+          self.$toast('Measurement Type Created Successfully');
         }
       });
     },
     update: function update() {
       var self = this;
-      this.$inertia.post(this.route("loads.update", this.form.id), {
-        amount: this.form.amount,
-        stock_rent: this.form.stock_rent,
+      this.$inertia.post(this.route('measurement-types.update', this.form.id), {
+        name: this.form.name,
         status: this.form.status,
         _method: "put"
       }).then(function () {
         if (Object.keys(self.errors).length === 0) {
           self.closeModel();
           self.cleanForm();
-          self.$toast("Load Updated Successfully");
+          self.$toast('Measurement Type Updated Successfully');
         }
       });
     }
@@ -2973,14 +2912,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 387:
+/***/ 394:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("layout", { attrs: { name: "Load" } }, [
+  return _c("layout", { attrs: { name: "MeasurementType" } }, [
     _c(
       "section",
       { staticClass: "users-list-wrapper" },
@@ -2999,7 +2938,7 @@ var render = function() {
                     ])
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.loads.data.length > 0
+                _vm.measurement_types.data.length > 0
                   ? _c("div", { staticClass: "table-responsive" }, [
                       _c(
                         "table",
@@ -3016,13 +2955,7 @@ var render = function() {
                                 _vm._v(_vm._s(_vm.__("S.N.")))
                               ]),
                               _vm._v(" "),
-                              _c("th", { staticClass: "text-right" }, [
-                                _vm._v(_vm._s(_vm.__("Amount")))
-                              ]),
-                              _vm._v(" "),
-                              _c("th", { staticClass: "text-right" }, [
-                                _vm._v(_vm._s(_vm.__("Stock Rent")))
-                              ]),
+                              _c("th", [_vm._v(_vm._s(_vm.__("Name")))]),
                               _vm._v(" "),
                               _c("th", [_vm._v(_vm._s(_vm.__("Created At")))]),
                               _vm._v(" "),
@@ -3038,32 +2971,29 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "tbody",
-                            _vm._l(_vm.loads.data, function(load, index) {
-                              return _c("tr", { key: load.id }, [
+                            _vm._l(_vm.measurement_types.data, function(
+                              measurement_type,
+                              index
+                            ) {
+                              return _c("tr", { key: measurement_type.id }, [
                                 _c("th", [_vm._v(_vm._s(index + 1))]),
                                 _vm._v(" "),
-                                _c("th", { staticClass: "text-right" }, [
-                                  _vm._v(
-                                    _vm._s(parseFloat(load.amount).toFixed(2))
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("th", { staticClass: "text-right" }, [
-                                  _vm._v(
-                                    _vm._s(
-                                      parseFloat(load.stock_rent).toFixed(2)
-                                    )
-                                  )
+                                _c("th", [
+                                  _vm._v(_vm._s(measurement_type.name))
                                 ]),
                                 _vm._v(" "),
                                 _c("td", [
-                                  _vm._v(_vm._s(load.default_date_time))
+                                  _vm._v(
+                                    _vm._s(measurement_type.default_date_time)
+                                  )
                                 ]),
                                 _vm._v(" "),
                                 _c("td", {
                                   domProps: {
                                     innerHTML: _vm._s(
-                                      _vm.$options.filters.status(load.status)
+                                      _vm.$options.filters.status(
+                                        measurement_type.status
+                                      )
                                     )
                                   }
                                 }),
@@ -3077,7 +3007,7 @@ var render = function() {
                                       on: {
                                         click: function($event) {
                                           $event.preventDefault()
-                                          return _vm.setData(load)
+                                          return _vm.setData(measurement_type)
                                         }
                                       }
                                     },
@@ -3155,93 +3085,45 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "modal-body" }, [
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("label", [_vm._v(_vm._s(_vm.__("Load Amount")))]),
-                    _vm._v(" "),
+                  _c("div", { staticClass: "form-group mb-0" }, [
                     _c("input", {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.form.amount,
-                          expression: "form.amount"
+                          value: _vm.form.name,
+                          expression: "form.name"
                         }
                       ],
                       staticClass: "form-control",
-                      class: [_vm.errors.amount ? "is-invalid" : ""],
+                      class: [_vm.errors.name ? "is-invalid" : ""],
                       attrs: {
                         type: "text",
-                        placeholder: _vm.__("Load Amount")
+                        placeholder: _vm.__("Measurement Type Name")
                       },
-                      domProps: { value: _vm.form.amount },
+                      domProps: { value: _vm.form.name },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.form, "amount", $event.target.value)
+                          _vm.$set(_vm.form, "name", $event.target.value)
                         }
                       }
-                    }),
-                    _vm._v(" "),
-                    _vm.errors.amount
-                      ? _c(
-                          "span",
-                          {
-                            staticClass: "invalid-feedback",
-                            staticStyle: { display: "block" },
-                            attrs: { role: "alert" }
-                          },
-                          [_c("strong", [_vm._v(_vm._s(_vm.errors.amount[0]))])]
-                        )
-                      : _vm._e()
+                    })
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "form-group mb-0" }, [
-                    _c("label", [_vm._v(_vm._s(_vm.__("Stock Rent")))]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
+                  _vm.errors.name
+                    ? _c(
+                        "span",
                         {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.stock_rent,
-                          expression: "form.stock_rent"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      class: [_vm.errors.stock_rent ? "is-invalid" : ""],
-                      attrs: {
-                        type: "text",
-                        placeholder: _vm.__("Stock Rent")
-                      },
-                      domProps: { value: _vm.form.stock_rent },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "stock_rent", $event.target.value)
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.errors.stock_rent
-                      ? _c(
-                          "span",
-                          {
-                            staticClass: "invalid-feedback",
-                            staticStyle: { display: "block" },
-                            attrs: { role: "alert" }
-                          },
-                          [
-                            _c("strong", [
-                              _vm._v(_vm._s(_vm.errors.stock_rent[0]))
-                            ])
-                          ]
-                        )
-                      : _vm._e()
-                  ]),
+                          staticClass: "invalid-feedback",
+                          staticStyle: { display: "block" },
+                          attrs: { role: "alert" }
+                        },
+                        [_c("strong", [_vm._v(_vm._s(_vm.errors.name[0]))])]
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
                   _vm.editMode
                     ? _c("label", { staticClass: "float-left mt-2" }, [
@@ -3293,9 +3175,13 @@ var render = function() {
                           }
                         }),
                         _vm._v(
-                          "\n            " +
-                            _vm._s(_vm.form.status ? "Active" : "Inactive") +
-                            "\n          "
+                          "\n              " +
+                            _vm._s(
+                              _vm.form.status
+                                ? _vm.__("Active")
+                                : _vm.__("Inactive")
+                            ) +
+                            "\n            "
                         )
                       ])
                     : _vm._e()
@@ -3310,9 +3196,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n            " +
-                          _vm._s(_vm.editMode ? "Update" : "Create") +
-                          "\n          "
+                        _vm._s(
+                          _vm.editMode ? _vm.__("Update") : _vm.__("Create")
+                        )
                       )
                     ]
                   ),
@@ -3324,7 +3210,7 @@ var render = function() {
                       attrs: { type: "button", "data-dismiss": "modal" },
                       on: { click: _vm.cleanForm }
                     },
-                    [_vm._v("\n            Cancel\n          ")]
+                    [_vm._v(_vm._s(_vm.__("Cancel")))]
                   )
                 ])
               ]
@@ -3342,7 +3228,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1cb5b832", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-11e4d7c0", module.exports)
   }
 }
 

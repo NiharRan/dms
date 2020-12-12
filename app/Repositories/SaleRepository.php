@@ -74,12 +74,12 @@ class SaleRepository
         $q->with([
           'stock',
           'product'
-          ]);
+        ]);
       }
     ])->find($rowId);
-    
-    if($sale->sale_details->count() > 0) {
-      foreach($sale->sale_details as $key => $sale_detail) {
+
+    if ($sale->sale_details->count() > 0) {
+      foreach ($sale->sale_details as $key => $sale_detail) {
         $stock_detail = StockDetails::where([
           'stock_id' => $sale_detail->stock->id,
           'product_id' => $sale_detail->product->id,
@@ -121,6 +121,7 @@ class SaleRepository
       $this->checkReference($request->reference);
     }
 
+    $sale->reference = $request->reference;
     if ($sale->save()) {
       $this->storeSaleDetailsInfo($sale, $request);
 
@@ -156,6 +157,7 @@ class SaleRepository
       }
     }
 
+    $sale->reference = $request->reference;
     if ($sale->save()) {
       // First increment stock by adding old sale stock data
       $saleDetails = $sale->sale_details()->get();
@@ -185,7 +187,7 @@ class SaleRepository
     $total_due = $request->total_due == "" ? 0 : $request->total_due;
     $total_paid = $request->total_paid == "" ? 0 : $request->total_paid;
     $client = Client::find($request->client_id);
-    if ($client->balance && $client->balance > 0) {
+    if ($client->balance != '' && $client->balance > 0) {
       $balance_decrease = 0;
       if ($client->balance < $total_due) {
         $total_paid += $client->balance;
@@ -195,16 +197,16 @@ class SaleRepository
         $client->balance = 0;
       } else {
         $total_paid += $total_due;
-        $total_due = 0;
-
-        $client->balance -= $total_due;
         $balance_decrease = $total_due;
+        $client->balance -= $total_due;
+        $total_due = 0;
       }
+
       if ($client->save()) {
         $balance = number_format($balance_decrease, 2);
         $client->balance_histories()->create([
           'amount' => $balance_decrease,
-          'description' => "$client->name, Total $balance TK is spent from your balance as 'Product Sale Payment'.Sale Invoice No. is $sale->invoice",
+          'description' => "$client->name, বিক্রয় রশিদ - $sale->invoice এর বিপরীতে আপনার হিসাব থেকে $balance টাকা খরচ হয়েছে",
           'type' => 'Out',
           'status' => 1,
           'created_at' => date('Y-m-d H:i:s')
@@ -229,11 +231,9 @@ class SaleRepository
     $client->balance += $balance_increase;
     if ($client->save()) {
       $balance = number_format($balance_increase, 2);
-      $price = number_format($total_price, 2);
-      $paid = number_format($total_paid, 2);
       $client->balance_histories()->create([
         'amount' => $balance_increase,
-        'description' => "$client->name, Total $balance TK is restore from $sale->invoice No. (Invoice) sale. ($paid (Paid) - $price (Price) = $balance (Increase))",
+        'description' => "বিক্রয় রশিদ - $sale->invoice এর বিপরীতে আপনার হিসাবে $balance টাকা যুক্ত হয়েছে",
         'type' => 'In',
         'status' => 1,
         'created_at' => date('Y-m-d H:i:s')
@@ -255,7 +255,6 @@ class SaleRepository
     $sale->description = strtoupper($request->description);
     $sale->sale_date = date('Y-m-d H:i:s', strtotime($request->sale_date));
     $sale->commission = $request->commission == '' ? 0 : $request->commission;
-    $sale->reference = $request->reference;
 
     if (intval($request->total_due) === 0) {
       $sale->status = 1;
@@ -301,14 +300,14 @@ class SaleRepository
 
   private function checkReference($reference)
   {
-    DriverInvoice::where('reference', '=', $reference)->update([
+    DriverInvoice::where('reference', $reference)->update([
       'is_commission_added' => 1
     ]);
   }
 
   private function uncheckReference($reference)
   {
-    DriverInvoice::where('reference', '=', $reference)->update([
+    DriverInvoice::where('reference', $reference)->update([
       'is_commission_added' => 0
     ]);
   }

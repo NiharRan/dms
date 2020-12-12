@@ -100,7 +100,7 @@
                       <th>{{ transaction.media.name }}</th>
                       <th>{{ transaction.description }}</th>
                       <th class="text-right">
-                        {{ parseFloat(transaction.amount).toFixed(2) }}
+                        {{ parseFloat(transaction.amount).toFixed(3) }}
                       </th>
                       <td class="text-center">
                         <a
@@ -231,7 +231,7 @@ export default {
         let p = transaction.amount == "" ? 0 : transaction.amount;
         return paid + parseFloat(p);
       }, 0);
-      return parseFloat(paidPrice).toFixed(2);
+      return parseFloat(paidPrice).toFixed(3);
     },
     searchData: function () {
       $("#default").modal("hide");

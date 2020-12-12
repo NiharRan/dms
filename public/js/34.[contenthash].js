@@ -6,13 +6,13 @@ webpackJsonp([34],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(454)
+  __webpack_require__(457)
 }
 var normalizeComponent = __webpack_require__(235)
 /* script */
-var __vue_script__ = __webpack_require__(456)
+var __vue_script__ = __webpack_require__(459)
 /* template */
-var __vue_template__ = __webpack_require__(457)
+var __vue_template__ = __webpack_require__(460)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -425,13 +425,13 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 454:
+/***/ 457:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(455);
+var content = __webpack_require__(458);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 455:
+/***/ 458:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -467,7 +467,7 @@ exports.push([module.i, "\n.mt-200 {\n  margin-top: 200px;\n}\n.mb-200 {\n  marg
 
 /***/ }),
 
-/***/ 456:
+/***/ 459:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -606,28 +606,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var totalPrice = data.reduce(function (total, sale) {
         return total + parseFloat(sale.total_price);
       }, 0);
-      return parseFloat(totalPrice).toFixed(2);
+      return parseFloat(totalPrice).toFixed(3);
     },
     totalPaid: function totalPaid(data) {
       var paidPrice = data.reduce(function (paid, sale) {
         var p = sale.total_paid == "" ? 0 : sale.total_paid;
         return paid + parseFloat(p);
       }, 0);
-      return parseFloat(paidPrice).toFixed(2);
+      return parseFloat(paidPrice).toFixed(3);
     },
     totalDue: function totalDue(data) {
       var duePrice = data.reduce(function (due, sale) {
         var p = sale.total_due == "" ? 0 : sale.total_due;
         return due + parseFloat(p);
       }, 0);
-      return parseFloat(duePrice).toFixed(2);
+      return parseFloat(duePrice).toFixed(3);
     },
     totalCommission: function totalCommission(data) {
       var commissionPrice = data.reduce(function (c, sale) {
         var com = sale.commission == "" ? 0 : sale.commission;
         return c + parseFloat(com);
       }, 0);
-      return parseFloat(commissionPrice).toFixed(2);
+      return parseFloat(commissionPrice).toFixed(3);
     },
     printPage: function printPage() {
       window.print();
@@ -638,7 +638,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 457:
+/***/ 460:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -887,7 +887,7 @@ var render = function() {
                               _vm._v(
                                 "\n                  " +
                                   _vm._s(
-                                    parseFloat(sale.commission).toFixed(2)
+                                    parseFloat(sale.commission).toFixed(3)
                                   ) +
                                   "\n                "
                               )
@@ -897,7 +897,7 @@ var render = function() {
                               _vm._v(
                                 "\n                  " +
                                   _vm._s(
-                                    parseFloat(sale.total_price).toFixed(2)
+                                    parseFloat(sale.total_price).toFixed(3)
                                   ) +
                                   "\n                "
                               )
@@ -907,7 +907,7 @@ var render = function() {
                               _vm._v(
                                 "\n                  " +
                                   _vm._s(
-                                    parseFloat(sale.total_paid).toFixed(2)
+                                    parseFloat(sale.total_paid).toFixed(3)
                                   ) +
                                   "\n                "
                               )
@@ -917,7 +917,7 @@ var render = function() {
                               _vm._v(
                                 "\n                  " +
                                   _vm._s(
-                                    parseFloat(sale.total_due).toFixed(2)
+                                    parseFloat(sale.total_due).toFixed(3)
                                   ) +
                                   "\n                "
                               )

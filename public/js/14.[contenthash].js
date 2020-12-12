@@ -1,18 +1,18 @@
 webpackJsonp([14],{
 
-/***/ 189:
+/***/ 190:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(466)
+  __webpack_require__(473)
 }
 var normalizeComponent = __webpack_require__(235)
 /* script */
-var __vue_script__ = __webpack_require__(468)
+var __vue_script__ = __webpack_require__(475)
 /* template */
-var __vue_template__ = __webpack_require__(469)
+var __vue_template__ = __webpack_require__(476)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/Pages/TransactionType/Index.vue"
+Component.options.__file = "resources/js/Pages/User/Index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-12a367c2", Component.options)
+    hotAPI.createRecord("data-v-0ad644d7", Component.options)
   } else {
-    hotAPI.reload("data-v-12a367c2", Component.options)
+    hotAPI.reload("data-v-0ad644d7", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -2599,7 +2599,7 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2630,6 +2630,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     size: {
       type: String,
       "default": ''
+    },
+    modelId: {
+      type: String,
+      "default": 'default'
     }
   }
 });
@@ -2649,7 +2653,7 @@ var render = function() {
       staticClass: "modal fade text-left",
       staticStyle: { display: "none" },
       attrs: {
-        id: "default",
+        id: _vm.modelId,
         tabindex: "-1",
         role: "dialog",
         "aria-labelledby": "myModalLabel1",
@@ -2692,23 +2696,23 @@ if (false) {
 
 /***/ }),
 
-/***/ 466:
+/***/ 473:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(467);
+var content = __webpack_require__(474);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("3e2a8317", content, false, {});
+var update = __webpack_require__(234)("3625c875", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-12a367c2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-12a367c2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0ad644d7\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0ad644d7\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -2719,7 +2723,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 467:
+/***/ 474:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2727,14 +2731,14 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 468:
+/***/ 475:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2822,27 +2826,279 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "TransactionType",
+  name: "UserIndex",
   components: {
     Model: __WEBPACK_IMPORTED_MODULE_1__Components_Model___default.a,
     Layout: __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default.a
   },
   props: {
     success: String,
-    transaction_types: Object,
-    errors: Object
+    users: Object,
+    errors: Object,
+    genders: Array,
+    religions: Array,
+    blood_groups: Array,
+    divisions: Array
   },
   data: function data() {
     return {
       editMode: false,
-      modelTitle: this.__('Create New Transaction Type'),
+      modelTitle: this.__("Create New User"),
       form: {
-        id: '',
-        name: '',
-        status: ''
+        id: "",
+        name: "",
+        avatar: null,
+        phone: "",
+        email: "",
+        gender_id: "",
+        religion_id: "",
+        blood_group_id: "",
+        birth_date: new Date(),
+        nationality: "",
+        address: "",
+        status: "",
+        avatar_url: ""
       }
     };
   },
@@ -2851,23 +3107,50 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.modelTitle = "Edit ".concat(data.name, "'s Information");
       this.editMode = true;
       this.form.name = data.name;
+      this.form.phone = data.phone;
+      this.form.email = data.email;
+      this.form.gender_id = data.gender_id;
+      this.form.religion_id = data.religion_id;
+      this.form.blood_group_id = data.blood_group_id;
+      this.form.birth_date = new Date(data.birth_date);
+      this.form.nationality = data.nationality;
+      this.form.address = data.address;
       this.form.status = data.status;
       this.form.id = data.id;
-      $("#default").modal('show');
+      this.form.avatar_url = data.avatar_small;
+      $("#default").modal("show");
+    },
+    showImage: function showImage(e) {
+      var file = e.target.files[0];
+      var url = URL.createObjectURL(file);
+      console.log(file);
+      this.form.avatar_url = url;
+      this.form.avatar = file;
     },
     closeModel: function closeModel() {
-      $("#default").modal('hide');
+      $("#default").modal("hide");
     },
     cleanForm: function cleanForm() {
       var _this = this;
 
-      this.modelTitle = this.__('Create New Transaction Type');
+      this.modelTitle = this.__("Create New User");
       this.editMode = false;
-      this.form.name = '';
-      this.form.id = '';
-      this.form.status = '';
+      this.form.name = "";
+      this.form.phone = "";
+      this.form.email = "";
+      this.form.gender_id = "";
+      this.form.religion_id = "";
+      this.form.blood_group_id = "";
+      this.form.birth_date = "";
+      this.form.nationality = "";
+      this.form.address = "";
+      this.form.id = "";
+      this.form.status = "";
+      this.form.avatar = null;
+      $("#avatar").val('');
+      this.form.avatar_url = "";
       Object.keys(this.errors).forEach(function (key, value) {
-        _this.errors[key] = '';
+        _this.errors[key] = "";
       });
     },
     storeOrUpdate: function storeOrUpdate() {
@@ -2879,27 +3162,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     store: function store() {
       var self = this;
-      this.$inertia.post(this.route('transaction-types.store'), {
-        name: this.form.name
-      }).then(function () {
+      var formData = new FormData();
+      formData.append("name", this.form.name);
+      formData.append("phone", this.form.phone);
+      formData.append("email", this.form.email);
+      formData.append("gender_id", this.form.gender_id);
+      formData.append("religion_id", this.form.religion_id);
+      formData.append("blood_group_id", this.form.blood_group_id);
+      formData.append("birth_date", this.form.birth_date);
+      formData.append("nationality", this.form.nationality);
+      formData.append("address", this.form.address);
+      formData.append("avatar", this.form.avatar);
+      this.$inertia.post(this.route("users.store"), formData).then(function () {
         if (Object.keys(self.errors).length === 0) {
           self.closeModel();
           self.cleanForm();
-          self.$toast('Transaction Type Created Successfully');
+          self.$toast(self.__("User Created Successfully"));
         }
       });
     },
     update: function update() {
       var self = this;
-      this.$inertia.post(this.route('transaction-types.update', this.form.id), {
-        name: this.form.name,
-        status: this.form.status,
-        _method: "put"
-      }).then(function () {
+      var formData = new FormData();
+      formData.append("name", this.form.name);
+      formData.append("phone", this.form.phone);
+      formData.append("email", this.form.email);
+      formData.append("gender_id", this.form.gender_id);
+      formData.append("religion_id", this.form.religion_id);
+      formData.append("blood_group_id", this.form.blood_group_id);
+      formData.append("birth_date", this.form.birth_date);
+      formData.append("nationality", this.form.nationality);
+      formData.append("address", this.form.address);
+      formData.append("avatar", this.form.avatar);
+      formData.append("status", this.form.status);
+      formData.append("_method", "PUT");
+      this.$inertia.post(this.route("users.update", this.form.id), formData).then(function () {
         if (Object.keys(self.errors).length === 0) {
           self.closeModel();
           self.cleanForm();
-          self.$toast('Transaction Type Updated Successfully');
+          self.$toast(self.__("User Updated Successfully"));
         }
       });
     }
@@ -2908,14 +3209,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 469:
+/***/ 476:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("layout", { attrs: { name: "TransactionType" } }, [
+  return _c("layout", { attrs: { name: "UserIndex" } }, [
     _c(
       "section",
       { staticClass: "users-list-wrapper" },
@@ -2934,7 +3235,7 @@ var render = function() {
                     ])
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.transaction_types.data.length > 0
+                _vm.users.data.length > 0
                   ? _c("div", { staticClass: "table-responsive" }, [
                       _c(
                         "table",
@@ -2947,49 +3248,78 @@ var render = function() {
                         [
                           _c("thead", [
                             _c("tr", [
-                              _c("th", { attrs: { scope: "col" } }, [
-                                _vm._v(_vm._s(_vm.__("S.N.")))
+                              _c(
+                                "th",
+                                {
+                                  staticClass: "text-uppercase",
+                                  attrs: { scope: "col" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                      " +
+                                      _vm._s(_vm.__("S.N.")) +
+                                      "\n                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("th", { staticClass: "text-uppercase" }, [
+                                _vm._v(_vm._s(_vm.__("Name")))
                               ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v(_vm._s(_vm.__("Name")))]),
-                              _vm._v(" "),
-                              _c("th", [_vm._v(_vm._s(_vm.__("Created At")))]),
-                              _vm._v(" "),
-                              _c("th", { staticClass: "text-center" }, [
-                                _vm._v(_vm._s(_vm.__("Status")))
+                              _c("th", { staticClass: "text-uppercase" }, [
+                                _vm._v(_vm._s(_vm.__("Created At")))
                               ]),
                               _vm._v(" "),
-                              _c("th", { staticClass: "text-center" }, [
-                                _vm._v(_vm._s(_vm.__("Action")))
-                              ])
+                              _c(
+                                "th",
+                                { staticClass: "text-center text-uppercase" },
+                                [
+                                  _vm._v(
+                                    "\n                      " +
+                                      _vm._s(_vm.__("Status")) +
+                                      "\n                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "th",
+                                { staticClass: "text-center text-uppercase" },
+                                [
+                                  _vm._v(
+                                    "\n                      " +
+                                      _vm._s(_vm.__("Action")) +
+                                      "\n                    "
+                                  )
+                                ]
+                              )
                             ])
                           ]),
                           _vm._v(" "),
                           _c(
                             "tbody",
-                            _vm._l(_vm.transaction_types.data, function(
-                              transaction_type,
-                              index
-                            ) {
-                              return _c("tr", { key: transaction_type.id }, [
+                            _vm._l(_vm.users.data, function(user, index) {
+                              return _c("tr", { key: user.id }, [
                                 _c("th", [_vm._v(_vm._s(index + 1))]),
                                 _vm._v(" "),
-                                _c("th", [
-                                  _vm._v(_vm._s(transaction_type.name))
-                                ]),
+                                _c("th", [_vm._v(_vm._s(user.name))]),
                                 _vm._v(" "),
                                 _c("td", [
                                   _vm._v(
-                                    _vm._s(transaction_type.default_date_time)
+                                    _vm._s(
+                                      _vm._f("moment")(
+                                        user.created_at,
+                                        "DD-MM-YYYY"
+                                      )
+                                    )
                                   )
                                 ]),
                                 _vm._v(" "),
                                 _c("td", {
                                   domProps: {
                                     innerHTML: _vm._s(
-                                      _vm.$options.filters.status(
-                                        transaction_type.status
-                                      )
+                                      _vm.$options.filters.status(user.status)
                                     )
                                   }
                                 }),
@@ -3003,7 +3333,7 @@ var render = function() {
                                       on: {
                                         click: function($event) {
                                           $event.preventDefault()
-                                          return _vm.setData(transaction_type)
+                                          return _vm.setData(user)
                                         }
                                       }
                                     },
@@ -3030,6 +3360,7 @@ var render = function() {
         _c(
           "model",
           {
+            attrs: { size: "modal-lg" },
             scopedSlots: _vm._u([
               {
                 key: "header",
@@ -3081,45 +3412,538 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "modal-body" }, [
-                  _c("div", { staticClass: "form-group mb-0" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.name,
-                          expression: "form.name"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      class: [_vm.errors.name ? "is-invalid" : ""],
-                      attrs: {
-                        type: "text",
-                        placeholder: _vm.__("Transaction Type Name")
-                      },
-                      domProps: { value: _vm.form.name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.name,
+                              expression: "form.name"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: [_vm.errors.name ? "is-invalid" : ""],
+                          attrs: {
+                            type: "text",
+                            placeholder: _vm.__("User Name")
+                          },
+                          domProps: { value: _vm.form.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "name", $event.target.value)
+                            }
                           }
-                          _vm.$set(_vm.form, "name", $event.target.value)
-                        }
-                      }
-                    })
+                        }),
+                        _vm._v(" "),
+                        _vm.errors.name
+                          ? _c(
+                              "span",
+                              {
+                                staticClass: "invalid-feedback",
+                                staticStyle: { display: "block" },
+                                attrs: { role: "alert" }
+                              },
+                              [
+                                _c("strong", [
+                                  _vm._v(_vm._s(_vm.errors.name[0]))
+                                ])
+                              ]
+                            )
+                          : _vm._e()
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.phone,
+                              expression: "form.phone"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: [_vm.errors.phone ? "is-invalid" : ""],
+                          attrs: {
+                            type: "text",
+                            placeholder: _vm.__("Contact No."),
+                            minlength: "11",
+                            maxlength: "11"
+                          },
+                          domProps: { value: _vm.form.phone },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "phone", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _vm.errors.phone
+                          ? _c(
+                              "span",
+                              {
+                                staticClass: "invalid-feedback",
+                                staticStyle: { display: "block" },
+                                attrs: { role: "alert" }
+                              },
+                              [
+                                _c("strong", [
+                                  _vm._v(_vm._s(_vm.errors.phone[0]))
+                                ])
+                              ]
+                            )
+                          : _vm._e()
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.email,
+                              expression: "form.email"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: [_vm.errors.email ? "is-invalid" : ""],
+                          attrs: {
+                            type: "email",
+                            placeholder: _vm.__("Email Address")
+                          },
+                          domProps: { value: _vm.form.email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "email", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _vm.errors.email
+                          ? _c(
+                              "span",
+                              {
+                                staticClass: "invalid-feedback",
+                                staticStyle: { display: "block" },
+                                attrs: { role: "alert" }
+                              },
+                              [
+                                _c("strong", [
+                                  _vm._v(_vm._s(_vm.errors.email[0]))
+                                ])
+                              ]
+                            )
+                          : _vm._e()
+                      ])
+                    ])
                   ]),
                   _vm._v(" "),
-                  _vm.errors.name
-                    ? _c(
-                        "span",
-                        {
-                          staticClass: "invalid-feedback",
-                          staticStyle: { display: "block" },
-                          attrs: { role: "alert" }
-                        },
-                        [_c("strong", [_vm._v(_vm._s(_vm.errors.name[0]))])]
-                      )
-                    : _vm._e(),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-8 col-12" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.gender_id,
+                                    expression: "form.gender_id"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                class: [
+                                  _vm.errors.gender_id ? "is-invalid" : ""
+                                ],
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.form,
+                                      "gender_id",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              [
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v(
+                                    _vm._s(_vm.__("Select Gender")) + " ...."
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _vm._l(_vm.genders, function(gender) {
+                                  return _c(
+                                    "option",
+                                    {
+                                      key: gender.id,
+                                      domProps: { value: gender.id }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                        " +
+                                          _vm._s(gender.name) +
+                                          "\n                      "
+                                      )
+                                    ]
+                                  )
+                                })
+                              ],
+                              2
+                            ),
+                            _vm._v(" "),
+                            _vm.errors.gender_id
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "invalid-feedback",
+                                    staticStyle: { display: "block" },
+                                    attrs: { role: "alert" }
+                                  },
+                                  [
+                                    _c("strong", [
+                                      _vm._v(_vm._s(_vm.errors.gender_id[0]))
+                                    ])
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.religion_id,
+                                    expression: "form.religion_id"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                class: [
+                                  _vm.errors.religion_id ? "is-invalid" : ""
+                                ],
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.form,
+                                      "religion_id",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              [
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v(
+                                    "\n                        " +
+                                      _vm._s(_vm.__("Select Religion")) +
+                                      " ....\n                      "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _vm._l(_vm.religions, function(religion) {
+                                  return _c(
+                                    "option",
+                                    {
+                                      key: religion.id,
+                                      domProps: { value: religion.id }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                        " +
+                                          _vm._s(religion.name) +
+                                          "\n                      "
+                                      )
+                                    ]
+                                  )
+                                })
+                              ],
+                              2
+                            ),
+                            _vm._v(" "),
+                            _vm.errors.religion_id
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "invalid-feedback",
+                                    staticStyle: { display: "block" },
+                                    attrs: { role: "alert" }
+                                  },
+                                  [
+                                    _c("strong", [
+                                      _vm._v(_vm._s(_vm.errors.religion_id[0]))
+                                    ])
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c(
+                            "div",
+                            { staticClass: "form-group" },
+                            [
+                              _c("date-picker", {
+                                class: [
+                                  _vm.errors.birth_date ? "is-invalid" : ""
+                                ],
+                                model: {
+                                  value: _vm.form.birth_date,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.form, "birth_date", $$v)
+                                  },
+                                  expression: "form.birth_date"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _vm.errors.birth_date
+                                ? _c(
+                                    "span",
+                                    {
+                                      staticClass: "invalid-feedback",
+                                      staticStyle: { display: "block" },
+                                      attrs: { role: "alert" }
+                                    },
+                                    [
+                                      _c("strong", [
+                                        _vm._v(_vm._s(_vm.errors.birth_date[0]))
+                                      ])
+                                    ]
+                                  )
+                                : _vm._e()
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-6" }, [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c(
+                              "select",
+                              {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.form.blood_group_id,
+                                    expression: "form.blood_group_id"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                class: [
+                                  _vm.errors.blood_group_id ? "is-invalid" : ""
+                                ],
+                                on: {
+                                  change: function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.$set(
+                                      _vm.form,
+                                      "blood_group_id",
+                                      $event.target.multiple
+                                        ? $$selectedVal
+                                        : $$selectedVal[0]
+                                    )
+                                  }
+                                }
+                              },
+                              [
+                                _c("option", { attrs: { value: "" } }, [
+                                  _vm._v(
+                                    "\n                        " +
+                                      _vm._s(_vm.__("Select Blood Group")) +
+                                      " ....\n                      "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _vm._l(_vm.blood_groups, function(blood_group) {
+                                  return _c(
+                                    "option",
+                                    {
+                                      key: blood_group.id,
+                                      domProps: { value: blood_group.id }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                        " +
+                                          _vm._s(blood_group.name) +
+                                          "\n                      "
+                                      )
+                                    ]
+                                  )
+                                })
+                              ],
+                              2
+                            ),
+                            _vm._v(" "),
+                            _vm.errors.blood_group_id
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "invalid-feedback",
+                                    staticStyle: { display: "block" },
+                                    attrs: { role: "alert" }
+                                  },
+                                  [
+                                    _c("strong", [
+                                      _vm._v(
+                                        _vm._s(_vm.errors.blood_group_id[0])
+                                      )
+                                    ])
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c("div", { staticClass: "form-group" }, [
+                            _c("textarea", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.form.address,
+                                  expression: "form.address"
+                                }
+                              ],
+                              staticClass: "form-control",
+                              attrs: { placeholder: "Address", rows: "3" },
+                              domProps: { value: _vm.form.address },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.form,
+                                    "address",
+                                    $event.target.value
+                                  )
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.blood_group_id
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "invalid-feedback",
+                                    staticStyle: { display: "block" },
+                                    attrs: { role: "alert" }
+                                  },
+                                  [
+                                    _c("strong", [
+                                      _vm._v(
+                                        _vm._s(_vm.errors.blood_group_id[0])
+                                      )
+                                    ])
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-4 col-12" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "banner-logo-upload-box mx-auto",
+                            staticStyle: {
+                              background: "#f3f3f3",
+                              width: "170px",
+                              height: "140px"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "users-avatar-shadow rounded",
+                              attrs: { src: _vm.form.avatar_url, alt: "" }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "label",
+                              {
+                                staticClass: "btn-pill",
+                                staticStyle: { "font-size": "35px" }
+                              },
+                              [
+                                _c("i", { staticClass: "fa fa-camera" }),
+                                _vm._v(" "),
+                                _c("input", {
+                                  staticClass: "hidden",
+                                  attrs: {
+                                    type: "file",
+                                    name: "image",
+                                    id: "avatar",
+                                    accept: "image/*"
+                                  },
+                                  on: { change: _vm.showImage }
+                                })
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ]),
                   _vm._v(" "),
                   _vm.editMode
                     ? _c("label", { staticClass: "float-left mt-2" }, [
@@ -3171,13 +3995,13 @@ var render = function() {
                           }
                         }),
                         _vm._v(
-                          "\n              " +
+                          "\n            " +
                             _vm._s(
                               _vm.form.status
                                 ? _vm.__("Active")
                                 : _vm.__("Inactive")
                             ) +
-                            "\n            "
+                            "\n          "
                         )
                       ])
                     : _vm._e()
@@ -3192,9 +4016,11 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        _vm._s(
-                          _vm.editMode ? _vm.__("Update") : _vm.__("Create")
-                        )
+                        "\n            " +
+                          _vm._s(
+                            _vm.editMode ? _vm.__("Update") : _vm.__("Create")
+                          ) +
+                          "\n          "
                       )
                     ]
                   ),
@@ -3206,7 +4032,13 @@ var render = function() {
                       attrs: { type: "button", "data-dismiss": "modal" },
                       on: { click: _vm.cleanForm }
                     },
-                    [_vm._v(_vm._s(_vm.__("Cancel")))]
+                    [
+                      _vm._v(
+                        "\n            " +
+                          _vm._s(_vm.__("Cancel")) +
+                          "\n          "
+                      )
+                    ]
                   )
                 ])
               ]
@@ -3224,7 +4056,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-12a367c2", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0ad644d7", module.exports)
   }
 }
 

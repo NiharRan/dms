@@ -6,13 +6,13 @@ webpackJsonp([39],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(324)
+  __webpack_require__(327)
 }
 var normalizeComponent = __webpack_require__(235)
 /* script */
-var __vue_script__ = __webpack_require__(326)
+var __vue_script__ = __webpack_require__(329)
 /* template */
-var __vue_template__ = __webpack_require__(327)
+var __vue_template__ = __webpack_require__(330)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -425,13 +425,13 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 324:
+/***/ 327:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(325);
+var content = __webpack_require__(328);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 325:
+/***/ 328:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -467,7 +467,7 @@ exports.push([module.i, "\n.mt-200 {\r\n  margin-top: 200px;\n}\n.mb-200 {\r\n  
 
 /***/ }),
 
-/***/ 326:
+/***/ 329:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -607,7 +607,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (history.type == "In") total += amount;else total -= amount;
         return total;
       }, 0);
-      return parseFloat(totalAmount).toFixed(2);
+      return parseFloat(totalAmount).toFixed(3);
     },
     printPage: function printPage() {
       window.print();
@@ -618,7 +618,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 327:
+/***/ 330:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -881,7 +881,7 @@ var render = function() {
                                 _vm._s(
                                   _vm._f("moment")(
                                     history.created_at,
-                                    "DD/MM/YYYY"
+                                    "DD/MM/YYYY h:mm A"
                                   )
                                 )
                               )
@@ -897,7 +897,7 @@ var render = function() {
                               _vm._v(
                                 "\n                  " +
                                   _vm._s(
-                                    parseFloat(history.amount).toFixed(2)
+                                    parseFloat(history.amount).toFixed(3)
                                   ) +
                                   "\n                "
                               )

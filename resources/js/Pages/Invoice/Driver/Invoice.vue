@@ -86,33 +86,48 @@
                       }}</span
                     >
                   </p>
-                  <p class="d-flex" style="justify-content: space-between">
-                    <span
-                      >{{ __("Client Name") }}{{ __(":") }}
-                      {{ driver_invoice.client.name }}</span
-                    >
-                    <span
-                      >{{ __("Address") }}{{ __(":") }}
-                      {{ driver_invoice.client.address }}</span
-                    >
-                    <span
-                      >{{ __("Contact No.") }}{{ __(":") }}
-                      {{ driver_invoice.client_phone }}</span
-                    >
-                  </p>
-                  <p class="d-flex" style="justify-content: space-between">
-                    <span
-                      >{{ __("Driver Name") }}{{ __(":") }}
-                      {{ driver_invoice.driver_name }}</span
-                    >
-                    <span
-                      >{{ __("Track No.") }}-{{ driver_invoice.track_no }}</span
-                    >
-                    <span
-                      >{{ __("Dri: Mobile:") }}
-                      {{ driver_invoice.driver_phone }}</span
-                    >
-                  </p>
+                  <table class="table invoice-header-table">
+                    <tr>
+                      <td>
+                        <span
+                          >{{ __("Client Name") }}{{ __(":") }}
+                          {{ driver_invoice.client.name }}</span
+                        >
+                      </td>
+                      <td>
+                        <span
+                          >{{ __("Driver Name") }}{{ __(":") }}
+                          {{ driver_invoice.driver_name }}</span
+                        >
+                      </td>
+                      <td>
+                        <span style="margin-right: 100px"
+                          >{{ __("Reference") }}{{ __(":") }}
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span
+                          >{{ __("Address") }}{{ __(":") }}
+                          {{ driver_invoice.client.address }}</span
+                        >
+                      </td>
+                      <td>
+                        <span
+                          >{{ __("Track No.") }}-{{
+                            driver_invoice.track_no
+                          }}</span
+                        >
+                      </td>
+                      <td>
+                        <span
+                          >{{ __("Dri: Mobile:") }}
+                          {{ driver_invoice.driver_phone }}</span
+                        >
+                      </td>
+                    </tr>
+                  </table>
 
                   <table class="table font-medium-3">
                     <thead>
@@ -137,14 +152,24 @@
                           {{ driver_invoice.measurement_type.name }}
                         </th>
                         <th class="text-center">
+                          <span v-if="driver_invoice.container_length">
+                            <span class="mess"
+                            >{{ driver_invoice.container_length }} In
+                          </span>
+                          *
+                          <span class="mess"
+                            >{{ driver_invoice.container_breadth }} In
+                          </span>
+                          *
                           <span v-if="driver_invoice.container_height">
-                            {{ driver_invoice.container_height }} In *
-                            {{ driver_invoice.container_length }} In *
-                            {{ driver_invoice.container_breadth }} In
+                            <span class="mess"
+                              >{{ driver_invoice.container_height }} In
+                            </span>
+                          </span>
                           </span>
                         </th>
                         <th class="text-center">
-                          {{ parseFloat(driver_invoice.quantity).toFixed(2) }}
+                          {{ parseFloat(driver_invoice.quantity).toFixed(3) }}
                         </th>
                       </tr>
                       <tr>
@@ -152,33 +177,45 @@
                         <th></th>
                         <th></th>
                         <th class="text-right">
-                          {{ parseFloat(driver_invoice.track_rent).toFixed(2) }}
+                          {{ parseFloat(driver_invoice.track_rent).toFixed(3) }}
                         </th>
                       </tr>
                       <tr>
                         <th>{{ __("Others") }}</th>
                         <th></th>
                         <th></th>
-                        <th class="text-right">{{ parseFloat(driver_invoice.others).toFixed(2) }}</th>
+                        <th class="text-right">
+                          {{
+                            driver_invoice.others
+                              ? parseFloat(driver_invoice.others).toFixed(3)
+                              : "0.00"
+                          }}
+                        </th>
                       </tr>
 
                       <tr>
                         <th colspan="3" class="text-right">
                           {{ __("Total Amount") }}
                         </th>
-                        <th class="text-right">{{ parseFloat(driver_invoice.total).toFixed(2) }}</th>
+                        <th class="text-right">
+                          {{ parseFloat(driver_invoice.total).toFixed(3) }}
+                        </th>
                       </tr>
                       <tr>
                         <th colspan="3" class="text-right">
                           {{ __("Borrow") }}
                         </th>
-                        <th class="text-right">{{ parseFloat(driver_invoice.borrow).toFixed(2) }}</th>
+                        <th class="text-right">
+                          {{ parseFloat(driver_invoice.borrow).toFixed(3) }}
+                        </th>
                       </tr>
                       <tr>
                         <th colspan="3" class="text-right">
                           {{ __("Final Amount") }}
                         </th>
-                        <th class="text-right">{{ parseFloat(driver_invoice.final).toFixed(2) }}</th>
+                        <th class="text-right">
+                          {{ parseFloat(driver_invoice.final).toFixed(3) }}
+                        </th>
                       </tr>
                     </tbody>
                   </table>
@@ -191,7 +228,8 @@
                   <p class="mb-0">
                     <span class="float-left">
                       <span class="text-bold-700">
-                        {{ __("Signature of Driver") }}{{ __(":") }}</span
+                        {{ __("Signature of Driver") }}{{ __(":") }}
+                        {{ driver_invoice.driver_name }}</span
                       >
                     </span>
                     <span class="float-right">
@@ -205,7 +243,10 @@
               </div>
             </div>
             <div class="card-footer text-right">
-              <inertia-link class="btn btn-primary" :href="route('drivers.invoices.index')">
+              <inertia-link
+                class="btn btn-primary"
+                :href="route('drivers.invoices.index')"
+              >
                 <i class="feather icon-unlock"></i>
                 <span class="menu-title" data-i18n="">{{ __("Back") }}</span>
               </inertia-link>

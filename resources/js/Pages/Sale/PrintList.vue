@@ -84,16 +84,16 @@
                   <th>{{ sale.invoice }}</th>
                   <th>{{ sale.client.name }}</th>
                   <th class="text-right">
-                    {{ parseFloat(sale.commission).toFixed(2) }}
+                    {{ parseFloat(sale.commission).toFixed(3) }}
                   </th>
                   <th class="text-right">
-                    {{ parseFloat(sale.total_price).toFixed(2) }}
+                    {{ parseFloat(sale.total_price).toFixed(3) }}
                   </th>
                   <th class="text-right">
-                    {{ parseFloat(sale.total_paid).toFixed(2) }}
+                    {{ parseFloat(sale.total_paid).toFixed(3) }}
                   </th>
                   <th class="text-right">
-                    {{ parseFloat(sale.total_due).toFixed(2) }}
+                    {{ parseFloat(sale.total_due).toFixed(3) }}
                   </th>
                 </tr>
               </tbody>
@@ -134,28 +134,28 @@ export default {
         (total, sale) => total + parseFloat(sale.total_price),
         0
       );
-      return parseFloat(totalPrice).toFixed(2);
+      return parseFloat(totalPrice).toFixed(3);
     },
     totalPaid: function (data) {
       let paidPrice = data.reduce((paid, sale) => {
         let p = sale.total_paid == "" ? 0 : sale.total_paid;
         return paid + parseFloat(p);
       }, 0);
-      return parseFloat(paidPrice).toFixed(2);
+      return parseFloat(paidPrice).toFixed(3);
     },
     totalDue: function (data) {
       let duePrice = data.reduce((due, sale) => {
         let p = sale.total_due == "" ? 0 : sale.total_due;
         return due + parseFloat(p);
       }, 0);
-      return parseFloat(duePrice).toFixed(2);
+      return parseFloat(duePrice).toFixed(3);
     },
     totalCommission: function (data) {
       let commissionPrice = data.reduce((c, sale) => {
         let com = sale.commission == "" ? 0 : sale.commission;
         return c + parseFloat(com);
       }, 0);
-      return parseFloat(commissionPrice).toFixed(2);
+      return parseFloat(commissionPrice).toFixed(3);
     },
     printPage: function () {
       window.print();

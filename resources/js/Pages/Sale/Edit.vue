@@ -141,7 +141,6 @@
                                     ? 'is-invalid'
                                     : '',
                                 ]"
-                                @input="checkProduct"
                                 :searchable="true"
                                 :close-on-select="true"
                                 :show-labels="true"
@@ -247,9 +246,7 @@
                                 type="text"
                                 readonly
                                 :value="
-                                  parseFloat(row.price * row.quantity).toFixed(
-                                    2
-                                  )
+                                  parseFloat(row.price * row.quantity).toFixed(3)
                                 "
                                 class="form-control"
                                 :placeholder="__('Total')"
@@ -315,14 +312,14 @@
                         </th>
                       </tr>
                       <tr>
-                        <th class="text-right">{{ __("Reference Code") }}</th>
+                        <th class="text-right">{{ __("Reference") }}</th>
                         <td>
                           <input
                             type="text"
                             @change="fetchCommission"
                             v-model="sale.reference"
                             class="form-control"
-                            :placeholder="__('Reference Code')"
+                            :placeholder="__('Reference')"
                           />
                         </td>
                       </tr>
@@ -368,7 +365,7 @@
                               <input
                                 type="text"
                                 v-model="sale.description"
-                                class="form-control"
+                                class="form-control text-uppercase"
                                 :placeholder="__('Description')"
                               />
                             </div>
@@ -438,37 +435,32 @@ export default {
             this.sale.commission =
               data.commission == ""
                 ? 0.0
-                : parseFloat(data.commission).toFixed(2);
+                : parseFloat(data.commission).toFixed(3);
           })
           .catch((err) => {
             console.log(err);
           });
       }
     },
-    checkStock: function (index) {
+    checkStock: async function (index) {
       const selectedRow = this.sale.sale_details[index];
-      let stock = parseFloat(selectedRow.product.quantity).toFixed(2);
-      let quantity = parseFloat(selectedRow.quantity).toFixed(2);
-      let dif = stock - quantity;
+      let selectedProduct = selectedRow.product;
+      let stock = await this.sale.sale_details.reduce((sum, saleDetail) => {
+        saleDetail.product && saleDetail.product.id == selectedProduct.id
+          ? (sum += parseFloat(saleDetail.quantity))
+          : false;
+        return sum;
+      }, 0);
+      let totalStock = selectedRow.product.quantity;
+      let dif = totalStock - stock;
       if (dif < 0) {
         this.invalid_stock = true;
         this.sale.sale_details[
           index
-        ].stock_alert = `${stock} - ${quantity} = ${dif}`;
+        ].stock_alert = `${totalStock} - ${stock} = ${dif}`;
       } else {
         this.invalid_stock = false;
         this.sale.sale_details[index].stock_alert = "";
-      }
-    },
-    checkProduct: function (obj) {
-      const result = this.sale.sale_details.find(function (sale_detail) {
-        return sale_detail.product.id == obj.id;
-      });
-      if (result) {
-        this.$toast("Oops! This product is already selected!", "error");
-        this.sale.sale_details[
-          this.sale.sale_details.length - 1
-        ].product = null;
       }
     },
     calculateTotalWhenQuantityChange: function (index) {
@@ -478,7 +470,7 @@ export default {
       let quantity = selectedRow.quantity == "" ? "0.00" : selectedRow.quantity;
 
       let total = parseFloat(price) * parseFloat(quantity);
-      this.sale.sale_details[index].amount = parseFloat(total).toFixed(2);
+      this.sale.sale_details[index].amount = parseFloat(total).toFixed(3);
       this.calculateTotal();
     },
     calculateTotalWhenPriceChange: function (index) {
@@ -488,14 +480,14 @@ export default {
       let quantity = selectedRow.quantity == "" ? "0.00" : selectedRow.quantity;
 
       let total = parseFloat(price) * parseFloat(quantity);
-      this.sale.sale_details[index].amount = parseFloat(total).toFixed(2);
+      this.sale.sale_details[index].amount = parseFloat(total).toFixed(3);
       this.calculateTotal();
     },
     calculateTotal: async function () {
       let total_price = await this.sale.sale_details.reduce((sum, item) => {
         return sum + parseFloat(item.amount);
       }, 0);
-      this.sale.total_price = parseFloat(total_price).toFixed(2);
+      this.sale.total_price = parseFloat(total_price).toFixed(3);
       this.calculateDue();
     },
     calculateDue: function () {
@@ -504,7 +496,7 @@ export default {
       let total_paid =
         this.sale.total_paid == "" ? "0.00" : this.sale.total_paid;
       let total_due = parseFloat(total_price) - parseFloat(total_paid);
-      this.sale.total_due = parseFloat(total_due).toFixed(2);
+      this.sale.total_due = parseFloat(total_due).toFixed(3);
     },
     update: async function () {
       let errors = this.isValid();

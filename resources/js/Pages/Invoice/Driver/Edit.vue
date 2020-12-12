@@ -132,13 +132,35 @@
                       >{{ __("Reference")
                       }}<strong class="text-danger">*</strong></label
                     >
-                    <input
-                      type="text"
-                      v-model="driver_invoice.reference"
-                      :class="[errors.reference ? 'in-invalid' : '']"
-                      :placeholder="__('Reference')"
-                      class="form-control text-uppercase"
-                    />
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <fieldset class="checkbox">
+                          <div class="vs-checkbox-con vs-checkbox-primary">
+                            <input
+                              type="checkbox"
+                              v-model="driver_invoice.has_commission"
+                            />
+                            <span class="vs-checkbox">
+                              <span class="vs-checkbox--check">
+                                <i
+                                  style="font-size: 30px"
+                                  class="vs-icon feather icon-check"
+                                ></i>
+                              </span>
+                            </span>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <input
+                        type="text"
+                        v-model="driver_invoice.reference"
+                        :class="[errors.reference ? 'in-invalid' : '']"
+                        :readonly="!driver_invoice.has_commission"
+                        :placeholder="__('Reference')"
+                        maxlength="20"
+                        class="form-control text-uppercase"
+                      />
+                    </div>
 
                     <span
                       v-if="errors.reference"
@@ -185,7 +207,7 @@
                               type="text"
                               v-model="driver_invoice.container_length"
                               :placeholder="__('Length')"
-                              class="form-controll"
+                              class="form-control"
                             />
                           </div>
                           <div class="col-md-4 col-4">
@@ -193,7 +215,7 @@
                               type="text"
                               v-model="driver_invoice.container_breadth"
                               :placeholder="__('Breadth')"
-                              class="form-controll"
+                              class="form-control"
                             />
                           </div>
                           <div class="col-md-4 col-4">
@@ -201,7 +223,7 @@
                               type="text"
                               v-model="driver_invoice.container_height"
                               :placeholder="__('Height')"
-                              class="form-controll"
+                              class="form-control"
                             />
                           </div>
                         </div>
@@ -272,7 +294,9 @@
                       </th>
                     </tr>
                     <tr>
-                      <th colspan="3" class="text-right">{{ __("Commission") }}</th>
+                      <th colspan="3" class="text-right">
+                        {{ __("Commission") }}
+                      </th>
                       <th>
                         <input
                           type="text"
@@ -296,7 +320,9 @@
                       </th>
                     </tr>
                     <tr>
-                      <th colspan="3" class="text-right">{{ __("Final Amount") }}</th>
+                      <th colspan="3" class="text-right">
+                        {{ __("Final Amount") }}
+                      </th>
                       <th>
                         <input
                           type="text"
@@ -384,24 +410,34 @@ export default {
           ? 0
           : this.driver_invoice.borrow;
 
-      let total =
-        (parseFloat(track_rent) + parseFloat(this.load.amount)) *
-          parseFloat(quantity) +
-        parseFloat(others);
+      let total = track_rent * quantity;
+      if (this.driver_invoice.has_commission) {
+        total =
+          (parseFloat(track_rent) + parseFloat(this.load.amount)) *
+            parseFloat(quantity) +
+          parseFloat(this.load.stock_rent) +
+          parseFloat(others);
+      }
+
       let final = total - parseFloat(borrow);
-      this.driver_invoice.total = parseFloat(total).toFixed(2);
-      this.driver_invoice.final = parseFloat(final).toFixed(2);
+      this.driver_invoice.total = parseFloat(total).toFixed(3);
+      this.driver_invoice.final = parseFloat(final).toFixed(3);
       this.calculateCommission();
     },
     calculateCommission: function () {
-      let quantity =
+      if(this.driver_invoice.has_commission) {
+let quantity =
         this.driver_invoice.quantity === "" ? 0 : this.driver_invoice.quantity;
 
       let commission =
         parseFloat(this.load.stock_rent) +
         parseFloat(this.load.amount) * parseFloat(quantity);
-      this.driver_invoice.commission = parseFloat(commission).toFixed(2);
+      this.driver_invoice.commission = parseFloat(commission).toFixed(3);
       console.log(this.driver_invoice.commission);
+      }else {
+        this.driver_invoice.commission = "";
+      }
+      
     },
     calculateFinal: function () {
       let total =
@@ -413,7 +449,7 @@ export default {
           ? 0
           : this.driver_invoice.borrow;
       let final = parseFloat(total) - parseFloat(borrow);
-      this.driver_invoice.final = parseFloat(final).toFixed(2);
+      this.driver_invoice.final = parseFloat(final).toFixed(3);
     },
     update: async function () {
       let self = this;
@@ -451,6 +487,7 @@ export default {
           borrow: this.driver_invoice.borrow,
           final: this.driver_invoice.final,
           commission: this.driver_invoice.commission,
+          has_commission: this.driver_invoice.has_commission,
           reference: this.driver_invoice.reference,
         }
       );
@@ -461,4 +498,8 @@ export default {
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style>
+.vs-checkbox-con .vs-checkbox {
+  width: 40px;
+  height: 40px;
+}
 </style>

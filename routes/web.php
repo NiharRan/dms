@@ -121,6 +121,9 @@ Route::group([
       Route::put('/clients/{clientId}', 'ClientController@update')->name('clients.update');
       Route::get('/client-balances/history/{clientId}', 'ClientPaymentHistoryController@show')->name('client-balances.history.show');
       Route::get('/client-balances/history/print/{clientId}', 'ClientPaymentHistoryController@print')->name('client-balances.history.print');
+      Route::post('/client-balances/histories/store', 'ClientPaymentHistoryController@store')->name('client-balances.history.store');
+      Route::put('/client-balances/histories/update/{historyId}', 'ClientPaymentHistoryController@update')->name('client-balances.history.update');
+      Route::delete('/client-balances/histories/destroy/{historyId}', 'ClientPaymentHistoryController@destroy')->name('client-balances.history.destroy');
     });
 
     Route::group([

@@ -6,13 +6,13 @@ webpackJsonp([36],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(414)
+  __webpack_require__(417)
 }
 var normalizeComponent = __webpack_require__(235)
 /* script */
-var __vue_script__ = __webpack_require__(416)
+var __vue_script__ = __webpack_require__(419)
 /* template */
-var __vue_template__ = __webpack_require__(417)
+var __vue_template__ = __webpack_require__(420)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -425,13 +425,13 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 414:
+/***/ 417:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(415);
+var content = __webpack_require__(418);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 415:
+/***/ 418:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -467,7 +467,7 @@ exports.push([module.i, "\n.mt-200 {\r\n  margin-top: 200px;\n}\n.mb-200 {\r\n  
 
 /***/ }),
 
-/***/ 416:
+/***/ 419:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -603,7 +603,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var totalQuantity = data.reduce(function (total, history) {
         return total + parseFloat(history.quantity);
       }, 0);
-      return parseFloat(totalQuantity).toFixed(2);
+      return parseFloat(totalQuantity).toFixed(3);
     },
     printPage: function printPage() {
       window.print();
@@ -614,7 +614,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 417:
+/***/ 420:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -890,7 +890,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("th", { staticClass: "text-right" }, [
                               _vm._v(
-                                _vm._s(parseFloat(history.quantity).toFixed(2))
+                                _vm._s(parseFloat(history.quantity).toFixed(3))
                               )
                             ])
                           ])

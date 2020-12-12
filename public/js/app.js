@@ -56395,11 +56395,11 @@ module.exports = function (css) {
 var map = {
 	"./Account/Statement": [
 		151,
-		4
+		2
 	],
 	"./Account/Statement.vue": [
 		151,
-		4
+		2
 	],
 	"./Account/StatementPrint": [
 		152,
@@ -56451,19 +56451,19 @@ var map = {
 	],
 	"./Client/History": [
 		158,
-		12
+		13
 	],
 	"./Client/History.vue": [
 		158,
-		12
+		13
 	],
 	"./Client/Index": [
 		159,
-		24
+		6
 	],
 	"./Client/Index.vue": [
 		159,
-		24
+		6
 	],
 	"./Client/Print": [
 		160,
@@ -56475,11 +56475,11 @@ var map = {
 	],
 	"./Company/Index": [
 		161,
-		1
+		4
 	],
 	"./Company/Index.vue": [
 		161,
-		1
+		4
 	],
 	"./Company/Profile": [
 		162,
@@ -56507,43 +56507,43 @@ var map = {
 	],
 	"./Gender/Index": [
 		165,
-		23
+		24
 	],
 	"./Gender/Index.vue": [
 		165,
-		23
+		24
 	],
 	"./Invoice/Driver/Create": [
 		166,
-		11
+		12
 	],
 	"./Invoice/Driver/Create.vue": [
 		166,
-		11
+		12
 	],
 	"./Invoice/Driver/Edit": [
 		167,
-		10
+		11
 	],
 	"./Invoice/Driver/Edit.vue": [
 		167,
-		10
+		11
 	],
 	"./Invoice/Driver/Index": [
 		168,
-		3
+		1
 	],
 	"./Invoice/Driver/Index.vue": [
 		168,
-		3
+		1
 	],
 	"./Invoice/Driver/Invoice": [
 		169,
-		9
+		10
 	],
 	"./Invoice/Driver/Invoice.vue": [
 		169,
-		9
+		10
 	],
 	"./Invoice/Driver/Print": [
 		170,
@@ -56563,51 +56563,51 @@ var map = {
 	],
 	"./Load/Index": [
 		172,
-		22
+		23
 	],
 	"./Load/Index.vue": [
 		172,
-		22
+		23
 	],
 	"./MeasurementType/Index": [
 		173,
-		21
+		22
 	],
 	"./MeasurementType/Index.vue": [
 		173,
-		21
+		22
 	],
 	"./Product/Index": [
 		174,
-		0
+		3
 	],
 	"./Product/Index.vue": [
 		174,
-		0
+		3
 	],
 	"./ProductType/Index": [
 		175,
-		20
+		21
 	],
 	"./ProductType/Index.vue": [
 		175,
-		20
+		21
 	],
 	"./Purchase/History": [
 		176,
-		8
+		9
 	],
 	"./Purchase/History.vue": [
 		176,
-		8
+		9
 	],
 	"./Purchase/Index": [
 		177,
-		7
+		5
 	],
 	"./Purchase/Index.vue": [
 		177,
-		7
+		5
 	],
 	"./Purchase/Print": [
 		178,
@@ -56619,51 +56619,51 @@ var map = {
 	],
 	"./Religion/Index": [
 		179,
-		19
+		20
 	],
 	"./Religion/Index.vue": [
 		179,
-		19
+		20
 	],
 	"./Role/Index": [
 		180,
-		18
+		19
 	],
 	"./Role/Index.vue": [
 		180,
-		18
+		19
 	],
 	"./Sale/Create": [
 		181,
-		6
+		8
 	],
 	"./Sale/Create.vue": [
 		181,
-		6
+		8
 	],
 	"./Sale/Edit": [
 		182,
-		5
+		7
 	],
 	"./Sale/Edit.vue": [
 		182,
-		5
+		7
 	],
 	"./Sale/Index": [
 		183,
-		2
+		0
 	],
 	"./Sale/Index.vue": [
 		183,
-		2
+		0
 	],
 	"./Sale/Invoice": [
 		184,
-		17
+		18
 	],
 	"./Sale/Invoice.vue": [
 		184,
-		17
+		18
 	],
 	"./Sale/Print": [
 		185,
@@ -56683,35 +56683,35 @@ var map = {
 	],
 	"./Stock/Index": [
 		187,
-		16
+		17
 	],
 	"./Stock/Index.vue": [
 		187,
-		16
+		17
 	],
 	"./TransactionMedia/Index": [
 		188,
-		15
+		16
 	],
 	"./TransactionMedia/Index.vue": [
 		188,
-		15
+		16
 	],
 	"./TransactionType/Index": [
 		189,
-		14
+		15
 	],
 	"./TransactionType/Index.vue": [
 		189,
-		14
+		15
 	],
 	"./User/Index": [
 		190,
-		13
+		14
 	],
 	"./User/Index.vue": [
 		190,
-		13
+		14
 	],
 	"./User/Profile": [
 		191,

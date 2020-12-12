@@ -12,7 +12,7 @@ class BalanceHistory extends MyModel
    * @var array
    */
   protected $fillable = [
-    'client_id', 'description', 'status', 'type', 'amount'
+    'client_id', 'description', 'status',  'type', 'amount', 'created_at'
   ];
 
 

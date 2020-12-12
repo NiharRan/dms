@@ -6,13 +6,13 @@ webpackJsonp([38],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(376)
+  __webpack_require__(379)
 }
 var normalizeComponent = __webpack_require__(235)
 /* script */
-var __vue_script__ = __webpack_require__(378)
+var __vue_script__ = __webpack_require__(381)
 /* template */
-var __vue_template__ = __webpack_require__(379)
+var __vue_template__ = __webpack_require__(382)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -425,13 +425,13 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 376:
+/***/ 379:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(377);
+var content = __webpack_require__(380);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 377:
+/***/ 380:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -467,11 +467,57 @@ exports.push([module.i, "\n.mt-200 {\n  margin-top: 200px;\n}\n.mb-200 {\n  marg
 
 /***/ }),
 
-/***/ 378:
+/***/ 381:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -686,7 +732,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 379:
+/***/ 382:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -827,65 +873,85 @@ var render = function() {
                 )
               : _vm._e(),
             _vm._v(" "),
-            _c("div", { staticClass: "controller width-300" }, [
-              _c("label", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.hasHeader,
-                      expression: "hasHeader"
-                    }
-                  ],
-                  attrs: { type: "checkbox" },
-                  domProps: {
-                    checked: Array.isArray(_vm.hasHeader)
-                      ? _vm._i(_vm.hasHeader, null) > -1
-                      : _vm.hasHeader
-                  },
-                  on: {
-                    change: function($event) {
-                      var $$a = _vm.hasHeader,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = null,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.hasHeader = $$a.concat([$$v]))
+            _c(
+              "div",
+              { staticClass: "controller width-400 text-center" },
+              [
+                _c("label", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.hasHeader,
+                        expression: "hasHeader"
+                      }
+                    ],
+                    attrs: { type: "checkbox" },
+                    domProps: {
+                      checked: Array.isArray(_vm.hasHeader)
+                        ? _vm._i(_vm.hasHeader, null) > -1
+                        : _vm.hasHeader
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.hasHeader,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.hasHeader = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.hasHeader = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
                         } else {
-                          $$i > -1 &&
-                            (_vm.hasHeader = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
+                          _vm.hasHeader = $$c
                         }
-                      } else {
-                        _vm.hasHeader = $$c
                       }
                     }
-                  }
-                }),
-                _vm._v(
-                  "\n            " +
-                    _vm._s(_vm.__("Attach company information"))
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary btn-sm float-right",
-                  attrs: { type: "button" },
-                  on: { click: _vm.printPage }
-                },
-                [
+                  }),
                   _vm._v(
-                    "\n            " + _vm._s(_vm.__("Print")) + "\n          "
+                    "\n            " +
+                      _vm._s(_vm.__("Attach company information"))
                   )
-                ]
-              )
-            ]),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "inertia-link",
+                  {
+                    staticClass: "btn btn-primary btn-sm float-left",
+                    attrs: { href: _vm.route("drivers.invoices.index") }
+                  },
+                  [
+                    _vm._v(
+                      "\n            " + _vm._s(_vm.__("Back")) + "\n          "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-warning btn-sm float-right",
+                    attrs: { type: "button" },
+                    on: { click: _vm.printPage }
+                  },
+                  [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(_vm.__("Print")) +
+                        "\n          "
+                    )
+                  ]
+                )
+              ],
+              1
+            ),
             _vm._v(" "),
             _c("div", { staticClass: "invoice-body" }, [
               _c("p", { staticClass: "clearfix" }, [
@@ -912,75 +978,74 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "d-flex",
-                  staticStyle: { "justify-content": "space-between" }
-                },
-                [
-                  _c("span", [
-                    _vm._v(
-                      _vm._s(_vm.__("Client Name")) +
-                        _vm._s(_vm.__(":")) +
-                        "\n              " +
-                        _vm._s(_vm.driver_invoice.client.name)
-                    )
+              _c("table", { staticClass: "table invoice-header-table" }, [
+                _c("tr", [
+                  _c("td", [
+                    _c("span", [
+                      _vm._v(
+                        _vm._s(_vm.__("Client Name")) +
+                          _vm._s(_vm.__(":")) +
+                          "\n                  " +
+                          _vm._s(_vm.driver_invoice.client.name)
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("span", [
-                    _vm._v(
-                      _vm._s(_vm.__("Address")) +
-                        _vm._s(_vm.__(":")) +
-                        "\n              " +
-                        _vm._s(_vm.driver_invoice.client.address)
-                    )
+                  _c("td", [
+                    _c("span", [
+                      _vm._v(
+                        _vm._s(_vm.__("Driver Name")) +
+                          _vm._s(_vm.__(":")) +
+                          "\n                  " +
+                          _vm._s(_vm.driver_invoice.driver_name)
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("span", [
-                    _vm._v(
-                      _vm._s(_vm.__("Contact No.")) +
-                        _vm._s(_vm.__(":")) +
-                        "\n              " +
-                        _vm._s(_vm.driver_invoice.client_phone)
-                    )
+                  _c("td", [
+                    _c("span", { staticStyle: { "margin-right": "100px" } }, [
+                      _vm._v(
+                        _vm._s(_vm.__("Reference")) +
+                          _vm._s(_vm.__(":")) +
+                          "\n                "
+                      )
+                    ])
                   ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "d-flex",
-                  staticStyle: { "justify-content": "space-between" }
-                },
-                [
-                  _c("span", [
-                    _vm._v(
-                      _vm._s(_vm.__("Driver Name")) +
-                        _vm._s(_vm.__(":")) +
-                        "\n              " +
-                        _vm._s(_vm.driver_invoice.driver_name)
-                    )
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td", [
+                    _c("span", [
+                      _vm._v(
+                        _vm._s(_vm.__("Address")) +
+                          _vm._s(_vm.__(":")) +
+                          "\n                  " +
+                          _vm._s(_vm.driver_invoice.client.address)
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("span", [
-                    _vm._v(
-                      _vm._s(_vm.__("Track No.")) +
-                        "-" +
-                        _vm._s(_vm.driver_invoice.track_no)
-                    )
+                  _c("td", [
+                    _c("span", [
+                      _vm._v(
+                        _vm._s(_vm.__("Track No.")) +
+                          "-" +
+                          _vm._s(_vm.driver_invoice.track_no)
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("span", [
-                    _vm._v(
-                      _vm._s(_vm.__("Dri: Mobile:")) +
-                        "\n              " +
-                        _vm._s(_vm.driver_invoice.driver_phone)
-                    )
+                  _c("td", [
+                    _c("span", [
+                      _vm._v(
+                        _vm._s(_vm.__("Dri: Mobile:")) +
+                          "\n                  " +
+                          _vm._s(_vm.driver_invoice.driver_phone)
+                      )
+                    ])
                   ])
-                ]
-              ),
+                ])
+              ]),
               _vm._v(" "),
               _c(
                 "table",
@@ -1033,26 +1098,48 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("th", { staticClass: "text-center" }, [
-                        _vm.driver_invoice.container_height
+                        _vm.driver_invoice.container_length
                           ? _c("span", [
-                              _vm._v(
-                                "\n                    " +
-                                  _vm._s(_vm.driver_invoice.container_height) +
-                                  " In *\n                    " +
+                              _c("span", { staticClass: "mess" }, [
+                                _vm._v(
                                   _vm._s(_vm.driver_invoice.container_length) +
-                                  " In *\n                    " +
+                                    " In\n                    "
+                                )
+                              ]),
+                              _vm._v(
+                                "\n                    *\n                    "
+                              ),
+                              _c("span", { staticClass: "mess" }, [
+                                _vm._v(
                                   _vm._s(_vm.driver_invoice.container_breadth) +
-                                  " In\n                  "
-                              )
+                                    " In\n                    "
+                                )
+                              ]),
+                              _vm._v(
+                                "\n                    *\n                    "
+                              ),
+                              _vm.driver_invoice.container_height
+                                ? _c("span", [
+                                    _c("span", { staticClass: "mess" }, [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.driver_invoice.container_height
+                                        ) + " In\n                      "
+                                      )
+                                    ])
+                                  ])
+                                : _vm._e()
                             ])
                           : _vm._e()
                       ]),
                       _vm._v(" "),
                       _c("th", { staticClass: "text-center" }, [
                         _vm._v(
-                          _vm._s(
-                            parseFloat(_vm.driver_invoice.quantity).toFixed(2)
-                          )
+                          "\n                  " +
+                            _vm._s(
+                              parseFloat(_vm.driver_invoice.quantity).toFixed(3)
+                            ) +
+                            "\n                "
                         )
                       ])
                     ]),
@@ -1066,9 +1153,13 @@ var render = function() {
                       _vm._v(" "),
                       _c("th", { staticClass: "text-right" }, [
                         _vm._v(
-                          _vm._s(
-                            parseFloat(_vm.driver_invoice.track_rent).toFixed(2)
-                          )
+                          "\n                  " +
+                            _vm._s(
+                              parseFloat(_vm.driver_invoice.track_rent).toFixed(
+                                3
+                              )
+                            ) +
+                            "\n                "
                         )
                       ])
                     ]),
@@ -1082,9 +1173,11 @@ var render = function() {
                       _vm._v(" "),
                       _c("th", { staticClass: "text-right" }, [
                         _vm._v(
-                          _vm._s(
-                            parseFloat(_vm.driver_invoice.others).toFixed(2)
-                          )
+                          "\n                  " +
+                            _vm._s(
+                              parseFloat(_vm.driver_invoice.others).toFixed(3)
+                            ) +
+                            "\n                "
                         )
                       ])
                     ]),
@@ -1104,9 +1197,11 @@ var render = function() {
                       _vm._v(" "),
                       _c("th", { staticClass: "text-right" }, [
                         _vm._v(
-                          _vm._s(
-                            parseFloat(_vm.driver_invoice.total).toFixed(2)
-                          )
+                          "\n                  " +
+                            _vm._s(
+                              parseFloat(_vm.driver_invoice.total).toFixed(3)
+                            ) +
+                            "\n                "
                         )
                       ])
                     ]),
@@ -1120,9 +1215,15 @@ var render = function() {
                       _vm._v(" "),
                       _c("th", { staticClass: "text-right" }, [
                         _vm._v(
-                          _vm._s(
-                            parseFloat(_vm.driver_invoice.borrow).toFixed(2)
-                          )
+                          "\n                  " +
+                            _vm._s(
+                              _vm.driver_invoice.others
+                                ? parseFloat(_vm.driver_invoice.borrow).toFixed(
+                                    3
+                                  )
+                                : "0.00"
+                            ) +
+                            "\n                "
                         )
                       ])
                     ]),
@@ -1142,9 +1243,11 @@ var render = function() {
                       _vm._v(" "),
                       _c("th", { staticClass: "text-right" }, [
                         _vm._v(
-                          _vm._s(
-                            parseFloat(_vm.driver_invoice.final).toFixed(2)
-                          )
+                          "\n                  " +
+                            _vm._s(
+                              parseFloat(_vm.driver_invoice.final).toFixed(3)
+                            ) +
+                            "\n                "
                         )
                       ])
                     ])

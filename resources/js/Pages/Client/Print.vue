@@ -89,11 +89,11 @@
                   :key="history.id"
                 >
                   <th style="width: 80px">{{ index + 1 }}</th>
-                  <td>{{ history.created_at | moment("DD/MM/YYYY") }}</td>
+                  <td>{{ history.created_at | moment("DD/MM/YYYY h:mm A") }}</td>
                   <th>{{ history.description }}</th>
                   <th class="text-center">{{ history.type }}</th>
                   <th class="text-right">
-                    {{ parseFloat(history.amount).toFixed(2) }}
+                    {{ parseFloat(history.amount).toFixed(3) }}
                   </th>
                 </tr>
               </tbody>
@@ -135,7 +135,7 @@ export default {
         else total -= amount;
         return total;
       }, 0);
-      return parseFloat(totalAmount).toFixed(2);
+      return parseFloat(totalAmount).toFixed(3);
     },
     printPage: function () {
       window.print();

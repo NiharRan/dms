@@ -35,15 +35,18 @@
 #dashboard-analytics table tr td:last-child {
   padding-right: 2rem;
 }
+
 .underlined {
   border-bottom: 1px dotted #9a9191;
   display: inline-block;
 }
+
 #dashboard-analytics table td {
   padding: 0.75rem;
 }
 
 @media only screen and (max-width: 576px) {
+
   #dashboard-analytics .img-left,
   #dashboard-analytics .img-right {
     width: 140px;
@@ -58,7 +61,8 @@
   background-position: center right calc(0.3125em + 0.35rem);
   background-size: calc(0.625em + 0.7rem) calc(0.625em + 0.7rem);
 }
-.invalid-feedback{
+
+.invalid-feedback {
   display: block !important;
 }
 
@@ -81,11 +85,13 @@
     transform: translateY(-50%);
   }
 }
-.width-full{
+
+.width-full {
   min-width: 100%;
   height: 150px;
 }
-.width-half{
+
+.width-half {
   width: 50%;
   height: 100px;
   margin: auto;
@@ -100,6 +106,7 @@
     }
   }
 }
+
 .passport-size {
   width: 200px;
   height: 200px;
@@ -115,12 +122,13 @@
   transition: all 0.35s ease;
   cursor: pointer;
 
-  .fa{
+  .fa {
     text-align: center;
     display: block;
     visibility: hidden;
     transition: all 0.35s ease;
   }
+
   input[type=file] {
     visibility: hidden;
     width: 100%;
@@ -129,14 +137,16 @@
   }
 }
 
-.width-full .btn-pill, .passport-size .btn-pill {
+.width-full .btn-pill,
+.passport-size .btn-pill {
   width: 100px;
   height: 100px;
 }
 
 
 
-.width-full .btn-pill .fa, .passport-size .btn-pill .fa {
+.width-full .btn-pill .fa,
+.passport-size .btn-pill .fa {
   line-height: 100px;
   font-size: 35px;
 }
@@ -146,6 +156,7 @@
 .banner-logo-upload-box:hover {
   opacity: 0.6;
 }
+
 .banner-logo-upload-box:hover .btn-pill {
   background-color: #aaa;
 }
@@ -153,11 +164,13 @@
 .banner-logo-upload-box:hover .btn-pill i.fa {
   visibility: visible;
 }
+
 .btn-default {
   border: 1px solid #ccc;
 }
+
 .app-content.content {
-    min-height: 92vh;
+  min-height: 92vh;
 }
 
 .signature {
@@ -188,10 +201,29 @@
 }
 
 @media print {
-  .page-gap{
+  .page-gap {
     margin: 2in 0in;
   }
+
   .signature {
     bottom: 2.5in;
   }
+}
+
+.table.invoice-header-table th,
+.table.invoice-header-table td {
+  padding: .3rem;
+  vertical-align: middle;
+}
+
+.table.invoice-header-table th,
+.table.invoice-header-table td {
+  border-top: 1px solid #f8f8f8;
+}
+
+.mess {
+  border: 1px solid;
+  display: inline-block;
+  padding: 1px 5px;
+  border-radius: 4px;
 }

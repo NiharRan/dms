@@ -157,6 +157,7 @@
                         :class="[errors.reference ? 'in-invalid' : '']"
                         :readonly="!form.has_commission"
                         :placeholder="__('Reference')"
+                        maxlength="20"
                         class="form-control text-uppercase"
                       />
                     </div>
@@ -405,6 +406,7 @@ export default {
         reference: "",
         commission: "",
         has_commission: true,
+        is_commission_added: 0
       },
     };
   },
@@ -419,15 +421,18 @@ export default {
       let others = this.form.others === "" ? 0 : this.form.others;
       let borrow = this.form.borrow === "" ? 0 : this.form.borrow;
 
-      let total =
-        (parseFloat(track_rent) + parseFloat(this.load.amount)) *
-          parseFloat(quantity) +
-        parseFloat(this.load.stock_rent) +
-        parseFloat(others);
+      let total = track_rent * quantity;
+      if (this.form.has_commission) {
+        total =
+          (parseFloat(track_rent) + parseFloat(this.load.amount)) *
+            parseFloat(quantity) +
+          parseFloat(this.load.stock_rent) +
+          parseFloat(others);
+      }
       let final = total - parseFloat(borrow);
 
-      this.form.total = parseFloat(total).toFixed(2);
-      this.form.final = parseFloat(final).toFixed(2);
+      this.form.total = parseFloat(total).toFixed(3);
+      this.form.final = parseFloat(final).toFixed(3);
       this.calculateCommission();
     },
     calculateCommission: function () {
@@ -437,7 +442,7 @@ export default {
         let commission =
           parseFloat(this.load.stock_rent) +
           parseFloat(this.load.amount) * parseFloat(quantity);
-        this.form.commission = parseFloat(commission).toFixed(2);
+        this.form.commission = parseFloat(commission).toFixed(3);
         console.log(this.form.commission);
       } else {
         this.form.commission = "";
@@ -447,7 +452,7 @@ export default {
       let total = this.form.total === "" ? "0" : this.form.total;
       let borrow = this.form.borrow === "" ? "0" : this.form.borrow;
       let final = parseFloat(total) - parseFloat(borrow);
-      this.form.final = parseFloat(final).toFixed(2);
+      this.form.final = parseFloat(final).toFixed(3);
     },
     store: async function () {
       let self = this;
@@ -480,6 +485,7 @@ export default {
         reference: this.form.reference,
         commission: this.form.commission,
         has_commission: this.form.has_commission,
+        is_commission_added: this.form.is_commission_added,
       });
     },
   },

@@ -3,7 +3,6 @@
   "Congratulations": "অভিনন্দন",
   "Dashboard": "ড্যাশবোর্ড",
 
-
   "Active": "সক্রিয়",
   "Inactive": "নিষ্ক্রিয়",
   "Create": "সৃষ্টি করুন",
@@ -19,7 +18,6 @@
   "Search": "অনুসন্ধান করুন",
   "Back": "আগের পেইজ",
   "Description": "বর্ণনা",
-
 
   "Users": "ব্যবহারকারীগণ",
   "User": "ব্যবহারকারী",
@@ -39,7 +37,7 @@
   "Product Type": "পণ্যের ধরন",
 
   "Loads": "লোড গুলো",
-  "Load": "লোড", 
+  "Load": "লোড",
 
   "Payment Status": "লেনদেনের অবস্থা",
   "Mg": "মে.ট.",
@@ -78,7 +76,7 @@
   "In Words": "কথায়",
   "Price": "মূল্য",
   "Paid": "টাকা দেওয়া",
-  "Borrow": "টাকা নেওয়া", 
+  "Borrow": "টাকা নেওয়া",
 
   "All Clients": "মোট ক্রেতা",
   "All Products": "মোট পণ্য",
@@ -93,7 +91,6 @@
   "Mark Paid": "মার্ক পেইড",
   "Awaiting payment": "পেমেন্ট অপেক্ষায়",
 
-
   "Create New User": "নতুন ব্যবহারকারী তৈরি করুন",
   "User Name": "ব্যবহারকারীর নাম",
   "Select Gender": "লিংগ নির্বাচন করুন",
@@ -103,13 +100,12 @@
   "Contact No.": "যোগাযোগ নম্বর",
   "Account": "বিবরণ",
   "Birth Date": "জন্ম তারিখ",
-
+  "Reference": "রেফারেন্স",
   "Stock": "স্টক",
   "Stock Rent": "ঘাটের  ভাড়া",
   "Commission Status": "কমিশনের অবস্থা",
   "Collected": "সংগৃহীত",
   "Not Collected": "সংগৃহীত নয়",
-
 
   "Clients": "ক্রেতা গণ",
   "Client": "ক্রেতা",
@@ -152,7 +148,6 @@
   "Purchase Product": "পণ্য ক্রয়",
   "Select Stock": "স্টক নির্বাচন করুন",
 
-
   "Measurement Type": "পরিমাপের একক",
   "Create New Measurement Type": "নতুন পরিমাপের একক তৈরি করুন",
   "Measurement Type Name": "পরিমাপের এককের নাম",
@@ -164,8 +159,6 @@
 
   "Ship": "বাহক",
   "Buyer": "বিক্রেতা",
-
-
 
   "Accounts": "অ্যাকাউন্টস",
   "Account Statement": "অ্যাকাউন্ট বিবৃতি",

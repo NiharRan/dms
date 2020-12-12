@@ -106,21 +106,21 @@
                       <th>{{ row.track_no }}</th>
                       <th>{{ row.stock.name }}</th>
                       <th>{{ row.product.name }}</th>
-                      <th class="text-center">{{ parseFloat(row.quantity).toFixed(2) }} {{ __('Mg')}}</th>
-                      <th class="text-right">{{ parseFloat(row.price).toFixed(2) }}</th>
-                      <th class="text-right">{{ parseFloat(row.amount).toFixed(2) }}</th>
+                      <th class="text-center">{{ parseFloat(row.quantity).toFixed(3) }} {{ __('Mg')}}</th>
+                      <th class="text-right">{{ parseFloat(row.price).toFixed(3) }}</th>
+                      <th class="text-right">{{ parseFloat(row.amount).toFixed(3) }}</th>
                     </tr>
                     <tr>
                       <th colspan="5" class="text-right">{{ __('Total Amount') }}</th>
-                      <th class="text-right">{{ parseFloat(sale.total_price).toFixed(2) }}</th>
+                      <th class="text-right">{{ parseFloat(sale.total_price).toFixed(3) }}</th>
                     </tr>
                     <tr>
                       <th colspan="5" class="text-right">{{ __('Paid') }}</th>
-                      <th class="text-right">{{ parseFloat(sale.total_paid).toFixed(2) }}</th>
+                      <th class="text-right">{{ parseFloat(sale.total_paid).toFixed(3) }}</th>
                     </tr>
                     <tr>
                       <th colspan="5" class="text-right">{{ __('Due') }}</th>
-                      <th class="text-right">{{ parseFloat(sale.total_due).toFixed(2) }}</th>
+                      <th class="text-right">{{ parseFloat(sale.total_due).toFixed(3) }}</th>
                     </tr>
                     </tbody>
                   </table>

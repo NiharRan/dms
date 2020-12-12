@@ -35,6 +35,7 @@ class CreateDriverInvoicesTable extends Migration
             $table->decimal('final', 10, 4)->nullable();
             $table->decimal('commission', 10, 4)->nullable();
             $table->string('reference', 20);
+            $table->boolean('has_reference')->default(1);
 
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies');

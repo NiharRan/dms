@@ -61,7 +61,10 @@ class DriverInvoiceRepository
       });
     }
     if (\request()->has('is_commission_added') && request()->is_commission_added != '') {
-      $driverInvoices = $driverInvoices->where('is_commission_added', '=', \request()->is_commission_added);
+      $driverInvoices = $driverInvoices->where([
+        'is_commission_added' => \request()->is_commission_added,
+        'has_commission' => 1,
+      ]);
     }
      return $driverInvoices->orderBy('id', 'desc');
   }
@@ -127,6 +130,8 @@ class DriverInvoiceRepository
     $driverInvoice->final = $request->final == '' ? 0 : $request->final;
     $driverInvoice->commission = $request->commission == '' ? 0 : $request->commission;
     $driverInvoice->reference = strtoupper($request->reference);
+    $driverInvoice->has_commission = $request->has_commission;
+    $driverInvoice->is_commission_added = $request->is_commission_added;
     $driverInvoice->company_id = $request->company_id;
     $driverInvoice->client_id = $request->client_id;
     $driverInvoice->client_address = strtoupper($request->client_address);
@@ -135,7 +140,6 @@ class DriverInvoiceRepository
     $driverInvoice->driver_name = strtoupper($request->driver_name);
     $driverInvoice->track_no = strtoupper($request->track_no);
     $driverInvoice->driver_phone = $request->driver_phone;
-    $driverInvoice->is_commission_added = 0;
     
     return $driverInvoice;
   }

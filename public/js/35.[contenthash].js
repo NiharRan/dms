@@ -6,13 +6,13 @@ webpackJsonp([35],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(450)
+  __webpack_require__(453)
 }
 var normalizeComponent = __webpack_require__(235)
 /* script */
-var __vue_script__ = __webpack_require__(452)
+var __vue_script__ = __webpack_require__(455)
 /* template */
-var __vue_template__ = __webpack_require__(453)
+var __vue_template__ = __webpack_require__(456)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -425,13 +425,13 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 450:
+/***/ 453:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(451);
+var content = __webpack_require__(454);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 451:
+/***/ 454:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -467,7 +467,7 @@ exports.push([module.i, "\n.mt-200 {\n  margin-top: 200px;\n}\n.mb-200 {\n  marg
 
 /***/ }),
 
-/***/ 452:
+/***/ 455:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -652,7 +652,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 453:
+/***/ 456:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -929,7 +929,7 @@ var render = function() {
                           _c("th", { staticClass: "text-center" }, [
                             _vm._v(
                               "\n                  " +
-                                _vm._s(parseFloat(row.quantity).toFixed(2)) +
+                                _vm._s(parseFloat(row.quantity).toFixed(3)) +
                                 " " +
                                 _vm._s(_vm.__("Mg")) +
                                 "\n                "
@@ -939,7 +939,7 @@ var render = function() {
                           _c("th", { staticClass: "text-right" }, [
                             _vm._v(
                               "\n                  " +
-                                _vm._s(parseFloat(row.price).toFixed(2)) +
+                                _vm._s(parseFloat(row.price).toFixed(3)) +
                                 "\n                "
                             )
                           ]),
@@ -947,7 +947,7 @@ var render = function() {
                           _c("th", { staticClass: "text-right" }, [
                             _vm._v(
                               "\n                  " +
-                                _vm._s(parseFloat(row.amount).toFixed(2)) +
+                                _vm._s(parseFloat(row.amount).toFixed(3)) +
                                 "\n                "
                             )
                           ])
@@ -974,7 +974,7 @@ var render = function() {
                           _vm._v(
                             "\n                  " +
                               _vm._s(
-                                parseFloat(_vm.sale.total_price).toFixed(2)
+                                parseFloat(_vm.sale.total_price).toFixed(3)
                               ) +
                               "\n                "
                           )
@@ -995,7 +995,7 @@ var render = function() {
                           _vm._v(
                             "\n                  " +
                               _vm._s(
-                                parseFloat(_vm.sale.total_paid).toFixed(2)
+                                parseFloat(_vm.sale.total_paid).toFixed(3)
                               ) +
                               "\n                "
                           )
@@ -1016,7 +1016,7 @@ var render = function() {
                           _vm._v(
                             "\n                  " +
                               _vm._s(
-                                parseFloat(_vm.sale.total_due).toFixed(2)
+                                parseFloat(_vm.sale.total_due).toFixed(3)
                               ) +
                               "\n                "
                           )

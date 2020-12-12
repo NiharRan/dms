@@ -142,7 +142,6 @@
                                     ? 'is-invalid'
                                     : '',
                                 ]"
-                                @input="checkProduct"
                                 :close-on-select="true"
                                 :show-labels="true"
                                 label="name"
@@ -364,7 +363,7 @@
                               <input
                                 type="text"
                                 v-model="form.description"
-                                class="form-control"
+                                class="form-control text-uppercase"
                                 :placeholder="__('Description')"
                               />
                             </div>
@@ -446,38 +445,32 @@ export default {
             this.form.commission =
               data.commission == ""
                 ? 0.0
-                : parseFloat(data.commission).toFixed(2);
+                : parseFloat(data.commission).toFixed(3);
           })
           .catch((err) => {
             console.log(err);
           });
       }
     },
-    checkStock: function (index) {
+    checkStock: async function (index) {
       const selectedRow = this.form.sale_details[index];
-      let stock = selectedRow.product.quantity;
-      let quantity = selectedRow.quantity;
-      let dif = stock - quantity;
+      let selectedProduct = selectedRow.product;
+      let stock = await this.form.sale_details.reduce((sum, saleDetail) => {
+        saleDetail.product && saleDetail.product.id == selectedProduct.id
+          ? (sum += parseFloat(saleDetail.quantity))
+          : false;
+        return sum;
+      }, 0);
+      let totalStock = selectedRow.product.quantity;
+      let dif = totalStock - stock;
       if (dif < 0) {
         this.invalid_stock = true;
         this.form.sale_details[
           index
-        ].stock_alert = `${stock} - ${quantity} = ${dif}`;
+        ].stock_alert = `${totalStock} - ${stock} = ${dif}`;
       } else {
         this.invalid_stock = false;
         this.form.sale_details[index].stock_alert = "";
-      }
-    },
-    checkProduct: function (obj) {
-      console.log(obj)
-      const result = this.form.sale_details.find(function (sale_detail) {
-        return sale_detail.product.id == obj.id;
-      });
-      if (result) {
-        this.$toast("Oops! This product is already selected!", "error");
-        this.form.sale_details[
-          this.form.sale_details.length - 1
-        ].product = null;
       }
     },
     calculateTotalWhenQuantityChange: function (index) {
@@ -487,7 +480,7 @@ export default {
       let quantity = selectedRow.quantity == "" ? "0.00" : selectedRow.quantity;
 
       let total = parseFloat(price) * parseFloat(quantity);
-      selectedRow.total = parseFloat(total).toFixed(2);
+      selectedRow.total = parseFloat(total).toFixed(3);
       this.form.sale_details[index] = selectedRow;
       this.calculateTotal();
     },
@@ -498,7 +491,7 @@ export default {
       let quantity = selectedRow.quantity == "" ? "0.00" : selectedRow.quantity;
 
       let total = parseFloat(price) * parseFloat(quantity);
-      selectedRow.total = parseFloat(total).toFixed(2);
+      selectedRow.total = parseFloat(total).toFixed(3);
       this.form.sale_details[index] = selectedRow;
 
       this.calculateTotal();
@@ -508,7 +501,7 @@ export default {
         (sum, item) => sum + parseFloat(item.total),
         0
       );
-      this.form.total_price = parseFloat(total_price).toFixed(2);
+      this.form.total_price = parseFloat(total_price).toFixed(3);
       this.calculateDue();
     },
     calculateDue: function () {
@@ -517,7 +510,7 @@ export default {
       let total_paid =
         this.form.total_paid == "" ? "0.00" : this.form.total_paid;
       let total_due = parseFloat(total_price) - parseFloat(total_paid);
-      this.form.total_due = parseFloat(total_due).toFixed(2);
+      this.form.total_due = parseFloat(total_due).toFixed(3);
     },
     cleanForm: function () {
       Object.keys(this.errors).forEach((key, value) => {

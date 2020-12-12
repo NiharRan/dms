@@ -1,18 +1,18 @@
 webpackJsonp([24],{
 
-/***/ 159:
+/***/ 165:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(320)
+  __webpack_require__(349)
 }
 var normalizeComponent = __webpack_require__(235)
 /* script */
-var __vue_script__ = __webpack_require__(322)
+var __vue_script__ = __webpack_require__(351)
 /* template */
-var __vue_template__ = __webpack_require__(323)
+var __vue_template__ = __webpack_require__(352)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/Pages/Client/Index.vue"
+Component.options.__file = "resources/js/Pages/Gender/Index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5efac6d2", Component.options)
+    hotAPI.createRecord("data-v-24d83fe6", Component.options)
   } else {
-    hotAPI.reload("data-v-5efac6d2", Component.options)
+    hotAPI.reload("data-v-24d83fe6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -2599,7 +2599,7 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2630,6 +2630,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     size: {
       type: String,
       "default": ''
+    },
+    modelId: {
+      type: String,
+      "default": 'default'
     }
   }
 });
@@ -2649,7 +2653,7 @@ var render = function() {
       staticClass: "modal fade text-left",
       staticStyle: { display: "none" },
       attrs: {
-        id: "default",
+        id: _vm.modelId,
         tabindex: "-1",
         role: "dialog",
         "aria-labelledby": "myModalLabel1",
@@ -2692,23 +2696,23 @@ if (false) {
 
 /***/ }),
 
-/***/ 320:
+/***/ 349:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(321);
+var content = __webpack_require__(350);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("93c6f502", content, false, {});
+var update = __webpack_require__(234)("8815a6b2", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5efac6d2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5efac6d2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-24d83fe6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-24d83fe6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Index.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -2719,7 +2723,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 321:
+/***/ 350:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2727,14 +2731,14 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 322:
+/***/ 351:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2743,8 +2747,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Shared_Layout__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model__ = __webpack_require__(262);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Components_Model__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Shared_Pagination__ = __webpack_require__(480);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Shared_Pagination___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Shared_Pagination__);
 //
 //
 //
@@ -2824,152 +2826,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Client",
+  name: "Index",
   components: {
     Model: __WEBPACK_IMPORTED_MODULE_1__Components_Model___default.a,
-    Layout: __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default.a,
-    Pagination: __WEBPACK_IMPORTED_MODULE_2__Shared_Pagination___default.a
+    Layout: __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default.a
   },
   props: {
     success: String,
-    clients: Object,
+    genders: Object,
     errors: Object
   },
   data: function data() {
     return {
       editMode: false,
-      modelTitle: this.__("Create New Client"),
+      modelTitle: 'Create New Gender',
       form: {
-        id: "",
-        name: "",
-        phone: "",
-        address: "",
-        status: ""
+        id: '',
+        name: '',
+        status: ''
       }
     };
   },
@@ -2978,29 +2855,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.modelTitle = "Edit ".concat(data.name, "'s Information");
       this.editMode = true;
       this.form.name = data.name;
-      this.form.phone = data.phone;
-      this.form.address = data.address;
-      this.form.balance = data.balance;
       this.form.status = data.status;
       this.form.id = data.id;
-      $("#default").modal("show");
+      $("#default").modal('show');
     },
     closeModel: function closeModel() {
-      $("#default").modal("hide");
+      $("#default").modal('hide');
     },
     cleanForm: function cleanForm() {
       var _this = this;
 
-      this.modelTitle = this.__("Create New Client");
+      this.modelTitle = 'Create New Gender';
       this.editMode = false;
-      this.form.name = "";
-      this.form.phone = "";
-      this.form.address = "";
-      this.form.balance = "";
-      this.form.id = "";
-      this.form.status = "";
+      this.form.name = '';
+      this.form.id = '';
+      this.form.status = '';
       Object.keys(this.errors).forEach(function (key, value) {
-        _this.errors[key] = "";
+        _this.errors[key] = '';
       });
     },
     storeOrUpdate: function storeOrUpdate() {
@@ -3012,32 +2883,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     store: function store() {
       var self = this;
-      this.$inertia.post(this.route("clients.store"), {
-        name: this.form.name,
-        phone: this.form.phone,
-        address: this.form.address,
-        balance: this.form.balance
+      this.$inertia.post(this.route('genders.store'), {
+        name: this.form.name
       }).then(function () {
         if (Object.keys(self.errors).length === 0) {
           self.closeModel();
           self.cleanForm();
-          self.$toast("Client Created Successfully");
+          self.$toast('Gender Created Successfully');
         }
       });
     },
     update: function update() {
       var self = this;
-      this.$inertia.post(this.route("clients.update", this.form.id), {
+      this.$inertia.post(this.route('genders.update', this.form.id), {
         name: this.form.name,
-        phone: this.form.phone,
-        address: this.form.address,
         status: this.form.status,
         _method: "put"
       }).then(function () {
         if (Object.keys(self.errors).length === 0) {
           self.closeModel();
           self.cleanForm();
-          self.$toast("Client Info Updated Successfully");
+          self.$toast('Gender Updated Successfully');
         }
       });
     }
@@ -3046,14 +2912,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 323:
+/***/ 352:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("layout", { attrs: { name: "Client" } }, [
+  return _c("layout", { attrs: { name: "Dashboard" } }, [
     _c(
       "section",
       { staticClass: "users-list-wrapper" },
@@ -3072,7 +2938,7 @@ var render = function() {
                     ])
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.clients.data.length > 0
+                _vm.genders.data.length > 0
                   ? _c("div", { staticClass: "table-responsive" }, [
                       _c(
                         "table",
@@ -3086,96 +2952,63 @@ var render = function() {
                           _c("thead", [
                             _c("tr", [
                               _c("th", { attrs: { scope: "col" } }, [
-                                _vm._v(_vm._s(_vm.__("S.N.")))
+                                _vm._v("S.N.")
                               ]),
                               _vm._v(" "),
-                              _c("th", [_vm._v(_vm._s(_vm.__("Name")))]),
+                              _c("th", [_vm._v("Name")]),
                               _vm._v(" "),
-                              _c("th", [_vm._v(_vm._s(_vm.__("Contact No.")))]),
-                              _vm._v(" "),
-                              _c("th", [_vm._v(_vm._s(_vm.__("Address")))]),
-                              _vm._v(" "),
-                              _c("th", [_vm._v(_vm._s(_vm.__("Created At")))]),
+                              _c("th", [_vm._v("Created At")]),
                               _vm._v(" "),
                               _c("th", { staticClass: "text-center" }, [
-                                _vm._v(_vm._s(_vm.__("Status")))
+                                _vm._v("Status")
                               ]),
                               _vm._v(" "),
                               _c("th", { staticClass: "text-center" }, [
-                                _vm._v(_vm._s(_vm.__("Action")))
+                                _vm._v("Actions")
                               ])
                             ])
                           ]),
                           _vm._v(" "),
                           _c(
                             "tbody",
-                            _vm._l(_vm.clients.data, function(client, index) {
-                              return _c("tr", { key: client.id }, [
+                            _vm._l(_vm.genders.data, function(gender, index) {
+                              return _c("tr", { key: gender.id }, [
                                 _c("th", [_vm._v(_vm._s(index + 1))]),
                                 _vm._v(" "),
-                                _c("th", [_vm._v(_vm._s(client.name))]),
-                                _vm._v(" "),
-                                _c("th", [_vm._v(_vm._s(client.phone))]),
-                                _vm._v(" "),
-                                _c("th", [_vm._v(_vm._s(client.address))]),
+                                _c("th", [_vm._v(_vm._s(gender.name))]),
                                 _vm._v(" "),
                                 _c("td", [
-                                  _vm._v(_vm._s(client.default_date_time))
+                                  _vm._v(_vm._s(gender.default_date_time))
                                 ]),
                                 _vm._v(" "),
                                 _c("td", {
                                   domProps: {
                                     innerHTML: _vm._s(
-                                      _vm.$options.filters.status(client.status)
+                                      _vm.$options.filters.status(gender.status)
                                     )
                                   }
                                 }),
                                 _vm._v(" "),
-                                _c(
-                                  "td",
-                                  { staticClass: "text-center" },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "text-info",
-                                        attrs: { href: "", role: "button" },
-                                        on: {
-                                          click: function($event) {
-                                            $event.preventDefault()
-                                            return _vm.setData(client)
-                                          }
+                                _c("td", { staticClass: "text-center" }, [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "text-info",
+                                      attrs: { href: "", role: "button" },
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.setData(gender)
                                         }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "feather icon-edit"
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "inertia-link",
-                                      {
-                                        staticClass: "text-primary",
-                                        attrs: {
-                                          title: _vm.__("History"),
-                                          href: _vm.route(
-                                            "client-balances.history.show",
-                                            client.id
-                                          ),
-                                          role: "button"
-                                        }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass: "feather icon-eye"
-                                        })
-                                      ]
-                                    )
-                                  ],
-                                  1
-                                )
+                                      }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass: "feather icon-edit"
+                                      })
+                                    ]
+                                  )
+                                ])
                               ])
                             }),
                             0
@@ -3183,20 +3016,7 @@ var render = function() {
                         ]
                       )
                     ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "mt-1" },
-                  [
-                    _vm.clients
-                      ? _c("pagination", {
-                          attrs: { links: _vm.clients.links }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                )
+                  : _vm._e()
               ])
             ])
           ])
@@ -3256,7 +3076,7 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "modal-body" }, [
-                  _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "form-group mb-0" }, [
                     _c("input", {
                       directives: [
                         {
@@ -3266,12 +3086,9 @@ var render = function() {
                           expression: "form.name"
                         }
                       ],
-                      staticClass: "form-control text-uppercase",
+                      staticClass: "form-control",
                       class: [_vm.errors.name ? "is-invalid" : ""],
-                      attrs: {
-                        type: "text",
-                        placeholder: _vm.__("Client Name")
-                      },
+                      attrs: { type: "text", placeholder: "Gender Name" },
                       domProps: { value: _vm.form.name },
                       on: {
                         input: function($event) {
@@ -3281,167 +3098,20 @@ var render = function() {
                           _vm.$set(_vm.form, "name", $event.target.value)
                         }
                       }
-                    }),
-                    _vm._v(" "),
-                    _vm.errors.name
-                      ? _c(
-                          "span",
-                          {
-                            staticClass: "invalid-feedback",
-                            staticStyle: { display: "block" },
-                            attrs: { role: "alert" }
-                          },
-                          [_c("strong", [_vm._v(_vm._s(_vm.errors.name[0]))])]
-                        )
-                      : _vm._e()
+                    })
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "row form-group" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "col-sm-12",
-                        class: [_vm.editMode ? "col-md-12" : "col-md-6"]
-                      },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.form.phone,
-                              expression: "form.phone"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          class: [_vm.errors.phone ? "is-invalid" : ""],
-                          attrs: {
-                            type: "text",
-                            placeholder: _vm.__("Contact No."),
-                            minlength: "11",
-                            maxlength: "11"
-                          },
-                          domProps: { value: _vm.form.phone },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(_vm.form, "phone", $event.target.value)
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _vm.errors.phone
-                          ? _c(
-                              "span",
-                              {
-                                staticClass: "invalid-feedback",
-                                staticStyle: { display: "block" },
-                                attrs: { role: "alert" }
-                              },
-                              [
-                                _c("strong", [
-                                  _vm._v(_vm._s(_vm.errors.phone[0]))
-                                ])
-                              ]
-                            )
-                          : _vm._e()
-                      ]
-                    ),
-                    _vm._v(" "),
-                    !_vm.editMode
-                      ? _c("div", { staticClass: "col-md-6 col-sm-12" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.form.balance,
-                                expression: "form.balance"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            class: [_vm.errors.balance ? "is-invalid" : ""],
-                            attrs: {
-                              type: "number",
-                              step: "2",
-                              placeholder: _vm.__("Opening Balance")
-                            },
-                            domProps: { value: _vm.form.balance },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.form,
-                                  "balance",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _vm.errors.balance
-                            ? _c(
-                                "span",
-                                {
-                                  staticClass: "invalid-feedback",
-                                  staticStyle: { display: "block" },
-                                  attrs: { role: "alert" }
-                                },
-                                [
-                                  _c("strong", [
-                                    _vm._v(_vm._s(_vm.errors.balance[0]))
-                                  ])
-                                ]
-                              )
-                            : _vm._e()
-                        ])
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group mb-0" }, [
-                    _c("textarea", {
-                      directives: [
+                  _vm.errors.name
+                    ? _c(
+                        "span",
                         {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.address,
-                          expression: "form.address"
-                        }
-                      ],
-                      staticClass: "form-control text-uppercase",
-                      class: [_vm.errors.address ? "is-invalid" : ""],
-                      attrs: { rows: "3" },
-                      domProps: { value: _vm.form.address },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "address", $event.target.value)
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.errors.address
-                      ? _c(
-                          "span",
-                          {
-                            staticClass: "invalid-feedback",
-                            staticStyle: { display: "block" },
-                            attrs: { role: "alert" }
-                          },
-                          [
-                            _c("strong", [
-                              _vm._v(_vm._s(_vm.errors.address[0]))
-                            ])
-                          ]
-                        )
-                      : _vm._e()
-                  ]),
+                          staticClass: "invalid-feedback",
+                          staticStyle: { display: "block" },
+                          attrs: { role: "alert" }
+                        },
+                        [_c("strong", [_vm._v(_vm._s(_vm.errors.name[0]))])]
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
                   _vm.editMode
                     ? _c("label", { staticClass: "float-left mt-2" }, [
@@ -3493,13 +3163,9 @@ var render = function() {
                           }
                         }),
                         _vm._v(
-                          "\n            " +
-                            _vm._s(
-                              _vm.form.status
-                                ? _vm.__("Active")
-                                : _vm.__("Inactive")
-                            ) +
-                            "\n          "
+                          "\n              " +
+                            _vm._s(_vm.form.status ? "Active" : "Inactive") +
+                            "\n            "
                         )
                       ])
                     : _vm._e()
@@ -3512,15 +3178,7 @@ var render = function() {
                       staticClass: "btn btn-success waves-effect waves-light",
                       attrs: { type: "submit" }
                     },
-                    [
-                      _vm._v(
-                        "\n            " +
-                          _vm._s(
-                            _vm.editMode ? _vm.__("Update") : _vm.__("Create")
-                          ) +
-                          "\n          "
-                      )
-                    ]
+                    [_vm._v(_vm._s(_vm.editMode ? "Update" : "Create"))]
                   ),
                   _vm._v(" "),
                   _c(
@@ -3530,13 +3188,7 @@ var render = function() {
                       attrs: { type: "button", "data-dismiss": "modal" },
                       on: { click: _vm.cleanForm }
                     },
-                    [
-                      _vm._v(
-                        "\n            " +
-                          _vm._s(_vm.__("Cancel")) +
-                          "\n          "
-                      )
-                    ]
+                    [_vm._v("Cancel")]
                   )
                 ])
               ]
@@ -3554,150 +3206,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5efac6d2", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 480:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(235)
-/* script */
-var __vue_script__ = __webpack_require__(481)
-/* template */
-var __vue_template__ = __webpack_require__(482)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/Shared/Pagination.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7ed7fa14", Component.options)
-  } else {
-    hotAPI.reload("data-v-7ed7fa14", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 481:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    links: Array
-  },
-  computed: {
-    showPagination: function showPagination() {
-      return 1;
-    }
-  },
-  methods: {
-    isActive: function isActive(link) {
-      return link.active === true ? 'active' : 'normal';
-    },
-    handleNoLink: function handleNoLink() {
-      return false;
-    }
-  }
-});
-
-/***/ }),
-
-/***/ 482:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm.showPagination
-    ? _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
-        _c(
-          "ul",
-          { staticClass: "pagination" },
-          _vm._l(_vm.links, function(link, key) {
-            return _c(
-              "li",
-              { key: key, staticClass: "page-item", class: _vm.isActive(link) },
-              [
-                link.url
-                  ? _c(
-                      "inertia-link",
-                      { staticClass: "page-link", attrs: { href: link.url } },
-                      [_vm._v(_vm._s(link.label))]
-                    )
-                  : _c(
-                      "inertia-link",
-                      {
-                        staticClass: "page-link",
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.handleNoLink($event)
-                          }
-                        }
-                      },
-                      [_vm._v(_vm._s(link.label))]
-                    )
-              ],
-              1
-            )
-          }),
-          0
-        )
-      ])
-    : _vm._e()
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7ed7fa14", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-24d83fe6", module.exports)
   }
 }
 

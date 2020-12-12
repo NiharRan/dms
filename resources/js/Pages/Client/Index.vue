@@ -56,16 +56,20 @@
                           role="button"
                           ><i class="feather icon-eye"></i
                         ></inertia-link>
+                        <a
+                          @click.prevent="openBalanceModal(client)"
+                          href=""
+                          class="text-success"
+                          role="button"
+                          ><i class="feather icon-plus-circle"></i
+                        ></a>
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <div class="mt-1">
-                <pagination
-                  v-if="clients"
-                  :links="clients.links"
-                ></pagination>
+                <pagination v-if="clients" :links="clients.links"></pagination>
               </div>
             </div>
           </div>
@@ -192,6 +196,87 @@
           </div>
         </form>
       </model>
+      <model :modelId="'balance'">
+        <template v-slot:header>
+          <h4 class="modal-title" id="myModalLabel1">Store Balance Info</h4>
+          <button
+            type="button"
+            @click="cleanForm"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+        </template>
+
+        <form @submit.prevent="storeBalanceInfo">
+          <div class="modal-body">
+            <div class="form-group row">
+              <div class="col-md-6 col-sm-12">
+                <input
+                  type="number"
+                  step="2"
+                  :placeholder="__('Balance')"
+                  class="form-control"
+                  :class="[errors.amount ? 'is-invalid' : '']"
+                  v-model="balance.amount"
+                />
+                <span
+                  v-if="errors.amount"
+                  class="invalid-feedback"
+                  style="display: block"
+                  role="alert"
+                >
+                  <strong>{{ errors.amount[0] }}</strong>
+                </span>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <date-picker
+                  class="form-control"
+                  :placeholder="__('Sale Date')"
+                  v-model="balance.created_at"
+                  :config="options"
+                >
+                </date-picker>
+              </div>
+            </div>
+
+            <div class="form-group mb-0">
+              <textarea
+                class="form-control text-uppercase"
+                :class="[errors.description ? 'is-invalid' : '']"
+                v-model="balance.description"
+                rows="3"
+              ></textarea>
+              <span
+                v-if="errors.description"
+                class="invalid-feedback"
+                style="display: block"
+                role="alert"
+              >
+                <strong>{{ errors.description[0] }}</strong>
+              </span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="submit"
+              class="btn btn-success waves-effect waves-light"
+            >
+              {{ __("Store") }}
+            </button>
+            <button
+              type="button"
+              @click="cleanForm"
+              class="btn"
+              data-dismiss="modal"
+            >
+              {{ __("Cancel") }}
+            </button>
+          </div>
+        </form>
+      </model>
       <!-- Ag Grid users list section end -->
     </section>
     <!-- product type list ends -->
@@ -221,6 +306,16 @@ export default {
         address: "",
         status: "",
       },
+      balance: {
+        id: "",
+        description: "",
+        amount: "",
+        created_at: new Date(),
+      },
+      options: {
+          format: 'DD-MM-YYYY h:mm A',
+          useCurrent: false,
+        } 
     };
   },
   methods: {
@@ -235,8 +330,13 @@ export default {
       this.form.id = data.id;
       $("#default").modal("show");
     },
+    openBalanceModal: function (data) {
+      this.balance.client_id = data.id;
+      $("#balance").modal("show");
+    },
     closeModel: function () {
       $("#default").modal("hide");
+      $("#balance").modal("hide");
     },
     cleanForm: function () {
       this.modelTitle = this.__("Create New Client");
@@ -247,9 +347,12 @@ export default {
       this.form.balance = "";
       this.form.id = "";
       this.form.status = "";
-      Object.keys(this.errors).forEach((key, value) => {
-        this.errors[key] = "";
-      });
+
+      this.balance.client_id = "";
+      this.balance.amount = "";
+      this.balance.description = "";
+      this.balance.description = "";
+      this.balance.created_at = new Date()
     },
     storeOrUpdate: function () {
       if (this.editMode) {
@@ -290,6 +393,23 @@ export default {
             self.closeModel();
             self.cleanForm();
             self.$toast("Client Info Updated Successfully");
+          }
+        });
+    },
+    storeBalanceInfo: function () {
+      let self = this;
+      this.$inertia
+        .post(this.route("client-balances.history.store"), {
+          client_id: this.balance.client_id,
+          amount: this.balance.amount,
+          description: this.balance.description,
+          created_at: this.balance.created_at,
+        })
+        .then(function () {
+          if (Object.keys(self.errors).length === 0) {
+            self.closeModel();
+            self.cleanForm();
+            self.$toast("Client Balance Updated Successfully");
           }
         });
     },

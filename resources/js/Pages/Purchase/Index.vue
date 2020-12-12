@@ -36,7 +36,7 @@
                       <th>{{ stock_detail.stock.name }}</th>
                       <th>{{ stock_detail.product.name }}</th>
                       <th class="text-center">
-                        {{ parseFloat(stock_detail.quantity).toFixed(2) }}
+                        {{ parseFloat(stock_detail.quantity).toFixed(3) }}
                       </th>
                       <td class="text-center"
                         v-html="$options.filters.status(stock_detail.status)"

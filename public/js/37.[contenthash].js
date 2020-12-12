@@ -6,13 +6,13 @@ webpackJsonp([37],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(380)
+  __webpack_require__(383)
 }
 var normalizeComponent = __webpack_require__(235)
 /* script */
-var __vue_script__ = __webpack_require__(382)
+var __vue_script__ = __webpack_require__(385)
 /* template */
-var __vue_template__ = __webpack_require__(383)
+var __vue_template__ = __webpack_require__(386)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -425,13 +425,13 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 380:
+/***/ 383:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(381);
+var content = __webpack_require__(384);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 381:
+/***/ 384:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -467,7 +467,7 @@ exports.push([module.i, "\n.mt-200 {\r\n  margin-top: 200px;\n}\n.mb-200 {\r\n  
 
 /***/ }),
 
-/***/ 382:
+/***/ 385:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -624,21 +624,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var totalPrice = data.reduce(function (total, invoice) {
         return total + parseFloat(invoice.total);
       }, 0);
-      return parseFloat(totalPrice).toFixed(2);
+      return parseFloat(totalPrice).toFixed(3);
     },
     totalBorrow: function totalBorrow(data) {
       var borrowPrice = data.reduce(function (borrow, invoice) {
         var p = invoice.borrow == "" ? 0 : invoice.borrow;
         return borrow + parseFloat(p);
       }, 0);
-      return parseFloat(borrowPrice).toFixed(2);
+      return parseFloat(borrowPrice).toFixed(3);
     },
     totalFinal: function totalFinal(data) {
       var finalPrice = data.reduce(function (_final, invoice) {
         var d = invoice["final"] == "" ? 0 : invoice["final"];
         return _final + parseFloat(d);
       }, 0);
-      return parseFloat(finalPrice).toFixed(2);
+      return parseFloat(finalPrice).toFixed(3);
     },
     printPage: function printPage() {
       window.print();
@@ -649,7 +649,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 383:
+/***/ 386:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1006,7 +1006,7 @@ var render = function() {
                               _vm._v(
                                 "\n                  " +
                                   _vm._s(
-                                    parseFloat(driver_invoice.final).toFixed(2)
+                                    parseFloat(driver_invoice.final).toFixed(3)
                                   ) +
                                   "\n                "
                               )

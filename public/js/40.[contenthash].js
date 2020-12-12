@@ -6,13 +6,13 @@ webpackJsonp([40],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(290)
+  __webpack_require__(293)
 }
 var normalizeComponent = __webpack_require__(235)
 /* script */
-var __vue_script__ = __webpack_require__(292)
+var __vue_script__ = __webpack_require__(295)
 /* template */
-var __vue_template__ = __webpack_require__(293)
+var __vue_template__ = __webpack_require__(296)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -425,13 +425,13 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 290:
+/***/ 293:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(291);
+var content = __webpack_require__(294);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 291:
+/***/ 294:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -467,7 +467,7 @@ exports.push([module.i, "\n.mt-200 {\r\n  margin-top: 200px;\n}\n.mb-200 {\r\n  
 
 /***/ }),
 
-/***/ 292:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -597,7 +597,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var p = transaction.amount == "" ? 0 : transaction.amount;
         return paid + parseFloat(p);
       }, 0);
-      return parseFloat(paidPrice).toFixed(2);
+      return parseFloat(paidPrice).toFixed(3);
     },
     printPage: function printPage() {
       window.print();
@@ -608,7 +608,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 293:
+/***/ 296:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -864,7 +864,7 @@ var render = function() {
                             _c("th", { staticClass: "text-right" }, [
                               _vm._v(
                                 _vm._s(
-                                  parseFloat(transaction.amount).toFixed(2)
+                                  parseFloat(transaction.amount).toFixed(3)
                                 )
                               )
                             ])

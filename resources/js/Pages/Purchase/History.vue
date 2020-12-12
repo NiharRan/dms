@@ -45,7 +45,7 @@
                     >
                       <th>{{ index + 1 }}</th>
                       <td>{{ history.created_at | moment('DD/MM/YYYY') }}</td>
-                      <th class="text-center">{{ parseFloat(history.quantity).toFixed(2) }} {{ __('Mg')}}</th>
+                      <th class="text-center">{{ parseFloat(history.quantity).toFixed(3) }} {{ __('Mg')}}</th>
                       <th>{{ history.ship }}</th>
                       <th>{{ history.company }}</th>
                       <td class="text-center" v-html="$options.filters.status(history.status)"></td>

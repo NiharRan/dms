@@ -116,7 +116,7 @@
                     </p>
                   </td>
                   <td class="text-right">
-                    {{ parseFloat(driver_invoice.final).toFixed(2) }}
+                    {{ parseFloat(driver_invoice.final).toFixed(3) }}
                   </td>
                 </tr>
               </tbody>
@@ -152,21 +152,21 @@ export default {
         (total, invoice) => total + parseFloat(invoice.total),
         0
       );
-      return parseFloat(totalPrice).toFixed(2);
+      return parseFloat(totalPrice).toFixed(3);
     },
     totalBorrow: function (data) {
       let borrowPrice = data.reduce((borrow, invoice) => {
         let p = invoice.borrow == "" ? 0 : invoice.borrow;
         return borrow + parseFloat(p);
       }, 0);
-      return parseFloat(borrowPrice).toFixed(2);
+      return parseFloat(borrowPrice).toFixed(3);
     },
     totalFinal: function (data) {
       let finalPrice = data.reduce((final, invoice) => {
         let d = invoice.final == "" ? 0 : invoice.final;
         return final + parseFloat(d);
       }, 0);
-      return parseFloat(finalPrice).toFixed(2);
+      return parseFloat(finalPrice).toFixed(3);
     },
     printPage: function () {
       window.print();

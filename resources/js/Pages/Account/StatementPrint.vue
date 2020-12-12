@@ -87,7 +87,7 @@
                   <th>{{ transaction.transaction_type.name }}</th>
                   <th>{{ transaction.media.name }}</th>
                   <th class="text-left">{{ transaction.description }}</th>
-                  <th class="text-right">{{ parseFloat(transaction.amount).toFixed(2) }}</th>
+                  <th class="text-right">{{ parseFloat(transaction.amount).toFixed(3) }}</th>
                 </tr>
               </tbody>
               <tfoot>
@@ -124,7 +124,7 @@ export default {
         let p = transaction.amount == "" ? 0 : transaction.amount;
         return paid + parseFloat(p);
       }, 0);
-      return parseFloat(paidPrice).toFixed(2);
+      return parseFloat(paidPrice).toFixed(3);
     },
     printPage: function () {
       window.print();

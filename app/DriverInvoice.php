@@ -17,7 +17,7 @@ class DriverInvoice extends MyModel
     'driver_phone', 'product_id', 'quantity', 'measurement_type_id',
     'container_height', 'container_length', 'container_breadth', 'track_rent',
     'others', 'total', 'borrow', 'final', 'status', 'user_id', 'load_id',
-     'commission', 'reference', 'is_commission_added',
+     'commission', 'reference', 'has_commission', 'is_commission_added',
     'client_address', 'client_phone'
   ];
 
