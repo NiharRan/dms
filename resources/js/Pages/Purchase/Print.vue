@@ -48,6 +48,9 @@
               </span>
             </p>
           </div>
+          <div class="print-header" v-if="!hasHeader">
+            <img :src="company.current_logo" :alt="company.name" />
+          </div>
           <div class="controller width-400 text-center">
             <label
               ><input type="checkbox" v-model="hasHeader" />
@@ -105,6 +108,10 @@
                 </tr>
               </tfoot>
             </table>
+          </div>
+
+          <div class="print-footer" v-if="!hasHeader">
+            <img src="/images/footer.png" :alt="company.name" />
           </div>
         </div>
       </div>

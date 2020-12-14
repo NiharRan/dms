@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Settings\ClientRequest;
 use App\Repositories\Settings\ClientRepository;
 use App\Settings\Client;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -28,7 +30,9 @@ class ClientController extends Controller
       $breadcrumbs = [
         ['link'=>"/",'name'=>"Home"],['link'=>"",'name'=>"Clients"]
       ];
-      return Inertia::render('Client/Index', [
+      $user = User::find(Auth::id());
+      $page = $user->is_admin ? 'Index' : 'List';
+      return Inertia::render("Client/$page", [
         'breadcrumbs' => $breadcrumbs,
         'clients' => $clients,
         'has_modal' => true

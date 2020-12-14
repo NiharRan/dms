@@ -54,6 +54,14 @@
               </span>
             </p>
           </div>
+
+          <div class="print-header" v-if="!hasHeader">
+            <img
+              :src="driver_invoice.company.current_logo"
+              :alt="driver_invoice.company.name"
+            />
+          </div>
+
           <div class="controller width-400 text-center">
             <label
               ><input type="checkbox" v-model="hasHeader" />
@@ -136,7 +144,7 @@
                       {{ __("Height") }}
                     </span>
                   </th>
-                  <th class="text-center">{{ __("Quantity") }}</th>
+                  <th class="text-right">{{ __("Quantity") }}</th>
                 </tr>
               </thead>
               <tbody>
@@ -162,7 +170,7 @@
                       </span>
                     </span>
                   </th>
-                  <th class="text-center">
+                  <th class="text-right">
                     {{ parseFloat(driver_invoice.quantity).toFixed(3) }}
                   </th>
                 </tr>
@@ -171,7 +179,11 @@
                   <th></th>
                   <th></th>
                   <th class="text-right">
-                    {{ parseFloat(driver_invoice.track_rent).toFixed(3) }}
+                    {{
+                      driver_invoice.track_rent
+                        ? parseFloat(driver_invoice.track_rent).toFixed(3)
+                        : "0.000"
+                    }}
                   </th>
                 </tr>
                 <tr>
@@ -179,7 +191,11 @@
                   <th></th>
                   <th></th>
                   <th class="text-right">
-                    {{ parseFloat(driver_invoice.others).toFixed(3) }}
+                    {{
+                      driver_invoice.others
+                        ? parseFloat(driver_invoice.others).toFixed(3)
+                        : "0.000"
+                    }}
                   </th>
                 </tr>
 
@@ -197,7 +213,7 @@
                     {{
                       driver_invoice.others
                         ? parseFloat(driver_invoice.borrow).toFixed(3)
-                        : "0.00"
+                        : "0.000"
                     }}
                   </th>
                 </tr>
@@ -231,6 +247,10 @@
                 {{ driver_invoice.company.name }}
               </span>
             </p>
+          </div>
+
+          <div class="print-footer" v-if="!hasHeader">
+            <img src="/images/footer.png" :alt="driver_invoice.company.name" />
           </div>
         </div>
       </div>
@@ -290,7 +310,7 @@ body {
   }
   td,
   th {
-    font-size: 14px !important;
+    font-size: 16px !important;
   }
   .bt {
     border-top: 1px solid #0b0b0b !important;

@@ -42,10 +42,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
 
-    public function getIsSubscriberAttribute()
+    public function getIsOperatorAttribute()
     {
-      $role = Role::where('name', 'Subscriber')->first();
+      $role = Role::where('name', 'Operator')->first();
       return $role->id === $this->role_id;
     }
     public function getIsAdminAttribute()
@@ -79,6 +80,8 @@ class User extends Authenticatable
     }
 
     protected $appends = [
+      'is_admin',
+      'is_operator',
       'current_status',
       'last_updated',
       'profile_url',
@@ -96,9 +99,9 @@ class User extends Authenticatable
       $role = Role::where('name', 'Admin')->first();
       return $query->where('role_id', $role->id);
     }
-    public function scopeSubscriber($query)
+    public function scopeOperator($query)
     {
-      $role = Role::where('name', 'Subscriber')->first();
+      $role = Role::where('name', 'Operator')->first();
       return $query->where('role_id', $role->id);
     }
 

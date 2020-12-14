@@ -187,8 +187,8 @@
 }
 
 .controller {
-  right: 29%;
-  bottom: 30px;
+  right: 0;
+  top: 0;
   position: fixed;
   border: 1px solid #d0d0d0;
   border-radius: 4px;
@@ -200,13 +200,39 @@
   padding: 0.9rem 1rem !important;
 }
 
+.print-header {
+  height: 2in;
+}
+
+.print-footer {
+  height: 2.2in;
+}
+
+.print-header {
+  text-align: center;
+}
+
+.print-header img {
+  height: 100%;
+}
+
+.print-footer img {
+  width: 100%;
+}
+
 @media print {
-  .page-gap {
-    margin: 2in 0in;
+  .signature {
+    bottom: 2.8in;
   }
 
-  .signature {
-    bottom: 2.5in;
+  .print-footer {
+    position: fixed;
+    bottom: 35px;
+    left: 0;
+    right: auto;
+  }
+  *{
+    font-size: 22px !important;
   }
 }
 
@@ -222,8 +248,14 @@
 }
 
 .mess {
-  border: 1px solid;
+  border: 1px solid #aaa;
   display: inline-block;
   padding: 1px 5px;
   border-radius: 4px;
+}
+.invoice-body {
+  margin-top: 40px;
+}
+.signature span {
+  font-weight: bold;
 }

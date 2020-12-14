@@ -1,20 +1,20 @@
 webpackJsonp([1],{
 
-/***/ 168:
+/***/ 169:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(365)
-  __webpack_require__(367)
-  __webpack_require__(369)
+  __webpack_require__(370)
+  __webpack_require__(372)
+  __webpack_require__(374)
 }
-var normalizeComponent = __webpack_require__(235)
+var normalizeComponent = __webpack_require__(236)
 /* script */
-var __vue_script__ = __webpack_require__(371)
+var __vue_script__ = __webpack_require__(376)
 /* template */
-var __vue_template__ = __webpack_require__(372)
+var __vue_template__ = __webpack_require__(377)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -54,7 +54,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 234:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -73,7 +73,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(236)
+var listToStyles = __webpack_require__(237)
 
 /*
 type StyleObject = {
@@ -283,7 +283,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 235:
+/***/ 236:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -393,7 +393,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 236:
+/***/ 237:
 /***/ (function(module, exports) {
 
 /**
@@ -427,19 +427,19 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 237:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(238)
+  __webpack_require__(239)
 }
-var normalizeComponent = __webpack_require__(235)
+var normalizeComponent = __webpack_require__(236)
 /* script */
-var __vue_script__ = __webpack_require__(240)
+var __vue_script__ = __webpack_require__(241)
 /* template */
-var __vue_template__ = __webpack_require__(241)
+var __vue_template__ = __webpack_require__(242)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -479,17 +479,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 238:
+/***/ 239:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(239);
+var content = __webpack_require__(240);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("03a0949b", content, false, {});
+var update = __webpack_require__(235)("03a0949b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -506,7 +506,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 239:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -521,7 +521,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 240:
+/***/ 241:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -559,7 +559,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 241:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -641,19 +641,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 242:
+/***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(243)
+  __webpack_require__(244)
 }
-var normalizeComponent = __webpack_require__(235)
+var normalizeComponent = __webpack_require__(236)
 /* script */
-var __vue_script__ = __webpack_require__(245)
+var __vue_script__ = __webpack_require__(246)
 /* template */
-var __vue_template__ = __webpack_require__(261)
+var __vue_template__ = __webpack_require__(262)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -693,17 +693,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 243:
+/***/ 244:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(244);
+var content = __webpack_require__(245);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("24565851", content, false, {});
+var update = __webpack_require__(235)("24565851", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -720,7 +720,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 244:
+/***/ 245:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -735,18 +735,18 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 245:
+/***/ 246:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar__ = __webpack_require__(247);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Sidebar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Sidebar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar__ = __webpack_require__(252);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Navbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Navbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter__ = __webpack_require__(238);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__AppFooter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__AppFooter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb__ = __webpack_require__(257);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Breadcrumb___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Breadcrumb__);
 //
 //
@@ -813,19 +813,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 246:
+/***/ 247:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(247)
+  __webpack_require__(248)
 }
-var normalizeComponent = __webpack_require__(235)
+var normalizeComponent = __webpack_require__(236)
 /* script */
-var __vue_script__ = __webpack_require__(249)
+var __vue_script__ = __webpack_require__(250)
 /* template */
-var __vue_template__ = __webpack_require__(250)
+var __vue_template__ = __webpack_require__(251)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -865,17 +865,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 247:
+/***/ 248:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(248);
+var content = __webpack_require__(249);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("880366ac", content, false, {});
+var update = __webpack_require__(235)("880366ac", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -892,7 +892,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 248:
+/***/ 249:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -900,18 +900,127 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 249:
+/***/ 250:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1106,7 +1215,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 250:
+/***/ 251:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1152,499 +1261,761 @@ var render = function() {
       _c("div", { staticClass: "shadow-bottom" }),
       _vm._v(" "),
       _c("div", { staticClass: "main-menu-content" }, [
-        _c(
-          "ul",
-          {
-            staticClass: "navigation navigation-main",
-            attrs: {
-              id: "main-menu-navigation",
-              "data-menu": "menu-navigation"
-            }
-          },
-          [
-            _c(
-              "li",
-              { staticClass: "nav-item" },
+        _vm.$page.auth.is_admin
+          ? _c(
+              "ul",
+              {
+                staticClass: "navigation navigation-main",
+                attrs: {
+                  id: "main-menu-navigation",
+                  "data-menu": "menu-navigation"
+                }
+              },
               [
-                _c("inertia-link", { attrs: { href: "/" } }, [
-                  _c("i", { staticClass: "feather icon-home" }),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c("inertia-link", { attrs: { href: "/" } }, [
+                      _c("i", { staticClass: "feather icon-home" }),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "menu-title",
+                          attrs: { "data-i18n": "" }
+                        },
+                        [_vm._v(_vm._s(_vm.__("Dashboard")))]
+                      )
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "inertia-link",
+                      { attrs: { href: _vm.route("users.index") } },
+                      [
+                        _c("i", { staticClass: "feather icon-users" }),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "menu-title",
+                            attrs: { "data-i18n": "" }
+                          },
+                          [_vm._v(_vm._s(_vm.__("Users")))]
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "inertia-link",
+                      { attrs: { href: _vm.route("companies.index") } },
+                      [
+                        _c("i", { staticClass: "feather icon-unlock" }),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "menu-title",
+                            attrs: { "data-i18n": "" }
+                          },
+                          [_vm._v(_vm._s(_vm.__("Company")))]
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "inertia-link",
+                      { attrs: { href: _vm.route("stock-details.index") } },
+                      [
+                        _c("i", { staticClass: "feather icon-unlock" }),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "menu-title",
+                            attrs: { "data-i18n": "" }
+                          },
+                          [_vm._v(_vm._s(_vm.__("Purchase Product")))]
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item has-sub" }, [
+                  _c("a", { attrs: { href: "" } }, [
+                    _c("i", { staticClass: "fa fa-money" }),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
+                      [_vm._v(_vm._s(_vm.__("Invoice")))]
+                    )
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "span",
-                    { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                    [_vm._v(_vm._s(_vm.__("Dashboard")))]
-                  )
+                  _c("ul", [
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("sales.create") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Sale")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          {
+                            attrs: {
+                              href: _vm.route("drivers.invoices.create")
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Driver")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item has-sub" }, [
+                  _c("a", { attrs: { href: "" } }, [
+                    _c("i", { staticClass: "fa fa-money" }),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
+                      [_vm._v(_vm._s(_vm.__("Report")))]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", [
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          {
+                            attrs: { href: _vm.route("drivers.invoices.index") }
+                          },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Driver Invoice Report")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("sales.index") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Sale Report")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("accounts.statements") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Account Statement")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item has-sub" }, [
+                  _c("a", { attrs: { href: "" } }, [
+                    _c("i", { staticClass: "fa fa-money" }),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
+                      [_vm._v(_vm._s(_vm.__("Depu Setup")))]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", [
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("stocks.index") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Stock")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("clients.index") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Client")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          {
+                            attrs: {
+                              href: _vm.route("measurement-types.index")
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Measurement Type")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("loads.index") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Load")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("product-types.index") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Product Type")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("products.index") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Product")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          {
+                            attrs: {
+                              href: _vm.route("transaction-types.index")
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Transaction Type")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          {
+                            attrs: {
+                              href: _vm.route("transaction-media.index")
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Transaction Media")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item has-sub" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("i", { staticClass: "fa fa-money" }),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
+                      [_vm._v(_vm._s(_vm.__("Settings")))]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", [
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("roles.index") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Role")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("genders.index") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Gender")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("religions.index") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Religion")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("blood-groups.index") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Blood Group")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
                 ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("users.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-users" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Users")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("companies.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Company")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("stock-details.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Purchase Product")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("li", { staticClass: "nav-item has-sub" }, [
-              _c("a", { attrs: { href: "" } }, [
-                _c("i", { staticClass: "fa fa-money" }),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                  [_vm._v(_vm._s(_vm.__("Invoice")))]
-                )
-              ]),
-              _vm._v(" "),
-              _c("ul", [
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "inertia-link",
-                      { attrs: { href: _vm.route("sales.create") } },
-                      [
-                        _c("i", { staticClass: "feather icon-unlock" }),
-                        _vm._v(" "),
-                        _c(
-                          "span",
-                          {
-                            staticClass: "menu-title",
-                            attrs: { "data-i18n": "" }
-                          },
-                          [_vm._v(_vm._s(_vm.__("Sale")))]
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "inertia-link",
-                      { attrs: { href: _vm.route("drivers.invoices.create") } },
-                      [
-                        _c("i", { staticClass: "feather icon-unlock" }),
-                        _vm._v(" "),
-                        _c(
-                          "span",
-                          {
-                            staticClass: "menu-title",
-                            attrs: { "data-i18n": "" }
-                          },
-                          [_vm._v(_vm._s(_vm.__("Driver")))]
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "nav-item has-sub" }, [
-              _c("a", { attrs: { href: "" } }, [
-                _c("i", { staticClass: "fa fa-money" }),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                  [_vm._v(_vm._s(_vm.__("Report")))]
-                )
-              ]),
-              _vm._v(" "),
-              _c("ul", [
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "inertia-link",
-                      { attrs: { href: _vm.route("drivers.invoices.index") } },
-                      [
-                        _c("i", { staticClass: "feather icon-unlock" }),
-                        _vm._v(" "),
-                        _c(
-                          "span",
-                          {
-                            staticClass: "menu-title",
-                            attrs: { "data-i18n": "" }
-                          },
-                          [_vm._v(_vm._s(_vm.__("Driver Invoice Report")))]
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "inertia-link",
-                      { attrs: { href: _vm.route("sales.index") } },
-                      [
-                        _c("i", { staticClass: "feather icon-unlock" }),
-                        _vm._v(" "),
-                        _c(
-                          "span",
-                          {
-                            staticClass: "menu-title",
-                            attrs: { "data-i18n": "" }
-                          },
-                          [_vm._v(_vm._s(_vm.__("Sale Report")))]
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "inertia-link",
-                      { attrs: { href: _vm.route("accounts.statements") } },
-                      [
-                        _c("i", { staticClass: "feather icon-unlock" }),
-                        _vm._v(" "),
-                        _c(
-                          "span",
-                          {
-                            staticClass: "menu-title",
-                            attrs: { "data-i18n": "" }
-                          },
-                          [_vm._v(_vm._s(_vm.__("Account Statement")))]
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("stocks.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Stock")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("clients.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Client")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("measurement-types.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Measurement Type")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("loads.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Load")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("product-types.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Product Type")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("products.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Product")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("transaction-types.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Transaction Type")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("transaction-media.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Transaction Media")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("roles.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Role")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("genders.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Gender")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("religions.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Religion")))]
-                    )
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "inertia-link",
-                  { attrs: { href: _vm.route("blood-groups.index") } },
-                  [
-                    _c("i", { staticClass: "feather icon-unlock" }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
-                      [_vm._v(_vm._s(_vm.__("Blood Group")))]
-                    )
-                  ]
-                )
-              ],
-              1
+              ]
             )
-          ]
-        )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.$page.auth.is_operator
+          ? _c(
+              "ul",
+              {
+                staticClass: "navigation navigation-main",
+                attrs: {
+                  id: "main-menu-navigation",
+                  "data-menu": "menu-navigation"
+                }
+              },
+              [
+                _c("li", { staticClass: "nav-item has-sub" }, [
+                  _c("a", { attrs: { href: "" } }, [
+                    _c("i", { staticClass: "fa fa-money" }),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
+                      [_vm._v(_vm._s(_vm.__("Invoice")))]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", [
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("sales.create") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Sale")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          {
+                            attrs: {
+                              href: _vm.route("drivers.invoices.create")
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Driver")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item has-sub" }, [
+                  _c("a", { attrs: { href: "" } }, [
+                    _c("i", { staticClass: "fa fa-money" }),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      { staticClass: "menu-title", attrs: { "data-i18n": "" } },
+                      [_vm._v(_vm._s(_vm.__("Report")))]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", [
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          {
+                            attrs: { href: _vm.route("drivers.invoices.index") }
+                          },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Driver Invoice Report")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("sales.index") } },
+                          [
+                            _c("i", { staticClass: "feather icon-unlock" }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              {
+                                staticClass: "menu-title",
+                                attrs: { "data-i18n": "" }
+                              },
+                              [_vm._v(_vm._s(_vm.__("Sale Report")))]
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "inertia-link",
+                      { attrs: { href: _vm.route("clients.index") } },
+                      [
+                        _c("i", { staticClass: "feather icon-plus" }),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "menu-title",
+                            attrs: { "data-i18n": "" }
+                          },
+                          [_vm._v(_vm._s(_vm.__("Clients")))]
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ]
+            )
+          : _vm._e()
       ])
     ]
   )
@@ -1674,14 +2045,6 @@ var staticRenderFns = [
         ]
       )
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "navigation-header" }, [
-      _c("span", [_vm._v("Settings")])
-    ])
   }
 ]
 render._withStripped = true
@@ -1695,19 +2058,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 251:
+/***/ 252:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(252)
+  __webpack_require__(253)
 }
-var normalizeComponent = __webpack_require__(235)
+var normalizeComponent = __webpack_require__(236)
 /* script */
-var __vue_script__ = __webpack_require__(254)
+var __vue_script__ = __webpack_require__(255)
 /* template */
-var __vue_template__ = __webpack_require__(255)
+var __vue_template__ = __webpack_require__(256)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1747,17 +2110,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 252:
+/***/ 253:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(253);
+var content = __webpack_require__(254);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("629be114", content, false, {});
+var update = __webpack_require__(235)("629be114", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1774,7 +2137,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 253:
+/***/ 254:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -1789,7 +2152,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 254:
+/***/ 255:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1874,7 +2237,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 255:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2177,19 +2540,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 256:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(257)
+  __webpack_require__(258)
 }
-var normalizeComponent = __webpack_require__(235)
+var normalizeComponent = __webpack_require__(236)
 /* script */
-var __vue_script__ = __webpack_require__(259)
+var __vue_script__ = __webpack_require__(260)
 /* template */
-var __vue_template__ = __webpack_require__(260)
+var __vue_template__ = __webpack_require__(261)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2229,17 +2592,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 257:
+/***/ 258:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(258);
+var content = __webpack_require__(259);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("c3dd8234", content, false, {});
+var update = __webpack_require__(235)("c3dd8234", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2256,7 +2619,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 258:
+/***/ 259:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2271,7 +2634,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 259:
+/***/ 260:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2314,7 +2677,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 260:
+/***/ 261:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2428,7 +2791,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 261:
+/***/ 262:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2514,19 +2877,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 262:
+/***/ 263:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(263)
+  __webpack_require__(264)
 }
-var normalizeComponent = __webpack_require__(235)
+var normalizeComponent = __webpack_require__(236)
 /* script */
-var __vue_script__ = __webpack_require__(265)
+var __vue_script__ = __webpack_require__(266)
 /* template */
-var __vue_template__ = __webpack_require__(266)
+var __vue_template__ = __webpack_require__(267)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2566,17 +2929,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 263:
+/***/ 264:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(264);
+var content = __webpack_require__(265);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("71b6ec7e", content, false, {});
+var update = __webpack_require__(235)("71b6ec7e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2593,7 +2956,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 264:
+/***/ 265:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2608,7 +2971,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 265:
+/***/ 266:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2642,7 +3005,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 266:
+/***/ 267:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2698,15 +3061,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 267:
+/***/ 268:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(235)
+var normalizeComponent = __webpack_require__(236)
 /* script */
-var __vue_script__ = __webpack_require__(268)
+var __vue_script__ = __webpack_require__(269)
 /* template */
-var __vue_template__ = __webpack_require__(269)
+var __vue_template__ = __webpack_require__(270)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2746,7 +3109,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 268:
+/***/ 269:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2783,7 +3146,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 269:
+/***/ 270:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2841,17 +3204,17 @@ if (false) {
 
 /***/ }),
 
-/***/ 365:
+/***/ 370:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(366);
+var content = __webpack_require__(371);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("668f7684", content, false, {});
+var update = __webpack_require__(235)("668f7684", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2868,7 +3231,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 366:
+/***/ 371:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2883,17 +3246,17 @@ exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n
 
 /***/ }),
 
-/***/ 367:
+/***/ 372:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(368);
+var content = __webpack_require__(373);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("33b64a3b", content, false, {});
+var update = __webpack_require__(235)("33b64a3b", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2910,7 +3273,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 368:
+/***/ 373:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2925,17 +3288,17 @@ exports.push([module.i, "\ntd[data-v-aab6e828],th[data-v-aab6e828]{padding:2px;b
 
 /***/ }),
 
-/***/ 369:
+/***/ 374:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(370);
+var content = __webpack_require__(375);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("56d5efb8", content, false, {});
+var update = __webpack_require__(235)("56d5efb8", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2952,7 +3315,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 370:
+/***/ 375:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -2967,16 +3330,16 @@ exports.push([module.i, "\n.btn-default {\n  border: 1px solid #ccc;\n  padding:
 
 /***/ }),
 
-/***/ 371:
+/***/ 376:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout__ = __webpack_require__(243);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Shared_Layout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Shared_Layout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model__ = __webpack_require__(263);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_Model___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Components_Model__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Shared_Pagination__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Shared_Pagination__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Shared_Pagination___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Shared_Pagination__);
 //
 //
@@ -3333,7 +3696,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 372:
+/***/ 377:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -3883,52 +4246,62 @@ var render = function() {
           [
             _vm._v(" "),
             _c("div", { staticClass: "modal-body" }, [
-              _c(
-                "div",
-                { staticClass: "form-group" },
-                [
-                  _c("label", [_vm._v(_vm._s(_vm.__("Date Range")))]),
-                  _vm._v(" "),
-                  _c("date-range-picker", {
-                    ref: "picker",
-                    attrs: {
-                      "locale-data": { firstDay: 1, format: "DD-MM-YYYY" },
-                      showDropdowns: true
-                    },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "input",
-                        fn: function(picker) {
-                          return [
-                            _vm._v(
-                              "\n              " +
-                                _vm._s(
-                                  _vm._f("moment")(
-                                    picker.startDate,
-                                    "DD-MM-YYYY"
+              _vm.$page.auth.is_admin
+                ? _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [_vm._v(_vm._s(_vm.__("Date Range")))]),
+                      _vm._v(" "),
+                      _c("date-range-picker", {
+                        ref: "picker",
+                        attrs: {
+                          "locale-data": { firstDay: 1, format: "DD-MM-YYYY" },
+                          showDropdowns: true
+                        },
+                        scopedSlots: _vm._u(
+                          [
+                            {
+                              key: "input",
+                              fn: function(picker) {
+                                return [
+                                  _vm._v(
+                                    "\n              " +
+                                      _vm._s(
+                                        _vm._f("moment")(
+                                          picker.startDate,
+                                          "DD-MM-YYYY"
+                                        )
+                                      ) +
+                                      " -\n              " +
+                                      _vm._s(
+                                        _vm._f("moment")(
+                                          picker.endDate,
+                                          "DD-MM-YYYY"
+                                        )
+                                      ) +
+                                      "\n            "
                                   )
-                                ) +
-                                " -\n              " +
-                                _vm._s(
-                                  _vm._f("moment")(picker.endDate, "DD-MM-YYYY")
-                                ) +
-                                "\n            "
-                            )
-                          ]
+                                ]
+                              }
+                            }
+                          ],
+                          null,
+                          false,
+                          248734929
+                        ),
+                        model: {
+                          value: _vm.search.dateRange,
+                          callback: function($$v) {
+                            _vm.$set(_vm.search, "dateRange", $$v)
+                          },
+                          expression: "search.dateRange"
                         }
-                      }
-                    ]),
-                    model: {
-                      value: _vm.search.dateRange,
-                      callback: function($$v) {
-                        _vm.$set(_vm.search, "dateRange", $$v)
-                      },
-                      expression: "search.dateRange"
-                    }
-                  })
-                ],
-                1
-              ),
+                      })
+                    ],
+                    1
+                  )
+                : _vm._e(),
               _vm._v(" "),
               _c("div", { staticClass: "form-group row mb-0" }, [
                 _c(

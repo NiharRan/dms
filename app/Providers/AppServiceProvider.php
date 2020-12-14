@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Helpers\Helper;
+use App\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\UrlWindow;
@@ -54,7 +55,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Inertia::share('auth', function () {
-          return Auth::user() ? Auth::user() : null;
+          return Auth::user() ? User::find(Auth::id()) : null;
         });
 
 

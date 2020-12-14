@@ -3,6 +3,7 @@
 
 namespace App\Services;
 
+use App\Company;
 use App\Settings\Stock;
 
 class StockService
@@ -18,6 +19,19 @@ class StockService
         $products = [];
         if ($stockDetails->count() > 0) {
         foreach ($stockDetails as $stockDetail) {
+            $stockDetail->product->quantity = $stockDetail->quantity;
+            $products[] = $stockDetail->product;
+        }
+        }
+        return $products;
+    }
+
+    public static function companyProducts()
+    {
+        $companyStocks = Company::active()->with(['stocks'])->first()->stocks;
+        $products = [];
+        if ($companyStocks->count() > 0) {
+        foreach ($companyStocks as $stockDetail) {
             $stockDetail->product->quantity = $stockDetail->quantity;
             $products[] = $stockDetail->product;
         }

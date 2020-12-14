@@ -7,7 +7,9 @@ use Inertia\Inertia;
 use App\Http\Requests\SaleRequest;
 use App\Http\Resources\SaleResource;
 use App\Repositories\SaleRepository;
+use App\Services\StockService;
 use App\Settings\Client;
+use App\Settings\Product;
 use App\Settings\Stock;
 use App\Settings\TransactionMedia;
 use Illuminate\Http\Response;
@@ -71,14 +73,14 @@ class SaleController extends Controller
       ['name' => __('New Sale')]
     ];
     $clients = Client::active()->get();
-    $stocks = Stock::active()->get();
+    $products = StockService::companyProducts();
     $transactionMedias = TransactionMedia::active()->get();
     $company = Company::active()->first();
     return Inertia::render('Sale/Create', [
       'breadcrumbs' => $breadcrumbs,
       'clients' => $clients,
       'transaction_medias' => $transactionMedias,
-      'stocks' => $stocks,
+      'products' => $products,
       'company' => $company,
       'has_modal' => false,
       'link' => route('sales.index')
@@ -112,14 +114,14 @@ class SaleController extends Controller
     ];
     $sale = $this->saleRepository->findById($id);
     $clients = Client::active()->get();
-    $stocks = Stock::active()->get();
+    $products = StockService::companyProducts();
     $transactionMedias = TransactionMedia::active()->get();
     $company = Company::active()->first();
     return Inertia::render('Sale/Edit', [
       'breadcrumbs' => $breadcrumbs,
       'clients' => $clients,
       'transaction_medias' => $transactionMedias,
-      'stocks' => $stocks,
+      'products' => $products,
       'company' => $company,
       'sale' => $sale,
       'has_modal' => false,

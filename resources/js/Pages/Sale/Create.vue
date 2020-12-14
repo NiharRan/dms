@@ -72,7 +72,7 @@
                       >
                         <td>
                           <div class="row">
-                            <div class="col-md-4 col-12 my-1">
+                            <div class="col-md-6 col-12 my-1">
                               <input
                                 type="text"
                                 v-model="row.track_no"
@@ -99,39 +99,7 @@
                                 }}</strong>
                               </span>
                             </div>
-                            <div class="col-md-4 col-12 my-1">
-                              <multi-select
-                                v-model="row.stock"
-                                :options="stocks"
-                                :searchable="true"
-                                :class="[
-                                  sale_details_errors[index] &&
-                                  sale_details_errors[index].stock
-                                    ? 'is-invalid'
-                                    : '',
-                                ]"
-                                :close-on-select="true"
-                                :show-labels="true"
-                                @input="fetchProducts(row.stock)"
-                                label="name"
-                                track-by="name"
-                                :placeholder="__('Select Stock')"
-                              ></multi-select>
-                              <span
-                                v-if="
-                                  sale_details_errors[index] &&
-                                  sale_details_errors[index].stock
-                                "
-                                class="invalid-feedback"
-                                style="display: block"
-                                role="alert"
-                              >
-                                <strong>{{
-                                  sale_details_errors[index].stock
-                                }}</strong>
-                              </span>
-                            </div>
-                            <div class="col-md-4 col-12 my-1">
+                            <div class="col-md-6 col-12 my-1">
                               <multi-select
                                 v-model="row.product"
                                 :options="products"
@@ -411,7 +379,7 @@ export default {
     success: String,
     clients: Array,
     transaction_medias: Array,
-    stocks: Array,
+    products: Array,
     company: Object,
     errors: Object,
   },
@@ -430,7 +398,6 @@ export default {
         reference: "",
         commission: "0.00",
       },
-      products: [],
       sale_details_errors: [],
       invalid: false,
       invalid_stock: false,
@@ -525,10 +492,6 @@ export default {
           ? this.form.transaction_media.id
           : "";
         const client_id = this.form.client ? this.form.client.id : "";
-        const stocks = await this.form.sale_details.map((item) => {
-          if (item.stock) return item.stock.id;
-          return "";
-        });
         const products = await this.form.sale_details.map((item) => {
           if (item.product) return item.product.id;
           return "";
@@ -558,7 +521,6 @@ export default {
             sale_date: this.form.sale_date,
             commission: this.form.commission,
             reference: this.form.reference,
-            stocks: stocks,
             products: products,
             tracks: tracks,
             quantities: quantities,
@@ -578,7 +540,6 @@ export default {
     },
     addNewItem: function () {
       const saleDetail = {
-        stock: null,
         product: null,
         quantity: "",
         price: "",
@@ -602,20 +563,10 @@ export default {
       this.calculateTotal();
       this.calculateDue();
     },
-    fetchProducts: function (stock) {
-      let self = this;
-      axios.get(this.route("stocks.products", stock.id)).then(({ data }) => {
-        self.products = data;
-      });
-    },
     isValid: function () {
       let errors = [];
       this.form.sale_details.forEach((row, index) => {
         let error = {};
-        if (row.stock === null) {
-          this.invalid = true;
-          error.stock = "Stock is required";
-        }
         if (row.product === null) {
           this.invalid = true;
           error.product = "Product is required";

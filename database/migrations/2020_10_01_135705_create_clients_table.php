@@ -19,7 +19,7 @@ class CreateClientsTable extends Migration
             $table->string('slug', 110)->unique();
             $table->string('phone', 11)->nullable();
             $table->text('address')->nullable();
-            $table->decimal('balance', 10, 4)->nullable()->default(0);
+            $table->decimal('balance', 20, 4)->nullable()->default(0);
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

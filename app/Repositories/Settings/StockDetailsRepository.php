@@ -3,7 +3,8 @@
 
 namespace App\Repositories\Settings;
 
-
+use App\Company;
+use App\CompanyStock;
 use App\Settings\StockDetails;
 use App\Settings\StockDetailsHistory;
 use App\Traits\RepositoryTrait;
@@ -76,6 +77,20 @@ class StockDetailsRepository
 
   public function store(Request $request)
   {
+    $company = Company::active()->first();
+    if ($companyStock = $this->alreadyStockExists($company->id, $request->product_id)) {
+      $companyStock->quantity += $request->quantity;
+      $companyStock->save();
+    } else {
+      $companyStock = new CompanyStock();
+      $company->stocks()->create([
+        'product_id' => $request->product_id,
+        'quantity' => $request->quantity,
+        'status' => 1,
+        'created_at' => date('Y-m-d H:i:s')
+      ]);
+    }
+
     if ($stockDetails = $this->alreadyExists($request->stock_id, $request->product_id)) {
       $stockDetails->quantity += $request->quantity;
       $stockDetails->save();
@@ -90,6 +105,14 @@ class StockDetailsRepository
     }
     
     return null;
+  }
+
+  public function alreadyStockExists($company_id, $product_id)
+  {
+    return CompanyStock::where([
+      'company_id' => $company_id,
+      'product_id' => $product_id
+    ])->active()->first();
   }
 
   public function alreadyExists($stock_id, $product_id)

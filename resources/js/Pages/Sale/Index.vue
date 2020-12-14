@@ -164,7 +164,7 @@
           </button>
         </template>
         <div class="modal-body">
-          <div class="form-group">
+          <div class="form-group" v-if="$page.auth.is_admin">
             <label>{{ __("Date Range") }}</label>
             <date-range-picker
               ref="picker"

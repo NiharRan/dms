@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLoadsTable extends Migration
+class CreateCompanyStocksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateLoadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('loads', function (Blueprint $table) {
+        Schema::create('company_stocks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->decimal('amount', 20, 4);
-            $table->decimal('stock_rent', 20, 4);
+            $table->unsignedBigInteger('company_id');
+            $table->foreign('company_id')->references('id')->on('companies');
+
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->decimal('quantity', 20, 4);
             $table->boolean('status')->default(1);
             $table->timestamps();
         });
@@ -29,6 +33,6 @@ class CreateLoadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loads');
+        Schema::dropIfExists('company_stocks');
     }
 }

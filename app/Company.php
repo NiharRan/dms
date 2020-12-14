@@ -8,7 +8,7 @@ class Company extends MyModel
     protected $fillable = [
       'name', 'slug', 'description', 'owner',
       'head_office', 'dipu_office', 'address',
-      'sales_center', 'email', 'logo', 'status'
+      'sales_center', 'email', 'logo', 'status',
     ];
 
     public function getProfileUrlAttribute()
@@ -50,36 +50,41 @@ class Company extends MyModel
 
     public function user()
     {
-      return $this->belongsTo('App\User');
+      return $this->belongsTo(User::class);
     }
 
     public function images()
     {
-      return $this->hasMany('App\CompanyImage');
+      return $this->hasMany(CompanyImage::class);
     }
 
     public function phones()
     {
-      return $this->hasMany('App\CompanyPhone');
+      return $this->hasMany(CompanyPhone::class);
     }
 
     public function sales()
     {
-      return $this->hasMany('App\Sale');
+      return $this->hasMany(Sale::class);
     }
     public function driver_invoices()
     {
-      return $this->hasMany('App\DriverInvoice');
+      return $this->hasMany(DriverInvoice::class);
     }
 
 
     public function logo()
     {
-      return $this->hasOne('App\CompanyImage')->logo();
+      return $this->hasOne(CompanyImage::class)->logo();
     }
 
     public function banner()
     {
-      return $this->hasOne('App\CompanyImage')->banner();
+      return $this->hasOne(CompanyImage::class)->banner();
+    }
+
+    public function stocks()
+    {
+        return $this->hasMany(CompanyStock::class, 'company_id');
     }
 }

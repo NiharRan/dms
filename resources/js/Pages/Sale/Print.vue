@@ -1,7 +1,7 @@
 <template>
-  <div class="invoice-card card" :class="[!hasHeader ? 'page-gap' : '']">
+  <div class="invoice-card card">
     <div class="card-content">
-      <div class="card-body">
+      <div class="card-body p-0">
         <div class="invoice">
           <div
             class="invoice-header text-center mb-2 position-relative"
@@ -50,6 +50,11 @@
               </span>
             </p>
           </div>
+          <div class="print-header" v-if="!hasHeader">
+            <img :src="sale.company.current_logo" :alt="sale.company.name">
+          </div>
+
+
           <div class="controller width-300">
             <label
               ><input type="checkbox" v-model="hasHeader" />
@@ -70,7 +75,7 @@
               >
               <span class="float-right"
                 >{{ __("Date") }}{{ __(":") }}
-                {{ sale.created_at | moment("DD/MM/YYYY") }}</span
+                {{ sale.sale_date | moment("DD/MM/YYYY") }}</span
               >
             </p>
             <p class="clearfix">
@@ -151,6 +156,12 @@
                 <span class="text-bold-700">{{ sale.company.name }}</span>
               </span>
             </p>
+          </div>
+
+
+
+          <div class="print-footer" v-if="!hasHeader">
+            <img src="/images/footer.png" :alt="sale.company.name">
           </div>
         </div>
       </div>

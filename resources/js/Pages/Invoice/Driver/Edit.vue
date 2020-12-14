@@ -488,7 +488,8 @@ let quantity =
           final: this.driver_invoice.final,
           commission: this.driver_invoice.commission,
           has_commission: this.driver_invoice.has_commission,
-          reference: this.driver_invoice.reference,
+          reference: this.driver_invoice.reference,          
+          is_commission_added: this.driver_invoice.is_commission_added,
         }
       );
     },

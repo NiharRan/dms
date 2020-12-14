@@ -28,14 +28,14 @@ class CreateDriverInvoicesTable extends Migration
             $table->unsignedDecimal('container_height')->nullable();
             $table->unsignedDecimal('container_length')->nullable();
             $table->unsignedDecimal('container_breadth')->nullable();
-            $table->decimal('track_rent', 10, 4);
-            $table->decimal('others', 10, 4)->nullable();
-            $table->decimal('total', 10, 4);
-            $table->decimal('borrow', 10, 4)->nullable();
-            $table->decimal('final', 10, 4)->nullable();
-            $table->decimal('commission', 10, 4)->nullable();
+            $table->decimal('track_rent', 20, 4);
+            $table->decimal('others', 20, 4)->nullable();
+            $table->decimal('total', 20, 4);
+            $table->decimal('borrow', 20, 4)->nullable();
+            $table->decimal('final', 20, 4)->nullable();
+            $table->decimal('commission', 20, 4)->nullable();
             $table->string('reference', 20);
-            $table->boolean('has_reference')->default(1);
+            $table->boolean('has_commission')->default(1);
 
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies');

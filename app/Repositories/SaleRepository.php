@@ -3,6 +3,8 @@
 
 namespace App\Repositories;
 
+use App\Company;
+use App\CompanyStock;
 use App\DriverInvoice;
 use App\Sale;
 use App\Services\InvoiceService;
@@ -10,6 +12,7 @@ use App\Services\TransactionService;
 use App\Settings\Client;
 use App\Settings\StockDetails;
 use App\Traits\RepositoryTrait;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -29,6 +32,13 @@ class SaleRepository
   public function all()
   {
     $sales = $this->sale->with(['client', 'company', 'creator', 'transaction_media']);
+    $user = User::find(Auth::id());
+    if ($user->is_operator) {
+      $start_date = date('Y-m-d') . ' 00:00:00';
+      $end_date = date('Y-m-d') . ' 23:59:59';
+      $sales = $sales->where('user_id', $user->id)
+        ->whereBetween('created_at', [$start_date, $end_date]);
+    }
 
     if (\request()->has('status') && !empty(request()->status)) {
       $sales = $sales->where('status', \request()->status);
@@ -72,16 +82,16 @@ class SaleRepository
       'creator',
       'sale_details' => function ($q) {
         $q->with([
-          'stock',
           'product'
         ]);
       }
     ])->find($rowId);
 
+    $company = Company::active()->first();
     if ($sale->sale_details->count() > 0) {
       foreach ($sale->sale_details as $key => $sale_detail) {
-        $stock_detail = StockDetails::where([
-          'stock_id' => $sale_detail->stock->id,
+        $stock_detail = CompanyStock::where([
+          'company_id' => $company->id,
           'product_id' => $sale_detail->product->id,
         ])->first();
         $sale->sale_details[$key]->product->quantity = $stock_detail->quantity;
@@ -100,7 +110,7 @@ class SaleRepository
       'transaction_media',
       'creator',
       'sale_details' => function ($q) {
-        $q->with(['stock', 'product']);
+        $q->with(['product']);
       },
     ])->where('invoice', $invoice)->first();
   }
@@ -184,8 +194,8 @@ class SaleRepository
   private function paymentFromBalance(Request $request, Sale $sale)
   {
     $total_price = $request->total_price;
-    $total_due = $request->total_due == "" ? 0 : $request->total_due;
-    $total_paid = $request->total_paid == "" ? 0 : $request->total_paid;
+    $total_due = ($request->total_due == null  || $request->total_due == "") ? 0 : $request->total_due;
+    $total_paid = ($request->total_paid == null  || $request->total_paid == "") ? 0 : $request->total_paid;
     $client = Client::find($request->client_id);
     if ($client->balance != '' && $client->balance > 0) {
       $balance_decrease = 0;
@@ -195,14 +205,16 @@ class SaleRepository
 
         $balance_decrease = $client->balance;
         $client->balance = 0;
+        $client->save();
       } else {
         $total_paid += $total_due;
         $balance_decrease = $total_due;
         $client->balance -= $total_due;
         $total_due = 0;
+        $client->save();
       }
 
-      if ($client->save()) {
+      if ($balance_decrease > 0) {
         $balance = number_format($balance_decrease, 2);
         $client->balance_histories()->create([
           'amount' => $balance_decrease,
@@ -213,11 +225,15 @@ class SaleRepository
         ]);
       }
       $sale->is_paid_from_balance = 1;
-    }
-    $sale->total_price = $total_price;
-    $sale->total_paid = $total_paid;
-    $sale->total_due = $total_due;
 
+      $sale->total_price = $total_price;
+      $sale->total_paid = $total_paid;
+      $sale->total_due = $total_due;
+    } else {
+      $sale->total_price = $request->total_price;
+      $sale->total_paid = $request->total_paid;
+      $sale->total_due = $request->total_due;
+    }
     return $sale;
   }
 
@@ -265,13 +281,12 @@ class SaleRepository
 
   private function storeSaleDetailsInfo(Sale $sale, $request)
   {
+    $company = Company::active()->first();
     foreach ($request->products as $key => $value) {
       if (!empty($value)) {
-        $stock_id = $request->stocks[$key];
         $product_id = $request->products[$key];
         $quantity = $request->quantities[$key];
         $saleDetail = [
-          'stock_id' => $stock_id,
           'product_id' => $product_id,
           'quantity' => $quantity,
           'price' => $request->prices[$key],
@@ -279,21 +294,23 @@ class SaleRepository
           'track_no' => strtoupper($request->tracks[$key]),
         ];
         $sale->sale_details()->create($saleDetail);
-        $this->reduceStock($stock_id, $product_id, $quantity);
+        $this->reduceStock($company->id, $product_id, $quantity);
       }
     }
   }
-  private function reduceStock($stock_id, $product_id, $quantity)
+
+  private function reduceStock($company_id, $product_id, $quantity)
   {
-    DB::table('stock_details')->where([
-      'stock_id' => $stock_id,
+    DB::table('company_stocks')->where([
+      'company_id' => $company_id,
       'product_id' => $product_id,
     ])->decrement('quantity', $quantity);
   }
-  private function increaseStock($stock_id, $product_id, $quantity)
+
+  private function increaseStock($company_id, $product_id, $quantity)
   {
-    DB::table('stock_details')->where([
-      'stock_id' => $stock_id,
+    DB::table('company_stocks')->where([
+      'company_id' => $company_id,
       'product_id' => $product_id,
     ])->increment('quantity', $quantity);
   }

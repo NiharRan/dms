@@ -25,6 +25,7 @@ class CreateCompaniesTable extends Migration
             $table->text('sales_center')->nullable();
             $table->string('email', 200)->nullable();
             $table->string('logo', 20)->default('default.jpg');
+            $table->decimal('stock', 20, 4)->default(0);
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

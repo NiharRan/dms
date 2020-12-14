@@ -3,78 +3,120 @@
     <!-- product type list start -->
     <section class="users-list-wrapper">
       <!-- product type section start -->
-      <div id="basic-examples">
-        <div class="card">
+      <section
+        id="wishlist"
+        class="grid-view wishlist-items"
+        v-if="clients.data.length > 0"
+      >
+        <div
+          class="card ecommerce-card"
+          v-for="(client, key) in clients.data"
+          :key="key"
+        >
           <div class="card-content">
-            <div class="card-body">
-              <div v-if="success" class="alert alert-success">
-                {{ success }}
+            <div class="card-header">
+              <div class="">
+                <p class="card-title">{{ client.name }}</p>
+                <p>
+                  <i
+                    class="h6 feather icon-file-text font-weight-bold"
+                    v-if="client.address"
+                  ></i
+                  ><span class="h6">{{ client.address }}</span>
+                  <i
+                    class="h6 feather icon-phone font-weight-bold"
+                    v-if="client.phone"
+                  ></i
+                  ><span class="h6">{{ client.phone }}</span>
+                </p>
               </div>
-
-              <div class="table-responsive" v-if="clients.data.length > 0">
-                <table
-                  id="data-table"
-                  class="table table-bordered display responsive nowrap mb-0"
-                  style="width: 100%"
-                >
+              <div>
+                <a
+                  @click.prevent="setData(client)"
+                  href=""
+                  class="btn btn-info"
+                  role="button"
+                  ><i class="feather icon-edit"></i>
+                  {{ __("Edit") }}
+                </a>
+                <inertia-link
+                  :title="__('History')"
+                  :href="route('client-balances.history.show', client.id)"
+                  class="btn btn-primary"
+                  role="button"
+                  ><i class="feather icon-eye"></i>
+                  {{ __("History") }}
+                </inertia-link>
+                <a
+                  @click.prevent="openBalanceModal(client)"
+                  href=""
+                  class="btn btn-success"
+                  role="button"
+                  ><i class="feather icon-plus-circle"></i>
+                  {{ __("Add Balance") }}
+                </a>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th scope="col">{{ __("S.N.") }}</th>
-                      <th>{{ __("Name") }}</th>
-                      <th>{{ __("Contact No.") }}</th>
-                      <th>{{ __("Address") }}</th>
-                      <th>{{ __("Created At") }}</th>
-                      <th class="text-center">{{ __("Status") }}</th>
+                      <th class="text-center">{{ __("S.N.") }}</th>
+                      <th class="text-center">{{ __("Invoice") }}</th>
+                      <th class="text-center">{{ __("Date") }}</th>
+                      <th class="text-right">{{ __("Commission") }}</th>
+                      <th class="text-right">{{ __("Total Amount") }}</th>
+                      <th class="text-right">{{ __("Paid") }}</th>
+                      <th class="text-right">{{ __("Due") }}</th>
                       <th class="text-center">{{ __("Action") }}</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr
-                      v-for="(client, index) in clients.data"
-                      :key="client.id"
-                    >
-                      <th>{{ index + 1 }}</th>
-                      <th>{{ client.name }}</th>
-                      <th>{{ client.phone }}</th>
-                      <th>{{ client.address }}</th>
-                      <td>{{ client.default_date_time }}</td>
-                      <td v-html="$options.filters.status(client.status)"></td>
-                      <td class="text-center">
+                  <tbody v-if="client.sales && client.sales.length > 0">
+                    <tr>
+                      <th colspan="6" class="text-right">{{ __("Total") }}</th>
+                      <th class="bg-warning text-right text-white">
+                        {{ totalDue(client.sales) }}
+                      </th>
+                      <td></td>
+                    </tr>
+                    <tr v-for="(sale, k) in client.sales" :key="k">
+                      <th>{{ k + 1 }}</th>
+                      <th>{{ sale.invoice }}</th>
+                      <td>
+                        {{ sale.sale_date | moment("DD-MM-YYYY hh:mm A") }}
+                      </td>
+                      <td class="text-right">
+                        {{ parseFloat(sale.commission).toFixed(3) }}
+                      </td>
+                      <td class="text-right">
+                        {{ parseFloat(sale.total_price).toFixed(3) }}
+                      </td>
+                      <td class="text-right">
+                        {{ parseFloat(sale.total_paid).toFixed(3) }}
+                      </td>
+                      <td class="text-right">
+                        {{ parseFloat(sale.total_due).toFixed(3) }}
+                      </td>
+                      <td>
                         <a
-                          @click.prevent="setData(client)"
-                          href=""
-                          class="text-info"
+                          v-if="sale.status === 0"
+                          @click.prevent="setPaymentData(sale)"
+                          class="btn btn-success text-white"
                           role="button"
-                          ><i class="feather icon-edit"></i
-                        ></a>
-                        <inertia-link
-                          :title="__('History')"
-                          :href="
-                            route('client-balances.history.show', client.id)
-                          "
-                          class="text-primary"
-                          role="button"
-                          ><i class="feather icon-eye"></i
-                        ></inertia-link>
-                        <a
-                          @click.prevent="openBalanceModal(client)"
-                          href=""
-                          class="text-success"
-                          role="button"
-                          ><i class="feather icon-plus-circle"></i
-                        ></a>
+                        >
+                          <i class="feather icon-file"></i>
+                          {{ __("Due Payment") }}
+                        </a>
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <div class="mt-1">
-                <pagination v-if="clients" :links="clients.links"></pagination>
-              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <model>
         <template v-slot:header>
           <h4 class="modal-title" id="myModalLabel1">{{ modelTitle }}</h4>
@@ -140,6 +182,7 @@
                   class="form-control"
                   :class="[errors.balance ? 'is-invalid' : '']"
                   v-model="form.balance"
+                  :readonly="$page.auth.is_operator ? true : false"
                 />
                 <span
                   v-if="errors.balance"
@@ -234,7 +277,7 @@
               <div class="col-md-6 col-sm-12">
                 <date-picker
                   class="form-control"
-                  :placeholder="__('Sale Date')"
+                  :placeholder="__('Date')"
                   v-model="balance.created_at"
                   :config="options"
                 >
@@ -277,6 +320,96 @@
           </div>
         </form>
       </model>
+      <model :modelId="'payment'">
+        <template v-slot:header>
+          <h4 class="modal-title" id="myModalLabel1">{{ modelTitle }}</h4>
+          <button
+            type="button"
+            @click="cleanPaymentForm"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+        </template>
+
+        <form @submit.prevent="payment">
+          <div class="modal-body">
+            <div class="alert alert-danger" v-if="error && error.length > 0">
+              {{ error }}
+            </div>
+            <div class="form-group">
+              <label>{{ __("Total Amount") }}</label>
+              <input
+                type="text"
+                :placeholder="__('Total Amount')"
+                class="form-control"
+                readonly
+                v-model="sale.total_price"
+              />
+            </div>
+            <div class="form-group">
+              <label>{{ __("Paid") }}</label>
+              <input
+                type="text"
+                :placeholder="__('Paid')"
+                class="form-control"
+                readonly
+                v-model="sale.total_paid"
+              />
+            </div>
+            <div class="form-group">
+              <label>{{ __("Due") }}</label>
+              <input
+                type="text"
+                :placeholder="__('Due')"
+                class="form-control"
+                readonly
+                v-model="sale.total_due"
+              />
+            </div>
+            <div class="form-group mb-0">
+              <label>{{ __("Amount") }}</label>
+              <input
+                type="text"
+                :placeholder="__('Amount')"
+                class="form-control"
+                :class="[errors.amount ? 'is-invalid' : '']"
+                v-model="sale.amount"
+              />
+              <span
+                v-if="errors.amount"
+                class="invalid-feedback"
+                style="display: block"
+                role="alert"
+              >
+                <strong>{{ errors.amount[0] }}</strong>
+              </span>
+            </div>
+            <label class="float-left mt-2">
+              <input type="checkbox" v-model="sale.payment_from_balance" />
+              {{ __("Payment From Balance") }}
+            </label>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="submit"
+              class="btn btn-success waves-effect waves-light"
+            >
+              {{ __("Update") }}
+            </button>
+            <button
+              type="button"
+              @click="cleanPaymentForm"
+              class="btn"
+              data-dismiss="modal"
+            >
+              {{ __("Cancel") }}
+            </button>
+          </div>
+        </form>
+      </model>
       <!-- Ag Grid users list section end -->
     </section>
     <!-- product type list ends -->
@@ -294,6 +427,7 @@ export default {
     success: String,
     clients: Object,
     errors: Object,
+    error: String,
   },
   data: function () {
     return {
@@ -312,13 +446,28 @@ export default {
         amount: "",
         created_at: new Date(),
       },
+      sale: {
+        total_price: "",
+        total_paid: "",
+        total_due: "",
+        invoice: "",
+        payment_from_balance: false,
+        client_id: 0,
+      },
       options: {
-          format: 'DD-MM-YYYY h:mm A',
-          useCurrent: false,
-        } 
+        format: "DD-MM-YYYY h:mm A",
+        useCurrent: false,
+      },
     };
   },
   methods: {
+    totalDue: function (data) {
+      let duePrice = data.reduce((due, sale) => {
+        let p = sale.total_due == "" ? 0 : sale.total_due;
+        return due + parseFloat(p);
+      }, 0);
+      return parseFloat(duePrice).toFixed(3);
+    },
     setData: function (data) {
       this.modelTitle = `Edit ${data.name}'s Information`;
       this.editMode = true;
@@ -337,6 +486,7 @@ export default {
     closeModel: function () {
       $("#default").modal("hide");
       $("#balance").modal("hide");
+      $("#payment").modal("hide");
     },
     cleanForm: function () {
       this.modelTitle = this.__("Create New Client");
@@ -352,7 +502,7 @@ export default {
       this.balance.amount = "";
       this.balance.description = "";
       this.balance.description = "";
-      this.balance.created_at = new Date()
+      this.balance.created_at = new Date();
     },
     storeOrUpdate: function () {
       if (this.editMode) {
@@ -412,6 +562,39 @@ export default {
             self.$toast("Client Balance Updated Successfully");
           }
         });
+    },
+    cleanPaymentForm: function () {
+      $("#payment").modal("hide");
+      this.sale.total_price = "";
+      this.sale.total_paid = "";
+      this.sale.total_due = "";
+      this.sale.amount = "";
+      this.sale.invoice = "";
+      this.sale.payment_from_balance = false;
+      this.sale.client_id = 0;
+    },
+    payment: function () {
+      let self = this;
+      this.$inertia
+        .post(this.route("sales.invoices.pay", this.sale.invoice), {
+          amount: this.sale.amount,
+          payment_from_balance: this.sale.payment_from_balance,
+          client_id: this.sale.client_id,
+        })
+        .then(function (response) {
+          if (Object.keys(self.errors).length === 0 && !this.error) {
+            self.cleanPaymentForm();
+          }
+        });
+    },
+    setPaymentData: function (data) {
+      this.modelTitle = this.__("Update Due Amount");
+      $("#payment").modal("show");
+      this.sale.total_price = data.total_price;
+      this.sale.total_paid = data.total_paid;
+      this.sale.total_due = data.total_due;
+      this.sale.invoice = data.invoice;
+      this.sale.client_id = data.client_id;
     },
   },
 };

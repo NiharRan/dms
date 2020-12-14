@@ -7,6 +7,7 @@ namespace App\Repositories;
 use App\DriverInvoice;
 use App\Services\InvoiceService;
 use App\Traits\RepositoryTrait;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,12 +27,20 @@ class DriverInvoiceRepository
   {
     $driverInvoices = $this->driverInvoice
       ->with(['client', 'product', 'measurement_type']);
-
-    if (\request()->has('start_date') && !empty(request()->start_date)) {
-      $start_date = \request()->start_date . ' 00:00:00';
-      $end_date = \request()->end_date . ' 23:59:59';
-      $driverInvoices = $driverInvoices->whereBetween('created_at', [$start_date, $end_date]);
+      $user = User::find(Auth::id());
+    if ($user->is_operator) {
+      $start_date = date('Y-m-d') . ' 00:00:00';
+        $end_date = date('Y-m-d') . ' 23:59:59';
+        $driverInvoices = $driverInvoices->where('user_id', $user->id)
+        ->whereBetween('created_at', [$start_date, $end_date]);
+    } else {
+      if (\request()->has('start_date') && !empty(request()->start_date)) {
+        $start_date = \request()->start_date . ' 00:00:00';
+        $end_date = \request()->end_date . ' 23:59:59';
+        $driverInvoices = $driverInvoices->whereBetween('created_at', [$start_date, $end_date]);
+      }
     }
+    
 
     if (\request()->has('invoice') && !empty(request()->invoice)) {
       $driverInvoices = $driverInvoices->where('invoice', \request()->invoice);
@@ -130,7 +139,7 @@ class DriverInvoiceRepository
     $driverInvoice->final = $request->final == '' ? 0 : $request->final;
     $driverInvoice->commission = $request->commission == '' ? 0 : $request->commission;
     $driverInvoice->reference = strtoupper($request->reference);
-    $driverInvoice->has_commission = $request->has_commission;
+    $driverInvoice->has_commission = filter_var($request->has_commission, FILTER_VALIDATE_BOOLEAN);
     $driverInvoice->is_commission_added = $request->is_commission_added;
     $driverInvoice->company_id = $request->company_id;
     $driverInvoice->client_id = $request->client_id;

@@ -18,7 +18,7 @@ class CreateTransactionsTable extends Migration
             $table->unsignedBigInteger('transaction_type_id');
             $table->foreign('transaction_type_id')->references('id')->on('transaction_types');
 
-            $table->decimal('amount', 10, 4);
+            $table->decimal('amount', 20, 4);
             $table->unsignedBigInteger('transactionable_id');
             $table->string('transactionable_type');
             

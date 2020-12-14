@@ -1,18 +1,18 @@
 webpackJsonp([38],{
 
-/***/ 170:
+/***/ 172:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(379)
+  __webpack_require__(388)
 }
-var normalizeComponent = __webpack_require__(235)
+var normalizeComponent = __webpack_require__(236)
 /* script */
-var __vue_script__ = __webpack_require__(381)
+var __vue_script__ = __webpack_require__(390)
 /* template */
-var __vue_template__ = __webpack_require__(382)
+var __vue_template__ = __webpack_require__(391)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/Pages/Invoice/Driver/Print.vue"
+Component.options.__file = "resources/js/Pages/Invoice/Driver/PrintList.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-37e9d25e", Component.options)
+    hotAPI.createRecord("data-v-bb782fe2", Component.options)
   } else {
-    hotAPI.reload("data-v-37e9d25e", Component.options)
+    hotAPI.reload("data-v-bb782fe2", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 234:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -71,7 +71,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(236)
+var listToStyles = __webpack_require__(237)
 
 /*
 type StyleObject = {
@@ -281,7 +281,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 235:
+/***/ 236:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -391,7 +391,7 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 236:
+/***/ 237:
 /***/ (function(module, exports) {
 
 /**
@@ -425,23 +425,23 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 379:
+/***/ 388:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(380);
+var content = __webpack_require__(389);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(234)("7753108a", content, false, {});
+var update = __webpack_require__(235)("33e152dc", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-37e9d25e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Print.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-37e9d25e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Print.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-bb782fe2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PrintList.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-bb782fe2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PrintList.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -452,7 +452,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 380:
+/***/ 389:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(148)(false);
@@ -460,14 +460,14 @@ exports = module.exports = __webpack_require__(148)(false);
 
 
 // module
-exports.push([module.i, "\n.mt-200 {\n  margin-top: 200px;\n}\n.mb-200 {\n  margin-top: 200px;\n}\nbody {\n  -webkit-print-color-adjust: exact !important;\n}\n* {\n  font-family: \"SolaimanLipi\", sans-serif;\n  font-size: 20px !important;\n}\n.owner {\n  background-color: #000 !important;\n  color: #fff;\n  font-weight: bold;\n  padding: 5px 10px;\n  border-radius: 16px;\n  font-size: 18px;\n}\n@media print {\n.table th,\n  .table td {\n    padding: 0.5rem !important;\n}\n.table-bordered {\n    border: 1px solid #333 !important;\n}\ntd,\n  th {\n    font-size: 14px !important;\n}\n.bt {\n    border-top: 1px solid #0b0b0b !important;\n}\n.controller {\n    display: none;\n}\n}\n", ""]);
+exports.push([module.i, "\n.mt-200 {\r\n  margin-top: 200px;\n}\n.mb-200 {\r\n  margin-top: 200px;\n}\nbody {\r\n  -webkit-print-color-adjust: exact !important;\n}\n* {\r\n  font-family: \"SolaimanLipi\", sans-serif;\r\n  font-size: 20px !important;\n}\n.owner {\r\n  background-color: #000;\r\n  color: #fff;\r\n  font-weight: bold;\r\n  padding: 5px 10px;\r\n  border-radius: 16px;\r\n  font-size: 18px;\n}\n@media print {\n.table th,\r\n  .table td {\r\n    padding: 0.5rem !important;\n}\n.table-bordered {\r\n    border: 1px solid #333 !important;\n}\ntd,\r\n  th {\r\n    font-size: 14px !important;\n}\n.bt {\r\n    border-top: 1px solid #0b0b0b !important;\n}\n.controller {\r\n    display: none;\n}\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 381:
+/***/ 390:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -617,105 +617,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Print",
+  name: "PrintList",
   props: {
-    driver_invoice: Object
+    driver_invoices: Array,
+    company: Object
   },
   data: function data() {
     return {
@@ -723,6 +629,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
   methods: {
+    total: function total(data) {
+      var totalPrice = data.reduce(function (total, invoice) {
+        return total + parseFloat(invoice.total);
+      }, 0);
+      return parseFloat(totalPrice).toFixed(3);
+    },
+    totalBorrow: function totalBorrow(data) {
+      var borrowPrice = data.reduce(function (borrow, invoice) {
+        var p = invoice.borrow == "" ? 0 : invoice.borrow;
+        return borrow + parseFloat(p);
+      }, 0);
+      return parseFloat(borrowPrice).toFixed(3);
+    },
+    totalFinal: function totalFinal(data) {
+      var finalPrice = data.reduce(function (_final, invoice) {
+        var d = invoice["final"] == "" ? 0 : invoice["final"];
+        return _final + parseFloat(d);
+      }, 0);
+      return parseFloat(finalPrice).toFixed(3);
+    },
     printPage: function printPage() {
       window.print();
     }
@@ -732,7 +658,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 382:
+/***/ 391:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -764,8 +690,8 @@ var render = function() {
                         _c("img", {
                           staticClass: "width-95-per",
                           attrs: {
-                            src: _vm.driver_invoice.company.current_logo,
-                            alt: _vm.driver_invoice.company.name
+                            src: _vm.company.current_logo,
+                            alt: _vm.company.name
                           }
                         })
                       ]
@@ -780,22 +706,20 @@ var render = function() {
                       [
                         _vm._v(
                           "\n            " +
-                            _vm._s(_vm.driver_invoice.company.name) +
+                            _vm._s(_vm.company.name) +
                             "\n          "
                         )
                       ]
                     ),
                     _vm._v(" "),
-                    _c("h5", [
-                      _vm._v(_vm._s(_vm.driver_invoice.company.description))
-                    ]),
+                    _c("h5", [_vm._v(_vm._s(_vm.company.description))]),
                     _vm._v(" "),
                     _c("p", { staticClass: "my-1" }, [
                       _c("span", { staticClass: "owner" }, [
                         _vm._v(
                           _vm._s(_vm.__("Pro:-")) +
                             " " +
-                            _vm._s(_vm.driver_invoice.company.owner)
+                            _vm._s(_vm.company.owner)
                         )
                       ])
                     ]),
@@ -804,40 +728,28 @@ var render = function() {
                       _c("span", { staticClass: "text-bold-700" }, [
                         _vm._v(_vm._s(_vm.__("Head Office")) + ": ")
                       ]),
-                      _vm._v(
-                        _vm._s(_vm.driver_invoice.company.head_office) +
-                          "\n          "
-                      )
+                      _vm._v(_vm._s(_vm.company.head_office) + "\n          ")
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "mb-0" }, [
                       _c("span", { staticClass: "text-bold-700" }, [
                         _vm._v(_vm._s(_vm.__("Dipu Office")) + ": ")
                       ]),
-                      _vm._v(
-                        _vm._s(_vm.driver_invoice.company.dipu_office) +
-                          "\n          "
-                      )
+                      _vm._v(_vm._s(_vm.company.dipu_office) + "\n          ")
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "mb-0" }, [
                       _c("span", { staticClass: "text-bold-700" }, [
                         _vm._v(_vm._s(_vm.__("Address")) + ": ")
                       ]),
-                      _vm._v(
-                        _vm._s(_vm.driver_invoice.company.address) +
-                          "\n          "
-                      )
+                      _vm._v(_vm._s(_vm.company.address) + "\n          ")
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "mb-0" }, [
                       _c("span", { staticClass: "text-bold-700" }, [
                         _vm._v(_vm._s(_vm.__("Sales Center")) + ": ")
                       ]),
-                      _vm._v(
-                        _vm._s(_vm.driver_invoice.company.sales_center) +
-                          "\n          "
-                      )
+                      _vm._v(_vm._s(_vm.company.sales_center) + "\n          ")
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "mb-0" }, [
@@ -848,11 +760,9 @@ var render = function() {
                         _vm._v(
                           "\n              " +
                             _vm._s(
-                              _vm.driver_invoice.company.active_phones
-                                ? _vm.translate(
-                                    _vm.driver_invoice.company.active_phones.toString()
-                                  )
-                                : ""
+                              _vm.translate(
+                                _vm.company.active_phones.toString()
+                              )
                             ) +
                             "\n            "
                         )
@@ -864,7 +774,7 @@ var render = function() {
                         ]),
                         _vm._v(
                           "\n              " +
-                            _vm._s(_vm.driver_invoice.company.email) +
+                            _vm._s(_vm.company.email) +
                             "\n            "
                         )
                       ])
@@ -873,382 +783,270 @@ var render = function() {
                 )
               : _vm._e(),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "controller width-400 text-center" },
-              [
-                _c("label", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.hasHeader,
-                        expression: "hasHeader"
-                      }
-                    ],
-                    attrs: { type: "checkbox" },
-                    domProps: {
-                      checked: Array.isArray(_vm.hasHeader)
-                        ? _vm._i(_vm.hasHeader, null) > -1
-                        : _vm.hasHeader
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = _vm.hasHeader,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = null,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 && (_vm.hasHeader = $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              (_vm.hasHeader = $$a
-                                .slice(0, $$i)
-                                .concat($$a.slice($$i + 1)))
-                          }
+            !_vm.hasHeader
+              ? _c("div", { staticClass: "print-header" }, [
+                  _c("img", {
+                    attrs: {
+                      src: _vm.company.current_logo,
+                      alt: _vm.company.name
+                    }
+                  })
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("div", { staticClass: "controller width-300" }, [
+              _c("label", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.hasHeader,
+                      expression: "hasHeader"
+                    }
+                  ],
+                  attrs: { type: "checkbox" },
+                  domProps: {
+                    checked: Array.isArray(_vm.hasHeader)
+                      ? _vm._i(_vm.hasHeader, null) > -1
+                      : _vm.hasHeader
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.hasHeader,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = null,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && (_vm.hasHeader = $$a.concat([$$v]))
                         } else {
-                          _vm.hasHeader = $$c
+                          $$i > -1 &&
+                            (_vm.hasHeader = $$a
+                              .slice(0, $$i)
+                              .concat($$a.slice($$i + 1)))
                         }
+                      } else {
+                        _vm.hasHeader = $$c
                       }
                     }
-                  }),
-                  _vm._v(
-                    "\n            " +
-                      _vm._s(_vm.__("Attach company information"))
-                  )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "inertia-link",
-                  {
-                    staticClass: "btn btn-primary btn-sm float-left",
-                    attrs: { href: _vm.route("drivers.invoices.index") }
-                  },
-                  [
-                    _vm._v(
-                      "\n            " + _vm._s(_vm.__("Back")) + "\n          "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-warning btn-sm float-right",
-                    attrs: { type: "button" },
-                    on: { click: _vm.printPage }
-                  },
-                  [
-                    _vm._v(
-                      "\n            " +
-                        _vm._s(_vm.__("Print")) +
-                        "\n          "
-                    )
-                  ]
+                  }
+                }),
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.__("Attach company information"))
                 )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "invoice-body" }, [
-              _c("p", { staticClass: "clearfix" }, [
-                _c("span", { staticClass: "float-left" }, [
-                  _vm._v(
-                    _vm._s(_vm.__("Serial No.")) +
-                      "-" +
-                      _vm._s(_vm.driver_invoice.invoice)
-                  )
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "float-right" }, [
-                  _vm._v(
-                    _vm._s(_vm.__("Date")) +
-                      _vm._s(_vm.__(":")) +
-                      "\n              " +
-                      _vm._s(
-                        _vm._f("moment")(
-                          _vm.driver_invoice.created_at,
-                          "DD/MM/YYYY"
-                        )
-                      )
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("table", { staticClass: "table invoice-header-table" }, [
-                _c("tr", [
-                  _c("td", [
-                    _c("span", [
-                      _vm._v(
-                        _vm._s(_vm.__("Client Name")) +
-                          _vm._s(_vm.__(":")) +
-                          "\n                  " +
-                          _vm._s(_vm.driver_invoice.client.name)
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c("span", [
-                      _vm._v(
-                        _vm._s(_vm.__("Driver Name")) +
-                          _vm._s(_vm.__(":")) +
-                          "\n                  " +
-                          _vm._s(_vm.driver_invoice.driver_name)
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c("span", { staticStyle: { "margin-right": "100px" } }, [
-                      _vm._v(
-                        _vm._s(_vm.__("Reference")) +
-                          _vm._s(_vm.__(":")) +
-                          "\n                "
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("tr", [
-                  _c("td", [
-                    _c("span", [
-                      _vm._v(
-                        _vm._s(_vm.__("Address")) +
-                          _vm._s(_vm.__(":")) +
-                          "\n                  " +
-                          _vm._s(_vm.driver_invoice.client.address)
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c("span", [
-                      _vm._v(
-                        _vm._s(_vm.__("Track No.")) +
-                          "-" +
-                          _vm._s(_vm.driver_invoice.track_no)
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c("span", [
-                      _vm._v(
-                        _vm._s(_vm.__("Dri: Mobile:")) +
-                          "\n                  " +
-                          _vm._s(_vm.driver_invoice.driver_phone)
-                      )
-                    ])
-                  ])
-                ])
               ]),
               _vm._v(" "),
               _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary btn-sm float-right",
+                  attrs: { type: "button" },
+                  on: { click: _vm.printPage }
+                },
+                [
+                  _vm._v(
+                    "\n            " + _vm._s(_vm.__("Print")) + "\n          "
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "invoice-body" }, [
+              _c(
                 "table",
-                { staticClass: "table table-bordered font-medium-3 mt-2" },
+                { staticClass: "table table-bordered font-medium-3" },
                 [
                   _c("thead", [
                     _c("tr", [
-                      _c("th", [
-                        _vm._v(_vm._s(_vm.__("Description of Products")))
+                      _c("th", { attrs: { scope: "col" } }, [
+                        _vm._v(_vm._s(_vm.__("S.N.")))
                       ]),
                       _vm._v(" "),
-                      _c("th", { staticClass: "text-center" }, [
-                        _vm._v(_vm._s(_vm.__("Measurement Type")))
+                      _c("th", [_vm._v(_vm._s(_vm.__("Date")))]),
+                      _vm._v(" "),
+                      _c("th", { staticStyle: { width: "10%" } }, [
+                        _vm._v(_vm._s(_vm.__("Client")))
                       ]),
                       _vm._v(" "),
-                      _c("th", { staticClass: "text-center" }, [
-                        _vm.driver_invoice.measurement_type.id == 1
-                          ? _c("span", [
-                              _vm._v(
-                                "\n                    " +
-                                  _vm._s(_vm.__("Length")) +
-                                  " * " +
-                                  _vm._s(_vm.__("Breadth")) +
-                                  " *\n                    " +
-                                  _vm._s(_vm.__("Height")) +
-                                  "\n                  "
-                              )
-                            ])
-                          : _vm._e()
-                      ]),
+                      _c("th", [_vm._v(_vm._s(_vm.__("Driver")))]),
                       _vm._v(" "),
                       _c("th", { staticClass: "text-center" }, [
-                        _vm._v(_vm._s(_vm.__("Quantity")))
+                        _vm._v(_vm._s(_vm.__("Invoice")))
+                      ]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(_vm.__("Product")))]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v(_vm._s(_vm.__("Measurement Type")))]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "text-right" }, [
+                        _vm._v(_vm._s(_vm.__("Track Rental")))
                       ])
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("th", [
-                        _vm._v(_vm._s(_vm.driver_invoice.product.name))
-                      ]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-center" }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(_vm.driver_invoice.measurement_type.name) +
-                            "\n                "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-center" }, [
-                        _vm.driver_invoice.container_length
-                          ? _c("span", [
-                              _c("span", { staticClass: "mess" }, [
-                                _vm._v(
-                                  _vm._s(_vm.driver_invoice.container_length) +
-                                    " In\n                    "
-                                )
-                              ]),
+                  _vm.driver_invoices.length > 0
+                    ? _c(
+                        "tbody",
+                        _vm._l(_vm.driver_invoices, function(
+                          driver_invoice,
+                          index
+                        ) {
+                          return _c("tr", { key: index }, [
+                            _c("th", [_vm._v(_vm._s(index + 1))]),
+                            _vm._v(" "),
+                            _c("td", [
                               _vm._v(
-                                "\n                    *\n                    "
-                              ),
-                              _c("span", { staticClass: "mess" }, [
-                                _vm._v(
-                                  _vm._s(_vm.driver_invoice.container_breadth) +
-                                    " In\n                    "
-                                )
-                              ]),
-                              _vm._v(
-                                "\n                    *\n                    "
-                              ),
-                              _vm.driver_invoice.container_height
-                                ? _c("span", [
-                                    _c("span", { staticClass: "mess" }, [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.driver_invoice.container_height
-                                        ) + " In\n                      "
-                                      )
-                                    ])
-                                  ])
-                                : _vm._e()
-                            ])
-                          : _vm._e()
-                      ]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-center" }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(
-                              parseFloat(_vm.driver_invoice.quantity).toFixed(3)
-                            ) +
-                            "\n                "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("th", [_vm._v(_vm._s(_vm.__("Track Rent")))]),
-                      _vm._v(" "),
-                      _c("th"),
-                      _vm._v(" "),
-                      _c("th"),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(
-                              parseFloat(_vm.driver_invoice.track_rent).toFixed(
-                                3
+                                "\n                  " +
+                                  _vm._s(
+                                    _vm._f("moment")(
+                                      driver_invoice.created_at,
+                                      "DD/MM/YYYY"
+                                    )
+                                  ) +
+                                  "\n                "
                               )
-                            ) +
-                            "\n                "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("th", [_vm._v(_vm._s(_vm.__("Others")))]),
-                      _vm._v(" "),
-                      _c("th"),
-                      _vm._v(" "),
-                      _c("th"),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(
-                              parseFloat(_vm.driver_invoice.others).toFixed(3)
-                            ) +
-                            "\n                "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c(
-                        "th",
-                        { staticClass: "text-right", attrs: { colspan: "3" } },
-                        [
-                          _vm._v(
-                            "\n                  " +
-                              _vm._s(_vm.__("Total Amount")) +
-                              "\n                "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(
-                              parseFloat(_vm.driver_invoice.total).toFixed(3)
-                            ) +
-                            "\n                "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c(
-                        "th",
-                        { staticClass: "text-right", attrs: { colspan: "3" } },
-                        [_vm._v(_vm._s(_vm.__("Borrow")))]
-                      ),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(
-                              _vm.driver_invoice.others
-                                ? parseFloat(_vm.driver_invoice.borrow).toFixed(
-                                    3
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _vm._v(
+                                "\n                  " +
+                                  _vm._s(driver_invoice.client.name) +
+                                  "\n                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _vm._v(
+                                "\n                  " +
+                                  _vm._s(driver_invoice.driver_name) +
+                                  "\n                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                  " +
+                                  _vm._s(driver_invoice.invoice) +
+                                  "\n                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("th", { staticClass: "text-center" }, [
+                              _vm._v(
+                                "\n                  " +
+                                  _vm._s(driver_invoice.product.name) +
+                                  "\n                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c("p", { staticClass: "mb-0" }, [
+                                _c(
+                                  "strong",
+                                  {
+                                    staticStyle: {
+                                      "font-size": "13px !important"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      _vm._s(
+                                        driver_invoice.measurement_type.name
+                                      )
+                                    )
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "mb-0",
+                                  staticStyle: {
+                                    "font-size": "13px !important"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                    " +
+                                      _vm._s(_vm.__("Height")) +
+                                      _vm._s(_vm.__(":")) +
+                                      "\n                    " +
+                                      _vm._s(driver_invoice.container_height) +
+                                      "\n                  "
                                   )
-                                : "0.00"
-                            ) +
-                            "\n                "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "mb-0",
+                                  staticStyle: {
+                                    "font-size": "13px !important"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                    " +
+                                      _vm._s(_vm.__("Length")) +
+                                      _vm._s(_vm.__(":")) +
+                                      "\n                    " +
+                                      _vm._s(driver_invoice.container_length) +
+                                      "\n                  "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                {
+                                  staticClass: "mb-0",
+                                  staticStyle: {
+                                    "font-size": "13px !important"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                    " +
+                                      _vm._s(_vm.__("Breadth")) +
+                                      _vm._s(_vm.__(":")) +
+                                      "\n                    " +
+                                      _vm._s(driver_invoice.container_breadth) +
+                                      "\n                  "
+                                  )
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("td", { staticClass: "text-right" }, [
+                              _vm._v(
+                                "\n                  " +
+                                  _vm._s(
+                                    parseFloat(driver_invoice.final).toFixed(3)
+                                  ) +
+                                  "\n                "
+                              )
+                            ])
+                          ])
+                        }),
+                        0
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("tfoot", { staticClass: "bt" }, [
                     _c("tr", [
                       _c(
-                        "th",
-                        { staticClass: "text-right", attrs: { colspan: "3" } },
-                        [
-                          _vm._v(
-                            "\n                  " +
-                              _vm._s(_vm.__("Final Amount")) +
-                              "\n                "
-                          )
-                        ]
+                        "td",
+                        { staticClass: "text-right", attrs: { colspan: "7" } },
+                        [_vm._v(_vm._s(_vm.__("Total")))]
                       ),
                       _vm._v(" "),
                       _c("th", { staticClass: "text-right" }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(
-                              parseFloat(_vm.driver_invoice.final).toFixed(3)
-                            ) +
-                            "\n                "
-                        )
+                        _vm._v(_vm._s(_vm.totalFinal(_vm.driver_invoices)))
                       ])
                     ])
                   ])
@@ -1256,48 +1054,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "invoice-footer" }, [
-              _c("p", [
-                _c("span", [
-                  _vm._v(_vm._s(_vm.__("In Words")) + _vm._s(_vm.__(":")))
-                ]),
-                _vm._v(
-                  "\n            " +
-                    _vm._s(_vm.driver_invoice.word) +
-                    "\n          "
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "mb-0 signature" }, [
-                _c("span", { staticClass: "border-top-dashed float-left" }, [
-                  _c("span", { staticClass: "text-bold-700" }, [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(_vm.__("Signature of Driver")) +
-                        _vm._s(_vm.__(":")) +
-                        "\n                " +
-                        _vm._s(_vm.driver_invoice.driver_name) +
-                        "\n              "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "border-top-dashed float-right" }, [
-                  _c("span", { staticClass: "text-bold-700" }, [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(_vm.__("In Favor of")) +
-                        _vm._s(_vm.__(":"))
-                    )
-                  ]),
-                  _vm._v(
-                    "\n              " +
-                      _vm._s(_vm.driver_invoice.company.name) +
-                      "\n            "
-                  )
+            !_vm.hasHeader
+              ? _c("div", { staticClass: "print-footer" }, [
+                  _c("img", {
+                    attrs: { src: "/images/footer.png", alt: _vm.company.name }
+                  })
                 ])
-              ])
-            ])
+              : _vm._e()
           ])
         ])
       ])
@@ -1310,7 +1073,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-37e9d25e", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-bb782fe2", module.exports)
   }
 }
 

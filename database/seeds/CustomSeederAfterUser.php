@@ -63,7 +63,6 @@ class CustomSeederAfterUser extends Seeder
       'slug' => make_slug('Demo Client'),
       'phone' => '01726535344',
       'address' => 'Sylhet',
-      'balance' => 50000,
       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
       'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
     ]);

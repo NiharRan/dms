@@ -21,7 +21,7 @@ class CreateStockDetailsHistoriesTable extends Migration
 
             $table->string('ship', 45)->nullable();
             $table->string('company', 45)->nullable();
-            $table->unsignedDecimal('quantity', 10, 4);
+            $table->unsignedDecimal('quantity', 20, 4);
             
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

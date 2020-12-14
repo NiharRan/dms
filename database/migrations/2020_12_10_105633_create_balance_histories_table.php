@@ -18,7 +18,7 @@ class CreateBalanceHistoriesTable extends Migration
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients');
 
-            $table->decimal('amount', 10, 4);
+            $table->decimal('amount', 20, 4);
             $table->text('description')->nullable();
             $table->string('type', 5);
             $table->boolean('status')->default(1);

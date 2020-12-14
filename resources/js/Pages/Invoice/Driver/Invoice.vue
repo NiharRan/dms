@@ -154,18 +154,18 @@
                         <th class="text-center">
                           <span v-if="driver_invoice.container_length">
                             <span class="mess"
-                            >{{ driver_invoice.container_length }} In
-                          </span>
-                          *
-                          <span class="mess"
-                            >{{ driver_invoice.container_breadth }} In
-                          </span>
-                          *
-                          <span v-if="driver_invoice.container_height">
-                            <span class="mess"
-                              >{{ driver_invoice.container_height }} In
+                              >{{ driver_invoice.container_length }} In
                             </span>
-                          </span>
+                            *
+                            <span class="mess"
+                              >{{ driver_invoice.container_breadth }} In
+                            </span>
+                            *
+                            <span v-if="driver_invoice.container_height">
+                              <span class="mess"
+                                >{{ driver_invoice.container_height }} In
+                              </span>
+                            </span>
                           </span>
                         </th>
                         <th class="text-center">
@@ -177,7 +177,11 @@
                         <th></th>
                         <th></th>
                         <th class="text-right">
-                          {{ parseFloat(driver_invoice.track_rent).toFixed(3) }}
+                          {{
+                            driver_invoice.track_rent
+                              ? parseFloat(driver_invoice.track_rent).toFixed(3)
+                              : "0.000"
+                          }}
                         </th>
                       </tr>
                       <tr>
@@ -188,7 +192,7 @@
                           {{
                             driver_invoice.others
                               ? parseFloat(driver_invoice.others).toFixed(3)
-                              : "0.00"
+                              : "0.000"
                           }}
                         </th>
                       </tr>
