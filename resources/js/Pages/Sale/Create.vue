@@ -511,15 +511,15 @@ export default {
         });
         this.$inertia
           .post(this.route("sales.store"), {
-            total_price: this.form.total_price,
-            total_due: this.form.total_due,
-            total_paid: this.form.total_paid,
+            total_price: this.form.total_price ? this.form.total_price : "0",
+            total_due: this.form.total_due ? this.form.total_due : "0",
+            total_paid: this.form.total_paid ? this.form.total_paid : "0",
             description: this.form.description,
             client_id: client_id,
             transaction_media_id: transaction_media_id,
             company_id: this.company.id,
             sale_date: this.form.sale_date,
-            commission: this.form.commission,
+            commission: this.form.commission ? this.form.commission : "0",
             reference: this.form.reference,
             products: products,
             tracks: tracks,
