@@ -640,9 +640,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Print",
   props: {
@@ -655,7 +652,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   methods: {
     printPage: function printPage() {
-      window.print();
+      var doc = new jsPDF();
+      var elementHandler = {
+        "#ignorePDF": function ignorePDF(element, renderer) {
+          return true;
+        }
+      };
+      var source = window.document.getElementsByTagName("body")[0];
+      doc.fromHTML(source, 15, 15, {
+        width: 180,
+        elementHandlers: elementHandler
+      });
+      doc.output("dataurlnewwindow");
     }
   },
   created: function created() {}
@@ -799,64 +807,69 @@ var render = function() {
               ])
             : _vm._e(),
           _vm._v(" "),
-          _c("div", { staticClass: "controller width-300" }, [
-            _c("label", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.hasHeader,
-                    expression: "hasHeader"
-                  }
-                ],
-                attrs: { type: "checkbox" },
-                domProps: {
-                  checked: Array.isArray(_vm.hasHeader)
-                    ? _vm._i(_vm.hasHeader, null) > -1
-                    : _vm.hasHeader
-                },
-                on: {
-                  change: function($event) {
-                    var $$a = _vm.hasHeader,
-                      $$el = $event.target,
-                      $$c = $$el.checked ? true : false
-                    if (Array.isArray($$a)) {
-                      var $$v = null,
-                        $$i = _vm._i($$a, $$v)
-                      if ($$el.checked) {
-                        $$i < 0 && (_vm.hasHeader = $$a.concat([$$v]))
+          _c(
+            "div",
+            { staticClass: "controller width-300", attrs: { id: "ignorePDF" } },
+            [
+              _c("label", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.hasHeader,
+                      expression: "hasHeader"
+                    }
+                  ],
+                  attrs: { type: "checkbox" },
+                  domProps: {
+                    checked: Array.isArray(_vm.hasHeader)
+                      ? _vm._i(_vm.hasHeader, null) > -1
+                      : _vm.hasHeader
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.hasHeader,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = null,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && (_vm.hasHeader = $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            (_vm.hasHeader = $$a
+                              .slice(0, $$i)
+                              .concat($$a.slice($$i + 1)))
+                        }
                       } else {
-                        $$i > -1 &&
-                          (_vm.hasHeader = $$a
-                            .slice(0, $$i)
-                            .concat($$a.slice($$i + 1)))
+                        _vm.hasHeader = $$c
                       }
-                    } else {
-                      _vm.hasHeader = $$c
                     }
                   }
-                }
-              }),
-              _vm._v(
-                "\n            " + _vm._s(_vm.__("Attach company information"))
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary btn-sm float-right",
-                attrs: { type: "button" },
-                on: { click: _vm.printPage }
-              },
-              [
+                }),
                 _vm._v(
-                  "\n            " + _vm._s(_vm.__("Print")) + "\n          "
+                  "\n            " +
+                    _vm._s(_vm.__("Attach company information"))
                 )
-              ]
-            )
-          ]),
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary btn-sm float-right",
+                  attrs: { type: "button" },
+                  on: { click: _vm.printPage }
+                },
+                [
+                  _vm._v(
+                    "\n            " + _vm._s(_vm.__("Print")) + "\n          "
+                  )
+                ]
+              )
+            ]
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "invoice-body" }, [
             _c("p", { staticClass: "clearfix" }, [

@@ -51,11 +51,10 @@
             </p>
           </div>
           <div class="print-header" v-if="!hasHeader">
-            <img :src="sale.company.current_logo" :alt="sale.company.name">
+            <img :src="sale.company.current_logo" :alt="sale.company.name" />
           </div>
 
-
-          <div class="controller width-300">
+          <div class="controller width-300" id="ignorePDF">
             <label
               ><input type="checkbox" v-model="hasHeader" />
               {{ __("Attach company information") }}</label
@@ -158,10 +157,8 @@
             </p>
           </div>
 
-
-
           <div class="print-footer" v-if="!hasHeader">
-            <img src="/images/footer.png" :alt="sale.company.name">
+            <img src="/images/footer.png" :alt="sale.company.name" />
           </div>
         </div>
       </div>
@@ -182,7 +179,19 @@ export default {
   },
   methods: {
     printPage: function () {
-      window.print();
+      var doc = new jsPDF();
+      var elementHandler = {
+        "#ignorePDF": function (element, renderer) {
+          return true;
+        },
+      };
+      var source = window.document.getElementsByTagName("body")[0];
+      doc.fromHTML(source, 15, 15, {
+        width: 180,
+        elementHandlers: elementHandler,
+      });
+
+      doc.output("dataurlnewwindow");
     },
   },
   created() {},
